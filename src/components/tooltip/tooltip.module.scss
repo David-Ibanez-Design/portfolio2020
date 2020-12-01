@@ -1,0 +1,40 @@
+$tooltip-theme: $brand;
+ 
+.tooltipContainer{
+    background: $tooltip-theme !important;
+    font-size: $h6-size !important;
+    border-radius: $border-radius !important;
+    padding: $spacer-1 $spacer-2 !important;
+
+    &.hidePointer{
+        &:after, &:before{
+            display: none !important;
+        }  
+    }
+
+}
+
+:global(.place-bottom) {
+    &:before, &:after {
+        border-bottom-color: $tooltip-theme !important;
+    }
+}
+
+:global(.place-top) {
+    &:before, &:after {
+        border-top-color: $tooltip-theme !important;
+    }
+
+}
+
+:global(.place-left) {
+    &:before, &:after {
+        border-left-color: $tooltip-theme !important;
+    }
+}
+
+:global(.place-right) {
+    &:before, &:after {
+        border-right-color: $tooltip-theme !important;
+    }
+}

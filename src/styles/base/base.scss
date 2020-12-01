@@ -1,0 +1,89 @@
+// stylelint-disable selector-max-type
+* {
+    box-sizing: border-box;
+  }
+  
+  input,
+  select,
+  textarea,
+  button {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+  
+  body {
+    font-family: $body-font;
+    font-size: $body-font-size;
+    line-height: $body-line-height;
+    font-weight: $font-weight-regular;
+    color: $gray-dark;
+    background-color: $white;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizelegibility;
+    font-variant-numeric: lining-nums;
+    -webkit-font-feature-settings: "lnum";
+    font-feature-settings: "lnum";
+    overflow-x: hidden;
+  }
+  
+  a {
+    color: $brand;
+    text-decoration: none;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  b,
+  strong {
+    font-weight: $font-weight-bold;
+  }
+
+    //
+  // Remove most list dots because most don't have it.
+  ul{
+    list-style: none;
+  }
+  //
+  
+  //
+  // Remove most spacing between table cells.
+  //
+  
+  table {
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+  
+  td,
+  th {
+    padding: 0;
+  }
+  
+  button {
+    cursor: pointer;
+    // Remove border radius added by Chrome macOS
+    border-radius: 0;
+  }
+  
+  // increase the selector specificity for [hidden]
+  // so that it always overrides utility classes (.d-block, etc.)
+  [hidden][hidden] {
+    display: none !important;
+  }
+  
+  details {
+    summary { cursor: pointer; }
+  
+    &:not([open]) {
+      // Set details content hidden by default for browsers that don't do this
+      > *:not(summary) { display: none !important; }
+    }
+  }
+  
+  div[role=button], button:focus {outline:0;}
+
+
+

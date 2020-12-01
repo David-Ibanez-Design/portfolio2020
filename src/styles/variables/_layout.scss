@@ -1,0 +1,129 @@
+// Layout variables
+
+// these are values for the display CSS property
+$display-values: (
+  block,
+  flex,
+  inline,
+  inline-block,
+  inline-flex,
+  none,
+  table,
+  table-cell
+) !default;
+
+// maps edges to respective corners for border-radius
+$edges: (
+  top: (top-left, top-right),
+  right: (top-right, bottom-right),
+  bottom: (bottom-right, bottom-left),
+  left: (bottom-left, top-left)
+) !default;
+
+
+$spacer: 8px !default;
+
+// Our spacing scale
+$spacer-0: 0 !default;                  // 0
+$spacer-1: round($spacer / 2) !default; // 4px
+$spacer-2: $spacer !default;            // 8px
+$spacer-3: $spacer * 2 !default;        // 16px
+$spacer-4: $spacer * 3 !default;        // 24px
+$spacer-5: $spacer * 4 !default;        // 32px
+$spacer-6: $spacer * 5 !default;        // 40px
+$spacer-7: $spacer * 6 !default;        // 48px
+$spacer-8: $spacer * 8 !default;        // 64px
+$spacer-9: $spacer * 10 !default;       // 80px
+$spacer-10: $spacer * 12 !default;       // 96px
+$spacer-11: $spacer * 14 !default;       // 112px
+$spacer-12: $spacer * 16 !default;      // 128px
+$spacer-13: $spacer * 17 !default;      // 184px
+
+// The list of spacer values
+$spacers: (
+  $spacer-0,
+  $spacer-1,
+  $spacer-2,
+  $spacer-3,
+  $spacer-4,
+  $spacer-5,
+  $spacer-6,
+  $spacer-7,
+  $spacer-8,
+  $spacer-9,
+  $spacer-10,
+  $spacer-11,
+  $spacer-12,
+  $spacer-13,
+) !default;
+
+// And the map of spacers, for easier looping:
+// @each $scale, $length in $spacer-map { ... }
+$spacer-map: (
+  0: $spacer-0,
+  1: $spacer-1,
+  2: $spacer-2,
+  3: $spacer-3,
+  4: $spacer-4,
+  5: $spacer-5,
+  6: $spacer-6,
+  7: $spacer-7,
+  8: $spacer-8,
+  9: $spacer-9,
+  10: $spacer-10,
+  11: $spacer-11,
+  12: $spacer-12,
+  13: $spacer-13,
+) !default;
+
+// Fixed-width container variables
+$container-width: 980px !default;
+$grid-gutter:     10px !default;
+
+// Breakpoint widths
+$width-xxs: 0 !default;
+// Small screen / phone
+$width-xs: 544px !default;
+// Medium screen / tablet
+$width-sm: 821px !default;
+// Large screen / desktop (980 + (16 * 2)) <= container + gutters
+$width-md: 1035px !default;
+// Extra large screen / wide desktop
+$width-lg: 1280px !default;
+// Extra large screen / wide desktop
+$width-xl: 1500px !default;
+// Full width
+$width-xxl: 100% !default;
+
+// Responsive container widths
+$container-xxs: $width-xxs !default;
+$container-xs: $width-xs !default;
+$container-sm: $width-sm !default;
+$container-md: $width-md !default;
+$container-lg: $width-lg !default;
+$container-xl: $width-xl !default;
+$container-xxl: $width-xxl !default;
+
+// Breakpoints in the form (name: length)
+$breakpoints: (
+  xxs: $width-xxs,
+  xs: $width-xs,
+  sm: $width-sm,
+  md: $width-md,
+  lg: $width-lg,
+  xl: $width-xl,
+  xxl: $width-xxl
+) !default;
+
+// This map is used to iterate over breakpoints and create 
+// both responsive and non-responsive classes in one
+$responsive-variants: (
+  "": "",
+  xxs: "-xxs",
+  xs: "-xs",
+  sm: "-sm",
+  md: "-md",
+  lg: "-lg",
+  xl: "-xl",
+  xxl: "-xxl",
+) !default;

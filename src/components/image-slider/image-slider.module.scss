@@ -1,0 +1,108 @@
+.sliderContainer {
+    position: relative;
+    background: $purpule-000;
+    max-width: $container-md;
+    margin: 0 auto;
+}
+
+.imageBefore{
+    &:before{
+        position: absolute;
+        color: $gray;
+        top: $spacer-3;
+        left: $spacer-5;
+        font-weight: 500;
+        content: 'Before';
+    }
+}
+
+.imageAfter{
+    &:before{
+        position: absolute;
+        color: $gray;
+        top: $spacer-3;
+        right: $spacer-5;
+        font-weight: 500;
+        content: 'After';       
+    }
+}
+
+.containerHandles {
+    --rcs-handle-width: 2px;
+    --rcs-handle-box: 2.4rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--rcs-handle-width);
+    height: 100%;
+    box-shadow: none;
+    background-color: $brand-300;
+    cursor: pointer;
+
+
+}
+
+.blurredBg {
+    position: absolute;
+    width: var(--rcs-handle-box);
+    height: var(--rcs-handle-box);
+    border-radius: 100%;
+    overflow: hidden;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      width: inherit;
+      height: inherit;
+      backdrop-filter: blur(0.5rem);
+    }
+
+
+
+}
+
+.handlesArrows {
+    position: absolute;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-auto-flow: column;
+    width: var(--rcs-handle-box);
+    height: var(--rcs-handle-box);
+    border: var(--rcs-handle-width) solid $brand-300;
+    border-radius: 100%;
+    background: $brand-300;
+    overflow: hidden;
+    transition: all $transition-time ease-in-out;
+
+    &:hover{
+      background: $brand-400;    
+      border: var(--rcs-handle-width) solid $brand-400;  
+    }
+
+    // &:hover svg{
+    //   fill: $brand-400;      
+    // }
+
+    .arrowLeft,
+    .arrowRight {
+      fill: $white;
+      position: absolute;
+      top: 50%;
+      margin-top: -12px;
+    }
+
+    .arrowLeft{
+      left: -6%;
+    }
+
+    .arrowRight{
+      right: -6%;
+    }
+
+}
+

@@ -1,0 +1,257 @@
+
+// .container{
+//     @include container-md;
+//     margin-top: $spacer-7;
+// }
+
+// .title {
+//     color: $black;
+//     font-size: $h1-size;
+//     font-weight: $font-weight-black;
+//     margin-bottom: $spacer-3;
+// }
+
+
+
+.animatedBackground{
+    background: $gray-000;
+}
+
+.container{
+    width: 100%;
+    margin-top: $spacer-7;
+
+    .innerContainer{
+        @include container-lg;
+    }
+
+    .title {
+        color: $black;
+        font-size: $h0-size;
+        font-weight: $font-weight-black;
+        display: flex;
+        line-height: 34px;
+
+        svg{
+            margin-right: $spacer-2;
+        }
+    }
+
+    .bannerContainer{
+        height: 470px;
+        padding-top: 80px;
+        @include breakpoint("md"){
+            padding-top: 16px;
+            height: 100%;
+          }
+    }
+
+    .bannerBg{
+        padding-top: 4px;
+        background: $gray-000;
+        height: 100%;
+        width: 100%;
+
+        @include breakpoint("md"){
+            padding-top: 0;
+            background: transparent;
+          }
+    }
+
+    .nextArtContainer{
+        margin-top: -74px;
+        height: 100%;
+        cursor: pointer;
+        display: flex; 
+        flex-wrap: wrap;
+
+        @include breakpoint("md"){
+            margin-top: 0;
+          }
+
+
+        &:hover .shadow{
+            width: 540px;
+            height: 315px;
+        }
+
+        @media screen and (min-width: 1035px) {
+            &:hover .imageContainer{
+                margin-top: 4px;
+            }         
+        }
+
+        &:hover .more .iconArrowRect{
+            width: 25px;
+            background: $brand;
+        }
+
+        &:hover .more p{
+            color: $brand;
+        }
+
+        &:hover .more .iconArrowHead{
+            border: solid $brand;
+            border-width: 0 2px 2px 0;
+        }
+
+
+        &:hover .artTitle span{
+            background-size: 100% 2px;
+        }         
+
+    }
+
+    .imageContainer{
+        position: relative;
+        width: 589px;
+        height: 366px;
+        margin-right: $spacer-4;
+        transition: all $transition-time ease-in-out;
+
+        @include breakpoint("md"){
+            flex-basis: 100%;
+            margin-right: 0;
+            overflow: hidden;
+          }
+
+    }
+
+
+
+    .innerImage{
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+
+    }  
+
+    .image{
+        position: absolute;
+        top: 0;
+        background-image: linear-gradient(221deg, #3C6B87 0%, #1C394F 100%);
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+    }
+
+    .shadow{
+        top: 0;
+        width: 500px;
+        @include center-horizontal;
+        height: 289px;
+        margin-top: 50px;
+        z-index: 1;
+        opacity: 0.8;
+        box-shadow: 0 3px 108px 0 scale-color($gray-400, $alpha: -20%);
+        transition: all $transition-time ease-in-out;
+        @include breakpoint("md"){
+           display: none;
+          }
+    }
+
+
+    .textContainer{
+        margin-top: 64px;
+        flex-basis: 0;
+        flex-grow: 999;
+        height: 304px;
+        float: left;
+        position: relative;
+
+        @include breakpoint("md"){
+            margin-top: 0;
+            width: 100%;
+            height: none;
+            float: none;
+        }
+
+        .innerText{
+            @include center-vertical;
+            @include breakpoint("md"){
+                position: relative;
+                top:0;
+                transform: none;
+                margin-top: $spacer-4;
+            }
+        }
+
+        .tags{
+            margin-bottom: 0;
+            &>span>span{
+                padding: 0 8px;
+            }
+            @include breakpoint("md"){
+                margin-bottom: 0;
+            }
+        }
+
+        .artTitle{
+            font-size: $h0-size;
+            color: $black;
+            font-weight: $font-weight-bold;
+            margin-bottom: $spacer-2;
+            line-height: 40px;
+            display: block;
+        }
+
+        .artTitle span{
+            background-image: linear-gradient(to right,#000000 0%,#000000 100%);
+            background-position: 0 95%;
+            background-size: 0 2px;
+            padding: 0.1% 0;
+            background-repeat: no-repeat;
+            -webkit-transition: background-size 0.25s cubic-bezier(0.785,0.135,0.150,0.860);
+            transition: background-size 0.25s cubic-bezier(0.785,0.135,0.150,0.860);
+        }
+
+
+
+        .more{
+
+            p{
+                font-size: $h4-size;
+                color: $gray;
+                float: left;
+                -webkit-transition: all 0.25s cubic-bezier(0.785,0.135,0.150,0.860);
+                transition: all 0.25s cubic-bezier(0.785,0.135,0.150,0.860);
+            }
+
+            .iconArrow{
+                float: left;
+                margin-left: $spacer-2;
+                vertical-align: middle;
+                margin-top: 12px;
+            }
+
+            .iconArrowRect{
+                height: 2px;
+                width: 16px;
+                background: $gray-400;
+                float: left;
+                -webkit-transition: all 0.25s cubic-bezier(0.785,0.135,0.150,0.860);
+                transition: all 0.25s cubic-bezier(0.785,0.135,0.150,0.860);
+            }
+
+            .iconArrowHead{
+                border: solid $gray-400;
+                border-width: 0 2px 2px 0;
+                display: inline-block;
+                padding: 3px;
+                transform: rotate(-45deg);
+                -webkit-transform: rotate(-45deg);
+                float: left;
+                margin-left: -8px;
+                margin-top: -3px;
+                -webkit-transition: all 0.25s cubic-bezier(0.785,0.135,0.150,0.860);
+                transition: all 0.25s cubic-bezier(0.785,0.135,0.150,0.860);
+            }
+        }
+
+    }
+
+}
+

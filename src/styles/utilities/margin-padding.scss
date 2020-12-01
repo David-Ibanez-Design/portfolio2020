@@ -1,0 +1,26 @@
+// Margin/padding spacer utilities
+
+// Margin and padding helpers
+@each $scale, $size in $spacer-map {
+    /* Set a $size margin to all sides at $breakpoint */
+    .m-#{$scale}  { margin: $size !important; }
+    /* Set a $size margin on the top at $breakpoint */
+    .mt-#{$scale} { margin-top: $size !important; }
+    /* Set a $size margin on the right at $breakpoint */
+    .mr-#{$scale} { margin-right: $size !important; }
+    /* Set a $size margin on the bottom at $breakpoint */
+    .mb-#{$scale} { margin-bottom: $size !important; }
+    /* Set a $size margin on the left at $breakpoint */
+    .ml-#{$scale} { margin-left: $size !important; }
+
+    /* Set a $size padding to all sides at $breakpoint */
+    .p-#{$scale}  { padding: $size !important; }
+    /* Set a $size padding on the top at $breakpoint */
+    .pt-#{$scale} { padding-top: $size !important; }
+    /* Set a $size padding on the right at $breakpoint */
+    .pr-#{$scale} { padding-right: $size !important; }
+    /* Set a $size padding on the bottom at $breakpoint */
+    .pb-#{$scale} { padding-bottom: $size !important; }
+    /* Set a $size padding on the left at $breakpoint */
+    .pl-#{$scale} { padding-left: $size !important; }    
+}

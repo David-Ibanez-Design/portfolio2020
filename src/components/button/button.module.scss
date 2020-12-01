@@ -1,0 +1,40 @@
+.button{
+    display: inline-block;
+    text-align: center;
+    min-width: 160px;
+    font-size: $h5-size;
+    padding: 10px $spacer-3 11px $spacer-3;
+    border-radius: $border-radius;
+    cursor: pointer;
+}
+
+
+.buttonPrimary{
+    color: $white;
+    background: $brand-400;
+    border: 1px solid $brand-400;
+
+    &:hover{
+        background: $brand-300;
+        text-decoration: none;
+    }
+
+    &:active{
+        box-shadow: inset 0 7px 5px 0 scale-color($red-800, $alpha: -90%);
+    }
+}
+
+.buttonSecondary{
+    color: $brand-600;
+    background: transparent;
+    border: 1px solid $brand-600;
+
+    &:hover{
+        background: $brand-000;
+        text-decoration: none;
+    }
+
+    &:active{
+        box-shadow: inset 0 7px 5px 0 scale-color($red-400, $alpha: -90%);
+    }
+}

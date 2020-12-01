@@ -1,0 +1,35 @@
+
+.center-both{
+      @include center-both();
+  }
+
+.center-vertical{
+    @include center-vertical();
+}
+
+.center-horizontal{
+    @include center-horizontal();
+}
+
+.flex-center{
+    @include flex-center();
+}
+
+.container-sm{
+    @include container-sm();
+}
+
+.container-md{
+    @include container-md();
+}
+
+.container-lg{
+    @include container-lg();
+}
+
+.container-xl{
+    @include container-xl();
+}
+
+
+

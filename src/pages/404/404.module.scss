@@ -1,0 +1,17 @@
+
+.container {
+    @include flex-center;
+}
+
+.image {
+    max-width: 500px;
+    margin: auto;
+    img {
+        width: 100%;
+    }
+}
+
+.message {
+    margin: auto;
+    text-align: center;
+}

@@ -1,0 +1,60 @@
+// Typography mixins
+
+// Heading mixins for use within components
+// These match heading utilities in utilities/typography
+
+@mixin h00 {
+    font-size: $h00-size;
+    // font-family: $heading-font;
+    font-weight: $font-weight-extra-bold;
+}
+
+@mixin h0 {
+    font-size: $h0-size;
+    // font-family: $heading-font;
+    font-weight: $font-weight-extra-bold;
+}
+
+@mixin h1 {
+    font-size: $h1-size;
+    // font-family: $heading-font;
+    font-weight: $font-weight-extra-bold;
+}
+  
+@mixin h2 {
+    font-size: $h2-size;
+    // font-family: $heading-font;
+    font-weight: $font-weight-extra-bold;
+}
+
+@mixin h3 {
+    font-size: $h3-size;
+    // font-family: $sub-heading-font;
+    font-weight: $font-weight-bold;
+}
+
+@mixin h4 {
+    font-size: $h4-size;
+    // font-family: $sub-heading-font;
+    font-weight: $font-weight-bold;
+}
+
+@mixin h5 {
+    font-size: $h5-size;
+    // font-family: $sub-heading-font;
+    font-weight: $font-weight-bold;
+}
+
+@mixin h6 {
+    font-size: $h6-size;
+    // font-family: $sub-heading-font;
+    font-weight: $font-weight-bold;
+}
+
+@mixin heading ($selector, $size, $color: $black) {
+    #{$selector} {
+        font-size: $size;
+        font-weight: bold;
+        color: $color;
+    }
+}

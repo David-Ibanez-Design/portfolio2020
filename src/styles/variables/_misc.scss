@@ -1,0 +1,18 @@
+// Miscellaneous variables
+
+// Border
+$border-width: 1px !default;
+
+// Border Radius
+$border-radius:  4px !default;
+
+// Box shadow
+$box-shadow: 0 1px 0 rgba($black, 0.04) !default;
+$box-shadow-medium: 0 3px 6px rgba($gray-400, 0.15) !default;
+$box-shadow-large: 0 8px 24px rgba($gray-400, 0.2) !default;
+$box-shadow-extra-large: 0 12px 48px rgba($gray-400, 0.3) !default;
+$box-shadow-bottom: inset 0px -1px 0 0px $gray-200 !default; // bottom shadows
+$box-shadow-top: inset 0 6px 3px 0 scale-color($red-800, $alpha: -70%) !default; // top shadows
+
+// Transition
+$transition-time: .5s;

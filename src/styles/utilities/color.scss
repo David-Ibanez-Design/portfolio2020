@@ -1,0 +1,8 @@
+// Generate a foreground and background utility for every shade of every hue
+@each $hue, $shades in $hue-maps {
+    @each $index, $color in $shades {
+      .color-#{$hue}-#{$index} { color: $color !important; }
+      .bg-#{$hue}-#{$index} { background-color: $color !important; }
+    }
+  }
+  

@@ -1,0 +1,171 @@
+// Color variables
+
+// -------- Black and white --------
+$black: #101426 !default;
+$white: #fff !default;
+
+// -------- Grays --------
+$gray-000:        #F7F9FC !default;
+$gray-100:        #EDF1F7 !default;
+$gray-200:        #E4E9F2 !default;
+$gray-300:        #C5CEE0 !default;
+$gray-400:        #8F9BB3 !default;
+$gray-500:        #2E3A59 !default;
+$gray-600:        #222B45 !default;
+$gray-700:        #192038 !default;
+$gray-800:        #151A30 !default;
+
+// -------- Brand --------
+$brand-000:        #FFEFED !default;
+$brand-100:        #FFD4D0 !default;
+$brand-200:        #FFA49C !default;
+$brand-300:        #EF4F47 !default;
+$brand-400:        #D63735 !default;
+$brand-500:        #BD1A23 !default;
+$brand-600:        #9F030F !default;
+$brand-700:        #7D0001 !default;
+$brand-800:        #5C0000 !default;
+
+// -------- Red --------
+$red-000:        #FFF2F2 !default;
+$red-100:        #FFD6D9 !default;
+$red-200:        #FFA8B4 !default;
+$red-300:        #FF708D !default;
+$red-400:        #FF3D71 !default;
+$red-500:        #DB2C66 !default;
+$red-600:        #B81D5B !default;
+$red-700:        #94124E !default;
+$red-800:        #700940 !default;
+
+// -------- Blue --------
+$blue-000:        #F2F8FF !default;
+$blue-100:        #C7E2FF !default;
+$blue-200:        #94CBFF !default;
+$blue-300:        #42AAFF !default;
+$blue-400:        #0095FF !default;
+$blue-500:        #006FD6 !default;
+$blue-600:        #0057C2 !default;
+$blue-700:        #0041A8 !default;
+$blue-800:        #002885 !default;
+
+// -------- Green --------
+$green-000:        #EDFFF3 !default;
+$green-100:        #B3FFD6 !default;
+$green-200:        #8CFAC7 !default;
+$green-300:        #51F0B0 !default;
+$green-400:        #00E096 !default;
+$green-500:        #00B383 !default;
+$green-600:        #008F72 !default;
+$green-700:        #007566 !default;
+$green-800:        #00524C !default;
+
+// -------- Yellow --------
+$yellow-000:        #FFFDF2 !default;
+$yellow-100:        #FFF1C2 !default;
+$yellow-200:        #FFE59E !default;
+$yellow-300:        #FFC94C !default;
+$yellow-400:        #FFAA00 !default;
+$yellow-500:        #DB8B00 !default;
+$yellow-600:        #B86E00 !default;
+$yellow-700:        #945400 !default;
+$yellow-800:        #703C00 !default;
+
+// -------- Yellow --------
+$purpule-000:        #D9E4FF !default;
+$purpule-100:        #F3F0FF !default;
+$purpule-200:        #DED6FF !default;
+$purpule-800:        #7048E8 !default;
+
+// -------- Color defaults --------
+$red:         $red-500 !default;
+$blue:        $blue-500 !default;
+$green:       $green-500 !default;
+$yellow:      $yellow-500 !default;
+$brand:       $brand-500 !default;
+$gray-dark:   $gray-700 !default;
+$gray-light:  $gray-300 !default;
+$gray:        $gray-500 !default;
+
+// -------- Color gradient maps --------
+
+$whites: (
+  0: $white,
+) !default;
+
+$grays: (
+  0: $gray-000,
+  1: $gray-100,
+  2: $gray-200,
+  3: $gray-300,
+  4: $gray-400,
+  5: $gray-500,
+  6: $gray-600,
+  7: $gray-700,
+  8: $gray-800,
+) !default;
+
+$blues: (
+  0: $blue-000,
+  1: $blue-100,
+  2: $blue-200,
+  3: $blue-300,
+  4: $blue-400,
+  5: $blue-500,
+  6: $blue-600,
+  7: $blue-700,
+  8: $blue-800,
+) !default;
+
+$greens: (
+  0: $green-000,
+  1: $green-100,
+  2: $green-200,
+  3: $green-300,
+  4: $green-400,
+  5: $green-500,
+  6: $green-600,
+  7: $green-700,
+  8: $green-800,
+) !default;
+
+$yellows: (
+  0: $yellow-000,
+  1: $yellow-100,
+  2: $yellow-200,
+  3: $yellow-300,
+  4: $yellow-400,
+  5: $yellow-500,
+  6: $yellow-600,
+  7: $yellow-700,
+  8: $yellow-800,
+) !default;
+
+$reds: (
+  0: $red-000,
+  1: $red-100,
+  2: $red-200,
+  3: $red-300,
+  4: $red-400,
+  5: $red-500,
+  6: $red-600,
+  7: $red-700,
+  8: $red-800,
+) !default;
+
+$purpules: (
+  0: $purpule-000,
+  1: $purpule-100,
+  2: $purpule-200,
+  8: $purpule-800,
+) !default;
+
+
+$hue-maps: (
+  "white": $whites,
+  "gray": $grays,
+  "blue": $blues,
+  "green": $greens,
+  "yellow": $yellows,
+  "red": $reds,
+  "purpule": $purpules,
+) !default;
