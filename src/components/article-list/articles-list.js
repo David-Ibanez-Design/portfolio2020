@@ -36,7 +36,6 @@ const ArticleList = ({ articles, currentLang }) => {
                   <TagList tags={tags} />
                 </div>
                 <h3><span>{title}</span></h3>
-                {/* <p>View Case study</p> */}
               </Link>
 
           </div>
