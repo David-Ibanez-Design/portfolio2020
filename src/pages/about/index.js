@@ -9,17 +9,15 @@ import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 import style from './about.module.scss'
 import ResumeEn from '../../downloads/Resume-en.pdf'
-import Buttons from '../../components/button'
 import Config from '../../../config'
 import Utils from '../../utils'
-import Gallery from '../../components/gallery'
 
 
 class About extends React.Component {
 
   render() {
 
-    let { FileFromDir, profilePhoto } = this.props.data
+    let { profilePhoto } = this.props.data
   
     return (
       <Layout>
