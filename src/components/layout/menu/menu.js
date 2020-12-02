@@ -74,7 +74,7 @@ const Header = ({currentLang, data}) => {
       <div className={`${style.desktopMenu} ${getMenuBg()}`}>
         <div className={style.desktopMenuInnerContainer}>       
             <div className={style.logo}>
-                <Link data-tip data-for="backToHomepage" to={Utils.resolveLangPageUrl(currentLang, Config.pages.home)} >
+                <Link className={style.logoLink} data-tip data-for="backToHomepage" to={Utils.resolveLangPageUrl(currentLang, Config.pages.home)} >
                   <Logo/>
                 </Link>
                 <Tooltip id="tooltipMenuLogo" targetId="backToHomepage" effect="solid">

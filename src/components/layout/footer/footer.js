@@ -66,9 +66,9 @@ const Footer = ({currentLang}) => {
                     <a href={`mailto:${Config.email}`} target="_blank"　rel="noreferrer">Contact</a>
                   </li>
                 </ul>
-                <ul className={style.langSwitcher}>
+                <div className={style.langSwitcher}>
                   <LangSwitcher currentPage={currentPage} currentLang={currentLang} isMobile={false} withFlag/>
-                </ul>
+                </div>
               </div>
               <div className={style.socialsMobileContainer}>
                 <h6>Follow me on</h6>

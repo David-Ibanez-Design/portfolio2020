@@ -10,7 +10,6 @@ import style from './article-content.module.scss'
 import Images from "../../components/embedded-images"
 import ScrollTop from "../../components/scroll-top"
 import ArticleOverview from "../../components/article-overview"
-// import Progress from '../../components/progress'
 
 const components = {
   Img,
@@ -36,7 +35,6 @@ const ArticleContent = ({body, imageMd, imageLg, imageXl, imageXXl}) => (
           >{body}</MDXRenderer>
         </MDXProvider>
         <ScrollTop/>
-        {/* <Progress target={target}/> */}
      </article>
      
   </div>

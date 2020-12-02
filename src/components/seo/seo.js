@@ -82,7 +82,9 @@ function SEO({
                     }))
                   : []
               )}
-          />
+          >  
+            <html lang={currentLang || 'en'} />
+          </Helmet>
         )
       }}
     />

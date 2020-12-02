@@ -5,13 +5,13 @@ import { graphql } from 'gatsby'
 /* App imports */
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import ArticleList from '../components/article-list'
+// import ArticleList from '../components/article-list'
 import Config from '../../config'
 
 const IndexPage = ({ data }) => (
   <Layout currentLang={Config.translatedLanguage}>
     <SEO title="Home" description={Config.siteDescription} path="" />
-    <ArticleList currentLang={Config.translatedLanguage} articles={data.allMdx.edges} />
+    {/* <ArticleList currentLang={Config.translatedLanguage} articles={data.allMdx.edges} /> */}
   </Layout>
 )
 
