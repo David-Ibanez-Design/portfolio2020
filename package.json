@@ -38,7 +38,7 @@
     "react-image-comparison-slider": "^1.8.4",
     "react-masonry-component": "^6.2.1",
     "react-share": "^4.1.0",
-    "react-tooltip": "^4.2.10",
+    "react-tooltip": "^4.2.11",
     "utils": "^0.3.1"
   },
   "keywords": [

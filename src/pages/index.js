@@ -16,7 +16,7 @@ import Tooltip from "../components/tooltip";
 import Utils from '../utils'
 import HeroBg from '../images/icons/heroBackground'
 
-const Homepage = ({ data, currentLang }) => {
+const Homepage = ({data, currentLang}) => {
 
   const hasWindow = (typeof window !== 'undefined') ? true : false;
   const getWidth = () => hasWindow ? window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth : null;
@@ -121,7 +121,7 @@ const Homepage = ({ data, currentLang }) => {
                 <div className={style.articleFeatureImage} data-tip data-for="viewProjectHomepage">
                    <Img fluid={hasWindow ? getImg(WinWidth) : null} alt={caseStudyFeatureDesktop.node.frontmatter.title}
                   />
-                  <Tooltip targetId="viewProjectHomepage" effect="float" hidePointer="hidePointer">
+                  <Tooltip id="tooltipFeatureCaseStudy" targetId="viewProjectHomepage" effect="float" hidePointer="hidePointer">
                         View case study
                 </Tooltip>
                 <div className={style.overlay}></div>
@@ -154,7 +154,7 @@ const Homepage = ({ data, currentLang }) => {
                           fluid={hasWindow ? getImgCaseStudies(WinWidth, coverHomepage, index) : null}
                           alt={title}
                         />
-                        <Tooltip targetId={`viewProjectHomepage-${index}`} effect="float" hidePointer="hidePointer">
+                        <Tooltip id={`tooltipFeatureCase-${index}`} targetId={`viewProjectHomepage-${index}`} effect="float" hidePointer="hidePointer">
                                 View case study
                         </Tooltip>
                         <div className={style.overlay}></div>
@@ -186,7 +186,7 @@ const Homepage = ({ data, currentLang }) => {
                 <a key={index} rel="noreferrer" target="_blank" href={dribbbleShotMap.dribbbleUrl} className={style.dribbbleShots} >
                   <div className={style.dribbbleShotsImage} data-tip data-for="viewProjectHomepage-1">
                     <Img fluid={dribbbleShots.edges[index].node.childImageSharp.fluid} alt="sss"/>
-                    <Tooltip targetId="viewProjectHomepage-1" effect="float" hidePointer="hidePointer">
+                    <Tooltip id={`tooltipDribbbleShots-${index}`} targetId="viewProjectHomepage-1" effect="float" hidePointer="hidePointer">
                           View on Dribbble
                     </Tooltip>
                     <div className={style.overlay}></div>
@@ -245,7 +245,7 @@ export const pageQuery = graphql`
             coverHomepage {
               childImageSharp {
                 fluid(maxWidth: 715, quality: 100) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
@@ -266,7 +266,7 @@ export const pageQuery = graphql`
             coverHomepage {
               childImageSharp {
                 fluid(maxWidth: 1035, quality: 100) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
@@ -289,7 +289,7 @@ export const pageQuery = graphql`
             coverHomepage {
               childImageSharp {
                 fluid(maxWidth: 624, quality: 100) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
@@ -312,7 +312,7 @@ export const pageQuery = graphql`
             coverHomepage {
               childImageSharp {
                 fluid(maxWidth: 789, quality: 100) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
@@ -328,7 +328,7 @@ export const pageQuery = graphql`
         node {
           childImageSharp {
                 fluid(maxWidth: 624, quality: 100) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
@@ -348,7 +348,7 @@ export const pageQuery = graphql`
         relativePath: { eq: "homepage/profilePic.jpg" }) {
           childImageSharp {
             fixed(width: 128, height: 128, quality: 100) {
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed_withWebp
             }
           }
         }

@@ -76,10 +76,10 @@ const Header = ({currentLang, data}) => {
             <div className={style.logo}>
                 <Link data-tip data-for="backToHomepage" to={Utils.resolveLangPageUrl(currentLang, Config.pages.home)} >
                   <Logo/>
-                  <Tooltip targetId="backToHomepage" effect="solid">
-                    {!currentLang ? "Back the homepage" : "Homepageに戻る"}
-                  </Tooltip>
                 </Link>
+                <Tooltip id="tooltipMenuLogo" targetId="backToHomepage" effect="solid">
+                    {!currentLang ? "Back the homepage" : "Homepageに戻る"}
+                </Tooltip>
             </div>
             
             <div className={style.DesktopMenuButton} onClick={toggleMenu} role="button" tabIndex={0} onKeyDown={handleKeyDown}>
@@ -144,7 +144,7 @@ const Header = ({currentLang, data}) => {
               </ul> 
             </div>
             <div className={style.desktopLanguageContainer}>
-                <LangSwitcher currentPage={currentPage} currentLang={currentLang} style={style} isMobile={false} toggleMenu={toggleMenu}/>
+                <LangSwitcher　Tooltip={Tooltip} currentPage={currentPage} currentLang={currentLang} style={style} isMobile={false} toggleMenu={toggleMenu}/>
             </div>
         </div> 
         <div className={style.srollBackground} ></div>   
@@ -259,14 +259,14 @@ export default function MyStaticQuery(props) {
                   menuVignettes {
                     childImageSharp {
                       fluid(maxWidth: 174, quality: 100) {
-                        ...GatsbyImageSharpFluid
+                        ...GatsbyImageSharpFluid_withWebp
                       }
                     }
                   }
                   mobileVignettes {
                     childImageSharp {
                       fluid(maxWidth: 260, quality: 100) {
-                        ...GatsbyImageSharpFluid
+                        ...GatsbyImageSharpFluid_withWebp
                       }
                     }
                   }                  

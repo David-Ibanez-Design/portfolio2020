@@ -54,7 +54,7 @@ export const query = graphql`
     profilePhoto: file(name: { eq: "profile-photo" }) {
       childImageSharp {
         fluid(maxWidth: 800) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

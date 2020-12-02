@@ -79,17 +79,6 @@ class About extends React.Component {
               </a> 
             </p>
           </div>
-
-          {/* <div className={`container-md ${style.illustrations}`}>
-              <Gallery images={FileFromDir.edges}/>
-              <Buttons 
-                destination="external"
-                to={Config.social.dribbble} 
-                target="_blank" 
-                rel="noreferrer" 
-                buttonStyle="secondary">See more on Dribbble
-              </Buttons> 
-          </div> */}
         </div>
       </Layout>
     )
@@ -115,26 +104,10 @@ export const aboutPropTypes = {
 export const pageQuery = graphql`
   
      {
-      FileFromDir: allFile(
-        sort: { fields: [name] }
-        filter: {relativeDirectory: {eq: "about/gallery"}}) {
-        edges {
-          node {
-            childImageSharp {
-              fluid {
-                srcSet
-                src
-                sizes
-              }
-            }
-          }
-        }
-      }
-
       profilePhoto: file(name: { eq: "about-placeholder" }) {
          childImageSharp {
            fluid(maxWidth: 1035) {
-             ...GatsbyImageSharpFluid
+             ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
