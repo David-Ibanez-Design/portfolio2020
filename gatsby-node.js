@@ -1,61 +1,31 @@
 /* Vendor imports */
 const path = require('path');
 /* App imports */
-const config = require('./config');
+const config = require('./gatsby-config');
 const utils = require('./src/utils');
 
-exports.createPages = ({ actions, graphql }) => {
+exports.onCreatePage = async ({page, actions: {createPage, deletePage} }) => {
 
-  const { createPage } = actions;
+  console.log(page)
+  await deletePage(page);
 
-  return graphql(`
-    {
-      allMdx {
-        edges {
-          node {
-            frontmatter {
-              path
-              tags
-              order
-            }
-            fileAbsolutePath
-          }
-        }
-      }
-    }    
-  `).then(result => {
-    if (result.errors) return Promise.reject(result.errors);
+  await Promise.all(
+    config.siteMetadata.supportedLanguages.map(async lang => {
+      const originalPath = page.path;
+      const localizedPath = `/${lang}${page.path}`;
 
-    const { site, allMdx } = result.data
-    // To account for translation pages the count need to be divided by 2
-    const artCount = allMdx.edges.length/2
-    const getNextArt = (currentPage) => {
-      return currentPage < artCount ? currentPage + 1 : 1
-    }
-
-    /* Post pages */
-    allMdx.edges.forEach(({ node, index }) => {
-      // Check path prefix of post
-      if (node.frontmatter.path.indexOf(config.pages.article) !== 0) throw `Invalid path prefix: ${node.frontmatter.path}`
-      
-      createPage({
-        path: node.frontmatter.path,
-        component: path.resolve('src/templates/article.js'),
+      await createPage({
+        ...page,
+        path: localizedPath,
         context: {
-          postPath: node.frontmatter.path,
-          artCount,
-          currentPage: node.frontmatter.order,
-          nextArt: getNextArt(node.frontmatter.order),
-          translations: utils.getRelatedTranslations(node, allMdx.edges)
-        }
-      })
+          ...page.context,
+          originalPath,
+          lang,
+        },
+      });
     })
-
-    const regexForIndex = /index\.mdx$/
-    // Posts in default language, excluded the translated versions
-    const defaultPosts = allMdx.edges.filter(({ node: { fileAbsolutePath } }) => fileAbsolutePath.match(regexForIndex))
-
-  })
+  );
+  
 
 };
 

@@ -7,7 +7,8 @@ module.exports = {
     // Data used by some gatsby plugins
     siteUrl: config.siteUrl,
     title: config.siteTitle,
-    description: config.siteDescription
+    description: config.siteDescription,
+    supportedLanguages : [ "en", "el" ]
   },
   plugins,
 }

@@ -5,3 +5,5 @@
  */
 
 import "./src/styles/_index.scss"
+
+export { wrapRootElement } from './gatsby-ssr';
