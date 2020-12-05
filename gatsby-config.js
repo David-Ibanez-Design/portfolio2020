@@ -8,6 +8,7 @@ module.exports = {
     siteUrl: config.siteUrl,
     title: config.siteTitle,
     description: config.siteDescription,
+    defaultLanguage: "en",
     supportedLanguages : [ "en", "el" ]
   },
   plugins,

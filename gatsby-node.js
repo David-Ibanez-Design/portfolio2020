@@ -16,7 +16,7 @@ exports.onCreatePage = async ({page, actions: {createPage, deletePage, createRed
     config.siteMetadata.supportedLanguages.map(async lang => {
       const originalPath = page.path;
       const localizedPath = `/${lang}${page.path}`;
-
+  
       // create a redirect based on the accept-language header
       createRedirect({
         fromPath: originalPath,
