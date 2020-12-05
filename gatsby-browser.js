@@ -6,4 +6,4 @@
 
 import "./src/styles/_index.scss"
 
-export { wrapRootElement } from './gatsby-ssr';
+export { wrapPageElement, wrapRootElement } from './gatsby-ssr';

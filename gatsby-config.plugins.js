@@ -1,4 +1,5 @@
 const config = require('./config')
+const resources = require("./i18n-translations.json")
 
 module.exports = [
     'gatsby-plugin-react-helmet',
@@ -67,5 +68,6 @@ module.exports = [
       }
     },
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-robots-txt`
+    `gatsby-plugin-robots-txt`,
+    'gatsby-plugin-netlify'
 ]

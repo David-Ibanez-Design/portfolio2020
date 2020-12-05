@@ -1,9 +1,11 @@
 import i18n from 'i18next';
 import translations from '../i18n-translations.json';
 
+
 i18n.init({
   resources: translations,
   fallbackLng: 'en',
+  lng: "en",
   interpolation: {
     escapeValue: false,
   },

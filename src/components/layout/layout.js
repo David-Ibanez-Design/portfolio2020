@@ -18,9 +18,9 @@ import "../tooltip/tooltip.module.scss";
 
 const Layout = ({children, currentLang }) => (
   <I18nextProvider i18n={i18n}>
-    <Menu currentLang={currentLang} />
+    {/* <Menu currentLang={currentLang} /> */}
       {children}
-    <Footer currentLang={currentLang}/>
+    {/* <Footer currentLang={currentLang}/> */}
   </I18nextProvider>
 )
 
