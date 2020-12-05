@@ -111,14 +111,16 @@ export const pageQuery = graphql`
         coverArticle {
           childImageSharp {
             fluid(maxWidth: 1035, quality: 100) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp,
+              ...GatsbyImageSharpFluidLimitPresentationSize
             }
           }
         }
         coverHomepage {
           childImageSharp {
             fluid(maxWidth: 1035, quality: 100) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluidLimitPresentationSize
             }
           }
         }
@@ -129,7 +131,8 @@ export const pageQuery = graphql`
               maxWidth: 1035,
               quality: 100
               ) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluidLimitPresentationSize
             }
           }
         }
@@ -141,7 +144,8 @@ export const pageQuery = graphql`
               quality: 100,
               srcSetBreakpoints: [1035, 1280, 1500]
               ) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluidLimitPresentationSize
             }
           }
         }
@@ -153,7 +157,8 @@ export const pageQuery = graphql`
               quality: 100,
               srcSetBreakpoints: [1035, 1280, 1500]
               ) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluidLimitPresentationSize
             }
           }
         }       
@@ -165,7 +170,8 @@ export const pageQuery = graphql`
               quality: 100,
               srcSetBreakpoints: [1035, 1280, 1500]
               ) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluidLimitPresentationSize
             }
           }
         }               
@@ -182,21 +188,24 @@ export const pageQuery = graphql`
           coverArticle {
             childImageSharp {
               fluid(maxWidth: 1035, quality: 100) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_withWebp
+                ...GatsbyImageSharpFluidLimitPresentationSize
               }
             }
           }
           coverHomepage {
             childImageSharp {
               fluid(maxWidth: 1035, quality: 100) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_withWebp
+                ...GatsbyImageSharpFluidLimitPresentationSize
               }
             }
           }
           suggestedArt {
             childImageSharp {
               fluid(maxWidth: 590, quality: 100) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_withWebp
+                ...GatsbyImageSharpFluidLimitPresentationSize
               }
             }
           }

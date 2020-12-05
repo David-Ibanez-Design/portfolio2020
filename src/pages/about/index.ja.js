@@ -1,7 +1,6 @@
 /* Vendor imports */
 import React from 'react'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
 /* App imports */
 import { aboutPropTypes } from './index'
 import Layout from '../../components/layout'
@@ -14,7 +13,7 @@ class About extends React.Component {
   static propTypes = aboutPropTypes
 
   render() {
-    let { profilePhoto } = this.props.data
+  
     return (
       <Layout currentLang={Config.translatedLanguage}>
         <SEO
@@ -24,7 +23,6 @@ class About extends React.Component {
         />
         <div className={style.container}>
           <div className={style.photo}>
-            <Img fluid={profilePhoto.childImageSharp.fluid} />
           </div>
           <div className={style.content}>
             <h1>Hi, I'm Luigi!</h1>
@@ -44,7 +42,6 @@ class About extends React.Component {
             <h1>Hi, I'm Luigi!</h1>
           </div>
           <div className={style.photo}>
-            <Img fluid={profilePhoto.childImageSharp.fluid} />
           </div>
         </div>
       </Layout>
@@ -57,7 +54,7 @@ export const query = graphql`
     profilePhoto: file(name: { eq: "profile-photo" }) {
       childImageSharp {
         fluid(maxWidth: 800) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

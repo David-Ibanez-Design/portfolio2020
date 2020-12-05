@@ -19,12 +19,12 @@ const LangSwitcher = ({toggleMenu, isMobile, currentLang, currentPage, withFlag=
             <JapaneseFlag className={style.japaneseFlag}/>
             <Link 
               onClick={ isMobile ? toggleMenu : null}
-              data-tip data-for="switchToJapanese" 
+              data-tip data-for="tooltipMenuJpLang" 
               className={currentLang ? "active": null} 
               to={currentLang === transLang ? currentPage: currentPage.substr(0, pageName) + transLang + "/" + currentPage.substr(pageName)}>
               {transLang}
             </Link>
-            {!currentLang ? (<Tooltip targetId="switchToJapanese" effect="solid" >日本語に変える</Tooltip>) : null}
+            {!currentLang ? (<Tooltip id="tooltipMenuJpLang" targetId="tooltipMenuJpLang" effect="solid" >日本語に変える</Tooltip>) : null}
           </li>
 
           {/* English */}
@@ -40,7 +40,7 @@ const LangSwitcher = ({toggleMenu, isMobile, currentLang, currentPage, withFlag=
                   {Config.defaultLanguage}
                 </Link>
 
-                {currentLang ? (<Tooltip targetId="switchToEnglish" effect="solid" >Switch to English</Tooltip>) : null}
+                {currentLang ? (<Tooltip id="tooltipMenuEnLang" targetId="switchToEnglish" effect="solid" >Switch to English</Tooltip>) : null}
               </>
             )}
           </li>

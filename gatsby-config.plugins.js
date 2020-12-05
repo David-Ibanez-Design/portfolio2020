@@ -50,7 +50,8 @@ module.exports = [
               disableBgImage: true,
               backgroundColor: "none",
               showCaptions: true,
-              linkImagesToOriginal: false
+              linkImagesToOriginal: false,
+              disableBgImageOnAlpha: true
             },
           },
           `gatsby-remark-copy-linked-files`

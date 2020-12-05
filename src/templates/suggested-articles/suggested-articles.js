@@ -14,9 +14,10 @@ import Tooltip from "../../components/tooltip";
 
 const SuggestedPosts = ({ currentLang, articles }) => {
 
-  const getWidth = () => window.innerWidth 
-  || document.documentElement.clientWidth 
-  || document.body.clientWidth;
+  const hasWindow = (typeof window !== 'undefined') ? true : false;
+  const getWidth = () => hasWindow ? window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth : null;
+  // || document.documentElement.clientWidth 
+  // || document.body.clientWidth;
 
   function useCurrentWidth() {
     // save current window width in the state object
@@ -45,6 +46,14 @@ const SuggestedPosts = ({ currentLang, articles }) => {
   let WinWidth = useCurrentWidth();
   const { title, path, tags, suggestedArt, coverHomepage } = articles[0].node.frontmatter
 
+  function getImg(WinWidth){
+    if(WinWidth > 1035){
+      return suggestedArt.childImageSharp.fluid
+    }else{
+      return coverHomepage.childImageSharp.fluid
+    }
+  }
+
   return(
       <div className={style.container}>
       
@@ -60,10 +69,7 @@ const SuggestedPosts = ({ currentLang, articles }) => {
               <div className={style.imageContainer}>
                 <div className={style.innerImage} data-tip data-for="viewProject">
                   <div className={style.image} >
-                      <Img
-                      fluid={WinWidth > 1035 ? suggestedArt.childImageSharp.fluid : coverHomepage.childImageSharp.fluid}
-                      
-                      alt={title}
+                      <Img fluid={hasWindow ? getImg(WinWidth) : null} alt={title}
                     />
                   </div>
                   <Tooltip targetId="viewProject" effect="float" hidePointer="hidePointer" data-offset="{'top': 0}">

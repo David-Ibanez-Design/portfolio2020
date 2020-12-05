@@ -9,17 +9,15 @@ import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 import style from './about.module.scss'
 import ResumeEn from '../../downloads/Resume-en.pdf'
-import Buttons from '../../components/button'
 import Config from '../../../config'
 import Utils from '../../utils'
-import Gallery from '../../components/gallery'
 
 
 class About extends React.Component {
 
   render() {
 
-    let { FileFromDir, profilePhoto } = this.props.data
+    let { profilePhoto } = this.props.data
   
     return (
       <Layout>
@@ -81,17 +79,6 @@ class About extends React.Component {
               </a> 
             </p>
           </div>
-
-          {/* <div className={`container-md ${style.illustrations}`}>
-              <Gallery images={FileFromDir.edges}/>
-              <Buttons 
-                destination="external"
-                to={Config.social.dribbble} 
-                target="_blank" 
-                rel="noreferrer" 
-                buttonStyle="secondary">See more on Dribbble
-              </Buttons> 
-          </div> */}
         </div>
       </Layout>
     )
@@ -117,26 +104,11 @@ export const aboutPropTypes = {
 export const pageQuery = graphql`
   
      {
-      FileFromDir: allFile(
-        sort: { fields: [name] }
-        filter: {relativeDirectory: {eq: "about/gallery"}}) {
-        edges {
-          node {
-            childImageSharp {
-              fluid {
-                srcSet
-                src
-                sizes
-              }
-            }
-          }
-        }
-      }
-
       profilePhoto: file(name: { eq: "about-placeholder" }) {
          childImageSharp {
-           fluid(maxWidth: 1035) {
-             ...GatsbyImageSharpFluid
+           fluid(maxWidth: 1035, quality: 100) {
+             ...GatsbyImageSharpFluid_withWebp,
+             ...GatsbyImageSharpFluidLimitPresentationSize
            }
          }
        }

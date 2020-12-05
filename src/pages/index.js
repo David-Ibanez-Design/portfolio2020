@@ -16,11 +16,10 @@ import Tooltip from "../components/tooltip";
 import Utils from '../utils'
 import HeroBg from '../images/icons/heroBackground'
 
-const Homepage = ({ data, currentLang }) => {
+const Homepage = ({data, currentLang}) => {
 
-    const getWidth = () => window.innerWidth 
-    || document.documentElement.clientWidth 
-    || document.body.clientWidth;
+  const hasWindow = (typeof window !== 'undefined') ? true : false;
+  const getWidth = () => hasWindow ? window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth : null;
   
     function useCurrentWidth() {
       // save current window width in the state object
@@ -55,6 +54,22 @@ const Homepage = ({ data, currentLang }) => {
 
   const featurePath = caseStudyFeatureDesktop.node.frontmatter.path;
   const dribbbleShotsMap = Config.dribbbleShots;
+
+  function getImg(WinWidth){
+    if(WinWidth > 1035){
+      return caseStudyFeatureDesktop.node.frontmatter.coverHomepage.childImageSharp.fluid
+    }else{
+      return caseStudyFeatureTablet.node.frontmatter.coverHomepage.childImageSharp.fluid
+    }
+  }
+
+  function getImgCaseStudies(WinWidth, coverHomepage, index){
+    if(WinWidth > 821){
+      return coverHomepage.childImageSharp.fluid
+    }else{
+      return caseStudiesTablet[index].node.frontmatter.coverHomepage.childImageSharp.fluid
+    }
+  }
 
   return(
     <Layout>
@@ -104,11 +119,9 @@ const Homepage = ({ data, currentLang }) => {
           <h2>Case Studies</h2>
               <Link className={style.articleFeature} to={Utils.resolveLangPageUrl(currentLang, Config.pages.article, featurePath.split('/')[featurePath.split('/').length-1])}>
                 <div className={style.articleFeatureImage} data-tip data-for="viewProjectHomepage">
-                   <Img 
-                      fluid={WinWidth > 1035 ? caseStudyFeatureDesktop.node.frontmatter.coverHomepage.childImageSharp.fluid : caseStudyFeatureTablet.node.frontmatter.coverHomepage.childImageSharp.fluid}
-                      alt={caseStudyFeatureDesktop.node.frontmatter.title}
+                   <Img fluid={hasWindow ? getImg(WinWidth) : null} alt={caseStudyFeatureDesktop.node.frontmatter.title}
                   />
-                  <Tooltip targetId="viewProjectHomepage" effect="float" hidePointer="hidePointer">
+                  <Tooltip id="tooltipFeatureCaseStudy" targetId="viewProjectHomepage" effect="float" hidePointer="hidePointer">
                         View case study
                 </Tooltip>
                 <div className={style.overlay}></div>
@@ -138,10 +151,10 @@ const Homepage = ({ data, currentLang }) => {
                   <Link key={index} className={style.caseStudies} to={Utils.resolveLangPageUrl(currentLang, Config.pages.article, path.split('/')[path.split('/').length-1])}>
                       <div className={style.caseStudiesImage} data-tip data-for={`viewProjectHomepage-${index}`}>
                         <Img 
-                          fluid={WinWidth > 821 ? coverHomepage.childImageSharp.fluid : caseStudiesTablet[index].node.frontmatter.coverHomepage.childImageSharp.fluid}
+                          fluid={hasWindow ? getImgCaseStudies(WinWidth, coverHomepage, index) : null}
                           alt={title}
                         />
-                        <Tooltip targetId={`viewProjectHomepage-${index}`} effect="float" hidePointer="hidePointer">
+                        <Tooltip id={`tooltipFeatureCase-${index}`} targetId={`viewProjectHomepage-${index}`} effect="float" hidePointer="hidePointer">
                                 View case study
                         </Tooltip>
                         <div className={style.overlay}></div>
@@ -165,7 +178,7 @@ const Homepage = ({ data, currentLang }) => {
       </div>
         <div className={`${style.dribbbleListContainer}  ${style.container}`}>
           <h2>Other Work</h2>
-          <p>Other projects and things I've designed for fun. Check them out on<a href="#"> Dribbble.</a></p>
+          <p>Other projects and things I've designed for fun. Check them out on<a href={Config.social.dribbble}> Dribbble.</a></p>
           <div className={style.dribbbleInnerContainer}>
               
           {dribbbleShotsMap.map((dribbbleShotMap, index) => {
@@ -173,7 +186,7 @@ const Homepage = ({ data, currentLang }) => {
                 <a key={index} rel="noreferrer" target="_blank" href={dribbbleShotMap.dribbbleUrl} className={style.dribbbleShots} >
                   <div className={style.dribbbleShotsImage} data-tip data-for="viewProjectHomepage-1">
                     <Img fluid={dribbbleShots.edges[index].node.childImageSharp.fluid} alt="sss"/>
-                    <Tooltip targetId="viewProjectHomepage-1" effect="float" hidePointer="hidePointer">
+                    <Tooltip id={`tooltipDribbbleShots-${index}`} targetId="viewProjectHomepage-1" effect="float" hidePointer="hidePointer">
                           View on Dribbble
                     </Tooltip>
                     <div className={style.overlay}></div>
@@ -232,7 +245,8 @@ export const pageQuery = graphql`
             coverHomepage {
               childImageSharp {
                 fluid(maxWidth: 715, quality: 100) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp,
+                  ...GatsbyImageSharpFluidLimitPresentationSize
                 }
               }
             }
@@ -253,7 +267,8 @@ export const pageQuery = graphql`
             coverHomepage {
               childImageSharp {
                 fluid(maxWidth: 1035, quality: 100) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp,
+                  ...GatsbyImageSharpFluidLimitPresentationSize
                 }
               }
             }
@@ -276,7 +291,8 @@ export const pageQuery = graphql`
             coverHomepage {
               childImageSharp {
                 fluid(maxWidth: 624, quality: 100) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp,
+                  ...GatsbyImageSharpFluidLimitPresentationSize
                 }
               }
             }
@@ -299,7 +315,8 @@ export const pageQuery = graphql`
             coverHomepage {
               childImageSharp {
                 fluid(maxWidth: 789, quality: 100) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp,
+                  ...GatsbyImageSharpFluidLimitPresentationSize
                 }
               }
             }
@@ -315,7 +332,8 @@ export const pageQuery = graphql`
         node {
           childImageSharp {
                 fluid(maxWidth: 624, quality: 100) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp,
+                  ...GatsbyImageSharpFluidLimitPresentationSize
                 }
               }
             }
@@ -326,7 +344,8 @@ export const pageQuery = graphql`
         relativePath: { eq: "homepage/hero-visual.png" }) {
           childImageSharp {
             fluid(maxWidth: 555, quality: 100) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp,
+              ...GatsbyImageSharpFluidLimitPresentationSize
             }
           }
         }
@@ -335,7 +354,7 @@ export const pageQuery = graphql`
         relativePath: { eq: "homepage/profilePic.jpg" }) {
           childImageSharp {
             fixed(width: 128, height: 128, quality: 100) {
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed_withWebp
             }
           }
         }

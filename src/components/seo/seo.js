@@ -82,7 +82,9 @@ function SEO({
                     }))
                   : []
               )}
-          />
+          >  
+            <html lang={currentLang || 'en'} />
+          </Helmet>
         )
       }}
     />
@@ -116,7 +118,7 @@ const detailsQuery = graphql`
     file(name: { eq: "di-logo-image" }) {
       childImageSharp {
         fluid(maxWidth: 500) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

@@ -8,6 +8,9 @@ import style from './scroll-top.module.scss'
 
 const ScrollTop = () => {
 
+
+      // Check if server or client is rendering
+    const hasWindow = (typeof window !== 'undefined') ? true : false;
     const [showScroll, setShowScroll] = useState(false)
 
     const checkScrollTop = () => {
@@ -19,16 +22,16 @@ const ScrollTop = () => {
       };
 
     const scrollTo = () =>{
-    window.scrollTo({top: 0, behavior: 'smooth'});
+      window.scrollTo({top: 0, behavior: 'smooth'});
     };
 
-    window.addEventListener('scroll', checkScrollTop)
+    if(hasWindow) {window.addEventListener('scroll', checkScrollTop)}
 
     return (
         <>
             <IoIosArrowDropup 
                 data-tip data-for="backToTop" 
-                className={style.scrollTop} onClick={scrollTo} 
+                className={style.scrollTop} onClick={hasWindow ? scrollTo : null} 
                 style={{height: 40, display: showScroll ? 'block' : 'none'}}
             />
             <Tooltip targetId="backToTop" place="left" effect="solid">Scroll to the top</Tooltip>
