@@ -15,8 +15,10 @@ import ResumeEn from '../../../downloads/Resume-en.pdf'
 import { BiChevronDown } from 'react-icons/bi'
 import Img from 'gatsby-image'
 import useEvent from '../../hooks/useEvent'
+import {useTranslation} from 'react-i18next';
 
 const Header = ({currentLang, data}) => {
+  const {t} = useTranslation()
 
   const articles = data;
 
@@ -76,6 +78,7 @@ const Header = ({currentLang, data}) => {
             <div className={style.logo}>
                 <Link className={style.logoLink} data-tip data-for="backToHomepage" to={Utils.resolveLangPageUrl(currentLang, Config.pages.home)} >
                   <Logo/>
+                  {t('siteMetadata.title')}
                 </Link>
                 <Tooltip id="tooltipMenuLogo" targetId="backToHomepage" effect="solid">
                     {!currentLang ? "Back the homepage" : "Homepageに戻る"}

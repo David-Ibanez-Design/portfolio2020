@@ -1,6 +1,8 @@
 /* Vendor imports */
 import React from 'react'
 import PropTypes from 'prop-types'
+import { I18nextProvider, useTranslation } from 'react-i18next';
+import i18n from '../../i18next';
 
 /* App imports */
 import Menu from './menu'
@@ -15,11 +17,11 @@ import "../../styles/utilities/layout.scss";
 import "../tooltip/tooltip.module.scss";
 
 const Layout = ({children, currentLang }) => (
-  <>
+  <I18nextProvider i18n={i18n}>
     <Menu currentLang={currentLang} />
       {children}
     <Footer currentLang={currentLang}/>
-  </>
+  </I18nextProvider>
 )
 
 Layout.propTypes = {
