@@ -309,6 +309,7 @@
             width: 715px;
             margin-right: $spacer-5;
             position: relative;
+            
 
             &>div:first-child{
                 z-index: 1;
@@ -387,6 +388,7 @@
 
         .caseStudiesImage{
             border-radius: 8px;
+            overflow: hidden;
             background: $gray-000;
             margin-bottom: $spacer-5;
             position: relative;

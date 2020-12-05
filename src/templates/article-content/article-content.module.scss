@@ -4,6 +4,10 @@
   position: relative;
   margin-top: -100px;
 
+  .gatsby-image-wrapper img{
+    height: auto !important;
+  }
+
   .caption{
     font-size: $h5-size;
     color: $gray;

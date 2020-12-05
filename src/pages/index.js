@@ -245,7 +245,8 @@ export const pageQuery = graphql`
             coverHomepage {
               childImageSharp {
                 fluid(maxWidth: 715, quality: 100) {
-                  ...GatsbyImageSharpFluid_withWebp
+                  ...GatsbyImageSharpFluid_withWebp,
+                  ...GatsbyImageSharpFluidLimitPresentationSize
                 }
               }
             }
@@ -266,7 +267,8 @@ export const pageQuery = graphql`
             coverHomepage {
               childImageSharp {
                 fluid(maxWidth: 1035, quality: 100) {
-                  ...GatsbyImageSharpFluid_withWebp
+                  ...GatsbyImageSharpFluid_withWebp,
+                  ...GatsbyImageSharpFluidLimitPresentationSize
                 }
               }
             }
@@ -289,7 +291,8 @@ export const pageQuery = graphql`
             coverHomepage {
               childImageSharp {
                 fluid(maxWidth: 624, quality: 100) {
-                  ...GatsbyImageSharpFluid_withWebp
+                  ...GatsbyImageSharpFluid_withWebp,
+                  ...GatsbyImageSharpFluidLimitPresentationSize
                 }
               }
             }
@@ -312,7 +315,8 @@ export const pageQuery = graphql`
             coverHomepage {
               childImageSharp {
                 fluid(maxWidth: 789, quality: 100) {
-                  ...GatsbyImageSharpFluid_withWebp
+                  ...GatsbyImageSharpFluid_withWebp,
+                  ...GatsbyImageSharpFluidLimitPresentationSize
                 }
               }
             }
@@ -328,7 +332,8 @@ export const pageQuery = graphql`
         node {
           childImageSharp {
                 fluid(maxWidth: 624, quality: 100) {
-                  ...GatsbyImageSharpFluid_withWebp
+                  ...GatsbyImageSharpFluid_withWebp,
+                  ...GatsbyImageSharpFluidLimitPresentationSize
                 }
               }
             }
@@ -339,7 +344,8 @@ export const pageQuery = graphql`
         relativePath: { eq: "homepage/hero-visual.png" }) {
           childImageSharp {
             fluid(maxWidth: 555, quality: 100) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid_withWebp,
+              ...GatsbyImageSharpFluidLimitPresentationSize
             }
           }
         }
