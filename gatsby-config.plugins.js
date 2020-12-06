@@ -34,7 +34,7 @@ module.exports = [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `markdown-pages`,
+        name: `Mdx`,
         path: `${__dirname}/content`,
       },
     },

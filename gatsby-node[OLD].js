@@ -13,12 +13,16 @@ exports.createPages = ({ actions, graphql }) => {
       allMdx {
         edges {
           node {
+                        relativeDirectory
+            fields {
+              locale
+              isDefault
+            }
             frontmatter {
               path
               tags
               order
             }
-            fileAbsolutePath
           }
         }
       }

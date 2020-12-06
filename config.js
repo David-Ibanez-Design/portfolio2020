@@ -5,8 +5,8 @@ module.exports = {
   siteTitle: 'David Ibanez',
   siteDescription: 'UI/UX designer',
   author: 'David Ibanez',
-  defaultLanguage: 'En',
-  translatedLanguage: 'Ja',
+  defaultLanguage: 'en',
+  translatedLanguage: 'ja',
   email: 'dibanez@rocketmail.com',
   pages: {
     home: '/',

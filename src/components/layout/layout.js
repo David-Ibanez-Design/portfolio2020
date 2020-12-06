@@ -5,8 +5,8 @@ import { I18nextProvider, useTranslation } from 'react-i18next';
 import i18n from '../../i18next';
 
 /* App imports */
-import Menu from './menu'
-import Footer from './footer'
+// import Menu from './menu'
+// import Footer from './footer'
 /* Base style: makes it available to all components under layout  */
 import "../../styles/base/normalize.scss";
 import "../../styles/base/base.scss";
