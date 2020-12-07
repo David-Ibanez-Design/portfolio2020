@@ -2,43 +2,55 @@
 const path = require('path');
 /* App imports */
 const config = require('./gatsby-config');
-const locales = require(`./config/i18n`)
 const Utils = require('./src/utils');
 
-exports.onCreatePage = ({ page, actions }) => {
-  const { createPage, deletePage } = actions
+exports.onCreatePage = async ({page, actions: {createPage, deletePage, createRedirect} }) => {
+  const isEnvDevelopment = process.env.NODE_ENV === 'development';
+  const originalPath = page.path;
 
-  // First delete the incoming page that was automatically created by Gatsby
-  // So everything in src/pages/
-  deletePage(page)
+// Delete the original page (since we are gonna create localized versions of it) and add a
+  // redirect header
+  await deletePage(page);
 
-  // Grab the keys ('en' & 'de') of locales and map over them
+  await Promise.all(
+    config.siteMetadata.supportedLanguages.map(async lang => {
+      const originalPath = page.path;
+      const localizedPath = `/${lang}${page.path}`;
+  
+      // create a redirect based on the accept-language header
+      createRedirect({
+        fromPath: originalPath,
+        toPath: localizedPath,
+        Language: lang,
+        isPermanent: false,
+        redirectInBrowser: isEnvDevelopment,
+        statusCode: 301,
+      });
+      
 
-  Object.keys(locales).map(lang => {
-    // Use the values defined in "locales" to construct the path
-    const localizedPath = locales[lang].default
-      ? page.path
-      : `${locales[lang].path}${page.path}`
-
-
-    return createPage({
-      // Pass on everything from the original page
-      ...page,
-      // Since page.path returns with a trailing slash (e.g. "/de/")
-      // We want to remove that
-      path: Utils.removeTrailingSlash(localizedPath),
-      // Pass in the locale as context to every page
-      // This context also gets passed to the src/components/layout file
-      // This should ensure that the locale is available on every page
-      context: {
-        ...page.context,
-        locale: lang,
-        dateFormat: locales[lang].dateFormat,
-      },
+      await createPage({
+        ...page,
+        path: localizedPath,
+        context: {
+          ...page.context,
+          originalPath,
+          lang,
+        },
+      });
     })
-  })
-}
+  );
 
+   // Create a fallback redirect if the language is not supported or the
+  // Accept-Language header is missing for some reason
+  createRedirect({
+    fromPath: originalPath,
+    toPath: `/${config.siteMetadata.defaultLanguage}${page.path}`,
+    isPermanent: false,
+    redirectInBrowser: isEnvDevelopment,
+    statusCode: 301,
+  });
+  
+};
 
 // As you don't want to manually add the correct language to the frontmatter of each file
 // a new node is created automatically with the filename
@@ -53,12 +65,12 @@ exports.onCreateNode = ({ node, actions }) => {
 
     const name = path.basename(node.fileAbsolutePath, `.mdx`)
 
-    // Find the key that has "default: true" set (in this case it returns "en")
-    const defaultKey = Utils.findKey(locales, o => o.default === true)
-    
-    // Check if post.name is "index.default"
-    const isDefault = name === `index.${defaultKey}`
+    // Check if post.name is "index" -- because that's the file for default language
+    // (In this case "en")
+    const isDefault = name === `index`
 
+    // Find the key that has "default: true" set (in this case it returns "en")
+    const defaultKey = config.siteMetadata.defaultLanguage
 
     // Files are defined with "name-with-dashes.lang.mdx"
     // name returns "name-with-dashes.lang"

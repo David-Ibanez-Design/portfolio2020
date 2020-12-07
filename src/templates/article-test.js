@@ -2,7 +2,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 /* App imports */
-import Layout from '../components/layout'
+import {Layout} from '../components/layout'
 // import SEO from '../components/seo'
 // import ArticleHeading from './article-heading'
 import ArticleContent from './article-content'
@@ -15,7 +15,7 @@ const Post = ({ data }) => {
   const { body, frontmatter } = data.articleContent
 
   return (
-    <Layout>
+    <>
       {/* <SEO
         title={title}
         path={path}
@@ -31,7 +31,7 @@ const Post = ({ data }) => {
           />
         </div>
       </div>
-    </Layout>
+    </>
   )
 }
 

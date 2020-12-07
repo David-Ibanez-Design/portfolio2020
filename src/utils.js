@@ -1,6 +1,51 @@
 const Config = require('../config')
 
 const Utils = {
+
+  setDefaultLang: (contextLang, options = {}) => {
+
+      const defaultOptions = {
+        languageCodeOnly: true,
+        languageFallback: "ja",
+      };
+
+      const opt = {
+        ...defaultOptions,
+        ...options,
+      };
+
+      if(typeof navigator !== 'undefined'){
+
+        const browserLocales =
+        navigator.languages === undefined
+          ? [navigator.language]
+          : navigator.languages;
+      
+        if (!browserLocales) { return contextLang === defaultOptions.languageFallback ;}
+
+        const browserLocalesArr = []
+
+        browserLocales.map(locale => {
+          const trimmedLocale = locale.trim();
+          browserLocalesArr.push(opt.languageCodeOnly ? trimmedLocale.split(/-|_/)[0] : trimmedLocale);
+        });
+
+        // If the array is empty set the fallback language as the default language
+        if(browserLocalesArr.length === 0){
+          return contextLang === defaultOptions.languageFallback
+        }
+       
+        // If the first result it equal to the context lang
+        return browserLocalesArr[0] === contextLang
+
+      }else{
+        console.log("s")
+          return contextLang === defaultOptions.languageFallback
+        }
+
+  },
+
+
   /**
    * Join provided url paths.
    * @param {...string} paths Provided paths. It doesn't matter if they have trailing slash.
@@ -21,6 +66,10 @@ const Utils = {
     {return "/"+slug}
     else
     {return "/"+locale+"/"+slug}
+  },
+
+  removeTrailingSlash: (path) => {
+   return  path === `/` ? path : path.replace(/\/$/, ``)
   },
  
   // From lodash:

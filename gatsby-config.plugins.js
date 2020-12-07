@@ -1,5 +1,4 @@
 const config = require('./config')
-const resources = require("./i18n-translations.json")
 
 module.exports = [
     'gatsby-plugin-react-helmet',
@@ -38,6 +37,13 @@ module.exports = [
         path: `${__dirname}/content`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/config/translations`,
+        name: `translations`,
+      },
+    },
 
     {
       resolve: `gatsby-plugin-mdx`,
@@ -69,5 +75,6 @@ module.exports = [
     },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-robots-txt`,
-    'gatsby-plugin-netlify'
+    'gatsby-plugin-netlify',
+    `gatsby-transformer-json`
 ]
