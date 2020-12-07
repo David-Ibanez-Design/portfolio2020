@@ -34,7 +34,7 @@ module.exports = [
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `Mdx`,
-        path: `${__dirname}/content`,
+        path: `${__dirname}/content`
       },
     },
     {
@@ -65,16 +65,7 @@ module.exports = [
         ],
       },
     },
-
-    {
-      resolve: 'gatsby-plugin-i18n',
-      options: {        
-        langKeyDefault: config.defaultLanguage,
-        useLangKeyLayout: false
-      }
-    },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-robots-txt`,
-    'gatsby-plugin-netlify',
     `gatsby-transformer-json`
 ]

@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 /* App imports */
 // import Menu from './menu'
 import Footer from './footer'
+import Menu from '../layout/menu'
 import i18n from '../../../config/i18n'
 
 
@@ -22,7 +23,7 @@ const LocaleContext = React.createContext()
 
 const Layout = ({children, pageContext: { locale } }) => (
   <LocaleContext.Provider value={{ locale }}>
-    {/* <Menu currentLang={currentLang} /> */}
+    <Menu locale={locale}/>
       {children}
    <Footer/>
   </LocaleContext.Provider>

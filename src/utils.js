@@ -39,7 +39,6 @@ const Utils = {
         return browserLocalesArr[0] === contextLang
 
       }else{
-        console.log("s")
           return contextLang === defaultOptions.languageFallback
         }
 

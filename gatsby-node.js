@@ -48,6 +48,7 @@ exports.onCreateNode = ({ node, actions }) => {
 
   // Check for "Mdx" type so that other files (e.g. images) are exluded
   if (node.internal.type === `Mdx`) {
+
     // Use path.basename
     // https://nodejs.org/api/path.html#path_path_basename_path_ext
 
@@ -74,11 +75,11 @@ exports.onCreateNode = ({ node, actions }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const artTemplate = require.resolve(`./src/templates/article-test.js`)
+  const artTemplate = require.resolve(`./src/templates/article.js`)
 
   const result = await graphql(`
     {
-      art: allFile(filter: {sourceInstanceName: {eq: "Mdx"}}) {
+      art: allFile(filter: {sourceInstanceName: {eq: "Mdx"}, internal: {mediaType: {eq: "text/mdx"}}}) {
         edges {
           node {
             relativeDirectory
@@ -89,6 +90,8 @@ exports.createPages = async ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                order
+                path
               }
             }
           }
@@ -103,9 +106,14 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   const artList = result.data.art.edges
+  const artCount = artList.length/2
+
+  const getNextArt = (currentPage) => {
+    return currentPage < artCount ? currentPage + 1 : 1
+  }
 
   artList.forEach(({ node: art }) => {
-
+    
     // All files for a blogpost are stored in a folders
     // relativeDirectory is the name of the folder
     const slug = art.relativeDirectory
@@ -117,6 +125,10 @@ exports.createPages = async ({ graphql, actions }) => {
       path: Utils.localizedSlug( isDefault, locale, slug ),
       component: artTemplate,
       context: {
+        artCount,
+        postPath: art.childMdx.frontmatter.path,
+        currentPage: art.childMdx.frontmatter.order,
+        nextArt: getNextArt(art.childMdx.frontmatter.order),       
         // Pass both the "title" and "locale" to find a unique file
         // Only the title would not have been sufficient as articles could have the same title
         // in different languages, e.g. because an english phrase is also common in german

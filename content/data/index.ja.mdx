@@ -1,0 +1,260 @@
+---
+title: Helping A Company Understand Customer Behaviours Thought Data IN JAPANESE.
+tags: [Research, DataAudit, DataAnalysis, DataVisualization]
+order: 4
+featured: 0
+path: articles/data-gathering
+coverHomepage: images/homepage-cover.png
+coverArticle: images/article-cover.png
+menuVignettes: images/menu-vignettes.png
+mobileVignettes: images/mobile-menu-vignettes.png
+suggestedArt: images/suggestedArt.png
+imagesMd: 
+    - images/exsiting-quantitative.png
+    - images/exsiting-qualitative.png
+    - images/structure-graph.png
+    - images/structure-final-vision.png
+    - images/spreadsheet-list.png
+    - images/GA-reports.png
+    - images/zendesk-reports.png
+    - images/in-app-feedback-form.png
+    - images/tableau-report-1.png
+    - images/tableau-report-2.png
+---
+
+<!-- Overview -->
+
+<ArticleOverview>
+    <Sunnary>
+        <a href="https://comvex.co.jp/" target="_blank" rel="noreferrer">Convex</a> is a Tokyo based sales company with the mission to provide businesses with a cost-effective and user-friendly way to understand their customers' needs through technology.
+        As the company’s main product customer base grew, so did the number of support tickets and cancellations. After a while, it became evident that the company lacked the necessary insights to anticipate customer behaviors.
+    </Sunnary>
+    <Problems>
+        The company lacks the necessary knowledge about their customers and the product performance to make proactive business decisions.    
+    </Problems>
+    <Goals>
+        Help the company collect the necessary metrics to understand customer behavior, business, and product performance, to improve the decision-making process.      
+    </Goals>
+    <Outcomes>
+        <ul>
+            <li>Data started to be used to inform roadmaps and business decisions.</li>
+            <li>Fundamental insights were discovered that challenged stakeholder’s assumptions.</li>
+        </ul>        
+    </Outcomes>    
+</ArticleOverview>
+
+<!-- Content -->
+
+#### Data Audit
+## The data audit showed that the company had little to no visibility on customer behaviors and product performance.
+
+<p>
+To map out the gaps in the company data, and get an idea of the amount of work needed to start filling in these gaps, I first began by conducting a data audit. I spent some time talking to different department leads and going through a few documents. 
+Once I felt that I had captured the majority of what the company was recording, I organized my finding into two categories:
+</p>
+
+<p className={props.style.listHeader}>
+<strong>Quantitative data:</strong>
+</p>
+<ul>
+    <li>Some business metrics were calculated and recorded manually in a Google spreadsheet.</li>
+    <li>Some basic customer metrics were recorded in our product administration site.</li>
+    <li>The support team was using the cutomer support software <a href="https://www.zendesk.com/" target="_blank" rel="noreferrer">Zendesk</a>, which had some reporting capabilities that had not been used.</li>
+</ul>
+
+<Images name={props.md["exsiting-quantitative"]} captions="Important buisness related metrics were manualy recorded in a Google spreadsheet."/>
+
+<p className={props.style.listHeader}>
+<strong>Qualitative data:</strong>
+</p>
+<ul>
+    <li>Customers were asked to fill a pdf survey when the their account was issued.</li>
+    <li>Customer behaviors were not tracked in any way.</li>
+    <li>They had no online customer feedback or survey form.</li>
+    <li>No customer personas exsited.</li>
+    <li>No dedicated user research was done.</li>    
+</ul>
+
+<Images name={props.md["exsiting-qualitative"]} captions="An example of the survey form customers were asked to fill out upon accoutn creation."/>
+
+<p className={props.style.listHeader}>
+What I learned from the data audit:
+</p>
+
+<ul>
+    <li>A lot of customers knowledge were only exchanged verbally amount sales and support staff.</li>
+    <li>Business metrics were mostly shared, amount, stakeholders.</li>
+    <li>Recording business metrics in a Google spreadsheet required lots of manual work.</li>
+    <li>The cost of recording customer metrics was high because it needed dedicated Backend and Frontend development.</li>
+</ul>
+
+#### Goals
+## Making sure new insights could be easily collected and shared across the company was essential in removing barriers to adoption.
+
+<p>
+Now that I had a better idea of the company data gap, it was time to decide which metric we wanted to collect and why. I classified the data required in 3 categories. For each group, I added a series of questions to answer with the collected data. 
+</p>
+
+<p className={props.style.listHeader}>
+I came up with the following goals for our data gathering efforts.
+</p>
+
+
+<ul>
+    <li><strong>Understand our users:</strong></li>
+    <ul>
+        <li>What are their demographic profiles?</li>
+        <li>What are their technical profiles?</li> 
+        <li>What are their goals?</li>
+        <li>What challenges do they face in their daily work?</li>  
+        <li>How do our customers interact with our products?</li>                         
+    </ul>
+    <li><strong>Monitor the performance of our product:</strong></li>
+    <ul>
+        <li>What part of our product is used, and what part is not?</li>
+        <li>How performant is our porduct are at satisfiing our customers business needs?</li>                         
+    </ul>
+    <li><strong>Monitor the general health of the business by automatically collecting key KPIs:</strong></li>
+    <ul>
+        <li>How many accounts we gain?</li>
+        <li>How many accounts we lost?</li>     
+        <li>How much MRR are we generating?</li>                          
+    </ul>
+</ul>
+
+
+<Images name={props.md["structure-graph"]} />
+
+<p>
+However knowing what data to collect won’t be enough. For these efforts to have a long-lasting impact on the businesses, people needed to take ownership of the data by incorporating them into their processes. Using what I learned from the data audit, I also defined a set of goals that will help reduce barriers to adoption:
+</p>
+
+<ul>
+    <li>Eeveryone should be able to understand data so they can and gain useful insight from it.</li>
+    <li>Data should be easly sharable and customizable.</li>
+    <li>Adding new metrics should require as little dedicated development as possible.</li>
+</ul>
+
+<p>
+My final vision of how data could be shared acroos the ocmpany looked something like that:
+</p>
+
+<Images name={props.md["structure-final-vision"]} className="mt-4" />
+
+#### Challenges
+## Beyond the logistic challenges, stakeholders needed to trust data enough to make business decisions based on it.
+
+<p>
+Achieving the goals define earlier, will prove to be challenging for the following reasons:
+</p>
+
+<ul>
+    <li>The company was not willing to hire a dedicated business intelligence analyst or a UX researcher yet. Therefore I will have to not only invest myself in that project but also recruit others to help me along the way while still supporting new feature design and improvement to the product.</li>
+    <li>Our product was producing quite a large amount of data. Collecting and analyzing some of them will require dedicated costly infrastructure and software solutions.</li>
+    <li>Perhaps the most challenging one, beyond the logistics issues, stakeholders needed to trust data enough to base their decisions on data rather than on anecdotal evidence.</li>
+</ul>
+
+#### Planning And Strategy
+## I decided to first focus on low effort/high-value data to gain the necessary stakeholder buy-in to capture more challenging metrics.
+
+<p>
+Defining the goals as well as the challenges we were facing gave me good foundations to start planning.
+</p>
+
+<p>
+Using the high-level categorization defined earlier, I created a spreadsheet detailing exactly what data needed to be collected. To understand the effort and business value of each, I met with the developers, stakeholders, and did some of my own research. Once I felt I had a good understanding of the effort and value of each, I added my findings to the spreadsheet.
+</p>
+
+<Images name={props.md["spreadsheet-list"]}/>
+
+<p>
+Using the observation I made during my audit and my newly created data to collect spreadsheet, I then evaluated the effort vs the benefit of each metric.
+</p>
+
+<p>
+Looking at the document, It became clear that some data will be more resource-intensive to collect than others. For example, billing-related data like <a href="https://www.profitwell.com/recur/all/monthly-recurring-revenue#:~:text=MRR%20stands%20for%20Monthly%20Recurring,differences%20in%20your%20subscription%20service." target="_blank" rel="noreferrer">MRR</a> or <a href="https://www.investopedia.com/terms/c/churnrate.asp" target="_blank" rel="noreferrer">Chum rate</a>, although extremely important, will require a dedicated infrastructure to collect, which means that we first needed the business buy-in.
+</p>
+
+<p>
+To reach our goal, I, decided to first focus on data that like <a href="https://metriclabs.com.au/glossary/google-analytics-dimensions/days-since-last-session/" target="_blank" rel="noreferrer">days since the last session</a> or <a href="https://mixpanel.com/topics/daily-active-users/" target="_blank" rel="noreferrer">daily active users</a> that had a high business value but necessitated a relatively low effort to implement and gather. The idea was that by gradually showing how data could improve business decisions, stakeholders would learn to trust data over time, and we will gain access to more resources to gather data that necessitated dedicated infrastructure.
+</p>
+
+<p>
+I consolidated my planning into a roadmap that I shared with the company.
+</p>
+
+!!! Roadmap !!!
+
+#### Execution
+## Setting-up a free Google analytic account for the product was an obvious place to start.
+
+<p>
+A self-service analytic tool like <a href="https://analytics.google.com" target="_blank" rel="noreferrer">Google Analytics</a> presented many advantages:
+</p>
+
+<ul>
+    <li>It could be implemented with minimum involvement of the Frontend team.</li>
+    <li>It allows us to move away from custom-built solutions that were time consuming and resource-intensive.</li>
+    <li>We could easily share reports across multiple departments.</li>
+    <li>High-value business metrics could be tracked, and new ones could be added easily using <a href="https://marketingplatform.google.com/about/tag-manager/" target="_blank" rel="noreferrer">Google tag manager.</a></li>
+</ul>
+
+<Images name={props.md["GA-reports"]} captions="A overview of the product Google Analytics custom reports."/>
+
+<p>
+Next, I worked with the support manager to set-up custom reports in Zendesk that allow the team to view some essential metrics like the <strong>average time spent on tickets</strong> or the <strong>most reported issues per feature</strong>.
+</p>
+
+<Images name={props.md["zendesk-reports"]} className="mt-4"/>
+
+<p>
+To help capture direct users’ feedback, I also worked with the frontend team to implement an in-app feedback form. Inquiries were sent directly to our support team platform and added to a dedicated board inside our project management tool.
+</p>
+
+<Images name={props.md["in-app-feedback-form"]} captions="User's feedback were capture directly from our product and sent to our product management software." className="mt-4"/>
+
+<p>
+Finally, I worked with the project manager to make sure important insights were shared during our monthly product performance meeting.
+</p>
+
+#### Outcomes
+## Fundamental insights were discovered that challenged stakeholder’s assumptions.
+
+<p>
+After a few months, the mindset toward data started to change, and people began to include data into their business decision process. 
+</p>
+
+<ul>
+    <li>The support team was using metric like days since last sessions to identify accounts that were at risk of canceling their subscription and provided active support.</li>
+    <li>Data started to be used to inform roadmaps and business decisions.</li>
+</ul>
+
+<p>
+Important discoveries were made that did not aligned with the team initial assumptions: 
+</p>
+
+<ul>
+    <li>Some features previously thought to be heavily used were not and vise versa.</li>
+    <li>Even though the application did not support mobile, 15% of the traffic was coming from mobile devices. This showed us how important mobile was to our users, and the decision was made to explore the possibility of building a mobile version of the product. </li>
+</ul>
+
+<p>
+A year after we started collecting data, the Backend team began working on a dedicated business intelligence database. The company later on signed up for a Tableau subscription, which finally allowed us to create and share powerful dashboards.
+</p>
+
+<Images name={props.md["tableau-report-1"]} captions="The revenue dashbaord created using Table online."/>
+<Images name={props.md["tableau-report-2"]}/>
+
+
+## Conclusion
+### An evolution in mindset but no culture shift yet on how we define success.
+
+<p>
+I set out to improve the company decision-making process by providing access to the insights it needed to understand and anticipate customer behaviors. Although some progress has been made, we still need to get better at tracking the effect of our decisions on customer’s business goals. People's enthusiasm for data, however, gives me hope that with time and effort, things will improve.
+</p>
+
+### There is always more to learn.
+
+<p>
+Even though I learned a lot about what kinds of insights data can and cannot provide and how to use these insights in my work, this project also showed me how in-depth of a discipline data science and user research is. To truly use the power of data to drive design and business decisions, we ultimately need dedicated specialists.
+</p>

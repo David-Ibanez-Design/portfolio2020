@@ -1,0 +1,282 @@
+---
+title: Designing and documenting a design system to enable the team to focus on user experience IN JAPANESE.
+tags: [UIUXDesign, DesignSystem, FrontEndDevelopment]
+path: articles/design-system
+order: 2
+featured: 0
+coverHomepage: images/homepage-cover.png
+coverArticle: images/article-cover.png
+menuVignettes: images/menu-vignettes.png
+mobileVignettes: images/mobile-menu-vignettes.png
+suggestedArt: images/suggestedArt.png
+imagesMd: 
+    - images/inventory-spreadsheet.png
+    - images/v1-long-list.png
+    - images/visual-direction-01.png
+    - images/visual-direction-02.png
+    - images/visual-direction-final-01.png
+    - images/master-file-1.png
+    - images/master-file-2.png
+    - images/template-rules.png
+    - images/Components-1.png
+    - images/documentation-site.png
+    - images/invision-inspect.png
+    - images/live-compoenents.png
+    - images/before-profile-before.png
+    - images/before-profile-after.png
+    - images/before-table-before.png
+    - images/before-table-after.png
+    - images/before-dashbaord-before.png
+    - images/before-dashbaord-after.png
+
+imagesXl: 
+    - images/v1-duplicate-styles.png
+    - images/Components.png
+---
+
+<!-- Overview -->
+
+<ArticleOverview>
+    <Sunnary>
+        Digima, a web-based CRM application, provides small to medium companies with a way to understand their customers' needs. 
+        A few months after I joined the company, we came to a realization: Digima was getting harder and harder to scale. It got so bad that the decision was made to rebuild the product from the ground up.
+    </Sunnary>
+    <Problems>
+        <ul>
+            <li>The company needed a more scalable way to deliver feature designs.</li>
+            <li>Digima users needed a more consistent user experience.</li>
+        </ul>        
+    </Problems>
+    <Goals>
+        <ul>
+            <li>Create tools and processes that can deliver quality, consistency, and speed to the design process.</li>
+            <li>Redesign the produc using these tools.</li>
+        </ul>      
+    </Goals>
+    <Outcomes>
+        <ul>
+            <li>An entire new design system that included a dedicated documentation site was created.</li>
+            <li>Feature design quality, consistency, and delivery time were significantly imporved.</li>
+        </ul>        
+    </Outcomes>    
+</ArticleOverview>
+
+import ImageSlider from "../../src/components/image-slider"
+
+<!-- Content -->
+
+#### Inventory And Audit
+## The product audit revealed many inconsistencies and user experiences issues, confirming the need for a design system.
+
+<p>
+I first needed to evaluate the current product to understand of the needs of the redesign. 
+</p>
+
+<p>
+To that end, I went through the entire product interface and took screenshots of menus, buttons, and modals. I created a Google spreadsheet where I grouped each component into categories and gave each one a name.
+</p>
+
+<Images name={props.md["inventory-spreadsheet"]}/>
+
+<p>
+Viewing all the components side by side confirmed why we needed a redesign. There were 130 different colors, 56 different shades of greys, 22 different font sizes and 4 completely different variants of search fields. 
+</p>
+
+<p>
+It became clear that what we needed was a well organized, collaborative design system custom-built to meet the company’s needs.
+</p>
+
+<Images 
+    containerType="full" 
+    className="bg-gray-0" 
+    containerWidth="Xl"
+    name={props.xl["v1-duplicate-styles"]}
+    captions="The current product audit revealed many inconsistencies."
+/>
+
+
+
+
+<!-- #### Problem Statement
+## The audit revealed that the product had many inconsistencies, which made the tool hard to use and navigate for users.
+
+<p>
+The audit revealed that the product had many inconsistencies, which made the tool hard to use and navigate for users.
+</p> -->
+
+<!---
+<Images name={props.md["v1-long-list"]}/>
+--->
+
+#### Design Principles
+## Agreeing on what kind of product experience we wanted to deliver to our users helped us stay on track when making difficult decisions.
+
+<p>
+Before I could start exploring visual directions for the new design, the team and I needed to decide on our core principles. 
+</p>
+
+<p>
+These core principles are meant to act as our north star when making difficult product decisions and are the basis around which the product should be built.
+</p>
+
+<p>
+After a few discussions, we came up with the following four principles.
+</p>
+
+<ul>
+    <li><strong>Be purposeful:</strong> Always design with intention and seek to validate your solutions with data when possible.</li>
+</ul>
+
+<ul>
+    <li><strong>Provide clarity:</strong> Ensuring consistent, cohesive user experiences by applying the same solutions to the same problems. Changing patterns and workflows familiar to existing users only when doing so is a definite improvement. (consistency trump originality and coherence trump consistency).</li>
+</ul>
+
+<ul>
+    <li><strong>Design Iteratively:</strong> No one solution will be perfect for the first time. Be patient, learn from feedback, and improve user experience Iteratively.</li>
+</ul>
+
+<ul>
+    <li><strong>Foster collaboration:</strong> Software development is a team sport. A design cannot exist without the support of others, so learning to implicate them into your process will only make for better designs.</li>
+</ul>
+
+
+#### Visual Direction
+## Before I could start redesigning the product and building the design system, we needed to decide on a visual direction.
+
+<p>
+Once we had an idea of what kind of product experience we wanted to deliver, I could now iterate on a few potential design directions for the main screens of the application. 
+</p>
+
+<Images name={props.md["visual-direction-01"]} captions="An early version of the new table design."/>
+
+<Images name={props.md["visual-direction-02"]} captions="A variation on the web tracking page."/>
+
+<p>
+After a few rounds of feedbacks, the team and I ultimately selected one final style. 
+</p>
+
+<Images name={props.md["visual-direction-final-01"]} captions="The final design style." className="mt-0"/>
+
+
+#### Building The Design System Structure
+## An agreed-upon and straightforward structure for our design system helped promote the shared understanding necessary to reach our goal of improving efficiency.
+
+<p>
+Now that I had an idea of what the overall solution will look like, it was time to get into the details of how the design system will be structured. 
+</p>
+
+<p>
+I started by organizing and categorizing every component identified during the current product version’s audit. During my conversion with developers, I noticed that often, they were using different names when referring to elements. 
+</p>
+
+<p>
+Since one of the goals of the design system was to create a shared understanding, it was essential to decide on the right names collectively and grouped families of components based on their similarities.
+</p>
+
+<p>
+After a few backs and forths, we came up with the following organization. 
+</p>
+
+<Images bg="gray-0" name={props.md["master-file-1"]} captions="The design system structure."/>
+
+
+#### Designing The Components
+## Designing the components was a long and meticulous process, but one that will significantly increase feature design quality and delivery time. 
+
+<p>
+Once the design sytem structure was defined, I got to work converting the UI elements listed during the audit phase to the new design style established earlier.
+</p>
+
+<p>
+To keep changes isolated and performance high, each UI element was created <a href="https://www.sketch.com/docs/libraries/" target="_blank" rel="noreferrer">as a single Sketch library.</a> This organization, however, made it difficult to quickly navigate through the entire set, so to address this issue, I also created a master file that acted as an entry point or an overview.
+</p>
+
+<Images name={props.md["Components-1"]} captions="The design system is organized into 4 main categories."/>
+
+<p>
+One of the ways I could fulfill my goal of improving efficiency was to reduce guesswork as much as possible when adding or modifying a component. To that end, I created <a href="https://comvex-jp.github.io/unison-design-system/getting-started/for-designers" target="_blank" rel="noreferrer">a set of templates, rules, and conventions</a>, describing how a component library should be built and maintained. 
+</p>
+
+<Images name={props.md["master-file-2"]} className="mt-5" captions="The master file act as a entry point to the design system to help designers quickly navigate through the entire set of compoenents."/>
+
+<Images name={props.md["template-rules"]} captions="To keep the system consitent and easy to use, components states have their own symbols."/>
+
+
+
+<Images 
+    className="bg-gray-0 p-0" 
+    containerType="full" 
+    containerWidth="Xl"
+    name={props.xl["Components"]}
+    captions="A small sample of the system's components."
+/>
+
+
+#### Building The Documentation Site
+## The documentation site helped the team move from design to implementation quickly by eliminating guess-work.
+
+<p>
+To forge a shared understanding of the system between designer and developer and facilitate implementation, we needed a documentation site. With the help of the developer team, I started working on creating the website and adding components to it.  
+</p>
+
+<p>
+To help designers quickly move between the design files and the documentation, I decided to mirror the navigation, structure, and terminology in the Sketch files and the documentation. We also added a link to the component documentation in the sketch files themselves and a link to the sketch library in the related documentation article.
+</p>
+
+<Images name={props.md["documentation-site"]} captions="The documentation site include a directly link to the design file."/>
+
+<p>
+Developers could quickly inspect any component by simply clicking on its preview right from the documentation site itself.
+</p>
+
+<Images name={props.md["invision-inspect"]} className="mt-5"/>
+
+<p>
+When available, I also made sure to display the react version of a component as well as provide code snippets for it.
+</p>
+
+<div className={`${props.style.containedMd} ${props.style.imageWrapper} mt-5`}>
+     <Img fluid={props.md["live-compoenents"].fluid} alt="Image for the end of article test"/>
+    <video className={props.style.videoOverlay} muted autoplay loop>
+        <source src="images/vid-test4.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+
+#### Conclusion
+## Creating a design system was nessesary to address the scaling and consistency issues that led to a product redesign. 
+
+<p>
+This project turned out to be a massive undertaking spanning more than a year and involving several departments.
+</p>
+
+<p>
+However, these efforts paid off:
+</p>
+
+<ul>
+    <li><strong>As a designer</strong>, it allowed me to create mockups in a fraction of the time and with a higher level of precision than ever before; it also taught me the depth and complexity of thinking involved in crafting every little piece of an application’s user experience.</li>
+    <li><strong>For developers</strong>, being able to rely on clear documentation and reuse existing patterns allows them to focus on writing tests and efficient code rather than continually tweaking CSS values.</li>
+    <li><strong>For the business</strong>, the productivity gains we’ve seen in new feature development have more than justified the investments we made in adopting the system.</li>
+</ul>
+
+
+
+<ImageSlider 
+    beforeKey={props.md["before-profile-before"]} 
+    afterKey={props.md["before-profile-after"]} 
+    captions="Before and after versions of the contact profille page."
+/>
+
+<ImageSlider 
+    beforeKey={props.md["before-table-before"]} 
+    afterKey={props.md["before-table-after"]} 
+    captions="Before and after versions of the contact table page."
+/>
+
+<ImageSlider 
+    beforeKey={props.md["before-dashbaord-before"]} 
+    afterKey={props.md["before-dashbaord-after"]} 
+    captions="Before and after versions of the dashbaord page."
+/>
