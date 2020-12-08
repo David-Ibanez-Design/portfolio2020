@@ -29,8 +29,8 @@ const Footer = () => {
 
   function toggleActive(page){   
     const isIndex = page === `/`
-    const localizedPath = locales[locale].default ? page : `/${locales[locale].path}${isIndex ? `` : `${page}`}`
-    return localizedPath === localizedPath  ? "active" : null;   
+    const localizedSlug = locales[locale].default ? page : `/${locales[locale].path}${isIndex ? `` : `${page}`}`
+    return localizedPath === localizedSlug  ? "active" : null;   
   }
 
   return (
@@ -66,7 +66,7 @@ const Footer = () => {
                   </li>
                 </ul>
                 <div className={style.langSwitcher}>
-                  {/* <LangSwitcher isMobile={false}/> */}
+                  <LangSwitcher isMobile={false}/>
                 </div>
               </div>
               <div className={style.socialsMobileContainer}>

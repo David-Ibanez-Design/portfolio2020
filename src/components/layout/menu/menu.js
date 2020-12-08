@@ -224,7 +224,7 @@ const Header = ({data}) => {
               </li>
             </ul>               
             <div className={style.MobilelanguageContainer}>
-                {/* <LangSwitcher style={style} isMobile={true} toggleMenu={toggleMenu}/> */}
+                <LangSwitcher style={style} isMobile={true} toggleMenu={toggleMenu}/>
               </div>
             </div>
         </div>
