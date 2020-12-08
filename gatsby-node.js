@@ -128,7 +128,8 @@ exports.createPages = async ({ graphql, actions }) => {
         artCount,
         postPath: art.childMdx.frontmatter.path,
         currentPage: art.childMdx.frontmatter.order,
-        nextArt: getNextArt(art.childMdx.frontmatter.order),       
+        nextArt: getNextArt(art.childMdx.frontmatter.order),  
+        fullPath: Utils.localizedSlug( isDefault, locale, slug ),   
         // Pass both the "title" and "locale" to find a unique file
         // Only the title would not have been sufficient as articles could have the same title
         // in different languages, e.g. because an english phrase is also common in german

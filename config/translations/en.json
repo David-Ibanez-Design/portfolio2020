@@ -1,5 +1,52 @@
 {
-  "hello": "Hello and welcome to this i18n example site!",
-  "subline": "You can read some of my cool articles I wrote!",
-  "backToHome": "Back to home"
+  "menu": {
+    "menu": "Menu",
+    "home": "Home",
+    "work": "Work",
+    "about": "About",
+    "resume": "Resumé",
+    "contact": "Contact",
+    "japanese": "Ja",
+    "english": "En",
+    "backToHome": "Back to homepage",
+    "switchTo": "日本語に変える"
+  },
+  "home": {
+    "title": "I’m David, I’m a UI/UX Designer With 7 Years Of Experience.",
+    "heroText": "My knowledge of Frontend development helps me efficiently communicate my designs to developers. I’m looking to join a company that trusts the design process to deliver meaningful changes to their customers.",
+    "caseStudies": "Case Studies",
+    "viewCaseStudy": "View case study",
+    "otherWorks": "Other Works",
+    "viewOnDribbble": "View on Dribbble"
+  },
+  "suggestedArt": {
+    "next": "NEXT UP",
+    "viewCaseStudy": "View case study"
+  },
+  "about": {
+    "title": "I’m a UI/UX designer with 7 years of experience.",
+    "subtitle": "ABOUT ME",   
+    "textPart1": "My knowledge of Frontend development gives me the tools to understand developer’s perspectives and quickly prototype ideas to ensure technical feasibility. <br/><br/> For the past four years, I have been working as a UI/UX designer in the SaaS industry.  Working in collaboration with backend, frontend developers, and business managers taught me how to carefully balance business goals, engineering constraints, and user needs. <br/><br/> Lately, I have been excited about",
+    "link": " improving the business decision process as well as my own design process through the use of qualitative and quantitative data. ",
+    "textPart2": "In my free time, I love to travel, workout, and watch movies about  [...]<br/><br/>I’m currently looking to join an existing design team in a company that trusts the design process to deliver meaningful and measurable changes to their customers."
+  },
+  "footer": {
+    "title1": "LET’S WORK TOGETHER",
+    "subtitle1": "GET IN TOUCH",
+    "title2": "MENU",
+    "subtitle2": "View case study",
+    "legals": "MISSING SOMETHING?",
+    "text": "I’m currently looking to join an existing design team in a company that trusts the design process to deliver meaningful and measurable changes to their customers.",
+    "legals": "All rights reserved."
+  },
+  "socialsLinks":
+  {
+    "socials": "Socials",
+    "Linkedin": "Linkedin",
+    "Dribbble": "Dribbble",
+    "Follow": "Follow me on", 
+    "Contact": "Contact me at",
+    "or": "or",
+    "resume": "view my resume"
+  }
 }

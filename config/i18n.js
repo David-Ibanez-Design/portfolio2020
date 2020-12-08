@@ -15,6 +15,7 @@ module.exports = {
   ja: {
     path: `ja`,
     locale: `ja`,
+    default: false,
     dateFormat: `DD.MM.YYYY`,
     siteLanguage: `ja`,
     ogLanguage: `ja`,

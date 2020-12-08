@@ -6,11 +6,23 @@ import Tooltip from "../../tooltip";
 import style from './menu.module.scss'
 import JapaneseFlag from "../../../images/icons/japanese-flag";
 import AmericanFlag from "../../../images/icons/american-flag";
+import { LocaleContext } from "../layout"
+import useTranslations from "../../useTranslations"
+import LocalizedLink from '../../localizedLink'
+import locales from "../../../../config/i18n"
+import Utils from '../../../utils'
 
-const LangSwitcher = ({toggleMenu, isMobile, currentLang, currentPage, withFlag=false }) => {
-  let pageName = currentPage.lastIndexOf('/') + 1;
-  let URLSize = currentPage.split('/').length;
-  let transLang = Config.translatedLanguage;
+const LangSwitcher = ({toggleMenu, isMobile, currentPage }) => {
+
+  const { locale } = React.useContext(LocaleContext)
+  const t = useTranslations()
+
+  // Get the name of the page
+  const pageName = currentPage.substring(currentPage.lastIndexOf('/') + 1);
+
+  function getPageName(localeName) {
+    return locales[localeName].default ? `/${pageName}` : `/${localeName}/${pageName}`
+  }
 
   return (
         <ul> 
@@ -20,29 +32,30 @@ const LangSwitcher = ({toggleMenu, isMobile, currentLang, currentPage, withFlag=
             <Link 
               onClick={ isMobile ? toggleMenu : null}
               data-tip data-for="tooltipMenuJpLang" 
-              className={currentLang ? "active": null} 
-              to={currentLang === transLang ? currentPage: currentPage.substr(0, pageName) + transLang + "/" + currentPage.substr(pageName)}>
-              {transLang}
+              className={locale === "ja" ? "active": null} 
+              to={getPageName("ja")}
+              >
+              {t.menu.japanese}
             </Link>
-            {!currentLang ? (<Tooltip id="tooltipMenuJpLang" targetId="tooltipMenuJpLang" effect="solid" >日本語に変える</Tooltip>) : null}
+            {locale !== "ja" ? (
+              <Tooltip id="tooltipMenuJpLang" targetId="tooltipMenuJpLang" effect="solid" >{t.menu.switchTo}</Tooltip>
+            ) : null}
           </li>
 
           {/* English */}
           <li>
             <AmericanFlag/>
-            {URLSize === 2 ? (
-                <Link onClick={ isMobile ? toggleMenu : null} className={!currentLang ?  "active": null} to={currentLang === transLang ? currentPage.replace("/" + currentLang, "/") : currentPage.replace("/" + currentLang + "/", "/")}>
-                  {Config.defaultLanguage}
-                </Link>
-            ) : (
-              <>
-                <Link onClick={ isMobile ? toggleMenu : null} data-tip data-for="switchToEnglish" className={!currentLang ?  "active": null} to={currentLang === transLang ? currentPage.replace("/" + currentLang + "/", "/") : currentPage}>
-                  {Config.defaultLanguage}
-                </Link>
-
-                {currentLang ? (<Tooltip id="tooltipMenuEnLang" targetId="switchToEnglish" effect="solid" >Switch to English</Tooltip>) : null}
-              </>
-            )}
+              <Link 
+                onClick={ isMobile ? toggleMenu : null} 
+                data-tip data-for="switchToEnglish" 
+                className={locale === "en" ?  "active": null} 
+                to={getPageName("en")}
+              >               
+                {t.menu.english}
+              </Link>
+              {locale === "ja" ? (
+                <Tooltip id="tooltipMenuEnLang" targetId="switchToEnglish" effect="solid" >{t.menu.switchTo}</Tooltip>
+              ) : null}
           </li>
         </ul>
   )

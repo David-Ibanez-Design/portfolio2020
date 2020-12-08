@@ -24,6 +24,11 @@
     }
 }
 
+.buttonPrimary::first-letter,
+.buttonSecondary::first-letter{
+    text-transform: capitalize;
+}
+
 .buttonSecondary{
     color: $brand-600;
     background: transparent;

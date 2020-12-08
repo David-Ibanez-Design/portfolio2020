@@ -1,5 +1,52 @@
 {
-  "hello": "Hallo und herzlich Willkommen zu dieser i18n Beispielseite!",
-  "subline": "Lies doch ein paar coole Artikel von mir!",
-  "backToHome": "Zurück zur Startseite"
+  "menu": {
+    "menu": "Menu JP",
+    "home": "Home JP",
+    "work": "Work JP",
+    "about": "About JP",
+    "resume": "Resumé JP",
+    "contact": "Contact JP",
+    "japanese": "Ja JP",
+    "english": "En JP",
+    "backToHome": "Back to homepage JP",
+    "switchTo": "Switch to English"
+  },
+  "home": {
+    "title": "I’m David, I’m a UI/UX Designer With 7 Years Of Experience. JP",
+    "heroText": "JP My knowledge of Frontend development helps me efficiently communicate my designs to developers. I’m looking to join a company that trusts the design process to deliver meaningful changes to their customers.",
+    "caseStudies": "JP Case Studies",
+    "viewCaseStudy": "JP View case study",
+    "otherWorks": "JP Other Works",
+    "viewOnDribbble": "JP View on Dribbble"
+  },
+  "suggestedArt": {
+    "next": "JP NEXT UP",
+    "viewCaseStudy": "JP View case study"
+  },
+  "about": {
+    "title": "JP I’m a UI/UX designer with 7 years of experience.",
+    "subtitle": "JP ABOUT ME",   
+    "textPart1": "JP My knowledge of Frontend development gives me the tools to understand developer’s perspectives and quickly prototype ideas to ensure technical feasibility. <br/><br/> For the past four years, I have been working as a UI/UX designer in the SaaS industry.  Working in collaboration with backend, frontend developers, and business managers taught me how to carefully balance business goals, engineering constraints, and user needs. <br/><br/> Lately, I have been excited about",
+    "link": "JP  improving the business decision process as well as my own design process through the use of qualitative and quantitative data. ",
+    "textPart2": "JP In my free time, I love to travel, workout, and watch movies about  [...]<br/><br/>I’m currently looking to join an existing design team in a company that trusts the design process to deliver meaningful and measurable changes to their customers."
+  },
+  "footer": {
+    "title1": "JP LET’S WORK TOGETHER",
+    "subtitle1": "JP GET IN TOUCH",
+    "title2": "JP MENU",
+    "subtitle2": "JP View case study",
+    "legals": "JP MISSING SOMETHING?",
+    "text": "JP I’m currently looking to join an existing design team in a company that trusts the design process to deliver meaningful and measurable changes to their customers.",
+    "legals": "JP All rights reserved."
+  },
+  "socialsLinks":
+  {
+    "socials": "JP Socials",
+    "Linkedin": "JP Linkedin",
+    "Dribbble": "JP Dribbble",
+    "Follow": "JP Follow me on", 
+    "Contact": "JP Contact me at",
+    "or": "JP or",
+    "resume": "JP view my resume"
+  }
 }

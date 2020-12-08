@@ -2,17 +2,20 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
-import { Link } from 'gatsby'
 
 /* App imports */
 import style from './suggested-articles.module.scss'
 import Next from '../../images/icons/Icon-Next'
 import TagList from '../../components/tag-list'
-import Utils from '../../utils'
-import Config from '../../../config'
 import Tooltip from "../../components/tooltip";
+import LocalizedLink from '../../components/localizedLink'
+import useTranslations from "../../components/useTranslations"
 
-const SuggestedPosts = ({ currentLang, articles }) => {
+const SuggestedPosts = ({articles }) => {
+
+    // useTranslations is aware of the global context (and therefore also "locale")
+  // so it'll automatically give back the right translations
+  const t = useTranslations()
 
   const hasWindow = (typeof window !== 'undefined') ? true : false;
   const getWidth = () => hasWindow ? window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth : null;
@@ -60,12 +63,12 @@ const SuggestedPosts = ({ currentLang, articles }) => {
       <div className={style.innerContainer}>
         <h2 className={style.title}>
           <Next />
-          NEXT UP
+         {t.suggestedArt.next}
         </h2>
       </div>
       <div className={style.bannerContainer}>
         <div className={style.bannerBg}>
-          <Link className={`${style.innerContainer} ${style.nextArtContainer}`} to={Utils.resolveLangPageUrl(currentLang, Config.pages.article, path.split('/')[path.split('/').length-1])}>
+          <LocalizedLink className={`${style.innerContainer} ${style.nextArtContainer}`} to={`/${articles[0].node.parent.relativeDirectory}`}>
               <div className={style.imageContainer}>
                 <div className={style.innerImage} data-tip data-for="viewProject">
                   <div className={style.image} >
@@ -73,7 +76,7 @@ const SuggestedPosts = ({ currentLang, articles }) => {
                     />
                   </div>
                   <Tooltip targetId="viewProject" effect="float" hidePointer="hidePointer" data-offset="{'top': 0}">
-                            {!currentLang ? "View case study" : "見る"}
+                            {t.suggestedArt.viewCaseStudy}
                   </Tooltip>
                 <div className={style.shadow}></div>
                 </div>
@@ -87,7 +90,7 @@ const SuggestedPosts = ({ currentLang, articles }) => {
                     <span>{title}</span>
                   </h2>
                   <div className={style.more}>
-                    <p>View case study</p>
+                    <p>{t.suggestedArt.viewCaseStudy}</p>
                   <div className={style.iconArrow}>
                     <div className={style.iconArrowRect}></div>
                     <div className={style.iconArrowHead}></div>    
@@ -95,7 +98,7 @@ const SuggestedPosts = ({ currentLang, articles }) => {
                   </div>
                 </div>
             </div>      
-          </Link>
+          </LocalizedLink>
         </div>
 
       </div>

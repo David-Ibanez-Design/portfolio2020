@@ -63,9 +63,6 @@ const Post = ({ data }) => {
         return images;
       }, {});
 
-  // Set lang based on the current path. Couldn't not figure out a bette way
-  // if(path.includes(Config.translatedLanguage)){var currentLang = Config.translatedLanguage;}
-
   return (
     <>
       {/* <SEO
@@ -88,9 +85,9 @@ const Post = ({ data }) => {
             imageXXl={imagesByNameXXl}
           />
         </div>
-         {/* <SuggestedArticles 
+         <SuggestedArticles 
           articles={suggestedArticles} 
-        /> */}
+        />
       </div>
     </>
   )
@@ -179,8 +176,16 @@ export const pageQuery = graphql`
         
       }
     }
-    suggestedArticles :mdx(frontmatter: { order: { eq: $nextArt } })
+    suggestedArticles :mdx(
+      frontmatter: { order: { eq: $nextArt }}
+      fields: { locale: { eq: $locale }}
+      )
         {
+        parent {
+          ... on File {
+            relativeDirectory
+          }
+        }
         frontmatter {
           path
           title

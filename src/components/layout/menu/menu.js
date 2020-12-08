@@ -15,16 +15,24 @@ import ResumeEn from '../../../downloads/Resume-en.pdf'
 import { BiChevronDown } from 'react-icons/bi'
 import Img from 'gatsby-image'
 import useEvent from '../../hooks/useEvent'
+import LocalizedLink from '../../localizedLink'
+import useTranslations from "../../useTranslations"
+import { LocaleContext } from "../layout"
+import locales from "../../../../config/i18n"
 
-const Header = ({currentLang, data, locale}) => {
+const Header = ({data}) => {
 
-  // Since we can't filter a Static query by a varibale we need to reduce the returned array
+  const { locale } = React.useContext(LocaleContext)
+  const t = useTranslations()
+  const localIsJa = locale === "ja"
+
+  // Since we can't filter a Static query by a variable we need to reduce the returned array
   // Based on the current locale
 
   data = data.filter(function( obj ) {return obj.node.fields.locale === locale;});
   const articles = data;
 
-
+  // get the current page via the context instead
   let currentPage = "/"
   if(typeof window !== `undefined`) {
     currentPage = window.location.pathname
@@ -47,13 +55,10 @@ const Header = ({currentLang, data, locale}) => {
    }
   }
 
-  function toggleActive(pageLangUrl, articleTitle=""){      
-          
-    let finalUrl = Utils.resolveLangPageUrl(currentLang, pageLangUrl, articleTitle);
-    let isArticle = currentPage.includes(Config.pages.article);
-    if(currentPage === finalUrl || (articleTitle === "" && isArticle && pageLangUrl === Config.pages.article) ){
-      return style.active
-    }
+  function toggleActive(page){      
+    const isIndex = page === `/`
+    const localizedPath = locales[locale].default ? page : `/${locales[locale].path}${isIndex ? `` : `${page}`}`
+    return currentPage === localizedPath  ? style.active : null;
   }
 
   function toggleMenu() {
@@ -78,31 +83,27 @@ const Header = ({currentLang, data, locale}) => {
       <div className={`${style.desktopMenu} ${getMenuBg()}`}>
         <div className={style.desktopMenuInnerContainer}>       
             <div className={style.logo}>
-                <Link className={style.logoLink} data-tip data-for="backToHomepage" to={Utils.resolveLangPageUrl(currentLang, Config.pages.home)} >
+                <LocalizedLink className={style.logoLink} data-tip data-for="backToHomepage" to={`/`} >
                   <Logo/>
-                </Link>
+                </LocalizedLink>
                 <Tooltip id="tooltipMenuLogo" targetId="backToHomepage" effect="solid">
-                    {!currentLang ? "Back the homepage" : "Homepageに戻る"}
+                    {t.menu.backToHome}
                 </Tooltip>
             </div>
             
             <div className={style.DesktopMenuButton} onClick={toggleMenu} role="button" tabIndex={0} onKeyDown={handleKeyDown}>
               <IconMenu/>
-              <span>Menu</span>
+              <span>{t.menu.menu}</span>
             </div>
 
             <div className={[style.menuItems,isMenuCollapsed ? style.collapsedMenu : style.expandedMenu,].join(' ')} >
               <ul>
                 <li>
-                  <Link  
-                    className={toggleActive(Config.pages.home)}  
-                    to={Utils.resolveLangPageUrl(currentLang, Config.pages.home)}>
-                      Home
-                  </Link>
+                  <LocalizedLink className={toggleActive("/")} to={`/`}>{t.menu.home}</LocalizedLink>
                 </li>
                 <li className={style.withDropdown} >
                   <Link className={toggleActive(Config.pages.article)} to="#">
-                    Work 
+                    {t.menu.work} 
                     <BiChevronDown size="20" className={style.dropndownIcon}/>
                   </Link> 
                     <ul className={style.desktopDropdown}>
@@ -110,8 +111,8 @@ const Header = ({currentLang, data, locale}) => {
                           {articles.map((article, index) => {
                             const { title, path, tags, menuVignettes } = article.node.frontmatter
                             return (
-                                <li key={index} className={`${style.desktopDropdownItem} ${toggleActive(Config.pages.article,  path.split('/')[path.split('/').length-1])}`}>
-                                  <a href={Utils.resolveLangPageUrl(currentLang, Config.pages.article, path.split('/')[path.split('/').length-1])}>
+                                <li key={index} className={`${style.desktopDropdownItem} ${toggleActive(`/${article.node.parent.relativeDirectory}`)}`}>
+                                  <LocalizedLink to={`/${article.node.parent.relativeDirectory}`}>
                                     <Img
                                       className={style.preview}
                                       fluid={menuVignettes.childImageSharp.fluid}
@@ -121,7 +122,7 @@ const Header = ({currentLang, data, locale}) => {
                                         <TagList tags={tags} type="small"/>
                                         <p>{title}</p>
                                     </span>
-                                  </a>
+                                  </LocalizedLink>
                                 </li>
                             )
                             })}
@@ -129,26 +130,22 @@ const Header = ({currentLang, data, locale}) => {
                     </ul> 
                 </li>
                 <li>
-                  <Link 
-                    className={toggleActive(Config.pages.about)} 
-                    to={Utils.resolveLangPageUrl(currentLang, Config.pages.about)}>
-                      About
-                  </Link>
+                  <LocalizedLink className={toggleActive("/about")} to={`/about`}>{t.menu.about} </LocalizedLink>
                 </li> 
                 <li>
-                  <a className={style.externalLinks} href={currentLang ? ResumeJp : ResumeEn} target="_blank"　rel="noreferrer">
-                    Resumé
+                  <a className={style.externalLinks} href={localIsJa ? ResumeJp : ResumeEn} target="_blank"　rel="noreferrer">
+                    {t.menu.resume}
                   </a>
                 </li> 
                 <li>
                   <a className={style.externalLinks} href={`mailto:${Config.email}`} target="_blank"　rel="noreferrer">
-                    Contact
+                    {t.menu.contact}
                   </a>
                 </li>
               </ul> 
             </div>
             <div className={style.desktopLanguageContainer}>
-                <LangSwitcher　Tooltip={Tooltip} currentPage={currentPage} currentLang={currentLang} style={style} isMobile={false} toggleMenu={toggleMenu}/>
+                <LangSwitcher　Tooltip={Tooltip} currentPage={currentPage} style={style} isMobile={false} toggleMenu={toggleMenu}/>
             </div>
         </div> 
         <div className={style.srollBackground} ></div>   
@@ -162,9 +159,9 @@ const Header = ({currentLang, data, locale}) => {
         <div className={style.MobileMenuInnerContainer}>
             <div className={style.MobileMenuHeader}>
                 <div className={style.logo}>
-                  <Link onClick={toggleMenu} to={Utils.resolveLangPageUrl(currentLang, Config.pages.home)} >
+                  <LocalizedLink onClick={toggleMenu} to={`/`}>
                     <Logo />
-                  </Link>
+                  </LocalizedLink>
                 </div>
                 <div className={style.closeIcon}>
                     <IconClose onClick={toggleMenu} />
@@ -174,17 +171,17 @@ const Header = ({currentLang, data, locale}) => {
             <div className={style.menusContainers}>
             <ul>
               <li>
-                <Link  
+                <LocalizedLink  
                   onClick={toggleMenu}
                   onKeyDown={handleKeyDown}
-                  className={toggleActive(Config.pages.home)}  
-                  to={Utils.resolveLangPageUrl(currentLang, Config.pages.home)}>
-                    Home
-                </Link>
+                  className={toggleActive("/")}  
+                  to={`/`}>
+                    {t.menu.home}
+                </LocalizedLink>
               </li>
               <li className={style.withDropdown} >
                 <Link className={toggleActive(Config.pages.article)} to="#">
-                  Work 
+                  {t.menu.work} 
                 </Link> 
                   <ul className={style.mobileDropdown}>
                     <ul className={style.mobileDropdownInner}>
@@ -192,8 +189,8 @@ const Header = ({currentLang, data, locale}) => {
                           {articles.map((article, index) => {
                           const { title, path, tags, mobileVignettes } = article.node.frontmatter
                             return (   
-                              <a href={Utils.resolveLangPageUrl(currentLang, Config.pages.article, path.split('/')[path.split('/').length-1])} key={index}>
-                                    <span className={`${style.mobileDropdownContainer} ${toggleActive(Config.pages.article,  path.split('/')[path.split('/').length-1])}`}>                                   
+                              <LocalizedLink to={`/${article.node.parent.relativeDirectory}`} key={index}>
+                                    <span className={`${style.mobileDropdownContainer} ${toggleActive(`/${article.node.parent.relativeDirectory}`)}`}>                                   
                                       <span className={style.mobileDropdownContent}>
                                         <Img
                                             className={style.mobileDropdownImage}
@@ -208,32 +205,31 @@ const Header = ({currentLang, data, locale}) => {
                                           </span>
                                       </span>
                                     </span> 
-                                    </a>
-                                  )
-                            })}
-                        
+                              </LocalizedLink>
+                            )
+                          })}
                       </li>
                     </ul>
                   </ul>
               </li>
               <li>
-                <Link 
+                <LocalizedLink 
                   onClick={toggleMenu}
                   onKeyDown={handleKeyDown}
-                  className={toggleActive(Config.pages.about)} 
-                  to={Utils.resolveLangPageUrl(currentLang, Config.pages.about)}>
-                    About
-                </Link>
+                  className={toggleActive("/about")} 
+                  to={`/about`}>
+                    {t.menu.about}
+                </LocalizedLink>
               </li> 
               <li>
-                <a href={currentLang ? ResumeJp : ResumeEn} target="_blank"　rel="noreferrer">Resumé</a>
+                <a href={localIsJa ? ResumeJp : ResumeEn} target="_blank"　rel="noreferrer">{t.resume}</a>
               </li> 
               <li>
-                <a href={`mailto:${Config.email}`} target="_blank"　rel="noreferrer">Contact</a>
+                <a href={`mailto:${Config.email}`} target="_blank"　rel="noreferrer">{t.contact}</a>
               </li>
             </ul>               
             <div className={style.MobilelanguageContainer}>
-                <LangSwitcher currentPage={currentPage} currentLang={currentLang} style={style} isMobile={true} toggleMenu={toggleMenu}/>
+                <LangSwitcher currentPage={currentPage} style={style} isMobile={true} toggleMenu={toggleMenu}/>
               </div>
             </div>
         </div>
@@ -256,6 +252,11 @@ export default function MyStaticQuery(props) {
             node {
                 fields{
                   locale
+                }
+                parent {
+                  ... on File {
+                    relativeDirectory
+                  }
                 }
                 frontmatter {
                   path

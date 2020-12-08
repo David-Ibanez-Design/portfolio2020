@@ -3,7 +3,6 @@ const Config = require('../config')
 const Utils = {
 
   setDefaultLang: (contextLang, options = {}) => {
-
       const defaultOptions = {
         languageCodeOnly: true,
         languageFallback: "ja",
@@ -100,45 +99,6 @@ const Utils = {
     return resolvedUrl + '/'
   },
 
-
-resolveLangPageUrl: (currentLang, targetPAge, articleTitle="") => {
-    switch (targetPAge){
-      // Homepage
-      case "/" : return currentLang ? "/"+currentLang : targetPAge
-      // About, resume
-      case "about" : return currentLang ? "/"+currentLang+"/"+targetPAge : "/"+targetPAge
-      // Articles
-      case "articles" : return currentLang ? "/"+targetPAge+"/"+currentLang+"/"+articleTitle : "/"+targetPAge+"/"+articleTitle
-      default : break;
-    }
- },
-
-  /**
-   * Pass a post and retrieve a list of related translations.
-   * @param {Object} article The post of which retrieve its translations. It accepts a `node` object from Graphql's query `allMdx`
-   * @param {Object} postList The list of posts where search translations. It accepts a `edges` array from Graphql's query `allMdx`
-   * @return {Object} An array of objects with languages as keys (ISO 639-1) and translated post's paths as values.
-   */
-  getRelatedTranslations: (article, articleList) => {
- 
-    return articleList
-      .filter(({ node }) => {
-        // Get posts in the same folder of provided post
-        return (
-          node.fileAbsolutePath.split('/').slice(-2, -1)[0] ===
-          article.fileAbsolutePath.split('/').slice(-2, -1)[0]
-        )
-      })
-      .map(({ node }) => {
-        
-        let currentLang = node.fileAbsolutePath.split('.').slice(-2, -1)[0]
-      
-        return {
-          hreflang: currentLang.slice(-5) !== 'index' ? currentLang : Config.defaultLanguage,
-          path: Utils.resolvePageUrl(node.frontmatter.path),
-        }
-      })
-  },
   /**
    * Capitalize passed string
    * @param {string} str string to capitalize

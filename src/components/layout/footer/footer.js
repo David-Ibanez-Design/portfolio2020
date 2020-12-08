@@ -1,7 +1,6 @@
 /* Vendor imports */
 import React from 'react'
 import { FaDribbble, FaLinkedin } from 'react-icons/fa'
-import { Link } from 'gatsby';
 /* App imports */
 import style from './footer.module.scss'
 import Utils from '../../../utils'
@@ -10,22 +9,28 @@ import Buttons from '../../../components/button'
 import LangSwitcher from "../../layout/menu/lang-switcher"
 import ResumeJp from '../../../downloads/Resume-jp.pdf'
 import ResumeEn from '../../../downloads/Resume-en.pdf'
+import useTranslations from "../../useTranslations"
+import LocalizedLink from '../../localizedLink'
+import { LocaleContext } from "../layout"
+import locales from "../../../../config/i18n"
 
+const Footer = () => {
 
+  const { locale } = React.useContext(LocaleContext)
+  const t = useTranslations()
+  const localIsJa = locale === "ja"
 
-const Footer = ({currentLang}) => {
-
+  // get the current page via the context instead
   let currentPage = "/"
   if(typeof window !== `undefined`) {
     currentPage = window.location.pathname
   }
 
 
-  function toggleActive(pageLangUrl){      
-    let finalUrl = Utils.resolveLangPageUrl(currentLang, pageLangUrl);
-    if(currentPage === finalUrl){
-      return "active"
-    }
+  function toggleActive(page){   
+    const isIndex = page === `/`
+    const localizedPath = locales[locale].default ? page : `/${locales[locale].path}${isIndex ? `` : `${page}`}`
+    return currentPage === localizedPath  ? "active" : null;   
   }
 
   return (
@@ -34,45 +39,39 @@ const Footer = ({currentLang}) => {
           <div className={style.innerContainer}>
             <div className={style.menusContainer}>
               <div className={style.contactInfo}>
-              <h6>Get In Touch</h6>
-              <h1>Let’s work together</h1>
-              <p className={style.outro}>
-              I’m currently looking to join an existing design team in a company that trusts the design process to deliver meaningful and measurable changes to their customers.
-              </p>
+              <h6>{t.footer.subtitle1}</h6>
+              <h1>{t.footer.title1}</h1>
+              <p className={style.outro}>{t.footer.text}</p>
               <Buttons destination="external" to={`mailto:${Config.email}`} buttonStyle="primary">Contact me</Buttons>
               </div>
               <div className={style.menu}>
-                <h6>Missing something?</h6>
-                <h1>Menu</h1>
+                <h6>{t.footer.subtitle2}</h6>
+                <h1>{t.footer.title2}</h1>
                 <ul>
                 <li>
-                    <Link  
-                      className={toggleActive(Config.pages.home)}  
-                      to={Utils.resolveLangPageUrl(currentLang, Config.pages.home)}>
-                        Home
-                    </Link>
+                    <LocalizedLink className={toggleActive("/")} to={`/`}>
+                      {t.menu.home}
+                    </LocalizedLink>
                   </li>
                   <li>
-                      <Link 
-                        className={toggleActive(Config.pages.about)} 
-                        to={Utils.resolveLangPageUrl(currentLang, Config.pages.about)}>
-                          About
-                      </Link>
+                      <LocalizedLink className={toggleActive("/about")} to={`/about`}>
+                        {t.menu.about}
+                      </LocalizedLink>
                   </li> 
                   <li>
-                    <a href={currentLang ? ResumeJp : ResumeEn} target="_blank"　rel="noreferrer">Resume</a>
+                    <a href={localIsJa ? ResumeJp : ResumeEn} target="_blank"　rel="noreferrer">{t.menu.resume}</a>
                   </li> 
                   <li>
-                    <a href={`mailto:${Config.email}`} target="_blank"　rel="noreferrer">Contact</a>
+                    <a href={`mailto:${Config.email}`} target="_blank"　rel="noreferrer">{t.menu.contact}</a>
                   </li>
                 </ul>
                 <div className={style.langSwitcher}>
-                  <LangSwitcher currentPage={currentPage} currentLang={currentLang} isMobile={false} withFlag/>
+                  <LangSwitcher currentPage={currentPage} isMobile={false}/>
                 </div>
               </div>
               <div className={style.socialsMobileContainer}>
-                <h6>Follow me on</h6>
-                <h1>Socials</h1>
+                <h6>{t.socialsLinks.Follow}</h6>
+                <h1>{t.socialsLinks.socials}</h1>
                 <ul>
                   <li>
                   <a
@@ -82,7 +81,7 @@ const Footer = ({currentLang}) => {
                     data-tip 
                     data-for="social1"
                   >
-                    Dribbble
+                    {t.socialsLinks.Dribbble}
                   </a>
                   </li>
                   <li>
@@ -93,7 +92,7 @@ const Footer = ({currentLang}) => {
                       data-tip 
                       data-for="social2"
                     >
-                      Linkedin
+                      {t.socialsLinks.Linkedin}
                     </a>
                   </li>
                 </ul>
@@ -111,7 +110,7 @@ const Footer = ({currentLang}) => {
                     data-tip 
                     data-for="social1"
                   >
-                    Dribbble
+                    {t.socialsLinks.Dribbble}
                   </a>
                 </li>
                 <li>
@@ -123,11 +122,11 @@ const Footer = ({currentLang}) => {
                     data-tip 
                     data-for="social2"
                   >
-                    Linkedin
+                    {t.socialsLinks.Linkedin}
                   </a>
                 </li>
               </ul>
-              <p className={style.legals}>© 2020 All rights reserved.</p>
+              <p className={style.legals}>© 2020 {t.footer.legals}.</p>
           </div>
 
           </div>

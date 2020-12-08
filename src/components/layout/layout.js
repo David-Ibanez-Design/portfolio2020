@@ -23,7 +23,7 @@ const LocaleContext = React.createContext()
 
 const Layout = ({children, pageContext: { locale } }) => (
   <LocaleContext.Provider value={{ locale }}>
-    <Menu locale={locale}/>
+    <Menu/>
       {children}
    <Footer/>
   </LocaleContext.Provider>
