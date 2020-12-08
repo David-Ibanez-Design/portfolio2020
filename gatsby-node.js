@@ -19,7 +19,7 @@ exports.onCreatePage = ({ page, actions }) => {
     const localizedPath = locales[lang].default
       ? page.path
       : `${locales[lang].path}${page.path}`
-
+      
 
     return createPage({
       // Pass on everything from the original page
@@ -27,12 +27,15 @@ exports.onCreatePage = ({ page, actions }) => {
       // Since page.path returns with a trailing slash (e.g. "/de/")
       // We want to remove that
       path: Utils.removeTrailingSlash(localizedPath),
+
       // Pass in the locale as context to every page
       // This context also gets passed to the src/components/layout file
       // This should ensure that the locale is available on every page
       context: {
         ...page.context,
         locale: lang,
+        isArt: false,
+        localizedPath: Utils.removeTrailingSlash(localizedPath),
         dateFormat: locales[lang].dateFormat,
       },
     })
@@ -125,14 +128,9 @@ exports.createPages = async ({ graphql, actions }) => {
       path: Utils.localizedSlug( isDefault, locale, slug ),
       component: artTemplate,
       context: {
-        artCount,
-        postPath: art.childMdx.frontmatter.path,
-        currentPage: art.childMdx.frontmatter.order,
         nextArt: getNextArt(art.childMdx.frontmatter.order),  
-        fullPath: Utils.localizedSlug( isDefault, locale, slug ),   
-        // Pass both the "title" and "locale" to find a unique file
-        // Only the title would not have been sufficient as articles could have the same title
-        // in different languages, e.g. because an english phrase is also common in german
+        localizedPath: Utils.localizedSlug( isDefault, locale, slug), 
+        isArt: true,  
         title,
         locale
       },

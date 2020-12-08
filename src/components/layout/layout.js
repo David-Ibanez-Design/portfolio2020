@@ -21,8 +21,8 @@ import "../tooltip/tooltip.module.scss";
 
 const LocaleContext = React.createContext()
 
-const Layout = ({children, pageContext: { locale } }) => (
-  <LocaleContext.Provider value={{ locale }}>
+const Layout = ({children, pageContext: { locale, localizedPath, isArt } }) => (
+  <LocaleContext.Provider value={{ locale, localizedPath, isArt }}>
     <Menu/>
       {children}
    <Footer/>

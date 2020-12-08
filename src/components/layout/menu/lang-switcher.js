@@ -12,16 +12,16 @@ import LocalizedLink from '../../localizedLink'
 import locales from "../../../../config/i18n"
 import Utils from '../../../utils'
 
-const LangSwitcher = ({toggleMenu, isMobile, currentPage }) => {
+const LangSwitcher = ({toggleMenu, isMobile }) => {
 
-  const { locale } = React.useContext(LocaleContext)
+  const { locale, localizedPath } = React.useContext(LocaleContext)
   const t = useTranslations()
 
-  // Get the name of the page
-  const pageName = currentPage.substring(currentPage.lastIndexOf('/') + 1);
+  const pageName = localizedPath === locale ? "" : localizedPath.substring(localizedPath.lastIndexOf('/') + 1);
 
-  function getPageName(localeName) {
-    return locales[localeName].default ? `/${pageName}` : `/${localeName}/${pageName}`
+  function switchLangTo(targetLang) {   
+       const isIndex = (pageName === `/` || pageName === ``)
+       return locales[targetLang].default ? `/${pageName}` : `/${locales[targetLang].path}${isIndex ? `` : `/${pageName}`}`  
   }
 
   return (
@@ -33,7 +33,7 @@ const LangSwitcher = ({toggleMenu, isMobile, currentPage }) => {
               onClick={ isMobile ? toggleMenu : null}
               data-tip data-for="tooltipMenuJpLang" 
               className={locale === "ja" ? "active": null} 
-              to={getPageName("ja")}
+              to={switchLangTo("ja")}
               >
               {t.menu.japanese}
             </Link>
@@ -49,7 +49,7 @@ const LangSwitcher = ({toggleMenu, isMobile, currentPage }) => {
                 onClick={ isMobile ? toggleMenu : null} 
                 data-tip data-for="switchToEnglish" 
                 className={locale === "en" ?  "active": null} 
-                to={getPageName("en")}
+                to={switchLangTo("en")}
               >               
                 {t.menu.english}
               </Link>

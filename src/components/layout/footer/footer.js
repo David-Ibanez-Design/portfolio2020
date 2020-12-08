@@ -16,7 +16,7 @@ import locales from "../../../../config/i18n"
 
 const Footer = () => {
 
-  const { locale } = React.useContext(LocaleContext)
+  const { locale, localizedPath } = React.useContext(LocaleContext)
   const t = useTranslations()
   const localIsJa = locale === "ja"
 
@@ -30,7 +30,7 @@ const Footer = () => {
   function toggleActive(page){   
     const isIndex = page === `/`
     const localizedPath = locales[locale].default ? page : `/${locales[locale].path}${isIndex ? `` : `${page}`}`
-    return currentPage === localizedPath  ? "active" : null;   
+    return localizedPath === localizedPath  ? "active" : null;   
   }
 
   return (
@@ -66,7 +66,7 @@ const Footer = () => {
                   </li>
                 </ul>
                 <div className={style.langSwitcher}>
-                  <LangSwitcher currentPage={currentPage} isMobile={false}/>
+                  {/* <LangSwitcher isMobile={false}/> */}
                 </div>
               </div>
               <div className={style.socialsMobileContainer}>

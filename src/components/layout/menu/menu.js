@@ -22,21 +22,16 @@ import locales from "../../../../config/i18n"
 
 const Header = ({data}) => {
 
-  const { locale } = React.useContext(LocaleContext)
+  const { locale, isArt, localizedPath } = React.useContext(LocaleContext)
   const t = useTranslations()
   const localIsJa = locale === "ja"
+  const isHomePage = localizedPath === locale || localizedPath === "/"
 
   // Since we can't filter a Static query by a variable we need to reduce the returned array
   // Based on the current locale
 
   data = data.filter(function( obj ) {return obj.node.fields.locale === locale;});
   const articles = data;
-
-  // get the current page via the context instead
-  let currentPage = "/"
-  if(typeof window !== `undefined`) {
-    currentPage = window.location.pathname
-  }
   
   const [isMenuCollapsed, setMenuCollapsed] = useState(false)
   const [isHeaderCollapsed, setHeaderCollapsed] = useState(false)
@@ -57,8 +52,8 @@ const Header = ({data}) => {
 
   function toggleActive(page){      
     const isIndex = page === `/`
-    const localizedPath = locales[locale].default ? page : `/${locales[locale].path}${isIndex ? `` : `${page}`}`
-    return currentPage === localizedPath  ? style.active : null;
+    const localizedSlug = locales[locale].default ? page : `/${locales[locale].path}${isIndex ? `` : `${page}`}`
+    return localizedPath === localizedSlug  ? style.active : null;
   }
 
   function toggleMenu() {
@@ -67,10 +62,10 @@ const Header = ({data}) => {
   }
 
   function getMenuBg() {
-      if(currentPage !== "/"){
+      if(!isHomePage){
         return style.menuIsScrolled
       }
-      else if(currentPage === "/" && isHeaderCollapsed){
+      else if(isHeaderCollapsed){
         return style.menuIsScrolled
       }
   }
@@ -102,7 +97,7 @@ const Header = ({data}) => {
                   <LocalizedLink className={toggleActive("/")} to={`/`}>{t.menu.home}</LocalizedLink>
                 </li>
                 <li className={style.withDropdown} >
-                  <Link className={toggleActive(Config.pages.article)} to="#">
+                  <Link className={isArt ? style.active : null} to="#">
                     {t.menu.work} 
                     <BiChevronDown size="20" className={style.dropndownIcon}/>
                   </Link> 
@@ -145,7 +140,7 @@ const Header = ({data}) => {
               </ul> 
             </div>
             <div className={style.desktopLanguageContainer}>
-                <LangSwitcher　Tooltip={Tooltip} currentPage={currentPage} style={style} isMobile={false} toggleMenu={toggleMenu}/>
+                <LangSwitcher　Tooltip={Tooltip} style={style} isMobile={false} toggleMenu={toggleMenu}/>
             </div>
         </div> 
         <div className={style.srollBackground} ></div>   
@@ -180,7 +175,7 @@ const Header = ({data}) => {
                 </LocalizedLink>
               </li>
               <li className={style.withDropdown} >
-                <Link className={toggleActive(Config.pages.article)} to="#">
+                <Link className={isArt ? style.active : null} to="#">
                   {t.menu.work} 
                 </Link> 
                   <ul className={style.mobileDropdown}>
@@ -229,7 +224,7 @@ const Header = ({data}) => {
               </li>
             </ul>               
             <div className={style.MobilelanguageContainer}>
-                <LangSwitcher currentPage={currentPage} style={style} isMobile={true} toggleMenu={toggleMenu}/>
+                {/* <LangSwitcher style={style} isMobile={true} toggleMenu={toggleMenu}/> */}
               </div>
             </div>
         </div>
