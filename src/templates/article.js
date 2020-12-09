@@ -2,19 +2,16 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 /* App imports */
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+// import SEO from '../components/seo'
 import ArticleHeading from './article-heading'
 import ArticleContent from './article-content'
 import SuggestedArticles from './suggested-articles'
 import style from './article.module.scss'
-import Config from '../../config'
 
 const Post = ({ data }) => {
 
   const { body, frontmatter } = data.articleContent
-  const { title, tags, path, coverArticle, imagesMd, imagesLg, imagesXl, imagesXXl  } = frontmatter
-  // const translations = pageContext.translations.length > 1 ? pageContext.translations : null
+  const { title, tags, coverArticle, imagesMd, imagesLg, imagesXl, imagesXXl  } = frontmatter
   const imgArticle = coverArticle.childImageSharp.fluid
   const suggestedArticles= []
   suggestedArticles.push({ node: data.suggestedArticles })

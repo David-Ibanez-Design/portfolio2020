@@ -5,14 +5,14 @@ import { BiChevronDown } from 'react-icons/bi'
 /* App imports */
 import style from './menu.module.scss'
 import Img from 'gatsby-image'
-import LocalizedLink from '../../localizedLink'
-import useTranslations from "../../useTranslations"
+import LocalizedLink from '../localizedLink'
+import useTranslations from "../useTranslations"
 import { LocaleContext } from "../layout"
-import locales from "../../../../config/i18n"
-import Config from '../../../../config'
-import ResumeJp from '../../../downloads/Resume-jp.pdf'
-import ResumeEn from '../../../downloads/Resume-en.pdf'
-import TagList from '../../tag-list'
+import locales from "../../../config/i18n"
+import Config from '../../../config'
+import ResumeJp from '../../downloads/Resume-jp.pdf'
+import ResumeEn from '../../downloads/Resume-en.pdf'
+import TagList from '../tag-list'
 
 const MenuItems = ({data, isMobile , withWork}) => {
 
@@ -46,7 +46,7 @@ const MenuItems = ({data, isMobile , withWork}) => {
                             <ul>
                                 <li>
                                     {articles.map((article, index) => {
-                                        const { title, path, tags, menuVignettes, mobileVignettes } = article.node.frontmatter
+                                        const { title, tags, menuVignettes, mobileVignettes } = article.node.frontmatter
                                         return (
                                                 <LocalizedLink 
                                                     key={index}

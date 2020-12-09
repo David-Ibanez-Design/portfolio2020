@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 /* App imports */
 import LangSwitcher from './lang-switcher'
 import style from './menu.module.scss'
-import Logo from '../../../images/icons/di-logo'
-import IconClose from '../../../images/icons/Icon-close'
-import IconMenu from '../../../images/icons/Icon-menu'
-import Tooltip from "../../tooltip";
-import useEvent from '../../hooks/useEvent'
-import LocalizedLink from '../../localizedLink'
-import useTranslations from "../../useTranslations"
+import Logo from '../../images/icons/di-logo'
+import IconClose from '../../images/icons/Icon-close'
+import IconMenu from '../../images/icons/Icon-menu'
+import Tooltip from "../tooltip";
+import useEvent from '../hooks/useEvent'
+import LocalizedLink from '../localizedLink'
+import useTranslations from "../useTranslations"
 import { LocaleContext } from "../layout"
 import MenuItems from "./menu-items"
 

@@ -3,30 +3,18 @@ import React from 'react'
 import { FaDribbble, FaLinkedin } from 'react-icons/fa'
 /* App imports */
 import style from './footer.module.scss'
-import Utils from '../../../utils'
-import Config from '../../../../config'
-import Buttons from '../../../components/button'
-import LangSwitcher from "../../layout/menu/lang-switcher"
-import ResumeJp from '../../../downloads/Resume-jp.pdf'
-import ResumeEn from '../../../downloads/Resume-en.pdf'
-import useTranslations from "../../useTranslations"
-import LocalizedLink from '../../localizedLink'
-import { LocaleContext } from "../layout"
-import locales from "../../../../config/i18n"
+import Config from '../../../config'
+import Buttons from '../button'
+import LangSwitcher from "../menu/lang-switcher"
+import useTranslations from "../useTranslations"
+import { LocaleContext } from "../layout/layout"
 import MenuItems from "../menu/menu-items"
 import menuStyle from '../menu/menu.module.scss'
 
 const Footer = () => {
 
-  const { locale, localizedPath, isArt } = React.useContext(LocaleContext)
+  const { isArt } = React.useContext(LocaleContext)
   const t = useTranslations()
-  const localIsJa = locale === "ja"
-
-  function toggleActive(page){   
-    const isIndex = page === `/`
-    const localizedSlug = locales[locale].default ? page : `/${locales[locale].path}${isIndex ? `` : `${page}`}`
-    return localizedPath === localizedSlug  ? "active" : null;   
-  }
 
   return (
     <>
@@ -58,8 +46,6 @@ const Footer = () => {
                     target="_blank"
                     rel="nofollow noopener noreferrer"
                     href={Config.social.dribbble}
-                    data-tip 
-                    data-for="social1"
                   >
                     {t.socialsLinks.Dribbble}
                   </a>
@@ -69,8 +55,6 @@ const Footer = () => {
                       target="_blank"
                       rel="nofollow noopener noreferrer"
                       href={Config.social.linkedin}
-                      data-tip 
-                      data-for="social2"
                     >
                       {t.socialsLinks.Linkedin}
                     </a>
@@ -79,36 +63,31 @@ const Footer = () => {
               </div>
             </div>
 
-          <div className={style.socialsContainer}>
-            <ul className={style.socials}>
-                <li>
-                <FaDribbble size="14"/>
-                  <a
-                    target="_blank"
-                    rel="nofollow noopener noreferrer"
-                    href={Config.social.dribbble}
-                    data-tip 
-                    data-for="social1"
-                  >
-                    {t.socialsLinks.Dribbble}
-                  </a>
-                </li>
-                <li>
-                <FaLinkedin size="14"/>
-                  <a
-                    target="_blank"
-                    rel="nofollow noopener noreferrer"
-                    href={Config.social.linkedin}
-                    data-tip 
-                    data-for="social2"
-                  >
-                    {t.socialsLinks.Linkedin}
-                  </a>
-                </li>
-              </ul>
-              <p className={style.legals}>© 2020 {t.footer.legals}.</p>
-          </div>
-
+            <div className={style.socialsContainer}>
+              <ul className={style.socials}>
+                  <li>
+                  <FaDribbble size="14"/>
+                    <a
+                      target="_blank"
+                      rel="nofollow noopener noreferrer"
+                      href={Config.social.dribbble}
+                    >
+                      {t.socialsLinks.Dribbble}
+                    </a>
+                  </li>
+                  <li>
+                  <FaLinkedin size="14"/>
+                    <a
+                      target="_blank"
+                      rel="nofollow noopener noreferrer"
+                      href={Config.social.linkedin}
+                    >
+                      {t.socialsLinks.Linkedin}
+                    </a>
+                  </li>
+                </ul>
+                <p className={style.legals}>© 2020 {t.footer.legals}.</p>
+            </div>
           </div>
       </div>
     </>

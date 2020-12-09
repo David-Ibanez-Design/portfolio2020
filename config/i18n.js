@@ -1,6 +1,4 @@
-const Utils = require('../src/utils');
 // Only one item MUST have the "default: true" key
-
 module.exports = {
   en: {
     path: `en`,

@@ -5,7 +5,7 @@ import { graphql } from 'gatsby'
 import { FaDribbble, FaLinkedin } from 'react-icons/fa'
 /* App imports */
 import Img from 'gatsby-image'
-import SEO from '../components/seo'
+// import SEO from '../components/seo'
 import TagList from '../components/tag-list'
 import Config from '../../config'
 import style from './homepage.module.scss'
@@ -56,7 +56,6 @@ const Homepage = ({data}) => {
   caseStudiesDesktop = caseStudiesDesktop.edges;
   caseStudiesTablet = caseStudiesTablet.edges;
 
-  const featurePath = caseStudyFeatureDesktop.node.frontmatter.path;
   const dribbbleShotsMap = Config.dribbbleShots;
 
   function getImg(WinWidth){
@@ -146,7 +145,7 @@ const Homepage = ({data}) => {
           <div className={`${style.otherCaseStudies}  ${style.container}`}>
             {caseStudiesDesktop.map((caseStudyDesktop, index) => {
               
-              const { title, path, tags, coverHomepage } = caseStudyDesktop.node.frontmatter
+              const { title, tags, coverHomepage } = caseStudyDesktop.node.frontmatter
               return(
                   <LocalizedLink key={index} className={style.caseStudies} to={`/${caseStudyDesktop.node.parent.relativeDirectory}`}>
                       <div className={style.caseStudiesImage} data-tip data-for={`viewProjectHomepage-${index}`}>

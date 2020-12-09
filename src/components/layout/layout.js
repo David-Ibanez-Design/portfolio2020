@@ -1,14 +1,8 @@
 /* Vendor imports */
 import React from 'react'
-import PropTypes from 'prop-types'
-
 /* App imports */
-// import Menu from './menu'
-import Footer from './footer'
-import Menu from '../layout/menu'
-import i18n from '../../../config/i18n'
-
-
+import Footer from '../footer'
+import Menu from '../menu'
 /* Base style: makes it available to all components under layout  */
 import "../../styles/base/normalize.scss";
 import "../../styles/base/base.scss";

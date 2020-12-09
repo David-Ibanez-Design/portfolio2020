@@ -1,12 +1,10 @@
 /* Vendor imports */
 import React from "react"
-import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import { Link } from 'gatsby'
 /* App imports */
 import useTranslations from "../../components/useTranslations"
-import SEO from '../../components/seo'
+// import SEO from '../../components/seo'
 import style from './about.module.scss'
 import ResumeEn from '../../downloads/Resume-en.pdf'
 import Config from '../../../config'

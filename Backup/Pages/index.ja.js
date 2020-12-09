@@ -11,7 +11,6 @@ import Config from '../../config'
 const IndexPage = ({ data }) => (
   <Layout currentLang={Config.translatedLanguage}>
     <SEO title="Home" description={Config.siteDescription} path="" />
-    {/* <ArticleList currentLang={Config.translatedLanguage} articles={data.allMdx.edges} /> */}
   </Layout>
 )
 

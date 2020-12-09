@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby';
 /* App imports */
-import Tooltip from "../../tooltip";
+import Tooltip from "../tooltip";
 import style from './menu.module.scss'
-import JapaneseFlag from "../../../images/icons/japanese-flag";
-import AmericanFlag from "../../../images/icons/american-flag";
+import JapaneseFlag from "../../images/icons/japanese-flag";
+import AmericanFlag from "../../images/icons/american-flag";
 import { LocaleContext } from "../layout"
-import useTranslations from "../../useTranslations"
-import locales from "../../../../config/i18n"
+import useTranslations from "../useTranslations"
+import locales from "../../../config/i18n"
 
 const LangSwitcher = ({toggleMenu, isMobile }) => {
 
