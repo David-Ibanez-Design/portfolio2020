@@ -13,19 +13,14 @@ import useTranslations from "../../useTranslations"
 import LocalizedLink from '../../localizedLink'
 import { LocaleContext } from "../layout"
 import locales from "../../../../config/i18n"
+import MenuItems from "../menu/menu-items"
+import menuStyle from '../menu/menu.module.scss'
 
 const Footer = () => {
 
-  const { locale, localizedPath } = React.useContext(LocaleContext)
+  const { locale, localizedPath, isArt } = React.useContext(LocaleContext)
   const t = useTranslations()
   const localIsJa = locale === "ja"
-
-  // get the current page via the context instead
-  let currentPage = "/"
-  if(typeof window !== `undefined`) {
-    currentPage = window.location.pathname
-  }
-
 
   function toggleActive(page){   
     const isIndex = page === `/`
@@ -35,7 +30,7 @@ const Footer = () => {
 
   return (
     <>
-      <div className={`${style.container} ${currentPage.includes(Config.pages.article) === false ? "mt-11" : null}`}>
+      <div className={`${style.container} ${!isArt ? "mt-11" : null}`}>
           <div className={style.innerContainer}>
             <div className={style.menusContainer}>
               <div className={style.contactInfo}>
@@ -47,26 +42,11 @@ const Footer = () => {
               <div className={style.menu}>
                 <h6>{t.footer.subtitle2}</h6>
                 <h1>{t.footer.title2}</h1>
-                <ul>
-                <li>
-                    <LocalizedLink className={toggleActive("/")} to={`/`}>
-                      {t.menu.home}
-                    </LocalizedLink>
-                  </li>
-                  <li>
-                      <LocalizedLink className={toggleActive("/about")} to={`/about`}>
-                        {t.menu.about}
-                      </LocalizedLink>
-                  </li> 
-                  <li>
-                    <a href={localIsJa ? ResumeJp : ResumeEn} target="_blank"　rel="noreferrer">{t.menu.resume}</a>
-                  </li> 
-                  <li>
-                    <a href={`mailto:${Config.email}`} target="_blank"　rel="noreferrer">{t.menu.contact}</a>
-                  </li>
-                </ul>
-                <div className={style.langSwitcher}>
-                  <LangSwitcher isMobile={false}/>
+                <div className={menuStyle.footerMenu}>
+                  <MenuItems withWork={false} />
+                </div>
+                <div className={menuStyle.FooterlangSwitcher}>
+                  <LangSwitcher/>
                 </div>
               </div>
               <div className={style.socialsMobileContainer}>

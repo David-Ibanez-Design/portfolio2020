@@ -1,6 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby';
-import Config from '../../../../config';
 /* App imports */
 import Tooltip from "../../tooltip";
 import style from './menu.module.scss'
@@ -8,9 +8,7 @@ import JapaneseFlag from "../../../images/icons/japanese-flag";
 import AmericanFlag from "../../../images/icons/american-flag";
 import { LocaleContext } from "../layout"
 import useTranslations from "../../useTranslations"
-import LocalizedLink from '../../localizedLink'
 import locales from "../../../../config/i18n"
-import Utils from '../../../utils'
 
 const LangSwitcher = ({toggleMenu, isMobile }) => {
 
@@ -32,13 +30,13 @@ const LangSwitcher = ({toggleMenu, isMobile }) => {
             <Link 
               onClick={ isMobile ? toggleMenu : null}
               data-tip data-for="tooltipMenuJpLang" 
-              className={locale === "ja" ? "active": null} 
+              className={locale === "ja" ? style.active : null} 
               to={switchLangTo("ja")}
               >
               {t.menu.japanese}
             </Link>
             {locale !== "ja" ? (
-              <Tooltip id="tooltipMenuJpLang" targetId="tooltipMenuJpLang" effect="solid" >{t.menu.switchTo}</Tooltip>
+              <Tooltip targetId="tooltipMenuJpLang" >{t.menu.switchTo}</Tooltip>
             ) : null}
           </li>
 
@@ -48,17 +46,26 @@ const LangSwitcher = ({toggleMenu, isMobile }) => {
               <Link 
                 onClick={ isMobile ? toggleMenu : null} 
                 data-tip data-for="switchToEnglish" 
-                className={locale === "en" ?  "active": null} 
+                className={locale === "en" ?  style.active : null} 
                 to={switchLangTo("en")}
               >               
                 {t.menu.english}
               </Link>
               {locale === "ja" ? (
-                <Tooltip id="tooltipMenuEnLang" targetId="switchToEnglish" effect="solid" >{t.menu.switchTo}</Tooltip>
+                <Tooltip targetId="switchToEnglish" >{t.menu.switchTo}</Tooltip>
               ) : null}
           </li>
         </ul>
   )
+}
+
+LangSwitcher.propTypes = {
+  isMobile: PropTypes.bool
+}
+
+
+LangSwitcher.defaultProps = {
+  isMobile: false
 }
 
 export default LangSwitcher
