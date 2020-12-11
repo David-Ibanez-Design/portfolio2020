@@ -5,6 +5,7 @@ import ReactTooltip from "react-tooltip";
 import style from './tooltip.module.scss'
 
 const Tooltip = ({ targetId, place, effect="solid", offset, hidePointer, children }) => {
+
     return (
         <ReactTooltip 
             className={`
@@ -12,7 +13,7 @@ const Tooltip = ({ targetId, place, effect="solid", offset, hidePointer, childre
                 ${hidePointer ? style.hidePointer : ""} `} 
             id={targetId} 
             place={place} 
-            insecure={true}
+            insecure={false}
             effect={effect}
             offset={offset}
             >
