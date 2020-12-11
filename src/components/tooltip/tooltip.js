@@ -4,7 +4,7 @@ import React from 'react'
 import ReactTooltip from "react-tooltip";
 import style from './tooltip.module.scss'
 
-const Tooltip = ({ targetId, place, effect, offset, hidePointer, children }) => {
+const Tooltip = ({ targetId, place, effect="solid", offset, hidePointer, children }) => {
     return (
         <ReactTooltip 
             className={`

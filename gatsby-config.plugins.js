@@ -33,8 +33,15 @@ module.exports = [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `markdown-pages`,
-        path: `${__dirname}/content`,
+        name: `Mdx`,
+        path: `${__dirname}/content`
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/config/translations`,
+        name: `translations`,
       },
     },
 
@@ -58,14 +65,7 @@ module.exports = [
         ],
       },
     },
-
-    {
-      resolve: 'gatsby-plugin-i18n',
-      options: {        
-        langKeyDefault: config.defaultLanguage,
-        useLangKeyLayout: false
-      }
-    },
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-robots-txt`
+    `gatsby-plugin-robots-txt`,
+    `gatsby-transformer-json`
 ]

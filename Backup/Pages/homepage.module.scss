@@ -1,0 +1,524 @@
+
+.container {
+    @include container-lg;
+    padding: 0 $spacer-3 0 $spacer-3;
+
+    h2{
+        font-size: $h00-size;
+        margin-bottom: $spacer-4;
+        font-weight: $font-weight-extra-bold;
+        text-transform: uppercase;
+    }
+}
+
+.heroContainer{
+    position: relative;
+    margin-bottom: 82px;
+    height: 811px;
+
+    @include breakpoint("md"){  
+        height: auto;
+        background: #FFFBEE;
+    }
+
+    .heroBackground{
+        top: -145px;
+        z-index: 1;
+        @include center-horizontal;
+        @include breakpoint("md"){  
+            display: none !important;
+        }
+    }
+
+    .heroInnerContainer{
+        width: 100%;
+        // display: flex;
+        z-index: 5;
+        position: relative;
+        flex-direction: row;
+        // margin-top: $spacer-12;
+        @include breakpoint("md"){  
+            flex-direction: column-reverse;
+            position: relative;
+            transform: none;
+        }
+        
+    }
+}
+
+.heroImageContainer{
+    width: 575px;
+    height: 500px;
+    float: right;
+    margin-top: -34px;
+    // margin-top: $spacer-12;
+
+    @include breakpoint("md"){  
+        display: none;
+    }
+}
+
+.intro{
+    width: 566px;
+    margin-top: 195px;
+    float: left;
+
+    @include breakpoint("lg"){  
+        width: 42%;
+    }
+
+    @include breakpoint("md"){  
+        text-align: center;
+        width: 100%;
+        float: none;
+        padding: 120px 0;
+        margin-top: 0;
+    }
+
+    h1{
+        margin-bottom: $spacer-3;
+    }
+
+    h1 span{
+        font-size: $h000-size;
+        font-weight: $font-weight-black;
+        line-height: 58px;
+        background-image: linear-gradient(to right,$brand-000 0%,$brand-000 100%);
+        background-position: 0 95%;
+        background-size: 0 2px;
+        padding: 0.1% 0;
+        background-repeat: no-repeat;
+        // background-size: 100% 21px;
+        @include breakpoint("lg"){  
+            font-size: 40px;
+            line-height: 48px;
+         }
+    }
+
+    p{
+        color: $gray;
+        font-size: 20px;
+        line-height: 32px;
+        margin-bottom: $spacer-6;
+        @include breakpoint("lg"){  
+            font-size: 18px;
+            line-height: 30px;
+         }
+    }
+
+    .profilePicContainer{
+        display: none;
+        @include breakpoint("md"){ 
+            display: block;
+            position: relative;
+            width: $spacer-12;
+            height: $spacer-12;
+            border-radius:50%;
+            margin: 0 auto;
+            margin-bottom: $spacer-4;
+        }
+
+        .profilePicImg{
+            @include center-both;
+            border-radius:50%;
+            filter: saturate(0.7);
+        }
+
+        .profilePicBorder{
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius:50%;
+            border:1px solid #fbdf7d8f;
+            @include center-both;
+        }
+    }
+
+    .socials{
+        display: flex;
+        margin-bottom: $spacer-2;
+
+        @include breakpoint("md"){  
+            display: inline-block;
+            text-align: center;
+            margin-bottom: 0;
+
+            &>span, &>a{        
+                float: left;
+           } 
+
+            &>a:last-child{
+                margin-right: 0;
+            }
+         }
+
+
+        &>a{
+            @include flex-center;
+            margin-right: $spacer-3;
+            font-size: $h5-size;
+
+            &:hover{
+                text-decoration: none;
+            }
+        } 
+
+        .dribbble svg{
+            fill: $red;
+        }
+
+        .dribbble{
+            color: $red;
+            cursor: pointer;
+            &:hover{
+                color: $red-600;
+                svg{
+                    fill: $red-600;
+                }
+            }
+        }
+
+        .linkedin{
+            color: $blue-600;
+            cursor: pointer;
+            &:hover{
+                color: $blue-700;
+                svg{
+                    fill: $blue-700;
+                }
+            }
+        }
+
+        .linkedin svg{
+            fill: $blue-600;
+        }
+
+        &>span:first-child{
+            font-size: $h5-size;
+            margin-right: $spacer-3;
+            color: $gray-500;
+        }
+
+        &>a>svg{
+            margin-right: $spacer-1;
+        }
+
+    }
+
+    .actions{
+
+        display: flex;
+
+        @include breakpoint("md"){  
+           @include center-horizontal;
+        }
+        
+        &>a:first-child{
+            margin-right: $spacer-4;
+        }
+
+    }
+
+}
+
+.articleFeature:hover,
+.caseStudies:hover,
+.dribbbleShots:hover{
+    text-decoration: none;
+}
+
+.articleFeature:hover .more .iconArrowRect,
+.caseStudies:hover .more .iconArrowRect{
+    width: 25px;
+    background: $brand;
+}
+
+.articleFeature:hover .more p,
+.caseStudies:hover .more p{
+    color: $brand;
+    }
+
+.articleFeature:hover .more .iconArrowHead,
+.caseStudies:hover .more .iconArrowHead{
+    border: solid $brand;
+    border-width: 0 2px 2px 0;
+}
+
+.articleFeature:hover h3 span,
+.caseStudies:hover h4 span{
+    background-size: 100% 2px !important;
+}  
+
+.articleFeatureImage:hover .overlay,
+.caseStudiesImage:hover .overlay,
+.dribbbleShotsImage:hover .overlay{
+    opacity: .3;
+}
+
+.articleFeature h3,
+.caseStudies h4{
+    margin-bottom: $spacer-3;     
+}
+
+.articleFeature h3 span,
+.caseStudies h4 span{
+    color: $gray-800;
+    font-size: $h0-size;
+    font-weight: $font-weight-extra-bold;
+    line-height: 42px;
+    background-image: linear-gradient(to right,#000000 0%,#000000 100%);
+    background-position: 0 95%;
+    background-size: 0 2px;
+    padding: 0.1% 0;
+    background-repeat: no-repeat;
+    -webkit-transition: background-size 0.25s cubic-bezier(0.785,0.135,0.150,0.860);
+    transition: background-size 0.25s cubic-bezier(0.785,0.135,0.150,0.860);
+
+}   
+
+.articleFeatureImage .overlay,
+.caseStudiesImage .overlay,
+.dribbbleShotsImage .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-image: linear-gradient(217deg, #FFEFBA 0%, #FFFFFF 100%);
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity $transition-time ease-in-out;
+}
+
+
+.articleListContainer{
+
+    .articleFeature{
+
+        cursor: pointer;
+
+        display: flex;
+        margin-bottom: $spacer-9;
+
+        @include breakpoint("md"){  
+            display: block;
+        }  
+
+        .articleFeatureImage{        
+            width: 715px;
+            margin-right: $spacer-5;
+            position: relative;
+            
+
+            &>div:first-child{
+                z-index: 1;
+                min-height: 427px;
+                background: $gray-000;
+                border-radius: 8px;  
+            }
+
+            &:hover .overlay{
+                opacity: .3;
+             }
+
+            @include breakpoint("md"){  
+                margin-right: 0 !important;
+                margin-bottom: $spacer-5 ;
+                width: 100%;
+            }
+        }
+    
+        .articleFeatureContent{
+            width: 500px;
+            @include breakpoint("md"){  
+                width: 100%;
+            }
+
+            .articleFeatureInnerContent{
+                position: relative;
+            }
+
+            .truncate {
+                overflow:hidden;
+                max-height: 8rem;
+                -webkit-box-orient: vertical;
+                display: block;
+                display: -webkit-box;
+                overflow: hidden !important;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 4;
+              }
+            
+            
+            .articleFeatureExcerpt{
+                color: $gray-700;
+                margin-bottom: $spacer-3;     
+            }   
+        }
+
+
+
+    }
+
+    .otherCaseStudies{
+        display: flex;
+        flex-direction: row;
+        flex-flow: row wrap;
+        width: 100%;
+        margin-bottom: $spacer-9;
+        cursor: pointer;
+        @include breakpoint("sm"){  
+            display: block;
+        }
+
+        .caseStudies{
+            width: calc(50% - 18px); 
+            margin-right: $spacer-5;    
+            margin-bottom: $spacer-9;
+            &:nth-child(2n+0){
+                    margin-right: 0 !important;
+            }
+                  
+            @include breakpoint("sm"){  
+                width: 100%;
+                margin-right: 0 !important;
+            }
+        }
+
+        .caseStudiesImage{
+            border-radius: 8px;
+            overflow: hidden;
+            background: $gray-000;
+            margin-bottom: $spacer-5;
+            position: relative;
+        }
+
+        .caseStudiesImage>div:first-child{
+            z-index: 1;
+        }
+
+        h4 span{
+            font-size: $h2-size;
+            margin-bottom: $spacer-4;
+            font-weight: $font-weight-extra-bold;
+            line-height: 32px;        
+        }
+
+    }
+
+    .more{
+
+        overflow: hidden;
+        p{
+            font-weight: $font-weight-bold;
+            text-transform: uppercase;
+            font-size: $h5-size;
+            color: $gray;
+            float: left;
+            -webkit-transition: all 0.25s cubic-bezier(0.785,0.135,0.150,0.860);
+            transition: all 0.25s cubic-bezier(0.785,0.135,0.150,0.860);
+        }
+
+        .iconArrow{
+            float: left;
+            margin-left: $spacer-2;
+            vertical-align: middle;
+            margin-top: 8px;
+        }
+
+        .iconArrowRect{
+            height: 2px;
+            width: 16px;
+            background: $gray-400;
+            float: left;
+            -webkit-transition: all 0.25s cubic-bezier(0.785,0.135,0.150,0.860);
+            transition: all 0.25s cubic-bezier(0.785,0.135,0.150,0.860);
+        }
+
+        .iconArrowHead{
+            border: solid $gray-400;
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 3px;
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            float: left;
+            margin-left: -8px;
+            margin-top: -3px;
+            -webkit-transition: all 0.25s cubic-bezier(0.785,0.135,0.150,0.860);
+            transition: all 0.25s cubic-bezier(0.785,0.135,0.150,0.860);
+        }
+    }  
+
+}
+
+.dribbbleListContainer{
+    h2{
+        margin-bottom: 0 !important;
+    }
+
+    P{
+        color: $gray-800;
+        margin-bottom: $spacer-4 !important;
+    }
+
+    .dribbbleInnerContainer{
+        display: flex;
+        flex-direction: row;
+        flex-flow: row wrap;
+        width: 100%;
+
+
+    
+        .dribbbleShots{
+            width: calc(33.333% - #{$spacer-3});
+            margin-right: $spacer-4;
+            margin-bottom: $spacer-8;
+            cursor: pointer;
+
+            &:nth-child(3n+0){
+                margin-right: 0;
+            }
+    
+            @include breakpoint("md"){  
+                width: calc(50% - #{$spacer-3});     
+                &:nth-child(2n+0){
+                    margin-right: 0 !important;
+                }
+
+                &:nth-child(3n+0){
+                    margin-right: $spacer-4;
+                }
+            }
+
+            @include breakpoint("xs"){       
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+
+
+        .dribbbleShotsImage{
+            position: relative;
+            min-height: 504px;
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: $spacer-2;   
+
+            &>div:first-child{
+                z-index: 1;
+            }
+        }
+
+        p{
+            font-size: $h4-size;
+            font-weight: $font-weight-regular;
+        }
+    }
+}
+
+
+
+
+

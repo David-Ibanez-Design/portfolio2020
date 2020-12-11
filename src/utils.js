@@ -1,6 +1,47 @@
-const Config = require('../config')
-
 const Utils = {
+
+  // setDefaultLang: (contextLang, options = {}) => {
+  //     const defaultOptions = {
+  //       languageCodeOnly: true,
+  //       languageFallback: "ja",
+  //     };
+
+  //     const opt = {
+  //       ...defaultOptions,
+  //       ...options,
+  //     };
+
+  //     if(typeof navigator !== 'undefined'){
+
+  //       const browserLocales =
+  //       navigator.languages === undefined
+  //         ? [navigator.language]
+  //         : navigator.languages;
+      
+  //       if (!browserLocales) { return contextLang === defaultOptions.languageFallback ;}
+
+  //       const browserLocalesArr = []
+
+  //       return browserLocales.map(locale => {
+  //         const trimmedLocale = locale.trim();
+  //         return browserLocalesArr.push(opt.languageCodeOnly ? trimmedLocale.split(/-|_/)[0] : trimmedLocale);
+  //       });
+
+  //       // If the array is empty set the fallback language as the default language
+  //       if(browserLocalesArr.length === 0){
+  //         return contextLang === defaultOptions.languageFallback
+  //       }
+       
+  //       // If the first result it equal to the context lang
+  //       return browserLocalesArr[0] === contextLang
+
+  //     }else{
+  //         return contextLang === defaultOptions.languageFallback
+  //       }
+
+  // },
+
+
   /**
    * Join provided url paths.
    * @param {...string} paths Provided paths. It doesn't matter if they have trailing slash.
@@ -15,6 +56,36 @@ const Utils = {
       return resolvedUrl
     }, '')
   },
+
+  localizedSlug: (isDefault, locale, slug) => {
+    if(isDefault)
+    {return "/"+slug}
+    else
+    {return "/"+locale+"/"+slug}
+  },
+
+  removeTrailingSlash: (path) => {
+   return  path === `/` ? path : path.replace(/\/$/, ``)
+  },
+ 
+  // From lodash:
+  // https://github.com/lodash/lodash/blob/750067f42d3aa5f927604ece2c6df0ff2b2e9d72/findKey.js
+  findKey: (object, predicate) => {
+    let result
+    if (object == null) {
+      return result
+    }
+    Object.keys(object).some(key => {
+      const value = object[key]
+      if (predicate(value, key, object)) {
+        result = key
+        return true
+      }
+      return false
+    })
+    return result
+  },
+
   /**
    * Resolve a page url adding a trailing slash.
    * Needed to prevent 301 redirects cause of Gatsby.js' folder structure.
@@ -26,45 +97,6 @@ const Utils = {
     return resolvedUrl + '/'
   },
 
-
-resolveLangPageUrl: (currentLang, targetPAge, articleTitle="") => {
-    switch (targetPAge){
-      // Homepage
-      case "/" : return currentLang ? "/"+currentLang : targetPAge
-      // About, resume
-      case "about" : return currentLang ? "/"+currentLang+"/"+targetPAge : "/"+targetPAge
-      // Articles
-      case "articles" : return currentLang ? "/"+targetPAge+"/"+currentLang+"/"+articleTitle : "/"+targetPAge+"/"+articleTitle
-      default : break;
-    }
- },
-
-  /**
-   * Pass a post and retrieve a list of related translations.
-   * @param {Object} article The post of which retrieve its translations. It accepts a `node` object from Graphql's query `allMdx`
-   * @param {Object} postList The list of posts where search translations. It accepts a `edges` array from Graphql's query `allMdx`
-   * @return {Object} An array of objects with languages as keys (ISO 639-1) and translated post's paths as values.
-   */
-  getRelatedTranslations: (article, articleList) => {
- 
-    return articleList
-      .filter(({ node }) => {
-        // Get posts in the same folder of provided post
-        return (
-          node.fileAbsolutePath.split('/').slice(-2, -1)[0] ===
-          article.fileAbsolutePath.split('/').slice(-2, -1)[0]
-        )
-      })
-      .map(({ node }) => {
-        
-        let currentLang = node.fileAbsolutePath.split('.').slice(-2, -1)[0]
-      
-        return {
-          hreflang: currentLang.slice(-5) !== 'index' ? currentLang : Config.defaultLanguage,
-          path: Utils.resolvePageUrl(node.frontmatter.path),
-        }
-      })
-  },
   /**
    * Capitalize passed string
    * @param {string} str string to capitalize

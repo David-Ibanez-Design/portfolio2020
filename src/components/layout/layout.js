@@ -1,10 +1,8 @@
 /* Vendor imports */
 import React from 'react'
-import PropTypes from 'prop-types'
-
 /* App imports */
-import Menu from './menu'
-import Footer from './footer'
+import Footer from '../footer'
+import Menu from '../menu'
 /* Base style: makes it available to all components under layout  */
 import "../../styles/base/normalize.scss";
 import "../../styles/base/base.scss";
@@ -14,16 +12,15 @@ import "../../styles/utilities/color.scss";
 import "../../styles/utilities/layout.scss";
 import "../tooltip/tooltip.module.scss";
 
-const Layout = ({children, currentLang }) => (
-  <>
-    <Menu currentLang={currentLang} />
+
+const LocaleContext = React.createContext()
+
+const Layout = ({children, pageContext: { locale, localizedPath, isArt } }) => (
+  <LocaleContext.Provider value={{ locale, localizedPath, isArt }}>
+    <Menu/>
       {children}
-    <Footer currentLang={currentLang}/>
-  </>
+   <Footer/>
+  </LocaleContext.Provider>
 )
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export default Layout
+export {Layout, LocaleContext}

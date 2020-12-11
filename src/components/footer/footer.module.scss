@@ -1,0 +1,158 @@
+
+.container {
+    padding: $spacer-8 0 $spacer-9 0;
+    background: $gray-700;
+    text-align: right;
+    box-shadow: 0px -4px 0 0 $brand-400;
+}
+
+.innerContainer {
+    @include container-lg;
+    text-align: left;
+    color: $white;
+
+    @include breakpoint("sm"){
+        padding: 0 $spacer-8;
+    }
+
+    .menusContainer{
+        display: flex;
+        flex-wrap: wrap;
+        padding: $spacer-5 0 $spacer-7 0;
+    }
+
+    .contactInfo{
+        flex-basis: 0;
+        flex-grow: 999;
+
+        @include breakpoint("sm"){
+            flex-basis: 100%;    
+            margin-bottom: $spacer-8; 
+        }
+    }
+
+    .socialsContainer{
+        border-top: 1px solid $gray;
+        padding-top: $spacer-5;
+        overflow: hidden;
+    }
+
+    .menu{
+        flex-basis: 142px;
+        flex-grow: 1;
+
+        @include breakpoint("sm"){
+            max-width: 300px;
+            flex-grow: none;        
+            padding-right: $spacer-5; 
+        }
+    }
+
+    h6{
+        color: $gray-400;
+        font-weight: normal;
+        text-transform: uppercase;
+    }
+
+    h1{
+        font-size: $h00-size;
+        margin-bottom: $spacer-1;
+        text-transform: uppercase;
+    }
+
+    .outro{
+        color: $gray-100;
+        font-size: $h4-size;
+        padding-bottom: $spacer-4;
+        padding-right: 24px;
+        color: $gray-300;
+        max-width: $width-sm;
+        word-break: break-word;
+        @include breakpoint("sm"){
+            max-width: 100%;
+            padding-right: 0;
+        }
+    }
+
+    .legals{
+        float: right;
+        @include breakpoint("sm"){
+            float: left; 
+        }
+        color: $gray-300;
+        font-size: 12px;
+    }
+
+    .socialsMobileContainer{
+
+        display: none;
+
+
+        @include breakpoint("sm"){
+            display: block;    
+        }
+
+        li{
+            margin-bottom: $spacer-1;
+        }
+
+        a{
+            font-size: 16px;
+            color: $gray-300;
+            text-decoration: none;
+            transition: all $transition-time ease-in-out;
+
+            &:hover{
+                color: $white;
+            }
+        }
+  
+    }
+
+    .socials{
+       float: left;
+       font-size: 12px;
+
+       @include breakpoint("sm"){
+        display: none;     
+       }
+
+        li:first-child{
+            margin-right: $spacer-3;
+            
+        }
+
+        li{
+            display: flex;
+            list-style: none;
+            float: left;
+            cursor: pointer;
+            margin-right: 5px;
+
+            svg{
+                color: $gray-300;
+                margin-top: 1px;
+                transition: all $transition-time ease-in-out;
+            }
+
+            a{
+                color: $gray-300;
+                margin-left: $spacer-1;
+                text-decoration: none;
+                transition: all $transition-time ease-in-out;
+
+            }
+
+            &:hover a{
+                color: $white;
+            }
+
+            &:hover svg{
+                fill: $white;
+            }
+        }
+
+
+    }
+}
+

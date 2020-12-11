@@ -1,1 +1,1 @@
-export { default } from './layout'
+export {Layout, LocaleContext} from './layout'

@@ -2,19 +2,16 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 /* App imports */
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+// import SEO from '../components/seo'
 import ArticleHeading from './article-heading'
 import ArticleContent from './article-content'
 import SuggestedArticles from './suggested-articles'
 import style from './article.module.scss'
-import Config from '../../config'
 
-const Post = ({ data, pageContext }) => {
+const Post = ({ data }) => {
 
   const { body, frontmatter } = data.articleContent
-  const { title, tags, path, coverArticle, imagesMd, imagesLg, imagesXl, imagesXXl  } = frontmatter
-  const translations = pageContext.translations.length > 1 ? pageContext.translations : null
+  const { title, tags, coverArticle, imagesMd, imagesLg, imagesXl, imagesXXl  } = frontmatter
   const imgArticle = coverArticle.childImageSharp.fluid
   const suggestedArticles= []
   suggestedArticles.push({ node: data.suggestedArticles })
@@ -63,20 +60,17 @@ const Post = ({ data, pageContext }) => {
         return images;
       }, {});
 
-  // Set lang based on the current path. Couldn't not figure out a bette way
-  if(path.includes(Config.translatedLanguage)){var currentLang = Config.translatedLanguage;}
-
   return (
-    <Layout currentLang={currentLang}>
-      <SEO
+    <>
+      {/* <SEO
         title={title}
         path={path}
         description={title}
         contentType="article"
         imageUrl={imgArticle.src}
         keywords={tags}
-        translations={translations}
-      />
+        // translations={translations}
+      /> */}
       <div className={style.container}>
         <ArticleHeading title={title} tags={tags} imgArticle={imgArticle} />
         <div className={style.content}>
@@ -88,21 +82,22 @@ const Post = ({ data, pageContext }) => {
             imageXXl={imagesByNameXXl}
           />
         </div>
-        <SuggestedArticles 
-          currentLang={currentLang} 
+         <SuggestedArticles 
           articles={suggestedArticles} 
         />
       </div>
-    </Layout>
+    </>
   )
 }
 
 export const pageQuery = graphql`
 
-  query($postPath: String!, $nextArt: Int) {
-    articleContent: mdx(frontmatter: { path: { eq: $postPath } }) {
+  query($locale: String!, $title: String!, $nextArt: Int) {
+    articleContent: mdx(
+        frontmatter: { title: { eq: $title } }
+        fields: { locale: { eq: $locale } }
+      ) {
       body
-      timeToRead
       frontmatter {
         title
         tags
@@ -127,10 +122,7 @@ export const pageQuery = graphql`
         imagesMd {
           name,
           childImageSharp {
-            fluid(
-              maxWidth: 1035,
-              quality: 100
-              ) {
+            fluid(maxWidth: 1035,quality: 100) {
               ...GatsbyImageSharpFluid_withWebp
               ...GatsbyImageSharpFluidLimitPresentationSize
             }
@@ -139,11 +131,7 @@ export const pageQuery = graphql`
         imagesLg {
           name,
           childImageSharp {
-            fluid(
-              maxWidth: 1280,
-              quality: 100,
-              srcSetBreakpoints: [1035, 1280, 1500]
-              ) {
+            fluid(maxWidth: 1280, quality: 100,srcSetBreakpoints: [1035, 1280, 1500]) {
               ...GatsbyImageSharpFluid_withWebp
               ...GatsbyImageSharpFluidLimitPresentationSize
             }
@@ -152,10 +140,7 @@ export const pageQuery = graphql`
         imagesXl {
           name,
           childImageSharp {
-            fluid(
-              maxWidth: 1500,
-              quality: 100,
-              srcSetBreakpoints: [1035, 1280, 1500]
+            fluid( maxWidth: 1500, quality: 100, srcSetBreakpoints: [1035, 1280, 1500]
               ) {
               ...GatsbyImageSharpFluid_withWebp
               ...GatsbyImageSharpFluidLimitPresentationSize
@@ -166,9 +151,7 @@ export const pageQuery = graphql`
           name,
           childImageSharp {
             fluid(
-              maxWidth: 2560,
-              quality: 100,
-              srcSetBreakpoints: [1035, 1280, 1500]
+              maxWidth: 2560, quality: 100, srcSetBreakpoints: [1035, 1280, 1500]
               ) {
               ...GatsbyImageSharpFluid_withWebp
               ...GatsbyImageSharpFluidLimitPresentationSize
@@ -178,8 +161,16 @@ export const pageQuery = graphql`
         
       }
     }
-    suggestedArticles :mdx(frontmatter: { order: { eq: $nextArt } })
+    suggestedArticles :mdx(
+      frontmatter: { order: { eq: $nextArt }}
+      fields: { locale: { eq: $locale }}
+      )
         {
+        parent {
+          ... on File {
+            relativeDirectory
+          }
+        }
         frontmatter {
           path
           title
@@ -210,7 +201,6 @@ export const pageQuery = graphql`
             }
           }
         }
-
     }
   }
 `
