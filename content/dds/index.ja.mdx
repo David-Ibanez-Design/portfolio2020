@@ -76,7 +76,7 @@ I first needed to evaluate the current product to understand of the needs of the
 To that end, I went through the entire product interface and took screenshots of menus, buttons, and modals. I created a Google spreadsheet where I grouped each component into categories and gave each one a name.
 </p>
 
-<Images name={props.md["inventory-spreadsheet"]}/>
+<Images name={props.images.md["inventory-spreadsheet"]}/>
 
 <p>
 Viewing all the components side by side confirmed why we needed a redesign. There were 130 different colors, 56 different shades of greys, 22 different font sizes and 4 completely different variants of search fields. 
@@ -90,23 +90,9 @@ It became clear that what we needed was a well organized, collaborative design s
     containerType="full" 
     className="bg-gray-0" 
     containerWidth="Xl"
-    name={props.xl["v1-duplicate-styles"]}
+    name={props.images.xl["v1-duplicate-styles"]}
     captions="The current product audit revealed many inconsistencies."
 />
-
-
-
-
-<!-- #### Problem Statement
-## The audit revealed that the product had many inconsistencies, which made the tool hard to use and navigate for users.
-
-<p>
-The audit revealed that the product had many inconsistencies, which made the tool hard to use and navigate for users.
-</p> -->
-
-<!---
-<Images name={props.md["v1-long-list"]}/>
---->
 
 #### Design Principles
 ## Agreeing on what kind of product experience we wanted to deliver to our users helped us stay on track when making difficult decisions.
@@ -147,15 +133,15 @@ After a few discussions, we came up with the following four principles.
 Once we had an idea of what kind of product experience we wanted to deliver, I could now iterate on a few potential design directions for the main screens of the application. 
 </p>
 
-<Images name={props.md["visual-direction-01"]} captions="An early version of the new table design."/>
+<Images name={props.images.md["visual-direction-01"]} captions="An early version of the new table design."/>
 
-<Images name={props.md["visual-direction-02"]} captions="A variation on the web tracking page."/>
+<Images name={props.images.md["visual-direction-02"]} captions="A variation on the web tracking page."/>
 
 <p>
 After a few rounds of feedbacks, the team and I ultimately selected one final style. 
 </p>
 
-<Images name={props.md["visual-direction-final-01"]} captions="The final design style." className="mt-0"/>
+<Images name={props.images.md["visual-direction-final-01"]} captions="The final design style." className="mt-0"/>
 
 
 #### Building The Design System Structure
@@ -177,7 +163,7 @@ Since one of the goals of the design system was to create a shared understanding
 After a few backs and forths, we came up with the following organization. 
 </p>
 
-<Images bg="gray-0" name={props.md["master-file-1"]} captions="The design system structure."/>
+<Images bg="gray-0" name={props.images.md["master-file-1"]} captions="The design system structure."/>
 
 
 #### Designing The Components
@@ -191,23 +177,21 @@ Once the design sytem structure was defined, I got to work converting the UI ele
 To keep changes isolated and performance high, each UI element was created <a href="https://www.sketch.com/docs/libraries/" target="_blank" rel="noreferrer">as a single Sketch library.</a> This organization, however, made it difficult to quickly navigate through the entire set, so to address this issue, I also created a master file that acted as an entry point or an overview.
 </p>
 
-<Images name={props.md["Components-1"]} captions="The design system is organized into 4 main categories."/>
+<Images name={props.images.md["Components-1"]} captions="The design system is organized into 4 main categories."/>
 
 <p>
 One of the ways I could fulfill my goal of improving efficiency was to reduce guesswork as much as possible when adding or modifying a component. To that end, I created <a href="https://comvex-jp.github.io/unison-design-system/getting-started/for-designers" target="_blank" rel="noreferrer">a set of templates, rules, and conventions</a>, describing how a component library should be built and maintained. 
 </p>
 
-<Images name={props.md["master-file-2"]} className="mt-5" captions="The master file act as a entry point to the design system to help designers quickly navigate through the entire set of compoenents."/>
+<Images name={props.images.md["master-file-2"]} className="mt-5" captions="The master file act as a entry point to the design system to help designers quickly navigate through the entire set of compoenents."/>
 
-<Images name={props.md["template-rules"]} captions="To keep the system consitent and easy to use, components states have their own symbols."/>
-
-
+<Images name={props.images.md["template-rules"]} captions="To keep the system consitent and easy to use, components states have their own symbols."/>
 
 <Images 
     className="bg-gray-0 p-0" 
     containerType="full" 
     containerWidth="Xl"
-    name={props.xl["Components"]}
+    name={props.images.xl["Components"]}
     captions="A small sample of the system's components."
 />
 
@@ -223,20 +207,20 @@ To forge a shared understanding of the system between designer and developer and
 To help designers quickly move between the design files and the documentation, I decided to mirror the navigation, structure, and terminology in the Sketch files and the documentation. We also added a link to the component documentation in the sketch files themselves and a link to the sketch library in the related documentation article.
 </p>
 
-<Images name={props.md["documentation-site"]} captions="The documentation site include a directly link to the design file."/>
+<Images name={props.images.md["documentation-site"]} captions="The documentation site include a directly link to the design file."/>
 
 <p>
 Developers could quickly inspect any component by simply clicking on its preview right from the documentation site itself.
 </p>
 
-<Images name={props.md["invision-inspect"]} className="mt-5"/>
+<Images name={props.images.md["invision-inspect"]} className="mt-5"/>
 
 <p>
 When available, I also made sure to display the react version of a component as well as provide code snippets for it.
 </p>
 
 <div className={`${props.style.containedMd} ${props.style.imageWrapper} mt-5`}>
-     <Img fluid={props.md["live-compoenents"].fluid} alt="Image for the end of article test"/>
+     <Img fluid={props.images.md["live-compoenents"].fluid} alt="Image for the end of article test"/>
     <video className={props.style.videoOverlay} muted autoplay loop>
         <source src="images/vid-test4.mp4" type="video/mp4" />
         Your browser does not support the video tag.
@@ -261,22 +245,20 @@ However, these efforts paid off:
     <li><strong>For the business</strong>, the productivity gains we’ve seen in new feature development have more than justified the investments we made in adopting the system.</li>
 </ul>
 
-
-
 <ImageSlider 
-    beforeKey={props.md["before-profile-before"]} 
-    afterKey={props.md["before-profile-after"]} 
+    beforeKey={props.images.md["before-profile-before"]} 
+    afterKey={props.images.md["before-profile-after"]} 
     captions="Before and after versions of the contact profille page."
 />
 
 <ImageSlider 
-    beforeKey={props.md["before-table-before"]} 
-    afterKey={props.md["before-table-after"]} 
+    beforeKey={props.images.md["before-table-before"]} 
+    afterKey={props.images.md["before-table-after"]} 
     captions="Before and after versions of the contact table page."
 />
 
 <ImageSlider 
-    beforeKey={props.md["before-dashbaord-before"]} 
-    afterKey={props.md["before-dashbaord-after"]} 
+    beforeKey={props.images.md["before-dashbaord-before"]} 
+    afterKey={props.images.md["before-dashbaord-after"]} 
     captions="Before and after versions of the dashbaord page."
 />

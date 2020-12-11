@@ -20,26 +20,17 @@ const components = {
 
 const target = React.createRef();
 
-const ArticleContent = ({body, imageMd, imageLg, imageXl, imageXXl}) => (
-
+const ArticleContent = ({body, imagesObj}) => (
   <div className={style.container}>
      <article ref={target}>
-     
         <MDXProvider components={components}>
-          <MDXRenderer 
-            style={style}
-            md={imageMd}
-            lg={imageLg}
-            xl={imageXl}   
-            xxl={imageXXl} 
-          >{body}</MDXRenderer>
+          <MDXRenderer style={style} images={imagesObj}>
+            {body}
+          </MDXRenderer>
         </MDXProvider>
         <ScrollTop/>
-     </article>
-     
+     </article> 
   </div>
-
-
 )
 
 ArticleContent.propTypes = {

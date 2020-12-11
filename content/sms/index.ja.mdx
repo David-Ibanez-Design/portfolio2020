@@ -102,7 +102,7 @@ Because of the scale and complexity of the project, one of the most important ea
     containerType="full" 
     containerWidth="Xl" 
     captions="Building a user flow was instrumental in developping a shared understanding of the overall feature functionalites and challanges."
-    name={props.xl["full-User-flow"]}
+    name={props.images.xl["full-User-flow"]}
 />
 
 
@@ -121,15 +121,6 @@ Once I felt that the team and I had answered as many questions as we could with 
 I created a series of wireframes, focusing first on the screens that were identified as being the most challenging ones. The goal was to spend most of my time iterating on these, knowing that screens displaying tables for instance could be easily designed by <Link to={"/articles/design-system"}>reusing existing elements from our design system.</Link>
 </p>
 
-<!---
-<Images 
-    className="bg-gray-0 nb-0"
-    containerType="full" 
-    containerWidth="Xl" 
-    name={props.xl["full-Wireframes"]}
-/>
---->
-
 <p>
 One example of a challenging screen was the SMS creation screen. Because of the 3rd party API restrictions, it was crucial to make sure that users understood that the recipient(s) of the SMS will receive 4 separate SMS on their devices and that therefore, they should write their SMS messages accordingly. 
 </p>
@@ -138,7 +129,7 @@ One example of a challenging screen was the SMS creation screen. Because of the 
     className="bg-white-0"
     containerType="full" 
     containerWidth="Xl"
-    name={[props.md["centered-Creation-screen-iteration-1"], props.md["centered-Creation-screen-iteration-2"], props.md["centered-Creation-screen-iteration-3"]]}
+    name={[props.images.md["centered-Creation-screen-iteration-1"], props.images.md["centered-Creation-screen-iteration-2"], props.images.md["centered-Creation-screen-iteration-3"]]}
 />
 
 <p>
@@ -146,7 +137,7 @@ After a few iterations, I settled on a 2 column-style layout with one column dis
 </p>
 
 
-<Images name={props.md["wireframe-creation-screen"]} captions="The final wireframe version for the SMS creation screen."/>
+<Images name={props.images.md["wireframe-creation-screen"]} captions="The final wireframe version for the SMS creation screen."/>
 
 
 #### High Fidelity Mockup
@@ -165,19 +156,17 @@ When existing patterns could not be used, I documented new UI components in our 
 </p>
 
 
-<Images name={props.md["centered-documentation"] } captions="Documented new UI components in our dedicated site, helped imporve implementation time by reducing guesswork."/>
+<Images name={props.images.md["centered-documentation"] } captions="Documented new UI components in our dedicated site, helped imporve implementation time by reducing guesswork."/>
 
-<Images name={props.md["full-Final-design-01"]} captions="The final version of the SMS creation screen."/>
-<Images name={props.md["full-Final-design-02"]} captions="The final version of the SMS chat list screen."/>
-
-<!---<Images name={props.md["full-Final-design-03"]}/>--->
+<Images name={props.images.md["full-Final-design-01"]} captions="The final version of the SMS creation screen."/>
+<Images name={props.images.md["full-Final-design-02"]} captions="The final version of the SMS chat list screen."/>
 
 <p>
 Once screens for the most important scenarios were designed, an invision prototype was created and shared with the team. The prototype helped the team understand how the final version of the design will look and behave as a whole.
 </p>
 
 
-<Images containerWidth="XXl" name={props.xxl["centered-Prototype-2"]}/>
+<Images containerWidth="XXl" name={props.images.xxl["centered-Prototype-2"]}/>
 
 
 ## Conclusion
@@ -192,4 +181,3 @@ This could have led to significant project delays if the information we had turn
 <p>
 As a designer sometimes I had a tendency to start by designing solutions to problems I knew could be solved with little effort because it gives me a sense of progression early on. This project, however, showed me that starting by focusing on the most challenging problems first, ultimately made for a better and more efficient design process because I didn’t have to constantly re-think my solutions as I was discovering additional challenges along the way.
 </p>
-

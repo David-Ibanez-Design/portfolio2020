@@ -74,7 +74,7 @@ After a while, the profile page became cluttered and we were starting to run out
 </p>
 
 
-<Images name={props.md["exsiting-UX-issues"]} captions="A few examples of the exsitig page issues."/>
+<Images name={props.images.md["exsiting-UX-issues"]} captions="A few examples of the exsitig page issues."/>
 
 <p>
 Not only that was inconvenient to our users, but it was also slowing our development cycle down because we had to figure out where to place these new elements on the page and how to promote discovery for each of them.
@@ -84,7 +84,7 @@ Not only that was inconvenient to our users, but it was also slowing our develop
 Our users noticed these issues as well, and over the lifetime of the page, we saw an increase of support tickets and feedbacks asking how to perform certain tasks, where a specific feature was located on the page, as well as requests for improvement.  
 </p>
 
-<Images name={props.md["exsiting-customer-feedbacks"]} captions="Customer feedbacks also highlighted the need for imporvements"/>
+<Images name={props.images.md["exsiting-customer-feedbacks"]} captions="Customer feedbacks also highlighted the need for imporvements"/>
 </section>
 
 <section id="constrains" data-title="Constraints and Challenges">
@@ -103,7 +103,7 @@ From the beginning, one thing was clear, redesigning the contact profile page wo
     <li>The redesign will inevitably be a long process.</li>
 </ul>
 
-<Images name={props.md["exsiting-google-analytics"]} captions="Google Analytics's data clearly underscore the importance of the contact profile page for our users."/>
+<Images name={props.images.md["exsiting-google-analytics"]} captions="Google Analytics's data clearly underscore the importance of the contact profile page for our users."/>
 </section>
 
 <section id="research" data-title="User Research">
@@ -124,7 +124,7 @@ I consolided my findings into a Google spreadsheet making sure to categorize eac
     <li>Bugs. </li>
 </ul>
 
-<Images name={props.md["exsiting-customer-feedback-spreadsheet"]} captions="Collecting and categorizing all reported issues into a single document helped me find commum solutions for similar issues"/>
+<Images name={props.images.md["exsiting-customer-feedback-spreadsheet"]} captions="Collecting and categorizing all reported issues into a single document helped me find commum solutions for similar issues"/>
 </section>
 
 <section id="objectives" data-title="Redesign Objectives">
@@ -168,7 +168,7 @@ I manage to do that by listing and then laying out the main UI elements of the p
 </p>
 
 
-<Images name={props.md["exsiting-sections-break-down"]} captions="Listing each UI element of the page by order of importance allowed me to undestand their overall hierarchical value."/>
+<Images name={props.images.md["exsiting-sections-break-down"]} captions="Listing each UI element of the page by order of importance allowed me to undestand their overall hierarchical value."/>
 
 
 <p>
@@ -182,7 +182,7 @@ One of the critical goals of that redesign was to reduce the time users were spe
 
 <Images 
     containerWidth="Lg"
-    name={props.md["new-layout"]}
+    name={props.images.md["new-layout"]}
     captions="Switching to a 3 columns layout significantly increasing the amount of information that was visible above the fold"
 />
 
@@ -194,7 +194,7 @@ However since displaying too much information could be overwhelming to users, el
     containerType="full"
     className="bg-gray-0" 
     containerWidth="Lg"
-    name={[props.lg["new-layout-hierarchy-1"], props.lg["new-layout-hierarchy-2"]]}
+    name={[props.images.lg["new-layout-hierarchy-1"], props.images.lg["new-layout-hierarchy-2"]]}
 />
 
 <p>
@@ -206,7 +206,7 @@ Based on the new 3 columns layout, I created a wireframe that I shared with a fe
     className="bg-gray-0" 
     containerWidth="Lg"
     captions="2 column to 3 column layout."
-    name={[props.lg["new-sketches-wireframes-1"], props.lg["new-sketches-wireframes-2"]]}
+    name={[props.images.lg["new-sketches-wireframes-1"], props.images.lg["new-sketches-wireframes-2"]]}
 />
 </section>
 <section id="prototyping" data-title="Prototyping">
@@ -250,7 +250,7 @@ One of the challenges was to efficiently communicate to the frontend team how ea
 To facilitate implementation, I broke each element into components that I then documented <Link to={"/articles/design-system"}>in our existing design system documentation website.</Link>
 </p>
 
-<Images name={props.md["dds-components"]} captions="Each page element were documentaed in our dedicated deisgn system documentation website."/>
+<Images name={props.images.md["dds-components"]} captions="Each page element were documentaed in our dedicated deisgn system documentation website."/>
 
  In addition to the HTML prototype created earlier, an invision prototype was also created to give the frontend team a sense of how the final version of the design will look and behave as a whole.
 </section>
@@ -268,7 +268,7 @@ At this point, the redesign was ready to be implemented. However, since one of t
 This methodology kept the redesign integration going while having minimal impact on higher priority tasks like bug fixes or new features development.
 </p>
 
-<Images name={props.md["youtrack-tasks"]} captions="Each elements of the redesign were broken down into user story and spreadout into multiple sprints."/>
+<Images name={props.images.md["youtrack-tasks"]} captions="Each elements of the redesign were broken down into user story and spreadout into multiple sprints."/>
 
 <p>
 Because the page was the most used page of the whole application, an other essential redesign goal was to minimize disruption to users’ daily work. This meant that we couldn't just “flip the switch” and replace the current design by the new one. We needed a way to progressively expose users to the new design while keeping an eye on their feedbacks to fix any remaining bugs and usabilty issues.  
@@ -283,7 +283,7 @@ Therefore, in collaboration with the product manager, we decided to organize the
     <li><strong>The beta phase</strong>, during which users were automatically switched to the new design with the possibility to revert to the old profile via an opt-out option.</li>
 </ul>
 
-<Images name={props.md["release-schedule"]} captions="Progressivly exposing users to the new design allow us to minimize disruption to their daily work."/>
+<Images name={props.images.md["release-schedule"]} captions="Progressivly exposing users to the new design allow us to minimize disruption to their daily work."/>
 
 <p>
 After a few weeks of feedback and bug fixes, we entered the final two weeks of the process, where we warned users that the new profile design would be the default version with no possibility to revert to the old one. Two months after the start of the beta phase, all users were successfully switched to the new profiled design.
@@ -313,8 +313,8 @@ Getting the stakeholder’s buy-in to move forward with this type of redesign pr
 
 
 
-<ImageSlider beforeKey={props.md["final-version-1"]} afterKey={props.md["final-version-2"]} captions="Before and after versions of the contact profile page."/>
+<ImageSlider beforeKey={props.images.md["final-version-1"]} afterKey={props.images.md["final-version-2"]} captions="Before and after versions of the contact profile page."/>
 
-<Images name={props.md["final-version-3"]} captions="Responsive versions of the new profile design."/>
+<Images name={props.images.md["final-version-3"]} captions="Responsive versions of the new profile design."/>
 </section>
 </div>

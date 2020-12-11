@@ -144,20 +144,18 @@ export default function MyStaticQuery(props) {
                     }
                   }
                   frontmatter {
-                    path
-                    title
-                    tags
+                    ...articleFields
                     order
                     menuVignettes {
                       childImageSharp {
-                        fluid(maxWidth: 174, quality: 100) {
+                        fluid(maxWidth: 174) {
                           ...GatsbyImageSharpFluid_withWebp
                         }
                       }
                     }
                     mobileVignettes {
                       childImageSharp {
-                        fluid(maxWidth: 260, quality: 100) {
+                        fluid(maxWidth: 260) {
                           ...GatsbyImageSharpFluid_withWebp
                         }
                       }
@@ -174,18 +172,6 @@ export default function MyStaticQuery(props) {
   
     }
 
-
-MenuItems.propTypes = {
-    data: PropTypes.shape({
-      allMdx: PropTypes.shape({
-        edges: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
-      }).isRequired,
-    }).isRequired,
-    isMobile: PropTypes.bool,
-    withWork: PropTypes.bool
-}
-
-  
 MenuItems.defaultProps = {
     isMobile: false,
     withWork: true
