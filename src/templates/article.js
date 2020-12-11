@@ -122,10 +122,7 @@ export const pageQuery = graphql`
         imagesMd {
           name,
           childImageSharp {
-            fluid(
-              maxWidth: 1035,
-              quality: 100
-              ) {
+            fluid(maxWidth: 1035,quality: 100) {
               ...GatsbyImageSharpFluid_withWebp
               ...GatsbyImageSharpFluidLimitPresentationSize
             }
@@ -134,11 +131,7 @@ export const pageQuery = graphql`
         imagesLg {
           name,
           childImageSharp {
-            fluid(
-              maxWidth: 1280,
-              quality: 100,
-              srcSetBreakpoints: [1035, 1280, 1500]
-              ) {
+            fluid(maxWidth: 1280, quality: 100,srcSetBreakpoints: [1035, 1280, 1500]) {
               ...GatsbyImageSharpFluid_withWebp
               ...GatsbyImageSharpFluidLimitPresentationSize
             }
@@ -147,10 +140,7 @@ export const pageQuery = graphql`
         imagesXl {
           name,
           childImageSharp {
-            fluid(
-              maxWidth: 1500,
-              quality: 100,
-              srcSetBreakpoints: [1035, 1280, 1500]
+            fluid( maxWidth: 1500, quality: 100, srcSetBreakpoints: [1035, 1280, 1500]
               ) {
               ...GatsbyImageSharpFluid_withWebp
               ...GatsbyImageSharpFluidLimitPresentationSize
@@ -161,9 +151,7 @@ export const pageQuery = graphql`
           name,
           childImageSharp {
             fluid(
-              maxWidth: 2560,
-              quality: 100,
-              srcSetBreakpoints: [1035, 1280, 1500]
+              maxWidth: 2560, quality: 100, srcSetBreakpoints: [1035, 1280, 1500]
               ) {
               ...GatsbyImageSharpFluid_withWebp
               ...GatsbyImageSharpFluidLimitPresentationSize
