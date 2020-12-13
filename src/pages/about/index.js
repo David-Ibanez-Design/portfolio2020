@@ -21,10 +21,7 @@ const About = ({data}) => {
   const t = useTranslations()
   return (
     <>
-        <SEO
-          title={t.about.seoTitle}
-          description={t.about.seoDescription}
-          path={localizedPath}
+        <SEO title={t.about.seoTitle} description={t.about.seoDescription} path={localizedPath}
         />
         <div className={style.container}>
           <div className="container-md mt-13">

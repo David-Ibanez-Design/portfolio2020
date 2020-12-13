@@ -14,12 +14,13 @@ import Tooltip from "../components/tooltip";
 import HeroBg from '../images/icons/heroBackground'
 import LocalizedLink from '../components/localizedLink'
 import useTranslations from "../components/useTranslations"
-
+import { LocaleContext } from "../components/layout"
 
 const Homepage = ({data}) => {
 
 
   const t = useTranslations()
+  const { localizedPath } = React.useContext(LocaleContext)
   const hasWindow = (typeof window !== 'undefined') ? true : false;
   const getWidth = () => hasWindow ? window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth : null;
   
@@ -73,7 +74,7 @@ const Homepage = ({data}) => {
 
   return(
     <>
-      <SEO title="Home" description={t.home.description} path="" />
+      <SEO title={t.home.seoTitle} description={t.home.description} path={localizedPath} />
       <div className={style.heroContainer}>
         <div className={`${style.heroInnerContainer}  ${style.container}`}>
           <div className={style.intro}>

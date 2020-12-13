@@ -43,9 +43,7 @@ const Post = ({ data }) => {
         path={localizedPath}
         description={title}
         contentType="article"
-        imageUrl={coverArticle.childImageSharp.src}
         keywords={tags}
-        // translations={translations}
       />
       <div className={style.container}>
         <ArticleHeading title={title} tags={tags} imgArticle={coverArticle.childImageSharp.fluid} />
