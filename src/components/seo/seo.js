@@ -6,12 +6,13 @@ import { StaticQuery, graphql } from 'gatsby'
 /* App imports */
 import Config from '../../../config'
 import Utils from '../../utils'
+import { locale } from "../layout"
 
 function SEO({
   title,
   description,
   path,
-  currentLang,
+  locale,
   keywords,
   contentType,
   imageUrl,
@@ -52,15 +53,7 @@ function SEO({
                 { property: 'og:image', content: metaImageUrl },
                 { property: 'og:image:alt', content: description },
                 { property: 'og:site_name', content: Config.siteTitle },
-                { property: 'og:locale', content: currentLang || 'en_US' },
-                /* Twitter card */
-                { name: 'twitter:card', content: 'summary_large_image' },
-                { name: 'twitter:title', content: title },
-                { name: 'twitter:description', content: description },
-                { name: 'twitter:image', content: metaImageUrl },
-                { name: 'twitter:image:alt', content: description },
-                { name: 'twitter:site', content: Config.author },
-                { name: 'twitter:creator', content: Config.author },
+                { property: 'og:locale', content: locale || 'en_US' }
               ]
                 .concat(metaKeywords) // Keywords
                 .concat(meta || []) // Other provided metadata
@@ -83,7 +76,7 @@ function SEO({
                   : []
               )}
           >  
-            <html lang={currentLang || 'en'} />
+            <html lang={locale || 'en'} />
           </Helmet>
         )
       }}

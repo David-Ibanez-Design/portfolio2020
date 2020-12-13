@@ -31,6 +31,11 @@ const query = graphql`
         node {
           name
           translations: childTranslationsJson {
+            site{
+              title
+              description
+              author
+            }
             menu{
               menu
               home
@@ -45,6 +50,8 @@ const query = graphql`
             }
             home{
               title
+              seoTitle
+              seoDescription           
               heroText
               caseStudies
               viewCaseStudy
@@ -57,6 +64,8 @@ const query = graphql`
             }
             about{
               title
+              seoTitle
+              seoDescription
               subtitle
               textPart1
               link

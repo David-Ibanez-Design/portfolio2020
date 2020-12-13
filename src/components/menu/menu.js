@@ -11,7 +11,6 @@ import LocalizedLink from '../localizedLink'
 import useTranslations from "../useTranslations"
 import { LocaleContext } from "../layout"
 import MenuItems from "./menu-items"
-import ReactTooltip from "react-tooltip";
 
 const Header = () => {
 

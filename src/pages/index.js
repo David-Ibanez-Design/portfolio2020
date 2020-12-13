@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import { FaDribbble, FaLinkedin } from 'react-icons/fa'
 /* App imports */
 import Img from 'gatsby-image'
-// import SEO from '../components/seo'
+import SEO from '../components/seo'
 import TagList from '../components/tag-list'
 import Config from '../../config'
 import style from './homepage.module.scss'
@@ -73,7 +73,7 @@ const Homepage = ({data}) => {
 
   return(
     <>
-      {/* <SEO title="Home" description={Config.siteDescription} path="" /> */}
+      <SEO title="Home" description={t.home.description} path="" />
       <div className={style.heroContainer}>
         <div className={`${style.heroInnerContainer}  ${style.container}`}>
           <div className={style.intro}>
