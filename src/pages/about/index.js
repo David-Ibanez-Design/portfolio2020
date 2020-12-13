@@ -73,16 +73,6 @@ const About = ({data}) => {
 }
 
 export const pageQuery = graphql`
-     {
-      profilePhoto: file(name: { eq: "about-placeholder" }) {
-         childImageSharp {
-           fluid(maxWidth: 1035, quality: 100) {
-             ...GatsbyImageSharpFluid_withWebp,
-             ...GatsbyImageSharpFluidLimitPresentationSize
-           }
-         }
-       }
-
-    }
+     {profilePhoto: file(name: { eq: "about-placeholder" }) {...imageMedium}}
 `
 export default About

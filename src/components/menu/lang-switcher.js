@@ -25,27 +25,25 @@ const LangSwitcher = ({toggleMenu, isMobile }) => {
   return (
         <ul> 
           {/* Japanese */}
-          <li>
+          <li data-tip data-for="tooltipMenuJpLang" >
             <JapaneseFlag className={style.japaneseFlag}/>
             <Link 
               onClick={ isMobile ? toggleMenu : null}
-              data-tip data-for="tooltipMenuJpLang" 
               className={locale === "ja" ? style.active : null} 
               to={switchLangTo("ja")}
               >
               {t.menu.japanese}
             </Link>
             {locale !== "ja" ? (
-              <Tooltip targetId="tooltipMenuJpLang" >{t.menu.switchTo}</Tooltip>
+              <Tooltip place="top" targetId="tooltipMenuJpLang" >{t.menu.switchTo}</Tooltip>
             ) : null}
           </li>
 
           {/* English */}
-          <li>
+          <li data-tip data-for="switchToEnglish" >
             <AmericanFlag/>
               <Link 
-                onClick={ isMobile ? toggleMenu : null} 
-                data-tip data-for="switchToEnglish" 
+                onClick={ isMobile ? toggleMenu : null}    
                 className={locale === "en" ?  style.active : null} 
                 to={switchLangTo("en")}
               >               

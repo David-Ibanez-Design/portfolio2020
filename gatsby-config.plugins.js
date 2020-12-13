@@ -3,7 +3,12 @@ const config = require('./config')
 module.exports = [
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaultQuality: 100
+      },
+    },
     {
       resolve: 'gatsby-plugin-sass',
       options: {

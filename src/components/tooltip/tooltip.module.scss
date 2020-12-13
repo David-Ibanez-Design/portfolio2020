@@ -6,6 +6,7 @@ $tooltip-theme: $brand;
     border-radius: $border-radius !important;
     padding: $spacer-1 $spacer-2 !important;
 
+
     &.hidePointer{
         &:after, &:before{
             display: none !important;
@@ -14,11 +15,21 @@ $tooltip-theme: $brand;
 
 }
 
+// Fixed style overriding bug  
+:global(#tooltipMenuJpLang){
+    margin-top: -10px !important;
+}
+
+:global(#backToHomepage){
+    margin-top: 10px !important;
+}
+
 :global(.place-bottom) {
     &:before, &:after {
         border-bottom-color: $tooltip-theme !important;
     }
 }
+
 
 :global(.place-top) {
     &:before, &:after {

@@ -1,6 +1,5 @@
 /* Vendor imports */
 import React, { useState, useEffect } from 'react'
-import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { FaDribbble, FaLinkedin } from 'react-icons/fa'
 /* App imports */
@@ -16,12 +15,11 @@ import HeroBg from '../images/icons/heroBackground'
 import LocalizedLink from '../components/localizedLink'
 import useTranslations from "../components/useTranslations"
 
+
 const Homepage = ({data}) => {
 
-  // useTranslations is aware of the global context (and therefore also "locale")
-  // so it'll automatically give back the right translations
-  const t = useTranslations()
 
+  const t = useTranslations()
   const hasWindow = (typeof window !== 'undefined') ? true : false;
   const getWidth = () => hasWindow ? window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth : null;
   
@@ -48,7 +46,6 @@ const Homepage = ({data}) => {
   
       return width;
     }
-
   let WinWidth = useCurrentWidth();
   let { caseStudyFeatureDesktop,caseStudyFeatureTablet, caseStudiesDesktop, caseStudiesTablet, dribbbleShots, heroVisual, profilePics  } = data
   caseStudyFeatureDesktop = caseStudyFeatureDesktop.edges[0]
@@ -58,7 +55,7 @@ const Homepage = ({data}) => {
 
   const dribbbleShotsMap = Config.dribbbleShots;
 
-  function getImg(WinWidth){
+  function getImgFeature(WinWidth){
     if(WinWidth > 1035){
       return caseStudyFeatureDesktop.node.frontmatter.coverHomepage.childImageSharp.fluid
     }else{
@@ -84,7 +81,6 @@ const Homepage = ({data}) => {
                 <Img 
                   className={style.profilePicImg}
                   fixed={profilePics.childImageSharp.fixed}
-                  alt={caseStudyFeatureDesktop.node.frontmatter.title}
                 />            
                 <div className={style.profilePicBorder}></div>  
               </div>
@@ -105,10 +101,7 @@ const Homepage = ({data}) => {
               </div>
             </div>
             <div className={style.heroImageContainer}>
-              <Img 
-                fluid={heroVisual.childImageSharp.fluid}
-                alt={caseStudyFeatureDesktop.node.frontmatter.title}
-              />
+              <Img fluid={heroVisual.childImageSharp.fluid} />
             </div> 
         </div>  
         <HeroBg className={style.heroBackground}/>
@@ -118,7 +111,7 @@ const Homepage = ({data}) => {
           <h2>{t.home.caseStudies}</h2>
               <LocalizedLink className={style.articleFeature} to={`/${caseStudyFeatureDesktop.node.parent.relativeDirectory}`}>
                 <div className={style.articleFeatureImage} data-tip data-for="viewProjectHomepage">
-                   <Img fluid={hasWindow ? getImg(WinWidth) : null} alt={caseStudyFeatureDesktop.node.frontmatter.title}
+                   <Img fluid={hasWindow ? getImgFeature(WinWidth) : null} alt={caseStudyFeatureDesktop.node.frontmatter.title}
                   />
                   <Tooltip id="tooltipFeatureCaseStudy" targetId="viewProjectHomepage" effect="float" hidePointer="hidePointer">
                         {t.home.viewCaseStudy}
@@ -200,36 +193,6 @@ const Homepage = ({data}) => {
     )
   }
 
-export const aboutPropTypes = {
-  data: PropTypes.shape({
-    caseStudyFeatureDesktop: PropTypes.shape({
-      childImageSharp: PropTypes.shape({
-        fluid: PropTypes.object.isRequired,
-      }).isRequired,
-    }).isRequired,
-    caseStudyFeatureTablet: PropTypes.shape({
-      childImageSharp: PropTypes.shape({
-        fluid: PropTypes.object.isRequired,
-      }).isRequired,
-    }).isRequired,
-    caseStudiesDesktop: PropTypes.shape({
-      childImageSharp: PropTypes.shape({
-        fluid: PropTypes.object.isRequired,
-      }).isRequired,
-    }).isRequired,
-    caseStudiesTablet: PropTypes.shape({
-      childImageSharp: PropTypes.shape({
-        fluid: PropTypes.object.isRequired,
-      }).isRequired,
-    }).isRequired,    
-    dribbbleShots: PropTypes.shape({
-      childImageSharp: PropTypes.shape({
-        fluid: PropTypes.object.isRequired,
-      }).isRequired,
-    }).isRequired,
-  }),
-}
-
 export const pageQuery = graphql`
   query($locale: String!){
 
@@ -244,12 +207,10 @@ export const pageQuery = graphql`
             }
           }
           frontmatter {
-            path
-            title
-            tags
+            ...articleFields
             coverHomepage {
               childImageSharp {
-                fluid(maxWidth: 715, quality: 100) {
+                fluid(maxWidth: 715) {
                   ...GatsbyImageSharpFluid_withWebp,
                   ...GatsbyImageSharpFluidLimitPresentationSize
                 }
@@ -266,16 +227,9 @@ export const pageQuery = graphql`
       edges {
         node {
           frontmatter {
-            path
-            title
-            tags
+            ...articleFields
             coverHomepage {
-              childImageSharp {
-                fluid(maxWidth: 1035, quality: 100) {
-                  ...GatsbyImageSharpFluid_withWebp,
-                  ...GatsbyImageSharpFluidLimitPresentationSize
-                }
-              }
+              ...imageMedium
             }
           }
         }
@@ -294,17 +248,10 @@ export const pageQuery = graphql`
             }
           }
           frontmatter {
-            path
-            title
-            tags
+            ...articleFields
             featured
             coverHomepage {
-              childImageSharp {
-                fluid(maxWidth: 624, quality: 100) {
-                  ...GatsbyImageSharpFluid_withWebp,
-                  ...GatsbyImageSharpFluidLimitPresentationSize
-                }
-              }
+              ...imageSmall
             }
           }
         }
@@ -318,13 +265,11 @@ export const pageQuery = graphql`
       edges {
         node {
           frontmatter {
-            path
-            title
-            tags
+            ...articleFields
             featured
             coverHomepage {
               childImageSharp {
-                fluid(maxWidth: 789, quality: 100) {
+                fluid(maxWidth: 789) {
                   ...GatsbyImageSharpFluid_withWebp,
                   ...GatsbyImageSharpFluidLimitPresentationSize
                 }
@@ -340,30 +285,20 @@ export const pageQuery = graphql`
       filter: {relativeDirectory: {eq: "dribbbleShot"}}) {
       edges {
         node {
-          childImageSharp {
-                fluid(maxWidth: 624, quality: 100) {
-                  ...GatsbyImageSharpFluid_withWebp,
-                  ...GatsbyImageSharpFluidLimitPresentationSize
-                }
-              }
+          ...imageSmall
             }
           }
         }
 
         heroVisual: file(
         relativePath: { eq: "homepage/hero-visual.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 555, quality: 100) {
-              ...GatsbyImageSharpFluid_withWebp,
-              ...GatsbyImageSharpFluidLimitPresentationSize
-            }
-          }
+          ...imageXXSmall
         }
 
         profilePics: file(
         relativePath: { eq: "homepage/profilePic.jpg" }) {
           childImageSharp {
-            fixed(width: 128, height: 128, quality: 100) {
+            fixed(width: 128, height: 128) {
               ...GatsbyImageSharpFixed_withWebp
             }
           }

@@ -12,24 +12,12 @@ const Post = ({ data }) => {
 
   const { body, frontmatter } = data.articleContent
   const { title, tags, coverArticle, imagesMd, imagesLg, imagesXl, imagesXXl  } = frontmatter
-  const imgArticle = coverArticle.childImageSharp.fluid
-  const suggestedArticles= []
+  const suggestedArticles = []
   suggestedArticles.push({ node: data.suggestedArticles })
+  let imagesObj = []
 
-  const imagesByNameMd =
-  imagesMd &&
-  imagesMd.reduce((images, image, index) => {
-    images[`${image.name}`] = images[
-      `${toString(image.name)}`
-      ] || {
-        ...image.childImageSharp,
-      };
-      return images;
-    }, {});
-
-    const imagesByNameLg =
-    imagesLg &&
-    imagesLg.reduce((images, image, index) => {
+  function reduceObj(objToReduce, name){
+    const rsl = objToReduce && objToReduce.reduce((images, image, index) => {
       images[`${image.name}`] = images[
         `${toString(image.name)}`
         ] || {
@@ -37,28 +25,14 @@ const Post = ({ data }) => {
         };
         return images;
       }, {});
+      imagesObj[name] = rsl
+      return imagesObj
+  }
 
-  const imagesByNameXl =
-  imagesXl &&
-  imagesXl.reduce((images, image, index) => {
-    images[`${image.name}`] = images[
-      `${toString(image.name)}`
-      ] || {
-        ...image.childImageSharp,
-      };
-      return images;
-    }, {});
-
-    const imagesByNameXXl =
-    imagesXXl &&
-    imagesXXl.reduce((images, image, index) => {
-      images[`${image.name}`] = images[
-        `${toString(image.name)}`
-        ] || {
-          ...image.childImageSharp,
-        };
-        return images;
-      }, {});
+  reduceObj(imagesMd, "md")
+  reduceObj(imagesLg, "lg")
+  reduceObj(imagesXl, "xl")
+  reduceObj(imagesXXl, "xxl")
 
   return (
     <>
@@ -72,19 +46,11 @@ const Post = ({ data }) => {
         // translations={translations}
       /> */}
       <div className={style.container}>
-        <ArticleHeading title={title} tags={tags} imgArticle={imgArticle} />
+        <ArticleHeading title={title} tags={tags} imgArticle={coverArticle.childImageSharp.fluid} />
         <div className={style.content}>
-          <ArticleContent 
-            body={body} 
-            imageMd={imagesByNameMd}
-            imageLg={imagesByNameLg}
-            imageXl={imagesByNameXl}
-            imageXXl={imagesByNameXXl}
-          />
+          <ArticleContent body={body} imagesObj={imagesObj} />
         </div>
-         <SuggestedArticles 
-          articles={suggestedArticles} 
-        />
+         <SuggestedArticles  articles={suggestedArticles} />
       </div>
     </>
   )
@@ -99,64 +65,29 @@ export const pageQuery = graphql`
       ) {
       body
       frontmatter {
-        title
-        tags
-        path
+        ...articleFields
         order
         coverArticle {
-          childImageSharp {
-            fluid(maxWidth: 1035, quality: 100) {
-              ...GatsbyImageSharpFluid_withWebp,
-              ...GatsbyImageSharpFluidLimitPresentationSize
-            }
-          }
+          ...imageMedium
         }
         coverHomepage {
-          childImageSharp {
-            fluid(maxWidth: 1035, quality: 100) {
-              ...GatsbyImageSharpFluid_withWebp
-              ...GatsbyImageSharpFluidLimitPresentationSize
-            }
-          }
+          ...imageMedium
         }
         imagesMd {
           name,
-          childImageSharp {
-            fluid(maxWidth: 1035,quality: 100) {
-              ...GatsbyImageSharpFluid_withWebp
-              ...GatsbyImageSharpFluidLimitPresentationSize
-            }
-          }
+          ...imageMedium
         }
         imagesLg {
           name,
-          childImageSharp {
-            fluid(maxWidth: 1280, quality: 100,srcSetBreakpoints: [1035, 1280, 1500]) {
-              ...GatsbyImageSharpFluid_withWebp
-              ...GatsbyImageSharpFluidLimitPresentationSize
-            }
-          }
+          ...imageLg
         }
         imagesXl {
           name,
-          childImageSharp {
-            fluid( maxWidth: 1500, quality: 100, srcSetBreakpoints: [1035, 1280, 1500]
-              ) {
-              ...GatsbyImageSharpFluid_withWebp
-              ...GatsbyImageSharpFluidLimitPresentationSize
-            }
-          }
+          ...imageXl
         }       
         imagesXXl {
           name,
-          childImageSharp {
-            fluid(
-              maxWidth: 2560, quality: 100, srcSetBreakpoints: [1035, 1280, 1500]
-              ) {
-              ...GatsbyImageSharpFluid_withWebp
-              ...GatsbyImageSharpFluidLimitPresentationSize
-            }
-          }
+          ...imageXXl
         }               
         
       }
@@ -172,33 +103,16 @@ export const pageQuery = graphql`
           }
         }
         frontmatter {
-          path
-          title
-          tags
+          ...articleFields
           order
           coverArticle {
-            childImageSharp {
-              fluid(maxWidth: 1035, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp
-                ...GatsbyImageSharpFluidLimitPresentationSize
-              }
-            }
+            ...imageMedium
           }
           coverHomepage {
-            childImageSharp {
-              fluid(maxWidth: 1035, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp
-                ...GatsbyImageSharpFluidLimitPresentationSize
-              }
-            }
+            ...imageMedium
           }
           suggestedArt {
-            childImageSharp {
-              fluid(maxWidth: 590, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp
-                ...GatsbyImageSharpFluidLimitPresentationSize
-              }
-            }
+            ...imageXSmall
           }
         }
     }
