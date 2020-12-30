@@ -5,6 +5,7 @@ $tooltip-theme: $brand;
     font-size: $h6-size !important;
     border-radius: $border-radius !important;
     padding: $spacer-1 $spacer-2 !important;
+    color: $white !important;
 
 
     &.hidePointer{
@@ -26,6 +27,7 @@ $tooltip-theme: $brand;
 
 :global(.place-bottom) {
     &:before, &:after {
+        border-bottom: 8px solid transparent;
         border-bottom-color: $tooltip-theme !important;
     }
 }
@@ -33,6 +35,7 @@ $tooltip-theme: $brand;
 
 :global(.place-top) {
     &:before, &:after {
+        border-top: 8px solid transparent;
         border-top-color: $tooltip-theme !important;
     }
 

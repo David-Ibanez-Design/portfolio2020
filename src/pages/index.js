@@ -21,7 +21,9 @@ const Homepage = ({data}) => {
 
   const t = useTranslations()
   const { localizedPath } = React.useContext(LocaleContext)
+
   const hasWindow = (typeof window !== 'undefined') ? true : false;
+
   const getWidth = () => hasWindow ? window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth : null;
   
     function useCurrentWidth() {
@@ -47,30 +49,11 @@ const Homepage = ({data}) => {
   
       return width;
     }
-  let WinWidth = useCurrentWidth();
-  let { caseStudyFeatureDesktop,caseStudyFeatureTablet, caseStudiesDesktop, caseStudiesTablet, dribbbleShots, heroVisual, profilePics  } = data
-  caseStudyFeatureDesktop = caseStudyFeatureDesktop.edges[0]
+  let { caseStudyFeatureTablet, caseStudiesTablet, dribbbleShots, heroVisual, profilePics  } = data
   caseStudyFeatureTablet = caseStudyFeatureTablet.edges[0]
-  caseStudiesDesktop = caseStudiesDesktop.edges;
   caseStudiesTablet = caseStudiesTablet.edges;
 
   const dribbbleShotsMap = Config.dribbbleShots;
-
-  function getImgFeature(WinWidth){
-    if(WinWidth > 1035){
-      return caseStudyFeatureDesktop.node.frontmatter.coverHomepage.childImageSharp.fluid
-    }else{
-      return caseStudyFeatureTablet.node.frontmatter.coverHomepage.childImageSharp.fluid
-    }
-  }
-
-  function getImgCaseStudies(WinWidth, coverHomepage, index){
-    if(WinWidth > 821){
-      return coverHomepage.childImageSharp.fluid
-    }else{
-      return caseStudiesTablet[index].node.frontmatter.coverHomepage.childImageSharp.fluid
-    }
-  }
 
   return(
     <>
@@ -110,10 +93,9 @@ const Homepage = ({data}) => {
 
         <div className={`${style.articleListContainer}  ${style.container}`}>
           <h2>{t.home.caseStudies}</h2>
-              <LocalizedLink className={style.articleFeature} to={`/${caseStudyFeatureDesktop.node.parent.relativeDirectory}`}>
+              <LocalizedLink className={style.articleFeature} to={`/${caseStudyFeatureTablet.node.parent.relativeDirectory}`}>
                 <div className={style.articleFeatureImage} data-tip data-for="viewProjectHomepage">
-                   <Img fluid={hasWindow ? getImgFeature(WinWidth) : null} alt={caseStudyFeatureDesktop.node.frontmatter.title}
-                  />
+                  <Img fluid={caseStudyFeatureTablet.node.frontmatter.coverHomepage.childImageSharp.fluid} alt={caseStudyFeatureTablet.node.frontmatter.title} />
                   <Tooltip id="tooltipFeatureCaseStudy" targetId="viewProjectHomepage" effect="float" hidePointer="hidePointer">
                         {t.home.viewCaseStudy}
                 </Tooltip>
@@ -121,8 +103,8 @@ const Homepage = ({data}) => {
                 </div>
                 <div className={style.articleFeatureContent}>
                   
-                    <TagList tags={caseStudyFeatureDesktop.node.frontmatter.tags}/>
-                    <h3><span>{caseStudyFeatureDesktop.node.frontmatter.title}</span></h3>
+                    <TagList tags={caseStudyFeatureTablet.node.frontmatter.tags}/>
+                    <h3><span>{caseStudyFeatureTablet.node.frontmatter.title}</span></h3>
                       <p className={`${style.articleFeatureExcerpt} ${style.truncate}`}>
                         Digima, a web-based CRM application, aim to provide small to medium companies with a way to understand their customers' needs. The contact profile page is a central part of the product. In a single view, the page provides a large amount of information about contact
                       </p>
@@ -137,14 +119,14 @@ const Homepage = ({data}) => {
             </LocalizedLink>      
 
           <div className={`${style.otherCaseStudies}  ${style.container}`}>
-            {caseStudiesDesktop.map((caseStudyDesktop, index) => {
+            {caseStudiesTablet.map((caseStudiesTab, index) => {
               
-              const { title, tags, coverHomepage } = caseStudyDesktop.node.frontmatter
+              const { title, tags, coverHomepage } = caseStudiesTab.node.frontmatter
               return(
-                  <LocalizedLink key={index} className={style.caseStudies} to={`/${caseStudyDesktop.node.parent.relativeDirectory}`}>
+                  <LocalizedLink key={index} className={style.caseStudies} to={`/${caseStudiesTab.node.parent.relativeDirectory}`}>
                       <div className={style.caseStudiesImage} data-tip data-for={`viewProjectHomepage-${index}`}>
                         <Img 
-                          fluid={hasWindow ? getImgCaseStudies(WinWidth, coverHomepage, index) : null}
+                          fluid={caseStudiesTablet[index].node.frontmatter.coverHomepage.childImageSharp.fluid}
                           alt={title}
                         />
                         <Tooltip id={`tooltipFeatureCase-${index}`} targetId={`viewProjectHomepage-${index}`} effect="float" hidePointer="hidePointer">
@@ -197,36 +179,16 @@ const Homepage = ({data}) => {
 export const pageQuery = graphql`
   query($locale: String!){
 
-    caseStudyFeatureDesktop: allMdx(
-      filter: {frontmatter: {featured: {eq: 1}}, fields: {locale: {eq: $locale}}}
-      ) {
-      edges {
-        node {  
-          parent {
-            ... on File {
-              relativeDirectory
-            }
-          }
-          frontmatter {
-            ...articleFields
-            coverHomepage {
-              childImageSharp {
-                fluid(maxWidth: 715) {
-                  ...GatsbyImageSharpFluid_withWebp,
-                  ...GatsbyImageSharpFluidLimitPresentationSize
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-
     caseStudyFeatureTablet: allMdx(
       filter: {frontmatter: {featured: {eq: 1}}, fields: {locale: {eq: $locale}}}
       ) {
       edges {
         node {
+          parent {
+            ... on File {
+              relativeDirectory
+            }
+          }
           frontmatter {
             ...articleFields
             coverHomepage {
@@ -237,7 +199,8 @@ export const pageQuery = graphql`
       }
     }
 
-    caseStudiesDesktop: allMdx(
+
+    caseStudiesTablet: allMdx(
       sort: { fields: [frontmatter___order], order: ASC }
       filter: {frontmatter: {featured: {eq: 0}}, fields: {locale: {eq: $locale}}}
     ) {
@@ -248,23 +211,6 @@ export const pageQuery = graphql`
               relativeDirectory
             }
           }
-          frontmatter {
-            ...articleFields
-            featured
-            coverHomepage {
-              ...imageSmall
-            }
-          }
-        }
-      }
-    }
-
-    caseStudiesTablet: allMdx(
-      sort: { fields: [frontmatter___order], order: ASC }
-      filter: {frontmatter: {featured: {eq: 0}}, fields: {locale: {eq: $locale}}}
-    ) {
-      edges {
-        node {
           frontmatter {
             ...articleFields
             featured
