@@ -1,0 +1,13 @@
+.container{
+    text-align: center;
+
+    p{
+        width: 600px;
+        margin: 0 auto $spacer-6 auto;
+    }
+
+    svg{
+        display: block;
+        margin: 0 auto $spacer-4 auto;
+    }
+}

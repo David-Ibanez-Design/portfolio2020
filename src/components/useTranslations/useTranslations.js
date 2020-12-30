@@ -48,6 +48,11 @@ const query = graphql`
               backToHome
               switchTo
             }
+            notFound{
+              title
+              description
+              backBtn
+            }
             home{
               title
               seoTitle

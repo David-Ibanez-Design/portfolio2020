@@ -16,6 +16,11 @@
     "backToHome": "Back to homepage JP",
     "switchTo": "Switch to English"
   },
+  "notFound": {
+    "title": "Woops! looks like you are lost...",
+    "description": "The page you are looking for doesn't exist. You may have misspell the URL or the page you are looking for have moved.",
+    "backBtn": "Back to home"
+  },
   "home": {
     "title": "I’m David, I’m a UI/UX Designer With 7 Years Of Experience. JP",
     "description": "This is the site description",

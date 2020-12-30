@@ -2,12 +2,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
+import LocalizedLink from '../localizedLink'
 /* App imports */
 import style from './button.module.scss'
 
 const Button = ({ children, destination, to, buttonStyle, className }) => (
   <>
-    {destination = "external" ?
+  
+    {destination == "external" ?
       (
         <a 
           href={to} 
@@ -21,9 +23,12 @@ const Button = ({ children, destination, to, buttonStyle, className }) => (
           {children}</a>
       ):
       (
-        <Link to={to} className={`${style.button} ${buttonStyle === "primary" ? style.buttonPrimary : style.buttonSecondary }`}>
+        <>
+
+        <LocalizedLink to={to} className={`${style.button} ${buttonStyle === "primary" ? style.buttonPrimary : style.buttonSecondary }`}>
           {children}
-        </Link>
+        </LocalizedLink>
+        </>
       )
     }
   </>
