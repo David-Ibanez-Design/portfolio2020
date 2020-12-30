@@ -1,4 +1,9 @@
 {
+  "site": {
+    "title": "UI/UX Portfolio",
+    "description": "UI/UX Portfolio",
+    "author": "David"
+  },
   "menu": {
     "menu": "Menu JP",
     "home": "Home JP",
@@ -11,8 +16,14 @@
     "backToHome": "Back to homepage JP",
     "switchTo": "Switch to English"
   },
+  "notFound": {
+    "title": "Woops! looks like you are lost...",
+    "description": "The page you are looking for doesn't exist. You may have misspell the URL or the page you are looking for have moved.",
+    "backBtn": "Back to home"
+  },
   "home": {
     "title": "I’m David, I’m a UI/UX Designer With 7 Years Of Experience. JP",
+    "description": "This is the site description",
     "heroText": "JP My knowledge of Frontend development helps me efficiently communicate my designs to developers. I’m looking to join a company that trusts the design process to deliver meaningful changes to their customers.",
     "caseStudies": "JP Case Studies",
     "viewCaseStudy": "JP View case study",
@@ -25,6 +36,7 @@
   },
   "about": {
     "title": "JP I’m a UI/UX designer with 7 years of experience.",
+    "description": "This is the site description",
     "subtitle": "JP ABOUT ME",   
     "textPart1": "JP My knowledge of Frontend development gives me the tools to understand developer’s perspectives and quickly prototype ideas to ensure technical feasibility. <br/><br/> For the past four years, I have been working as a UI/UX designer in the SaaS industry.  Working in collaboration with backend, frontend developers, and business managers taught me how to carefully balance business goals, engineering constraints, and user needs. <br/><br/> Lately, I have been excited about",
     "link": "JP  improving the business decision process as well as my own design process through the use of qualitative and quantitative data. ",

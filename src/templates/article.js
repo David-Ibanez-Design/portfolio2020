@@ -2,17 +2,19 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 /* App imports */
-// import SEO from '../components/seo'
+import SEO from '../components/seo'
 import ArticleHeading from './article-heading'
 import ArticleContent from './article-content'
 import SuggestedArticles from './suggested-articles'
 import style from './article.module.scss'
+import { LocaleContext } from "../components/layout"
 
 const Post = ({ data }) => {
 
   const { body, frontmatter } = data.articleContent
   const { title, tags, coverArticle, imagesMd, imagesLg, imagesXl, imagesXXl  } = frontmatter
   const suggestedArticles = []
+  const { localizedPath } = React.useContext(LocaleContext)
   suggestedArticles.push({ node: data.suggestedArticles })
   let imagesObj = []
 
@@ -36,15 +38,13 @@ const Post = ({ data }) => {
 
   return (
     <>
-      {/* <SEO
+      <SEO
         title={title}
-        path={path}
+        path={localizedPath}
         description={title}
         contentType="article"
-        imageUrl={imgArticle.src}
         keywords={tags}
-        // translations={translations}
-      /> */}
+      />
       <div className={style.container}>
         <ArticleHeading title={title} tags={tags} imgArticle={coverArticle.childImageSharp.fluid} />
         <div className={style.content}>

@@ -4,28 +4,25 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 /* App imports */
 import useTranslations from "../../components/useTranslations"
-// import SEO from '../../components/seo'
+import SEO from '../../components/seo'
 import style from './about.module.scss'
 import ResumeEn from '../../downloads/Resume-en.pdf'
 import Config from '../../../config'
 import LocalizedLink from '../../components/localizedLink'
-
+import { LocaleContext } from "../../components/layout"
 
 const About = ({data}) => {
 
   const profilePhoto = data.profilePhoto
+  const { localizedPath } = React.useContext(LocaleContext)
 
   // useTranslations is aware of the global context (and therefore also "locale")
   // so it'll automatically give back the right translations
   const t = useTranslations()
-
   return (
     <>
-        {/* <SEO
-          title="About"
-          description="A brief summary of this blog"
-          path="about"
-        /> */}
+        <SEO title={t.about.seoTitle} description={t.about.seoDescription} path={localizedPath}
+        />
         <div className={style.container}>
           <div className="container-md mt-13">
             <Img fluid={profilePhoto.childImageSharp.fluid} className={style.images}/>

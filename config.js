@@ -4,15 +4,7 @@ module.exports = {
   siteUrl: 'https://lgcolella.github.io',
   siteTitle: 'David Ibanez',
   siteDescription: 'UI/UX designer',
-  author: 'David Ibanez',
-  defaultLanguage: 'en',
-  translatedLanguage: 'ja',
   email: 'dibanez@rocketmail.com',
-  pages: {
-    home: '/',
-    article: 'articles',
-    about: 'about'
-  },
   social: {
     dribbble: 'https://dribbble.com/dibanez',
     linkedin: 'https://www.linkedin.com/in/david-ibanez-a5b443120/'
