@@ -1,7 +1,6 @@
 /* Vendor imports */
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
 import LocalizedLink from '../localizedLink'
 /* App imports */
 import style from './button.module.scss'
@@ -9,7 +8,7 @@ import style from './button.module.scss'
 const Button = ({ children, destination, to, buttonStyle, className }) => (
   <>
   
-    {destination == "external" ?
+    {destination === "external" ?
       (
         <a 
           href={to} 
