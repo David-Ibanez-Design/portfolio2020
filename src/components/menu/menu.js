@@ -98,7 +98,7 @@ const Header = () => {
             </div>
 
             <div className={style.menusContainers}>
-              <MenuItems isMobile={true}/>
+              <MenuItems isMobile={true} toggleMenu={toggleMenu}/>
               <div className={style.MobilelanguageContainer}>
                 <LangSwitcher style={style} isMobile={true} toggleMenu={toggleMenu}/>
               </div>

@@ -60,6 +60,10 @@
     margin-top: $spacer-3;
   }
 
+  :global(#conclusion>h2){
+    margin-top: $spacer-6;
+  }
+
   h4{
     line-height: $lh-default;
     padding-top: $spacer-4;
@@ -79,10 +83,6 @@
     code {
       text-decoration: inherit;
     }
-  }
-
-  p + ul{
-    // margin-top: -$spacer-3;
   }
 
   .listHeader + ul{
@@ -188,7 +188,7 @@
   .containedXXl{
     max-width:$container-xxl;
     margin: 0 auto;
-    padding: $spacer-4 0;
+    padding: $spacer-8 0;
     @include breakpoint("md"){
       padding: $spacer-2 0;
     }

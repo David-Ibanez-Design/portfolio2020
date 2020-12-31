@@ -58,7 +58,6 @@
       height: 100%;
       width: inherit;
       height: inherit;
-      backdrop-filter: blur(0.5rem);
     }
 
 
@@ -83,10 +82,6 @@
       background: $brand-400;    
       border: var(--rcs-handle-width) solid $brand-400;  
     }
-
-    // &:hover svg{
-    //   fill: $brand-400;      
-    // }
 
     .arrowLeft,
     .arrowRight {

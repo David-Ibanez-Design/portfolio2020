@@ -12,7 +12,7 @@
     color: $white;
 
     @include breakpoint("sm"){
-        padding: 0 $spacer-8;
+        padding: 0 $spacer-4;
     }
 
     .menusContainer{
@@ -45,6 +45,7 @@
             max-width: 300px;
             flex-grow: none;        
             padding-right: $spacer-5; 
+            padding-bottom: $spacer-8;
         }
     }
 

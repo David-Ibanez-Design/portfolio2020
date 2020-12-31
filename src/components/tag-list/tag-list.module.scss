@@ -7,6 +7,7 @@
 
     &>.tag.medium:not(:last-child){
         margin-right: $spacer-3;
+
     }
 
     &>.tag.small:not(:last-child){
@@ -22,7 +23,8 @@
             font-size: $h6-size;
             font-weight: $font-weight-bold;
             margin-bottom: $spacer-3;
-            padding: 0 $spacer-3;        
+            padding: 0 $spacer-3;     
+        
         }
 
         &.small{

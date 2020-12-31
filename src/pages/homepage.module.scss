@@ -32,11 +32,9 @@
 
     .heroInnerContainer{
         width: 100%;
-        // display: flex;
         z-index: 5;
         position: relative;
         flex-direction: row;
-        // margin-top: $spacer-12;
         @include breakpoint("md"){  
             flex-direction: column-reverse;
             position: relative;
@@ -51,7 +49,6 @@
     height: 500px;
     float: right;
     margin-top: -34px;
-    // margin-top: $spacer-12;
 
     @include breakpoint("md"){  
         display: none;
@@ -72,6 +69,10 @@
         width: 100%;
         float: none;
         padding: 120px 0;
+        @include breakpoint("xs"){
+            padding-bottom: 152px;
+        }
+
         margin-top: 0;
     }
 
@@ -88,7 +89,6 @@
         background-size: 0 2px;
         padding: 0.1% 0;
         background-repeat: no-repeat;
-        // background-size: 100% 21px;
         @include breakpoint("lg"){  
             font-size: 40px;
             line-height: 48px;
@@ -212,10 +212,18 @@
         @include breakpoint("md"){  
            @include center-horizontal;
         }
-        
+      
         &>a:first-child{
             margin-right: $spacer-4;
         }
+
+        @include breakpoint("xs"){  
+            display: block;
+            &>a:first-child{
+                margin-right: 0;
+                margin-bottom: $spacer-4;
+            }
+         }
 
     }
 

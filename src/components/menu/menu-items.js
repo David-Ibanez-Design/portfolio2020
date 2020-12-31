@@ -13,7 +13,7 @@ import ResumeJp from '../../downloads/Resume-jp.pdf'
 import ResumeEn from '../../downloads/Resume-en.pdf'
 import TagList from '../tag-list'
 
-const MenuItems = ({data, isMobile , withWork}) => {
+const MenuItems = ({data, isMobile , withWork, toggleMenu}) => {
 
     const { locale, isArt, localizedPath } = React.useContext(LocaleContext)
     const t = useTranslations()
@@ -31,7 +31,7 @@ const MenuItems = ({data, isMobile , withWork}) => {
             <ul>
                 {/* Homepage */}
                 <li>
-                    <LocalizedLink className={toggleActive("/")} to={`/`}>{t.menu.home}</LocalizedLink>
+                    <LocalizedLink onClick={toggleMenu} className={toggleActive("/")} to={`/`}>{t.menu.home}</LocalizedLink>
                 </li>
 
                 {/* Work */}
@@ -48,6 +48,7 @@ const MenuItems = ({data, isMobile , withWork}) => {
                                         const { title, tags, menuVignettes, mobileVignettes } = article.node.frontmatter
                                         return (
                                                 <LocalizedLink 
+                                                    onClick={toggleMenu}
                                                     key={index}
                                                     to={`/${article.node.parent.relativeDirectory}`} 
                                                     className={`${style.containerLink} ${toggleActive(`/${article.node.parent.relativeDirectory}`)}`}>       
@@ -88,6 +89,7 @@ const MenuItems = ({data, isMobile , withWork}) => {
                 {/* About */}
                 <li>
                     <LocalizedLink 
+                        onClick={toggleMenu}
                         className={toggleActive("/about")} 
                         to={`/about`}
                     >
