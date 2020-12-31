@@ -1,18 +1,4 @@
 
-// .container{
-//     @include container-md;
-//     margin-top: $spacer-7;
-// }
-
-// .title {
-//     color: $black;
-//     font-size: $h1-size;
-//     font-weight: $font-weight-black;
-//     margin-bottom: $spacer-3;
-// }
-
-
-
 .animatedBackground{
     background: $gray-000;
 }
@@ -64,6 +50,7 @@
         cursor: pointer;
         display: flex; 
         flex-wrap: wrap;
+        text-decoration: none;
 
         @include breakpoint("md"){
             margin-top: 0;
@@ -162,7 +149,7 @@
         margin-top: 64px;
         flex-basis: 0;
         flex-grow: 999;
-        height: 304px;
+        padding-bottom: $spacer-8;
         float: left;
         position: relative;
 
@@ -215,6 +202,8 @@
 
 
         .more{
+            display: block;
+            overflow: hidden;
 
             p{
                 font-size: $h4-size;
