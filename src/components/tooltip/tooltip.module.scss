@@ -6,6 +6,7 @@ $tooltip-theme: $brand;
     border-radius: $border-radius !important;
     padding: $spacer-1 $spacer-2 !important;
     color: $white !important;
+    display: none;
 
 
     &.hidePointer{

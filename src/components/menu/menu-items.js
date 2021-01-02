@@ -26,6 +26,11 @@ const MenuItems = ({data, isMobile , withWork, toggleMenu}) => {
         return localizedPath === localizedSlug  ? style.active : null;
     }
 
+    function disableHover(){
+      var dropdownMenu = document.getElementsByClassName("desktopDropdown");
+      dropdownMenu[0].classList.add('disableHover').classList.remove('disableHover')
+    }
+
     return (
         <div className={style.menuItems}>
             <ul>
@@ -36,7 +41,7 @@ const MenuItems = ({data, isMobile , withWork, toggleMenu}) => {
 
                 {/* Work */}
                 {withWork ? (
-                    <li className={style.withDropdown} >
+                    <li className={`${style.withDropdown} desktopDropdown`} >
                         <Link className={isArt ? style.active : null} to="#">
                             {t.menu.work} 
                             <BiChevronDown size="20" className={style.dropndownIcon}/>
@@ -48,7 +53,7 @@ const MenuItems = ({data, isMobile , withWork, toggleMenu}) => {
                                         const { title, tags, menuVignettes, mobileVignettes } = article.node.frontmatter
                                         return (
                                                 <LocalizedLink 
-                                                    onClick={toggleMenu}
+                                                    onClick={isMobile ? toggleMenu : disableHover}
                                                     key={index}
                                                     to={`/${article.node.parent.relativeDirectory}`} 
                                                     className={`${style.containerLink} ${toggleActive(`/${article.node.parent.relativeDirectory}`)}`}>       

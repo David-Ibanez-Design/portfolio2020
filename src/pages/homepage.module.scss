@@ -375,6 +375,7 @@
         flex-flow: row wrap;
         width: 100%;
         margin-bottom: $spacer-9;
+        padding: 0 !important;
         cursor: pointer;
         @include breakpoint("sm"){  
             display: block;

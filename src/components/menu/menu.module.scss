@@ -348,6 +348,15 @@
     transform: rotate(180deg);
 } 
 
+:global(.disableHover > ul){
+    visibility: hidden !important;   
+    opacity: 0 !important;
+}
+
+:global(.disableHover > a > svg){
+    transform: rotate(0) !important;
+} 
+
 .isVisible{
     top: 63px;
     opacity: 1;   

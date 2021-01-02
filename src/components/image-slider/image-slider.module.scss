@@ -5,6 +5,13 @@
     margin: 0 auto;
 }
 
+.imageBefore,
+.imageAfter{
+  @include breakpoint("sm"){
+    padding-top: $spacer-4;
+  }
+}
+
 .imageBefore{
     &:before{
         position: absolute;
