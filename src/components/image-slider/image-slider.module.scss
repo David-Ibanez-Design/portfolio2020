@@ -35,13 +35,11 @@
 }
 
 .containerHandles {
-    --rcs-handle-width: 2px;
-    --rcs-handle-box: 2.4rem;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: var(--rcs-handle-width);
+    width: 2px;
     height: 100%;
     box-shadow: none;
     background-color: $brand-300;
@@ -52,8 +50,8 @@
 
 .blurredBg {
     position: absolute;
-    width: var(--rcs-handle-box);
-    height: var(--rcs-handle-box);
+    width: 2.4rem;
+    height: 2.4rem;
     border-radius: 100%;
     overflow: hidden;
 
@@ -71,15 +69,20 @@
 
 }
 
+// IE 11+
+_:-ms-fullscreen, :root .handlesArrows {
+  left:-19px;
+}
+
 .handlesArrows {
     position: absolute;
     display: grid;
     align-items: center;
     justify-content: center;
     grid-auto-flow: column;
-    width: var(--rcs-handle-box);
-    height: var(--rcs-handle-box);
-    border: var(--rcs-handle-width) solid $brand-300;
+    width: 2.4rem;
+    height: 2.4rem;
+    border: 2px solid $brand-300;
     border-radius: 100%;
     background: $brand-300;
     overflow: hidden;
@@ -87,7 +90,7 @@
 
     &:hover{
       background: $brand-400;    
-      border: var(--rcs-handle-width) solid $brand-400;  
+      border: 2px solid $brand-400;  
     }
 
     .arrowLeft,

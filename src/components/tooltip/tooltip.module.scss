@@ -1,4 +1,10 @@
 $tooltip-theme: $brand;
+
+// Fix issue where tooltip is been displayed for a few second on
+// Page load
+:global(.__react_component_tooltip){
+    opacity: 0;
+  }
  
 .tooltipContainer{
     background: $tooltip-theme !important;
@@ -6,15 +12,12 @@ $tooltip-theme: $brand;
     border-radius: $border-radius !important;
     padding: $spacer-1 $spacer-2 !important;
     color: $white !important;
-    display: none;
-
 
     &.hidePointer{
         &:after, &:before{
             display: none !important;
         }  
     }
-
 }
 
 // Fixed style overriding bug  

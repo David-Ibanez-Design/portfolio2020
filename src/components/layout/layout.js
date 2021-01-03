@@ -10,7 +10,7 @@ import "../../styles/base/typography-base.scss";
 import "../../styles/utilities/margin-padding.scss";
 import "../../styles/utilities/color.scss";
 import "../../styles/utilities/layout.scss";
-import "../tooltip/tooltip.module.scss";
+// import "../tooltip/tooltip.module.scss";
 
 
 const LocaleContext = React.createContext()

@@ -12,6 +12,7 @@ const Tooltip = ({ targetId, place, effect="solid", offset, hidePointer, childre
                 ${style.tooltipContainer} 
                 ${hidePointer ? style.hidePointer : ""} `} 
             id={targetId} 
+            style={{opacity:0}}
             place={place} 
             insecure={false}
             effect={effect}

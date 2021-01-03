@@ -22,9 +22,17 @@ const Header = () => {
   const [isHeaderCollapsed, setHeaderCollapsed] = useState(false)
 
   function toggleFixedHeader() {
-    if (!isHeaderCollapsed && window.scrollY > 100) {
+    if (!isHeaderCollapsed && window.scrollY > 100 ||
+      !isHeaderCollapsed && window.pageYOffset > 100 || 
+      !isHeaderCollapsed &&  document.documentElement.scrollTop > 100
+      ) {
       setHeaderCollapsed(true)
-    } else if (isHeaderCollapsed && window.scrollY < 100) {
+    } else if (
+      isHeaderCollapsed && window.scrollY < 100 ||
+      isHeaderCollapsed && window.pageYOffset < 100 || 
+      isHeaderCollapsed && document.documentElement.scrollTop < 100
+
+      ) {
       setHeaderCollapsed(false)
     }
   }
