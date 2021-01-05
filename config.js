@@ -1,6 +1,6 @@
 
 module.exports = {
-  pathPrefix: '/gatsby-starter-developer-blog',
+  // pathPrefix: '/gatsby-starter-developer-blog',
   // pathPrefix: '/portfolio2020',
   siteUrl: 'https://lgcolella.github.io',
   siteTitle: 'David Ibanez',
