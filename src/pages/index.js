@@ -1,5 +1,5 @@
 /* Vendor imports */
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
 import { FaDribbble, FaLinkedin } from 'react-icons/fa'
 /* App imports */
@@ -18,37 +18,9 @@ import { LocaleContext } from "../components/layout"
 
 const Homepage = ({data}) => {
 
-
   const t = useTranslations()
   const { localizedPath } = React.useContext(LocaleContext)
-
-  const hasWindow = (typeof window !== 'undefined') ? true : false;
-
-  const getWidth = () => hasWindow ? window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth : null;
   
-    function useCurrentWidth() {
-      // save current window width in the state object
-      let [width, setWidth] = useState(getWidth());
-  
-      // in this case useEffect will execute only once because
-      // it does not have any dependencies.
-      useEffect(() => {
-        const resizeListener = () => {
-          // change width from the state object
-          setWidth(getWidth())
-        };
-        // set resize listener
-        window.addEventListener('resize', resizeListener);
-  
-        // clean up function
-        return () => {
-          // remove resize listener
-          window.removeEventListener('resize', resizeListener);
-        }
-      }, [])
-  
-      return width;
-    }
   let { caseStudyFeatureTablet, caseStudiesTablet, dribbbleShots, heroVisual, profilePics  } = data
   caseStudyFeatureTablet = caseStudyFeatureTablet.edges[0]
   caseStudiesTablet = caseStudiesTablet.edges;
@@ -121,7 +93,7 @@ const Homepage = ({data}) => {
           <div className={`${style.otherCaseStudies}  ${style.container}`}>
             {caseStudiesTablet.map((caseStudiesTab, index) => {
               
-              const { title, tags, coverHomepage } = caseStudiesTab.node.frontmatter
+              const { title, tags } = caseStudiesTab.node.frontmatter
               return(
                   <LocalizedLink key={index} className={style.caseStudies} to={`/${caseStudiesTab.node.parent.relativeDirectory}`}>
                       <div className={style.caseStudiesImage} data-tip data-for={`viewProjectHomepage-${index}`}>

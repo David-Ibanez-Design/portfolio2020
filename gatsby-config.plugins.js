@@ -73,17 +73,6 @@ module.exports = [
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-robots-txt`,
     `gatsby-transformer-json`,
-    // {
-    //   resolve: `gatsby-plugin-google-gtag`,
-    //   options: {
-    //     // You can add multiple tracking ids and a pageview event will be fired for all of them.
-    //     trackingIds: [
-    //       "UA-186412640-1", // Google Analytics / GA
-    //       "AW-CONVERSION_ID", // Google Ads / Adwords / AW
-    //       "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
-    //     ],
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -95,7 +84,6 @@ module.exports = [
       resolve: "gatsby-plugin-guess-js",
       options: {
         // Find the view id in the GA admin in a section labeled "views"
-        //GAViewID: `235115625`, // Github pages
         GAViewID: `235033551`, // Surge
         // Add a JWT to get data from GA
         jwt: {
