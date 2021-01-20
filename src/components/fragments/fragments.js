@@ -4,6 +4,7 @@ export const articleFields = graphql`
   fragment articleFields on MdxFrontmatter {
       title
       tags
+      synopsis
   } 
 `
 

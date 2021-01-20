@@ -15,6 +15,7 @@ import HeroBg from '../images/icons/heroBackground'
 import LocalizedLink from '../components/localizedLink'
 import useTranslations from "../components/useTranslations"
 import { LocaleContext } from "../components/layout"
+import { string } from 'prop-types'
 
 const Homepage = ({data}) => {
 
@@ -26,6 +27,7 @@ const Homepage = ({data}) => {
   caseStudiesTablet = caseStudiesTablet.edges;
 
   const dribbbleShotsMap = Config.dribbbleShots;
+  var project = "";
 
   return(
     <>
@@ -52,8 +54,8 @@ const Homepage = ({data}) => {
               <h1><span>{t.home.title}</span></h1>
               <p>{t.home.heroText}</p>      
               <div className={style.actions}>
-                <Buttons destination="external" to={ResumeEn} buttonStyle="primary">{t.socialsLinks.resume}</Buttons>
-                <Buttons destination="external" to={`mailto:${Config.email}`} buttonStyle="secondary">{t.socialsLinks.Contact}</Buttons>    
+                <Buttons destination="external" to={ResumeEn} buttonStyle="primary">{t.home.viewResume}</Buttons>
+                <Buttons destination="external" to={`mailto:${Config.email}`} buttonStyle="secondary">{t.home.contact}</Buttons>    
               </div>
             </div>
             <div className={style.heroImageContainer}>
@@ -77,9 +79,7 @@ const Homepage = ({data}) => {
                   
                     <TagList tags={caseStudyFeatureTablet.node.frontmatter.tags}/>
                     <h3><span>{caseStudyFeatureTablet.node.frontmatter.title}</span></h3>
-                      <p className={`${style.articleFeatureExcerpt} ${style.truncate}`}>
-                        Digima, a web-based CRM application, aim to provide small to medium companies with a way to understand their customers' needs. The contact profile page is a central part of the product. In a single view, the page provides a large amount of information about contact
-                      </p>
+                      <p className={`${style.articleFeatureExcerpt} ${style.truncate}`}>{caseStudyFeatureTablet.node.frontmatter.synopsis}</p>
                       <div className={style.more}>
                         <p>{t.home.viewCaseStudy}</p>
                         <div className={style.iconArrow}>
@@ -108,7 +108,7 @@ const Homepage = ({data}) => {
                       </div>  
                       <div className={style.caseStudiesContent}>
                         <TagList tags={tags}/>
-                        <h4><span>{t.home.title}</span></h4>
+                        <h4><span>{title}</span></h4>
                         <div className={style.more}>
                           <p>{t.home.viewCaseStudy}</p>
                           <div className={style.iconArrow}>
@@ -125,9 +125,9 @@ const Homepage = ({data}) => {
       </div>
         <div className={`${style.dribbbleListContainer}  ${style.container}`}>
           <h2>{t.home.otherWorks}</h2>
-          <p>Other projects and things I've designed for fun. Check them out on<a href={Config.social.dribbble}> Dribbble.</a></p>
+          <p>{t.dribbbleShots.description} <a href={Config.social.dribbble}>{t.socialsLinks.Dribbble}.</a></p>
           <div className={style.dribbbleInnerContainer}>
-              
+          
           {dribbbleShotsMap.map((dribbbleShotMap, index) => {
              return(
                 <a key={index} rel="noreferrer" target="_blank" href={dribbbleShotMap.dribbbleUrl} className={style.dribbbleShots} >
@@ -138,7 +138,7 @@ const Homepage = ({data}) => {
                     </Tooltip>
                     <div className={style.overlay}></div>
                   </div>  
-                  <p>{dribbbleShotMap.description}</p>
+                  <p>{t.dribbbleShots.projects[index]}</p>
                 </a>
              )
           })}

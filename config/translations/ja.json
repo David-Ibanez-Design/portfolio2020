@@ -30,6 +30,21 @@
     "otherWorks": "JP Other Works",
     "viewOnDribbble": "JP View on Dribbble"
   },
+  "dribbbleShots": {
+    "description": "Other unreleased work and things I've designed for fun. Check them out on", 
+    "projects": [
+      "A movie review website mockup.",
+      "A logo designed for an open source IT company.",
+      "Digima modal redesign.",
+      "A fictional movie review website logo",
+      "Designing and documenting a design.",
+      "A previous version of my portfolio site.",
+      "Illustration for the Digima design system.",
+      "Email tracking online tool website.",
+      "The Digima date/time picker",
+      "The Comvex corporate web site"
+    ]
+  },
   "suggestedArt": {
     "next": "JP NEXT UP",
     "viewCaseStudy": "JP View case study"

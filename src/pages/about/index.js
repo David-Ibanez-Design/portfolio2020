@@ -34,19 +34,18 @@ const About = ({data}) => {
                 <span dangerouslySetInnerHTML={{__html: t.about.textPart1}}/>
                 <LocalizedLink to={`/data`}>{t.about.link}</LocalizedLink>
                 <span dangerouslySetInnerHTML={{__html: t.about.textPart2}}/>
-                <span>{t.socialsLinks.Follow} </span>
+                <span> {t.socialsLinks.Follow} </span>
                 <a 
                   href={Config.social.linkedin} 
                   target="_blank" 
                   rel="noreferrer"  
-                  className={style.linkedin}> {t.socialsLinks.Linkedin}
+                  className={style.linkedin}> {t.socialsLinks.Linkedin},
                 </a> 
-                <span> {t.socialsLinks.or}</span>
                 <a 
                   href={Config.social.dribbble} 
                   target="_blank" 
                   rel="noreferrer"  
-                  className={style.dribbble}> {t.socialsLinks.Dribbble}.
+                  className={style.dribbble}> {t.socialsLinks.Dribbble}
                 </a> 
                 <span> {t.socialsLinks.Contact} </span>
                 <a 

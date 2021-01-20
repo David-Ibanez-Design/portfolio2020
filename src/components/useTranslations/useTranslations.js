@@ -58,10 +58,16 @@ const query = graphql`
               seoTitle
               seoDescription           
               heroText
+              viewResume
+              contact
               caseStudies
               viewCaseStudy
               otherWorks
               viewOnDribbble
+            }
+            dribbbleShots{
+              description
+              projects
             }
             suggestedArt{
               next
