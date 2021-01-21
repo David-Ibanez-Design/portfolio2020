@@ -169,6 +169,9 @@
     max-width: $container-lg;
     margin: 0 auto;
     padding: $spacer-8 0;
+    &>.imageWrapper>div{
+      margin: 0 auto;
+    }
     @include breakpoint("md"){
       padding: $spacer-4 0;
     }

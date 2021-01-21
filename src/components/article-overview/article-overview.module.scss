@@ -57,7 +57,7 @@
     h3{
         font-size: $h3-size;
         line-height: inherit;
-        margin: $spacer-2 0;
+        margin: $spacer-2 0 0 0;
         padding: 0 !important;
     }
 
@@ -66,12 +66,12 @@
     }
 
     ul{
-        padding: 0;
+        padding-top: $spacer-2;
 
         li{
             list-style: none;
             margin-bottom: $spacer-1;
-            font-size: $h4-size;
+            font-size: $h5-size;
 
             &::before {
                 content: "\2022";  
