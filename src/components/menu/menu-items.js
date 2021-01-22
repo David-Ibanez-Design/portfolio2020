@@ -8,7 +8,7 @@ import LocalizedLink from '../localizedLink'
 import useTranslations from "../useTranslations"
 import { LocaleContext } from "../layout"
 import locales from "../../../config/i18n"
-import Config from '../../../config'
+import Config from '../../../gatsby-config'
 import ResumeJp from '../../downloads/Resume-jp.pdf'
 import ResumeEn from '../../downloads/Resume-en.pdf'
 import TagList from '../tag-list'

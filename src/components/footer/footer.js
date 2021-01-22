@@ -3,7 +3,7 @@ import React from 'react'
 import { FaDribbble, FaLinkedin } from 'react-icons/fa'
 /* App imports */
 import style from './footer.module.scss'
-import Config from '../../../config'
+import Config from '../../../gatsby-config'
 import Buttons from '../button'
 import LangSwitcher from "../menu/lang-switcher"
 import useTranslations from "../useTranslations"

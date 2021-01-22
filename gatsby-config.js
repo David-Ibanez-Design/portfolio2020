@@ -1,13 +1,17 @@
-const config = require('./config');
 const plugins = require('./gatsby-config.plugins');
 
 module.exports = {
-  pathPrefix: config.pathPrefix,
+  // pathPrefix: '/gatsby-starter-developer-blog',
+  // pathPrefix: '/portfolio2020',
   siteMetadata: {
-    // Data used by some gatsby plugins
-    siteUrl: config.siteUrl,
-    title: config.siteTitle,
-    description: config.siteDescription
+    siteUrl: "https://davidibanez.design",
+    title: "UI/UX Portfolio",
+    description: "UI/UX Portfolio",
+  },
+  email: 'dibanez@rocketmail.com',
+  social: {
+    dribbble: 'https://dribbble.com/dibanez',
+    linkedin: 'https://www.linkedin.com/in/david-ibanez-a5b443120/'
   },
   plugins,
 }

@@ -7,7 +7,7 @@ import useTranslations from "../../components/useTranslations"
 import SEO from '../../components/seo'
 import style from './about.module.scss'
 import ResumeEn from '../../downloads/Resume-en.pdf'
-import Config from '../../../config'
+import Config from '../../../gatsby-config'
 import LocalizedLink from '../../components/localizedLink'
 import { LocaleContext } from "../../components/layout"
 

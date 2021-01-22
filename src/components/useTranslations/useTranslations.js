@@ -64,10 +64,59 @@ const query = graphql`
               viewCaseStudy
               otherWorks
               viewOnDribbble
+              dribbbleShots{
+                description
+                projects {
+                  description
+                  dribbbleUrl
+                }
+              }
             }
-            dribbbleShots{
-              description
-              projects
+            tags{
+              Research{
+                name
+                description
+              }
+              Wireframe{
+                name
+                description
+              }
+              Prototyping{
+                name
+                description
+              }
+              UIUXDesign{
+                name
+                description
+              }
+              DesignSystem{
+                name
+                description
+              }
+              FrontEndDevelopment{
+                name
+                description
+              }
+              UserFlow{
+                name
+                description
+              }
+              VisualDesign{
+                name
+                description
+              }
+              DataAudit{
+                name
+                description
+              }
+              DataAnalysis{
+                name
+                description
+              }
+              DataVisualization{
+                name
+                description
+              }   
             }
             suggestedArt{
               next

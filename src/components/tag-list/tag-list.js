@@ -4,11 +4,12 @@ import PropTypes from 'prop-types'
 /* App imports */
 import './tag-list.scss'
 import style from './tag-list.module.scss'
-import Config from '../../../config'
 import Utils from '../../utils'
+import useTranslations from "../useTranslations"
 
-const TagList = ({ tags, type="medium", limit=""}) => {
+const TagList = ({tags, type="medium", limit=""}) => {
 
+  const t = useTranslations()
   const tagCount = tags.length;
 
   return(
@@ -19,7 +20,7 @@ const TagList = ({ tags, type="medium", limit=""}) => {
       .map((tag, index) => (
         <React.Fragment key={index}>
           <span key={tag} className={`${style.tag} ${tag} ${type ? style[type] : ""}`}>
-              {Config.tags[tag].name || Utils.capitalize(tag)}
+              {t.tags[tag].name || Utils.capitalize(tag)}
           </span>
         
           { limit !== "" && index === limit-1 ? (

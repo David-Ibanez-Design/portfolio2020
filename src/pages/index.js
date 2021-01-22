@@ -6,7 +6,7 @@ import { FaDribbble, FaLinkedin } from 'react-icons/fa'
 import Img from 'gatsby-image'
 import SEO from '../components/seo'
 import TagList from '../components/tag-list'
-import Config from '../../config'
+import Config from '../../gatsby-config'
 import style from './homepage.module.scss'
 import ResumeEn from '../downloads/Resume-en.pdf'
 import Buttons from '../components/button'
@@ -15,7 +15,6 @@ import HeroBg from '../images/icons/heroBackground'
 import LocalizedLink from '../components/localizedLink'
 import useTranslations from "../components/useTranslations"
 import { LocaleContext } from "../components/layout"
-import { string } from 'prop-types'
 
 const Homepage = ({data}) => {
 
@@ -25,9 +24,6 @@ const Homepage = ({data}) => {
   let { caseStudyFeatureTablet, caseStudiesTablet, dribbbleShots, heroVisual, profilePics  } = data
   caseStudyFeatureTablet = caseStudyFeatureTablet.edges[0]
   caseStudiesTablet = caseStudiesTablet.edges;
-
-  const dribbbleShotsMap = Config.dribbbleShots;
-  var project = "";
 
   return(
     <>
@@ -125,10 +121,10 @@ const Homepage = ({data}) => {
       </div>
         <div className={`${style.dribbbleListContainer}  ${style.container}`}>
           <h2>{t.home.otherWorks}</h2>
-          <p>{t.dribbbleShots.description} <a href={Config.social.dribbble}>{t.socialsLinks.Dribbble}.</a></p>
+          <p>{t.home.dribbbleShots.description} <a href={Config.social.dribbble}>{t.socialsLinks.Dribbble}.</a></p>
           <div className={style.dribbbleInnerContainer}>
           
-          {dribbbleShotsMap.map((dribbbleShotMap, index) => {
+          {t.home.dribbbleShots.projects.map((dribbbleShotMap, index) => {
              return(
                 <a key={index} rel="noreferrer" target="_blank" href={dribbbleShotMap.dribbbleUrl} className={style.dribbbleShots} >
                   <div className={style.dribbbleShotsImage} data-tip data-for="viewProjectHomepage-1">
@@ -138,7 +134,7 @@ const Homepage = ({data}) => {
                     </Tooltip>
                     <div className={style.overlay}></div>
                   </div>  
-                  <p>{t.dribbbleShots.projects[index]}</p>
+                  <p>{dribbbleShotMap.description}</p>
                 </a>
              )
           })}
