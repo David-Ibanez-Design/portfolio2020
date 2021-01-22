@@ -40,10 +40,10 @@ const Homepage = ({data}) => {
               </div>
               <div className={style.socials}>
                     <span>{t.socialsLinks.Follow}:</span>
-                    <a href={Config.social.dribbble} target="_blank" rel="noreferrer" className={style.dribbble}>
+                    <a href={Config.siteMetadata.social.dribbble} target="_blank" rel="noreferrer" className={style.dribbble}>
                       <FaDribbble size="16" />{t.socialsLinks.Dribbble}
                     </a>
-                    <a href={Config.social.linkedin} target="_blank" rel="noreferrer"  className={style.linkedin}>
+                    <a href={Config.siteMetadata.social.linkedin} target="_blank" rel="noreferrer"  className={style.linkedin}>
                       <FaLinkedin size="16" />{t.socialsLinks.Linkedin}
                     </a>
               </div>
@@ -51,7 +51,7 @@ const Homepage = ({data}) => {
               <p>{t.home.heroText}</p>      
               <div className={style.actions}>
                 <Buttons destination="external" to={ResumeEn} buttonStyle="primary">{t.home.viewResume}</Buttons>
-                <Buttons destination="external" to={`mailto:${Config.email}`} buttonStyle="secondary">{t.home.contact}</Buttons>    
+                <Buttons destination="external" to={`mailto:${Config.siteMetadata.email}`} buttonStyle="secondary">{t.home.contact}</Buttons>    
               </div>
             </div>
             <div className={style.heroImageContainer}>
@@ -121,7 +121,7 @@ const Homepage = ({data}) => {
       </div>
         <div className={`${style.dribbbleListContainer}  ${style.container}`}>
           <h2>{t.home.otherWorks}</h2>
-          <p>{t.home.dribbbleShots.description} <a href={Config.social.dribbble}>{t.socialsLinks.Dribbble}.</a></p>
+          <p>{t.home.dribbbleShots.description} <a href={Config.siteMetadata.social.dribbble}>{t.socialsLinks.Dribbble}.</a></p>
           <div className={style.dribbbleInnerContainer}>
           
           {t.home.dribbbleShots.projects.map((dribbbleShotMap, index) => {

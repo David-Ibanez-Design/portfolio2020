@@ -7,11 +7,12 @@ module.exports = {
     siteUrl: "https://davidibanez.design",
     title: "UI/UX Portfolio",
     description: "UI/UX Portfolio",
+    email: 'dibanez@rocketmail.com',
+    social: {
+      dribbble: 'https://dribbble.com/dibanez',
+      linkedin: 'https://www.linkedin.com/in/david-ibanez-a5b443120/'
+    },
   },
-  email: 'dibanez@rocketmail.com',
-  social: {
-    dribbble: 'https://dribbble.com/dibanez',
-    linkedin: 'https://www.linkedin.com/in/david-ibanez-a5b443120/'
-  },
+
   plugins,
 }

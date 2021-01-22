@@ -36,23 +36,23 @@ const About = ({data}) => {
                 <span dangerouslySetInnerHTML={{__html: t.about.textPart2}}/>
                 <span> {t.socialsLinks.Follow} </span>
                 <a 
-                  href={Config.social.linkedin} 
+                  href={Config.siteMetadata.social.linkedin} 
                   target="_blank" 
                   rel="noreferrer"  
                   className={style.linkedin}> {t.socialsLinks.Linkedin},
                 </a> 
                 <a 
-                  href={Config.social.dribbble} 
+                  href={Config.siteMetadata.social.dribbble} 
                   target="_blank" 
                   rel="noreferrer"  
                   className={style.dribbble}> {t.socialsLinks.Dribbble}
                 </a> 
                 <span> {t.socialsLinks.Contact} </span>
                 <a 
-                  href={`mailto:${Config.email}`}
+                  href={`mailto:${Config.siteMetadata.email}`}
                   target="_blank" 
                   rel="noreferrer"  
-                  className={style.dribbble}> {Config.email + " "} 
+                  className={style.dribbble}> {Config.siteMetadata.email + " "} 
                 </a> 
                 <span> {t.socialsLinks.or}</span>
                 <a 

@@ -116,7 +116,7 @@ const MenuItems = ({data, isMobile , withWork, toggleMenu}) => {
                 {/* Contact */}
                 <li>
                     <a className={style.externalLinks} 
-                        href={`mailto:${Config.email}`} 
+                        href={`mailto:${Config.siteMetadata.email}`} 
                         target="_blank"　
                         rel="noreferrer"
                     >
