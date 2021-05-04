@@ -3,7 +3,6 @@ import React from 'react'
 /* App imports */
 import Footer from '../footer'
 import Menu from '../menu'
-import Smartlook from '../smartlook'
 import Utils from '../../utils'
 /* Base style: makes it available to all components under layout  */
 import "../../styles/base/normalize.scss";
@@ -18,7 +17,6 @@ var BrowserPreferredLang= Utils.setDefaultLang()
 
 const Layout = ({children, pageContext: { BrowserPreferredLang, locale, localizedPath, isArt } }) => (
   <LocaleContext.Provider value={{ BrowserPreferredLang, locale, localizedPath, isArt }}>
-      <Smartlook/> 
       <Menu/>
         {children}
       <Footer/>
