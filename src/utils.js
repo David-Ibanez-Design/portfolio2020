@@ -1,45 +1,48 @@
 const Utils = {
 
-  // setDefaultLang: (contextLang, options = {}) => {
-  //     const defaultOptions = {
-  //       languageCodeOnly: true,
-  //       languageFallback: "ja",
-  //     };
+  setDefaultLang: (contextLang, options = {}) => {
+      const defaultOptions = {
+        languageCodeOnly: true,
+        languageFallback: "ja",
+      };
 
-  //     const opt = {
-  //       ...defaultOptions,
-  //       ...options,
-  //     };
+      const opt = {
+        ...defaultOptions,
+        ...options,
+      };
 
-  //     if(typeof navigator !== 'undefined'){
+      if(typeof navigator !== 'undefined'){
 
-  //       const browserLocales =
-  //       navigator.languages === undefined
-  //         ? [navigator.language]
-  //         : navigator.languages;
+        const browserLocales =
+        navigator.languages === undefined
+          ? [navigator.language]
+          : navigator.languages;
       
-  //       if (!browserLocales) { return contextLang === defaultOptions.languageFallback ;}
+        if (!browserLocales) { return contextLang === defaultOptions.languageFallback ;}
 
-  //       const browserLocalesArr = []
+        const browserLocalesArr = []
+        
+        browserLocales.map(locale => {
+          const trimmedLocale = locale.trim();
+          browserLocalesArr.push(opt.languageCodeOnly ? trimmedLocale.split(/-|_/)[0] : trimmedLocale);
+        });
 
-  //       return browserLocales.map(locale => {
-  //         const trimmedLocale = locale.trim();
-  //         return browserLocalesArr.push(opt.languageCodeOnly ? trimmedLocale.split(/-|_/)[0] : trimmedLocale);
-  //       });
+        // If the array is empty set the fallback language as the default language
+        if(browserLocalesArr.length === 0){
+          return contextLang === defaultOptions.languageFallback
 
-  //       // If the array is empty set the fallback language as the default language
-  //       if(browserLocalesArr.length === 0){
-  //         return contextLang === defaultOptions.languageFallback
-  //       }
-       
-  //       // If the first result it equal to the context lang
-  //       return browserLocalesArr[0] === contextLang
+        // If the first result it equal to the context lang
+        }else if(browserLocalesArr[0] === contextLang){
+          return browserLocalesArr[0]
+        }else{
+          return browserLocalesArr[0]
+        }
 
-  //     }else{
-  //         return contextLang === defaultOptions.languageFallback
-  //       }
+      }else{
+          return contextLang === defaultOptions.languageFallback
+        }
 
-  // },
+  },
 
 
   /**

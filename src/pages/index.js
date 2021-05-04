@@ -1,6 +1,6 @@
 /* Vendor imports */
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, navigate } from 'gatsby'
 import { FaDribbble, FaLinkedin } from 'react-icons/fa'
 /* App imports */
 import Img from 'gatsby-image'
@@ -16,14 +16,27 @@ import LocalizedLink from '../components/localizedLink'
 import useTranslations from "../components/useTranslations"
 import { LocaleContext } from "../components/layout"
 
-const Homepage = ({data}) => {
+
+const Homepage = ({data, requestLangChange}) => {
 
   const t = useTranslations()
-  const { localizedPath } = React.useContext(LocaleContext)
+
+console.log(requestLangChange)
+  const { localizedPath, locale, BrowserPreferredLang } = React.useContext(LocaleContext)
   
   let { caseStudyFeatureTablet, caseStudiesTablet, dribbbleShots, heroVisual, profilePics  } = data
   caseStudyFeatureTablet = caseStudyFeatureTablet.edges[0]
   caseStudiesTablet = caseStudiesTablet.edges;
+
+  // If users has a different default browser language setting that the website
+  // Redirect them to their prefered langauge
+  // ISSUE: we need to let user change lang whe the use the lang switcher
+
+  // if(locale == "en" && BrowserPreferredLang == "ja" && !requestLangChange){
+  //   navigate("/ja")}
+  // else if(locale == "ja" && BrowserPreferredLang == "en" && !requestLangChange){
+  //   navigate("/")
+  // }
 
   return(
     <>
@@ -126,7 +139,7 @@ const Homepage = ({data}) => {
           
           {t.home.dribbbleShots.projects.map((dribbbleShotMap, index) => {
              return(
-                <a key={index} rel="noreferrer" target="_blank" href={dribbbleShotMap.dribbbleUrl} className={style.dribbbleShots} >
+                <a key={index} rel="noreferrer" target="_blank" href={`https://dribbble.com/shots/${dribbbleShotMap.dribbbleUrl}`} className={style.dribbbleShots} >
                   <div className={style.dribbbleShotsImage} data-tip data-for="viewProjectHomepage-1">
                     <Img fluid={dribbbleShots.edges[index].node.childImageSharp.fluid} alt="sss"/>
                     <Tooltip id={`tooltipDribbbleShots-${index}`} targetId="viewProjectHomepage-1" effect="float" hidePointer="hidePointer">

@@ -10,14 +10,14 @@ import { LocaleContext } from "../layout"
 import useTranslations from "../useTranslations"
 import locales from "../../../config/i18n"
 
-const LangSwitcher = ({toggleMenu, isMobile }) => {
+const LangSwitcher = ({toggleMenu, isMobile, requestLangChange }) => {
 
-  const { locale, localizedPath } = React.useContext(LocaleContext)
+  const { locale, localizedPath, BrowserPreferredLang } = React.useContext(LocaleContext)
   const t = useTranslations()
 
   const pageName = localizedPath === locale ? "" : localizedPath.substring(localizedPath.lastIndexOf('/') + 1);
 
-  function switchLangTo(targetLang) {   
+  function switchLangTo(targetLang) {
        const isIndex = (pageName === `/` || pageName === ``)
        return locales[targetLang].default ? `/${pageName}` : `/${locales[targetLang].path}${isIndex ? `` : `/${pageName}`}`  
   }
