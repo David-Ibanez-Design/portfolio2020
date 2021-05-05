@@ -1,5 +1,5 @@
 ---
-title: Designing And Documenting A Design System To Enable The Team To Focus On User Experience.
+title: Designing And Documenting A Design System To Enable The Team To Focus On User Experience Rather Than Pixels.
 tags: [VisualDesign, DesignSystem, FrontEndDevelopment]
 path: articles/design-system
 order: 2
@@ -69,7 +69,7 @@ import ImageSlider from "../../src/components/image-slider"
 ## The product audit revealed many inconsistencies and user experiences issues, confirming the need for a design system.
 
 <p>
- To understand of the needs of the redesign, I first needed to evaluate the current product. 
+ To understand the needs of the redesign, I first had to evaluate the current product. 
 </p>
 
 <p>
@@ -152,11 +152,11 @@ Now that I had an idea of what the overall solution will look like, it was time 
 </p>
 
 <p>
-I started by organizing and categorizing every component identified during the current product version’s audit. During my conversion with developers, I noticed that often, they were using different names when referring to elements. 
+I started by organizing and categorizing every component identified during the current product version’s audit. During my conversion with developers, I noticed that often, they were using different names when referring to UI elements. 
 </p>
 
 <p>
-Since one of the goals of the design system was to create a shared understanding, it was essential to decide on the right names collectively and grouped families of components based on their similarities.
+Since one of the goals of the design system was to create a shared understanding, it was essential to decide on the right names collectively and grouped families of UI components based on their similarities.
 </p>
 
 <p>
@@ -174,7 +174,7 @@ Once the design sytem structure was defined, I got to work converting the UI ele
 </p>
 
 <p>
-To keep changes isolated and performance high, each UI element was created <a href="https://www.sketch.com/docs/libraries/" target="_blank" rel="noreferrer">as a single Sketch library.</a> This organization, however, made it difficult to quickly navigate through the entire set, so to address this issue, I also created a master file that acted as an entry point or an overview.
+To keep changes isolated and performance high, each UI element was created <a href="https://www.sketch.com/docs/libraries/" target="_blank" rel="noreferrer">as a single Sketch library.</a> This organization, however, made it difficult to quickly navigate through the entire set, so to address this issue, I also created a master file that acted as an entry point.
 </p>
 
 <Images name={props.images.md["Components-1"]} captions="The design system is organized into 4 main categories."/>
@@ -200,11 +200,11 @@ One of the ways I could fulfill my goal of improving efficiency was to reduce gu
 ## The documentation site helped the team move from design to implementation quickly by eliminating guess-work.
 
 <p>
-To forge a shared understanding of the system between designer and developer and facilitate implementation, we needed a documentation site. With the help of the developer team, I started working on creating the website and adding components to it.  
+To forge a shared understanding of the system between designer and developer and facilitate implementation, we needed a documentation site. With the help of the developement team, I started working on creating the website and adding components to it.  
 </p>
 
 <p>
-To help designers quickly move between the design files and the documentation, I decided to mirror the navigation, structure, and terminology in the Sketch files and the documentation. I also added a link to the component documentation in the sketch files themselves and a link to the sketch library in the related documentation article.
+To help designers quickly move between the design files and the documentation, I decided to mirror the navigation, structure, and terminology in the Sketch files and the documentation site. I also added a link to the component documentation in the sketch files themselves and a link to the sketch library in the related documentation article.
 </p>
 
 <Images name={props.images.md["documentation-site"]} captions="The documentation site include a directly link to the design file."/>
