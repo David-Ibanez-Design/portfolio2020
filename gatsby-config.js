@@ -1,7 +1,7 @@
 const plugins = require('./gatsby-config.plugins');
 
 module.exports = {
-  // pathPrefix: '/gatsby-starter-developer-blog',
+  pathPrefix: '/gatsby-starter-developer-blog',
   // pathPrefix: '/portfolio2020',
   siteMetadata: {
     siteUrl: "https://davidibanez.design",
