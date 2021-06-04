@@ -25,7 +25,7 @@ const Footer = () => {
               <h6>{t.footer.subtitle1}</h6>
               <h1>{t.footer.title1}</h1>
               <p className={style.outro}>{t.footer.text}</p>
-              <Buttons destination="external" to={`mailto:${Config.siteMetadata.email}`} buttonStyle="primary">Contact me</Buttons>
+              <Buttons destination="external" to={`mailto:${Config.siteMetadata.email}`} buttonStyle="primary">{t.home.contact}</Buttons>
               </div>
               <div className={style.menu}>
                 <h6>{t.footer.subtitle2}</h6>

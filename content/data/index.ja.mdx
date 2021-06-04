@@ -1,5 +1,5 @@
 ---
-title: Helping A Company Understand Customer Behaviours Thought Data IN JAPANESE.
+title: データを利用し会社が顧客の行動を理解できるように
 tags: [DataAudit, DataAnalysis, DataVisualization]
 order: 4
 featured: 0
@@ -26,234 +26,231 @@ imagesMd:
 
 <ArticleOverview>
     <Sunnary>
-        <a href="https://comvex.co.jp/" target="_blank" rel="noreferrer">Convex</a> is a Tokyo based sales company with the mission to provide businesses with a cost-effective and user-friendly way to understand their customers' needs through technology.
-        As the company’s main product customer base grew, so did the number of support tickets and cancellations. After a while, it became evident that the company lacked the necessary insights to anticipate customer behaviors.
+        <a href="https://comvex.co.jp/" target="_blank" rel="noreferrer">Convex</a> は東京に本社を置く会社で、テクノロジーを通じて顧客のニーズを理解するための、費用対効果が高くユーザーフレンドリーな手段を企業に提供することをミッションにしています。
+        同社の主要プロダクトの顧客ベースが広がるにつれ、サポートチケットや解約も増えていきました。しばらくすると、顧客の行動を予測するに必要なインサイトが不足していることがわかりました。
     </Sunnary>
     <Problems>
-        <p>The company lacks the necessary knowledge about their customers and the product performance to make proactive business decisions.</p>
+        <p>同社は、積極的なビジネス的判断を下すために必要な、自社の顧客およびプロダクトのパフォーマンスに関する必要な知識が不足していた。</p>
     </Problems>
     <Goals>
-        <p>Help the company collect the necessary metrics to understand customer behavior, business, and product performance, to improve the decision-making process.</p>
+        <p>顧客の行動とビジネスおよびプロダクトのパフォーマンスを把握するのに必要な指標を収集する手助けをし、意思決定プロセスを改善する。</p>
     </Goals>
     <Outcomes>
         <ul>
-            <li>Data started to be used to inform roadmaps and business decisions.</li>
-            <li>Fundamental insights were discovered that challenged stakeholder’s assumptions.</li>
+            <li>ロードマップ作成やビジネス上の判断にデータが使われるようになった。</li>
+            <li>ステークホルダーの前提を覆すような基礎的なインサイトが見つかった。</li>
         </ul>        
     </Outcomes>    
 </ArticleOverview>
 
 <!-- Content -->
 
-#### Data Audit
-## The data audit showed that the company had little to no visibility on customer behaviors and product performance.
+#### データ監査
+## データ監査を行った結果、顧客の行動とプロダクトのパフォーマンスについて把握しきれていないことが分かりました。
 
 <p>
-To map out the gaps in the company data, and get an idea of the amount of work needed to start filling in these gaps, I first began by conducting a data audit. I spent some time talking to different department leads and going through a few documents. 
-Once I felt that I had captured the majority of what the company was recording, I organized my finding into two categories:
+会社のデータギャップを理解し、溝を埋めるために必要な工数を把握するため、まずデータ監査を行いました。様々なチームのリーダーと話し、ドキュメントを確認するのに多くの時間を費やしました。同社が記録していたデータの大部分を把握できたと感じたあと、見つけた内容を2つのカテゴリーに分けました：
 </p>
 
 <p className={props.style.listHeader}>
-<strong>Quantitative data:</strong>
+<strong>定量的データ：</strong>
 </p>
 <ul>
-    <li>Some business metrics were calculated and recorded manually in a Google spreadsheet.</li>
-    <li>Some basic customer metrics were recorded in our product administration site.</li>
-    <li>The support team was using the cutomer support software <a href="https://www.zendesk.com/" target="_blank" rel="noreferrer">Zendesk</a>, which had some reporting capabilities that had not been used.</li>
+    <li>ビジネス指標の中には、手動計算でしGoogleスプレッドシートに記録しているものがありました。</li>
+    <li>一部の基本的な顧客指標はプロダクトの管理サイトに記録されてました。</li>
+    <li>サポートチームは <a href="https://www.zendesk.com/" target="_blank" rel="noreferrer">Zendesk</a>,という顧客サポートソフトウェアを使用していましたが、使っていないレポート機能もありました。</li>
 </ul>
 
-<Images name={props.images.md["exsiting-quantitative"]} captions="Important buisness related metrics were manualy recorded in a Google spreadsheet."/>
+<Images name={props.images.md["exsiting-quantitative"]} captions="重要なビジネス指標が手作業でGoogleスプレッドシートに記録されていました。"/>
 
 <p className={props.style.listHeader}>
-<strong>Qualitative data:</strong>
+<strong>定性的データ：</strong>
 </p>
 <ul>
-    <li>Customers were asked to fill a pdf survey when the their account was issued.</li>
-    <li>Customer behaviors were not tracked in any way.</li>
-    <li>They had no online customer feedback or survey form.</li>
-    <li>No customer personas exsited.</li>
-    <li>No dedicated user research was done.</li>    
+    <li>アカウント発行時、お客様にPDFの調査票の記入を依頼していた。</li>
+    <li>お客様の行動がトラッキングされていなかった。</li>
+    <li>ネット上でお客様の声やアンケートフォームを回収できるものがなかった。</li>
+    <li>顧客ペルソナが存在していなかった。</li>
+    <li>ユーザーに特化したリサーチがされていなかった。</li>    
 </ul>
 
-<Images name={props.images.md["exsiting-qualitative"]} captions="An example of the survey form customers were asked to fill out upon accoutn creation."/>
+<Images name={props.images.md["exsiting-qualitative"]} captions="アカウント作成時にお客様に記入を依頼していたアンケートフォーム例"/>
 
 <p className={props.style.listHeader}>
-What I learned from the data audit:
+データ監査でわかったこと：
 </p>
 
 <ul>
-    <li>A lot of customers knowledge were only exchanged verbally amount sales and support staff.</li>
-    <li>Business metrics were mostly shared, amount, stakeholders.</li>
-    <li>Recording business metrics in a Google spreadsheet required lots of manual work.</li>
-    <li>The cost of recording customer metrics was high because it needed dedicated Backend and Frontend development.</li>
+    <li>サポートチームと営業チーム間のお客様に関する情報のやり取りが、口頭でのみ行われていた。</li>
+    <li>ビジネス指標のほとんどは、ステークホルダーにのみ共有されていた。</li>
+    <li>Googleスプレッドシートへのビジネス指標の手入力に手間がかかっていた。</li>
+    <li>顧客指標を記録するために専用のバックエンドとフロントエンドの開発が必要だったので、コストがかかっていた。</li>
 </ul>
 
-#### Goals
-## Making sure new insights could be easily collected and shared across the company was essential in removing barriers to adoption.
+#### 目標
+## 新しいインサイトは、取り入れやすくするために、簡単に収集でき、会社全体で共有しやすいものにすることを目指しました。
 
 <p>
-Now that I had a better idea of the company data gap, it was time to decide which metric we wanted to collect and why. I classified the data required in 3 categories. For each group, I added a series of questions to answer with the collected data. 
+同社のデータギャップについて理解が深まったところで、どの指標をなぜ収集するのか決める作業に移りました。データを3グループに分け、各グループのデータの収集目的となる一連の質問を加えました。 
 </p>
 
 <p className={props.style.listHeader}>
-I came up with the following goals for our data gathering efforts.
+データ収集の取り組みに以下の目標を立てました。
 </p>
 
 
 <ul>
-    <li><strong>Understand our users:</strong></li>
+    <li><strong>ユーザーを理解する：</strong></li>
     <ul>
-        <li>What are their demographic profiles?</li>
-        <li>What are their technical profiles?</li> 
-        <li>What are their goals?</li>
-        <li>What challenges do they face in their daily work?</li>  
-        <li>How do our customers interact with our products?</li>                         
+        <li>ユーザーの人口統計学的プロフィールは？</li>
+        <li>ユーザーの技術的なプロフィールは？</li> 
+        <li>ユーザーの目標は？</li>
+        <li>日々の業務で直面している課題は？</li>  
+        <li>顧客は同社プロダクトとどう関わっているのか</li>                         
     </ul>
-    <li><strong>Monitor the performance of our product:</strong></li>
+    <li><strong>プロダクトのパフォーマンスをモニタリングする：</strong></li>
     <ul>
-        <li>What part of our product is used, and what part is not?</li>
-        <li>How performant is our porduct are at satisfiing our customers business needs?</li>                         
+        <li>プロダクトの利用されている部分と利用されていない部分は？</li>
+        <li>プロダクトのパフォーマンスはお客様のビジネスニーズを満たしているのか。</li>                         
     </ul>
-    <li><strong>Monitor the general health of the business by automatically collecting key KPIs:</strong></li>
+    <li><strong>主なKPIを自動収集し全体的なビジネスの健全性をモニタリングする：</strong></li>
     <ul>
-        <li>How many accounts we gain?</li>
-        <li>How many accounts we lost?</li>     
-        <li>How much MRR are we generating?</li>                          
+        <li>何件のアカウントを取得したのか。</li>
+        <li>何件のアカウントを失ったのか。</li>     
+        <li>生み出しているMRR値は？</li>                          
     </ul>
 </ul>
 
 <Images name={props.images.md["structure-graph"]} />
 
 <p>
-However knowing what data to collect won’t be enough. For these efforts to have a long-lasting impact on the businesses, people needed to take ownership of the data by incorporating them into their processes. Using what I learned from the data audit, I also defined a set of goals that will help reduce barriers to adoption:
+しかし、どのようなデータを収集すればいいのか知っているだけでは十分ではありません。このような取り組みが長期的に事業に効果を与えるには、各自、データをプロセスに組み込み、データを自分のものにする必要があります。また、データ監査で得た知見を用い、データを適用するまでの障壁を取り除くための目標を定義しました：
 </p>
 
 <ul>
-    <li>Eeveryone should be able to understand data so they can and gain useful insight from it.</li>
-    <li>Data should be easly sharable and customizable.</li>
-    <li>Adding new metrics should require as little dedicated development as possible.</li>
+    <li>全員がデータを理解し、データから役立つインサイトを得られるようにすること。</li>
+    <li>データは、簡単に共有できカスタマイズできるものであること。</li>
+    <li>新しい指標を追加する際は、専用の開発はできるだけ少なくすること。</li>
 </ul>
 
 <p>
-My final vision of how data could be shared acroos the ocmpany looked something like that:
+会社全体でデータを共有する方法の私の最終的なイメージは以下のとおりとなりました：
 </p>
 
 <Images name={props.images.md["structure-final-vision"]} className="mt-4" />
 
-#### Challenges
-## Beyond the logistic challenges, stakeholders needed to trust data enough to make business decisions based on it.
+#### 課題
+## データ収集に必要なインフラ整備の問題に加え、ステークホルダーがデータを信頼し、それに基づくビジネス上の意思決定を行う必要がありました。
 
 <p>
-Achieving the goals define earlier, will prove to be challenging for the following reasons:
+以下の理由から、前述の目標を達成することは困難であることが分かりました：
 </p>
 
 <ul>
-    <li>The company was not willing to hire a dedicated business intelligence analyst or a UX researcher yet. Therefore I will have to not only invest myself in that project but also recruit others to help me along the way while still supporting new feature design and improvement to the product.</li>
-    <li>Our product was producing quite a large amount of data. Collecting and analyzing some of them will require dedicated costly infrastructure and software solutions.</li>
-    <li>Perhaps the most challenging one, beyond the logistics issues, stakeholders needed to trust data enough to base their decisions on data rather than on anecdotal evidence.</li>
+    <li>同社は当時、専任のBIアナリストやユーザーエクスペリエンス（UX）リサーチャーを雇う予定はなかった。そのため、新機能デザインやプロダクト改善という他のサポートも行う中、プロジェクト内で自分で調べなければならなかった。そのため、サポートしてくれる人を募りながら進めなければならなかった。</li>
+    <li>同社プロダクトは、膨大な量のデータを生成していた。データの中には、コストのかかる専用のインフラやソフトウェアソリューションを必要とするものがあった。</li>
+    <li>データ収集に必要なインフラを整備しても、ステークホルダーに、事例証拠よりもデータを信頼し、データに基づく決定をしてもらう必要があった。おそらくこれが一番の課題であった。</li>
 </ul>
 
-#### Planning And Strategy
-## I decided to first focus on low effort/high-value data to gain the necessary stakeholder buy-in to capture more challenging metrics.
+#### プランニングと戦略
+## まずは、ステークホルダーの賛同を得てより困難な指標を把握するため、労力はかからないが価値の高いデータに焦点を充てることにしました。
 
 <p>
-Defining the goals as well as the challenges we were facing gave me good foundations to start planning.
+目標だけでなく、直面している課題も定義したことで、計画を始めるための基盤ができました。
 </p>
 
 <p>
-Using the high-level categorization defined earlier, I created a spreadsheet detailing exactly what data needed to be collected. To understand the effort and business value of each, I met with the developers, stakeholders, and did some of my own research. Once I felt I had a good understanding of the effort and value of each, I added my findings to the spreadsheet.
-</p>
+先に定義した大分類を用い、収集すべきデータの詳細を記載したスプレッドシートを作成しました。それぞれのデータの工数とビジネス的価値を把握するために、ディベロッパーおよびステークホルダーと話し合い、自分でも別途、一部の調査を行いました。工数と価値を十分に理解したという手ごたえを感じたところで、自分の調査結果もスプレッドシートに追加しました。</p>
 
 <Images name={props.images.md["spreadsheet-list"]}/>
 
 <p>
-Using the observation I made during my audit and my newly created data to collect spreadsheet, I then evaluated the effort vs the benefit of each metric.
+監査で得た見解と、スプレッドシートを収集するために新しく作成したデータを使い、各指標にかかる労力とメリットを比較評価しました。
 </p>
 
 <p>
-Looking at the document, It became clear that some data will be more resource-intensive to collect than others. For example, billing-related data like <a href="https://www.profitwell.com/recur/all/monthly-recurring-revenue#:~:text=MRR%20stands%20for%20Monthly%20Recurring,differences%20in%20your%20subscription%20service." target="_blank" rel="noreferrer">MRR</a> or <a href="https://www.investopedia.com/terms/c/churnrate.asp" target="_blank" rel="noreferrer">Chum rate</a>, although extremely important, will require a dedicated infrastructure to collect, which means that we first needed the business buy-in.
+資料から、一部のデータは、収集するのに他のデータよりもリソースが必要であることが分かりました。例えば、 <a href="https://www.profitwell.com/recur/all/monthly-recurring-revenue#:~:text=MRR%20stands%20for%20Monthly%20Recurring,differences%20in%20your%20subscription%20service." target="_blank" rel="noreferrer">MRR</a> や <a href="https://www.investopedia.com/terms/c/churnrate.asp" target="_blank" rel="noreferrer">チャーンレート</a>, のような課金に関連するデータは、非常に重要なデータですが、収集するには専用のインフラが必要ですので、ビジネスサイドの賛同を得なければなりません。
 </p>
 
 <p>
-To reach our goal, I, decided to first focus on data that like <a href="https://metriclabs.com.au/glossary/google-analytics-dimensions/days-since-last-session/" target="_blank" rel="noreferrer">days since the last session</a> or <a href="https://mixpanel.com/topics/daily-active-users/" target="_blank" rel="noreferrer">daily active users</a> that had a high business value but necessitated a relatively low effort to implement and gather. The idea was that by gradually showing how data could improve business decisions, stakeholders would learn to trust data over time, and we will gain access to more resources to gather data that necessitated dedicated infrastructure.
+目標達成するため、まずは、 <a href="https://metriclabs.com.au/glossary/google-analytics-dimensions/days-since-last-session/" target="_blank" rel="noreferrer">「最後のセッションからの日数」</a> や <a href="https://mixpanel.com/topics/daily-active-users/" target="_blank" rel="noreferrer">日ごとのアクティブユーザー」</a> など、ビジネス価値は高いが、実装や収集にあまり時間がかからない指標にフォーカスすることにしました。データにより、ビジネス上の判断がどう改善されるのかを徐々に示すことで、ステークホルダーが次第にデータを信頼するようになり、専用のインフラを必要とするデータを集めるためのリソースに、アクセスさせてもらえるようになると考えたからです。
 </p>
 
 <p>
-I consolidated my planning into a roadmap that I shared with the company.
+自分の計画をロードマップに落とし込み、社内で共有しました。
 </p>
 
-!!! Roadmap !!!
 
-#### Execution
-## Setting-up a free Google analytic account for the product was an obvious place to start.
+#### 実行
+## 同プロダクト用のGoogleアナリティクス無料アカウントの設定は、スタート地点として最適でした。
 
 <p>
-A self-service analytic tool like <a href="https://analytics.google.com" target="_blank" rel="noreferrer">Google Analytics</a> presented many advantages:
+<a href="https://analytics.google.com" target="_blank" rel="noreferrer">Google Analytics</a> のようなセルフ式の分析ツールには多くの利点があります：
 </p>
 
 <ul>
-    <li>It could be implemented with minimum involvement of the Frontend team.</li>
-    <li>It allows us to move away from custom-built solutions that were time consuming and resource-intensive.</li>
-    <li>We could easily share reports across multiple departments.</li>
-    <li>High-value business metrics could be tracked, and new ones could be added easily using <a href="https://marketingplatform.google.com/about/tag-manager/" target="_blank" rel="noreferrer">Google tag manager.</a></li>
+    <li>フロントエンドにあまり手間を取らせることなく実装できる。</li>
+    <li>時間とリソースがかかるカスタマイズソリューションから離れることができる。</li>
+    <li>複数の部署と簡単にレポートの共有ができる。</li>
+    <li><a href="https://marketingplatform.google.com/about/tag-manager/" target="_blank" rel="noreferrer">Google tag manager.</a>を使えば、価値の高いビジネス指標をトラッキングでき、新しい指標の追加も簡単である。</li>
 </ul>
 
-<Images name={props.images.md["GA-reports"]} captions="A overview of the product Google Analytics custom reports."/>
+<Images name={props.images.md["GA-reports"]} captions="Googleアナリティクスでのプロダクトに関するカスタムレポートの概観"/>
 
 <p>
-Next, I worked with the support manager to set-up custom reports in Zendesk that allow the team to view some essential metrics like the <strong>average time spent on tickets</strong> or the <strong>most reported issues per feature</strong>.
+次に、サポートマネージャーと一緒に、Zendeskのカスタムレポートの作成に取り掛かりました。目的は、サポートチームが、 <strong>チケットにかけている平均時間</strong> や <strong>機能別の最も報告の多い問題</strong>
 </p>
 
 <Images name={props.images.md["zendesk-reports"]} className="mt-4"/>
 
 <p>
-To help capture direct users’ feedback, I also worked with the frontend team to implement an in-app feedback form. Inquiries were sent directly to our support team platform and added to a dedicated board inside our project management tool.
+また、ユーザーからの直接の声を聞くため、フロントエンドチームと協力し、アプリ内にフィードバックフォームを実装しました。これにより、ユーザーからの質問はサポートチームのプラットフォームに直接送信され、送信された質問は、同社のプロジェクト管理ツールの専用ボードに追加されます。
 </p>
 
-<Images name={props.images.md["in-app-feedback-form"]} captions="User's feedback were capture directly from our product and sent to our product management software." className="mt-4"/>
+<Images name={props.images.md["in-app-feedback-form"]} captions="ユーザーのフィードバックをプロダクトから直接吸い上げ、プロダクト管理ソフトウェアに送信。" className="mt-4"/>
 
 <p>
-Finally, I worked with the project manager to make sure important insights were shared during our monthly product performance meeting.
+最後に、プロジェクトマネージャーと協働し、月次プロダクトミーティングで、必要なインサイトが共有されているのか確認しました。
 </p>
 
-#### Outcomes
-## Fundamental insights were discovered that challenged stakeholder’s assumptions.
+#### 結果
+## ステークホルダーの推測とは反対の基礎的なインサイトが見つかりました。
 
 <p>
-After a few months, the mindset toward data started to change, and people began to include data into their business decision process. 
+数カ月後、データに対する考え方に変化が見られ、ビジネス上の意思決定にデータを取り入れるようになりました。
 </p>
 
 <ul>
-    <li>The support team was using metric like days since last sessions to identify accounts that were at risk of canceling their subscription and provided active support.</li>
-    <li>Data started to be used to inform roadmaps and business decisions.</li>
+    <li>サポートチームは、解約のリスクのあるアカウントを特定するために、「最後のセッションからの日数」などの指標を用い、アクティブサポートと共有するようになった。</li>
+    <li>ロードマップやビジネス上の意思決定にデータを使用するようになった。</li>
 </ul>
 
 <p>
-Important discoveries were made that did not aligned with the team initial assumptions: 
+チームの当初の想定とは異なる重要な発見がありました： 
 </p>
 
 <ul>
-    <li>Some features previously thought to be heavily used were not and vise versa.</li>
-    <li>Even though the application did not support mobile, 15% of the traffic was coming from mobile devices. This showed us how important mobile was to our users, and the decision was made to explore the possibility of building a mobile version of the product. </li>
+    <li>当初よく使用されていると思われていた機能が実際はそうでなかった。逆に、使用されていないと思っていた機能が頻繁に使われていた。</li>
+    <li>同アプリはモバイル対応していなかったが、トラフィックの15％はモバイル端末からのものであった。これは、同社にとってモバイルがどれだけ重要かを示すものであり、同プロダクトのモバイル版の構築の可能性を追求するきっかけになった。</li>
 </ul>
 
 <p>
-A year after we started collecting data, the Backend team began working on a dedicated business intelligence database. The company later on signed up for a Tableau subscription, which finally allowed us to create and share powerful dashboards.
+データ収集を始めてから一年、バックエンドチームで、専用のビジネス・インテリジェンス・データベースの構築を開始しました。その後同社は、Tableau（タブロー）のサービスを契約し、非常に有用なダッシュボードの作成および共有が可能になりました。
 </p>
 
-<Images name={props.images.md["tableau-report-1"]} captions="The revenue dashbaord created using Table online."/>
+<Images name={props.images.md["tableau-report-1"]} captions="「Tableau（タブロー）」を使って作成した収益ダッシュボード"/>
 <Images name={props.images.md["tableau-report-2"]}/>
 
 
-## Conclusion
-### An evolution in mindset but no culture shift yet on how we define success.
+## 結論
+### 考え方の進展はあったものの成功の定義における文化的な変化はまだです。
 
 <p>
-I set out to improve the company decision-making process by providing access to the insights it needed to understand and anticipate customer behaviors. Although some progress has been made, we still need to get better at tracking the effect of our decisions on customer’s business goals. People's enthusiasm for data, however, gives me hope that with time and effort, things will improve.
+私は、顧客の行動を理解・予測するために必要だったインサイトへのアクセスを提供することで、同社の意思決定プロセスを改善することを目指しました。一定の進展はありましたが、お客様の事業目標における同社の決定の効果を追跡する部分は、今後改善していく必要があります。しかしながら、メンバーのデータに対する興味を見る限り、今後も時間と努力を続ければ、改善できると感じています。
 </p>
 
-### There is always more to learn.
+### 学ぶことは常にあります。
 
 <p>
-Even though I learned a lot about what kinds of insights data can and cannot provide and how to use these insights in my work, this project also showed me how in-depth of a discipline data science and user research is. To truly use the power of data to drive design and business decisions, we ultimately need dedicated specialists.
+このプロジェクトから、データから得られるインサイトと得られないインサイトについてや、自分の仕事にインサイトを取り入れる方法について多くのことを学びましたが、さらに、データサイエンスとユーザーリサーチの奥深さも見ることができました。デザインやビジネス上の決定を促すことを目的として、データを力を本格的に利用するには、最終的には専門家が必要です。
 </p>

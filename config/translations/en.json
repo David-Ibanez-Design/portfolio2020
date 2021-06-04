@@ -151,6 +151,12 @@
     "viewCaseStudy": "View case study"
   },
 
+  "articles": {
+    "problems": "Problems",
+    "goals": "Goals",
+    "outcomes": "Outcomes"
+  },
+
   "socialsLinks":
   {
     "socials": "Socials",

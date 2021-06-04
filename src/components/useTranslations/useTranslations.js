@@ -128,6 +128,11 @@ const query = graphql`
               next
               viewCaseStudy
             }
+            articles {
+              problems
+              goals
+              outcomes
+            }
             about{
               title
               seoTitle

@@ -1,5 +1,5 @@
 ---
-title: Designing and documenting a design system to enable the team to focus on user experience rather than pixels IN JAPANESE.
+title: チームがピクセルではなくユーザーエクスペリエンスに集中するためのデザインシステム設計およびドキュメント化
 tags: [VisualDesign, DesignSystem, FrontEndDevelopment]
 path: articles/design-system
 order: 2
@@ -38,25 +38,24 @@ imagesXl:
 
 <ArticleOverview>
     <Sunnary>
-        Digima, a web-based CRM application, provides small to medium companies with a way to understand their customers' needs. 
-        A few months after I joined the company, we came to a realization: Digima was getting harder and harder to scale. It got so bad that the decision was made to rebuild the product from the ground up.
+        ウェブベースのCRMアプリケーションである「Digima」は、中小企業が顧客ニーズを把握するための手段を提供しています。同社入社から数カ月後、「Digimaはスケールアップが難しい」ということに気付きました。非常に厳しい状態だったため、プロダクトを一から作り直すことになりました。
     </Sunnary>
     <Problems>
         <ul>
-            <li>The company needed a more scalable way to deliver feature designs.</li>
-            <li>Digima users needed a more consistent user experience.</li>
+            <li>同社は、機能デザインの提供のため、より拡張性のある方法を必要としていた。</li>
+            <li>より一貫したユーザーエクスペリエンスをDigimaのユーザーが求めていた。</li>
         </ul>        
     </Problems>
     <Goals>
         <ul>
-            <li>Create tools and processes that can deliver quality, consistency, and speed to the design process.</li>
-            <li>Redesign the produc using these tools.</li>
+            <li>デザインプロセスに質・一貫性・スピードをもたらすツールとプロセスの構築。</li>
+            <li>上記ツールを用いたプロダクトの再デザイン。</li>
         </ul>      
     </Goals>
     <Outcomes>
         <ul>
-            <li>An entire new design system that included a dedicated documentation site was created.</li>
-            <li>Feature design quality, consistency, and delivery time were significantly imporved.</li>
+            <li>専用のドキュメントサイトを含む完全に新しいデザインシステムが構築できた。</li>
+            <li>機能デザインの品質・一貫性・納期が大幅に改善された。</li>
         </ul>        
     </Outcomes>    
 </ArticleOverview>
@@ -65,25 +64,25 @@ import ImageSlider from "../../src/components/image-slider"
 
 <!-- Content -->
 
-#### Inventory And Audit
-## The product audit revealed many inconsistencies and user experiences issues, confirming the need for a design system.
+#### インベントリーおよび監査
+## プロダクト監査の結果、多くの不整合やユーザーエクスペリエンスの問題が見つかり、デザインシステムの必要性が確認されました。
 
 <p>
-I first needed to evaluate the current product to understand of the needs of the redesign. 
+再デザインの必要性を理解するため、まずは既存のプロダクトの評価をする必要がありました。 
 </p>
 
 <p>
-To that end, I went through the entire product interface and took screenshots of menus, buttons, and modals. I created a Google spreadsheet where I grouped each component into categories and gave each one a name.
+そのため、プロダクトのインターフェースを全体的に見渡し、メニュー、ボタン、モーダルのスクリーンショットを撮りました。各コンポーネントをカテゴリー分けし、それぞれに名称をつけ、Googleスプレッドシートにまとめました。
 </p>
 
 <Images name={props.images.md["inventory-spreadsheet"]}/>
 
 <p>
-Viewing all the components side by side confirmed why we needed a redesign. There were 130 different colors, 56 different shades of greys, 22 different font sizes and 4 completely different variants of search fields. 
+全てのコンポーネントを並べて確認したことで、デザインの変更が必要であることが分かりました。色は130種類、グレーのシェードに関しても56色、22種類のフォントサイズ、そして、検索窓に関しては全く違う4つのスタイルが存在していました。 
 </p>
 
 <p>
-It became clear that what we needed was a well organized, collaborative design system custom-built to meet the company’s needs.
+会社のニーズに合わせ、きちんと整備された協働デザインシステムが必要であるということが明らかになりました。
 </p>
 
 <Images 
@@ -91,132 +90,133 @@ It became clear that what we needed was a well organized, collaborative design s
     className="bg-gray-0" 
     containerWidth="Xl"
     name={props.images.xl["v1-duplicate-styles"]}
-    captions="The current product audit revealed many inconsistencies."
+    captions="プロダクト監査で多くの不整合が明らかになりました。"
 />
 
-#### Design Principles
-## Agreeing on what kind of product experience we wanted to deliver to our users helped us stay on track when making difficult decisions.
+#### デザイン原則
+## ユーザーにどういったプロダクトエクスペリエンスを届けたいのかについて認識を合わせることで、難しい決断を下す際にも軌道から外れず順調に進めることができました。
 
 <p>
-Before I could start exploring visual directions for the new design, the team and I needed to decide on our core principles. 
+新しいデザインのビジュアルの方向性を考案する前に、チームと一緒に、自分たちの基本原則を定める必要がありました。
 </p>
 
 <p>
-These core principles are meant to act as our north star when making difficult product decisions and are the basis around which the product should be built.
+この基本原則は、プロダクトに関する難しい決断をしなければならない際の、いわゆる北極星のようなもので、プロダクトを構築するための基盤となるものです。
 </p>
 
 <p>
-After a few discussions, we came up with the following four principles.
+ディスカッションを重ねた結果、以下の4つの原則に辿り着きました：
 </p>
 
 <ul>
-    <li><strong>Be purposeful:</strong> Always design with intention and seek to validate your solutions with data when possible.</li>
+    <li><strong>目的を持つこと：</strong> 常に意図をもってデザインし、可能な限りデータを基にソリューションを検証する。</li>
 </ul>
 
 <ul>
-    <li><strong>Provide clarity:</strong> Ensuring consistent, cohesive user experiences by applying the same solutions to the same problems. Changing patterns and workflows familiar to existing users only when doing so is a definite improvement. (consistency trump originality and coherence trump consistency).</li>
+    <li><strong>明確にすること：</strong> 同じ問題には同じソリューションを用いることで一貫性を追求し、ユーザーエクスペリエンスに密着すること。既存のユーザーが慣れ親しんだパターンやワークフローを変えるのは、確実にそれが向上につながる時のみに限定する。</li>
 </ul>
 
 <ul>
-    <li><strong>Design Iteratively:</strong> No one solution will be perfect for the first time. Be patient, learn from feedback, and improve user experience Iteratively.</li>
+    <li><strong>反復的にデザインすること：</strong> 最初から完璧なソリューションはありません。忍耐強く、フィードバックから学び、反復的にユーザーエクスペリエンスを改善していく。</li>
 </ul>
 
 <ul>
-    <li><strong>Foster collaboration:</strong> Software development is a team sport. A design cannot exist without the support of others, so learning to implicate them into your process will only make for better designs.</li>
+    <li><strong>コラボレーションを促進すること：</strong> ソフトウェア開発はチームスポーツです。周りのサポートなしではデザインは成り立ちません。だからこそ、プロセスに関わってもらうことで、より良いデザインが生まれるのです。</li>
 </ul>
 
 
-#### Visual Direction
-## Before I could start redesigning the product and building the design system, we needed to decide on a visual direction.
+#### ビジュアルデザイン
+## プロダクトの再デザインとデザインシステムの構築を始める前に、ビジュアルの方向性を決める必要がありました。
 
 <p>
-Once we had an idea of what kind of product experience we wanted to deliver, I could now iterate on a few potential design directions for the main screens of the application. 
+どのようなプロダクトエクスペリエンスを届けたいのかわかってきたところで、アプリケーションの主要な画面のデザインの方向性を、いくつか検討してみました。
 </p>
 
-<Images name={props.images.md["visual-direction-01"]} captions="An early version of the new table design."/>
+<Images name={props.images.md["visual-direction-01"]} captions="新しいテーブルの初期バージョン"/>
 
-<Images name={props.images.md["visual-direction-02"]} captions="A variation on the web tracking page."/>
+<Images name={props.images.md["visual-direction-02"]} captions="ウェブトラッキングページのバリエーション"/>
 
 <p>
-After a few rounds of feedbacks, the team and I ultimately selected one final style. 
+フィードバックのやり取りの後、チームと最終的なスタイルを決定しました。 
 </p>
 
-<Images name={props.images.md["visual-direction-final-01"]} captions="The final design style." className="mt-0"/>
+<Images name={props.images.md["visual-direction-final-01"]} captions="最終デザインスタイル" className="mt-0"/>
 
 
-#### Building The Design System Structure
-## An agreed-upon and straightforward structure for our design system helped promote the shared understanding necessary to reach our goal of improving efficiency.
-
-<p>
-Now that I had an idea of what the overall solution will look like, it was time to get into the details of how the design system will be structured. 
-</p>
+#### デザインシステム構造の構築
+## デザインシステムの認識を合わせること、および分かりやすい構造にすることで、効率性を改善するという目標を達成するために必要な、共通理解を得ることができました。
 
 <p>
-I started by organizing and categorizing every component identified during the current product version’s audit. During my conversion with developers, I noticed that often, they were using different names when referring to elements. 
+ソリューションの全体像が見えたところで、具体的にデザインシステムをどう構築していくのか、詳細の検討を始めました。
 </p>
 
 <p>
-Since one of the goals of the design system was to create a shared understanding, it was essential to decide on the right names collectively and grouped families of components based on their similarities.
+既存のプロダクト監査で特定された全てのコンポーネントを整理し、分類することから始めました。やり取りの中で、ディベロッパーがUI要素を別の名称で呼んでいることに気付きました。
 </p>
 
 <p>
-After a few backs and forths, we came up with the following organization. 
-</p>
-
-<Images bg="gray-0" name={props.images.md["master-file-1"]} captions="The design system structure."/>
-
-
-#### Designing The Components
-## Designing the components was a long and meticulous process, but one that will significantly increase feature design quality and delivery time. 
-
-<p>
-Once the design sytem structure was defined, I got to work converting the UI elements listed during the audit phase to the new design style established earlier.
+システムデザインの目的の一つは共通の理解を生むことですので、チーム全体で適切な名称を決めて、類似性に従いUIコンポーネントをグループ分けすることが不可欠でした。
 </p>
 
 <p>
-To keep changes isolated and performance high, each UI element was created <a href="https://www.sketch.com/docs/libraries/" target="_blank" rel="noreferrer">as a single Sketch library.</a> This organization, however, made it difficult to quickly navigate through the entire set, so to address this issue, I also created a master file that acted as an entry point or an overview.
+何度かやり取りを行い、以下の編成に辿り着きました。
 </p>
 
-<Images name={props.images.md["Components-1"]} captions="The design system is organized into 4 main categories."/>
+<Images bg="gray-0" name={props.images.md["master-file-1"]} captions="デザインシステム構造"/>
+
+
+#### コンポーネントのデザイン
+## コンポーネントのデザインは細かな作業のため時間がかかりますが、機能デザインの質と納期を大幅に向上させます。
 
 <p>
-One of the ways I could fulfill my goal of improving efficiency was to reduce guesswork as much as possible when adding or modifying a component. To that end, I created <a href="https://comvex-jp.github.io/unison-design-system/getting-started/for-designers" target="_blank" rel="noreferrer">a set of templates, rules, and conventions</a>, describing how a component library should be built and maintained. 
+デザインシステムの構造が定義されたあとは、監査段階でリストアップしたUI要素を、先に構築した新しいデザインシステムに変換していく作業に入りました。
 </p>
 
-<Images name={props.images.md["master-file-2"]} className="mt-5" captions="The master file act as a entry point to the design system to help designers quickly navigate through the entire set of compoenents."/>
+<p>
+変更部分は切り分け、パフォーマンスを維持するため、各UI要素を個別の <a href="https://www.sketch.com/docs/libraries/" target="_blank" rel="noreferrer">Sketchライブラリとして</a> 作成しました。しかしながら、この編成では全体をさっと確認するのが難しかったため、その対処として、エントリーポイントとなるマスターファイルを作りました。
+</p>
 
-<Images name={props.images.md["template-rules"]} captions="To keep the system consitent and easy to use, components states have their own symbols."/>
+<Images name={props.images.md["Components-1"]} captions="デザインシステムを主な4カテゴリーに整理しました。"/>
+
+<p>
+効率化を図るという私の目標を達成するための手段の一つとして、コンポーネントを追加したり修正したりするときに、できる限り推測することを減らしました。そのため、コンポーネントライブラリをどう作り、維持していくのか、 <a href="https://comvex-jp.github.io/unison-design-system/getting-started/for-designers" target="_blank" rel="noreferrer">テンプレート、ルール、約束事</a>, をまとめました。
+
+</p>
+
+<Images name={props.images.md["master-file-2"]} className="mt-5" captions="デザインシステムへのエントリーポイントとなるマスターファイル。これにより、デザイナーがスムーズにコンポーネント全体を見渡すことが可能に。"/>
+
+<Images name={props.images.md["template-rules"]} captions="システムの一貫性を維持し、使いやすさを保つため、コンポーネントステートにそれぞれのシンボルを付けました。"/>
 
 <Images 
     className="bg-gray-0 p-0" 
     containerType="full" 
     containerWidth="Xl"
     name={props.images.xl["Components"]}
-    captions="A small sample of the system's components."
+    captions="システムコンポーネントのサンプル"
 />
 
 
-#### Building The Documentation Site
-## The documentation site helped the team move from design to implementation quickly by eliminating guess-work.
+#### ドキュメントサイトの構築
+## ドキュメントサイトは、チームがデザインから実装へ、推測で判断することなくスムーズに移行するのに役立ちました。
 
 <p>
-To forge a shared understanding of the system between designer and developer and facilitate implementation, we needed a documentation site. With the help of the developer team, I started working on creating the website and adding components to it.  
+デザイナーとディベロッパーとの間で、システムに関する共通の理解を持って実装を進めていくために、ドキュメントサイトが必要でした。開発チームのサポートを受け、ドキュメントサイトの作成作業を開始し、そこにコンポーネントを追加していきました。
 </p>
 
 <p>
-To help designers quickly move between the design files and the documentation, I decided to mirror the navigation, structure, and terminology in the Sketch files and the documentation. We also added a link to the component documentation in the sketch files themselves and a link to the sketch library in the related documentation article.
+デザイナーがスムーズにデザインファイルからドキュメントに移動できるようにするため、Sketchファイルとドキュメントサイトのナビゲーション、構成、および用語をミラーリングすることにしました。また、Sketchファイル自体にコンポーネントドキュメントへのリンクを、そして関連するドキュメント記事にSketchライブラリへのリンクを追加しました。
 </p>
 
-<Images name={props.images.md["documentation-site"]} captions="The documentation site include a directly link to the design file."/>
+<Images name={props.images.md["documentation-site"]} captions="デザインファイルに直接移動できるリンクが追加されたドキュメントサイト"/>
 
 <p>
-Developers could quickly inspect any component by simply clicking on its preview right from the documentation site itself.
+ディベロッパーは、ドキュメントサイトで直接プレビューをクリックすることで、どのコンポーネントも簡単に確認することができます。
 </p>
 
 <Images name={props.images.md["invision-inspect"]} className="mt-5"/>
 
 <p>
-When available, I also made sure to display the react version of a component as well as provide code snippets for it.
+また、コンポーネントのReactバージョンを表示し、そのコードスニペットも提供するようにしました。
 </p>
 
 <div className={`${props.style.containedMd} ${props.style.imageWrapper} mt-5`}>
@@ -228,37 +228,37 @@ When available, I also made sure to display the react version of a component as 
 </div>
 
 
-#### Conclusion
-## Creating a design system was nessesary to address the scaling and consistency issues that led to a product redesign. 
+#### 結論
+## デザインシステムの作成は、プロダクトの再デザインにつながる拡張性と一貫性の問題に対処するために必要でした。
 
 <p>
-This project turned out to be a massive undertaking spanning more than a year and involving several departments.
+このプロジェクトは、複数の部署を取り込んだ1年以上に及ぶ大がかりなものになりました。
 </p>
 
 <p>
-However, these efforts paid off:
+しかしながら、その努力は実を結びました：
 </p>
 
 <ul>
-    <li><strong>As a designer</strong>, it allowed me to create mockups in a fraction of the time and with a higher level of precision than ever before; it also taught me the depth and complexity of thinking involved in crafting every little piece of an application’s user experience.</li>
-    <li><strong>For developers</strong>, being able to rely on clear documentation and reuse existing patterns allows them to focus on writing tests and efficient code rather than continually tweaking CSS values.</li>
-    <li><strong>For the business</strong>, the productivity gains we’ve seen in new feature development have more than justified the investments we made in adopting the system.</li>
+    <li><strong>デザイナーとして</strong>、短時間で、これまで以上に高い精度のモックアップを作成できるようになりました。また、アプリケーションのユーザーエクスペリエンスを細部まで創り上げるのに必要な、奥深く複雑な思考を学ぶことができました。</li>
+    <li><strong>ディベロッパーに関しては</strong>、 明確なドキュメントに頼ることができ、既存のパターンを再利用できたことで、CSS値の微調整を続けるよりも、テストや効率的なコードを書くことに集中できました。</li>
+    <li><strong>ビジネス面では</strong>、新しい機能開発で見られた生産性の向上は、システムの採用にかかった投資を上回るものでした。</li>
 </ul>
 
 <ImageSlider 
     beforeKey={props.images.md["before-profile-before"]} 
     afterKey={props.images.md["before-profile-after"]} 
-    captions="Before and after versions of the contact profille page."
+    captions="顧客プロフィールページの旧バージョンと新バージョン"
 />
 
 <ImageSlider 
     beforeKey={props.images.md["before-table-before"]} 
     afterKey={props.images.md["before-table-after"]} 
-    captions="Before and after versions of the contact table page."
+    captions="顧客情報一覧ページの旧バージョンと新バージョン"
 />
 
 <ImageSlider 
     beforeKey={props.images.md["before-dashbaord-before"]} 
     afterKey={props.images.md["before-dashbaord-after"]} 
-    captions="Before and after versions of the dashbaord page."
+    captions="ダッシュボードページの旧バージョンと新バージョン"
 />

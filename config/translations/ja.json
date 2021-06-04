@@ -5,14 +5,14 @@
     "author": "David Ibanez"
   },
   "menu": {
-    "menu": "Menu JP",
-    "home": "Home JP",
-    "work": "Work JP",
-    "about": "About JP",
-    "resume": "Resumé JP",
-    "contact": "Contact JP",
-    "japanese": "Ja JP",
-    "english": "En JP",
+    "menu": "メニュー",
+    "home": "Home",
+    "work": "作品",
+    "about": "自己紹介",
+    "resume": "レジュメ",
+    "contact": "連絡先",
+    "japanese": "Ja",
+    "english": "En",
     "backToHome": "Back to homepage JP",
     "switchTo": "Switch to English"
   },
@@ -22,50 +22,52 @@
     "backBtn": "Back to home"
   },
   "home": {
-    "title": "I’m David, I’m a UI/UX Designer With 7 Years Of Experience. JP",
+    "title": "7年の経験を持つUI/UXデザイナーのデイビッドです。",
     "description": "This is the site description",
-    "heroText": "JP My knowledge of Frontend development helps me efficiently communicate my designs to developers. I’m looking to join a company that trusts the design process to deliver meaningful changes to their customers.",
-    "caseStudies": "JP Case Studies",
-    "viewCaseStudy": "JP View case study",
-    "otherWorks": "JP Other Works",
+    "heroText": "フロントエンド開発のスキルを活かし、ディベロッパーに自分のデザインを効率的に伝えることができます。現在、デザインプロセスに信頼を置かれ、お客様に意味のある測定可能な変化を提供している企業のデザインチームの一員になりたいと思っています。",
+    "caseStudies": "ケーススタディ",
+    "viewCaseStudy": "ケーススタディーを見る",
+    "contact": "連絡先",
+    "viewResume": "レジュメを見る",
+    "otherWorks": "その他の作品",
     "viewOnDribbble": "JP View on Dribbble",
     "dribbbleShots": {
-      "description": "Other unreleased work and things I've designed for fun. Check them out on", 
+      "description": "その他未発表の作品や個人的にデザインしたものをご紹介します。ぜひDribbbleでご覧ください。", 
       "projects": [
         {
-          "description" : "A movie review website mockup.",
+          "description" : "映画レビューサイトのモックアップ",
           "dribbbleUrl": "15033975-Movie-review-website-design" 
         },
         {
-          "description" : "A logo designed for an open source IT company.",
+          "description" : "オープンソースIT会社のロゴデザイン",
           "dribbbleUrl": "15008807-OSIS-Logo-Branding" 
         },
         {
-          "description" : "Modal redesign of a the marketing CRM Digima.",
+          "description" : "マーケティングCRM「Digima」のモーダル再デザイン",
           "dribbbleUrl": "15034382-Digima-modals" 
         },
         {
-          "description" : "A fictional movie review website logo.",
+          "description" : "フィクション映画レビューサイトのロゴ",
           "dribbbleUrl": "15016336-cinema-chez-soi-logo" 
         },
         {
-          "description" : "A previous version of my portfolio website.",
+          "description" : "自分のポートフォリオサイトの以前のバージョン",
           "dribbbleUrl": "15008745-Portfolio-2015" 
         },
         {
-          "description" : "Illustration for the Digima design system.",
+          "description" : "Digimaデザインシステム用イラストレーション",
           "dribbbleUrl": "15008821-Digima-Design-system-Illustration" 
         },
         {
-          "description" : "Website design for an email tracking tool.",
+          "description" : "メールトラッキングツールのウェブサイトデザイン",
           "dribbbleUrl": "15033885-I-digima" 
         },
         {
-          "description" : "Date/time picker for Digima.",
+          "description" : "Digima用日付／時間ピッカー",
           "dribbbleUrl": "15008794-Digima-date-time-picker" 
         },
         {
-        "description" : "The Comvex corporate website.",
+        "description" : "Comvex社コーポレートサイト",
         "dribbbleUrl": "15034011-Comvex-webiste" 
         }
       ]
@@ -74,86 +76,93 @@
   
   "tags": {
     "UserResearch": {
-      "name": "User Research",
+      "name": "ユーザーリサーチ",
       "category": "research",
       "description": "Vue.js is a JavaScript framework for building interactive web applications."
     },
     "Wireframe": {
-      "name": "Wireframe",
+      "name": "ワイヤーフレーム",
       "category": "planning",
       "description": "Vue.js is a JavaScript framework for building interactive web applications."
     },
     "Prototyping": {
-      "name": "Prototyping",
+      "name": "プロトタイプ",
       "category": "planning",
       "description": "Vue.js is a JavaScript framework for building interactive web applications."
     },
     "DesignSystem": {
-      "name": "Design system",
+      "name": "デザインシステム",
       "category": "designSystem",
       "description": "Vue.js is a JavaScript framework for building interactive web applications."
     },
     "FrontEndDevelopment": {
-      "name": "Front-End Development",
+      "name": "フロントエンド開発",
       "category": "development",
       "description": "Vue.js is a JavaScript framework for building interactive web applications."
     },
     "UserFlow": {
-      "name": "User Flow",
+      "name": "ユーザーフロー",
       "category": "planning",
       "description": "Vue.js is a JavaScript framework for building interactive web applications."
     },
     "VisualDesign": {
-      "name": "Visual Design",
+      "name": "ビジュアルデザイン",
       "category": "design",
       "description": "Vue.js is a JavaScript framework for building interactive web applications."
     },
     "DataAudit": {
-      "name": "Data Audit",
+      "name": "データ監査",
       "category": "dataAnalysis",
       "description": "Vue.js is a JavaScript framework for building interactive web applications."
     },
     "DataAnalysis": {
-      "name": "Data Analysis",
+      "name": "データ分析",
       "category": "dataAnalysis",
       "description": "Vue.js is a JavaScript framework for building interactive web applications."
     },
     "DataVisualization": {
-      "name": "Data Visualization",
+      "name": "データ視覚化",
       "category": "dataAnalysis",
       "description": "Vue.js is a JavaScript framework for building interactive web applications."
     }
   },
 
   "suggestedArt": {
-    "next": "JP NEXT UP",
-    "viewCaseStudy": "JP View case study"
+    "next": "次ページへ",
+    "viewCaseStudy": "ケーススタディーを見る"
   },
+
+  "articles": {
+    "problems": "問題点",
+    "goals": "目標",
+    "outcomes": "結果"
+  },
+
   "about": {
-    "title": "JP I’m a UI/UX designer with 7 years of experience.",
+    "title": "7年の経験を持つUI/UXデザイナーです。",
     "description": "This is the site description",
-    "subtitle": "JP ABOUT ME",   
-    "textPart1": "JP My knowledge of Frontend development gives me the tools to understand developer’s perspectives and quickly prototype ideas to ensure technical feasibility. <br/><br/> For the past four years, I have been working as a UI/UX designer in the SaaS industry.  Working in collaboration with backend, frontend developers, and business managers taught me how to carefully balance business goals, engineering constraints, and user needs. <br/><br/> Lately, I have been excited about",
-    "link": "JP  improving the business decision process as well as my own design process through the use of qualitative and quantitative data. ",
-    "textPart2": "JP In my free time, I love to travel, workout, and watch movies about  [...]<br/><br/>I’m currently looking to join an existing design team in a company that trusts the design process to deliver meaningful and measurable changes to their customers."
+    "subtitle": "自己紹介",   
+    "textPart1": "フロントエンド開発のスキルを、ディベロッパーの視点で理解することや、迅速にアイディアをプロトタイプ化し技術的な実現可能性を確認することに活かしています。 <br/><br/> この4年間、SaaS業界でUI/UXデザイナーとして働いています。バックエンドやフロントエンドのディベロッパーおよびビジネスマネージャーと協力しながら働くことで、事業目標、エンジニアリングの制約、そしてユーザー・ニーズのバランスを慎重に取っていく方法を学びました。<br/><br/> 最近は、",
+    "link": "定性・定量データを用いて、ビジネス上の意思決定プロセスや自分のデザインプロセスを改善することにやりがいを感じています。",
+    "textPart2": "趣味は、旅行やワークアウト、映画鑑賞です。<br/><br/>現在、デザインプロセスに信頼を置かれ、お客様に意味のある測定可能な変化を提供している企業のデザインチームの一員になりたいと思っています。"
   },
   "footer": {
-    "title1": "JP LET’S WORK TOGETHER",
-    "subtitle1": "JP GET IN TOUCH",
-    "title2": "JP MENU",
-    "subtitle2": "JP View case study",
-    "legals": "JP MISSING SOMETHING?",
-    "text": "JP I’m currently looking to join an existing design team in a company that trusts the design process to deliver meaningful and measurable changes to their customers.",
+    "title1": "一緒に働きましょう",
+    "subtitle1": "ご連絡ください",
+    "title2": "メニュー",
+    "subtitle2": "ケーススタディーを見る",
+    "legals": "何かお探しですか？",
+    "text": "現在、デザインプロセスに信頼を置かれ、お客様に意味のある測定可能な変化を提供している企業のデザインチームに加わりたいと思っています。",
     "legals": "JP All rights reserved"
   },
   "socialsLinks":
   {
     "socials": "JP Socials",
-    "Linkedin": "JP Linkedin",
-    "Dribbble": "JP Dribbble",
-    "Follow": "JP Follow me on", 
-    "Contact": "JP Contact me at",
-    "or": "JP or",
-    "resume": "JP view my resume"
+    "Linkedin": "Linkedin",
+    "Dribbble": "Dribbble",
+    "Follow": "フォローしてください", 
+    "Contact": "連絡先アドレスは",
+    "or": "か",
+    "resume": "レジュメを見る"
   }
 }

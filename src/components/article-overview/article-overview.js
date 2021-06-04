@@ -4,10 +4,12 @@ import IconProblem from '../../images/icons/icon-problems'
 import IconGoals from '../../images/icons/icon-goals'
 import IconOutcomes from '../../images/icons/icon-outcomes'
 import style from './article-overview.module.scss'
+import useTranslations from "../useTranslations"
 
 const ArticleOverview = ({ type, ...props }) => {
 
     let overviewObj = {}
+    const t = useTranslations()
 
     if(props.children.length)
     {
@@ -32,17 +34,17 @@ const ArticleOverview = ({ type, ...props }) => {
                 <div className={style.articleSunnary}>
                     <div>
                         <IconProblem/>
-                        <h3>Problems</h3>
+                        <h3>{t.articles.problems}</h3>
                         {overviewObj.Problems ? overviewObj.Problems : null}
                     </div>
                     <div>
                         <IconGoals/>
-                        <h3>Goals</h3>
+                        <h3>{t.articles.goals}</h3>
                         {overviewObj.Goals ? overviewObj.Goals : null}
                     </div>
                     <div>
                         <IconOutcomes/>
-                        <h3>Outcomes</h3>
+                        <h3>{t.articles.outcomes}</h3>
                         {overviewObj.Outcomes ? overviewObj.Outcomes : null}
                     </div>
                 </div>

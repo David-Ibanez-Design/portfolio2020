@@ -1,5 +1,5 @@
 ---
-title: Increasing Prospect Reach And Engagement With Two-Way SMS. JAPANESE
+title: 双方向のSMSで見込み客への接触を図りとエンゲージメントを高める
 tags: [UserResearch, UserFlow, Wireframe, Prototyping, VisualDesign]
 path: articles/sms
 order: 3
@@ -33,96 +33,95 @@ imagesXXl:
 
 <ArticleOverview>
     <Sunnary>
-        Digima is a web-based CRM launched in 2018 with the mission of providing businesses with a way to understand their customers' needs and behaviors. 
-        In order to fufuill that mission, the product needed to provide users with a more efficient way to communication with their prospects that the exsiting emails and calls channels. 
+「      Digima」は、顧客のニーズや行動を把握する手段を企業に提供するというミッションをもって、2018年に発売されたウェブベースのCRMです。ミッションを果たすため、既存のメールや電話のチャネル以外で、より効率的に見込み客とコミュニケーションが取れる手段を、ユーザーに提供する必要がありました。
     </Sunnary>
     <Problems>
-        <p>Digima customers were already using emails and calls to engage with their prospects, However, many of them found that their email messages and phone calls were left unanswered.</p>
+        <p>Digimaの顧客は、見込み客との連絡にすでにメールと電話を使っていたが、なかなか返信をもらえなかったり、電話に出てもらえなかったりすることに気付いていた。</p>
     </Problems>
     <Goals>
-        <p>We need to provide our customers with a way to increase their prospects’ engagement and conversion rates.</p>
+        <p>Digima顧客の見込み客のエンゲージメントとコンバージョン率を向上させる手段を提供する。</p>
     </Goals>
     <Outcomes>  
         <ul>
-            <li>A two-way SMS feature was introduced to the existing product.</li>
-            <li>We saw an increase in customer's prospects engagement and conversion rates. </li>           
+            <li>既存のプロダクトに双方向のSMS機能を搭載した。</li>
+            <li>Digima顧客の見込み客のエンゲージメントとコンバージョン率に改善が見られた。</li>           
         </ul>
     </Outcomes>    
 </ArticleOverview>
 
 <!-- Content -->
 
-#### Problem Statement
-## Our customers needed a new, more efficient communication channel to engage with their prospects.
+#### 課題ステートメント
+## お客様が、見込み客と関係を築くためのより効率的な新しいコミュニケーションチャネルを必要としていました。
 <p>
-One of the most important business goals of our customers is to meaningfully engage propestect to propel them to purchase their services. 
+お客様の最も重要な事業目標の一つは、サービスを購入してもらうよう、見込み客と有意義な関係を築くことです。
 </p>
 
 <p>
-Consumers today have been solicited by advertising more than they ever have and breaking through that noise requires advertisers to reach consumers in the ways they prefer.
+今日の消費者は、今まで以上に広告で勧誘されているため、その煩わしさを取り払うには、広告主は消費者の好む方法でアプローチする必要があります。
 </p>
 
 <p>
-With an average email opening rate and a cold call reached rate between 10 to 15 percent, our customers needed a more efficient communication channel.
+平均的なメール開封率とコールドコールで繋がる割合は10～15パーセントくらいですが、お客様はより効率的なコミュニケーションチャネルを必要としていました。
 </p>
 
 <p>
-It was decided that SMS, with its high opening and click-through rate, was the feature our customers needed to achieve their goals.
+お客様のその目標を達成するために同社が決めたのは、開封率とクリック率が高いSMS機能でした。
 </p>
 
-#### Scope and Constraints
-## From the start of the project, it was clear that a lot of efforts will be spent working around the 3rd party API restrictions.
+#### 範囲と制約
+## プロジェクトの開始時から、外部APIの制約を回避するためにかなりの努力が必要であることが明らかでした。
 
 <p>
-When I started working on the project, a 3rd party SMS provider had already been chosen and a draft document detailing the overall feature goals, and functionalities had been written by the project manager. 
+私がプロジェクトの作業に着手したとき、第三者SMSプロバイダーはすでに選定済みで、機能の全体的な目標や機能性の詳細に関するドキュメントの草案も、プロジェクトマネージャーがすでに作成していた状態でした。
 </p>
 
 <p>
-My first task was to study that document and meet with team leaders to discuss the project. Since we were relying on an external API, it was also essential to identify constraints related to that service early in the process. Below are the main constrained we identified:
+私の最初のタスクは、そのドキュメントを読み込み、チームリーダーとプロジェクトについて話し合うことでした。外部APIに依存する形だったので、早い段階でそのAPIサービスに関する制約を特定することも必須でした。特定した主な制約は以下のとおりです：
 </p>
 
 <ul>
-    <li>All SMS sent to the Softbank provider was limited to 200 per day. SMS over that limit will not be sent.</li>
-    <li>Since a single SMS could only contain 70 characters, the decision was made to allow up to 4 separate SMS to be sent at the same time.</li>
-    <li>Because of scheduling issues, the Backend team could not investigate the API and the API itself had no documentations.</li>
-    <li>To be able to send and receive SMS a dedicated phone number needed to be manually issued.</li>
+    <li>ソフトバンクへのSMS送信制限が1日200通であった。それを超えるSMSは送信されない。</li>
+    <li>１つのSMSに70文字までしか入力できないので、同時に４つのSMSまで送信可能にする、とした。</li>
+    <li>スケジュールの問題でバックエンドチームがAPIを調査できず、API自体に関するドキュメントがなかった。</li>
+    <li>SMSの送受信を可能にするために、専用電話番号を手動で発行する必要があった。</li>
 </ul>
 
-#### User Flow
-## Laying out the feature’s user flow allowed the team and I to identify where we needed to focus our effort and spend most of our time.
+#### ユーザーフロー
+## 機能のユーザーフローのレイアウトを作成したことで、どの部分に注力し時間をかけなければならないのか明確になりました。
 
 <p>
-Because of the scale and complexity of the project, one of the most important early steps in the design process was to make sure the team had a shared understanding of the overall feature. However, at that point, all we had was a draft specification document. 
+プロジェクトの規模と複雑さから、デザインプロセスの初期段階で最も重要だったことは、機能の全体像について確実に、チームで共通の理解を持つことでしたが、当時、仕様書の草案しかありませんでした。
 </p>
 
-<p>Building a user flow, allow the team and I to lay down the entire feature functionalities in detail. In addition to getting everybody on the same page, It also allowed us to quickly identify potential issues and iterate upon possible solutions. </p>
+<p>ユーザーフローを構築することで、チーム内で機能性の詳細まで検討することができました。全員が同じ認識を持てたことに加え、潜在的な問題を速やかに特定し、考え得る解決策を繰り返し検討することができました。 </p>
 
 <Images 
     className="bg-gray-0" 
     containerType="full" 
     containerWidth="Xl" 
-    captions="Building a user flow was instrumental in developping a shared understanding of the overall feature functionalites and challanges."
+    captions="ユーザーフローの構築は、全体的な機能性および課題についての共通理解を深める上で重要でした。"
     name={props.images.xl["full-User-flow"]}
 />
 
 
 <p>
-One example of this was the feature activation process. Because a phone number needed to be manually issued before the SMS feature could be used, we needed to agree on a flow that was efficient but also flexible enough to account for the fact that some parts of the process couldn’t be automated. We also needed to let users know about the status of their requests in real-time. 
+その一例が、機能の有効化プロセスです。SMS機能を使用する前に手作業で電話番号を発行する必要があったため、効率的でかつ、すべてのプロセスを自動にすることはできないという事実を考慮し、柔軟に対応できるフローに合意する必要がありました。また、ユーザーに対しても、リアルタイムで電話番号リクエストの状況を知らせる必要もありました。
 </p>
 
-#### Wireframe
-## It was crucial to maintain users’ sense of control over what message they were sending despite all of the existing API restrictions.
+#### ワイヤーフレーム
+## APIの制限に関わらず、送信するメッセージに対しユーザーが自分たちでコントロールしている、という感覚を維持してもらうことも不可欠でした。
 
 <p>
-Once I felt that the team and I had answered as many questions as we could with the user flow, I started working on each individual screen.
-</p>
-
-<p>
-I created a series of wireframes, focusing first on the screens that were identified as being the most challenging ones. The goal was to spend most of my time iterating on these, knowing that screens displaying tables for instance could be easily designed by <Link to={"/articles/design-system"}>reusing existing elements from our design system.</Link>
+チーム内でユーザーフローに関する質疑応答が出切ったところで、個々の画面の作業に取り掛かりました。
 </p>
 
 <p>
-One example of a challenging screen was the SMS creation screen. Because of the 3rd party API restrictions, it was crucial to make sure that users understood that the recipient(s) of the SMS will receive 4 separate SMS on their devices and that therefore, they should write their SMS messages accordingly. 
+まずは、最も困難を強いられる画面に焦点をあて、一連のワイヤーフレームを作成しました。例えば、テーブルを表示する画面は <Link to={"/articles/design-system"}>デザインシステムから既存の要素を再利用することで</Link> 簡単にデザインできることはわかっていましたので、難しい画面で反復作業することに時間を費やすことにしました。
+</p>
+
+<p>
+難しかった画面の一つは、SMSの作成画面でした。外部APIの制限により、SMSの受信者の端末に4通のSMSが受信されることになるため、それに合わせてメッセージを作成する必要があるということを、ユーザーに理解してもらうことが重要でした。
 </p>
 
 <Images 
@@ -133,51 +132,55 @@ One example of a challenging screen was the SMS creation screen. Because of the 
 />
 
 <p>
-After a few iterations, I settled on a 2 column-style layout with one column displaying a series of textareas where users could input and manage their SMS messages, and the other displaying a real-time preview of the SMS on the recipient device.
+試行錯誤の結果、2カラムのスタイルのレイアウトに落ち着きました。カラム1は、ユーザーがメッセージの入力と管理をするメッセージエリアで、隣のカラムに、受信者の端末上でのメッセージのプレビューを表示しています。
 </p>
 
 
-<Images name={props.images.md["wireframe-creation-screen"]} captions="The final wireframe version for the SMS creation screen."/>
+<Images name={props.images.md["wireframe-creation-screen"]} captions="SMS作成画面のワイヤーフレーム最終バージョン"/>
 
 
-#### High Fidelity Mockup
-## To maintain consistency and facilitate implementation I made sure to reuse as many existing patterns as possible.
+#### 高忠実度モックアップ
+## 一貫性を維持した実装にするため、できるだけ既存のパターンを再利用しました
 
 <p>
-Continuing my strategy of focusing my time and effort on the most challenging functionalities first, I started by creating high fidelity mockups for the SMS creation screens and the chats functionality.
+まずは最も難しい機能に時間と労力を充てるという戦略の下、SMS作成画面とチャット機能の高忠実度モックアップを作成することから始めました。
 </p>
 
 <p>
-During that process, I made sure to reused as many existing design patterns from our design system as possible to maintain consistency and facilitate implementation.
+その工程で、デザインシステムからできるだけ既存のデザインパターンを再利用し、一貫性をもって実装できるように心がけました。
 </p>
 
 <p>
-When existing patterns could not be used, I documented new UI components in our dedicated site.
+既存のパターンが使用できない場合は、新規UIコンポーネントととし、専用サイトにドキュメントに残しました。
 </p>
 
 
-<Images name={props.images.md["centered-documentation"] } captions="Documented new UI components in our dedicated site, helped imporve implementation time by reducing guesswork."/>
+<Images name={props.images.md["centered-documentation"] } captions="専用サイトに新規UIコンポーネントをまとめておくことで、実装時間の改善と推測しながらの作業を減らすことができました。"/>
 
-<Images name={props.images.md["full-Final-design-01"]} captions="The final version of the SMS creation screen."/>
-<Images name={props.images.md["full-Final-design-02"]} captions="The final version of the SMS chat list screen."/>
+<Images name={props.images.md["full-Final-design-01"]} captions="SMS作成画面の最終バージョン"/>
+<Images name={props.images.md["full-Final-design-02"]} captions="SMSチャット一覧画面の最終バージョン"/>
 
 <p>
-Once screens for the most important scenarios were designed, an invision prototype was created and shared with the team. The prototype helped the team understand how the final version of the design will look and behave as a whole.
+最も重要なシーンを想定した画面のデザインが終わったあと、Invisionのプロトタイプを作成し、チームに共有しました。これにより、デザインの最終版がどのように見え、全体的な動作はどうなるのか、チームが理解することができました。
 </p>
 
 
 <Images containerWidth="XXl" name={props.images.xxl["centered-Prototype-2"]}/>
 
 
-## Conclusion
-### Basing my decisions on first-hand knowledge is essential when working with external services.
+## 結論
+### 外部サービスを利用する場合は、経験から直接得た知識に基づく決断が必要でした。
 <p>
-Because of scheduling issues, the Backend team couldn’t review the 3rd party API early in the project, therefore we had to rely on second-hand information about the API scope and limitations during most of the design process.
-This could have led to significant project delays if the information we had turned out to be wrong. Thankfully it wasn’t the case. After the project was finished the team decided to learn from that experience and made sure to involve the Backend team early in the design process when necessary.
+スケジュール上の問題から、プロジェクトの初期段階でバックエンドチームが外部APIを評価できなかったため、デザイン過程の大部分で、APIの範囲や制限に関し外部業者の情報に頼らざるを得ませんでした。このため、幸いにも実際には大丈夫でしたが、得た情報が間違っていた場合、大幅なプロジェクトの遅延につながるところでした。今回の件でチームは、今後経験から学ぶことにし、必要に応じ、デザインの早い段階でバックエンドチームにも関わってもうらうことにしました。
 </p>
 <br/>
 
-### Focusing on solving the most challenging problems first made my design process more efficient.
+### 最も難しい問題を解決することから始めたことで、デザインを効率的に進めることができました。
 <p>
-As a designer sometimes I had a tendency to start by designing solutions to problems I knew could be solved with little effort because it gives me a sense of progression early on. This project, however, showed me that starting by focusing on the most challenging problems first, ultimately made for a better and more efficient design process because I didn’t have to constantly re-think my solutions as I was discovering additional challenges along the way.
+デザイナーとして、早い段階で進捗を感じらるという理由から、比較的簡単に解決できるとわかっている部分からデザインを始める傾向が私にはありました。しかし、このプロジェクトは、最初に最も困難な問題から取り掛かることで、最終的にはより効率的なデザインプロセスに繋がるということを示しました。というのも、課題が見つかる度に、自分の解決策を再検討する必要がないからです。
+</p>
+
+### この機能は大成功を収め、リリースから6カ月後には、お客様の普及率が20％にまで上がり、全体的なプロダクトMRRも10％向上しました。
+<p>
+また、お客様からも、メールよりもSMSで送信したメッセージのエンゲージメント率の方が高かったとご報告いただきました。お客様にとっては、成約の可能性が向上し、同社にとっては、今後の機能開発を支える経常収益が増加することを意味します。
 </p>
