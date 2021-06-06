@@ -9,6 +9,7 @@ import TagList from '../components/tag-list'
 import Config from '../../gatsby-config'
 import style from './homepage.module.scss'
 import ResumeEn from '../downloads/Resume-en.pdf'
+import ResumeJp from '../downloads/Resume-jp.pdf'
 import Buttons from '../components/button'
 import Tooltip from "../components/tooltip";
 import HeroBg from '../images/icons/heroBackground'
@@ -61,7 +62,7 @@ const Homepage = ({data, requestLangChange}) => {
               <h1><span>{t.home.title}</span></h1>
               <p>{t.home.heroText}</p>      
               <div className={style.actions}>
-                <Buttons destination="external" to={ResumeEn} buttonStyle="primary">{t.home.viewResume}</Buttons>
+                <Buttons destination="external" to={locale === "en" ? ResumeEn : ResumeJp} buttonStyle="primary">{t.home.viewResume}</Buttons>
                 <Buttons destination="external" to={`mailto:${Config.siteMetadata.email}`} buttonStyle="secondary">{t.home.contact}</Buttons>    
               </div>
             </div>

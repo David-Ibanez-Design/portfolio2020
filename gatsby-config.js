@@ -9,7 +9,7 @@ module.exports = {
     description: "UI/UX Portfolio",
     email: 'dibanez@rocketmail.com',
     social: {
-      dribbble: 'https://dribbble.com/dibanez',
+      dribbble: 'https://dribbble.com/DavidDesign38',
       linkedin: 'https://www.linkedin.com/in/david-ibanez-a5b443120/'
     },
   },

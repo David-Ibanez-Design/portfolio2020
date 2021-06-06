@@ -7,6 +7,7 @@ import useTranslations from "../../components/useTranslations"
 import SEO from '../../components/seo'
 import style from './about.module.scss'
 import ResumeEn from '../../downloads/Resume-en.pdf'
+import ResumeJp from '../../downloads/Resume-jp.pdf'
 import Config from '../../../gatsby-config'
 import LocalizedLink from '../../components/localizedLink'
 import { LocaleContext } from "../../components/layout"
@@ -59,7 +60,7 @@ const About = ({data}) => {
                 {locale === "en" ? "" : "です。"}
                 <span> {t.socialsLinks.or}</span>
                 <a 
-                  href={ResumeEn}
+                  href={locale === "en" ? ResumeEn : ResumeJp}
                   target="_blank" 
                   rel="noreferrer"  
                   className={style.dribbble}> {t.socialsLinks.resume}
