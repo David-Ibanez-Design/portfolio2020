@@ -20,8 +20,6 @@ import { LocaleContext } from "../components/layout"
 const Homepage = ({data, requestLangChange}) => {
 
   const t = useTranslations()
-
-console.log(requestLangChange)
   const { localizedPath, locale, BrowserPreferredLang } = React.useContext(LocaleContext)
   
   let { caseStudyFeatureTablet, caseStudiesTablet, dribbbleShots, heroVisual, profilePics  } = data
@@ -134,7 +132,24 @@ console.log(requestLangChange)
       </div>
         <div className={`${style.dribbbleListContainer}  ${style.container}`}>
           <h2>{t.home.otherWorks}</h2>
-          <p>{t.home.dribbbleShots.description} <a href={Config.siteMetadata.social.dribbble}>{t.socialsLinks.Dribbble}.</a></p>
+          <p>
+            {locale === "en" ?  
+              (
+                <>
+                  {t.home.dribbbleShots.description}
+                  <a target="_blank" rel="noreferrer" href={Config.siteMetadata.social.dribbble}> {t.socialsLinks.Dribbble}.</a>
+                </>
+              )
+                :
+              (
+                <>
+                  {t.home.dribbbleShots.description}
+                  <a target="_blank" rel="noreferrer" href={Config.siteMetadata.social.dribbble}>{t.socialsLinks.Dribbble}</a>でご覧ください。
+                </>
+              )
+              }
+          </p>
+          
           <div className={style.dribbbleInnerContainer}>
           
           {t.home.dribbbleShots.projects.map((dribbbleShotMap, index) => {

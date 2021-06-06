@@ -2,12 +2,14 @@
 import React, {useState} from 'react'
 import { IoIosArrowDropup } from 'react-icons/io';
 import Tooltip from "../../components/tooltip";
+import useTranslations from "../useTranslations"
 
 /* App imports */
 import style from './scroll-top.module.scss'
 
 const ScrollTop = () => {
 
+  const t = useTranslations()
 
       // Check if server or client is rendering
     const hasWindow = (typeof window !== 'undefined') ? true : false;
@@ -34,7 +36,7 @@ const ScrollTop = () => {
                 className={style.scrollTop} onClick={hasWindow ? scrollTo : null} 
                 style={{height: 40, display: showScroll ? 'block' : 'none'}}
             />
-            <Tooltip targetId="backToTop" place="left" effect="solid">Scroll to the top</Tooltip>
+            <Tooltip targetId="backToTop" place="left" effect="solid">{t.articles.backToTop}</Tooltip>
         </>
         
     )   

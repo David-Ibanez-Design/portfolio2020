@@ -132,6 +132,7 @@ const query = graphql`
               problems
               goals
               outcomes
+              backToTop
             }
             about{
               title

@@ -6,20 +6,20 @@
   },
   "menu": {
     "menu": "メニュー",
-    "home": "Home",
+    "home": "ホーム",
     "work": "作品",
     "about": "自己紹介",
     "resume": "レジュメ",
     "contact": "連絡先",
     "japanese": "Ja",
     "english": "En",
-    "backToHome": "Back to homepage JP",
-    "switchTo": "Switch to English"
+    "backToHome": "ホームページに戻る",
+    "switchTo": "英語に切り替え"
   },
   "notFound": {
     "title": "Woops! looks like you are lost...",
     "description": "The page you are looking for doesn't exist. You may have misspell the URL or the page you are looking for have moved.",
-    "backBtn": "Back to home"
+    "backBtn": "ホームページに戻る"
   },
   "home": {
     "title": "7年の経験を持つUI/UXデザイナーのデイビッドです。",
@@ -30,9 +30,9 @@
     "contact": "連絡先",
     "viewResume": "レジュメを見る",
     "otherWorks": "その他の作品",
-    "viewOnDribbble": "JP View on Dribbble",
+    "viewOnDribbble": "Dribbbleで見る",
     "dribbbleShots": {
-      "description": "その他未発表の作品や個人的にデザインしたものをご紹介します。ぜひDribbbleでご覧ください。", 
+      "description": "その他未発表の作品や個人的にデザインしたものをご紹介します。ぜひ", 
       "projects": [
         {
           "description" : "映画レビューサイトのモックアップ",
@@ -135,7 +135,8 @@
   "articles": {
     "problems": "問題点",
     "goals": "目標",
-    "outcomes": "結果"
+    "outcomes": "結果",
+    "backToTop": "先頭に戻る"
   },
 
   "about": {
@@ -150,19 +151,18 @@
     "title1": "一緒に働きましょう",
     "subtitle1": "ご連絡ください",
     "title2": "メニュー",
-    "subtitle2": "ケーススタディーを見る",
-    "legals": "何かお探しですか？",
+    "subtitle2": "何かお探しですか？",
     "text": "現在、デザインプロセスに信頼を置かれ、お客様に意味のある測定可能な変化を提供している企業のデザインチームに加わりたいと思っています。",
-    "legals": "JP All rights reserved"
+    "legals": "All rights reserved"
   },
   "socialsLinks":
   {
-    "socials": "JP Socials",
+    "socials": "SMS",
     "Linkedin": "Linkedin",
     "Dribbble": "Dribbble",
     "Follow": "フォローしてください", 
     "Contact": "連絡先アドレスは",
-    "or": "か",
-    "resume": "レジュメを見る"
+    "or": "",
+    "resume": "レジュメ"
   }
 }

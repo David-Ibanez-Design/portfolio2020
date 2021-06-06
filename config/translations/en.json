@@ -52,7 +52,7 @@
           "dribbbleUrl": "15008807-OSIS-Logo-Branding" 
         },
         {
-          "description" : "Modal redesign of a the marketing CRM Digima.",
+          "description" : "Modal redesign of the marketing CRM Digima.",
           "dribbbleUrl": "15034382-Digima-modals" 
         },
         {
@@ -154,7 +154,8 @@
   "articles": {
     "problems": "Problems",
     "goals": "Goals",
-    "outcomes": "Outcomes"
+    "outcomes": "Outcomes",
+    "backToTop": "Scroll to the top"
   },
 
   "socialsLinks":
@@ -165,6 +166,6 @@
     "Follow": "Follow me on", 
     "Contact": "contact me at",
     "or": "or",
-    "resume": "view my resume"
+    "resume": "view my resume."
   }
 }

@@ -20,9 +20,9 @@ const MenuItems = ({data, isMobile , withWork, toggleMenu}) => {
     const localIsJa = locale === "ja"
     const articles = data.filter(function( obj ) {return obj.node.fields.locale === locale;});
 
-    function toggleActive(page){      
-        const isIndex = page === `/`
-        const localizedSlug = locales[locale].default ? page : `/${locales[locale].path}${isIndex ? `` : `${page}`}`
+    function toggleActive(page){  
+        const isIndex = page === `/`       
+        const localizedSlug = locales[locale].default ? page : `${locales[locale].path}${isIndex ? `` : `${page}`}`
         return localizedPath === localizedSlug  ? style.active : null;
     }
 

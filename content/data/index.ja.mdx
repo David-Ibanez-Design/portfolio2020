@@ -12,12 +12,12 @@ suggestedArt: images/suggestedArt.png
 imagesMd: 
     - images/exsiting-quantitative.png
     - images/exsiting-qualitative.png
-    - images/structure-graph.png
-    - images/structure-final-vision.png
+    - images/structure-graph-ja.png
+    - images/structure-final-vision-ja.png
     - images/spreadsheet-list.png
     - images/GA-reports.png
     - images/zendesk-reports.png
-    - images/in-app-feedback-form.png
+    - images/in-app-feedback-form-ja.png
     - images/tableau-report-1.png
     - images/tableau-report-2.png
 ---
@@ -58,7 +58,7 @@ imagesMd:
 <ul>
     <li>ビジネス指標の中には、手動計算でしGoogleスプレッドシートに記録しているものがありました。</li>
     <li>一部の基本的な顧客指標はプロダクトの管理サイトに記録されてました。</li>
-    <li>サポートチームは <a href="https://www.zendesk.com/" target="_blank" rel="noreferrer">Zendesk</a>,という顧客サポートソフトウェアを使用していましたが、使っていないレポート機能もありました。</li>
+    <li>サポートチームは <a href="https://www.zendesk.co.jp/" target="_blank" rel="noreferrer">Zendesk</a>,という顧客サポートソフトウェアを使用していましたが、使っていないレポート機能もありました。</li>
 </ul>
 
 <Images name={props.images.md["exsiting-quantitative"]} captions="重要なビジネス指標が手作業でGoogleスプレッドシートに記録されていました。"/>
@@ -121,7 +121,7 @@ imagesMd:
     </ul>
 </ul>
 
-<Images name={props.images.md["structure-graph"]} />
+<Images name={props.images.md["structure-graph-ja"]} />
 
 <p>
 しかし、どのようなデータを収集すればいいのか知っているだけでは十分ではありません。このような取り組みが長期的に事業に効果を与えるには、各自、データをプロセスに組み込み、データを自分のものにする必要があります。また、データ監査で得た知見を用い、データを適用するまでの障壁を取り除くための目標を定義しました：
@@ -137,7 +137,7 @@ imagesMd:
 会社全体でデータを共有する方法の私の最終的なイメージは以下のとおりとなりました：
 </p>
 
-<Images name={props.images.md["structure-final-vision"]} className="mt-4" />
+<Images name={props.images.md["structure-final-vision-ja"]} className="mt-4" />
 
 #### 課題
 ## データ収集に必要なインフラ整備の問題に加え、ステークホルダーがデータを信頼し、それに基づくビジネス上の意思決定を行う必要がありました。
@@ -169,7 +169,7 @@ imagesMd:
 </p>
 
 <p>
-資料から、一部のデータは、収集するのに他のデータよりもリソースが必要であることが分かりました。例えば、 <a href="https://www.profitwell.com/recur/all/monthly-recurring-revenue#:~:text=MRR%20stands%20for%20Monthly%20Recurring,differences%20in%20your%20subscription%20service." target="_blank" rel="noreferrer">MRR</a> や <a href="https://www.investopedia.com/terms/c/churnrate.asp" target="_blank" rel="noreferrer">チャーンレート</a>, のような課金に関連するデータは、非常に重要なデータですが、収集するには専用のインフラが必要ですので、ビジネスサイドの賛同を得なければなりません。
+資料から、一部のデータは、収集するのに他のデータよりもリソースが必要であることが分かりました。例えば、 <a href="https://try.analytica.jp/kpi/saas/mrr" target="_blank" rel="noreferrer">MRR</a> や <a href="https://ec-orange.jp/ec-media/?p=23049" target="_blank" rel="noreferrer">チャーンレート</a>, のような課金に関連するデータは、非常に重要なデータですが、収集するには専用のインフラが必要ですので、ビジネスサイドの賛同を得なければなりません。
 </p>
 
 <p>
@@ -185,14 +185,14 @@ imagesMd:
 ## 同プロダクト用のGoogleアナリティクス無料アカウントの設定は、スタート地点として最適でした。
 
 <p>
-<a href="https://analytics.google.com" target="_blank" rel="noreferrer">Google Analytics</a> のようなセルフ式の分析ツールには多くの利点があります：
+<a href="https://analytics.google.com/analytics/web/?hl=ja#/provision" target="_blank" rel="noreferrer">Google Analytics</a> のようなセルフ式の分析ツールには多くの利点があります：
 </p>
 
 <ul>
     <li>フロントエンドにあまり手間を取らせることなく実装できる。</li>
     <li>時間とリソースがかかるカスタマイズソリューションから離れることができる。</li>
     <li>複数の部署と簡単にレポートの共有ができる。</li>
-    <li><a href="https://marketingplatform.google.com/about/tag-manager/" target="_blank" rel="noreferrer">Google tag manager.</a>を使えば、価値の高いビジネス指標をトラッキングでき、新しい指標の追加も簡単である。</li>
+    <li><a href="https://marketingplatform.google.com/intl/ja/about/tag-manager/" target="_blank" rel="noreferrer">Googleタグマネージャー</a>を使えば、価値の高いビジネス指標をトラッキングでき、新しい指標の追加も簡単である。</li>
 </ul>
 
 <Images name={props.images.md["GA-reports"]} captions="Googleアナリティクスでのプロダクトに関するカスタムレポートの概観"/>
@@ -207,7 +207,7 @@ imagesMd:
 また、ユーザーからの直接の声を聞くため、フロントエンドチームと協力し、アプリ内にフィードバックフォームを実装しました。これにより、ユーザーからの質問はサポートチームのプラットフォームに直接送信され、送信された質問は、同社のプロジェクト管理ツールの専用ボードに追加されます。
 </p>
 
-<Images name={props.images.md["in-app-feedback-form"]} captions="ユーザーのフィードバックをプロダクトから直接吸い上げ、プロダクト管理ソフトウェアに送信。" className="mt-4"/>
+<Images name={props.images.md["in-app-feedback-form-ja"]} captions="ユーザーのフィードバックをプロダクトから直接吸い上げ、プロダクト管理ソフトウェアに送信。" className="mt-4"/>
 
 <p>
 最後に、プロジェクトマネージャーと協働し、月次プロダクトミーティングで、必要なインサイトが共有されているのか確認しました。

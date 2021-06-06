@@ -14,7 +14,7 @@ import { LocaleContext } from "../../components/layout"
 const About = ({data}) => {
 
   const profilePhoto = data.profilePhoto
-  const { localizedPath } = React.useContext(LocaleContext)
+  const { localizedPath, locale } = React.useContext(LocaleContext)
 
   // useTranslations is aware of the global context (and therefore also "locale")
   // so it'll automatically give back the right translations
@@ -34,19 +34,21 @@ const About = ({data}) => {
                 <span dangerouslySetInnerHTML={{__html: t.about.textPart1}}/>
                 <LocalizedLink to={`/data`}>{t.about.link}</LocalizedLink>
                 <span dangerouslySetInnerHTML={{__html: t.about.textPart2}}/>
-                <span> {t.socialsLinks.Follow} </span>
+                <span> {locale === "en" ? t.socialsLinks.Follow : "私の"} </span>
                 <a 
                   href={Config.siteMetadata.social.linkedin} 
                   target="_blank" 
                   rel="noreferrer"  
                   className={style.linkedin}> {t.socialsLinks.Linkedin},
                 </a> 
+                {locale === "en" ? "" : "や"}
                 <a 
                   href={Config.siteMetadata.social.dribbble} 
                   target="_blank" 
                   rel="noreferrer"  
                   className={style.dribbble}> {t.socialsLinks.Dribbble}
                 </a> 
+                {locale === "en" ? "" : "をフォローしてください。"}
                 <span> {t.socialsLinks.Contact} </span>
                 <a 
                   href={`mailto:${Config.siteMetadata.email}`}
@@ -54,13 +56,15 @@ const About = ({data}) => {
                   rel="noreferrer"  
                   className={style.dribbble}> {Config.siteMetadata.email + " "} 
                 </a> 
+                {locale === "en" ? "" : "です。"}
                 <span> {t.socialsLinks.or}</span>
                 <a 
                   href={ResumeEn}
                   target="_blank" 
                   rel="noreferrer"  
-                  className={style.dribbble}> {t.socialsLinks.resume}.
+                  className={style.dribbble}> {t.socialsLinks.resume}
                 </a> 
+                {locale === "en" ? "" : "もぜひご覧ください。"}
               </p>
           </div>
         </div>
