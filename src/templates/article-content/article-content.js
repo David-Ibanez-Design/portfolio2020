@@ -10,6 +10,7 @@ import style from './article-content.module.scss'
 import Images from "../../components/embedded-images"
 import ScrollTop from "../../components/scroll-top"
 import ArticleOverview from "../../components/article-overview"
+import Utils from '../../utils'
 
 const components = {
   Img,
@@ -18,12 +19,26 @@ const components = {
   ArticleOverview
 }
 
+
+const H4 = ({ children }) => {
+  return (
+    <h2 id={Utils.getAnchor(children, false)}>
+      {children}
+    </h2>
+  );
+};
+
+
 const target = React.createRef();
 
 const ArticleContent = ({body, imagesObj}) => (
   <div className={style.container}>
      <article ref={target}>
-        <MDXProvider components={components}>
+        <MDXProvider 
+          components={{
+            components, 
+            h4: H4}}
+          >
           <MDXRenderer style={style} images={imagesObj}>
             {body}
           </MDXRenderer>

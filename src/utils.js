@@ -60,6 +60,14 @@ const Utils = {
     }, '')
   },
 
+  getAnchor: (value, withHash = false) => {
+    value = withHash ? "#"+value : value
+    return value
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+  },
+
+
   localizedSlug: (isDefault, locale, slug) => {
     if(isDefault)
     {return "/"+slug}
