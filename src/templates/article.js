@@ -15,7 +15,7 @@ const Post = ({ data }) => {
   const { body, frontmatter, headings } = data.articleContent
   const { title, tags, coverArticle, imagesMd, imagesLg, imagesXl, imagesXXl, displayToc  } = frontmatter
   const suggestedArticles = []
-  const { localizedPath } = React.useContext(LocaleContext)
+  const { localizedPath, locale } = React.useContext(LocaleContext)
   suggestedArticles.push({ node: data.suggestedArticles })
   let imagesObj = []
 

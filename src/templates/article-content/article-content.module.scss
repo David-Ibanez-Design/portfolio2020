@@ -4,6 +4,10 @@
   position: relative;
   margin-top: -100px;
 
+  .illustrations h2{
+    padding-top: $spacer-8;
+  }
+
   .gatsby-image-wrapper img{
     height: auto !important;
   }
@@ -25,7 +29,7 @@
   p + h4,
   .imageWrapper + h4,
   ul + h4{
-    margin-top: $spacer-8;
+    margin-top: $spacer-4;
   }
 
   p + h2,
@@ -50,6 +54,7 @@
     margin-bottom: $spacer-3;
     margin-top: $spacer-1;
   }
+
   h3 {
     @include h3;
     line-height: 28px;
@@ -66,7 +71,8 @@
 
   h4{
     line-height: $lh-default;
-    padding-top: $spacer-4;
+    // padding-top: $spacer-4;
+    padding-top: $spacer-8;
     color: $gray-500;
   }
   p {
@@ -149,7 +155,7 @@
 
   .fullBleedContainer, .containedFull{
     margin: 0 auto;
-    padding: $spacer-8 0;
+    padding: $spacer-8 0 $spacer-4;
   }
 
 
@@ -157,12 +163,20 @@
   .containedMd{
     max-width: $container-md;
     margin: 0 auto;
-    padding: $spacer-8 0;
+    padding: $spacer-8 0 $spacer-4 0;
     @include breakpoint("md"){
       padding: $spacer-4 0;
     }
 
   }
+
+  .containedMd +  p {
+    padding-top: $spacer-4 !important;
+  }
+
+  // p + .containedMd{
+  //   padding-top: 0 !important;
+  // }
 
   // 1280
   .containedLg{

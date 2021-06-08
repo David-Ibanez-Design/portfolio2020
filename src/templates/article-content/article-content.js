@@ -12,32 +12,29 @@ import ScrollTop from "../../components/scroll-top"
 import ArticleOverview from "../../components/article-overview"
 import Utils from '../../utils'
 
-const components = {
-  Img,
-  Link,
-  Images,
-  ArticleOverview
-}
-
 
 const H4 = ({ children }) => {
   return (
-    <h2 id={Utils.getAnchor(children, false)}>
+    <h4 id={Utils.getAnchor(children, false)}>
       {children}
-    </h2>
+    </h4>
   );
 };
 
 
 const target = React.createRef();
 
-const ArticleContent = ({body, imagesObj}) => (
+const ArticleContent = ({body, imagesObj, displayToc}) => (
   <div className={style.container}>
-     <article ref={target}>
+     <article ref={target} className={!displayToc ? style.illustrations : null}>
         <MDXProvider 
           components={{
-            components, 
-            h4: H4}}
+            Img,
+            Link,
+            Images,
+            ArticleOverview,
+            h4: H4
+           }}
           >
           <MDXRenderer style={style} images={imagesObj}>
             {body}
