@@ -9,10 +9,11 @@ import SuggestedArticles from './suggested-articles'
 import style from './article.module.scss'
 import { LocaleContext } from "../components/layout"
 
+
 const Post = ({ data }) => {
 
-  const { body, frontmatter } = data.articleContent
-  const { title, tags, coverArticle, imagesMd, imagesLg, imagesXl, imagesXXl  } = frontmatter
+  const { body, frontmatter, headings } = data.articleContent
+  const { title, tags, coverArticle, imagesMd, imagesLg, imagesXl, imagesXXl, displayToc  } = frontmatter
   const suggestedArticles = []
   const { localizedPath } = React.useContext(LocaleContext)
   suggestedArticles.push({ node: data.suggestedArticles })
@@ -46,9 +47,10 @@ const Post = ({ data }) => {
         keywords={tags}
       />
       <div className={style.container}>
+      
         <ArticleHeading title={title} tags={tags} imgArticle={coverArticle.childImageSharp.fluid} />
         <div className={style.content}>
-          <ArticleContent body={body} imagesObj={imagesObj} />
+          <ArticleContent headings={headings} displayToc={displayToc} body={body} imagesObj={imagesObj} />
         </div>
          <SuggestedArticles  articles={suggestedArticles} />
       </div>
@@ -64,9 +66,13 @@ export const pageQuery = graphql`
         fields: { locale: { eq: $locale } }
       ) {
       body
+      headings(depth:h4) {
+            value
+      }
       frontmatter {
         ...articleFields
         order
+        displayToc
         coverArticle {
           ...imageMedium
         }

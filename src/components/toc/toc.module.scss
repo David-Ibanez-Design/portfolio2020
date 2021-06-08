@@ -1,0 +1,56 @@
+
+.toc {
+   margin: 0;
+   position: fixed;
+   top: 50%;
+   left: $spacer-3;
+   -ms-transform: translateY(-50%);
+   transform: translateY(-50%);
+   z-index: 999;
+   transition: opacity 0.3s linear;
+   max-width: none !important;
+   padding-left: 0 !important;
+   @include breakpoint("xl"){
+      display: none;
+    }
+
+   & li{
+      list-style: none;
+      margin-bottom: 0 !important;
+
+      &::before{
+         content: none !important;
+         margin-left: 0;
+      }
+   }
+
+   & li a{
+      color: $gray-800;
+      font-size: 13px;
+      font-weight: 600;
+      opacity: .3;
+      transition: all 0.3s linear;
+
+      & span{
+         display: inline-block;
+         width: 6px;
+         height: 2px;
+         margin-bottom: $spacer-1;
+         margin-right: $spacer-2;
+         background: $brand;
+      }
+   }
+
+   & li a:hover{
+      text-decoration: none;
+      opacity: 1;
+      margin-left: $spacer-1;
+   }
+
+   & li a.active{
+      opacity: 1;
+      margin-left: $spacer-1;
+   }
+
+}
+
