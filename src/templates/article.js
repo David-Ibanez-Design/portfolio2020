@@ -8,14 +8,14 @@ import ArticleContent from './article-content'
 import SuggestedArticles from './suggested-articles'
 import style from './article.module.scss'
 import { LocaleContext } from "../components/layout"
-import Toc from "../components/toc"
+
 
 const Post = ({ data }) => {
 
   const { body, frontmatter, headings } = data.articleContent
   const { title, tags, coverArticle, imagesMd, imagesLg, imagesXl, imagesXXl, displayToc  } = frontmatter
   const suggestedArticles = []
-  const { localizedPath, locale } = React.useContext(LocaleContext)
+  const { localizedPath } = React.useContext(LocaleContext)
   suggestedArticles.push({ node: data.suggestedArticles })
   let imagesObj = []
 
@@ -50,8 +50,7 @@ const Post = ({ data }) => {
       
         <ArticleHeading title={title} tags={tags} imgArticle={coverArticle.childImageSharp.fluid} />
         <div className={style.content}>
-        {displayToc ? <Toc headings={headings}/> : null}
-          <ArticleContent headings={headings} body={body} imagesObj={imagesObj} displayToc={displayToc} />
+          <ArticleContent headings={headings} displayToc={displayToc} body={body} imagesObj={imagesObj} />
         </div>
          <SuggestedArticles  articles={suggestedArticles} />
       </div>

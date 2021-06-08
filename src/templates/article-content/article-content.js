@@ -11,7 +11,7 @@ import Images from "../../components/embedded-images"
 import ScrollTop from "../../components/scroll-top"
 import ArticleOverview from "../../components/article-overview"
 import Utils from '../../utils'
-
+import Toc from "../../components/toc"
 
 const H4 = ({ children }) => {
   return (
@@ -24,9 +24,10 @@ const H4 = ({ children }) => {
 
 const target = React.createRef();
 
-const ArticleContent = ({body, imagesObj, displayToc}) => (
+const ArticleContent = ({body, imagesObj, displayToc, headings}) => (
   <div className={style.container}>
      <article ref={target} className={!displayToc ? style.illustrations : null}>
+     {displayToc ? <Toc headings={headings}/> : null}
         <MDXProvider 
           components={{
             Img,

@@ -27,7 +27,7 @@ const Images = ({ containerType, containerWidth, name, className, captions }) =>
                        
                             <div className={style.fullBleedContainer}>
                                 <div className={`${style.fullBleed} ${className}`}>
-                                    <div className={`${style["fullBleedInner" + name.length]} ${style["contained" + containerWidth]} imageWrapper`}>
+                                    <div className={`${style["fullBleedInner" + name.length]} ${className} ${style["contained" + containerWidth]} imageWrapper`}>
                                         {  name.map((item, index) =>
                                             <Img className={style["col" + name.length]} key={index} fluid={item.fluid} alt="Image for the end of article"/> 
                                         )}

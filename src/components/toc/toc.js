@@ -18,9 +18,9 @@ const Toc = ({ headings }) => {
     const bottom = document.documentElement.scrollHeight - extraMargin
     const currentScroll = Math.ceil(window.innerHeight + window.pageYOffset)
 
-    if(!showScroll && currentScroll < bottom && window.pageYOffset > 1000){
+    if(!showScroll && currentScroll < bottom && window.pageYOffset > 500){
       setShowScroll(true)
-    } else if (showScroll && (( window.pageYOffset < 1000) || currentScroll > bottom)){
+    } else if (showScroll && (( window.pageYOffset < 500) || currentScroll > bottom)){
       setShowScroll(false)
     }
 
@@ -76,7 +76,9 @@ const Toc = ({ headings }) => {
    <ul className={style.toc} style={{opacity: showScroll ? '1' : '0'}}>
     {headings.map((heading, index) => (
       <li key={index}>
+
         <a href={Utils.getAnchor(heading.value, true)} className={ Utils.getAnchor(heading.value) === activeId ? style.active : "" }>
+          <span/>
           {heading.value}
         </a>
       </li>

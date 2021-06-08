@@ -151,6 +151,8 @@
   .fullBleed{
     overflow: hidden;
     width: 100%;
+    z-index: 9999;
+    position: relative;
   }
 
   .fullBleedContainer, .containedFull{
@@ -183,6 +185,8 @@
     max-width: $container-lg;
     margin: 0 auto;
     padding: $spacer-8 0;
+    z-index: 9999;
+    position: relative;
     &>.imageWrapper>div{
       margin: 0 auto;
     }
@@ -196,6 +200,8 @@
     max-width: $container-xl;
     margin: 0 auto;
     padding: $spacer-8 0;
+    z-index: 9999;
+    position: relative;
     @include breakpoint("md"){
       padding: $spacer-4 0;
     }
@@ -206,6 +212,8 @@
     max-width:$container-xxl;
     margin: 0 auto;
     padding: $spacer-8 0;
+    z-index: 9999;
+    position: relative;
     @include breakpoint("md"){
       padding: $spacer-2 0;
     }
