@@ -108,11 +108,6 @@ const query = graphql`
                 category
                 description
               }
-              DataAudit{
-                name
-                category
-                description
-              }
               DataAnalysis{
                 name
                 category

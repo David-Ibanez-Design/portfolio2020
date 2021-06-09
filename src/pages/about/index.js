@@ -82,15 +82,24 @@ const About = ({data}) => {
               </p>
           </div>
           <div className="container-sm mt-7">
-              <h5 className={style.aboutSubTitle}>{t.about.technicalSkills}</h5>
+              <h4 className={style.aboutSubTitle}>{t.about.technicalSkills}</h4>
               <TagList 
-                tags={["VisualDesign", "UserResearch", "DataAnalysis", "DataVisualization", "Prototyping", "DesignSystem", "Code"]}
+                tags={["VisualDesign", 
+                  "UserResearch", 
+                  "DataAnalysis", 
+                  "DataVisualization", 
+                  "Prototyping", 
+                  "Wireframe", 
+                  "UserFlow", 
+                  "DesignSystem", 
+                  "Code"
+                ]}
                 type="large"
-                withColor={false}
+                withColor={true}
                 />
           </div>
           <div className="container-sm mt-7">
-              <h5 className={style.aboutSubTitle}>{t.about.languageSkills.description}</h5>
+              <h4 className={style.aboutSubTitle}>{t.about.languageSkills.description}</h4>
               <div className={style.languageSkills}>
                 <div className={style.languageSkillsInner}>
                   <FranceFlag/>
@@ -116,7 +125,7 @@ const About = ({data}) => {
               </div>
           </div>
           <div className="container-sm mt-7">
-              <h5 className={style.aboutSubTitle}>{t.about.tools.description}</h5>
+              <h4 className={style.aboutSubTitle}>{t.about.tools.description}</h4>
               <div className={style.tools}>
                 <a href="https://www.sketch.com/design/" className={style.toolsInner} target="_blank" rel="noreferrer"> 
                   <span className={style.toolsIcon}>
@@ -169,7 +178,7 @@ const About = ({data}) => {
               </div>
           </div>
           <div className="container-sm mt-7">
-              <h5 className={style.aboutSubTitle}>{t.about.process.description}</h5>
+              <h4 className={style.aboutSubTitle}>{t.about.process.description}</h4>
               <div className={style.process}>
               <div className={style.processInner}> 
                     <div className={style.processIcon}>

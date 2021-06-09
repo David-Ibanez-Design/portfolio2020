@@ -21,9 +21,9 @@
         &.large{
             line-height: $spacer-1*5;
             font-size: $h5-size;
-            margin-bottom: $spacer-2;
-            padding: $spacer-2 $spacer-3;     
-        
+            margin-bottom: $spacer-3;
+            padding: $spacer-1 $spacer-3;     
+            font-weight: 600;
         }
 
         &.medium{

@@ -110,11 +110,6 @@
       "category": "design",
       "description": "Vue.js is a JavaScript framework for building interactive web applications."
     },
-    "DataAudit": {
-      "name": "データ監査",
-      "category": "dataAnalysis",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
-    },
     "DataAnalysis": {
       "name": "データ分析",
       "category": "dataAnalysis",
