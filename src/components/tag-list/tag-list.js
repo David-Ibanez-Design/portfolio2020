@@ -7,7 +7,7 @@ import style from './tag-list.module.scss'
 import Utils from '../../utils'
 import useTranslations from "../useTranslations"
 
-const TagList = ({tags, type="medium", limit=""}) => {
+const TagList = ({tags, type="medium", limit="" , withColor=true}) => {
 
   const t = useTranslations()
   const tagCount = tags.length;
@@ -19,7 +19,8 @@ const TagList = ({tags, type="medium", limit=""}) => {
       .sort()
       .map((tag, index) => (
         <React.Fragment key={index}>
-          <span key={tag} className={`${style.tag} ${t.tags[tag].category}Tag ${type ? style[type] : ""}`}>
+          {console.log(t.tags[tag].category)}
+          <span key={tag} className={`${style.tag} ${withColor ? t.tags[tag].category+"Tag" : "tagColor" } ${type ? style[type] : ""}`}>
               {t.tags[tag].name || Utils.capitalize(tag)}
           </span>
         

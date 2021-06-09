@@ -90,7 +90,47 @@
     "subtitle": "ABOUT ME",   
     "textPart1": "My Front End development skills gives me the tools to understand developer’s perspectives and quickly prototype ideas to ensure technical feasibility. <br/><br/> For the past four years, I have been working as a UI/UX designer in the SaaS industry.  Working in collaboration with backend, frontend developers, and business managers taught me how to carefully balance business goals, engineering constraints, and user needs. <br/><br/> Lately, I have been excited about",
     "link": " improving the business decision process as well as my own design process through the use of qualitative and quantitative data. ",
-    "textPart2": "In my free time, I love to travel, workout, and watch movies.<br/><br/>I’m currently looking to join an existing design team in a company that trusts the design process to deliver meaningful and measurable changes to their customers."
+    "textPart2": "In my free time, I love to travel, workout, and watch movies.<br/><br/>I’m currently looking to join an existing design team in a company that trusts the design process to deliver meaningful and measurable changes to their customers.",
+    "technicalSkills": "I specialize in",
+    "languageSkills": {
+      "description": "Languages Skills",
+      "lang1": "French",
+      "langSkills1": "Native level",
+      "lang2": "Japanese",
+      "langSkills2": "Business level (JLPT N2)",
+      "lang3": "English",
+      "langSkills3": "Fluent level"
+    },
+    "tools": {
+      "description": "Tools that I use",
+      "tool1": "Sketch",
+      "tool1URL": "https://www.sketch.com/design/",
+      "tool2": "invision",
+      "tool2URL": "https://www.invisionapp.com/",
+      "tool3": "Photoshop",
+      "tool3URL": "https://www.adobe.com/products/photoshop.html",
+      "tool4": "Illustrator",
+      "tool4URL": "https://www.adobe.com/products/illustrator.html",
+      "tool5": "Tableau",
+      "tool5URL": "https://www.tableau.com/",
+      "tool6": "GA",
+      "tool6URL": "https://marketingplatform.google.com/about/analytics/",
+      "tool7": "VS code",
+      "tool7URL": "https://code.visualstudio.com/",
+      "tool8": "Smartlook",
+      "tool8URL": "https://www.smartlook.com/"
+    },
+    "process": {
+      "description": "My design process",
+      "processTitle1": "Understand & Define",
+      "processDescription1": "User research <br/> Hypothesis",
+      "processTitle2": "Ideate & Explore",
+      "processDescription2": "Brainstorming <br/> Wireframing",
+      "processTitle3": "Design & Build",
+      "processDescription3": "Visual/UI Design <br/> Hi-fi prototype",
+      "processTitle4": "Test & Validate",
+      "processDescription4": "Usability test <br/> A/B testing"
+    }
   },
 
   "tags": {
@@ -142,6 +182,11 @@
     "DataVisualization": {
       "name": "Data Visualization",
       "category": "dataAnalysis",
+      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+    },
+    "Code": {
+      "name": "HTML/CSS/JS",
+      "category": "code",
       "description": "Vue.js is a JavaScript framework for building interactive web applications."
     }
   },

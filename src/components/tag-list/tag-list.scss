@@ -3,6 +3,11 @@
     color: $blue-800;
 }
 
+.codeTag{
+    background: $blue-100;
+    color: $blue-800;
+}
+
 .developmentTag{
     background: $yellow-200;
     color: $yellow-800;
@@ -31,4 +36,9 @@
 .researchTag{
     background: $purpule-200;
     color: $purpule-800;
+}
+
+.tagColor{
+    background: rgba($color: $brand-500, $alpha: .05);
+    color: $gray-800;
 }

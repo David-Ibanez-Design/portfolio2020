@@ -84,9 +84,9 @@
         font-size: $h000-size;
         font-weight: $font-weight-black;
         line-height: 58px;
-        background-image: linear-gradient(to right,$brand-000 0%,$brand-000 100%);
-        background-position: 0 95%;
-        background-size: 0 2px;
+        background-image: linear-gradient(to right, rgba($brand-100, .4) 0%,rgba($brand-100, .4) 100%);
+        background-position: 0 82%;
+        background-size: 100% 13px;
         padding: 0.1% 0;
         background-repeat: no-repeat;
         @include breakpoint("lg"){  

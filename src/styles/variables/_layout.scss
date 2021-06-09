@@ -92,6 +92,8 @@ $width-md: 1035px !default;
 $width-lg: 1280px !default;
 // Extra large screen / wide desktop
 $width-xl: 1500px !default;
+// Extra large screen / wide desktop
+$width-xxxl: 1780px !default;
 // Full width
 $width-xxl: 100% !default;
 
@@ -103,6 +105,7 @@ $container-md: $width-md !default;
 $container-lg: $width-lg !default;
 $container-xl: $width-xl !default;
 $container-xxl: $width-xxl !default;
+$container-xxxl: $width-xxxl !default;
 
 // Breakpoints in the form (name: length)
 $breakpoints: (
@@ -112,7 +115,8 @@ $breakpoints: (
   md: $width-md,
   lg: $width-lg,
   xl: $width-xl,
-  xxl: $width-xxl
+  xxl: $width-xxl,
+  xxxl: $width-xxxl
 ) !default;
 
 // This map is used to iterate over breakpoints and create 
@@ -126,4 +130,5 @@ $responsive-variants: (
   lg: "-lg",
   xl: "-xl",
   xxl: "-xxl",
+  xxxl: "-xxxl"
 ) !default;
