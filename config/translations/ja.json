@@ -77,53 +77,43 @@
   "tags": {
     "UserResearch": {
       "name": "ユーザーリサーチ",
-      "category": "research",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+      "category": "research"
     },
     "Wireframe": {
       "name": "ワイヤーフレーム",
-      "category": "planning",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+      "category": "planning"
     },
     "Prototyping": {
       "name": "プロトタイプ",
-      "category": "planning",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+      "category": "planning"
     },
     "DesignSystem": {
       "name": "デザインシステム",
-      "category": "designSystem",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+      "category": "designSystem"
     },
     "FrontEndDevelopment": {
       "name": "フロントエンド開発",
-      "category": "development",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+      "category": "development"
     },
     "UserFlow": {
       "name": "ユーザーフロー",
-      "category": "planning",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+      "category": "planning"
     },
     "VisualDesign": {
       "name": "ビジュアルデザイン",
-      "category": "design",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+      "category": "design"
     },
     "DataAnalysis": {
       "name": "データ分析",
-      "category": "dataAnalysis",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+      "category": "dataAnalysis"
     },
     "DataVisualization": {
       "name": "データ視覚化",
-      "category": "dataAnalysis",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+      "category": "dataAnalysis"
     },
     "Code": {
       "name": "HTML/CSS/JS",
-      "category": "code",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+      "category": "development"
     }
   },
 

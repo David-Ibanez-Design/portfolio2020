@@ -76,52 +76,42 @@ const query = graphql`
               UserResearch{
                 name
                 category
-                description
               }
               Wireframe{
                 name
                 category
-                description
               }
               Prototyping{
                 name
                 category
-                description
               }
               DesignSystem{
                 name
                 category
-                description
               }
               FrontEndDevelopment{
                 name
                 category
-                description
               }
               UserFlow{
                 name
                 category
-                description
               }
               VisualDesign{
                 name
                 category
-                description
               }
               DataAnalysis{
                 name
                 category
-                description
               }
               DataVisualization{
                 name
                 category
-                description
               }
               Code{
                 name
                 category
-                description
               }
             }
             suggestedArt{

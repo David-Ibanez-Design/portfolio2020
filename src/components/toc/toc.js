@@ -75,10 +75,16 @@ const Toc = ({ headings }) => {
   return(
    <ul className={style.toc} style={{opacity: showScroll ? '1' : '0'}}>
     {headings.map((heading, index) => (
-      <li key={index}>
-
-        <a href={Utils.getAnchor(heading.value, true)} className={ Utils.getAnchor(heading.value) === activeId ? style.active : "" }>
-          <span/>
+      <li key={index} className={ Utils.getAnchor(heading.value) === activeId ? style.active : "" }>
+        <a 
+          href={Utils.getAnchor(heading.value, true)} 
+          onClick={(e) => {
+            e.preventDefault();
+            document.querySelector(`#${Utils.getAnchor(heading.value)}`).scrollIntoView({
+              behavior: "smooth"
+            });
+          }}
+        >
           {heading.value}
         </a>
       </li>

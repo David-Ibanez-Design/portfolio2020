@@ -84,18 +84,17 @@ const About = ({data}) => {
           <div className="container-sm mt-7">
               <h4 className={style.aboutSubTitle}>{t.about.technicalSkills}</h4>
               <TagList 
-                tags={["VisualDesign", 
-                  "UserResearch", 
-                  "DataAnalysis", 
-                  "DataVisualization", 
-                  "Prototyping", 
-                  "Wireframe", 
-                  "UserFlow", 
-                  "DesignSystem", 
-                  "Code"
-                ]}
+                tags={["UserResearch", 
+                "UserFlow", 
+                "Wireframe", 
+                "Prototyping", 
+                "VisualDesign", 
+                "DesignSystem", 
+                "DataVisualization", 
+                "DataAnalysis", 
+                "Code",
+              ]}
                 type="large"
-                withColor={true}
                 />
           </div>
           <div className="container-sm mt-7">
