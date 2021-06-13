@@ -123,13 +123,13 @@
     "process": {
       "description": "My design process",
       "processTitle1": "Understand & Define",
-      "processDescription1": "User research <br/> Hypothesis",
+      "processDescription1": "<span>User research</span><span><span>,</span>Hypothesis</span>",
       "processTitle2": "Ideate & Explore",
-      "processDescription2": "Brainstorming <br/> Wireframing",
+      "processDescription2": "<span>Brainstorming</span><span><span>,</span>Wireframing</span>",
       "processTitle3": "Design & Build",
-      "processDescription3": "Visual/UI Design <br/> Hi-fi prototype",
+      "processDescription3": "<span>Visual/UI Design</span><span><span>,</span>Hi-fi prototype</span>",
       "processTitle4": "Test & Validate",
-      "processDescription4": "Usability test <br/> A/B testing"
+      "processDescription4": "<span>Usability test</span><span><span>,</span>A/B testing</span>"
     }
   },
 
