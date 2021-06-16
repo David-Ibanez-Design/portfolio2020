@@ -186,10 +186,10 @@
           &>.processIcon{
               display: flex;
               justify-content: space-around;
-              height: 170px;
+              height: 120px;
 
               &>svg{
-                  width: $spacer-4;
+                  width: $spacer-8;
                   height: auto;
               } 
           }

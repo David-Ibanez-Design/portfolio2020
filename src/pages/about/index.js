@@ -21,8 +21,12 @@ import InvisionLogo from "../../images/icons/invision-logo";
 import PhotoshopLogo from "../../images/icons/photoshop-logo";
 import SketchLogo from "../../images/icons/sketch-logo";
 import SmartlookLogo from "../../images/icons/smartlook-logo";
-import TableauLogo from "../../images/icons/tableau-logo";
 import VscodeLogo from "../../images/icons/VS-code-logo";
+import TableauLogo from "../../images/icons/tableau-logo";
+import ProcessDesign from "../../images/icons/icon-design";
+import ProcessIdeas from "../../images/icons/icon-idea";
+import ProcessResearch from "../../images/icons/icon-research";
+import ProcessTest from "../../images/icons/icon-test";
 
 
 const About = ({data}) => {
@@ -176,12 +180,13 @@ const About = ({data}) => {
                 </a>
               </div>
           </div>
+
           <div className="container-sm mt-7">
               <h4 className={style.aboutSubTitle}>{t.about.process.description}</h4>
               <div className={style.process}>
               <div className={style.processInner}> 
                     <div className={style.processIcon}>
-                      <AmericanFlag/>
+                      <ProcessResearch/>
                     </div>
                     <div className={style.processContent}>
                       <p>{t.about.process.processTitle1}</p>
@@ -190,7 +195,7 @@ const About = ({data}) => {
                 </div>
                 <div className={style.processInner}> 
                     <div className={style.processIcon}>
-                      <AmericanFlag/>
+                      <ProcessIdeas/>
                     </div>
                     <div className={style.processContent}>
                       <p>{t.about.process.processTitle2}</p>
@@ -199,7 +204,7 @@ const About = ({data}) => {
                 </div>
                 <div className={style.processInner}> 
                     <div className={style.processIcon}>
-                      <AmericanFlag/>
+                      <ProcessDesign/>
                     </div>
                     <div className={style.processContent}>
                       <p>{t.about.process.processTitle3}</p>
@@ -208,7 +213,7 @@ const About = ({data}) => {
                 </div>
                 <div className={style.processInner}> 
                     <div className={style.processIcon}>
-                      <AmericanFlag/>
+                      <ProcessTest/>
                     </div>
                     <div className={style.processContent}>
                       <p>{t.about.process.processTitle4}</p>
