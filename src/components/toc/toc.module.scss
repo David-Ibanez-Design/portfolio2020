@@ -4,12 +4,12 @@
    position: fixed;
    top: 50%;
    left: $spacer-3;
-   -ms-transform: translateY(-50%);
    transform: translateY(-50%);
    z-index: 999;
    transition: opacity 0.3s linear;
    max-width: none !important;
    padding-left: 0 !important;
+   border-left: 1px solid $gray-200;
    @include breakpoint("xl"){
       display: none;
     }
@@ -18,27 +18,28 @@
       list-style: none;
       margin-bottom: 0 !important;
 
+      &:hover{
+         border-left: 1px solid $gray-400;
+      }
+
+      &.active{
+         border-left: 2px solid $brand;
+      }
+
       &::before{
          content: none !important;
          margin-left: 0;
       }
    }
 
+
    & li a{
       color: $gray-800;
       font-size: 13px;
       font-weight: 600;
+      padding-left: $spacer-2;
       opacity: .3;
       transition: all 0.3s linear;
-
-      & span{
-         display: inline-block;
-         width: 6px;
-         height: 2px;
-         margin-bottom: $spacer-1;
-         margin-right: $spacer-2;
-         background: $brand;
-      }
    }
 
    & li a:hover{
@@ -47,7 +48,7 @@
       margin-left: $spacer-1;
    }
 
-   & li a.active{
+   & li.active a{
       opacity: 1;
       margin-left: $spacer-1;
    }

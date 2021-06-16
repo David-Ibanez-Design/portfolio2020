@@ -77,53 +77,43 @@
   "tags": {
     "UserResearch": {
       "name": "ユーザーリサーチ",
-      "category": "research",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+      "category": "research"
     },
     "Wireframe": {
       "name": "ワイヤーフレーム",
-      "category": "planning",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+      "category": "planning"
     },
     "Prototyping": {
       "name": "プロトタイプ",
-      "category": "planning",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+      "category": "planning"
     },
     "DesignSystem": {
       "name": "デザインシステム",
-      "category": "designSystem",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+      "category": "designSystem"
     },
     "FrontEndDevelopment": {
       "name": "フロントエンド開発",
-      "category": "development",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+      "category": "development"
     },
     "UserFlow": {
       "name": "ユーザーフロー",
-      "category": "planning",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+      "category": "planning"
     },
     "VisualDesign": {
       "name": "ビジュアルデザイン",
-      "category": "design",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
-    },
-    "DataAudit": {
-      "name": "データ監査",
-      "category": "dataAnalysis",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+      "category": "design"
     },
     "DataAnalysis": {
       "name": "データ分析",
-      "category": "dataAnalysis",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+      "category": "dataAnalysis"
     },
     "DataVisualization": {
       "name": "データ視覚化",
-      "category": "dataAnalysis",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+      "category": "dataAnalysis"
+    },
+    "Code": {
+      "name": "HTML/CSS/JS",
+      "category": "development"
     }
   },
 
@@ -145,7 +135,47 @@
     "subtitle": "自己紹介",   
     "textPart1": "フロントエンド開発のスキルを、ディベロッパーの視点で理解することや、迅速にアイディアをプロトタイプ化し技術的な実現可能性を確認することに活かしています。 <br/><br/> この4年間、SaaS業界でUI/UXデザイナーとして働いています。バックエンドやフロントエンドのディベロッパーおよびビジネスマネージャーと協力しながら働くことで、事業目標、エンジニアリングの制約、そしてユーザー・ニーズのバランスを慎重に取っていく方法を学びました。<br/><br/> 最近は、",
     "link": "定性・定量データを用いて、ビジネス上の意思決定プロセスや自分のデザインプロセスを改善することにやりがいを感じています。",
-    "textPart2": "趣味は、旅行やワークアウト、映画鑑賞です。<br/><br/>現在、デザインプロセスに信頼を置かれ、お客様に意味のある測定可能な変化を提供している企業のデザインチームの一員になりたいと思っています。"
+    "textPart2": "趣味は、旅行やワークアウト、映画鑑賞です。<br/><br/>現在、デザインプロセスに信頼を置かれ、お客様に意味のある測定可能な変化を提供している企業のデザインチームの一員になりたいと思っています。",
+    "technicalSkills": "以下の分野を専門としています",
+    "languageSkills": {
+      "description": "言語スキル",
+      "lang1": "フランス語",
+      "langSkills1": "ネイティブレベル",
+      "lang2": "日本語",
+      "langSkills2": "ビジネスレベル (JLPT N2)",
+      "lang3": "英語",
+      "langSkills3": "流暢ブレベル"
+    },
+    "tools": {
+      "description": "使用するツール",
+      "tool1": "Sketch",
+      "tool1URL": "https://www.sketch.com/design/",
+      "tool2": "invision",
+      "tool2URL": "https://www.invisionapp.com/",
+      "tool3": "Photoshop",
+      "tool3URL": "https://www.adobe.com/jp/products/photoshop.html",
+      "tool4": "Illustrator",
+      "tool4URL": "https://www.adobe.com/jp/products/illustrator.html",
+      "tool5": "Tableau",
+      "tool5URL": "https://www.tableau.com/ja-jp?cb=Wed%20Jun%20%209%2008%3A32%3A31%202021",
+      "tool6": "GA",
+      "tool6URL": "https://marketingplatform.google.com/intl/ja/about/analytics/",
+      "tool7": "VS code",
+      "tool7URL": "https://azure.microsoft.com/ja-jp/products/visual-studio-code/",
+      "tool8": "Smartlook",
+      "tool8URL": "https://www.smartlook.com/"
+    },
+    "process": {
+      "description": "デザインプロセス",
+      "processTitle1": "理解 & 定義",
+      "processDescription1": "<span>ユーザーリサーチ</span><span><span>,</span>仮説</span>",
+      "processTitle2": "観念化 & 探検",
+      "processDescription2": "<span>ブレーンストーミング</span><span><span>,</span>ワイヤーフレーム</span>",
+      "processTitle3": "デザイ & 実装",
+      "processDescription3": "<span>UIデザイン</span><span><span>,</span>プロトタイプ</span>",
+      "processTitle4": "テスト & 検証",
+      "processDescription4": "<span>ユーザビリティテスト</span><span><span>,</span>データ分析</span>"
+    }
   },
   "footer": {
     "title1": "一緒に働きましょう",

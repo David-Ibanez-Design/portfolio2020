@@ -90,59 +90,89 @@
     "subtitle": "ABOUT ME",   
     "textPart1": "My Front End development skills gives me the tools to understand developer’s perspectives and quickly prototype ideas to ensure technical feasibility. <br/><br/> For the past four years, I have been working as a UI/UX designer in the SaaS industry.  Working in collaboration with backend, frontend developers, and business managers taught me how to carefully balance business goals, engineering constraints, and user needs. <br/><br/> Lately, I have been excited about",
     "link": " improving the business decision process as well as my own design process through the use of qualitative and quantitative data. ",
-    "textPart2": "In my free time, I love to travel, workout, and watch movies.<br/><br/>I’m currently looking to join an existing design team in a company that trusts the design process to deliver meaningful and measurable changes to their customers."
+    "textPart2": "In my free time, I love to travel, workout, and watch movies.<br/><br/>I’m currently looking to join an existing design team in a company that trusts the design process to deliver meaningful and measurable changes to their customers.",
+    "technicalSkills": "I specialize in",
+    "languageSkills": {
+      "description": "Languages Skills",
+      "lang1": "French",
+      "langSkills1": "Native level",
+      "lang2": "Japanese",
+      "langSkills2": "Business level (JLPT N2)",
+      "lang3": "English",
+      "langSkills3": "Fluent level"
+    },
+    "tools": {
+      "description": "Tools that I use",
+      "tool1": "Sketch",
+      "tool1URL": "https://www.sketch.com/design/",
+      "tool2": "invision",
+      "tool2URL": "https://www.invisionapp.com/",
+      "tool3": "Photoshop",
+      "tool3URL": "https://www.adobe.com/products/photoshop.html",
+      "tool4": "Illustrator",
+      "tool4URL": "https://www.adobe.com/products/illustrator.html",
+      "tool5": "Tableau",
+      "tool5URL": "https://www.tableau.com/",
+      "tool6": "GA",
+      "tool6URL": "https://marketingplatform.google.com/about/analytics/",
+      "tool7": "VS code",
+      "tool7URL": "https://code.visualstudio.com/",
+      "tool8": "Smartlook",
+      "tool8URL": "https://www.smartlook.com/"
+    },
+    "process": {
+      "description": "My design process",
+      "processTitle1": "Understand & Define",
+      "processDescription1": "<span>User research</span><span><span>,</span>Hypothesis</span>",
+      "processTitle2": "Ideate & Explore",
+      "processDescription2": "<span>Brainstorming</span><span><span>,</span>Wireframing</span>",
+      "processTitle3": "Design & Build",
+      "processDescription3": "<span>Visual/UI Design</span><span><span>,</span>Hi-fi prototype</span>",
+      "processTitle4": "Test & Validate",
+      "processDescription4": "<span>Usability test</span><span><span>,</span>Data analysis</span>"
+    }
   },
 
   "tags": {
     "UserResearch": {
       "name": "User Research",
-      "category": "research",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+      "category": "research"
     },
     "Wireframe": {
       "name": "Wireframe",
-      "category": "planning",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+      "category": "planning"
     },
     "Prototyping": {
       "name": "Prototyping",
-      "category": "planning",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+      "category": "planning"
     },
     "DesignSystem": {
       "name": "Design system",
-      "category": "designSystem",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+      "category": "designSystem"
     },
     "FrontEndDevelopment": {
       "name": "Front-End Development",
-      "category": "development",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+      "category": "development"
     },
     "UserFlow": {
       "name": "User Flow",
-      "category": "planning",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+      "category": "planning"
     },
     "VisualDesign": {
       "name": "Visual Design",
-      "category": "design",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
-    },
-    "DataAudit": {
-      "name": "Data Audit",
-      "category": "dataAnalysis",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+      "category": "design"
     },
     "DataAnalysis": {
       "name": "Data Analysis",
-      "category": "dataAnalysis",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+      "category": "dataAnalysis"
     },
     "DataVisualization": {
       "name": "Data Visualization",
-      "category": "dataAnalysis",
-      "description": "Vue.js is a JavaScript framework for building interactive web applications."
+      "category": "dataAnalysis"
+    },
+    "Code": {
+      "name": "HTML/CSS/JS",
+      "category": "development"
     }
   },
 

@@ -4,10 +4,11 @@
     align-items: center;
     flex-wrap: wrap;
 
-
+    &>.tag.large:not(:last-child){
+        margin-right: $spacer-3;
+    }
     &>.tag.medium:not(:last-child){
         margin-right: $spacer-3;
-
     }
 
     &>.tag.small:not(:last-child){
@@ -16,6 +17,14 @@
 
     .tag {
         border-radius: $border-radius;
+
+        &.large{
+            line-height: $spacer-1*5;
+            font-size: $h5-size;
+            margin-bottom: $spacer-3;
+            padding: $spacer-1 $spacer-3;     
+            font-weight: 600;
+        }
 
         &.medium{
             line-height: $spacer-1*5;

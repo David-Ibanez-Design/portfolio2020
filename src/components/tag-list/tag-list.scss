@@ -1,34 +1,81 @@
-.designTag{
+/// Specific style for the mobile menu
+.MobileMenu-designTag{
     background: $blue-100;
     color: $blue-800;
 }
 
-.developmentTag{
+.MobileMenu-codeTag{
     background: $yellow-200;
     color: $yellow-800;
 }
 
-.dataAnalysisTag{
+.MobileMenu-developmentTag{
+    background: $yellow-200;
+    color: $yellow-800;
+}
+
+.MobileMenu-dataAnalysisTag{
     background: $green-100;
     color: $green-800;
 }
 
-.userResearchTag{
+.MobileMenu-userResearchTag{
     background: $red-100;
     color: $red-800;
 }
 
-.designSystemTag{
+.MobileMenu-designSystemTag{
     background: $brand-100;
     color: $brand-800;
 }
 
-.planningTag{
+.MobileMenu-planningTag{
     background: $green-100;
     color: $green-800;
 }
 
-.researchTag{
+.MobileMenu-researchTag{
     background: $purpule-200;
+    color: $purpule-800;
+}
+
+/// Everywhere else
+.designTag{
+    background: rgba($color: $blue-200, $alpha: .2);
+    color: $blue-800;
+}
+
+.codeTag{
+    background: rgba($color: $yellow-200, $alpha: .2);
+    color: $yellow-800;
+}
+
+.developmentTag{
+    background: rgba($color: $yellow-200, $alpha: .5);
+    color: $yellow-800;
+}
+
+.dataAnalysisTag{
+    background: rgba($color: $green-400, $alpha: 0.2);
+    color: $green-800;
+}
+
+.userResearchTag{
+    background: rgba($color: $brand-200, $alpha: .2);
+    color: $brand-500;
+}
+
+.designSystemTag{
+    background: rgba($color: $brand-200, $alpha: .2);
+    color: $brand-500;
+}
+
+.planningTag{
+    background: rgba($color: $blue-200, $alpha: .2);
+    color: $blue-800;
+}
+
+.researchTag{
+    background: rgba($color: $purpule-200, $alpha: .3);
     color: $purpule-800;
 }

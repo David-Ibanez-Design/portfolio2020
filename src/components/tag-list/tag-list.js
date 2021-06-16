@@ -19,7 +19,7 @@ const TagList = ({tags, type="medium", limit=""}) => {
       .sort()
       .map((tag, index) => (
         <React.Fragment key={index}>
-          <span key={tag} className={`${style.tag} ${t.tags[tag].category}Tag ${type ? style[type] : ""}`}>
+          <span key={tag} className={`${style.tag} ${limit ? 'MobileMenu-' : ''}${t.tags[tag].category}Tag ${type ? style[type] : ""}`}>
               {t.tags[tag].name || Utils.capitalize(tag)}
           </span>
         

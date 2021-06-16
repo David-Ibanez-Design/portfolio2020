@@ -76,53 +76,43 @@ const query = graphql`
               UserResearch{
                 name
                 category
-                description
               }
               Wireframe{
                 name
                 category
-                description
               }
               Prototyping{
                 name
                 category
-                description
               }
               DesignSystem{
                 name
                 category
-                description
               }
               FrontEndDevelopment{
                 name
                 category
-                description
               }
               UserFlow{
                 name
                 category
-                description
               }
               VisualDesign{
                 name
                 category
-                description
-              }
-              DataAudit{
-                name
-                category
-                description
               }
               DataAnalysis{
                 name
                 category
-                description
               }
               DataVisualization{
                 name
                 category
-                description
-              }   
+              }
+              Code{
+                name
+                category
+              }
             }
             suggestedArt{
               next
@@ -142,6 +132,46 @@ const query = graphql`
               textPart1
               link
               textPart2
+              technicalSkills
+              languageSkills{
+                description
+                lang1
+                langSkills1
+                lang2
+                langSkills2
+                lang3
+                langSkills3
+              }
+              tools{
+                description
+                tool1
+                tool1URL
+                tool2
+                tool2URL
+                tool3
+                tool3URL
+                tool4
+                tool4URL
+                tool5
+                tool5URL
+                tool6
+                tool6URL
+                tool7
+                tool7URL
+                tool8
+                tool8URL
+              }
+              process{
+                description
+                processTitle1
+                processDescription1
+                processTitle2
+                processDescription2
+                processTitle3
+                processDescription3
+                processTitle4
+                processDescription4
+              }
             }
             socialsLinks{
               Linkedin
