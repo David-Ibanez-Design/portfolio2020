@@ -1,7 +1,3 @@
-
-import React from 'react';
-
-const ProcessTest = ({className, onClick}) => (
 <svg xmlns="http://www.w3.org/2000/svg" width="344" height="422" viewBox="0 0 344 422">
   <g fill="none" fill-rule="evenodd" transform="translate(0 1)">
     <path fill="#002885" fill-rule="nonzero" d="M201,4.54747351e-13 L201,74 C200.5,74.9069009 201.315878,75.7707042 202,76 L272,76 L272,192.999 L252,192.999 L252,96 L201,96 C189.650048,94.9664531 180.870474,85.7872264 180.993159,74.3615507 L181,74 L181,20 L20,20 L20,401 L136,401 L136,421 L10,421 C4.4771525,421 0,416.522847 0,411 L0,10 C0,4.4771525 4.4771525,4.54747351e-13 10,4.54747351e-13 L201,4.54747351e-13 Z"/>
@@ -29,6 +25,3 @@ const ProcessTest = ({className, onClick}) => (
     </g>
   </g>
 </svg>
-)
-
-export default ProcessTest;

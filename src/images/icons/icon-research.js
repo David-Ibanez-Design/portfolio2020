@@ -2,18 +2,20 @@
 import React from 'react';
 
 const ProcessResearch = ({className, onClick}) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="315" height="413" viewBox="0 0 315 413">
-    <g fill="none" fill-rule="evenodd" transform="translate(0 .5)">
-      <circle cx="157.5" cy="82.5" r="10.5" fill="#EF4F47"/>
-      <circle cx="157.5" cy="254.5" r="147.5" stroke="#002885" stroke-width="20"/>
-      <circle cx="157.5" cy="54.5" r="44.5" stroke="#002885" stroke-width="20"/>
-      <circle cx="157.5" cy="254.5" r="105.5" stroke="#EF4F47" stroke-width="20"/>
-      <g fill="#002885" transform="translate(78.721 172.43)">
-        <path d="M160.034489,4.26325641e-14 L103.577793,107.412704 L56.410984,54.4897614 L160.034489,4.26325641e-14 Z M105.799412,53.7063522 L82.6460606,65.881395 L93.184883,77.7063522 L105.799412,53.7063522 Z"/>
-        <path d="M103.623505,54.4216595 L47.1668091,161.834364 L-2.84217094e-14,108.911421 L103.623505,54.4216595 Z M49.3884281,108.128012 L26.2350765,120.303054 L36.7738989,132.128012 L49.3884281,108.128012 Z" transform="rotate(180 51.812 108.128)"/>
+
+  <svg xmlns="http://www.w3.org/2000/svg" width="315" height="378" viewBox="0 0 315 378">
+    <g fill="none" fill-rule="evenodd">
+      <circle cx="157.5" cy="220.5" r="147.5" stroke="#002885" stroke-width="20"/>
+      <circle cx="158" cy="56" r="14" fill="#EF4F47"/>
+      <circle cx="157.5" cy="41.5" r="31.5" stroke="#002885" stroke-width="20"/>
+      <circle cx="157.5" cy="220.5" r="105.5" stroke="#002885" stroke-width="20"/>
+      <g transform="rotate(45 -46.732 309.042)">
+        <path stroke="#EF4F47" stroke-width="18" d="M35.3211179,28.3217517 L57.4710725,93.5918627 L12.6778591,93.5918627 L35.3211179,28.3217517 Z"/>
+        <path stroke="#002885" stroke-width="17" d="M35.5791053,128.54024 L58.6582585,196.361681 L11.9859534,196.361681 L35.5791053,128.54024 Z" transform="rotate(-180 35.28 153.638)"/>
       </g>
     </g>
   </svg>
+
 )
 
 export default ProcessResearch;

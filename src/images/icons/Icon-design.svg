@@ -1,7 +1,3 @@
-
-import React from 'react';
-
-const ProcessDesign = ({className, onClick}) => (
 <svg xmlns="http://www.w3.org/2000/svg" width="338" height="420" viewBox="0 0 338 420">
   <g fill="none" fill-rule="evenodd" transform="rotate(90 169 169)">
     <rect width="15" height="30" x="314" y="277.001" fill="#EF4F47"/>
@@ -22,6 +18,3 @@ const ProcessDesign = ({className, onClick}) => (
     <line x1="267.953" x2="413.696" y1="159.282" y2="159.282" stroke="#002885" stroke-linecap="round" stroke-width="20" transform="rotate(-90 340.697 159.282)"/>
   </g>
 </svg>
-)
-
-export default ProcessDesign;

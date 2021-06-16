@@ -147,7 +147,7 @@
       "langSkills3": "流暢ブレベル"
     },
     "tools": {
-      "description": "Tools that I use",
+      "description": "使用するツール",
       "tool1": "Sketch",
       "tool1URL": "https://www.sketch.com/design/",
       "tool2": "invision",
@@ -166,15 +166,15 @@
       "tool8URL": "https://www.smartlook.com/"
     },
     "process": {
-      "description": "My design process",
-      "processTitle1": "Understand & Define",
-      "processDescription1": "<span>User research</span><span><span>,</span>Hypothesis</span>",
-      "processTitle2": "Ideate & Explore",
-      "processDescription2": "<span>Brainstorming</span><span><span>,</span>Wireframing</span>",
-      "processTitle3": "Design & Build",
-      "processDescription3": "<span>Visual/UI Design</span><span><span>,</span>Hi-fi prototype</span>",
-      "processTitle4": "Test & Validate",
-      "processDescription4": "<span>Usability test</span><span><span>,</span>A/B testing</span>"
+      "description": "デザインプロセス",
+      "processTitle1": "理解 & 定義",
+      "processDescription1": "<span>ユーザーリサーチ</span><span><span>,</span>仮説</span>",
+      "processTitle2": "観念化 & 探検",
+      "processDescription2": "<span>ブレーンストーミング</span><span><span>,</span>ワイヤーフレーム</span>",
+      "processTitle3": "デザイ & 実装",
+      "processDescription3": "<span>UIデザイン</span><span><span>,</span>プロトタイプ</span>",
+      "processTitle4": "テスト & 検証",
+      "processDescription4": "<span>ユーザビリティテスト</span><span><span>,</span>データ分析</span>"
     }
   },
   "footer": {
