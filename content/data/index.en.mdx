@@ -45,6 +45,8 @@ imagesMd:
 </ArticleOverview>
 
 <!-- Content -->
+<div className="articleContent">
+<section id="data-audit">
 
 #### Data Audit
 ## The data audit showed that the company had little to no visibility on customer behaviors and product performance.
@@ -88,6 +90,8 @@ What I learned from the data audit:
     <li>Recording business metrics in a Google spreadsheet required lots of manual work.</li>
     <li>The cost of recording customer metrics was high because it needed dedicated Backend and Frontend development.</li>
 </ul>
+</section>
+<section id="goals">
 
 #### Goals
 ## Making sure new insights could be easily collected and shared across the company was essential in removing barriers to adoption.
@@ -140,6 +144,8 @@ My final vision of how data could be shared across the company looked something 
 </p>
 
 <Images name={props.images.md["structure-final-vision"]} className="mt-4" />
+</section>
+<section id="challenges">
 
 #### Challenges
 ## Beyond the logistic challenges, stakeholders needed to trust data enough to make business decisions based on it.
@@ -153,6 +159,8 @@ Achieving the goals define earlier, will prove to be challenging for the followi
     <li>Our product was producing quite a large amount of data. Collecting and analyzing some of them will require dedicated costly infrastructure and software solutions.</li>
     <li>Perhaps the most challenging one, beyond the logistics issues, stakeholders needed to trust data enough to base their decisions on it rather than on anecdotal evidence.</li>
 </ul>
+</section>
+<section id="planning">
 
 #### Planning
 ## I decided to first focus on low effort/high-value data to gain the necessary stakeholder buy-in to capture more challenging metrics.
@@ -182,7 +190,8 @@ To reach our goal, I decided to first focus on metrics like <a href="https://met
 <p>
 I consolidated my planning into a roadmap that I shared with the company.
 </p>
-
+</section>
+<section id="execution">
 
 #### Execution
 ## Setting-up a free Google analytic account for the product was an obvious place to start.
@@ -215,6 +224,8 @@ To help capture direct users’ feedback, I also worked with the frontend team t
 <p>
 Finally, I worked with the project manager to make sure important insights were shared during our monthly product performance meeting.
 </p>
+</section>
+<section id="outcomes">
 
 #### Outcomes
 ## Fundamental insights were discovered that challenged stakeholder’s assumptions.
@@ -243,8 +254,8 @@ A year after we started collecting data, the Backend team began working on a ded
 
 <Images name={props.images.md["tableau-report-1"]} captions="The revenue dashboard created using Table online."/>
 <Images name={props.images.md["tableau-report-2"]}/>
-
-<section id="conclusion" data-title="Conclusion">
+</section>
+<section id="conclusion">
 
 #### Conclusion
 ### An evolution in mindset but no culture shift yet on how we define success.
@@ -258,5 +269,5 @@ I set out to improve the company decision-making process by providing access to 
 <p>
 Even though I learned a lot about what kinds of insights data can and cannot provide and how to use these insights in my work, this project also showed me how in-depth of a discipline data science and user research is. To truly use the power of data to drive design and business decisions, we ultimately need dedicated specialists.
 </p>
-
 </section>
+</div>

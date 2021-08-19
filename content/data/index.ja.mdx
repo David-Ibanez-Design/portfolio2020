@@ -45,6 +45,9 @@ imagesMd:
 </ArticleOverview>
 
 <!-- Content -->
+<!-- Content -->
+<div className="articleContent">
+<section id="data-audit">
 
 #### データ監査
 ## データ監査を行った結果、顧客の行動とプロダクトのパフォーマンスについて把握しきれていないことが分かりました。
@@ -87,6 +90,8 @@ imagesMd:
     <li>Googleスプレッドシートへのビジネス指標の手入力に手間がかかっていた。</li>
     <li>顧客指標を記録するために専用のバックエンドとフロントエンドの開発が必要だったので、コストがかかっていた。</li>
 </ul>
+</section>
+<section id="goals">
 
 #### 目標
 ## 新しいインサイトは、取り入れやすくするために、簡単に収集でき、会社全体で共有しやすいものにすることを目指しました。
@@ -139,6 +144,8 @@ imagesMd:
 </p>
 
 <Images name={props.images.md["structure-final-vision-ja"]} className="mt-4" />
+</section>
+<section id="challenges">
 
 #### 課題
 ## データ収集に必要なインフラ整備の問題に加え、ステークホルダーがデータを信頼し、それに基づくビジネス上の意思決定を行う必要がありました。
@@ -152,6 +159,8 @@ imagesMd:
     <li>同社プロダクトは、膨大な量のデータを生成していた。データの中には、コストのかかる専用のインフラやソフトウェアソリューションを必要とするものがあった。</li>
     <li>データ収集に必要なインフラを整備しても、ステークホルダーに、事例証拠よりもデータを信頼し、データに基づく決定をしてもらう必要があった。おそらくこれが一番の課題であった。</li>
 </ul>
+</section>
+<section id="planning">
 
 #### プランニング
 ## まずは、ステークホルダーの賛同を得てより困難な指標を把握するため、労力はかからないが価値の高いデータに焦点を充てることにしました。
@@ -180,7 +189,8 @@ imagesMd:
 <p>
 自分の計画をロードマップに落とし込み、社内で共有しました。
 </p>
-
+</section>
+<section id="execution">
 
 #### 実行
 ## 同プロダクト用のGoogleアナリティクス無料アカウントの設定は、スタート地点として最適でした。
@@ -213,6 +223,8 @@ imagesMd:
 <p>
 最後に、プロジェクトマネージャーと協働し、月次プロダクトミーティングで、必要なインサイトが共有されているのか確認しました。
 </p>
+</section>
+<section id="outcomes">
 
 #### 結果
 ## ステークホルダーの推測とは反対の基礎的なインサイトが見つかりました。
@@ -241,8 +253,8 @@ imagesMd:
 
 <Images name={props.images.md["tableau-report-1"]} captions="「Tableau（タブロー）」を使って作成した収益ダッシュボード"/>
 <Images name={props.images.md["tableau-report-2"]}/>
-
-<section id="conclusion" data-title="Conclusion">
+</section>
+<section id="conclusion">
 
 #### 結論
 
@@ -259,3 +271,4 @@ imagesMd:
 </p>
 
 </section>
+</div>
