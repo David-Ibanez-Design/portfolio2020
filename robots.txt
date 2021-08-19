@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://lgcolella.github.io/sitemap.xml
-Host: https://lgcolella.github.io
+Sitemap: https://davidibanez.design/sitemap.xml
+Host: https://davidibanez.design
