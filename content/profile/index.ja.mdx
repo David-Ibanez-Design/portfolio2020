@@ -1,8 +1,8 @@
 ---
-title: "How We Redesigned A CRM Most Valuable Page, To Improve User Experience And Accelerate New Feature Design JAPANESE."
+title: "How We Redesigned A CRM Most Valuable Page, To Improve User Experience And Accelerate New Feature Design Delivery."
 tags: [UserResearch, Wireframe, Prototyping, VisualDesign]
 path: articles/profile-redesign
-synopsis: "Digima, a web-based CRM application, aim to provide small to medium companies with a way to understand their customers' needs. The contact profile page is a central part of the product. In a single view, the page provides a large amount of information about contact"
+synopsis: "Digima, a web-based CRM application, aim to provide small to medium size companies with a way to understand their customers' needs. The contact profile page plays a key role in fulfilling that objectif. In a single view, the page provides a large amount of information about contact"
 order: 1
 featured: 1
 displayToc: true
@@ -11,11 +11,14 @@ mobileVignettes: images/mobile-menu-vignettes.png
 coverHomepage: images/homepage-cover.png
 coverArticle: images/article-cover.png
 suggestedArt: images/suggestedArt.png
+imagesXl: 
+    - images/journey-map.png
 imagesMd: 
     - images/exsiting-UX-issues.png
     - images/exsiting-customer-feedbacks.png
     - images/exsiting-google-analytics.png
     - images/exsiting-customer-feedback-spreadsheet.png
+    - images/user-testing-spreadsheet.png
     - images/exsiting-sections-break-down.png
     - images/new-layout.png
     - images/new-prototype-evolution-1.png
@@ -32,6 +35,8 @@ imagesLg:
     - images/new-layout-hierarchy-2.png
     - images/new-sketches-wireframes-1.png
     - images/new-sketches-wireframes-2.png
+    - images/new-prototype-evolution-1.png
+    - images/new-prototype-evolution-2.png
 ---
 
 import ImageSlider from "../../src/components/image-slider"
@@ -40,13 +45,13 @@ import ImageSlider from "../../src/components/image-slider"
 
 <ArticleOverview>
     <Sunnary>
-            Digima, a web-based CRM application, aim to provide small to medium companies with a way to understand their customers' needs.
-            The contact profile page is a central part of the product. In a single view, the page provides a large amount of information about contact characteristics, actions, and events. Over time, it had accumulated a lot of design debs leading to the necessity of a redesign.
+            Digima, a web-based CRM application, aim to provide small to medium size companies with a way to understand their customers' needs.
+            The contact profile page plays a key role in fulfilling that objectif. In a single view, the page provides a large amount of information about contact characteristics, actions, and events. Over time, it had accumulated a lot of design debs leading to the necessity of a redesign.
     </Sunnary>
     <Problems>
         <ul>
             <li>Users reported issues finding important lead information within the page. </li>
-            <li>Adding new features without negatively impacting existing one became a challenge. </li>
+            <li>Adding new features without negatively impacting existing ones became a challenge. </li>
         </ul>    
     </Problems>
     <Goals>
@@ -65,7 +70,7 @@ import ImageSlider from "../../src/components/image-slider"
 
 <!-- Content -->
 <div className="articleContent">
-<section id="problemStatement" data-title="Problem Statement">
+<section id="problem-statement" data-title="Problem Statement">
 
 #### Problem Statement
 ## A year after the product launch, we came to a realization: we were adding features to the product faster than the interface could handle.
@@ -79,7 +84,7 @@ After a while, the profile page became cluttered and we were starting to run out
 <Images name={props.images.md["exsiting-UX-issues"]} captions="A few examples of the exsitig page issues."/>
 
 <p>
-Not only that was inconvenient to our users, but it was also slowing our development cycle down because we had to figure out where to place these new elements on the page and how to promote discovery for each of them.
+Not only that was inconvenient to our users, but it was also slowing our development cycle down because I had to figure out where to place these new elements on the page and how to promote discovery for each of them.
 </p>
 
 <p>
@@ -89,10 +94,10 @@ Our users noticed these issues as well, and over the lifetime of the page, we sa
 <Images name={props.images.md["exsiting-customer-feedbacks"]} captions="Customer feedbacks also highlighted the need for imporvements"/>
 </section>
 
-<section id="constrains" data-title="Constraints and Challenges">
+<section id="challenges" data-title="Constraints and Challenges">
 
 #### Challenges
-## Before discussing any potential changes, It was essential to first identify potential challenges.
+## Before discussing any potential changes, It was essential to first identify challenges.
 
 <p>
 From the beginning, one thing was clear, redesigning the contact profile page won’t be easy:
@@ -100,33 +105,42 @@ From the beginning, one thing was clear, redesigning the contact profile page wo
 
 <ul>
     <li>It was the most used page both in terms of page views and time spent on a page; therefore, any modification could potentialy be hightly disruptive to users's daily work. </li>
-    <li>The page design needed to account for a variety of use cases and contexts, which was an inherent design challenge.</li>
-    <li>Due to a lack of resources, I did not have direct access to users to conduct interviews or perform user testing.</li>
-    <li>The redesign will inevitably be a long process.</li>
+    <li>The page design needed to account for a variety of use cases and contexts.</li>
+    <li>The redesign and its implementation will be a long process which will take resources away from other essential feature developments.</li>
 </ul>
 
 <Images name={props.images.md["exsiting-google-analytics"]} captions="Google Analytics's data clearly underscore the importance of the contact profile page for our users."/>
 </section>
 
-<section id="research" data-title="User Research">
+<section id="user-research" data-title="User Research">
 
 #### User Research
-## The goal of the user research was two-fold: evaluating how the current version was performing and finding opportunities for improvement.
+## Most of the issues users were reporting were centered around difficulties finding and identifying important information.
 
 <p>
-I started the research process by gathering qualitative data. To that end, I worked in collaboration with the support team to collect any profile related issues that could help me identify users pain points. I also spent some time with our internal sales staff that were using the product themselves.
+In order to identify potential design opportunities and improve the current profiles user experience, we first needed to get a detailed understanding of users pain points.
+To that end, I worked in collaboration with the support team to collect any previously reported profile related issues. 
 </p>
 <p>
-I consolided my findings into a Google spreadsheet making sure to categorize each reported issue/requests into one of three categories:
+To dig deeper into the identified issues, I also participated in several user interviews.
 </p>
 
-<ul>
-    <li>Feature discovery issues. </li>
-    <li>Information accessibility issues.</li>
-    <li>Bugs. </li>
-</ul>
+<p>
+From that research, I was able to synthesize the data into a customer journey map. This allowed me to represent user pain points and see where we needed to focus our attention.
+</p>
 
-<Images name={props.images.md["exsiting-customer-feedback-spreadsheet"]} captions="Collecting and categorizing all reported issues into a single document helped me find commum solutions for similar issues"/>
+<Images 
+    containerType="full" 
+    className="bg-gray-0" 
+    containerWidth="Xl"
+    name={props.images.xl["journey-map"]}
+    captions="The journey map allow me to represent user pain points visually and see where we needed to focus our attention."
+/>
+
+<p>
+The data revealed a variety of pain points that our users frequently faced and confirmed some of my earlier hypothesis. Most of the issues users were reporting were centered around difficulties finding and identifying important contact information.  
+</p>
+
 </section>
 
 <section id="objectives" data-title="Redesign Objectives">
@@ -150,9 +164,8 @@ For the business:
 For the users:
 </p>
 <ul>
-    <li>The redesign should not get disrupt users daily work.</li>
-    <li>Users ability to find lead information should be significantly improved.</li>
-    <li>The new design should give users the ability to customize the profile page to their specific needs.</li>
+    <li>The redesign should not cause disruptions to users daily work.</li>
+    <li>Users ability to find important lead information should be significantly improved.</li>
 </ul>
 </section>
 
@@ -166,18 +179,18 @@ One of the most commuly reported issues, had to do with feature/information disc
 </p>
 <p>
 To adress that, I first needed to get a clear idea of what UI elements were displayed on the page, what were their purpose and hierarchical value and how they related to each other. 
-I manage to do that by listing and then laying out the main UI elements of the page in a magic quadrant diagram.
+I manage to do that by listing and then laying out the main UI elements of the page in a prioritization matrix.
 </p>
 
 
-<Images name={props.images.md["exsiting-sections-break-down"]} captions="Listing each UI element of the page by order of importance allowed me to undestand their overall hierarchical value."/>
+<Images name={props.images.md["exsiting-sections-break-down"]} captions="Listing each UI element of the page by order of importance helped me to undestand their overall hierarchical value."/>
 
 
 <p>
-Once I had a clear idea of what needed to be displayed ont the page and the hierarchical value of each of these elements, I started working on the page layout itself.
+Once I had a clear idea of what needed to be displayed on the page and the hierarchical value of each of these elements, I started working on the page layout itself.
 </p>
 <p>
-One of the critical goals of that redesign was to reduce the time users were spending looking for specific information. Switching from the current version's 2 column layout to a 3 column layout seem like an obvious way to significantly increasing the amount of information that was visible above the fold.
+One of the critical goals of that redesign was to reduce the time users were spending looking for specific information. Switching from the current version's 2 columns layout to a 3 columns layout seem like an obvious way to significantly increasing the amount of information visible above the fold.
 </p>
 
 
@@ -185,11 +198,11 @@ One of the critical goals of that redesign was to reduce the time users were spe
 <Images 
     containerWidth="Lg"
     name={props.images.md["new-layout"]}
-    captions="Switching to a 3 columns layout significantly increasing the amount of information that was visible above the fold"
+    captions="Switching to a 3 columns layout significantly increasing the amount of information visible above the fold"
 />
 
 <p>
-However since displaying too much information could be overwhelming to users, elements on the page needed to be porperly organized. Using the magic quadrant diagram made earlier, I managed to give the layout some much needed visual hierarchy.
+However since displaying too much information could be overwhelming to users, elements on the page needed to be porperly organized. Using the prioritization matrix made earlier, I managed to give the layout some much needed visual hierarchy.
 </p>
 
 <Images 
@@ -200,7 +213,7 @@ However since displaying too much information could be overwhelming to users, el
 />
 
 <p>
-Based on the new 3 columns layout, I created a wireframe that I shared with a few team members to gather some early feedback. After a few backs and forth that leads to a few adjustments, I was ready to go to the next phase, prototyping.
+Based on the new 3 columns layout, I created a wireframe that I shared with a few team members to gather some early feedback. After a few backs and forth that lead to a few adjustments, I was ready to start the next phase, prototyping.
 </p>
 
 <Images 
@@ -228,20 +241,55 @@ Internal feedbacks indicated that specific timeline’s information were hard to
 
 <div className={props.style.containedMd}>
     <video width="100%" muted autoplay loop>
-        <source src="images/test-3.mp4" type="video/mp4"/>
+        <source src="images/prototype.mp4" type="video/mp4"/>
     Your browser does not support the video tag.
     </video> 
     <figcaption className={props.style.caption}>Building an HTML/CSS/jQuery prototype helped identify issues that a static version could not have otherwise revealed.</figcaption>
 </div>
+
+<Images 
+    containerType="full" 
+    className="bg-gray-0" 
+    containerWidth="Lg"
+    name={[props.images.lg["new-prototype-evolution-1"], props.images.lg["new-prototype-evolution-2"]]}
+/>
 </section>
 
-<section id="finalDesign"  data-title="Final Design">
+
+
+
+
+<section id="user-testing" data-title="User Testing">
+
+#### User Testing
+## Our testing sessions uncovered a series of unexpected usability issues that we were later able to fix.
+
+<p>
+In order to reveal additional usability issues with the new design, we use the newly created prototype to conduct a series of remote usability tests. 
+</p>
+<p>
+Participants were selected from our existing customer base and were asked to perform a series of tasks while verbalizing their thought process. Some follow-up questions such as “why” , “how do you think of this function” , “tell me more about that”, and questions about the current profile design were asked to try to get users to elaborate on their feelings. We chose to focus on tasks that were both representative of most user's goals and that were related to parts of the UI that had the most design changes. 
+</p>
+<Images name={props.images.md["user-testing-spreadsheet"]} captions="Results of each session were consolidated into a Google spreadsheet for further analysis."/>
+<p>
+Our testing sessions uncovered a series of unexpected usability issues that we were later able to fix.
+</p>
+<p>
+For instance, when asked to remove a contact from a group, most participants were either unable to perform the task or unsure whether they were performing the right one even though they were able to find the appropriate UI elements. Further inquiries reveal that some participants did not understand the relationship between the contact and the group the contact belonged to. 
+</p>
+<p>
+Changing the contact group block title to clearly describe the relationship seems to fix the issue for most participants.
+</p>
+
+</section>
+
+<section id="final-design"  data-title="Final Design">
 
 #### Final Design
 ## I broke down each element of the page into components that I then documented in our existing design system.
 
 <p>
-After the team and I were satisfied with the prototype, I set out to build the high fidelity version of the design.
+After the team and I were satisfied with the usability test results and the prototype, I set out to build the high fidelity version of the design.
 </p>
 
 <p>
@@ -249,7 +297,7 @@ One of the challenges was to efficiently communicate to the frontend team how ea
 </p>
 
 <p>
-To facilitate implementation, I broke each element into components that I then documented <Link to={"/articles/design-system"}>in our existing design system documentation website.</Link>
+To facilitate implementation, I broke down each element into components that I then documented <Link to={"/articles/design-system"}>in our existing design system documentation website.</Link>
 </p>
 
 <Images name={props.images.md["dds-components"]} captions="Each page element were documentaed in our dedicated deisgn system documentation website."/>
@@ -288,18 +336,13 @@ Therefore, in collaboration with the product manager, we decided to organize the
 <Images name={props.images.md["release-schedule"]} captions="Progressivly exposing users to the new design allow us to minimize disruption to their daily work."/>
 
 <p>
-After a few weeks of feedback and bug fixes, we entered the final two weeks of the process, where we warned users that the new profile design would be the default version with no possibility to revert to the old one. Two months after the start of the beta phase, all users were successfully switched to the new profiled design.
+After a few weeks of feedback and bug fixes, we entered the final two weeks of the process, where we warned users that the new profile design would be the default version. Two months after the start of the beta phase, all users were successfully switched to the new profiled design.
 </p>
 </section>
 
 <section id="conclusion" data-title="Conclusion">
 
 #### Conclusion
-### Little research is better than no research at all.
-
-<p>
-Not being able to reach out to our users directly or to perform user testing was frustrating. However, this project showed me that even a small amount of qualitative data could help inform the final design. This, in turn, left me eager to learn more about ways I could integrate more data into my design process. 
-</p>
 
 ### Static or interactive mockups are not enough when dealing with complex problems.
 

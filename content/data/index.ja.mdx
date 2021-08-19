@@ -27,7 +27,7 @@ imagesMd:
 
 <ArticleOverview>
     <Sunnary>
-        <a href="https://comvex.co.jp/" target="_blank" rel="noreferrer">Convex</a> は東京に本社を置く会社で、テクノロジーを通じて顧客のニーズを理解するための、費用対効果が高くユーザーフレンドリーな手段を企業に提供することをミッションにしています。
+        <a href="https://comvex.co.jp/" target="_blank" rel="noreferrer">Comvex</a> は東京に本社を置く会社で、テクノロジーを通じて顧客のニーズを理解するための、費用対効果が高くユーザーフレンドリーな手段を企業に提供することをミッションにしています。
         同社の主要プロダクトの顧客ベースが広がるにつれ、サポートチケットや解約も増えていきました。しばらくすると、顧客の行動を予測するに必要なインサイトが不足していることがわかりました。
     </Sunnary>
     <Problems>
@@ -45,6 +45,9 @@ imagesMd:
 </ArticleOverview>
 
 <!-- Content -->
+<!-- Content -->
+<div className="articleContent">
+<section id="data-audit">
 
 #### データ監査
 ## データ監査を行った結果、顧客の行動とプロダクトのパフォーマンスについて把握しきれていないことが分かりました。
@@ -59,7 +62,7 @@ imagesMd:
 <ul>
     <li>ビジネス指標の中には、手動計算でしGoogleスプレッドシートに記録しているものがありました。</li>
     <li>一部の基本的な顧客指標はプロダクトの管理サイトに記録されてました。</li>
-    <li>サポートチームは <a href="https://www.zendesk.co.jp/" target="_blank" rel="noreferrer">Zendesk</a>,という顧客サポートソフトウェアを使用していましたが、使っていないレポート機能もありました。</li>
+    <li>サポートチームは <a href="https://www.zendesk.co.jp/" target="_blank" rel="noreferrer">Zendesk</a>という顧客サポートソフトウェアを使用していましたが、使っていないレポート機能もありました。</li>
 </ul>
 
 <Images name={props.images.md["exsiting-quantitative"]} captions="重要なビジネス指標が手作業でGoogleスプレッドシートに記録されていました。"/>
@@ -87,6 +90,8 @@ imagesMd:
     <li>Googleスプレッドシートへのビジネス指標の手入力に手間がかかっていた。</li>
     <li>顧客指標を記録するために専用のバックエンドとフロントエンドの開発が必要だったので、コストがかかっていた。</li>
 </ul>
+</section>
+<section id="goals">
 
 #### 目標
 ## 新しいインサイトは、取り入れやすくするために、簡単に収集でき、会社全体で共有しやすいものにすることを目指しました。
@@ -139,6 +144,8 @@ imagesMd:
 </p>
 
 <Images name={props.images.md["structure-final-vision-ja"]} className="mt-4" />
+</section>
+<section id="challenges">
 
 #### 課題
 ## データ収集に必要なインフラ整備の問題に加え、ステークホルダーがデータを信頼し、それに基づくビジネス上の意思決定を行う必要がありました。
@@ -152,6 +159,8 @@ imagesMd:
     <li>同社プロダクトは、膨大な量のデータを生成していた。データの中には、コストのかかる専用のインフラやソフトウェアソリューションを必要とするものがあった。</li>
     <li>データ収集に必要なインフラを整備しても、ステークホルダーに、事例証拠よりもデータを信頼し、データに基づく決定をしてもらう必要があった。おそらくこれが一番の課題であった。</li>
 </ul>
+</section>
+<section id="planning">
 
 #### プランニング
 ## まずは、ステークホルダーの賛同を得てより困難な指標を把握するため、労力はかからないが価値の高いデータに焦点を充てることにしました。
@@ -170,17 +179,18 @@ imagesMd:
 </p>
 
 <p>
-資料から、一部のデータは、収集するのに他のデータよりもリソースが必要であることが分かりました。例えば、 <a href="https://try.analytica.jp/kpi/saas/mrr" target="_blank" rel="noreferrer">MRR</a> や <a href="https://ec-orange.jp/ec-media/?p=23049" target="_blank" rel="noreferrer">チャーンレート</a>, のような課金に関連するデータは、非常に重要なデータですが、収集するには専用のインフラが必要ですので、ビジネスサイドの賛同を得なければなりません。
+資料から、一部のデータは、収集するのに他のデータよりもリソースが必要であることが分かりました。例えば、 <a href="https://try.analytica.jp/kpi/saas/mrr" target="_blank" rel="noreferrer">MRR</a> や <a href="https://ec-orange.jp/ec-media/?p=23049" target="_blank" rel="noreferrer">チャーンレート</a>のような課金に関連するデータは、非常に重要なデータですが、収集するには専用のインフラが必要ですので、ビジネスサイドの賛同を得なければなりません。
 </p>
 
 <p>
-目標達成するため、まずは、 <a href="https://metriclabs.com.au/glossary/google-analytics-dimensions/days-since-last-session/" target="_blank" rel="noreferrer">「最後のセッションからの日数」</a> や <a href="https://mixpanel.com/topics/daily-active-users/" target="_blank" rel="noreferrer">日ごとのアクティブユーザー」</a> など、ビジネス価値は高いが、実装や収集にあまり時間がかからない指標にフォーカスすることにしました。データにより、ビジネス上の判断がどう改善されるのかを徐々に示すことで、ステークホルダーが次第にデータを信頼するようになり、専用のインフラを必要とするデータを集めるためのリソースに、アクセスさせてもらえるようになると考えたからです。
+目標達成するため、まずは、 <a href="https://metriclabs.com.au/glossary/google-analytics-dimensions/days-since-last-session/" target="_blank" rel="noreferrer">「最後のセッションからの日数」</a> や <a href="https://mixpanel.com/topics/daily-active-users/" target="_blank" rel="noreferrer">「日ごとのアクティブユーザー」</a> など、ビジネス価値は高いが、実装や収集にあまり時間がかからない指標にフォーカスすることにしました。データにより、ビジネス上の判断がどう改善されるのかを徐々に示すことで、ステークホルダーが次第にデータを信頼するようになり、専用のインフラを必要とするデータを集めるためのリソースに、アクセスさせてもらえるようになると考えたからです。
 </p>
 
 <p>
 自分の計画をロードマップに落とし込み、社内で共有しました。
 </p>
-
+</section>
+<section id="execution">
 
 #### 実行
 ## 同プロダクト用のGoogleアナリティクス無料アカウントの設定は、スタート地点として最適でした。
@@ -213,6 +223,8 @@ imagesMd:
 <p>
 最後に、プロジェクトマネージャーと協働し、月次プロダクトミーティングで、必要なインサイトが共有されているのか確認しました。
 </p>
+</section>
+<section id="outcomes">
 
 #### 結果
 ## ステークホルダーの推測とは反対の基礎的なインサイトが見つかりました。
@@ -241,8 +253,8 @@ imagesMd:
 
 <Images name={props.images.md["tableau-report-1"]} captions="「Tableau（タブロー）」を使って作成した収益ダッシュボード"/>
 <Images name={props.images.md["tableau-report-2"]}/>
-
-<section id="conclusion" data-title="Conclusion">
+</section>
+<section id="conclusion">
 
 #### 結論
 
@@ -259,3 +271,4 @@ imagesMd:
 </p>
 
 </section>
+</div>

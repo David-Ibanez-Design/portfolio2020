@@ -45,7 +45,7 @@ const Toc = ({ headings }) => {
         });
   
         const getIndexFromId = (id) =>
-          headingElements.findIndex((heading) => heading.id === id);
+        sectionElements.findIndex((heading) => heading.id === id);
   
         if (visibleHeadings.length === 1) {
           setActiveId(visibleHeadings[0].target.id);
@@ -58,13 +58,12 @@ const Toc = ({ headings }) => {
       };
   
       const observer = new IntersectionObserver(callback, {
-        rootMargin: "0px 0px -40% 0px"
+        rootMargin: "-100px"
       });
   
-      const headingElements = Array.from(document.querySelectorAll("h4"));
-      console.log(headingElements)
+      const sectionElements = Array.from(document.querySelectorAll("section"));
 
-      headingElements.forEach((element) => observer.observe(element));
+      sectionElements.forEach((element) => observer.observe(element));
   
       return () => observer.disconnect();
     }, [setActiveId]);

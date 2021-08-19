@@ -52,6 +52,8 @@ imagesXXl:
 </ArticleOverview>
 
 <!-- Content -->
+<div className="articleContent">
+<section id="problem-statement">
 
 #### Problem Statement
 ## Our customers needed a new, more efficient communication channel to engage with their prospects.
@@ -70,6 +72,8 @@ With an average email opening rate and a cold call reached rate between 10 to 15
 <p>
 It was decided that SMS, with its high opening and click-through rate, was the feature our customers needed to achieve their goals.
 </p>
+</section>
+<section id="constraints">
 
 #### Constraints
 ## From the start of the project, it was clear that a lot of efforts will be spent working around the 3rd party API restrictions.
@@ -88,6 +92,8 @@ My first task was to study that document and meet with team leaders to discuss t
     <li>Because of scheduling issues, the Backend team could not investigate the API and the API itself had no documentations.</li>
     <li>To be able to send and receive SMS a dedicated phone number needed to be manually issued.</li>
 </ul>
+</section>
+<section id="user-flow">
 
 #### User Flow
 ## Laying out the feature’s user flow allowed the team and I to identify where we needed to focus our efforts and spend most of our time.
@@ -110,6 +116,8 @@ Because of the scale and complexity of the project, one of the most important ea
 <p>
 One example of this was the feature activation process. Because a phone number needed to be manually issued before the SMS feature could be used, we needed to agree on a flow that was efficient but also flexible enough to account for the fact that some parts of the process couldn’t be automated. We also needed to let users know about the status of their requests in real-time. 
 </p>
+</section>
+<section id="wireframe">
 
 #### Wireframe
 ## It was crucial to maintain users’ sense of control over what message they were sending despite all of the existing API restrictions.
@@ -139,7 +147,8 @@ After a few iterations, I settled on a 2 column-style layout with one column dis
 
 
 <Images name={props.images.md["wireframe-creation-screen"]} captions="The final wireframe version for the SMS creation screen."/>
-
+</section>
+<section id="mockups">
 
 #### Mockups
 ## To maintain consistency and facilitate implementation I made sure to reuse as many existing patterns as possible.
@@ -168,8 +177,8 @@ Once screens for the most important scenarios were designed, an invision prototy
 
 
 <Images containerWidth="XXl" name={props.images.xxl["centered-Prototype-2"]}/>
-
-<section id="conclusion" data-title="Conclusion">
+</section>
+<section id="conclusion">
 
 #### Conclusion
 
@@ -192,3 +201,4 @@ Customers have also reported that SMS sent to contacts had a higher engagement r
 </p>
 
 </section>
+</div>

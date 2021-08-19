@@ -1,5 +1,5 @@
 ---
-title: 双方向のSMSで見込み客への接触を図りとエンゲージメントを高める
+title: 双方向のSMSで見込み客への接触を図りエンゲージメントを高める
 tags: [UserResearch, UserFlow, Wireframe, Prototyping, VisualDesign]
 path: articles/sms
 order: 3
@@ -51,6 +51,8 @@ imagesXXl:
 </ArticleOverview>
 
 <!-- Content -->
+<div className="articleContent">
+<section id="problem-statement">
 
 #### 課題ステートメント
 ## お客様が、見込み客と関係を築くためのより効率的な新しいコミュニケーションチャネルを必要としていました。
@@ -69,6 +71,8 @@ imagesXXl:
 <p>
 お客様のその目標を達成するために同社が決めたのは、開封率とクリック率が高いSMS機能でした。
 </p>
+</section>
+<section id="constraints">
 
 #### 制約
 ## プロジェクトの開始時から、外部APIの制約を回避するためにかなりの努力が必要であることが明らかでした。
@@ -87,6 +91,8 @@ imagesXXl:
     <li>スケジュールの問題でバックエンドチームがAPIを調査できず、API自体に関するドキュメントがなかった。</li>
     <li>SMSの送受信を可能にするために、専用電話番号を手動で発行する必要があった。</li>
 </ul>
+</section>
+<section id="user-flow">
 
 #### ユーザーフロー
 ## 機能のユーザーフローのレイアウトを作成したことで、どの部分に注力し時間をかけなければならないのか明確になりました。
@@ -109,6 +115,8 @@ imagesXXl:
 <p>
 その一例が、機能の有効化プロセスです。SMS機能を使用する前に手作業で電話番号を発行する必要があったため、効率的でかつ、すべてのプロセスを自動にすることはできないという事実を考慮し、柔軟に対応できるフローに合意する必要がありました。また、ユーザーに対しても、リアルタイムで電話番号リクエストの状況を知らせる必要もありました。
 </p>
+</section>
+<section id="wireframe">
 
 #### ワイヤーフレーム
 ## APIの制限に関わらず、送信するメッセージに対しユーザーが自分たちでコントロールしている、という感覚を維持してもらうことも不可欠でした。
@@ -138,7 +146,8 @@ imagesXXl:
 
 
 <Images name={props.images.md["wireframe-creation-screen"]} captions="SMS作成画面のワイヤーフレーム最終バージョン"/>
-
+</section>
+<section id="mockups">
 
 #### モックアップ
 ## 一貫性を維持した実装にするため、できるだけ既存のパターンを再利用しました
@@ -165,10 +174,9 @@ imagesXXl:
 最も重要なシーンを想定した画面のデザインが終わったあと、Invisionのプロトタイプを作成し、チームに共有しました。これにより、デザインの最終版がどのように見え、全体的な動作はどうなるのか、チームが理解することができました。
 </p>
 
-
 <Images containerWidth="XXl" name={props.images.xxl["centered-Prototype-2"]}/>
-
-<section id="conclusion" data-title="Conclusion">
+</section>
+<section id="conclusion">
 
 #### 結論
 ### 外部サービスを利用する場合は、経験から直接得た知識に基づく決断が必要でした。
@@ -188,3 +196,4 @@ imagesXXl:
 </p>
 
 </section>
+</div>

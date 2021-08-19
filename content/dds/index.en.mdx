@@ -65,6 +65,8 @@ imagesXl:
 import ImageSlider from "../../src/components/image-slider"
 
 <!-- Content -->
+<div className="articleContent">
+<section id="audit">
 
 #### Audit
 ## The product audit revealed many inconsistencies and user experiences issues, confirming the need for a design system.
@@ -94,6 +96,8 @@ It became clear that what we needed was a well organized, collaborative design s
     name={props.images.xl["v1-duplicate-styles"]}
     captions="The current product audit revealed many inconsistencies."
 />
+</section>
+<section id="design-principles">
 
 #### Design Principles
 ## Agreeing on what kind of product experience we wanted to deliver to our users helped us stay on track when making difficult decisions.
@@ -125,7 +129,8 @@ After a few discussions, we came up with the following four principles.
 <ul>
     <li><strong>Foster collaboration:</strong> Software development is a team sport. A design cannot exist without the support of others, so learning to implicate them into your process will only make for better designs.</li>
 </ul>
-
+</section>
+<section id="visual-direction">
 
 #### Visual Direction
 ## Before I could start redesigning the product and building the design system, we needed to decide on a visual direction.
@@ -143,7 +148,8 @@ After a few rounds of feedbacks, the team and I ultimately selected one final st
 </p>
 
 <Images name={props.images.md["visual-direction-final-01"]} captions="The final design style." className="mt-0"/>
-
+</section>
+<section id="structure">
 
 #### Structure
 ## An agreed-upon and straightforward structure for our design system helped promote the shared understanding necessary to reach our goal of improving efficiency.
@@ -165,7 +171,8 @@ After a few backs and forths, we came up with the following organization.
 </p>
 
 <Images bg="gray-0" name={props.images.md["master-file-1"]} captions="The design system structure."/>
-
+</section>
+<section id="components">
 
 #### Components
 ## Designing the components was a long and meticulous process, but one that will significantly increase feature design quality and delivery time. 
@@ -195,7 +202,8 @@ One of the ways I could fulfill my goal of improving efficiency was to reduce gu
     name={props.images.xl["Components"]}
     captions="A small sample of the system's components."
 />
-
+</section>
+<section id="documentation">
 
 #### Documentation
 ## The documentation site helped the team move from design to implementation quickly by eliminating guess-work.
@@ -227,7 +235,8 @@ When available, I also made sure to display the react version of a component as 
         Your browser does not support the video tag.
     </video>
 </div>
-
+</section>
+<section id="conclusion">
 
 #### Conclusion
 ## Creating a design system was necessary to address the scaling and consistency issues that led to a product redesign. 
@@ -263,3 +272,5 @@ However, these efforts paid off:
     afterKey={props.images.md["before-dashbaord-after"]} 
     captions="Before and after versions of the dashboard page."
 />
+</section>
+</div>
