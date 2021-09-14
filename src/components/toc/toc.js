@@ -5,7 +5,7 @@ import style from './toc.module.scss'
 import Utils from '../../utils'
 
 const Toc = ({ headings }) => {
-
+  console.log(headings)
   // Check if server or client is rendering
   const hasWindow = (typeof window !== 'undefined') ? true : false;
   const [showScroll, setShowScroll] = useState(false)
@@ -43,7 +43,7 @@ const Toc = ({ headings }) => {
           const headingElement = headingElementsRef.current[key];
           if (headingElement.isIntersecting) visibleHeadings.push(headingElement);
         });
-  
+        
         const getIndexFromId = (id) =>
         sectionElements.findIndex((heading) => heading.id === id);
   

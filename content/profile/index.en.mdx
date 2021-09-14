@@ -88,7 +88,7 @@ Not only that was inconvenient to our users, but it was also slowing our develop
 Our users noticed these issues as well, and over the lifetime of the page, we saw an increase of support tickets and feedbacks asking how to perform certain tasks, where a specific feature was located on the page, as well as requests for improvement.  
 </p>
 
-<Images name={props.images.md["exsiting-customer-feedbacks"]} captions="Customer feedbacks also highlighted the need for imporvements"/>
+<Images name={props.images.md["exsiting-customer-feedbacks"]} captions="Customer feedbacks also highlighted the need for improvements"/>
 </section>
 
 <section id="challenges" data-title="Constraints and Challenges">
@@ -97,11 +97,11 @@ Our users noticed these issues as well, and over the lifetime of the page, we sa
 ## Before discussing any potential changes, It was essential to first identify challenges.
 
 <p>
-From the beginning, one thing was clear, redesigning the contact profile page won’t be easy:
+From the beginning, one thing was clear, redesigning the contact profile page won’t be easy.
 </p>
 
 <ul>
-    <li>It was the most used page both in terms of page views and time spent on a page; therefore, any modification could potentialy be hightly disruptive to users's daily work. </li>
+    <li>It was the most used page both in terms of page views and time spent on a page; therefore, any modification could potentially be highly disruptive to users's daily work. </li>
     <li>The page design needed to account for a variety of use cases and contexts.</li>
     <li>The redesign and its implementation will be a long process which will take resources away from other essential feature developments.</li>
 </ul>
@@ -146,14 +146,14 @@ The data revealed a variety of pain points that our users frequently faced and c
 ## One of the essential goals of the redesign was to reduce the time users were spending looking for specific information.
 
 <p>
-After identifying design challanges and users pain points, it was now time to set some redesign goals. I decided to divide these goals into two categories: some directed at the business and some at the users.
+After identifying design challenges and users pain points, it was now time to set some redesign goals. I decided to divide these goals into two categories: some directed at the business and some at the users.
 </p>
 
 <p>
 For the business:
 </p>
 <ul>
-    <li>Imporve feature implementation speed by making the page more modular and easy to scale.</li>
+    <li>Improve feature implementation speed by making the page more modular and easy to scale.</li>
     <li>Ensure that the implementation of the redesign itself does not get in the way of new features development.</li>
 </ul>
 
@@ -172,15 +172,15 @@ For the users:
 ## After setting up some redesign goals, it was now time to start sketching a few ideas.
 
 <p>
-One of the most commuly reported issues, had to do with feature/information discovery. To me, that was clear sign of a lack of a visual hierarchy within the page.
+One of the most commonly reported issues, had to do with feature/information discovery. To me, that was clear sign of a lack of a visual hierarchy within the page.
 </p>
 <p>
-To adress that, I first needed to get a clear idea of what UI elements were displayed on the page, what were their purpose and hierarchical value and how they related to each other. 
+To address that, I first needed to get a clear idea of what UI elements were displayed on the page, what were their purpose and hierarchical value and how they related to each other. 
 I manage to do that by listing and then laying out the main UI elements of the page in a prioritization matrix.
 </p>
 
 
-<Images name={props.images.md["exsiting-sections-break-down"]} captions="Listing each UI element of the page by order of importance helped me to undestand their overall hierarchical value."/>
+<Images name={props.images.md["exsiting-sections-break-down"]} captions="Listing each UI element of the page by order of importance helped me to understand their overall hierarchical value."/>
 
 
 <p>
@@ -295,7 +295,7 @@ One of the challenges was to efficiently communicate to the frontend team how ea
 To facilitate implementation, I broke down each element into components that I then documented <Link to={"/dds/"}>in our existing design system documentation website.</Link>
 </p>
 
-<Images name={props.images.md["dds-components"]} captions="Each page element were documentaed in our dedicated deisgn system documentation website."/>
+<Images name={props.images.md["dds-components"]} captions="Each page element were documented in our dedicated deisgn system documentation website."/>
 
  In addition to the HTML prototype created earlier, an invision prototype was also created to give the frontend team a sense of how the final version of the design will look and behave as a whole.
 </section>
@@ -313,10 +313,10 @@ At this point, the redesign was ready to be implemented. However, since one of t
 This methodology kept the redesign integration going while having minimal impact on higher priority tasks like bug fixes or new features development.
 </p>
 
-<Images name={props.images.md["youtrack-tasks"]} captions="Each elements of the redesign were broken down into a user story and spreadout into multiple sprints."/>
+<Images name={props.images.md["youtrack-tasks"]} captions="Each elements of the redesign were broken down into a user story and spread out into multiple sprints."/>
 
 <p>
-Because the page was the most used page of the whole application, an other essential redesign goal was to minimize disruption to users’ daily work. This meant that we couldn't just “flip the switch” and replace the current design by the new one. We needed a way to progressively expose users to the new design while keeping an eye on their feedbacks to fix any remaining bugs and usabilty issues.  
+Because the page was the most used page of the whole application, an other essential redesign goal was to minimize disruption to users’ daily work. This meant that we couldn't just “flip the switch” and replace the current design by the new one. We needed a way to progressively expose users to the new design while keeping an eye on their feedbacks to fix any remaining bugs and usability issues.  
 </p>
 
 <p>
@@ -328,7 +328,7 @@ Therefore, in collaboration with the product manager, we decided to organize the
     <li><strong>The beta phase</strong>, during which users were automatically switched to the new design with the possibility to revert to the old profile via an opt-out option.</li>
 </ul>
 
-<Images name={props.images.md["release-schedule"]} captions="Progressivly exposing users to the new design allow us to minimize disruption to their daily work."/>
+<Images name={props.images.md["release-schedule"]} captions="Progressively exposing users to the new design allow us to minimize disruption to their daily work."/>
 
 <p>
 After a few weeks of feedback and bug fixes, we entered the final two weeks of the process, where we warned users that the new profile design would be the default version. Two months after the start of the beta phase, all users were successfully switched to the new profiled design.

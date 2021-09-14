@@ -1,8 +1,8 @@
 ---
-title: "How We Redesigned A CRM Most Valuable Page, To Improve User Experience And Accelerate New Feature Design Delivery."
+title: "ユーザーエクスペリエンスを向上させ、新機能デザインの提供を速めるため、CRMの最も価値のあるページをどのように再デザインしたか。"
 tags: [UserResearch, Wireframe, Prototyping, VisualDesign]
 path: articles/profile-redesign
-synopsis: "Digima, a web-based CRM application, aim to provide small to medium size companies with a way to understand their customers' needs. The contact profile page plays a key role in fulfilling that objectif. In a single view, the page provides a large amount of information about contact"
+synopsis: "WebベースのCRMアプリケーションであるDigimaは、中小企業が顧客のニーズを理解する方法を提供することを目的としています。顧客プロファイルページは、その目的を果たすために重要な役割を担います。このページでは、顧客情報の特徴、行動、イベントに関する大量の情報を、1つのビューで提供しています。しかし、時間の経過とともにデザイン上の問題点が蓄積され、デザインを見直す必要が出てきました。"
 order: 1
 featured: 1
 displayToc: true
@@ -12,17 +12,17 @@ coverHomepage: images/homepage-cover.png
 coverArticle: images/article-cover.png
 suggestedArt: images/suggestedArt.png
 imagesXl: 
-    - images/journey-map.png
+    - images/journey-map-ja.png
 imagesMd: 
     - images/exsiting-UX-issues.png
     - images/exsiting-customer-feedbacks.png
     - images/exsiting-google-analytics.png
     - images/exsiting-customer-feedback-spreadsheet.png
     - images/user-testing-spreadsheet.png
-    - images/exsiting-sections-break-down.png
-    - images/new-layout.png
-    - images/new-prototype-evolution-1.png
-    - images/new-prototype-evolution-2.png
+    - images/exsiting-sections-break-down-ja.png
+    - images/new-layout-ja.png
+    - images/new-prototype-evolution-1-ja.png
+    - images/new-prototype-evolution-2-ja.png
     - images/dds-components.png
     - images/youtrack-tasks.png
     - images/release-schedule.png
@@ -31,12 +31,12 @@ imagesMd:
     - images/final-version-3.png
 
 imagesLg: 
-    - images/new-layout-hierarchy-1.png
-    - images/new-layout-hierarchy-2.png
-    - images/new-sketches-wireframes-1.png
-    - images/new-sketches-wireframes-2.png
-    - images/new-prototype-evolution-1.png
-    - images/new-prototype-evolution-2.png
+    - images/new-layout-hierarchy-1-ja.png
+    - images/new-layout-hierarchy-2-ja.png
+    - images/new-sketches-wireframes-1-ja.png
+    - images/new-sketches-wireframes-2-ja.png
+    - images/new-prototype-evolution-1-ja.png
+    - images/new-prototype-evolution-2-ja.png
 ---
 
 import ImageSlider from "../../src/components/image-slider"
@@ -45,197 +45,188 @@ import ImageSlider from "../../src/components/image-slider"
 
 <ArticleOverview>
     <Sunnary>
-            Digima, a web-based CRM application, aim to provide small to medium size companies with a way to understand their customers' needs.
-            The contact profile page plays a key role in fulfilling that objectif. In a single view, the page provides a large amount of information about contact characteristics, actions, and events. Over time, it had accumulated a lot of design debs leading to the necessity of a redesign.
-    </Sunnary>
+        WebベースのCRMアプリケーションであるDigimaは、中小企業が顧客のニーズを理解する方法を提供することを目的としています。顧客プロファイルページは、その目的を果たすために重要な役割を担います。このページでは、顧客情報の特徴、行動、イベントに関する大量の情報を、1つのビューで提供しています。しかし、時間の経過とともにデザイン上の問題点が蓄積され、デザインを見直す必要が出てきました。    </Sunnary>
     <Problems>
         <ul>
-            <li>Users reported issues finding important lead information within the page. </li>
-            <li>Adding new features without negatively impacting existing ones became a challenge. </li>
+            <li>ユーザーから、同ページ内で、重要なリード情報を見つける際の問題が報告されまし</li>
+            <li>既存の機能に悪影響を与えることなく新しい機能を追加することが課題になりました。</li>
         </ul>    
     </Problems>
     <Goals>
         <ul>
-            <li>Improve usability and scalability of the page. </li>
-            <li>Minimize disruption to both the businesses and user's daily work. </li>
+            <li>同ページのユーザビリティとスケーラビリティを改善する。</li>
+            <li>ビジネスとユーザーの日々の作業の両方の混乱を最小限にする。</li>
         </ul>   
     </Goals>
     <Outcomes>
         <ul>
-            <li>Feature design and implementation time were reduced. </li>
-            <li>Users' feedback showed that finding lead information within the profile was much improved.</li>
+            <li>機能設計と実装の時間が短縮されました。</li>
+            <li>ユーザーから、プロフィールページでリード情報を見つけやすくなったというフィードバックが得られた。</li>
         </ul>   
     </Outcomes>    
 </ArticleOverview>
 
 <!-- Content -->
 <div className="articleContent">
-<section id="problem-statement" data-title="Problem Statement">
+<section id="課題ステートメント" data-title="Problem Statement">
 
-#### Problem Statement
-## A year after the product launch, we came to a realization: we were adding features to the product faster than the interface could handle.
-
-<p>
-As a CRM, Digima contact’s profile page is the central hub for all our customer’s lead interaction, and because of this, new features ended up adding UI elements to the page in some way or another.
-After a while, the profile page became cluttered and we were starting to run out of place.
-</p>
-
-
-<Images name={props.images.md["exsiting-UX-issues"]} captions="A few examples of the exsitig page issues."/>
+#### 課題ステートメント
+## プロダクトの発売から1年後、インターフェースの処理能力を上回るスピードで、プロダクトに機能を追加していたということに気付きました。
 
 <p>
-Not only that was inconvenient to our users, but it was also slowing our development cycle down because I had to figure out where to place these new elements on the page and how to promote discovery for each of them.
+CRMであるDigimaの顧客プロフィールページは、すべてのお客様のリードとのやり取りの中心的な役割を担っています。そのため、新しい機能は、何らかの方法でページにUI要素を追加することになっていました。 しばらくすると、プロフィールページは乱雑になり、スペースがなくなりました。
 </p>
 
 <p>
-Our users noticed these issues as well, and over the lifetime of the page, we saw an increase of support tickets and feedbacks asking how to perform certain tasks, where a specific feature was located on the page, as well as requests for improvement.  
+これはユーザーにとって不便なだけでなく、新しい要素をページのどこに配置するか、また、それぞれの要素を見つけてもらうよう促す方法を考えなければならないため、開発サイクルが遅くなっていました。
 </p>
 
-<Images name={props.images.md["exsiting-customer-feedbacks"]} captions="Customer feedbacks also highlighted the need for imporvements"/>
+<p>
+この問題はユーザーも同様に認識しており、ページの存続期間中に、特定のタスクを実行する方法や、特定の機能がページのどこにあるかを尋ねるサポートチケットやフィードバック、さらには改善要求が増加しました。
+</p>
+
+<Images name={props.images.md["exsiting-customer-feedbacks"]} captions="お客様の声からも改善の必要性を感じました。"/>
 </section>
 
-<section id="challenges" data-title="Constraints and Challenges">
+<section id="課題" data-title="Constraints and Challenges">
 
-#### Challenges
-## Before discussing any potential changes, It was essential to first identify challenges.
+#### 課題
+## 変更について議論する前に、まず課題を明らかにすることが必要でした。
 
 <p>
-From the beginning, one thing was clear, redesigning the contact profile page won’t be easy:
+最初から明確だったのは、顧客情報のプロフィールページを再設計するのは簡単ではないということでした。
 </p>
 
 <ul>
-    <li>It was the most used page both in terms of page views and time spent on a page; therefore, any modification could potentialy be hightly disruptive to users's daily work. </li>
-    <li>The page design needed to account for a variety of use cases and contexts.</li>
-    <li>The redesign and its implementation will be a long process which will take resources away from other essential feature developments.</li>
+    <li>ページビューとページの滞在時間の両方で最も利用されているページであるため、変更するとユーザーの日常業務に大きな支障をきたす可能性がありました。</li>
+    <li>ページのデザインには、様々なユースケースや背景を考慮する必要がありました。</li>
+    <li>デザインの変更とその実装には長い時間がかかるため、他の重要な機能の開発にリソースが割かれる可能性がありました。</li>
 </ul>
 
-<Images name={props.images.md["exsiting-google-analytics"]} captions="Google Analytics's data clearly underscore the importance of the contact profile page for our users."/>
+<Images name={props.images.md["exsiting-google-analytics"]} captions="Googleアナリティクスのデータから、顧客情報のプロフィールページは、ユーザーにとって重要であることが明らかになっています。"/>
 </section>
 
-<section id="user-research" data-title="User Research">
+<section id="ユーザーリサーチ" data-title="User Research">
 
-#### User Research
-## Most of the issues users were reporting were centered around difficulties finding and identifying important information.
+#### ユーザーリサーチ
+## ユーザーから寄せられた問題は、重要な情報を見つけられない、識別できないというものがほとんどでした。
 
 <p>
-In order to identify potential design opportunities and improve the current profiles user experience, we first needed to get a detailed understanding of users pain points.
-To that end, I worked in collaboration with the support team to collect any previously reported profile related issues. 
+デザインの可能性を見極め、現在のプロフィールのユーザーエクスペリエンスを改善するためには、まず、ユーザーのペインポイントをしっかりと把握する必要がありました。そのために私は、サポートチームと協力し、過去に報告された問題を収集しました。
 </p>
 <p>
-To dig deeper into the identified issues, I also participated in several user interviews.
+また、ユーザーのペインポイントをより深く理解するために、ユーザーとの面談にも参加しました。
 </p>
 
 <p>
-From that research, I was able to synthesize the data into a customer journey map. This allowed me to represent user pain points and see where we needed to focus our attention.
+その調査から、データをカスタマージャーニーマップに合成することができました。これにより、ユーザーのペインポイントを表し、どこに注意を払うべきかがわかりました。
 </p>
 
 <Images 
     containerType="full" 
     className="bg-gray-0" 
     containerWidth="Xl"
-    name={props.images.xl["journey-map"]}
-    captions="The journey map allow me to represent user pain points visually and see where we needed to focus our attention."
+    name={props.images.xl["journey-map-ja"]}
+    captions="ジャーニーマップでは、ユーザーのペインポイントを視覚的に表し、どこに注目すべきか確認することができました。"
 />
 
 <p>
-The data revealed a variety of pain points that our users frequently faced and confirmed some of my earlier hypothesis. Most of the issues users were reporting were centered around difficulties finding and identifying important contact information.  
+その結果、ユーザーが頻繁に直面しているさまざまな問題が明らかになり、私が以前から考えていた仮説のいくつかが裏付けられました。ユーザーから受けた報告での問題のほとんどは、重要な顧客の情報を見つけたり、特定したりするのが難しいということでした。
 </p>
 
 </section>
 
-<section id="objectives" data-title="Redesign Objectives">
+<section id="目的" data-title="Redesign Objectives">
 
-#### Objectives
-## One of the essential goals of the redesign was to reduce the time users were spending looking for specific information.
+#### 目的
+## デザイン変更の本質的な目的の一つは、ユーザーが特定の情報を探すのに費やす時間を短縮することでした。
 
 <p>
-After identifying design challanges and users pain points, it was now time to set some redesign goals. I decided to divide these goals into two categories: some directed at the business and some at the users.
+デザイン上の課題とユーザーのペインポイントを特定した後、再デザインの目標を設定しました。そして、これらの目標を、ビジネス向けとユーザー向けの２つに分類することにしました。
 </p>
 
 <p>
-For the business:
+ビジネス向け:
 </p>
 <ul>
-    <li>Imporve feature implementation speed by making the page more modular and easy to scale.</li>
-    <li>Ensure that the implementation of the redesign itself does not get in the way of new features development.</li>
+    <li>ページのモジュール化と拡張性の向上により、機能の実装速度を向上させる。</li>
+    <li>デザイン変更の実装自体が、新機能開発の妨げにならないようにする。</li>
 </ul>
 
 <p>
-For the users:
+ユーザー向け:
 </p>
 <ul>
-    <li>The redesign should not cause disruptions to users daily work.</li>
-    <li>Users ability to find important lead information should be significantly improved.</li>
+    <li>デザイン変更が、ユーザーの日常業務に支障をきたさないようにする。</li>
+    <li>ユーザーが重要なリード情報を見つける能力が大幅に向上するようにすること。</li>
 </ul>
 </section>
 
-<section id="ideation" data-title="Ideation">
+<section id="観念化" data-title="Ideation">
 
-#### Ideation
-## After setting up some redesign goals, it was now time to start sketching a few ideas.
+#### 観念化
+## デザイン変更の目標を設定した後、アイデアをスケッチすることにしました。
 
 <p>
-One of the most commuly reported issues, had to do with feature/information discovery. To me, that was clear sign of a lack of a visual hierarchy within the page.
+最も多く報告された問題の一つは、機能や情報の発見に関わるものでした。私にとって、これは明らかに、ページ内のビジュアル階層が欠如していることを示すものでした。
 </p>
 <p>
-To adress that, I first needed to get a clear idea of what UI elements were displayed on the page, what were their purpose and hierarchical value and how they related to each other. 
-I manage to do that by listing and then laying out the main UI elements of the page in a prioritization matrix.
+この問題に対処するためには、まず、ページに表示されているUI要素の目的や階層的な価値、そしてそれらがどのように関連しているのかを明確に把握する必要がありました。そのために、ページの主要なUI要素を書き出し、優先順位をつけたマトリクスでレイアウトしました。
 </p>
 
 
-<Images name={props.images.md["exsiting-sections-break-down"]} captions="Listing each UI element of the page by order of importance helped me to undestand their overall hierarchical value."/>
+<Images name={props.images.md["exsiting-sections-break-down-ja"]} captions="ページの各UI要素を重要度順に並べることで、全体の階層的な価値を理解することができました。"/>
 
 
 <p>
-Once I had a clear idea of what needed to be displayed on the page and the hierarchical value of each of these elements, I started working on the page layout itself.
+ページに何を表示するのか、それぞれの要素の階層的価値が明確になったところで、ページのレイアウトに着手しました。
 </p>
 <p>
-One of the critical goals of that redesign was to reduce the time users were spending looking for specific information. Switching from the current version's 2 columns layout to a 3 columns layout seem like an obvious way to significantly increasing the amount of information visible above the fold.
+このデザイン変更の重要な目標の一つは、ユーザーが特定の情報を探すのに費やす時間を短縮することでした。現行バージョンの2カラムのレイアウトから3カラムのレイアウトに変更することは、一面に表示される情報量を大幅に増やすための明白な方法に思えました。
 </p>
 
 
 
 <Images 
     containerWidth="Lg"
-    name={props.images.md["new-layout"]}
-    captions="Switching to a 3 columns layout significantly increasing the amount of information visible above the fold"
+    name={props.images.md["new-layout-ja"]}
+    captions="3カラムのレイアウトに変更することで、一面に表示される情報量が大幅に増加"
 />
 
 <p>
-However since displaying too much information could be overwhelming to users, elements on the page needed to be porperly organized. Using the prioritization matrix made earlier, I managed to give the layout some much needed visual hierarchy.
+しかし、あまりにも多くの情報を表示するとユーザーが圧倒されてしまうため、ページ内の要素を適切に整理する必要があります。そこで、先に作成した優先順位のマトリクスを用いて、ビジュアルの階層化を図りました。
 </p>
 
 <Images 
     containerType="full"
     className="bg-gray-0" 
     containerWidth="Lg"
-    name={[props.images.lg["new-layout-hierarchy-1"], props.images.lg["new-layout-hierarchy-2"]]}
+    name={[props.images.lg["new-layout-hierarchy-1-ja"], props.images.lg["new-layout-hierarchy-2-ja"]]}
 />
 
 <p>
-Based on the new 3 columns layout, I created a wireframe that I shared with a few team members to gather some early feedback. After a few backs and forth that lead to a few adjustments, I was ready to start the next phase, prototyping.
+新しい3カラムのレイアウトに基づいてワイヤーフレームを作成し、数名のチームメンバーに共有し、初回のフィードバックを集めました。何度か意見交換と修正の後、次の段階であるプロトタイプの作成に進む準備ができました。
 </p>
 
 <Images 
     containerType="full" 
     className="bg-gray-0" 
     containerWidth="Lg"
-    captions="2 column to 3 column layout."
-    name={[props.images.lg["new-sketches-wireframes-1"], props.images.lg["new-sketches-wireframes-2"]]}
+    captions="2カラムから3カラムのレイアウトへ"
+    name={[props.images.lg["new-sketches-wireframes-1-ja"], props.images.lg["new-sketches-wireframes-2-ja"]]}
 />
 </section>
-<section id="prototyping" data-title="Prototyping">
+<section id="プロトタイプ" data-title="Prototyping">
 
-#### Prototyping
-## Building an HTML/CSS/jQuery prototype helped me lower the risks involved in designing such a complex page.
+#### プロトタイプ
+## HTML/CSS/jQueryのプロトタイプを作ることで、このような複雑なページをデザインする際のリスクを軽減できました。
 
 <p>
-The prototype highlighted a few issues.
-One of them had to do with the timeline. Initially, I thought that placing the timeline at the center of the screen and giving it more screen real estate than the other sections would be enough to highlight recent leads related activities. It turned out that it wasn’t enough. 
+このプロトやイプを作成したことで、いくつかの問題点が浮き彫りになりました。そのひとつが、タイムラインです。当初は、タイムラインを画面の中央に配置し、他のセクションよりも広いスペースを確保すれば、リードの直近のアクティビティを強調するのに十分だと考えていました。しかし、それでは十分ではないことがわかりました。
 </p>
 
 <p>
-Internal feedbacks indicated that specific timeline’s information were hard to find. After a few iteration, I decided to only display the main activity type (emails, calls, meetings...) as top-level navigation for the timeline.
+社内からのフィードバックによると、特定のタイムラインの情報を見つけるのが難しいとのことでした。何度かやり取りを繰り返した後、タイムラインのトップレベルナビゲーションとして、主なアクティビティの種類（メール、電話、面談など）のみを表示することにしました。
 </p>
 
 
@@ -244,122 +235,120 @@ Internal feedbacks indicated that specific timeline’s information were hard to
         <source src="images/prototype.mp4" type="video/mp4"/>
     Your browser does not support the video tag.
     </video> 
-    <figcaption className={props.style.caption}>Building an HTML/CSS/jQuery prototype helped identify issues that a static version could not have otherwise revealed.</figcaption>
+    <figcaption className={props.style.caption}>HTML / CSS / jQueryプロトタイプを作成することで、静的バージョンでは明らかにできなかった問題を特定することができました。</figcaption>
 </div>
 
+</section>
+
+
+<section id="ユーザーテスト" data-title="User Testing">
+
+#### ユーザーテスト
+## テストセッションでは、後で修正することができた予期していなかったユーザビリティの問題が明らかに。
+
+<p>
+新しいデザインのさらなるユーザビリティの問題を明らかにするために、新しく作成したプロトタイプを使用して、一連のリモートユーザビリティテストを実施しました。
+</p>
+<p>
+参加者を既存の顧客ベースから選び、思考プロセスを声に出しながら、一連のタスクを実行するように依頼しました。 ユーザーに自分の気持ちを詳しく説明してもらうよう、「どうしてですか？」、「この機能についてどう思いますか？」、「それについてもっと教えてください」などのフォローアップの質問や、現行のプロフィールデザインについての質問しました。 多くのユーザーの目標を代表し、かつUIの中で最もデザインが変更された部分に関連するタスクに焦点を当てました。
+</p>
+<Images name={props.images.md["user-testing-spreadsheet"]} captions="各セッションの結果を、さらなる分析のためにGoogleスプレッドシートに集約しました。"/>
+<p>
+テストでは、予想外の使い勝手の悪さが次々と見つかりましたが、後になって修正することができました。
+</p>
+<p>
+例えば、グループから顧客情報を削除するよう依頼したとき、ほとんどの参加者は、適切なUI要素を見つけることができたにもかかわらず、タスクを実行できないか、正しいタスクを実行しているかどうかわからないという結果になりました。さらに調べてみると、顧客情報とその顧客情報が所属するグループの関係を理解していない参加者もいました。
+</p>
+<p>
+顧客情報グループブロックのタイトルを変更して、関係を明確に表現することで、ほとんどの参加者の問題が解決するようです。
+</p>
 <Images 
     containerType="full" 
     className="bg-gray-0" 
     containerWidth="Lg"
-    name={[props.images.lg["new-prototype-evolution-1"], props.images.lg["new-prototype-evolution-2"]]}
+    name={[props.images.lg["new-prototype-evolution-1-ja"], props.images.lg["new-prototype-evolution-2-ja"]]}
 />
-</section>
-
-
-
-
-
-<section id="user-testing" data-title="User Testing">
-
-#### User Testing
-## Our testing sessions uncovered a series of unexpected usability issues that we were later able to fix.
-
-<p>
-In order to reveal additional usability issues with the new design, we use the newly created prototype to conduct a series of remote usability tests. 
-</p>
-<p>
-Participants were selected from our existing customer base and were asked to perform a series of tasks while verbalizing their thought process. Some follow-up questions such as “why” , “how do you think of this function” , “tell me more about that”, and questions about the current profile design were asked to try to get users to elaborate on their feelings. We chose to focus on tasks that were both representative of most user's goals and that were related to parts of the UI that had the most design changes. 
-</p>
-<Images name={props.images.md["user-testing-spreadsheet"]} captions="Results of each session were consolidated into a Google spreadsheet for further analysis."/>
-<p>
-Our testing sessions uncovered a series of unexpected usability issues that we were later able to fix.
-</p>
-<p>
-For instance, when asked to remove a contact from a group, most participants were either unable to perform the task or unsure whether they were performing the right one even though they were able to find the appropriate UI elements. Further inquiries reveal that some participants did not understand the relationship between the contact and the group the contact belonged to. 
-</p>
-<p>
-Changing the contact group block title to clearly describe the relationship seems to fix the issue for most participants.
-</p>
 
 </section>
 
-<section id="final-design"  data-title="Final Design">
+<section id="最終デザイン"  data-title="Final Design">
 
-#### Final Design
-## I broke down each element of the page into components that I then documented in our existing design system.
+#### 最終デザイン
+## ページの各要素をコンポーネントに分解し、それを既存のデザインシステムで文書化しました。
 
 <p>
-After the team and I were satisfied with the usability test results and the prototype, I set out to build the high fidelity version of the design.
+ユーザビリティテストの結果とプロトタイプに満足した私とチームは、デザインの高忠実度版に着手しました。
 </p>
 
 <p>
-One of the challenges was to efficiently communicate to the frontend team how each element of the page was supposed to look and behave.
+課題の一つは、ページの各要素がどのように見えるか、どのように動作するかをフロントエンドチームに効率的に伝えることでした。
 </p>
 
 <p>
-To facilitate implementation, I broke down each element into components that I then documented <Link to={"/articles/design-system"}>in our existing design system documentation website.</Link>
+実装を容易にするために、私は各要素をコンポーネントに分解し、<Link to={"/ja/dds"}>既存のデザインシステムのドキュメントサイトに文書化しました。</Link>
 </p>
 
-<Images name={props.images.md["dds-components"]} captions="Each page element were documentaed in our dedicated deisgn system documentation website."/>
+<Images name={props.images.md["dds-components"]} captions="各ページの要素を、デザインシステム専用のドキュメントサイトに記録しました。"/>
 
- In addition to the HTML prototype created earlier, an invision prototype was also created to give the frontend team a sense of how the final version of the design will look and behave as a whole.
+先に作成したHTMLプロトタイプに加えて、フロントエンドチームに最終バージョンのデザインが全体としてどのように見えるか、どのように動作するかを感じてもらうために、invisionプロトタイプも作成しました。
 </section>
 
-<section id="implementation" data-title="Implementation And Release Strategy">
+<section id="実装" data-title="Implementation And Release Strategy">
 
-#### Implementation
-## We needed to come up with an implementation and release strategy that would minimize disruption to both the development of new features and users’ daily work.
+#### 実装
+## 私たちは、新機能の開発とユーザーの日常業務の両方に支障をきたさないような、実装およびリリースの戦略を考える必要がありました。
 
 <p>
-At this point, the redesign was ready to be implemented. However, since one of the redesign goals was to minimize disruption to the development of new features, I decided to break down the redesign integration into separate user stories and spread these out into multiple sprints.
+この時点で、デザイン変更の実装は完了していました。しかし、デザイン変更の目標のひとつは、新機能の開発への影響を最小限に抑えることだったので、デザイン変更の統合を個別のユーザーストーリーに分け、これを複数のスプリントに分散させることにしました。
 </p>
 
 <p>
-This methodology kept the redesign integration going while having minimal impact on higher priority tasks like bug fixes or new features development.
+この方法論により、バグ修正や新機能の開発といった優先度の高いタスクへの影響を最小限に抑えながら、デザイン変更の統合を進めることができました。
 </p>
 
-<Images name={props.images.md["youtrack-tasks"]} captions="Each elements of the redesign were broken down into user story and spreadout into multiple sprints."/>
+<Images name={props.images.md["youtrack-tasks"]} captions="デザイン変更の各要素を、ユーザーストーリーに分割し、複数のスプリントに分けました。"/>
 
 <p>
-Because the page was the most used page of the whole application, an other essential redesign goal was to minimize disruption to users’ daily work. This meant that we couldn't just “flip the switch” and replace the current design by the new one. We needed a way to progressively expose users to the new design while keeping an eye on their feedbacks to fix any remaining bugs and usabilty issues.  
+このページはアプリケーション全体の中で最も使用されるページであったため、デザイン変更のもう一つの重要な目標は、ユーザーの日常業務への影響を最小限に抑えることでした。そのため、現行のデザインをすぐに新しいデザインに差し替えることはできませんでした。ユーザーからのフィードバックを見ながら、残っているバグや使い勝手の問題を修正しつつ、徐々に新しいデザインに触れてもらう方法が必要でした。
 </p>
 
 <p>
-Therefore, in collaboration with the product manager, we decided to organize the release process into 2 phases: 
+そこで、プロダクトマネージャーと協力して、リリースプロセスを2つのフェーズに整理することにしました。
 </p>
 
 <ul>
-    <li><strong>The alpha phase</strong>, during which the new design was only released to our internal sales team.</li>
-    <li><strong>The beta phase</strong>, during which users were automatically switched to the new design with the possibility to revert to the old profile via an opt-out option.</li>
+    <li><strong>アルファ版</strong>では、新デザインを社内の営業チームにのみ公開する</li>
+    <li><strong>ベータ版</strong>では、自動的に新デザインに切り替わりますが、ユーザーがオプトアウトオプションを使って旧プロファイルに戻すことができるようにしました。
+</li>
 </ul>
 
-<Images name={props.images.md["release-schedule"]} captions="Progressivly exposing users to the new design allow us to minimize disruption to their daily work."/>
+<Images name={props.images.md["release-schedule"]} captions="徐々に新しいデザインに触れていくことで、ユーザーの日常業務への影響を最小限に抑えることができます。"/>
 
 <p>
-After a few weeks of feedback and bug fixes, we entered the final two weeks of the process, where we warned users that the new profile design would be the default version. Two months after the start of the beta phase, all users were successfully switched to the new profiled design.
+数週間のフィードバックとバグ修正を経て、最後の2週間に入ったところで、新しいプロフィールデザインがデフォルトバージョンになることをユーザーに警告しました。ベータ版の開始から2ヶ月後、すべてのユーザーが新しいプロフィールデザインへの切り替えに成功しました。
 </p>
 </section>
 
-<section id="conclusion" data-title="Conclusion">
+<section id="結論" data-title="Conclusion">
 
-#### Conclusion
+#### 結論
 
-### Static or interactive mockups are not enough when dealing with complex problems.
-
-<p>
-Taking the time to create an HTML/CSS/jQuery prototype rather than relying solely on an invision prototype turned out to be crucial in getting some early internal feedback and catching a lot of issues that would have otherwise had to be solved by developers during the implementation phase.
-</p>
-
-### Setting business-specific goals Is essential.
+### 複雑な問題を扱う場合、静的なモックアップやインタラクティブなモックアップだけでは不十分である
 
 <p>
-Getting the stakeholder’s buy-in to move forward with this type of redesign proved to be challenging. However, overcoming that obstacle taught me a lot about how to present my ideas to stakeholders and about the necessity to set up business-specific goals. 
+invisionのプロトタイプだけに頼るのではなく、HTML/CSS/jQueryのプロトタイプを時間をかけて作成したことで、早期に社内のフィードバックを得ることができ、実装段階で開発者が解決しなければならなかった多くの問題を発見することができました。
+</p>
+
+### ビジネスに特化した目標設定が不可欠。
+
+<p>
+このような再設計を進めるために、ステークホルダーの賛同を得ることは難しいことでした。しかし、この壁を乗り越えたことで、自分のアイデアをステークホルダーにどのようにプレゼンテーションするか、また、ビジネスに即した目標を設定する必要性について多くのことを学びました。
 </p>
 
 
 
-<ImageSlider beforeKey={props.images.md["final-version-1"]} afterKey={props.images.md["final-version-2"]} captions="Before and after versions of the contact profile page."/>
+<ImageSlider beforeKey={props.images.md["final-version-1"]} afterKey={props.images.md["final-version-2"]} captions="顧客情報プロフィールの旧ページと新ページ"/>
 
-<Images name={props.images.md["final-version-3"]} captions="Responsive versions of the new profile design."/>
+<Images name={props.images.md["final-version-3"]} captions="新しいプロフィールデザインのレスポンシブ版"/>
 </section>
 </div>
