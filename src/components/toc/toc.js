@@ -5,7 +5,6 @@ import style from './toc.module.scss'
 import Utils from '../../utils'
 
 const Toc = ({ headings }) => {
-  console.log(headings)
   // Check if server or client is rendering
   const hasWindow = (typeof window !== 'undefined') ? true : false;
   const [showScroll, setShowScroll] = useState(false)
