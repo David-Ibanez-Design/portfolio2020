@@ -41,7 +41,7 @@ const Homepage = ({data, requestLangChange}) => {
   // }
 
   return(
-    <>
+    <div className={style.homeContainer}>
       <SEO title={t.home.seoTitle} description={t.home.description} path={localizedPath} />
       <div className={style.heroContainer}>
         <div className={`${style.heroInnerContainer}  ${style.container}`}>
@@ -174,7 +174,7 @@ const Homepage = ({data, requestLangChange}) => {
           })}
           </div>       
         </div>
-    </>
+    </div>
     )
   }
 
