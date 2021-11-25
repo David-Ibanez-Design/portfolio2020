@@ -20,22 +20,22 @@ const Testimonies = ({data}) => {
     const t = useTranslations();
     const {locale} = React.useContext(LocaleContext);
 
+    // Check if server or client is rendering
+    const hasWindow = (typeof window !== 'undefined') ? true : false;
+
     // Slider initialization
     let initialPos = 0;
-    if(window.innerWidth < 1420 && window.innerWidth > 821)
+    if(hasWindow && window.innerWidth < 1420 && window.innerWidth > 821)
     { initialPos = 16}
-    else if (window.innerWidth > 1420)
+    else if (hasWindow && window.innerWidth > 1420)
     { initialPos = 64}
-    else if (window.innerWidth <= 821)
+    else if (hasWindow && window.innerWidth <= 821)
     { initialPos = 0}
 
     const slides = t.home.testimonies.testimony.length;
     const margin = 16;
     const slideW = 523; 
     const sliderW = (slideW * slides) + (margin * slides) + margin/2;
-
-    // Check if server or client is rendering
-    const hasWindow = (typeof window !== 'undefined') ? true : false;
 
     // Set variables
     const [offerSet, setCount] = useState(initialPos);
@@ -46,7 +46,7 @@ const Testimonies = ({data}) => {
         setLeftPosition(true);
         setRightPosition(false);
         
-        if(window.innerWidth>1000){
+        if(hasWindow && window.innerWidth>1000){
             setCount( ( window.innerWidth -sliderW) ); 
         }else{
             setCount( -(window.innerWidth) + (margin * 2) ); 
@@ -57,7 +57,7 @@ const Testimonies = ({data}) => {
         setRightPosition(true);
         setLeftPosition(false);
 
-        if (window.innerWidth < 1420){
+        if (hasWindow && window.innerWidth < 1420){
             setCount(16);    
         }
         else{
@@ -106,7 +106,7 @@ const Testimonies = ({data}) => {
 
                                         <div className={style.authorContainer}>
                                             <div className={style.pictureContainer}>
-                                                <Img fluid={data[index].node.childImageSharp.fluid} alt="sss"/>
+                                                <Img fluid={data[index]?.node?.childImageSharp.fluid} alt="sss"/>
                                             </div>
 
                                             <div className={style.AuthorDetails}>
