@@ -63,7 +63,19 @@ const query = graphql`
               caseStudies
               viewCaseStudy
               otherWorks
+              testimoniesTitle
               viewOnDribbble
+              testimonies{
+                description
+                testimony {
+                  quote
+                  name
+                  position
+                  profilePicture
+                  companyLogo
+                  quoteUrl
+                }
+              }
               dribbbleShots{
                 description
                 projects {
