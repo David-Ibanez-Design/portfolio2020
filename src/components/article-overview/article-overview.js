@@ -27,6 +27,11 @@ const ArticleOverview = ({ type, ...props }) => {
     <div className={style.articleContainer}>
        
             <div className={style.articleInnerContainer}>
+                {overviewObj.Announcement ? (
+                    <div className={style.articleAnnouncement}>
+                        {overviewObj.Announcement}
+                    </div>
+                ) : null}
                 <div className={style.articleIntroduction}>
                     {overviewObj.Sunnary ? overviewObj.Sunnary : null}
                 </div>
@@ -49,7 +54,6 @@ const ArticleOverview = ({ type, ...props }) => {
                     </div>
                 </div>
             ) : null}  
-
 
         </div>
 

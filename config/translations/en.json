@@ -39,7 +39,45 @@
     "caseStudies": "Case Studies",
     "viewCaseStudy": "View case study",
     "otherWorks": "Other Works",
+    "testimoniesTitle": "Testimonies",
     "viewOnDribbble": "View on Dribbble",
+    "testimonies": {
+      "description": "People I have closely worked with. Checkout full testimonies on",
+      "testimony": [
+        {
+          "quote" : "David is an amazing partner and professional designer, he's collaborative and always paying attention to the detail & process in order to build a great product. It's pleased to work with him on the KAPI app.",
+          "name": "Luke Robinson",
+          "position": "Lead Frond-end Engineer",
+          "profilePicture": "01-Luke",
+          "companyLogo": "IndeedLogo",
+          "quoteUrl": ""
+        },
+        {
+          "quote" : "David is definitely a fast doer. He never misses the opportunity to start expressing his ideas through prototypes and designs, and iterate through his work super fast, making.",
+          "name": "Théo Da Costa",
+          "position": "Lead Backend Engineer",
+          "profilePicture": "02-Theo",
+          "companyLogo": "MercariLogo",
+          "quoteUrl": ""
+        },
+        {
+          "quote" : "David is a natural leader. He excels at building design communities and empowering others. His passion for design is contagious. He inspires.",
+          "name": "Akinori Mizushima",
+          "position": "Frond-end Engineer",
+          "profilePicture": "03-Akinori",
+          "companyLogo": "IndeedLogo",
+          "quoteUrl": ""
+        },
+        {
+          "quote" : "David is an amazing partner and professional designer, he's collaborative and always paying attention to the detail & process in order to build a great product. It's pleased to work with him on the KAPI app.",
+          "name": "Anderson Oki",
+          "position": "Lead Back-end developer",
+          "profilePicture": "04-Anderson",
+          "companyLogo": "IndeedLogo",
+          "quoteUrl": ""
+        }
+      ]    
+    },
     "dribbbleShots": {
       "description": "Other unreleased work and things I've designed for fun. Check them out on", 
       "projects": [

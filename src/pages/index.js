@@ -11,6 +11,9 @@ import style from './homepage.module.scss'
 import ResumeEn from '../downloads/Resume-en.pdf'
 import ResumeJp from '../downloads/Resume-jp.pdf'
 import Buttons from '../components/button'
+import Testimonies from "../components/testimonies"
+import IndeedLogo from "../images/icons/indeed";
+import MercariLogo from "../images/icons/mercari";
 import Tooltip from "../components/tooltip";
 import HeroBg from '../images/icons/heroBackground'
 import LocalizedLink from '../components/localizedLink'
@@ -23,7 +26,7 @@ const Homepage = ({data, requestLangChange}) => {
   const t = useTranslations()
   const { localizedPath, locale, BrowserPreferredLang } = React.useContext(LocaleContext)
   
-  let { caseStudyFeatureTablet, caseStudiesTablet, dribbbleShots, heroVisual, profilePics  } = data
+  let { caseStudyFeatureTablet, caseStudiesTablet, dribbbleShots,testimoniesImg, heroVisual, profilePics  } = data
   caseStudyFeatureTablet = caseStudyFeatureTablet.edges[0]
   caseStudiesTablet = caseStudiesTablet.edges;
 
@@ -129,8 +132,10 @@ const Homepage = ({data, requestLangChange}) => {
                   )
                 } )}
           </div>
-         
       </div>
+      
+      <Testimonies />
+
         <div className={`${style.dribbbleListContainer}  ${style.container}`}>
           <h2>{t.home.otherWorks}</h2>
           <p>
@@ -223,6 +228,21 @@ export const pageQuery = graphql`
         }
       }
     }
+
+    testimoniesImg: allFile(
+      sort: { fields: [name] }
+      filter: {relativeDirectory: {eq: "testimonies"}}) {
+      edges {
+        node {
+          ...imageSmall
+            }
+          }
+        }
+
+        Luke: file(
+        relativePath: { eq: "01-Luke.png" }) {
+          ...imageXXSmall
+        }
 
     dribbbleShots: allFile(
       sort: { fields: [name] }

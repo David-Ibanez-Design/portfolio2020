@@ -1,0 +1,334 @@
+.container {
+    @include container-lg;
+    padding: 0 $spacer-3 0 $spacer-3;
+}
+
+
+// Header
+
+.testimonies{
+    display: block;
+    margin-top: $spacer-9;
+
+    h2{
+        margin-bottom: 0 !important;
+        font-size: $h00-size;
+        margin-bottom: $spacer-4;
+        font-weight: $font-weight-extra-bold;
+        text-transform: uppercase;
+    }
+
+    P{
+        color: $gray-800;
+        margin-bottom: $spacer-2 !important;
+    }
+}
+
+
+// Slider
+
+.slider{
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    width: 100%;
+    position: relative;
+    margin-bottom: $spacer-8;
+
+    @media screen and (min-width: 2232px) {
+        margin-bottom: $spacer-13;
+    }
+
+    .slidesContainer{
+        position: relative;
+        height: 234px;
+        width: 100%;
+        transition: all $transition-time ease-in-out;
+
+        @media screen and (max-width: $width-sm) {
+            height: auto;
+            margin: 0 16px
+        }
+    }
+
+    .slidesInnerContainer{
+        display: flex;
+        position: absolute;
+        margin-top: $spacer-3;
+        z-index: 2;
+        
+        @media screen and (max-width:1030px) and (min-width: $width-sm) {
+            display: grid;
+            grid-auto-columns: calc( 50% - 8px );
+            grid-auto-flow: column;
+        }
+
+        @media screen and (max-width: $width-sm) {
+            flex-wrap: wrap; 
+            position: relative;
+            height: auto;
+            left: auto; 
+        }
+    }
+
+}
+
+// Slide
+
+.slide{
+    position: relative;
+    margin-right: $spacer-3;
+    width: 525px;
+
+    @media screen and (min-width: 2232px) {
+        width: 25%;
+    }
+
+    @media screen and (max-width: 1030px) {
+        width: auto;
+        grid-auto-rows: 1fr;
+        display: grid;
+    }
+
+    @media screen and (max-width: $width-sm) {
+        width: 100%; 
+        margin-right: 0;
+        margin-bottom: $spacer-4;
+        display: block;
+    }
+
+    .SlideShadow{
+        position: absolute;
+        background: $yellow-700;
+        width: 80%;
+        height: 80%;
+        bottom: $spacer-2;
+        transform: translateX(-50%);
+        margin-left: 50%;
+        opacity: 0.4;
+        filter: blur(20px);
+        z-index: -1;
+
+        @media screen and (max-width: 1030px) {
+            display: none;
+        }
+    }
+
+
+    .quote{
+        padding: $spacer-3 $spacer-5;
+        width: 100%;
+        min-height: 140px;
+        background: $white;
+        border-top: 1px solid $gray-200;
+        border-left: 1px solid $gray-200;
+        border-right: 1px solid $gray-200;
+        border-radius: $spacer-2 $spacer-2 0 0;
+
+        @media screen and (max-width: $width-sm) {
+            padding: $spacer-3;
+        }
+    }
+
+    .author{
+        position: relative;
+        overflow: hidden;
+        padding: $spacer-3 $spacer-5;
+        width: 100%;
+        max-height: 76px;
+        background: $gray-000;
+        border-radius: 0 0 $spacer-2 $spacer-2;
+        border-bottom: 1px solid $gray-200;
+        border-left: 1px solid $gray-200;
+        border-right: 1px solid $gray-200;
+
+        @media screen and (max-width: $width-sm) {
+            padding: $spacer-3;
+        }
+    }
+
+    .authorContainer{
+        display: flex;
+        align-items: center;
+
+        .pictureContainer{
+            height: $spacer-6;
+            width: $spacer-6;
+            border-radius: $spacer-6;
+            overflow: hidden;
+            float: left;
+        }
+    }
+
+    .AuthorDetails{
+        float: left;
+        margin-left: $spacer-2;
+
+        .name{
+            font-size: $h4-size;
+            font-weight: bold;
+            color: $black;
+            margin-bottom: -$spacer-1;
+        }
+
+        .position{
+            font-size: $h5-size;
+            color: $gray-600;
+        }
+
+        .positionContainer{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .positionContainer .separator{
+            height: $spacer-3;
+            width: 1px;
+            background: $gray-300;
+            margin: 0 $spacer-2;    
+        }
+
+        .positionContainer .companyLogo{
+            height: $spacer-4;
+        }
+
+        .positionContainer .companyLogo svg{
+            height: 18px;
+            width: auto;
+        }
+    }    
+
+}
+
+
+
+// Background
+
+.bgContainer{
+    position: absolute;
+    top: 78px;
+    width: 100%;
+
+    .innerContainer{
+        position: relative;  
+        width: 100%;   
+        height: 188px;
+
+        @media screen and (max-width: 1030px) {
+            display: none;
+        }
+    }
+
+    .quote{
+        position: absolute;
+        left: 0;
+        top: -137px;
+        opacity: .1;
+
+        @media screen and (max-width: 1600px) {
+            display: none;        
+        }
+    }
+
+    .quote svg{
+        height: auto;
+        width: 128px;
+    }
+
+    .bg{
+        width: 100%;
+        height: 100%;
+        opacity: 0.34;
+        background: #FFEFBA;
+        position: absolute;
+    }
+}
+
+
+// Slider controls
+
+.controlsContainer{
+    width: 100%;
+    margin: 54px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+
+    @media screen and (max-width: 860px) {
+        margin: 94px auto 54px auto;
+    }
+
+    @media screen and (max-width: $width-sm) {
+        display: none; 
+    }
+
+    @media screen and (min-width: 2232px) {
+        display: none;
+    }
+
+    .steps{
+        margin: 0 $spacer-5;
+        display: flex;
+    }
+
+    .stepDot{
+        height: 14px;
+        width: 14px;
+        border-radius: 14px;
+        background: $gray-300;
+        margin-right: $spacer-3;
+        cursor: pointer;
+    }
+
+    .stepDot:last-child{
+        margin-right: 0;
+    } 
+
+    .stepDot:not(.stepDotActive):hover{
+        background-image: linear-gradient(0deg, $brand-400 0%, $brand-300 100%);
+        border: 1px solid $brand-500;           
+    }
+
+
+    .stepDotActive{
+        background-image: linear-gradient(0deg, $brand-400 0%, $brand-300 100%);
+        border: 1px solid $brand-500;
+    }
+
+    .arrow{
+        height: $spacer-6;
+        width: $spacer-6;
+        border-radius: $spacer-1;
+        background-image: linear-gradient(1deg, $gray-000 0%, $white 100%);
+        border: 1px solid $gray-300;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .arrow:not(.arrowDisabled):hover{
+        background-image: linear-gradient(0deg, $brand-400 0%, $brand-300 100%);
+        border: 1px solid $brand-500;
+
+        svg polygon{
+            fill: $white;
+        }
+    }
+
+    .arrow svg{
+        width: $spacer-3;
+        height: auto;
+    }
+    
+    .arrowDisabled{
+        opacity: .4;
+        cursor: not-allowed;
+    }
+
+    .arrowRight svg{
+            transform: rotate(180deg);
+    }
+}

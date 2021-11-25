@@ -30,7 +30,53 @@
     "contact": "連絡先",
     "viewResume": "レジュメを見る",
     "otherWorks": "その他の作品",
+    "testimoniesTitle": "Testimonies",
     "viewOnDribbble": "Dribbbleで見る",
+    "testimonies": {
+      "description": "People I have worked with thought my years as a UI/UX design. Checkout full testimonies on",
+      "testimony": [
+        {
+          "quote" : "David is an amazing partner and professional designer, he's collaborative and always paying attention to the detail & process in order to build a great product. It's pleased to work with him on the KAPI app.",
+          "name": "Luke Robinson",
+          "position": "Lead Frond-end developer",
+          "profilePicture": "01-Luke",
+          "companyLogo": "IndeedLogo",
+          "quoteUrl": ""
+        },
+        {
+          "quote" : "David is an amazing partner and professional designer, he's collaborative and always paying attention to the detail & process in order to build a great product. It's pleased to work with him on the KAPI app.",
+          "name": "Luke Robinson",
+          "position": "Lead Frond-end developer",
+          "profilePicture": "01-Luke",
+          "companyLogo": "IndeedLogo",
+          "quoteUrl": ""
+        },
+        {
+          "quote" : "David is an amazing partner and professional designer, he's collaborative and always paying attention to the detail & process in order to build a great product. It's pleased to work with him on the KAPI app.",
+          "name": "Luke Robinson",
+          "position": "Lead Frond-end developer",
+          "profilePicture": "01-Luke",
+          "companyLogo": "IndeedLogo",
+          "quoteUrl": ""
+        },
+        {
+          "quote" : "David is an amazing partner and professional designer, he's collaborative and always paying attention to the detail & process in order to build a great product. It's pleased to work with him on the KAPI app.",
+          "name": "Luke Robinson",
+          "position": "Lead Frond-end developer",
+          "profilePicture": "01-Luke",
+          "companyLogo": "IndeedLogo",
+          "quoteUrl": ""
+        },
+        {
+          "quote" : "David is an amazing partner and professional designer, he's collaborative and always paying attention to the detail & process in order to build a great product. It's pleased to work with him on the KAPI app.",
+          "name": "Luke Robinson",
+          "position": "Lead Frond-end developer",
+          "profilePicture": "01-Luke",
+          "companyLogo": "IndeedLogo",
+          "quoteUrl": ""
+        }
+      ]    
+    },
     "dribbbleShots": {
       "description": "その他未発表の作品や個人的にデザインしたものをご紹介します。ぜひ", 
       "projects": [
