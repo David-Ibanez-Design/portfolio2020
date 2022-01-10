@@ -172,6 +172,10 @@ const query = graphql`
                 tool7URL
                 tool8
                 tool8URL
+                tool9
+                tool9URL
+                tool10
+                tool10URL
               }
               process{
                 description

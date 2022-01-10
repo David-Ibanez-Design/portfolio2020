@@ -156,7 +156,11 @@
       "tool7": "VS code",
       "tool7URL": "https://code.visualstudio.com/",
       "tool8": "Smartlook",
-      "tool8URL": "https://www.smartlook.com/"
+      "tool8URL": "https://www.smartlook.com/",
+      "tool9": "Figma",
+      "tool9URL": "https://www.figma.com/",
+      "tool10": "Miro",
+      "tool10URL": "https://miro.com/"
     },
     "process": {
       "description": "My design process",

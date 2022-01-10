@@ -340,7 +340,7 @@
 
 
 .menuItems .withDropdown:hover .desktopDropdown{
-    top: 70px;
+    top: 53px;
     visibility: visible;   
     opacity: 1;
 } 
@@ -376,7 +376,7 @@
     width: 563px;
     border-radius: 8px;
     border: 1px solid $gray-200;
-    transition: all $transition-time ease-in-out;
+    transition: all $transition-time;
     visibility: hidden;
     opacity: 0;
 

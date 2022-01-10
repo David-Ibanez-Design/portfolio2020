@@ -136,7 +136,7 @@ const About = ({data}) => {
                   <span className={style.toolsIcon}>
                     <FigmaLogo/>               
                   </span>
-                  <p>{t.about.tools.tool1}</p>
+                  <p>{t.about.tools.tool9}</p>
                 </a>
                 <a href="https://www.sketch.com/design/" className={style.toolsInner} target="_blank" rel="noreferrer"> 
                   <span className={style.toolsIcon}>
@@ -148,7 +148,7 @@ const About = ({data}) => {
                   <span className={style.toolsIcon}>
                     <MiroLogo/>
                   </span>
-                  <p>{t.about.tools.tool1}</p>
+                  <p>{t.about.tools.tool10}</p>
                 </a>
                 <a href="https://www.invisionapp.com/" className={style.toolsInner} target="_blank" rel="noreferrer"> 
                   <span className={style.toolsIcon}>

@@ -209,7 +209,11 @@
       "tool7": "VS code",
       "tool7URL": "https://azure.microsoft.com/ja-jp/products/visual-studio-code/",
       "tool8": "Smartlook",
-      "tool8URL": "https://www.smartlook.com/"
+      "tool8URL": "https://www.smartlook.com/",
+      "tool9": "Figma",
+      "tool9URL": "https://www.figma.com/",
+      "tool10": "Miro",
+      "tool10URL": "https://miro.com/"
     },
     "process": {
       "description": "デザインプロセス",
