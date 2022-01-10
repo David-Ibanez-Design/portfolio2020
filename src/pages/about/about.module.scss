@@ -101,10 +101,10 @@
 
 .tools{
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
   @include breakpoint("sm"){
-    justify-content: end;
+    justify-content: start;
  }
 
     .toolsInner{

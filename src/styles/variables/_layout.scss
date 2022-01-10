@@ -132,3 +132,21 @@ $responsive-variants: (
   xxl: "-xxl",
   xxxl: "-xxxl"
 ) !default;
+
+// Exporting variables so they used in Javascript 
+:export {
+  spacer0: $spacer-0;
+  spacer1: $spacer-1;
+  spacer2: $spacer-2;
+  spacer3: $spacer-3;
+  spacer4: $spacer-4;
+  spacer5: $spacer-5;
+  spacer6: $spacer-6;
+  spacer7: $spacer-7;
+  spacer8: $spacer-8;
+  spacer9: $spacer-9;
+  spacer10: $spacer-10;
+  spacer11: $spacer-11;
+  spacer12: $spacer-12;
+  spacer13: $spacer-13;
+}

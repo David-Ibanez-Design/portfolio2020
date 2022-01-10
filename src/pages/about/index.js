@@ -20,6 +20,8 @@ import IllustratorLogo from "../../images/icons/illustrator-logo";
 import InvisionLogo from "../../images/icons/invision-logo";
 import PhotoshopLogo from "../../images/icons/photoshop-logo";
 import SketchLogo from "../../images/icons/sketch-logo";
+import FigmaLogo from "../../images/icons/Figma-logo";
+import MiroLogo from "../../images/icons/miro-logo";
 import SmartlookLogo from "../../images/icons/smartlook-logo";
 import VscodeLogo from "../../images/icons/VS-code-logo";
 import TableauLogo from "../../images/icons/tableau-logo";
@@ -130,9 +132,21 @@ const About = ({data}) => {
           <div className="container-sm mt-7">
               <h4 className={style.aboutSubTitle}>{t.about.tools.description}</h4>
               <div className={style.tools}>
+                <a href="https://www.figma.com/" className={style.toolsInner} target="_blank" rel="noreferrer"> 
+                  <span className={style.toolsIcon}>
+                    <FigmaLogo/>               
+                  </span>
+                  <p>{t.about.tools.tool1}</p>
+                </a>
                 <a href="https://www.sketch.com/design/" className={style.toolsInner} target="_blank" rel="noreferrer"> 
                   <span className={style.toolsIcon}>
                     <SketchLogo/>
+                  </span>
+                  <p>{t.about.tools.tool1}</p>
+                </a>
+                <a href="https://miro.com/" className={style.toolsInner} target="_blank" rel="noreferrer"> 
+                  <span className={style.toolsIcon}>
+                    <MiroLogo/>
                   </span>
                   <p>{t.about.tools.tool1}</p>
                 </a>
@@ -204,6 +218,15 @@ const About = ({data}) => {
                 </div>
                 <div className={style.processInner}> 
                     <div className={style.processIcon}>
+                      <ProcessTest/>
+                    </div>
+                    <div className={style.processContent}>
+                      <p>{t.about.process.processTitle4}</p>
+                      <p dangerouslySetInnerHTML={{__html: t.about.process.processDescription4}} />
+                    </div>
+                </div>  
+                <div className={style.processInner}> 
+                    <div className={style.processIcon}>
                       <ProcessDesign/>
                     </div>
                     <div className={style.processContent}>
@@ -211,15 +234,7 @@ const About = ({data}) => {
                       <p dangerouslySetInnerHTML={{__html: t.about.process.processDescription3}} />
                     </div>
                 </div>
-                <div className={style.processInner}> 
-                    <div className={style.processIcon}>
-                      <ProcessTest/>
-                    </div>
-                    <div className={style.processContent}>
-                      <p>{t.about.process.processTitle4}</p>
-                      <p dangerouslySetInnerHTML={{__html: t.about.process.processDescription4}} />
-                    </div>
-                </div>       
+     
               </div>
           </div>
         </div>

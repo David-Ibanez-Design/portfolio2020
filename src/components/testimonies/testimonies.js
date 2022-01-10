@@ -1,6 +1,6 @@
 /* Vendor imports */
 import Img from 'gatsby-image'
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql, useRef } from 'gatsby'
 import React, {useState} from 'react'
 import Config from '../../../gatsby-config'
 import IndeedLogo from "../../images/icons/indeed";
@@ -13,6 +13,7 @@ import { LocaleContext } from "../../components/layout"
 
 /* App imports */
 import style from './testimonies.module.scss'
+import layout from '../../styles/variables/_layout.scss'
 
 const Testimonies = ({data}) => {
 
@@ -23,22 +24,17 @@ const Testimonies = ({data}) => {
     // Check if server or client is rendering
     const hasWindow = (typeof window !== 'undefined') ? true : false;
 
-    // Slider initialization
-    let initialPos = 0;
-    if(hasWindow && window.innerWidth < 1420 && window.innerWidth > 821)
-    { initialPos = 16}
-    else if (hasWindow && window.innerWidth > 1420)
-    { initialPos = 64}
-    else if (hasWindow && window.innerWidth <= 821)
-    { initialPos = 0}
+    // Dynamically calculate the slider width so that it can be precisely moved
+    const sliderDom = React.createRef();
+    const sliderDomPos = sliderDom?.current?.offsetLeft;
 
     const slides = t.home.testimonies.testimony.length;
-    const margin = 16;
+    const margin = parseFloat(layout.spacer3);
     const slideW = 523; 
     const sliderW = (slideW * slides) + (margin * slides) + margin/2;
 
     // Set variables
-    const [offerSet, setCount] = useState(initialPos);
+    const [offerSet, setCount] = useState(sliderDomPos);
     const [movedLeft, setLeftPosition] = useState(false);
     const [movedRight, setRightPosition] = useState(true);
       
@@ -61,7 +57,7 @@ const Testimonies = ({data}) => {
             setCount(16);    
         }
         else{
-            setCount(initialPos);  
+            setCount(sliderDomPos);  
         }
     };
 
@@ -88,7 +84,7 @@ const Testimonies = ({data}) => {
                 </p>
             </div>
             <div className={style.slider}>
-                <div className={style.slidesContainer} style={{left: offerSet}}>
+                <div className={style.slidesContainer} style={{left: offerSet}} ref={sliderDom}>
                     <div className={style.slidesInnerContainer} >
                        
                         {t.home.testimonies.testimony.map((rsl, index) => {
@@ -105,7 +101,7 @@ const Testimonies = ({data}) => {
                                     <div className={style.author}>
 
                                         <div className={style.authorContainer}>
-                                            <div className={style.pictureContainer}>
+                                            <div className={style.pictureContainer}>                          
                                                 <Img fluid={data[index]?.node?.childImageSharp.fluid} alt="sss"/>
                                             </div>
 
@@ -114,7 +110,7 @@ const Testimonies = ({data}) => {
                                                 <div className={style.positionContainer}>
                                                     <div className={style.position}>{rsl.position}</div>
                                                     <div className={style.separator}></div>
-                                                        {index == 0 ? <div className={style.companyLogo}><IndeedLogo/></div> : null}  
+                                                        {index == 0 ? <div className={style.companyLogo}>{<IndeedLogo/>}</div> : null}  
                                                         {index == 1 ? <div className={style.companyLogo}><MercariLogo/></div> : null}
                                                         {index == 2 ? <div className={style.companyLogo}><SlalomLogo/></div> : null} 
                                                         {index == 3 ? <div className={style.companyLogo}><IndeedLogo/></div> : null}              
@@ -182,6 +178,7 @@ export default function GetTestimoniesData(props) {
       query={graphql`
         query {
             allFile(
+                sort: { fields: [name] }
                 filter: {relativeDirectory: {eq: "testimonies"}}) {
                 edges {
                     node {

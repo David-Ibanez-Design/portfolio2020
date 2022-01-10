@@ -44,10 +44,20 @@
         height: 234px;
         width: 100%;
         transition: all $transition-time ease-in-out;
+        left: 16px;
+
+        @media (min-width:$width-sm) and (max-width:1420px) {
+            left: 16px;
+        }
+
+        @media screen and (min-width: 1420px) {
+            left: 64px;
+        }
 
         @media screen and (max-width: $width-sm) {
             height: auto;
-            margin: 0 16px
+            margin: 0 16px;
+            left:0;
         }
     }
 
