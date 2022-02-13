@@ -1,8 +1,5 @@
 /* Vendor imports */
 import React from 'react'
-import IconProblem from '../../images/icons/icon-problems'
-import IconGoals from '../../images/icons/icon-goals'
-import IconOutcomes from '../../images/icons/icon-outcomes'
 import style from './article-overview.module.scss'
 import useTranslations from "../useTranslations"
 
@@ -35,21 +32,22 @@ const ArticleOverview = ({ type, ...props }) => {
                 <div className={style.articleIntroduction}>
                     {overviewObj.Sunnary ? overviewObj.Sunnary : null}
                 </div>
-            {overviewObj.Problems && overviewObj.Goals && overviewObj.Outcomes ? (
+            {overviewObj.Problems && overviewObj.Goals && overviewObj.Outcomes && overviewObj.Role ? (
                 <div className={style.articleSunnary}>
-                    <div>
-                        <IconProblem/>
-                        <h3>{t.articles.problems}</h3>
+                    <div className={style.sunnaryWrapper}>
+                            <h3>01 | {t.articles.problems}</h3>
                         {overviewObj.Problems ? overviewObj.Problems : null}
                     </div>
-                    <div>
-                        <IconGoals/>
-                        <h3>{t.articles.goals}</h3>
+                    <div className={style.sunnaryWrapper}>
+                            <h3>02 | {t.articles.goals}</h3>
                         {overviewObj.Goals ? overviewObj.Goals : null}
                     </div>
-                    <div>
-                        <IconOutcomes/>
-                        <h3>{t.articles.outcomes}</h3>
+                    <div className={style.sunnaryWrapper}>
+                            <h3>03 | {t.articles.role}</h3>
+                        {overviewObj.Role ? overviewObj.Role : null}
+                    </div>
+                    <div className={style.sunnaryWrapper}>
+                            <h3>04 | {t.articles.outcomes}</h3>
                         {overviewObj.Outcomes ? overviewObj.Outcomes : null}
                     </div>
                 </div>
