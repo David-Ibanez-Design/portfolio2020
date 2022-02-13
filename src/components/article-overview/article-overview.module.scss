@@ -43,27 +43,43 @@
 }
 
 .articleSunnary{
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
-    margin: 0 auto;
-    width: 95%;
+    grid-auto-columns: 1fr;
+    grid-column-gap:  $spacer-3;
+    grid-row-gap: $spacer-3;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
     font-size: $h5-size;
-    &>div{
-        flex: 1 1 30%;
+
+    .sunnaryWrapper{
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        padding: 24px;
+        flex: 0 47%;
+        border-style: solid;
+        border-width: 1px;
+        border-color: $gray-200;
+        border-radius: 8px;
+        min-height: 190px;
     }
 
-    &>div:not(:last-child){
+    .sunnaryWrapper:not(:last-child){
         padding-right: $spacer-5;
     }
     
     @include breakpoint("sm"){
-        &>div{
+        grid-template-columns: 1fr;
+
+        .sunnaryWrapper{
             flex-grow: 1;
             width: 100%;
             text-align: center;
             flex: auto;
             padding-right: 0 !important;
             margin-bottom: $spacer-4;
+            min-height: auto;
         }
 
         h3{
@@ -73,10 +89,12 @@
     }
 
     h3{
+        display: inline;
         font-size: $h3-size;
         line-height: inherit;
         margin: $spacer-2 0 0 0;
         padding: 0 !important;
+        margin: 0  0  0 $spacer-2;
     }
 
     p{
@@ -85,11 +103,12 @@
 
     ul{
         padding-top: $spacer-2;
+        margin-bottom: 0;
 
         li{
             list-style: none;
             margin-bottom: $spacer-1;
-            font-size: $h5-size;
+            font-size: $h4-size;
 
             &::before {
                 content: "\2022";  
