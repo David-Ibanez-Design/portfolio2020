@@ -46,7 +46,6 @@ const SuggestedPosts = ({articles }) => {
   }
 
   let WinWidth = useCurrentWidth();
-  console.log(articles)
   const { title, tags, suggestedArt, coverHomepage } = articles[0].node.frontmatter
 
   function getImg(WinWidth){

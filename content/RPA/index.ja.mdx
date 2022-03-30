@@ -1,0 +1,362 @@
+---
+title: "Making The Process Of Acquiring  and Understanding New Lead Behavior More Efficient For Real Estate Agents."
+tags: [UserResearch, UserFlow, Prototyping, VisualDesign]
+path: articles/portal-integration
+synopsis: "Digima, a web-based CRM application, aims to provide small to medium size real estate companies with a way to understand their customers' needs. Despite the fact that most real estate company's main lead acquisition channels were portal sites like SUUMO,  Digima did not provide a way to automatically import these leads into Digima, leading to an increase in manual work and a loss of valuable information for our users."
+order: 1
+featured: 1
+visible: true
+displayToc: true
+menuVignettes: images/menu-vignettes.png
+mobileVignettes: images/mobile-menu-vignettes.png
+coverHomepage: images/homepage-cover.png
+coverArticle: images/article-cover.png
+suggestedArt: images/suggestedArt.png
+imagesXl: 
+    - images/journey-map-ja.png
+imagesMd: 
+    - images/exsiting-UX-issues.png
+    - images/exsiting-customer-feedbacks-ja.png
+    - images/exsiting-google-analytics.png
+    - images/exsiting-customer-feedback-spreadsheet.png
+    - images/user-testing-spreadsheet.png
+    - images/exsiting-sections-break-down-ja.png
+    - images/new-layout-ja.png
+    - images/new-prototype-evolution-1-ja.png
+    - images/new-prototype-evolution-2-ja.png
+    - images/dds-components.png
+    - images/youtrack-tasks.png
+    - images/release-schedule.png
+    - images/final-version-1.png
+    - images/final-version-2.png
+    - images/final-version-3.png
+
+imagesLg: 
+    - images/new-layout-hierarchy-1-ja.png
+    - images/new-layout-hierarchy-2-ja.png
+    - images/new-sketches-wireframes-1-ja.png
+    - images/new-sketches-wireframes-2-ja.png
+    - images/new-prototype-evolution-1-ja.png
+    - images/new-prototype-evolution-2-ja.png
+---
+
+import ImageSlider from "../../src/components/image-slider"
+
+<!-- Overview -->
+
+<ArticleOverview>
+    <Sunnary>
+        Digima, a web-based CRM application, aims to provide small to medium size real estate companies with a way to understand their customers' needs. Despite the fact that most real estate company's main lead acquisition channels were portal sites like SUUMO,  Digima did not provide a way to automatically import these leads into Digima, leading to an increase in manual work and a loss of valuable information for our users.    </Sunnary>
+    <Problems>
+        <ul>
+            <li>ユーザーから、同ページ内で、重要なリード情報を見つける際の問題が報告されました。</li>
+            <li>既存の機能に悪影響を与えることなく新しい機能を追加することが課題になりました。</li>
+        </ul>    
+    </Problems>
+    <Goals>
+        <ul>
+            <li>同ページのユーザビリティとスケーラビリティを改善する。</li>
+            <li>ビジネスとユーザーの日々の作業の両方の混乱を最小限にする。</li>
+        </ul>   
+    </Goals>
+    <Outcomes>
+        <ul>
+            <li>機能設計と実装の時間が短縮されました。</li>
+            <li>ユーザーから、プロフィールページでリード情報を見つけやすくなったというフィードバックが得られた。</li>
+        </ul>   
+    </Outcomes>
+    <Role>
+        <ul>
+            <li>ユーザーリサーチ/データ分析</li>
+            <li>ビジュアルデザイン</li>
+            <li>プロジェクト管理</li>
+        </ul>   
+    </Role>  
+</ArticleOverview>
+
+<!-- Content -->
+<div className="articleContent">
+<section id="課題ステートメント" data-title="Problem Statement">
+
+#### 課題ステートメント
+## プロダクトの発売から1年後、インターフェースの処理能力を上回るスピードで、プロダクトに機能を追加していたということに気付きました。
+
+<p>
+CRMであるDigimaの顧客プロフィールページは、すべてのお客様のリードとのやり取りの中心的な役割を担っています。そのため、新しい機能は、何らかの方法でページにUI要素を追加することになっていました。 しばらくすると、プロフィールページは乱雑になり、スペースがなくなりました。
+</p>
+
+<p>
+これはユーザーにとって不便なだけでなく、新しい要素をページのどこに配置するか、また、それぞれの要素を見つけてもらうよう促す方法を考えなければならないため、開発サイクルが遅くなっていました。
+</p>
+
+<p>
+この問題はユーザーも同様に認識しており、ページの存続期間中に、特定のタスクを実行する方法や、特定の機能がページのどこにあるかを尋ねるサポートチケットやフィードバック、さらには改善要求が増加しました。
+</p>
+
+<Images name={props.images.md["exsiting-customer-feedbacks-ja"]} captions="お客様の声からも改善の必要性を感じました。"/>
+</section>
+
+<section id="課題" data-title="Constraints and Challenges">
+
+#### 課題
+## 変更について議論する前に、まず課題を明らかにすることが必要でした。
+
+<p>
+最初から明確だったのは、顧客情報のプロフィールページを再設計するのは簡単ではないということでした。
+</p>
+
+<ul>
+    <li>ページビューとページの滞在時間の両方で最も利用されているページであるため、変更するとユーザーの日常業務に大きな支障をきたす可能性がありました。</li>
+    <li>ページのデザインには、様々なユースケースや背景を考慮する必要がありました。</li>
+    <li>デザインの変更とその実装には長い時間がかかるため、他の重要な機能の開発にリソースが割かれる可能性がありました。</li>
+</ul>
+
+<Images name={props.images.md["exsiting-google-analytics"]} captions="Googleアナリティクスのデータから、顧客情報のプロフィールページは、ユーザーにとって重要であることが明らかになっています。"/>
+</section>
+
+<section id="ユーザーリサーチ" data-title="User Research">
+
+#### ユーザーリサーチ
+## ユーザーから寄せられた問題は、重要な情報を見つけられない、識別できないというものがほとんどでした。
+
+<p>
+デザインの可能性を見極め、現在のプロフィールのユーザーエクスペリエンスを改善するためには、まず、ユーザーのペインポイントをしっかりと把握する必要がありました。そのために私は、サポートチームと協力し、過去に報告された問題を収集しました。
+</p>
+<p>
+また、ユーザーのペインポイントをより深く理解するために、ユーザーとの面談にも参加しました。
+</p>
+
+<p>
+その調査から、データをカスタマージャーニーマップに合成することができました。これにより、ユーザーのペインポイントを表し、どこに注意を払うべきかがわかりました。
+</p>
+
+<Images 
+    containerType="full" 
+    className="bg-gray-0" 
+    containerWidth="Xl"
+    name={props.images.xl["journey-map-ja"]}
+    captions="ジャーニーマップでは、ユーザーのペインポイントを視覚的に表し、どこに注目すべきか確認することができました。"
+/>
+
+<p>
+その結果、ユーザーが頻繁に直面しているさまざまな問題が明らかになり、私が以前から考えていた仮説のいくつかが裏付けられました。ユーザーから受けた報告での問題のほとんどは、重要な顧客の情報を見つけたり、特定したりするのが難しいということでした。
+</p>
+
+</section>
+
+<section id="目的" data-title="Redesign Objectives">
+
+#### 目的
+## デザイン変更の本質的な目的の一つは、ユーザーが特定の情報を探すのに費やす時間を短縮することでした。
+
+<p>
+デザイン上の課題とユーザーのペインポイントを特定した後、再デザインの目標を設定しました。そして、これらの目標を、ビジネス向けとユーザー向けの２つに分類することにしました。
+</p>
+
+<p>
+ビジネス向け:
+</p>
+<ul>
+    <li>ページのモジュール化と拡張性の向上により、機能の実装速度を向上させる。</li>
+    <li>デザイン変更の実装自体が、新機能開発の妨げにならないようにする。</li>
+</ul>
+
+<p>
+ユーザー向け:
+</p>
+<ul>
+    <li>デザイン変更が、ユーザーの日常業務に支障をきたさないようにする。</li>
+    <li>ユーザーが重要なリード情報を見つける能力が大幅に向上するようにすること。</li>
+</ul>
+</section>
+
+<section id="観念化" data-title="Ideation">
+
+#### 観念化
+## デザイン変更の目標を設定した後、アイデアをスケッチすることにしました。
+
+<p>
+最も多く報告された問題の一つは、機能や情報の発見に関わるものでした。私にとって、これは明らかに、ページ内のビジュアル階層が欠如していることを示すものでした。
+</p>
+<p>
+この問題に対処するためには、まず、ページに表示されているUI要素の目的や階層的な価値、そしてそれらがどのように関連しているのかを明確に把握する必要がありました。そのために、ページの主要なUI要素を書き出し、優先順位をつけたマトリクスでレイアウトしました。
+</p>
+
+
+<Images name={props.images.md["exsiting-sections-break-down-ja"]} captions="ページの各UI要素を重要度順に並べることで、全体の階層的な価値を理解することができました。"/>
+
+
+<p>
+ページに何を表示するのか、それぞれの要素の階層的価値が明確になったところで、ページのレイアウトに着手しました。
+</p>
+<p>
+このデザイン変更の重要な目標の一つは、ユーザーが特定の情報を探すのに費やす時間を短縮することでした。現行バージョンの2カラムのレイアウトから3カラムのレイアウトに変更することは、一面に表示される情報量を大幅に増やすための明白な方法に思えました。
+</p>
+
+
+
+<Images 
+    containerWidth="Lg"
+    name={props.images.md["new-layout-ja"]}
+    captions="3カラムのレイアウトに変更することで、一面に表示される情報量が大幅に増加"
+/>
+
+<p>
+しかし、あまりにも多くの情報を表示するとユーザーが圧倒されてしまうため、ページ内の要素を適切に整理する必要があります。そこで、先に作成した優先順位のマトリクスを用いて、ビジュアルの階層化を図りました。
+</p>
+
+<Images 
+    containerType="full"
+    className="bg-gray-0" 
+    containerWidth="Lg"
+    name={[props.images.lg["new-layout-hierarchy-1-ja"], props.images.lg["new-layout-hierarchy-2-ja"]]}
+/>
+
+<p>
+新しい3カラムのレイアウトに基づいてワイヤーフレームを作成し、数名のチームメンバーに共有し、初回のフィードバックを集めました。何度か意見交換と修正の後、次の段階であるプロトタイプの作成に進む準備ができました。
+</p>
+
+<Images 
+    containerType="full" 
+    className="bg-gray-0" 
+    containerWidth="Lg"
+    captions="2カラムから3カラムのレイアウトへ"
+    name={[props.images.lg["new-sketches-wireframes-1-ja"], props.images.lg["new-sketches-wireframes-2-ja"]]}
+/>
+</section>
+<section id="プロトタイプ" data-title="Prototyping">
+
+#### プロトタイプ
+## HTML/CSS/jQueryのプロトタイプを作ることで、このような複雑なページをデザインする際のリスクを軽減できました。
+
+<p>
+このプロトやイプを作成したことで、いくつかの問題点が浮き彫りになりました。そのひとつが、タイムラインです。当初は、タイムラインを画面の中央に配置し、他のセクションよりも広いスペースを確保すれば、リードの直近のアクティビティを強調するのに十分だと考えていました。しかし、それでは十分ではないことがわかりました。
+</p>
+
+<p>
+社内からのフィードバックによると、特定のタイムラインの情報を見つけるのが難しいとのことでした。何度かやり取りを繰り返した後、タイムラインのトップレベルナビゲーションとして、主なアクティビティの種類（メール、電話、面談など）のみを表示することにしました。
+</p>
+
+
+<div className={props.style.containedMd}>
+    <video width="100%" muted autoplay loop>
+        <source src="images/prototype.mp4" type="video/mp4"/>
+    Your browser does not support the video tag.
+    </video> 
+    <figcaption className={props.style.caption}>HTML / CSS / jQueryプロトタイプを作成することで、静的バージョンでは明らかにできなかった問題を特定することができました。</figcaption>
+</div>
+
+</section>
+
+
+<section id="ユーザーテスト" data-title="User Testing">
+
+#### ユーザーテスト
+## テストセッションでは、後で修正することができた予期していなかったユーザビリティの問題が明らかに。
+
+<p>
+新しいデザインのさらなるユーザビリティの問題を明らかにするために、新しく作成したプロトタイプを使用して、一連のリモートユーザビリティテストを実施しました。
+</p>
+<p>
+参加者を既存の顧客ベースから選び、思考プロセスを声に出しながら、一連のタスクを実行するように依頼しました。 ユーザーに自分の気持ちを詳しく説明してもらうよう、「どうしてですか？」、「この機能についてどう思いますか？」、「それについてもっと教えてください」などのフォローアップの質問や、現行のプロフィールデザインについての質問しました。 多くのユーザーの目標を代表し、かつUIの中で最もデザインが変更された部分に関連するタスクに焦点を当てました。
+</p>
+<Images withZoom name={props.images.md["user-testing-spreadsheet"]} captions="各セッションの結果を、さらなる分析のためにGoogleスプレッドシートに集約しました。"/>
+<p>
+テストでは、予想外の使い勝手の悪さが次々と見つかりましたが、後になって修正することができました。
+</p>
+<p>
+例えば、グループから顧客情報を削除するよう依頼したとき、ほとんどの参加者は、適切なUI要素を見つけることができたにもかかわらず、タスクを実行できないか、正しいタスクを実行しているかどうかわからないという結果になりました。さらに調べてみると、顧客情報とその顧客情報が所属するグループの関係を理解していない参加者もいました。
+</p>
+<p>
+顧客情報グループブロックのタイトルを変更して、関係を明確に表現することで、ほとんどの参加者の問題が解決するようです。
+</p>
+<Images 
+    containerType="full" 
+    className="bg-gray-0" 
+    containerWidth="Lg"
+    name={[props.images.lg["new-prototype-evolution-1-ja"], props.images.lg["new-prototype-evolution-2-ja"]]}
+/>
+
+</section>
+
+<section id="最終デザイン"  data-title="Final Design">
+
+#### 最終デザイン
+## ページの各要素をコンポーネントに分解し、それを既存のデザインシステムで文書化しました。
+
+<p>
+ユーザビリティテストの結果とプロトタイプに満足した私とチームは、デザインの高忠実度版に着手しました。
+</p>
+
+<p>
+課題の一つは、ページの各要素がどのように見えるか、どのように動作するかをフロントエンドチームに効率的に伝えることでした。
+</p>
+
+<p>
+実装を容易にするために、私は各要素をコンポーネントに分解し、<Link to={"/ja/dds"}>既存のデザインシステムのドキュメントサイトに文書化しました。</Link>
+</p>
+
+<Images name={props.images.md["dds-components"]} captions="各ページの要素を、デザインシステム専用のドキュメントサイトに記録しました。"/>
+
+先に作成したHTMLプロトタイプに加えて、フロントエンドチームに最終バージョンのデザインが全体としてどのように見えるか、どのように動作するかを感じてもらうために、invisionプロトタイプも作成しました。
+</section>
+
+<section id="実装" data-title="Implementation And Release Strategy">
+
+#### 実装
+## 私たちは、新機能の開発とユーザーの日常業務の両方に支障をきたさないような、実装およびリリースの戦略を考える必要がありました。
+
+<p>
+この時点で、デザイン変更の実装は完了していました。しかし、デザイン変更の目標のひとつは、新機能の開発への影響を最小限に抑えることだったので、デザイン変更の統合を個別のユーザーストーリーに分け、これを複数のスプリントに分散させることにしました。
+</p>
+
+<p>
+この方法論により、バグ修正や新機能の開発といった優先度の高いタスクへの影響を最小限に抑えながら、デザイン変更の統合を進めることができました。
+</p>
+
+<Images name={props.images.md["youtrack-tasks"]} captions="デザイン変更の各要素を、ユーザーストーリーに分割し、複数のスプリントに分けました。"/>
+
+<p>
+このページはアプリケーション全体の中で最も使用されるページであったため、デザイン変更のもう一つの重要な目標は、ユーザーの日常業務への影響を最小限に抑えることでした。そのため、現行のデザインをすぐに新しいデザインに差し替えることはできませんでした。ユーザーからのフィードバックを見ながら、残っているバグや使い勝手の問題を修正しつつ、徐々に新しいデザインに触れてもらう方法が必要でした。
+</p>
+
+<p>
+そこで、プロダクトマネージャーと協力して、リリースプロセスを2つのフェーズに整理することにしました。
+</p>
+
+<ul>
+    <li><strong>アルファ版</strong>では、新デザインを社内の営業チームにのみ公開する</li>
+    <li><strong>ベータ版</strong>では、自動的に新デザインに切り替わりますが、ユーザーがオプトアウトオプションを使って旧プロファイルに戻すことができるようにしました。
+</li>
+</ul>
+
+<Images name={props.images.md["release-schedule"]} captions="徐々に新しいデザインに触れていくことで、ユーザーの日常業務への影響を最小限に抑えることができます。"/>
+
+<p>
+数週間のフィードバックとバグ修正を経て、最後の2週間に入ったところで、新しいプロフィールデザインがデフォルトバージョンになることをユーザーに警告しました。ベータ版の開始から2ヶ月後、すべてのユーザーが新しいプロフィールデザインへの切り替えに成功しました。
+</p>
+</section>
+
+<section id="結論" data-title="Conclusion">
+
+#### 結論
+
+### 複雑な問題を扱う場合、静的なモックアップやインタラクティブなモックアップだけでは不十分である
+
+<p>
+invisionのプロトタイプだけに頼るのではなく、HTML/CSS/jQueryのプロトタイプを時間をかけて作成したことで、早期に社内のフィードバックを得ることができ、実装段階で開発者が解決しなければならなかった多くの問題を発見することができました。
+</p>
+
+### ビジネスに特化した目標設定が不可欠。
+
+<p>
+このような再設計を進めるために、ステークホルダーの賛同を得ることは難しいことでした。しかし、この壁を乗り越えたことで、自分のアイデアをステークホルダーにどのようにプレゼンテーションするか、また、ビジネスに即した目標を設定する必要性について多くのことを学びました。
+</p>
+
+
+
+<ImageSlider beforeKey={props.images.md["final-version-1"]} afterKey={props.images.md["final-version-2"]} captions="顧客情報プロフィールの旧ページと新ページ"/>
+
+<Images name={props.images.md["final-version-3"]} captions="新しいプロフィールデザインのレスポンシブ版"/>
+</section>
+</div>

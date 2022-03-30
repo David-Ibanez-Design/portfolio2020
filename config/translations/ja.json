@@ -125,6 +125,18 @@
       "name": "ユーザーリサーチ",
       "category": "research"
     },
+    "UserInterviews": {
+      "name": "User Interviews",
+      "category": "research"
+    },
+    "UsabilityTesting": {
+      "name": "Usability Testing",
+      "category": "research"
+    },
+    "JourneyMap": {
+      "name": "Journey Map",
+      "category": "research"
+    },
     "Wireframe": {
       "name": "ワイヤーフレーム",
       "category": "planning"
