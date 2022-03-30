@@ -110,13 +110,17 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const artList = result.data.art.edges
   const artCount = artList.length/2
+  const hiddenArtOrder = 4; //should be dynamic but I just can't figure it out
 
   const getNextArt = (currentPage) => {
-    return currentPage < artCount ? currentPage + 1 : 1
+    if(currentPage != hiddenArtOrder - 1){
+      return currentPage < artCount ? currentPage + 1 : 1
+    }else{
+      return currentPage + 2 >= artCount ? currentPage + 2 : 1
+    }
   }
 
-  artList.forEach(({ node: art }) => {
-    
+  artList.forEach(({ node: art}) => {
     // All files for a blogpost are stored in a folders
     // relativeDirectory is the name of the folder
     const slug = art.relativeDirectory
@@ -124,16 +128,18 @@ exports.createPages = async ({ graphql, actions }) => {
     const locale = art.childMdx.fields.locale
     const isDefault = art.childMdx.fields.isDefault
 
-    createPage({
-      path: Utils.localizedSlug( isDefault, locale, slug ),
-      component: artTemplate,
-      context: {
-        nextArt: getNextArt(art.childMdx.frontmatter.order),  
-        localizedPath: Utils.localizedSlug( isDefault, locale, slug), 
-        isArt: true,  
-        title,
-        locale
-      },
-    })
+      createPage({
+        path: Utils.localizedSlug( isDefault, locale, slug ),
+        component: artTemplate,
+        context: {
+          nextArt: getNextArt(art.childMdx.frontmatter.order),  
+          localizedPath: Utils.localizedSlug( isDefault, locale, slug), 
+          isArt: true,  
+          title,
+          locale
+        },
+      })
+
+
   })
 }

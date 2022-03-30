@@ -29,6 +29,7 @@ const Homepage = ({data, requestLangChange}) => {
   let { caseStudyFeatureTablet, caseStudiesTablet, dribbbleShots,testimoniesImg, heroVisual, profilePics  } = data
   caseStudyFeatureTablet = caseStudyFeatureTablet.edges[0]
   caseStudiesTablet = caseStudiesTablet.edges;
+  console.log(caseStudiesTablet)
 
   // If users has a different default browser language setting that the website
   // Redirect them to their prefered langauge
@@ -182,7 +183,7 @@ export const pageQuery = graphql`
   query($locale: String!){
 
     caseStudyFeatureTablet: allMdx(
-      filter: {frontmatter: {featured: {eq: 1}}, fields: {locale: {eq: $locale}}}
+      filter: {frontmatter: {featured: {eq: 1}, visible: {eq: true}}, fields: {locale: {eq: $locale}}}
       ) {
       edges {
         node {
@@ -204,7 +205,7 @@ export const pageQuery = graphql`
 
     caseStudiesTablet: allMdx(
       sort: { fields: [frontmatter___order], order: ASC }
-      filter: {frontmatter: {featured: {eq: 0}}, fields: {locale: {eq: $locale}}}
+      filter: {frontmatter: {featured: {eq: 0}, visible: {eq: true}}, fields: {locale: {eq: $locale}}}
     ) {
       edges {
         node {

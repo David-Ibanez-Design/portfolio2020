@@ -15,6 +15,8 @@ import TagList from '../tag-list'
 
 const MenuItems = ({data, isMobile , withWork, toggleMenu}) => {
 
+  console.log(data)
+
     const { locale, isArt, localizedPath } = React.useContext(LocaleContext)
     const t = useTranslations()
     const localIsJa = locale === "ja"
@@ -138,6 +140,7 @@ export default function MyStaticQuery(props) {
         query {
           allMdx(
             sort: { fields: [frontmatter___order], order: ASC }
+            filter: {frontmatter: {visible: {eq: true}}}
           ) {
             edges {
               node {
