@@ -49,3 +49,8 @@
   transition-property: transform;
   transform-origin: center center;
 }
+
+.sideBySide{
+  flex: 50% 1;
+  margin: 0 16px;
+}

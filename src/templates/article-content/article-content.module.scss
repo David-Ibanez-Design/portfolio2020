@@ -163,7 +163,6 @@
     padding: $spacer-8 0 $spacer-4;
   }
 
-
   // 1035
   .containedMd{
     max-width: $container-md;
@@ -232,6 +231,17 @@
     top: 43.4%;
     width: 66.7%;
     right: 6.3%;
+  }
+
+  .videoCentered{
+    display: block;
+    margin: 0 auto;
+    padding: $spacer-3;
+    background: $gray-200;
+    max-width: $width-sm;
+    @include breakpoint("sm"){
+        max-width: 100%;
+    }
   }
 
   

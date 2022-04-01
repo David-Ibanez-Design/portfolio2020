@@ -15,10 +15,18 @@ suggestedArt: images/suggestedArt.png
 imagesXl: 
     - images/journey-map.png
     - images/journey-map-test.png
+    - images/Real-esate-buyer-and-seller-idiation.png
+    - images/Real-esate-buyer-block-to-timeline-activity.png
+    - images/Real-esate-buyer-and-seller-timeline-activity.png
+    - images/full-User-flow-Delayed response.png
+    - images/full-User-flow-In-Digima-Request-response.png
+    - images/Final-design-screens.png
+
 imagesMd: 
     - images/exsiting-UX-issues.png
     - images/exsiting-customer-feedbacks.png
-    - images/exsiting-google-analytics.png
+    - images/Interview-sheet.png
+    - images/Matching-field-step.png
     - images/exsiting-customer-feedback-spreadsheet.png
     - images/user-testing-spreadsheet.png
     - images/exsiting-sections-break-down.png
@@ -31,12 +39,13 @@ imagesMd:
     - images/final-version-1.png
     - images/final-version-2.png
     - images/final-version-3.png
+    - images/centered-documentation.png
 
 imagesLg: 
-    - images/new-layout-hierarchy-1.png
-    - images/new-layout-hierarchy-2.png
-    - images/new-sketches-wireframes-1.png
-    - images/new-sketches-wireframes-2.png
+    - images/persona-Buyers.png
+    - images/persona-Seller.png
+    - images/Buyers-real-estate-journey-takeaways.png
+    - images/Sellers-real-estate-journey-takeaways.png
     - images/new-prototype-evolution-1.png
     - images/new-prototype-evolution-2.png
 ---
@@ -51,242 +60,286 @@ import ImageSlider from "../../src/components/image-slider"
     </Sunnary>
     <Problems>
         <ul>
-            <li>Users reported issues finding important lead information within the page. </li>
-            <li>Adding new features without negatively impacting existing ones became a challenge. </li>
+            <li>Lots of manual work required to add/import leads into Digima manually</li>
+            <li>Loss of valuable information</li>
         </ul>    
     </Problems>
     <Goals>
         <ul>
-            <li>Improve usability and scalability of the page. </li>
-            <li>Minimize disruption to both the businesses and user's daily work. </li>
+            <li>Reduce manual work</li>
+            <li>Increase number and quality of leads</li>
         </ul>   
     </Goals>
     <Outcomes>
         <ul>
-            <li>Feature design and implementation time were reduced. </li>
-            <li>Users' feedback showed that finding lead information within the profile was much improved.</li>
+            <li>76% deceased in manual contact creation</li>
+            <li>25% increase in number leads for accounts subscribed to the new portal to lead feature which has a direct impact on the user's bottom line</li>
         </ul>   
     </Outcomes> 
     <Role>
         <ul>
-            <li>User research/data analysis</li>
+            <li>User research in collaboration with product manager</li>
+            <li>HTML/jQuery and invision prototype</li>
             <li>UI design</li>
-            <li>Project management</li>
         </ul>   
     </Role>   
 </ArticleOverview>
 
 <!-- Content -->
 <div className="articleContent">
+<section id="context" data-title="Context">
+
+#### Context
+## Our customers needed a way to automatically import leads coming from real estate portal sites into Digima.
+
+<p>
+According to our own internal surveys, 80% of real estate company’s leads were directly coming from real estate portal sites like <a href="https://suumo.jp" target="_blank" rel="noreferrer">SUUMO</a> or <a href="https://www.homes.co.jp" target="_blank" rel="noreferrer">HOMES</a>. Despite that, Digima did not have a feature to automatically import these leads into Digima.
+</p>
+
+<p>
+Not only that situation was forcing users to add those leads manually, but it also meant that some crucial information like for example which portal site the leads came from, pictures of a property for sale or the date and time of the request were not registered. 
+</p>
+
+<p>
+To remedy that situation, it was decided that a feature allowing users to automatically import leads from all majors real estate portal sites into Digima will be built.
+</p>
+
+</section>
+
+<section id="user-discovery" data-title="User discovery">
+
+#### User discovery
+## To get a deeper understanding of users goals and pain points a series of user interviews were conducted and synthesized into personas and journey maps.
+
+<p>
+Before diving into any kind of concrete solution, it was essential to answer a few questions:
+</p>
+
+<ul>
+    <li>What portal site do real estate agents use the most?</li>
+    <li>What lead information real estate agents value the most when first interacting with potential sellers/buyers?</li>
+    <li>How does this information influence real estate agents' sales process?</li>
+    <li>What kind of pain points and goals do real estate agents as well as buyers and sellers have when they first interact with each other?</li>
+</ul>
+
+<p>
+To answer these questions, the product manager and I decided to conduct a series of user interviews. Participants were selected from our existing users base and separated into 3 groups:
+</p>
+
+<ul>
+    <li>Real estate companies specialized in sellers markets</li>
+    <li>Real estate companies specialized in buyers markets</li>
+    <li>Real estate companies dealing with both markets</li>
+</ul>
+
+<Images withZoom name={props.images.md["Interview-sheet"]}/>
+
+<p>
+    Findings were then systentised into user personas and journey maps.
+</p>
+
+<Images 
+    withZoom
+    containerType="full"
+    className="bg-gray-0" 
+    containerWidth="Lg"
+    name={[props.images.lg["persona-Buyers"], props.images.lg["persona-Seller"]]}
+/>
+
+<p>
+In addition to customer interviews, a series of existing internal and external research were used to inform journey maps. Visualizing the whole real estate agents and seller/buyer journey helped the team and I get a broader understanding of users goals and pain points.  
+</p>
+
+<Images 
+    withZoom
+    containerType="full"
+    className="bg-gray-0" 
+    containerWidth="Lg"
+    name={[props.images.lg["Buyers-real-estate-journey-takeaways"], props.images.lg["Sellers-real-estate-journey-takeaways"]]}
+/>
+
+</section>
+
+<section id="challenges" data-title="Challenges">
+
+#### Challenges
+## It was essential to first identify potential challenges so that along with insights from user research, they could be used to inform any future design solution.
+
+<p>
+Based on internal discussions, preliminary research conducted on portal sites and user research, I identified the following challenges.
+</p>
+<p>
+<b>From the business team: </b>
+</p>
+<ul>
+    <li>The product team wanted to release a MVP as soon as possible</li>
+</ul>
+<p>
+<b>From the development team:  </b>
+</p>
+<ul>
+    <li>Portal sites didn't have any API the development team could use to link Digima with a portal site or import contact programmatically. This meant that I had to design for unexpected failure and long running processes. It also meant that I had to be very careful not to design anything that would end-up being server intensif. </li>
+</ul>
+<p>
+<b>From the design team:  </b>
+</p>
+<ul>
+    <li>User research showed that seller and buyer markets prioritized and used lead information in different ways. Therefore lead information coming from portal sites needed to be displayed differently and have different functionalities for different markets. </li>
+</ul>
+
+</section>
+
 <section id="problem-statement" data-title="Problem Statement">
 
 #### Problem Statement
-## A year after the product launch, we came to a realization: we were adding features to the product faster than the interface could handle.
+## Clearly describing the issues I was trying to address early on in the process helped me stay focused throughout the design process.
 
 <p>
-As a CRM, Digima contact’s profile page is the central hub for all our customer’s lead interaction, and because of this, new features ended up adding UI elements to the page in some way or another.
-After a while, the profile page became cluttered and we were starting to run out of place.
+After identifying users' goals and pain points as well as potential challenges, I decided to synthesize those insights into a problem statement so that design goals could be clearly identified and communicated to the whole team.
 </p>
 
 <p>
-Not only that was inconvenient to our users, but it was also slowing our development cycle down because I had to figure out where to place these new elements on the page and how to promote discovery for each of them.
+“How might we design a feature that would automatically import important lead information from portal sites into Digima and organize it in a way that will facilitate real estate agent’s sale activity, while still minimizing development and server cost. “
 </p>
-
-<p>
-Our users noticed these issues as well, and over the lifetime of the page, we saw an increase of support tickets and feedbacks asking how to perform certain tasks, where a specific feature was located on the page, as well as requests for improvement.  
-</p>
-
-<Images name={props.images.md["exsiting-customer-feedbacks"]} captions="Customer feedbacks also highlighted the need for improvements"/>
-</section>
-
-<section id="challenges" data-title="Constraints and Challenges">
-
-#### Challenges
-## Before discussing any potential changes, It was essential to first identify challenges.
-
-<p>
-From the beginning, one thing was clear, redesigning the contact profile page won’t be easy.
-</p>
-
-<ul>
-    <li>It was the most used page both in terms of page views and time spent on a page; therefore, any modification could potentially be highly disruptive to users's daily work. </li>
-    <li>The page design needed to account for a variety of use cases and contexts.</li>
-    <li>The redesign and its implementation will be a long process which will take resources away from other essential feature developments.</li>
-</ul>
-
-<Images name={props.images.md["exsiting-google-analytics"]} captions="Google Analytics's data clearly underscore the importance of the contact profile page for our users."/>
-</section>
-
-<section id="user-research" data-title="User Research">
-
-#### User Research
-## Most of the issues users were reporting were centered around difficulties finding and identifying important information.
-
-<p>
-In order to identify potential design opportunities and improve the current profiles user experience, we first needed to get a detailed understanding of users pain points.
-To that end, I worked in collaboration with the support team to collect any previously reported issues. 
-</p>
-<p>
-To get a deeper insight into users pain points, I also participated in several user interviews.
-</p>
-
-<p>
-From that research, I was able to synthesize the data into a customer journey map. This allowed me to represent user pain points and see where we needed to focus our attention.
-</p>
-
-<Images 
-    containerType="full" 
-    className="bg-gray-0" 
-    containerWidth="Xl"
-    name={props.images.xl["journey-map"]}
-    captions="The journey map allowed me to represent user pain points visually and see where we needed to focus our attention."
-/>
-
-<Images 
-    containerType="full" 
-    className="bg-gray-0" 
-    containerWidth="Xl"
-    name={props.images.xl["journey-map-test"]}
-    withZoom
-    captions="The journey map allowed me to represent user pain points visually and see where we needed to focus our attention."
-/>
-
-<p>
-The data revealed a variety of pain points that our users frequently faced and confirmed some of my earlier hypothesis. Most of the issues users were reporting were centered around difficulties finding and identifying important contact information.  
-</p>
-
-</section>
-
-<section id="objectives" data-title="Redesign Objectives">
-
-#### Objectives
-## One of the essential goals of the redesign was to reduce the time users were spending looking for specific information.
-
-<p>
-After identifying design challenges and users pain points, it was now time to set some redesign goals. I decided to divide these goals into two categories: some directed at the business and some at the users.
-</p>
-
-<p>
-For the business:
-</p>
-<ul>
-    <li>Improve feature implementation speed by making the page more modular and easy to scale.</li>
-    <li>Ensure that the implementation of the redesign itself does not get in the way of new features development.</li>
-</ul>
-
-<p>
-For the users:
-</p>
-<ul>
-    <li>The redesign should not cause disruptions to users daily work.</li>
-    <li>Users ability to find important lead information should be significantly improved.</li>
-</ul>
 </section>
 
 <section id="ideation" data-title="Ideation">
 
 #### Ideation
-## After setting up some redesign goals, it was now time to start sketching a few ideas.
+## After identifying design goals and challenges, it was now time to start iterating on a few design ideas.
 
 <p>
-One of the most commonly reported issues, had to do with feature/information discovery. To me, that was clear sign of a lack of a visual hierarchy within the page.
-</p>
-<p>
-To address that, I first needed to get a clear idea of what UI elements were displayed on the page, what were their purpose and hierarchical value and how they related to each other. 
-I manage to do that by listing and then laying out the main UI elements of the page in a prioritization matrix.
-</p>
-
-
-<Images name={props.images.md["exsiting-sections-break-down"]} captions="Listing each UI element of the page by order of importance helped me to understand their overall hierarchical value."/>
-
-
-<p>
-Once I had a clear idea of what needed to be displayed on the page and the hierarchical value of each of these elements, I started working on the page layout itself.
-</p>
-<p>
-One of the critical goals of that redesign was to reduce the time users were spending looking for specific information. Switching from the current version's 2 columns layout to a 3 columns layout seem like an obvious way to significantly increasing the amount of information visible above the fold.
-</p>
-
-
-
-<Images 
-    containerWidth="Lg"
-    name={props.images.md["new-layout"]}
-    captions="Switching to a 3 columns layout significantly increasing the amount of information visible above the fold"
-/>
-
-<p>
-However since displaying too much information could be overwhelming to users, elements on the page needed to be porperly organized. Using the prioritization matrix made earlier, I managed to give the layout some much needed visual hierarchy.
-</p>
-
-<Images 
-    containerType="full"
-    className="bg-gray-0" 
-    containerWidth="Lg"
-    name={[props.images.lg["new-layout-hierarchy-1"], props.images.lg["new-layout-hierarchy-2"]]}
-/>
-
-<p>
-Based on the new 3 columns layout, I created a wireframe that I shared with a few team members to gather some early feedback. After a few backs and forth that lead to a few adjustments, I was ready to start the next phase, prototyping.
+One of my first design solutions was to display lead information into a dedicated block that would integrate nicely with  <Link to={"/profile"}>the existing contact profile page</Link>. Sellers and buyer information would be displayed in separate blocks so that different information could be emphasized for different markets. Finally users had the possibility to edit that information to keep it relevant as agents gather more information about the lead.
 </p>
 
 <Images 
     containerType="full" 
     className="bg-gray-0" 
-    containerWidth="Lg"
-    captions="2 column to 3 column layout."
-    name={[props.images.lg["new-sketches-wireframes-1"], props.images.lg["new-sketches-wireframes-2"]]}
+    containerWidth="Xl"
+    name={props.images.xl["Real-esate-buyer-and-seller-idiation"]}
 />
+
+<p>
+However after sharing my design internally, externally and looking through existing data, I realized that a lot of users were already managing that information using our existing contact field management feature. Forcing them to update the same information twice would inevitably lead to issues but more importantly wasn’t aligned with one of the feature's main purposes of reducing manual work. 
+</p>
+
+<p>
+One solution was to allow users to match existing contact fields to lead information imported via portal sites. That way information could be automatically synchronized and no manual work would be required.
+</p>
+
+<Images name={props.images.md["Matching-field-step"]}/>
+
+<p>
+However, discussions with the development team revealed that implementing that design would require significant refactoring work because of existing technical debt. Therefore that solution had to be abandoned.
+</p>
+
+<p>
+To save time while still leveraging as much of the original design idea as possible, I decided to scrap the editable block design idea and instead modify the existing timeline activity card. 
+</p>
+
+<Images 
+    containerType="full" 
+    className="bg-gray-0" 
+    containerWidth="Xl"
+    name={props.images.xl["Real-esate-buyer-and-seller-timeline-activity"]}
+/>
+
+<p>
+That design solution had obvious disadvantages compared to the original version (information could not be edited or grouped together) but I was confident that despite its shortcomings it was still fulfilling most of the feature design objectives described in the problem statement. 
+</p>
+
+<p>
+With the first part of the feature design mostly done, I then moved on to the second most challenging part, the portal integration step-up process. 
+</p>
+
 </section>
-<section id="prototyping" data-title="Prototyping">
 
-#### Prototyping
-## Building an HTML/CSS/jQuery prototype helped me lower the risks involved in designing such a complex page.
+<section id="user-flow" data-title="User Flow">
+
+#### User Flow
+## Although a crucial part of the feature, the portal integration step-up process presented major technical and usability challenges.
 
 <p>
-The prototype highlighted a few issues.
-One of them had to do with the timeline. Initially, I thought that placing the timeline at the center of the screen and giving it more screen real estate than the other sections would be enough to highlight recent leads related activities. It turned out that it wasn’t enough. 
+In order to import lead information into Digima, users had to first set-up a link between the 2 applications. This set-up process although necessary presented a few challenges:
+</p>
+
+<ul>
+    <li>Portal sites didn't have any API which meant that I had to design for unexpected failure and long running processes. It also meant that I had to be very careful not to design anything that would end-up being server intensif</li>
+    <li>The integration process was quite technical and involved a number of steps that could be difficult for users to understand</li>
+</ul>
+
+<p>
+With these challenges in mind and a few basic requirements, I started by iterating over the flow users had to go through to set up the integration. The objective was to strike the right balance between usability and technical feasibility by first agreeing on what was technically feasible and then validating the flow with users.
+</p>
+
+<Images 
+    withZoom
+    containerType="full" 
+    className="bg-gray-0" 
+    containerWidth="Xl"
+    name={props.images.xl["full-User-flow-Delayed response"]}
+/>
+
+<p>
+The first few versions, although easy to implement, included steps that required users to go back and forth between Digima and other third party applications multiple times as well as delayed feedback which could have easily resulted in users abandoning the process before it was completed.
 </p>
 
 <p>
-Internal feedbacks indicated that specific timeline’s information were hard to find. After a few iteration, I decided to only display the main activity type (emails, calls, meetings...) as top-level navigation for the timeline.
+After further discussion with the development team, we agreed upon a flow that minimized the need for users to leave the application and drastically reduced the risk of delayed responses.
 </p>
 
+<Images 
+    withZoom
+    containerType="full" 
+    className="bg-gray-0" 
+    containerWidth="Xl"
+    name={props.images.xl["full-User-flow-In-Digima-Request-response"]}
+/>
+
+</section>
+
+
+<section id="prototype-and-usability-testing" data-title="Prototype and usability testing">
+
+#### Prototype and usability testing
+## Our testing sessions uncovered a series of unexpected usability issues that I was able to fix and validate with further testing.
+
+<p>
+Once the development team and I agreed on a portal integration set-up flow, I then set out to validate it with users. To that end I created a fully functional HTML/CSSjQuery prototype that could be configured to test different scenarios.
+</p>
 
 <div className={props.style.containedMd}>
-    <video width="100%" muted autoplay loop>
-        <source src="images/prototype.mp4" type="video/mp4"/>
+    <video className={props.style.videoCentered} muted autoplay loop>
+        <source style="display:block;margin:0 auto;" src="images/RPA-prototype.mp4" type="video/mp4"/>
     Your browser does not support the video tag.
     </video> 
     <figcaption className={props.style.caption}>Building an HTML/CSS/jQuery prototype helped identify issues that a static version could not have otherwise revealed.</figcaption>
 </div>
 
-</section>
-
-
-<section id="user-testing" data-title="User Testing">
-
-#### User Testing
-## Our testing sessions uncovered a series of unexpected usability issues that we were later able to fix.
+<p>
+After the prototype was built and tested internally, the product manager and I started looking for participants amongst our existing user base.
+</p>
 
 <p>
-In order to reveal additional usability issues with the new design, we use the newly created prototype to conduct a series of remote usability tests. 
+During the test, participants were asked to go through the entire portal integration set-up process while verbalizing their thought process. Some follow-up questions such as “why” , “what do you think of this function” , “tell me more about that”, were asked to try to get users to elaborate on their feelings.
 </p>
+
 <p>
-Participants were selected from our existing customer base and were asked to perform a series of tasks while verbalizing their thought process. Some follow-up questions such as “why” , “how do you think of this function” , “tell me more about that”, and questions about the current profile design were asked to try to get users to elaborate on their feelings. We chose to focus on tasks that were both representative of most user's goals and that were related to parts of the UI that had the most design changes. 
+Testing sessions uncovered a series of usability issues that I was able to fix and validate with further testing.
 </p>
-<Images withZoom name={props.images.md["user-testing-spreadsheet"]} captions="Results of each session were consolidated into a Google spreadsheet for further analysis."/>
+
+<Images withZoom name={props.images.md["user-testing-spreadsheet"]}/>
+
 <p>
-Our testing sessions uncovered a series of unexpected usability issues that we were later able to fix.
+For instance, one of the tasks required participants to follow a series of instructions describing how to forward email notifications sent from portal sites to a dedicated Digima inbox. To save development time I initially thought that just adding a link to our support site would be enough. However most participants ignored that link and simply skipped the step entirely. 
 </p>
+
 <p>
-For instance, when asked to remove a contact from a group, most participants were either unable to perform the task or unsure whether they were performing the right one even though they were able to find the appropriate UI elements. Further inquiries reveal that some participants did not understand the relationship between the contact and the group the contact belonged to. 
-</p>
-<p>
-Changing the contact group block title to clearly describe the relationship seems to fix the issue for most participants.
+Displaying the instructions directly in the page gave it the necessary visual weight it needed to help participants understand what they needed to do.
 </p>
 
 <Images 
+    withZoom
     containerType="full" 
     className="bg-gray-0" 
     containerWidth="Lg"
@@ -295,83 +348,51 @@ Changing the contact group block title to clearly describe the relationship seem
 
 </section>
 
-<section id="final-design"  data-title="Final Design">
+<section id="high-fidelity-mock-up"  data-title="High fidelity Mock-up">
 
-#### Final Design
-## I broke down each element of the page into components that I then documented in our existing design system.
+#### High fidelity Mock-up
+## To maintain consistency and facilitate implementation I made sure to reuse as many existing design patterns as possible.
 
 <p>
-After the team and I were satisfied with the usability test results and the prototype, I set out to build the high fidelity version of the design.
+After the team and I were satisfied with the usability test results, I then started to build the high fidelity version of the design.
 </p>
 
 <p>
-One of the challenges was to efficiently communicate to the frontend team how each element of the page was supposed to look and behave.
+Because one of the main business goals was to release a MVP as soon as possible, I made sure to reuse as many design components as possible in my final design.
 </p>
+
+<Images withZoom name={props.images.md["dds-components"]}/>
 
 <p>
-To facilitate implementation, I broke down each element into components that I then documented <Link to={"/dds/"}>in our existing design system documentation website.</Link>
+When existing patterns could not be used, I made sure to document them  <Link to={"/dds"}>in our dedicated design system</Link> documentation site so that they could be efficiently communicated to the Front-end team.
 </p>
 
-<Images name={props.images.md["dds-components"]} captions="Each page element were documented in our dedicated deisgn system documentation website."/>
-
- In addition to the HTML prototype created earlier, an invision prototype was also created to give the frontend team a sense of how the final version of the design will look and behave as a whole.
-</section>
-
-<section id="implementation" data-title="Implementation And Release Strategy">
-
-#### Implementation
-## We needed to come up with an implementation and release strategy that would minimize disruption to both the development of new features and users’ daily work.
+<Images withZoom name={props.images.md["centered-documentation"]}/>
 
 <p>
-At this point, the redesign was ready to be implemented. However, since one of the redesign goals was to minimize disruption to the development of new features, I decided to break down the redesign integration into separate user stories and spread these out into multiple sprints.
+In addition to the prototype used during testing an high fidelity invision prototype was also created to help the development and business teams understand how the final version of the design will look and behave as a whole.
 </p>
 
-<p>
-This methodology kept the redesign integration going while having minimal impact on higher priority tasks like bug fixes or new features development.
-</p>
-
-<Images name={props.images.md["youtrack-tasks"]} captions="Each elements of the redesign were broken down into a user story and spread out into multiple sprints."/>
-
-<p>
-Because the page was the most used page of the whole application, an other essential redesign goal was to minimize disruption to users’ daily work. This meant that we couldn't just “flip the switch” and replace the current design by the new one. We needed a way to progressively expose users to the new design while keeping an eye on their feedbacks to fix any remaining bugs and usability issues.  
-</p>
-
-<p>
-Therefore, in collaboration with the product manager, we decided to organize the release process into 2 phases: 
-</p>
-
-<ul>
-    <li><strong>The alpha phase</strong>, during which the new design was only released to our internal sales team.</li>
-    <li><strong>The beta phase</strong>, during which users were automatically switched to the new design with the possibility to revert to the old profile via an opt-out option.</li>
-</ul>
-
-<Images withZoom name={props.images.md["release-schedule"]} captions="Progressively exposing users to the new design allow us to minimize disruption to their daily work."/>
-
-<p>
-After a few weeks of feedback and bug fixes, we entered the final two weeks of the process, where we warned users that the new profile design would be the default version. Two months after the start of the beta phase, all users were successfully switched to the new profiled design.
-</p>
 </section>
 
 <section id="conclusion" data-title="Conclusion">
 
 #### Conclusion
-
-### Static or interactive mockups are not enough when dealing with complex problems.
-
+### Since the release of the portal to lead feature we saw on average a 67% decrease in manual contact creations and a 25% increase in the overall number of leads.
 <p>
-Taking the time to create an HTML/CSS/jQuery prototype rather than relying solely on an invision prototype turned out to be crucial in getting some early internal feedback and catching a lot of issues that would have otherwise had to be solved by developers during the implementation phase.
+For our customers this meant that they could focus their attention on more essential tasks like trying to reach a lead by phone or SMS. For the business, the increased number of leads also meant a direct increase in revenue that could be used to support future product developments.
 </p>
 
-### Setting business-specific goals Is essential.
-
+### Constantly evolving specifications and shifting priorities challenged my resilience as a designer.
 <p>
-Getting the stakeholder’s buy-in to move forward with this type of redesign proved to be challenging. However, overcoming that obstacle taught me a lot about how to present my ideas to stakeholders and about the necessity to set up business-specific goals. 
+When deadlines got closer and priorities were swifting, it would have been easy for me to just go for the easiest solution and blame the results on the circonstances. However, because I spent many hours with customers in interviews and usability tests, I felt a strong responsibility to try hard to find ways to still meet their most important needs despite the challenges.
 </p>
 
+### The Digima inbox setting process remains challenging for users, but improvements are coming.
+<p>
+Even though I spend a lot of time improving the portal integration set-up process by conducting usability tests, part of that process like the Digima inbox setting step remain challenging for our users. I am currently discussing possible design solutions with the development team which would simplify or even remove that step entirely.
+</p>
 
-
-<ImageSlider beforeKey={props.images.md["final-version-1"]} afterKey={props.images.md["final-version-2"]} captions="Before and after versions of the contact profile page."/>
-
-<Images name={props.images.md["final-version-3"]} captions="Responsive versions of the new profile design."/>
 </section>
+
 </div>
