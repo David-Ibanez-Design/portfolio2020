@@ -15,8 +15,6 @@ import TagList from '../tag-list'
 
 const MenuItems = ({data, isMobile , withWork, toggleMenu}) => {
 
-  console.log(data)
-
     const { locale, isArt, localizedPath } = React.useContext(LocaleContext)
     const t = useTranslations()
     const localIsJa = locale === "ja"

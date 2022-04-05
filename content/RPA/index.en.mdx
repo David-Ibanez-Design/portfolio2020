@@ -15,7 +15,6 @@ suggestedArt: images/suggestedArt.png
 imagesXl: 
     - images/journey-map.png
     - images/journey-map-test.png
-    - images/Real-esate-buyer-and-seller-idiation.png
     - images/Real-esate-buyer-block-to-timeline-activity.png
     - images/Real-esate-buyer-and-seller-timeline-activity.png
     - images/full-User-flow-Delayed response.png
@@ -40,14 +39,20 @@ imagesMd:
     - images/final-version-2.png
     - images/final-version-3.png
     - images/centered-documentation.png
+    - images/Buyers-real-estate-journey-takeaways.png
+    - images/Sellers-real-estate-journey-takeaways.png
+    - images/Real-estate-buyer-journey-map.png
+    - images/Real-estate-buyer-agent-journey-map.png
+    - images/Real-estate-seller-journey-map.png
+    - images/Real-estate-seller-agent-journey-map.png
 
 imagesLg: 
     - images/persona-Buyers.png
     - images/persona-Seller.png
-    - images/Buyers-real-estate-journey-takeaways.png
-    - images/Sellers-real-estate-journey-takeaways.png
     - images/new-prototype-evolution-1.png
     - images/new-prototype-evolution-2.png
+    - images/Real-esate-buyer-and-seller-idiation-1.png
+    - images/Real-esate-buyer-and-seller-idiation-2.png    
 ---
 
 import ImageSlider from "../../src/components/image-slider"
@@ -132,7 +137,7 @@ To answer these questions, the product manager and I decided to conduct a series
     <li>Real estate companies dealing with both markets</li>
 </ul>
 
-<Images withZoom name={props.images.md["Interview-sheet"]}/>
+<Images withZoom name={props.images.md["Interview-sheet"]} captions="Customers interviews insights were recorded into a Google spreadsheet" />
 
 <p>
     Findings were then systentised into user personas and journey maps.
@@ -150,12 +155,38 @@ To answer these questions, the product manager and I decided to conduct a series
 In addition to customer interviews, a series of existing internal and external research were used to inform journey maps. Visualizing the whole real estate agents and seller/buyer journey helped the team and I get a broader understanding of users goals and pain points.  
 </p>
 
-<Images 
+<Carrousel 
     withZoom
     containerType="full"
     className="bg-gray-0" 
-    containerWidth="Lg"
-    name={[props.images.lg["Buyers-real-estate-journey-takeaways"], props.images.lg["Sellers-real-estate-journey-takeaways"]]}
+    containerWidth="Md"
+    images={[
+       {
+          link: props.images.md["Buyers-real-estate-journey-takeaways"],
+          cation: ""
+       },
+      {
+          link: props.images.md["Sellers-real-estate-journey-takeaways"],
+          cation: ""
+      },
+      {
+          link: props.images.md["Real-estate-buyer-journey-map"],
+          cation: ""
+      },
+      {
+          link: props.images.md["Real-estate-buyer-agent-journey-map"],
+          cation: ""
+      },
+      {
+          link: props.images.md["Real-estate-seller-journey-map"],
+          cation: ""
+      },
+      {
+          link: props.images.md["Real-estate-seller-agent-journey-map"],
+          cation: ""
+      }
+      ]    
+    }
 />
 
 </section>
@@ -213,10 +244,11 @@ One of my first design solutions was to display lead information into a dedicate
 </p>
 
 <Images 
+    withZoom
     containerType="full" 
     className="bg-gray-0" 
-    containerWidth="Xl"
-    name={props.images.xl["Real-esate-buyer-and-seller-idiation"]}
+    containerWidth="Lg"
+    name={[props.images.lg["Real-esate-buyer-and-seller-idiation-1"], props.images.lg["Real-esate-buyer-and-seller-idiation-2"]]}
 />
 
 <p>
@@ -299,9 +331,9 @@ After further discussion with the development team, we agreed upon a flow that m
 </section>
 
 
-<section id="prototype-and-usability-testing" data-title="Prototype and usability testing">
+<section id="usability-testing" data-title="Usability testing">
 
-#### Prototype and usability testing
+#### Usability testing
 ## Our testing sessions uncovered a series of unexpected usability issues that I was able to fix and validate with further testing.
 
 <p>
@@ -328,7 +360,7 @@ During the test, participants were asked to go through the entire portal integra
 Testing sessions uncovered a series of usability issues that I was able to fix and validate with further testing.
 </p>
 
-<Images withZoom name={props.images.md["user-testing-spreadsheet"]}/>
+<Images withZoom name={props.images.md["user-testing-spreadsheet"]} captions="Results of each session were consolidated into a Google spreadsheet for further analysis."/>
 
 <p>
 For instance, one of the tasks required participants to follow a series of instructions describing how to forward email notifications sent from portal sites to a dedicated Digima inbox. To save development time I initially thought that just adding a link to our support site would be enough. However most participants ignored that link and simply skipped the step entirely. 
@@ -348,9 +380,9 @@ Displaying the instructions directly in the page gave it the necessary visual we
 
 </section>
 
-<section id="high-fidelity-mock-up"  data-title="High fidelity Mock-up">
+<section id="mock-up"  data-title="Mock-up">
 
-#### High fidelity Mock-up
+#### Mock-up
 ## To maintain consistency and facilitate implementation I made sure to reuse as many existing design patterns as possible.
 
 <p>
@@ -361,13 +393,13 @@ After the team and I were satisfied with the usability test results, I then star
 Because one of the main business goals was to release a MVP as soon as possible, I made sure to reuse as many design components as possible in my final design.
 </p>
 
-<Images withZoom name={props.images.md["dds-components"]}/>
+<Images withZoom name={props.images.md["dds-components"]} captions="Each page element were documented in our dedicated deisgn system documentation website."/>
 
 <p>
 When existing patterns could not be used, I made sure to document them  <Link to={"/dds"}>in our dedicated design system</Link> documentation site so that they could be efficiently communicated to the Front-end team.
 </p>
 
-<Images withZoom name={props.images.md["centered-documentation"]}/>
+<Images withZoom name={props.images.md["centered-documentation"]} captions="Documenting new UI components in our dedicated site, helped imporve implementation time by reducing guesswork."/>
 
 <p>
 In addition to the prototype used during testing an high fidelity invision prototype was also created to help the development and business teams understand how the final version of the design will look and behave as a whole.

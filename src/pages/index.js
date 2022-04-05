@@ -29,7 +29,6 @@ const Homepage = ({data, requestLangChange}) => {
   let { caseStudyFeatureTablet, caseStudiesTablet, dribbbleShots,testimoniesImg, heroVisual, profilePics  } = data
   caseStudyFeatureTablet = caseStudyFeatureTablet.edges[0]
   caseStudiesTablet = caseStudiesTablet.edges;
-  console.log(caseStudiesTablet)
 
   // If users has a different default browser language setting that the website
   // Redirect them to their prefered langauge
