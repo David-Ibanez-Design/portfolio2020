@@ -4,7 +4,7 @@ module.exports = {
   // pathPrefix: '/gatsby-starter-developer-blog',
   // pathPrefix: '/public',
   siteMetadata: {
-    siteUrl: "https://davidibanez.design",
+    siteUrl: "https://davidibanez.com",
     title: "UI/UX Portfolio",
     description: "UI/UX Portfolio",
     email: 'dibanez@rocketmail.com',
