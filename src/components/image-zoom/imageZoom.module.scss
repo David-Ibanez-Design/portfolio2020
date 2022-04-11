@@ -48,4 +48,10 @@
   position: absolute;
   transition-property: transform;
   transform-origin: center center;
+  // box-shadow: 0 10px 20px rgba(82,113,135, .1);
+}
+
+.sideBySide{
+  flex: 50% 1;
+  margin: 0 16px;
 }

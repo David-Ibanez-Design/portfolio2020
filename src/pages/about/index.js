@@ -92,6 +92,9 @@ const About = ({data}) => {
               <TagList 
                 tags={["UserResearch", 
                 "UserFlow", 
+                "UserInterviews", 
+                "UsabilityTesting", 
+                "JourneyMap", 
                 "Wireframe", 
                 "Prototyping", 
                 "VisualDesign", 

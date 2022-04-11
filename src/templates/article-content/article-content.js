@@ -8,6 +8,7 @@ import { Link } from 'gatsby'
 /* App imports */
 import style from './article-content.module.scss'
 import Images from "../../components/embedded-images"
+import Carrousel from "../../components/carrousel"
 import ScrollTop from "../../components/scroll-top"
 import ArticleOverview from "../../components/article-overview"
 import Utils from '../../utils'
@@ -31,6 +32,7 @@ const ArticleContent = ({body, imagesObj, displayToc, headings}) => (
         <MDXProvider 
           components={{
             Img,
+            Carrousel,
             Link,
             Images,
             ArticleOverview,

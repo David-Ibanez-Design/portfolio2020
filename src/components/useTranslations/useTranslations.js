@@ -89,6 +89,18 @@ const query = graphql`
                 name
                 category
               }
+              UserInterviews{
+                name
+                category
+              }
+              UsabilityTesting{
+                name
+                category
+              }
+              JourneyMap{
+                name
+                category
+              }
               Wireframe{
                 name
                 category

@@ -1,0 +1,74 @@
+.wrapper{
+    max-width: $container-md;
+    padding: $spacer-8 0 $spacer-4 0;
+    margin: 0 auto;
+    @include breakpoint("md"){
+        padding: $spacer-4 0;
+        width: 90%;
+      }
+}
+
+.sliderCaption{
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    color: #2E3A59;
+    text-align: center;
+    margin-top: 16px;
+    padding: 0 16px;
+}
+
+.arrows svg{
+    height: 24px;
+    width: 24px;
+}
+
+.arrows svg polygon{
+    fill: $gray-500;
+}
+
+.arrows:hover svg polygon{
+    fill: $brand;
+}
+
+.arrows {
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    cursor: pointer;
+    border: none;
+}
+
+.arrowPrev {
+    left: -32px;
+}
+
+.arrowNext {
+    right: -32px;
+}
+
+:global(.slick-prev:before), :global(.slick-next:before){
+   display: none;
+}
+
+:global(.slick-dots li){
+    margin: 0 3px;
+}
+
+:global(.slick-dots li button:before){
+    font-size: 9px;
+    color: $gray-500;
+}
+
+:global(.slick-dots li.slick-active button:before){
+    color: $brand;
+}
+
+:global(.slick-dots li button:hover:before){
+    color: $brand;
+}

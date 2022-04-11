@@ -12,6 +12,7 @@
     "@3nvi/gatsby-theme-intl": "^0.4.13",
     "@mdx-js/mdx": "^1.6.19",
     "@mdx-js/react": "^1.6.19",
+    "esm": "^3.2.25",
     "gatsby": "^2.15.29",
     "gatsby-image": "^2.2.24",
     "gatsby-plugin-google-analytics": "^2.8.0",
@@ -39,10 +40,15 @@
     "react-dom": "^16.10.2",
     "react-helmet": "^6.0.0",
     "react-icons": "^3.7.0",
+    "react-id-swiper": "^4.0.0",
     "react-image-comparison-slider": "^1.8.4",
     "react-medium-image-zoom": "^4.3.5",
     "react-share": "^4.1.0",
+    "react-slick": "^0.28.1",
+    "react-slideshow-image": "^3.7.0",
     "react-tooltip": "^4.2.11",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^6.8.4",
     "utils": "^0.3.1"
   },
   "keywords": [

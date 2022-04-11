@@ -182,7 +182,7 @@ export const pageQuery = graphql`
   query($locale: String!){
 
     caseStudyFeatureTablet: allMdx(
-      filter: {frontmatter: {featured: {eq: 1}}, fields: {locale: {eq: $locale}}}
+      filter: {frontmatter: {featured: {eq: 1}, visible: {eq: true}}, fields: {locale: {eq: $locale}}}
       ) {
       edges {
         node {
@@ -204,7 +204,7 @@ export const pageQuery = graphql`
 
     caseStudiesTablet: allMdx(
       sort: { fields: [frontmatter___order], order: ASC }
-      filter: {frontmatter: {featured: {eq: 0}}, fields: {locale: {eq: $locale}}}
+      filter: {frontmatter: {featured: {eq: 0}, visible: {eq: true}}, fields: {locale: {eq: $locale}}}
     ) {
       edges {
         node {

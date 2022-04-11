@@ -16,7 +16,7 @@ const Images = ({ containerType, containerWidth, name, className, captions, with
             <div className={`${style["contained" + containerWidth]} ${className ? className : ""}`}>
                 <div className={style.imageWrapper}>
                     {
-                        withZoom ? <ImageZoom image={name.fluid}/> : <Img fluid={name.fluid} alt="Image for the end of article test"/>  
+                        withZoom ? <ImageZoom image={name.fluid} /> : <Img fluid={name.fluid} alt="Image for the end of article test"/>  
                     } 
                 </div>
                 {captions ? <figcaption className={style.caption}>{captions}</figcaption> : null }
@@ -32,7 +32,8 @@ const Images = ({ containerType, containerWidth, name, className, captions, with
                                 <div className={`${style.fullBleed} ${className}`}>
                                     <div className={`${style["fullBleedInner" + name.length]} ${className} ${style["contained" + containerWidth]} imageWrapper`}>
                                         {  name.map((item, index) =>
-                                            <Img className={style["col" + name.length]} key={index} fluid={item.fluid} alt="Image for the end of article"/> 
+                                          
+                                            withZoom ?  <ImageZoom image={item.fluid} key={index} sideBySide /> : <Img className={style["col" + name.length]} key={index} fluid={item.fluid}/> 
                                         )}
                                     </div>
                                 </div>

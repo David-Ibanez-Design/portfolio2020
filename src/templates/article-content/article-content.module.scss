@@ -41,7 +41,7 @@
   h1, h2, h3, h4, h5, h6 {
     text-align: left;
   }
-  h2, h3, h4, ul {
+  h2, h3, h4, ul:not(:global(.slick-dots)) {
     max-width: $container-sm;
     @include breakpoint("sm"){
       padding: 0 $spacer-3; 
@@ -95,7 +95,7 @@
     margin-top: -$spacer-3;
   }
 
-  ul{
+  ul:not(:global(.slick-dots)){
     margin: -$spacer-2 auto $spacer-4 auto;
     padding-left: $spacer-3;
     @include breakpoint("sm"){
@@ -162,7 +162,6 @@
     margin: 0 auto;
     padding: $spacer-8 0 $spacer-4;
   }
-
 
   // 1035
   .containedMd{
@@ -232,6 +231,13 @@
     top: 43.4%;
     width: 66.7%;
     right: 6.3%;
+  }
+
+  .videoCentered{
+    padding: $spacer-7;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
   }
 
   

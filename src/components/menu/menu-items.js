@@ -138,6 +138,7 @@ export default function MyStaticQuery(props) {
         query {
           allMdx(
             sort: { fields: [frontmatter___order], order: ASC }
+            filter: {frontmatter: {visible: {eq: true}}}
           ) {
             edges {
               node {
