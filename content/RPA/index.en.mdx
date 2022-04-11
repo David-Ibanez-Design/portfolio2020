@@ -65,14 +65,14 @@ import ImageSlider from "../../src/components/image-slider"
     </Sunnary>
     <Problems>
         <ul>
-            <li>Lots of manual work required to add/import leads into Digima manually</li>
-            <li>Loss of valuable information</li>
+            <li>Lots of manual work required to add portl site leads into Digima</li>
+            <li>Loss of valuable lead information</li>
         </ul>    
     </Problems>
     <Goals>
         <ul>
             <li>Reduce manual work</li>
-            <li>Increase number and quality of leads</li>
+            <li>Increase number and quality of leads imported into Digima</li>
         </ul>   
     </Goals>
     <Outcomes>
@@ -98,11 +98,11 @@ import ImageSlider from "../../src/components/image-slider"
 ## Our customers needed a way to automatically import leads coming from real estate portal sites into Digima.
 
 <p>
-According to our own internal surveys, 80% of real estate company’s leads were directly coming from real estate portal sites like <a href="https://suumo.jp" target="_blank" rel="noreferrer">SUUMO</a> or <a href="https://www.homes.co.jp" target="_blank" rel="noreferrer">HOMES</a>. Despite that, Digima did not have a feature to automatically import these leads into Digima.
+According to our own internal surveys, 80% of real estate company’s leads were coming directly from real estate portal sites like <a href="https://suumo.jp" target="_blank" rel="noreferrer">SUUMO</a> or <a href="https://www.homes.co.jp" target="_blank" rel="noreferrer">HOMES</a>. Despite that, Digima did not have a feature to automatically import these leads.
 </p>
 
 <p>
-Not only that situation was forcing users to add those leads manually, but it also meant that some crucial information like for example which portal site the leads came from, pictures of a property for sale or the date and time of the request were not registered. 
+Not only that was forcing users to add those leads manually, but it also meant that some crucial information like for example which portal site the leads came from, pictures of a property for sale or the date and time of the request were not registered. 
 </p>
 
 <p>
@@ -121,7 +121,7 @@ Before diving into any kind of concrete solution, it was essential to answer a f
 </p>
 
 <ul>
-    <li>What portal site do real estate agents use the most?</li>
+    <li>What portal sites do real estate agents use the most?</li>
     <li>What lead information real estate agents value the most when first interacting with potential sellers/buyers?</li>
     <li>How does this information influence real estate agents' sales process?</li>
     <li>What kind of pain points and goals do real estate agents as well as buyers and sellers have when they first interact with each other?</li>
@@ -163,27 +163,27 @@ In addition to customer interviews, a series of existing internal and external r
     images={[
        {
           link: props.images.md["Buyers-real-estate-journey-takeaways"],
-          cation: ""
+          cation: "Key takeaways from 2 essential steps in the buyer and real estate agents journey."
        },
       {
           link: props.images.md["Sellers-real-estate-journey-takeaways"],
-          cation: ""
+          cation: "Key takeaways from 2 essential steps in the seller and real estate agents journey"
       },
       {
           link: props.images.md["Real-estate-buyer-journey-map"],
-          cation: ""
+          cation: "The full buyer journey map"
       },
       {
           link: props.images.md["Real-estate-buyer-agent-journey-map"],
-          cation: ""
+          cation: "The full real restate buyer agent journey map"
       },
       {
           link: props.images.md["Real-estate-seller-journey-map"],
-          cation: ""
+          cation: "The full seller journey map"
       },
       {
           link: props.images.md["Real-estate-seller-agent-journey-map"],
-          cation: ""
+          cation: "The full real restate seller agent journey map"
       }
       ]    
     }
@@ -197,7 +197,7 @@ In addition to customer interviews, a series of existing internal and external r
 ## It was essential to first identify potential challenges so that along with insights from user research, they could be used to inform any future design solution.
 
 <p>
-Based on internal discussions, preliminary research conducted on portal sites and user research, I identified the following challenges.
+Based on internal discussions, preliminary researches conducted on portal sites and user research, I identified the following challenges.
 </p>
 <p>
 <b>From the business team: </b>
@@ -256,7 +256,7 @@ However after sharing my design internally, externally and looking through exist
 </p>
 
 <p>
-One solution was to allow users to match existing contact fields to lead information imported via portal sites. That way information could be automatically synchronized and no manual work would be required.
+In order to solve that issues, I imagined a design solution that would allow users to match existing contact fields to lead information imported via portal sites. That way information could be automatically synchronized and no manual work would be required.
 </p>
 
 <Images name={props.images.md["Matching-field-step"]}/>
@@ -289,7 +289,7 @@ With the first part of the feature design mostly done, I then moved on to the se
 <section id="user-flow" data-title="User Flow">
 
 #### User Flow
-## Although a crucial part of the feature, the portal integration step-up process presented major technical and usability challenges.
+## Although a crucial part of the feature, the portal integration step-up process presented some major technical and usability challenges.
 
 <p>
 In order to import lead information into Digima, users had to first set-up a link between the 2 applications. This set-up process although necessary presented a few challenges:
@@ -301,7 +301,7 @@ In order to import lead information into Digima, users had to first set-up a lin
 </ul>
 
 <p>
-With these challenges in mind and a few basic requirements, I started by iterating over the flow users had to go through to set up the integration. The objective was to strike the right balance between usability and technical feasibility by first agreeing on what was technically feasible and then validating the flow with users.
+With these challenges in mind and a few basic requirements, I started by iterating over the flow users will have to go through to set up the integration. The objective was to strike the right balance between usability and technical feasibility by first agreeing on what was technically feasible and then validating the flow with users.
 </p>
 
 <Images 
@@ -341,10 +341,12 @@ Once the development team and I agreed on a portal integration set-up flow, I th
 </p>
 
 <div className={props.style.containedMd}>
+        <div className={props.style.imageWrapper}>
     <video className={props.style.videoCentered} muted autoplay loop>
         <source style="display:block;margin:0 auto;" src="images/RPA-prototype.mp4" type="video/mp4"/>
     Your browser does not support the video tag.
     </video> 
+    </div>
     <figcaption className={props.style.caption}>Building an HTML/CSS/jQuery prototype helped identify issues that a static version could not have otherwise revealed.</figcaption>
 </div>
 
@@ -393,7 +395,7 @@ After the team and I were satisfied with the usability test results, I then star
 Because one of the main business goals was to release a MVP as soon as possible, I made sure to reuse as many design components as possible in my final design.
 </p>
 
-<Images withZoom name={props.images.md["dds-components"]} captions="Each page element were documented in our dedicated deisgn system documentation website."/>
+<Images withZoom name={props.images.md["dds-components"]} />
 
 <p>
 When existing patterns could not be used, I made sure to document them  <Link to={"/dds"}>in our dedicated design system</Link> documentation site so that they could be efficiently communicated to the Front-end team.

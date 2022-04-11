@@ -38,6 +38,7 @@ const Carrousel = ({  containerType, containerWidth, images, className, captions
         infinite: true,
         autoplay:true,
         pauseOnHover: true,
+        swipe: false,
         autoplaySpeed: 5000,
         speed: 500,
         centerPadding: 0,
@@ -54,7 +55,6 @@ const Carrousel = ({  containerType, containerWidth, images, className, captions
             <Slider  {...settings}>
             {images.map((slides, index) => (
                 <div className={style.slide}>
-                    {console.log(slides.link)}
                     <ImageZoom image={slides.link.fluid} />
                     <caption className={style.sliderCaption}>{slides.cation}</caption>
                 </div>

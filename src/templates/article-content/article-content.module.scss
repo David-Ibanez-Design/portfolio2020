@@ -234,14 +234,10 @@
   }
 
   .videoCentered{
-    display: block;
+    padding: $spacer-7;
+    max-width: 100%;
     margin: 0 auto;
-    padding: $spacer-3;
-    background: $gray-200;
-    max-width: $width-sm;
-    @include breakpoint("sm"){
-        max-width: 100%;
-    }
+    display: block;
   }
 
   

@@ -176,7 +176,15 @@ When existing patterns could not be used, I documented new UI components in our 
 
 <Images name={props.images.md["centered-documentation"] } captions="Documenting new UI components in our dedicated site, helped imporve implementation time by reducing guesswork."/>
 
-<Images name={props.images.md["full-Final-design-01"]} captions="The final version of the SMS creation screen."/>
+<div className={props.style.containedMd}>
+    <div className={props.style.imageWrapper}>
+        <video className={props.style.videoCentered} muted autoplay loop>
+            <source style="display:block;margin:0 auto;" src="images/sms-composer.mp4" type="video/mp4"/>
+             Your browser does not support the video tag.
+        </video> 
+    </div>
+    <figcaption className={props.style.caption}>"The final version of the SMS creation screen.</figcaption>
+</div>
 <Images name={props.images.md["full-Final-design-02"]} captions="The final version of the SMS chat list screen."/>
 
 <p>
