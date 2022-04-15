@@ -30,6 +30,9 @@ imagesMd:
     - images/final-version-1.png
     - images/final-version-2.png
     - images/final-version-3.png
+    - images/usability-testing.png
+    - images/google-analytics-adoption-rate.png
+    - images/Profile-feedback.png
 
 imagesLg: 
     - images/new-layout-hierarchy-1-ja.png
@@ -126,6 +129,8 @@ CRMであるDigimaの顧客プロフィールページは、すべてのお客�
 また、ユーザーのペインポイントをより深く理解するために、ユーザーとの面談にも参加しました。
 </p>
 
+<Images name={props.images.md["exsiting-customer-feedback-spreadsheet"]} captions="Customer feedbacks from various sources were centralized and categorized in a dedicated Google spreadsheet."/>
+
 <p>
 その調査から、データをカスタマージャーニーマップに合成することができました。これにより、ユーザーのペインポイントを表し、どこに注意を払うべきかがわかりました。
 </p>
@@ -179,7 +184,7 @@ CRMであるDigimaの顧客プロフィールページは、すべてのお客�
 最も多く報告された問題の一つは、機能や情報の発見に関わるものでした。私にとって、これは明らかに、ページ内のビジュアル階層が欠如していることを示すものでした。
 </p>
 <p>
-この問題に対処するためには、まず、ページに表示されているUI要素の目的や階層的な価値、そしてそれらがどのように関連しているのかを明確に把握する必要がありました。そのために、ページの主要なUI要素を書き出し、優先順位をつけたマトリクスでレイアウトしました。
+この問題に対処するためには、まず、ページ上に必要なUI要素、それらの目的、および各要素がユーザーにとってどれほど重要であるかを明確に理解する必要がありました。そのために、Googleアナリティクスのイベントデータと以前のユーザー調査に基づいて、各要素を一覧表示、分類、並べ替えました。
 </p>
 
 
@@ -257,6 +262,8 @@ CRMであるDigimaの顧客プロフィールページは、すべてのお客�
 <p>
 新しいデザインのさらなるユーザビリティの問題を明らかにするために、新しく作成したプロトタイプを使用して、一連のリモートユーザビリティテストを実施しました。
 </p>
+<Images withZoom name={props.images.md["usability-testing"]} captions="ユーザビリティテストはズームを介してリモートで実施されました。"/>
+
 <p>
 参加者を既存の顧客ベースから選び、思考プロセスを声に出しながら、一連のタスクを実行するように依頼しました。 ユーザーに自分の気持ちを詳しく説明してもらうよう、「どうしてですか？」、「この機能についてどう思いますか？」、「それについてもっと教えてください」などのフォローアップの質問や、現行のプロフィールデザインについての質問しました。 多くのユーザーの目標を代表し、かつUIの中で最もデザインが変更された部分に関連するタスクに焦点を当てました。
 </p>
@@ -335,6 +342,11 @@ CRMであるDigimaの顧客プロフィールページは、すべてのお客�
 <p>
 数週間のフィードバックとバグ修正を経て、最後の2週間に入ったところで、新しいプロフィールデザインがデフォルトバージョンになることをユーザーに警告しました。ベータ版の開始から2ヶ月後、すべてのユーザーが新しいプロフィールデザインへの切り替えに成功しました。
 </p>
+
+<Images withZoom name={props.images.md["google-analytics-adoption-rate"]} captions="新しいプロファイルの採用率データは、GoogleAnalyticsとTableauで追跡されました。"/>
+
+<Images name={props.images.md["Profile-feedback"]} captions="顧客からのフィードバックはさまざまなソースから収集され、専用のyoutrackボードで管理されました。"/>
+
 </section>
 
 <section id="結論" data-title="Conclusion">

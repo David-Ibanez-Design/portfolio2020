@@ -31,6 +31,9 @@ imagesMd:
     - images/final-version-1.png
     - images/final-version-2.png
     - images/final-version-3.png
+    - images/usability-testing.png
+    - images/google-analytics-adoption-rate.png
+    - images/Profile-feedback.png
 
 imagesLg: 
     - images/new-layout-hierarchy-1.png
@@ -131,6 +134,8 @@ To that end, I worked in collaboration with the support team to collect any prev
 To get a deeper insight into users pain points, I also participated in several user interviews.
 </p>
 
+<Images name={props.images.md["exsiting-customer-feedback-spreadsheet"]} captions="Customer feedbacks from various sources were centralized and categorized in a dedicated Google spreadsheet."/>
+
 <p>
 From that research, I was able to synthesize the data into a customer journey map. This allowed me to represent user pain points and see where we needed to focus our attention.
 </p>
@@ -142,6 +147,7 @@ From that research, I was able to synthesize the data into a customer journey ma
     name={props.images.xl["journey-map"]}
     captions="The journey map allowed me to represent user pain points visually and see where we needed to focus our attention."
 />
+
 
 <p>
 The data revealed a variety of pain points that our users frequently faced and confirmed some of my earlier hypothesis. Most of the issues users were reporting were centered around difficulties finding and identifying important contact information.  
@@ -184,8 +190,7 @@ For the users:
 One of the most commonly reported issues, had to do with feature/information discovery. To me, that was clear sign of a lack of a visual hierarchy within the page.
 </p>
 <p>
-To address that, I first needed to get a clear idea of what UI elements were displayed on the page, what were their purpose and hierarchical value and how they related to each other. 
-I manage to do that by listing and then laying out the main UI elements of the page in a prioritization matrix.
+To address that, I first needed to get a clear idea of what UI elements needed to be on the page, what their purpose was and how important each one was to our users. To that end, I listed, categorized and ordered each element based on Google analytics event data and prior user research.
 </p>
 
 
@@ -264,6 +269,8 @@ Internal feedbacks indicated that specific timeline’s information were hard to
 <p>
 In order to reveal additional usability issues with the new design, we use the newly created prototype to conduct a series of remote usability tests. 
 </p>
+<Images withZoom name={props.images.md["usability-testing"]} captions="Usability tests were conducted remotely via zoom."/>
+
 <p>
 Participants were selected from our existing customer base and were asked to perform a series of tasks while verbalizing their thought process. Some follow-up questions such as “why” , “how do you think of this function” , “tell me more about that”, and questions about the current profile design were asked to try to get users to elaborate on their feelings. We chose to focus on tasks that were both representative of most user's goals and that were related to parts of the UI that had the most design changes. 
 </p>
@@ -340,8 +347,13 @@ Therefore, in collaboration with the product manager, we decided to organize the
 <Images withZoom name={props.images.md["release-schedule"]} captions="Progressively exposing users to the new design allow us to minimize disruption to their daily work."/>
 
 <p>
-After a few weeks of feedback and bug fixes, we entered the final two weeks of the process, where we warned users that the new profile design would be the default version. Two months after the start of the beta phase, all users were successfully switched to the new profiled design.
+After a few weeks of feedback and bug fixes, we entered the final two weeks of the process, where we warned users that the new profile design would be the default version. 3 months after the start of the beta phase, all users were successfully switched to the new profiled design.
 </p>
+
+<Images withZoom name={props.images.md["google-analytics-adoption-rate"]} captions="The new profile adoption rate data were tracked in Google Analytics and Tableau."/>
+
+<Images name={props.images.md["Profile-feedback"]} captions="Customer feedbacks were collected from various sources and managed in a dedicated youtrack board."/>
+
 </section>
 
 <section id="conclusion" data-title="Conclusion">
