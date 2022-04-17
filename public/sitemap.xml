@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://davidibanez.com/ja/sms</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://davidibanez.com/profile</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://davidibanez.com/ja/profile</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://davidibanez.com/dds</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://davidibanez.com/ja/dds</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://davidibanez.com/illustrations</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://davidibanez.com/ja/illustrations</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://davidibanez.com/data</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://davidibanez.com/ja/data</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://davidibanez.com/RPA</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://davidibanez.com/ja/RPA</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://davidibanez.com/sms</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://davidibanez.com/ja/404</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://davidibanez.com/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://davidibanez.com/ja</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://davidibanez.com/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://davidibanez.com/ja/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://davidibanez.com/ja/404.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+</urlset>
