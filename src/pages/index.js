@@ -134,7 +134,7 @@ const Homepage = ({data, requestLangChange}) => {
           </div>
       </div>
       
-      <Testimonies />
+      {/* <Testimonies /> */}
 
         <div className={`${style.dribbbleListContainer}  ${style.container}`}>
           <h2>{t.home.otherWorks}</h2>
