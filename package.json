@@ -60,7 +60,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build && cp .htaccess public/",
     "dev": "gatsby develop",
     "clean": "gatsby clean",
     "start": "npm run dev",
