@@ -128,3 +128,12 @@ Everyone can contribute to enhance this starter! Here a not-exhaustive list of h
 - If you are a *user* you can improve the guide or give me a feedback.
 
 Even the smallest help is precious and matters to improve this project!
+
+
+## Deploy
+
+gatsby build
+git add .
+git commit -m "Update build"
+git push origin main
+git push cpanel main

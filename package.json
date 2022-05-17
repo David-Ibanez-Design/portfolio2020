@@ -60,12 +60,12 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build && cp .htaccess public/",
+    "build": "gatsby build",
     "dev": "gatsby develop",
     "clean": "gatsby clean",
     "start": "npm run dev",
     "serve": "gatsby serve",
-    "deploy": "gatsby build && git push cpanel main",
+    "deploy": "gatsby build && git push cpanel main -u --exec=/usr/local/cpanel/3rdparty/bin/git-receive-pack",
     "goDady": "gatsby serve -p 8080 -H 184.168.102.44",
     "format": "prettier --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
