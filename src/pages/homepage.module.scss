@@ -319,8 +319,8 @@
         }  
 
         .articleFeatureImage{        
-            width: 733px;
-            margin-right: $spacer-5;
+            width: 622px;
+            margin-right: $spacer-6;
             position: relative;
             
 
@@ -343,7 +343,7 @@
         }
     
         .articleFeatureContent{
-            width: 500px;
+            width: 520px;
             @include breakpoint("md"){  
                 width: 100%;
             }

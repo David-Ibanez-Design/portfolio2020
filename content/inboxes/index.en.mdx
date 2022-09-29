@@ -1,0 +1,433 @@
+---
+title: "This is a title for the inboxes feature case study."
+tags: [UserResearch, UserFlow, Prototyping,VisualDesign, ProjectManagement]
+path: articles/inboxes
+synopsis: "Digima, a web-based CRM application, aims to provide small to medium size real estate companies with a way to understand their customers' needs. Despite the fact that most real estate company's main lead acquisition channels were portal sites like SUUMO,  Digima did not provide a way to automatically import these leads into Digima, leading to an increase in manual work and a loss of valuable information for our users."
+order: 1
+featured: 1
+visible: true
+displayToc: true
+menuVignettes: images/menu-vignettes.png
+mobileVignettes: images/mobile-menu-vignettes.png
+coverHomepage: images/homepage-cover.png
+coverArticle: images/article-cover.png
+suggestedArt: images/suggestedArt.png
+imagesXl: 
+    - images/journey-map.png
+    - images/journey-map-test.png
+    - images/Real-esate-buyer-block-to-timeline-activity.png
+    - images/Real-esate-buyer-and-seller-timeline-activity.png
+    - images/full-User-flow-Delayed response.png
+    - images/full-User-flow-In-Digima-Request-response.png
+    - images/Final-design-screens.png
+
+imagesMd: 
+    - images/exsiting-UX-issues.png
+    - images/exsiting-customer-feedbacks.png
+    - images/Interview-sheet.png
+    - images/Matching-field-step.png
+    - images/exsiting-customer-feedback-spreadsheet.png
+    - images/user-testing-spreadsheet.png
+    - images/exsiting-sections-break-down.png
+    - images/new-layout.png
+    - images/new-prototype-evolution-1.png
+    - images/new-prototype-evolution-2.png
+    - images/dds-components.png
+    - images/youtrack-tasks.png
+    - images/release-schedule.png
+    - images/final-version-1.png
+    - images/final-version-2.png
+    - images/final-version-3.png
+    - images/centered-documentation.png
+    - images/Buyers-real-estate-journey-takeaways.png
+    - images/Sellers-real-estate-journey-takeaways.png
+    - images/Real-estate-buyer-journey-map.png
+    - images/Real-estate-buyer-agent-journey-map.png
+    - images/Real-estate-seller-journey-map.png
+    - images/Real-estate-seller-agent-journey-map.png
+
+imagesLg: 
+    - images/persona-Buyers.png
+    - images/persona-Seller.png
+    - images/new-prototype-evolution-1.png
+    - images/new-prototype-evolution-2.png
+    - images/Real-esate-buyer-and-seller-idiation-1.png
+    - images/Real-esate-buyer-and-seller-idiation-2.png    
+---
+
+import ImageSlider from "../../src/components/image-slider"
+
+<!-- Overview -->
+
+<ArticleOverview>
+    <Sunnary>
+        Digima, a web-based CRM application, aims to provide small to medium size real estate companies with a way to understand their customers' needs. Despite the fact that most real estate company's main lead acquisition channels were portal sites like SUUMO,  Digima did not provide a way to automatically import these leads into Digima, leading to an increase in manual work and a loss of valuable information for our users.
+    </Sunnary>
+    <Problems>
+        <ul>
+            <li>Lots of manual work required to add portl site leads into Digima</li>
+            <li>Loss of valuable lead information</li>
+        </ul>    
+    </Problems>
+    <Goals>
+        <ul>
+            <li>Reduce manual work</li>
+            <li>Increase number and quality of leads imported into Digima</li>
+        </ul>   
+    </Goals>
+    <Outcomes>
+        <ul>
+            <li>76% deceased in manual contact creation</li>
+            <li>25% increase in number leads for accounts subscribed to the new portal to lead feature which has a direct impact on the user's bottom line</li>
+        </ul>   
+    </Outcomes> 
+    <Role>
+        <ul>
+            <li>User research in collaboration with product manager</li>
+            <li>HTML/jQuery and invision prototype</li>
+            <li>UI design</li>
+            <li>Project management</li>
+        </ul>   
+    </Role>   
+</ArticleOverview>
+
+<!-- Content -->
+<div className="articleContent">
+<section id="context" data-title="Context">
+
+#### Context
+## Our customers needed a way to automatically import leads coming from real estate portal sites into Digima.
+
+<p>
+According to our own internal surveys, 80% of real estate company’s leads were coming directly from real estate portal sites like <a href="https://suumo.jp" target="_blank" rel="noreferrer">SUUMO</a> or <a href="https://www.homes.co.jp" target="_blank" rel="noreferrer">HOMES</a>. Despite that, Digima did not have a feature to automatically import these leads.
+</p>
+
+<p>
+Not only that was forcing users to add those leads manually, but it also meant that some crucial information like for example which portal site the leads came from, pictures of a property for sale or the date and time of the request were not registered. 
+</p>
+
+<p>
+To remedy that situation, it was decided that a feature allowing users to automatically import leads from all majors real estate portal sites into Digima will be built.
+</p>
+
+</section>
+
+<section id="user-discovery" data-title="User discovery">
+
+#### User discovery
+## To get a deeper understanding of users goals and pain points a series of user interviews were conducted and synthesized into personas and journey maps.
+
+<p>
+Before diving into any kind of concrete solution, it was essential to answer a few questions:
+</p>
+
+<ul>
+    <li>What portal sites do real estate agents use the most?</li>
+    <li>What lead information real estate agents value the most when first interacting with potential sellers/buyers?</li>
+    <li>How does this information influence real estate agents' sales process?</li>
+    <li>What kind of pain points and goals do real estate agents as well as buyers and sellers have when they first interact with each other?</li>
+</ul>
+
+<p>
+To answer these questions, the product manager and I decided to conduct a series of user interviews. Participants were selected from our existing users base and separated into 3 groups:
+</p>
+
+<ul>
+    <li>Real estate companies specialized in sellers markets</li>
+    <li>Real estate companies specialized in buyers markets</li>
+    <li>Real estate companies dealing with both markets</li>
+</ul>
+
+<Images withZoom name={props.images.md["Interview-sheet"]} captions="Customers interviews insights were recorded into a Google spreadsheet" />
+
+<p>
+    Findings were then systentised into user personas and journey maps.
+</p>
+
+<Images 
+    withZoom
+    containerType="full"
+    className="bg-gray-0" 
+    containerWidth="Lg"
+    name={[props.images.lg["persona-Buyers"], props.images.lg["persona-Seller"]]}
+/>
+
+<p>
+In addition to customer interviews, a series of existing internal and external research were used to inform journey maps. Visualizing the whole real estate agents and seller/buyer journey helped the team and I get a broader understanding of users goals and pain points.  
+</p>
+
+<Carrousel 
+    withZoom
+    containerType="full"
+    className="bg-gray-0" 
+    containerWidth="Md"
+    images={[
+       {
+          link: props.images.md["Buyers-real-estate-journey-takeaways"],
+          cation: "Key takeaways from 2 essential steps in the buyer and real estate agents journey."
+       },
+      {
+          link: props.images.md["Sellers-real-estate-journey-takeaways"],
+          cation: "Key takeaways from 2 essential steps in the seller and real estate agents journey"
+      },
+      {
+          link: props.images.md["Real-estate-buyer-journey-map"],
+          cation: "The full buyer journey map"
+      },
+      {
+          link: props.images.md["Real-estate-buyer-agent-journey-map"],
+          cation: "The full real restate buyer agent journey map"
+      },
+      {
+          link: props.images.md["Real-estate-seller-journey-map"],
+          cation: "The full seller journey map"
+      },
+      {
+          link: props.images.md["Real-estate-seller-agent-journey-map"],
+          cation: "The full real restate seller agent journey map"
+      }
+      ]    
+    }
+/>
+
+</section>
+
+<section id="challenges" data-title="Challenges">
+
+#### Challenges
+## Identify potential challenges was essential so that along with insights from user research, they could be used to inform any future design solution.
+
+<p>
+Based on internal discussions, preliminary researches conducted on portal sites and user research, I identified the following challenges.
+</p>
+<p>
+<b>From the business team: </b>
+</p>
+<ul>
+    <li>The product team wanted to release the feature as soon as possible</li>
+</ul>
+<p>
+<b>From the development team:  </b>
+</p>
+<ul>
+    <li>Portal sites didn't have any API the development team could use to link Digima with a portal site or import contact programmatically. This meant that I had to design for unexpected failure and long running processes. It also meant that I had to be very careful not to design anything that would end-up being server intensif. </li>
+</ul>
+<p>
+<b>From the design team:  </b>
+</p>
+<ul>
+    <li>User research showed that seller and buyer markets prioritized and used lead information in different ways. Therefore lead information coming from portal sites needed to be displayed differently and have different functionalities for different markets. </li>
+</ul>
+
+</section>
+
+<section id="problem-statement" data-title="Problem Statement">
+
+#### Problem Statement
+## Clearly describing the issues I was trying to address early on, helped me stay focused throughout the design process.
+
+<p>
+After identifying users' goals and pain points as well as potential challenges, I decided to synthesize those insights into a problem statement so that design goals could be clearly identified and communicated to the whole team.
+</p>
+
+<p>
+“How might we design a feature that would automatically import important lead information from portal sites into Digima and organize it in a way that will facilitate real estate agent’s sale activity, while still minimizing development and server cost. “
+</p>
+</section>
+
+<section id="ideation" data-title="Ideation">
+
+#### Ideation
+## After identifying design goals and challenges, I started iterating on a few design ideas.
+
+<p>
+One of my first design solutions was to display lead information into a dedicated block that would integrate nicely with  <Link to={"/profile"}>the existing contact profile page</Link>. Sellers and buyer information would be displayed in separate blocks so that different information could be emphasized for different markets. Finally users had the possibility to edit that information to keep it relevant as agents gather more information about the lead.
+</p>
+
+<Images 
+    withZoom
+    containerType="full" 
+    className="bg-gray-0" 
+    containerWidth="Lg"
+    name={[props.images.lg["Real-esate-buyer-and-seller-idiation-1"], props.images.lg["Real-esate-buyer-and-seller-idiation-2"]]}
+/>
+
+<p>
+However after sharing my design internally, externally and looking through existing data, I realized that a lot of users were already managing that information using our existing contact field management feature. Forcing them to update the same information twice would inevitably lead to issues but more importantly wasn’t aligned with one of the feature's main purposes of reducing manual work. 
+</p>
+
+<p>
+In order to solve that issues, I imagined a design solution that would allow users to match existing contact fields to lead information imported via portal sites. That way information could be automatically synchronized and no manual work would be required.
+</p>
+
+<Images name={props.images.md["Matching-field-step"]}/>
+
+<p>
+However, discussions with the development team revealed that implementing that design would require significant refactoring work because of existing technical debt. Therefore that solution had to be abandoned.
+</p>
+
+<p>
+To save time while still leveraging as much of the original design idea as possible, I decided to scrap the editable block design idea and instead modify the existing timeline activity card. 
+</p>
+
+<Images 
+    containerType="full" 
+    className="bg-gray-0" 
+    containerWidth="Xl"
+    name={props.images.xl["Real-esate-buyer-and-seller-timeline-activity"]}
+/>
+
+<p>
+That design solution had obvious disadvantages compared to the original version (information could not be edited or grouped together) but I was confident that despite its shortcomings it was still fulfilling most of the feature design objectives described in the problem statement. 
+</p>
+
+<p>
+With the first part of the feature design mostly done, I then moved on to the second most challenging part, the portal integration step-up process. 
+</p>
+
+</section>
+
+<section id="user-flow" data-title="User Flow">
+
+#### User Flow
+## Although a crucial part of the feature, the portal integration step-up process presented some major technical and usability challenges.
+
+<p>
+In order to import lead information into Digima, users had to first set-up a link between the 2 applications. This set-up process although necessary presented a few challenges:
+</p>
+
+<ul>
+    <li>Portal sites didn't have any API which meant that I had to design for unexpected failure and long running processes. It also meant that I had to be very careful not to design anything that would end-up being server intensif</li>
+    <li>The integration process was quite technical and involved a number of steps that could be difficult for users to navigate</li>
+</ul>
+
+<p>
+With these challenges in mind and a few basic requirements, I started by iterating over the flow users will have to go through to set up the integration. The objective was to strike the right balance between usability and technical feasibility by first agreeing on what was technically feasible and then validating the flow with users.
+</p>
+
+<Images 
+    withZoom
+    containerType="full" 
+    className="bg-gray-0" 
+    containerWidth="Xl"
+    name={props.images.xl["full-User-flow-Delayed response"]}
+/>
+
+<p>
+The first few versions, although easy to implement, included steps that required users to go back and forth between Digima and other third party applications multiple times as well as delayed feedback which could have easily resulted in users abandoning the process before it was completed.
+</p>
+
+<p>
+After further discussion with the development team, we agreed upon a flow that minimized the need for users to leave the application and drastically reduced the risk of delayed responses.
+</p>
+
+<Images 
+    withZoom
+    containerType="full" 
+    className="bg-gray-0" 
+    containerWidth="Xl"
+    name={props.images.xl["full-User-flow-In-Digima-Request-response"]}
+/>
+
+</section>
+
+
+<section id="usability-testing" data-title="Usability testing">
+
+#### Usability testing
+## Our testing sessions uncovered a series of unexpected usability issues that I was able to fix and validate with further testing.
+
+<p>
+Once the development team and I agreed on a portal integration set-up flow, I then set out to validate it with users. To that end I created a fully functional HTML/CSSjQuery prototype that could be configured to test different scenarios.
+</p>
+
+<div className={props.style.containedMd}>
+    <div className={props.style.imageWrapper}>
+        <video className={props.style.videoCentered} muted autoplay loop>
+            <source style="display:block;margin:0 auto;" src="images/RPA-prototype.mp4" type="video/mp4"/>
+        Your browser does not support the video tag.
+        </video> 
+    </div>
+    <figcaption className={props.style.caption}>Building an HTML/CSS/jQuery prototype helped identify issues that a static version could not have otherwise revealed.</figcaption>
+</div>
+
+<p>
+After the prototype was built and tested internally, the product manager and I started looking for participants amongst our existing user base.
+</p>
+
+<p>
+During the test, participants were asked to go through the entire portal integration set-up process while verbalizing their thoughts. Some follow-up questions such as “why” , “what do you think of this function” , “tell me more about that”, were asked to try to get users to elaborate on their feelings.
+</p>
+
+<p>
+Testing sessions uncovered a series of usability issues that I was able to fix and validate with further testing.
+</p>
+
+<Images withZoom name={props.images.md["user-testing-spreadsheet"]} captions="Results of each session were consolidated into a Google spreadsheet for further analysis."/>
+
+<p>
+For instance, one of the tasks required participants to follow a series of instructions describing how to forward email notifications sent from portal sites to a dedicated Digima inbox. To save development time I initially thought that just adding a link to our support site would be enough. However most participants ignored that link and simply skipped the step entirely. 
+</p>
+
+<p>
+Displaying the instructions directly in the page gave it the necessary visual weight it needed to help participants understand what they needed to do.
+</p>
+
+<Images 
+    withZoom
+    containerType="full" 
+    className="bg-gray-0" 
+    containerWidth="Lg"
+    name={[props.images.lg["new-prototype-evolution-1"], props.images.lg["new-prototype-evolution-2"]]}
+/>
+
+</section>
+
+<section id="mock-up"  data-title="Mock-up">
+
+#### Mock-up
+## To maintain consistency and facilitate implementation I made sure to reuse as many existing design patterns as possible.
+
+<p>
+After the team and I were satisfied with the usability test results, I then started to build the high fidelity version of the design.
+</p>
+
+<p>
+Because one of the main business goals was to release the feature as soon as possible, I made sure to reuse as many design components as possible in my final design.
+</p>
+
+<Images withZoom name={props.images.md["dds-components"]} />
+
+<p>
+When existing patterns could not be used, I made sure to document them  <Link to={"/dds"}>in our dedicated design system</Link> documentation site so that they could be efficiently communicated to the Front-end team.
+</p>
+
+<Images withZoom name={props.images.md["centered-documentation"]} captions="Documenting new UI components in our dedicated site, helped imporve implementation time by reducing guesswork."/>
+
+<p>
+In addition to the prototype used during testing an high fidelity invision prototype was also created to help the development and business teams understand how the final version of the design will look and behave as a whole.
+</p>
+
+</section>
+
+<section id="conclusion" data-title="Conclusion">
+
+#### Conclusion
+### Since the release of the portal to lead feature we saw on average a 67% decrease in manual contact creations and a 25% increase in the overall number of leads.
+<p>
+For our customers this meant that they could focus their attention on more essential tasks like trying to reach a lead by phone or SMS. For the business, the increased number of leads also meant a direct increase in revenue that could be used to support future product developments.
+</p>
+
+### Constantly evolving specifications and shifting priorities challenged my resilience as a designer.
+<p>
+When deadlines got closer and priorities were swifting, it would have been easy for me to just settle for the easiest solution. However, because I spent many hours with customers in interviews and usability tests, I felt a strong responsibility to try hard to find ways to still meet their most important needs despite the challenges.
+</p>
+
+### The Digima inbox setting process remains challenging for users, but improvements are coming.
+<p>
+Even though I spend a lot of time improving the portal integration set-up process by conducting usability tests, part of that process like the Digima inbox setting step remain challenging for our users. I am currently discussing possible design solutions with the development team which would simplify or even remove that step entirely.
+</p>
+
+</section>
+
+</div>

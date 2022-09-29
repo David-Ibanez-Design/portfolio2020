@@ -172,6 +172,10 @@
     "Code": {
       "name": "HTML/CSS/JS",
       "category": "development"
+    },
+    "ProjectManagement": {
+      "name": "プロジェクト管理",
+      "category": "ProjectManagement"
     }
   },
 

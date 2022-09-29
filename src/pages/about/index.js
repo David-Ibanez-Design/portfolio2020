@@ -102,6 +102,7 @@ const About = ({data}) => {
                 "DataVisualization", 
                 "DataAnalysis", 
                 "Code",
+                "ProjectManagement"
               ]}
                 type="large"
                 />

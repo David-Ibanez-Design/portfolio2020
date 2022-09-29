@@ -227,6 +227,10 @@
     "Code": {
       "name": "HTML/CSS/JS",
       "category": "development"
+    },
+    "ProjectManagement": {
+      "name": "Project Management",
+      "category": "ProjectManagement"
     }
   },
 

@@ -11,12 +11,12 @@ const TagList = ({tags, type="medium", limit=""}) => {
 
   const t = useTranslations()
   const tagCount = tags.length;
+  console.log(tags)
 
   return(
     <span className={`${style.tags}`}>
     {tags
       .filter((tag, index) =>limit !== "" ? index < limit :  index === tags.indexOf(tag)) // Remove duplicate values
-      .sort()
       .map((tag, index) => (
         <React.Fragment key={index}>
           <span key={tag} className={`${style.tag} ${limit ? 'MobileMenu-' : ''}${t.tags[tag].category}Tag ${type ? style[type] : ""}`}>
