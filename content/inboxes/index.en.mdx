@@ -2,7 +2,7 @@
 title: "Improve work efficiency and reduce information loss by helping non-tech savvy users connect their email inbox to Digima."
 tags: [UserResearch, Prototyping,VisualDesign, ProjectManagement]
 path: articles/inboxes
-synopsis: "Digima, a web-based CRM application, aims to provide small to medium size real estate companies with a way to understand their customers' needs. Despite the fact that over 1.7 million emails were sent monthly thought the application, leads replies were not registered, leading to inefficiencies and loss of valuable information for our users."
+synopsis: "Despite the fact that over 1.7 million emails were sent monthly thought the application, leads replies were not registered, leading to inefficiencies and loss of valuable information for our users."
 order: 1
 featured: 1
 visible: true
@@ -48,19 +48,19 @@ imagesLg:
     <Goals>
         <ul>
             <li>Connect user’s inboxes to Digima so that lead replies can be registered in the application</li>
-            <li>Reducing email delivery issues and sending cost</li>
+            <li>Reducing email delivery issues and sending costs</li>
         </ul>   
     </Goals>
     <Outcomes>
         <ul>
             <li>3 months after the feature release, 65% of users sucssuflly connected their inboxes</li>
-            <li>We saw a 25% increase in the number of email sent from the application from users who have connected their inbox</li>
-            <li>% decrease in email delivery failures</li>
+            <li>We saw a 25% increase in the number of email sent from the application</li>
+            <li>60% decrease in email delivery failures</li>
         </ul>   
     </Outcomes> 
     <Role>
         <ul>
-            <li>User research in collaboration with product manager UI design</li>
+            <li>User research in collaboration with product manager</li>
             <li>UI design</li>
             <li>HTML/CSS/jQuery and invision prototypes</li>
             <li>Project management</li>
@@ -107,7 +107,7 @@ I started that process by defining the research goals. To that end I organized a
 </p>
 
 <p>
-Once we gather enough information, themes started to emerge. After some refinement and prioritization we transformed these themes into 2 main research goals:
+Once we gather enough information, themes started to emerge. After some refinement and prioritization I transformed these themes into 2 main research goals:
 </p>
 
 <ul>
@@ -127,11 +127,7 @@ Once we gather enough information, themes started to emerge. After some refineme
 ## The various researches unearthed a series of insights that later created important design opportunities. 
 
 <p>
-Once the research goals were identified, I them listed questions that needed to be answer under each research goals.
-</p>
-
-<p>
-Research questions were then matched with one or more research methods such as user interviews, surveys, data analysis, technical investigation and so on. This process ensured that research efforts were inline with business and user goals.
+Once the research goals were identified, I them listed questions that needed to be answer under each research goals. Research questions were then matched with one or more research methods such as user interviews, surveys, data analysis, technical investigation and so on. This process ensured that research efforts were inline with business and user goals.
 </p>
 
 <p>
@@ -139,28 +135,28 @@ Here are some of the researches key applicable findings:
 </p>
 
 
-<p><b>From the interviews we found out that: </b> </p>
+<p><b>From the interviews I found out that: </b> </p>
     <ul>
         <li>6 out of 7 interviewees didn’t know what their email provider were or even what the term “email provider” actually meant</li>
         <li>All interviewee had at least 2 different email addresses. The most common setup was an email address named after it owner and use to interact with leads and an info@../contact@.. email address dedicated to new leads. This email address is usually shared within the company</li>
     </ul>
 
 
-<p><b>From the survey we found out that: </b></p>
+<p><b>From the survey I found out that: </b></p>
     <ul>
         <li>Almost all participants were highly engaged with their inboxes. 97.6% reported that they checked it multiple times a day, more than 60% reported using some kind of management system (folders, labels etc…).</li>
         <li>60% of users had their inbox set up by a co-worker or an external company</li>
     </ul>
 
-<p> <b>From the data analysis done from existing Digima users we found out that: </b></p>
+<p> <b>From the data analysis research, I found out that: </b></p>
     <ul>
-        <li>35.2% of users use email providers with predictable SMTP/IMAP/POP settings that can be pre-set automatically</li>
-        <li>50.6% of users use providers that require custom server names that cannot be predicted</li>
-        <li>89% of accounts have a main email address domain used by most of it users</li>
+        <li>35.2% of users used email providers with predictable SMTP/IMAP/POP settings that can be pre-set automatically</li>
+        <li>50.6% of users used providers that require custom server names that cannot be predicted</li>
+        <li>89% of accounts had a main email address domain that was used by most of it users</li>
         <li>Previous surveys shown that 84% of users were using either Outlook, Gmail or Thunderbird as their email client</li>
     </ul>
 
-<p> <b>From the technical investigation we found out that:</b></p>
+<p> <b>From the technical investigation, I found out that:</b></p>
 <ul>
     <li>Connecting Gmail users using Google’s dedicated sign-in API required a yearly paid security audit</li>
     <li>Importing user email server settings from their email client was estimated as technically challenging and time consuming to implement and maintain</li>
@@ -179,10 +175,10 @@ Here are some of the researches key applicable findings:
 <section id="challenges" data-title="Challenges">
 
 #### Challenges
-## Identify potential challenges was essential so that along with insights gather from user research, they could be used to inform future design solutions.
+## Identify potential challenges was essential so that along with insights gather from the various researches, they could be used to inform future design solutions.
 
 <p>
-Based on research and stakeholder meetings, I identified the following challenges:
+Based on the research and stakeholder meetings, I identified the following challenges:
 </p>
 
 <p> <b>From the business team: </b></p>
@@ -197,7 +193,7 @@ Based on research and stakeholder meetings, I identified the following challenge
 
 <p> <b>From the developement team</b></p>
 <ul>
-    <li>The variety of email providers to support as well as the tight deadline were identified as the main challenge.</li>
+    <li>The variety of email providers to support as well as the tight deadline were identified as the main challenges.</li>
 </ul>
 
 <p> <b>From the design team (me)</b></p>
@@ -228,7 +224,11 @@ After gathering research finding and defining challenges, I decided to synthesiz
 ## Using the insight gathered from the research, I them started iterating on a few design solutions.
 
 <p>
-One of my early ideas was to use email providers login APIs when available to allow users to access their inbox. This would allow users to connect their inboxes without requiring them to enter any server settings.
+With the design goals clearly defined and the research insights in mind, I them started to sketch a few potential design solutions.
+</p>
+
+<p>
+One of my early ideas was to leverage email providers login APIs when available to allow users to connect their inbox to Digima without requiring them to enter any server settings.
 </p>
 
 <p>
@@ -237,7 +237,7 @@ However this solution had to be abandon for 2 reasons:
 
 <ul>
     <li>A technical investigation into the feasibility of such system revealed that provider sign-in required a paid yearly security audit for Google that was too expensive for the company</li>
-    <li>User research indicated that users didn’t know what provider they were using and so asking them to select a provider might not work at all</li>
+    <li>User research indicated that users didn’t know what provider they were using and so asking them to select a provider might not had work</li>
 </ul>
 
 <Images 
@@ -269,15 +269,15 @@ The development team however estimated that this feature althgout feasible, woul
 />
 
 <p>
-Taking advantage of the fact that the same email domain was used by a majority of users within a given account, I finally settled on a version that would allow users or the support team to set account-wide email server settings that users could automatically use to connect their inbox to Digima during the user inbox connection process.
+Taking advantage of the fact that the same email domain was used by a majority of users within a given account, I finally settled on a version that would allow users or the support team to set account-wide email server settings that users could automatically use to connect user's inbox to Digima during the user inbox connection process.
 </p>
 
 <p>
-The minority of users who knew their email settings could still manually enter email settings information.
+The minority of users who knew their email settings could still manually add them.
 </p>
 
 <p>
-For users who didn’t have access to account level server settings, a dedicated support article was created to help users find email server settings using their email client.
+For users who didn’t have access to account level server settings, a dedicated support article was created to help users find them using their email client.
 </p>
 
 <Images 
@@ -291,17 +291,17 @@ For users who didn’t have access to account level server settings, a dedicated
 </section>
 
 
-<section id="usability-testing" data-title="Usability testing">
+<section id="usability-test" data-title="Usability test">
 
 #### Usability test
 ## Our testing sessions uncovered a series of usability issues that I were later able to fix.
 
 <p>
-Once I was confident that we had a solution what was meeting our goals, I set out to validate my assumptions by testing them with real users.
+Once I was confident that the version I designed was meeting our goals, I set out to validate my assumptions by testing them with real users.
 </p>
 
 <p>
-To that end, I created a fully functional HTML/CSS/Jquery prototype of the user setting flow that we tested with 7 participants recruted from our exsiting user base.
+To that end, I created a fully functional HTML/CSS/Jquery prototype of the user setting flow that we tested with 5 participants recruted from our exsiting user base.
 </p>
 
 <div className={props.style.containedMd}>
@@ -325,7 +325,7 @@ The testing sessions uncovered a series of usability issues that I was able to f
 <Images withZoom name={props.images.md["user-testing-spreadsheet"]} captions="Results of each session were consolidated into a Google spreadsheet for further analysis."/>
 
 <p>
-For instance, in the initial design, some participants didn’t noticed the help link that was suppose to open a separate support page with a step by step guide on how to setup their email settings. 
+For instance, in the initial design, some participants didn’t noticed the help link that was suppose to open a separate support page with a step by step guide on how to setup their email settings and therefore couldn’t complete the form. 
 </p>
 
 <p>
@@ -342,38 +342,34 @@ Changing the link into a banner, displaying the help link in error and warning m
 
 </section>
 
-<section id="mock-up"  data-title="Mock-up">
+<section id="high-fidelity-mock-ups"  data-title="High fidelity mock-ups">
 
 #### High fidelity mock-ups
 ## To maintain consistency and facilitate implementation I made sure to reuse as many existing patterns as possible.
 
 <p>
 After the team and I were satisfied with the usability test results and the prototype, I shifted my focus on the high fidelity version of the design.
-</p>
-
-<p>
 To facilitate implementation and help meet the deallines set by the business team, I made sure to reuse as many design components as possible in my final design.
 </p>
 
-<Images withZoom name={props.images.md["dds-components"]} />
-
 <p>
-When existing patterns could not be used, I documented them in our dedicated  <Link to={"/dds"}>design system documentation site.</Link> so that they could be efficiently communicated to the Front-end team.
+When existing patterns could not be used, I documented them in our dedicated  <Link to={"/dds"}>design system documentation site.</Link>
 </p>
 
 <Images withZoom name={props.images.md["centered-documentation"]} captions="Documenting new UI components in our dedicated site, helped imporve implementation time by reducing guesswork."/>
 
 <p>
-Finally, in addition to the prototype used during usability testing an invision prototype was also created to help the development, QA and business teams understand how the final version of the design should look and behave as a whole.
+Finally, in addition to the prototype used during testing an invision prototype was also created to help the development, QA and business teams understand how the final version of the design should look and behave as a whole.
 </p>
 
-<Images withZoom name={props.images.md["Final-design-01"]} />
+<Images withZoom name={props.images.md["Final-design-01"]} captions="The final version of the email sent list."/>
 
 <Images 
     className="bg-black-1 p-0" 
     containerType="full" 
     containerWidth="Xl"
-    name={props.images.xl["Final-design-02"]}
+    name={props.images.xl["Final-design-02"] }
+    captions="Some of the user inbox connection process UI."
 />
 
 
@@ -385,7 +381,7 @@ Finally, in addition to the prototype used during usability testing an invision 
 ## Each part of the design was broken down into individual user stories and spread over multiple sprints.
 
 <p>
-In addition to the prototypes and the hight fidelity mockups, I broke down the design into more then 40 user stories that were then distributed into multiple sprints.
+In addition to the prototypes and the hight fidelity mockups, I broke down the design into more then 50 user stories that were then distributed into multiple sprints.
 </p>
 
 <p>
@@ -399,7 +395,7 @@ During the whole implementation process, I regularly met with the developers and
 <section id="conclusion" data-title="Conclusion">
 
 #### Conclusion
-### 3 months after the feature release, 65% of users sucssuflly connected their inboxes and emails sendig were up 25%
+### 3 months after the feature release, 65% of users sucssuflly connected their inboxes and emails sending were up by 25%.
 <p>
 For users it meant that they wouldn't have to constantly switch between their email client and Digima and didn’t have to worry about missing important lead information. 
 For the business, having a large number of users connected to their inbox meant that reply data could be used to build advice based features in the future.
@@ -412,7 +408,12 @@ For this feature, I made sure that each step of the research process was plan ah
 
 ### Efforts to make the research process more efficient should be made.
 <p>
-Even though the insights gather from the research were instrumental in designing a feature that help us met our goals, the overall process took almost 2 months from planning to final recommendations. This meant that I had less time to iterate and design the final version of the feature. 
+Even though the insights gather from the research were instrumental in designing a feature that help us met our goals, the overall process took almost 2 months from planning to final recommendations. This meant that I had less time was sepnt on iteration and design. 
+</p>
+
+### Taking the time to build a simple proof-of-concept would have helped reduced last minute changes.
+<p>
+Even thought we conducted a lots of technical investigations during the research and design phase, there were still a lot of detail missing and that ended-up causing issues during development. A sinple proof of concept would have probably helped us reduce risks even further.
 </p>
 
 </section>
