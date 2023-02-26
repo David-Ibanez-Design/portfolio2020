@@ -11,7 +11,6 @@ const TagList = ({tags, type="medium", limit=""}) => {
 
   const t = useTranslations()
   const tagCount = tags.length;
-  console.log(tags)
 
   return(
     <span className={`${style.tags}`}>

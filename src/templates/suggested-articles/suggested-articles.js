@@ -12,6 +12,7 @@ import LocalizedLink from '../../components/localizedLink'
 import useTranslations from "../../components/useTranslations"
 
 const SuggestedPosts = ({articles }) => {
+  console.log(articles)
     // useTranslations is aware of the global context (and therefore also "locale")
   // so it'll automatically give back the right translations
   const t = useTranslations()

@@ -110,14 +110,9 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const artList = result.data.art.edges
   const artCount = artList.length/2
-  const hiddenArtOrder = 6; //should be dynamic but I just can't figure it out
 
   const getNextArt = (currentPage) => {
-    if(currentPage != hiddenArtOrder - 1){
-      return currentPage < artCount ? currentPage + 1 : 1
-    }else{
-      return currentPage + 2 >= artCount ? 1 : currentPage + 2
-    }
+    return currentPage < artCount ? currentPage + 1 : 1
   }
 
   artList.forEach(({ node: art}) => {

@@ -13,7 +13,7 @@ import { LocaleContext } from "../components/layout"
 const Post = ({ data }) => {
 
   const { body, frontmatter, headings } = data.articleContent
-  const { title, tags, coverArticle, imagesMd, imagesLg, imagesXl, imagesXXl, displayToc  } = frontmatter
+  const { title, tags, coverArticle, imagesMd, imagesLg, imagesXl, displayToc  } = frontmatter
   const suggestedArticles = []
   const { localizedPath } = React.useContext(LocaleContext)
   suggestedArticles.push({ node: data.suggestedArticles })
@@ -35,7 +35,6 @@ const Post = ({ data }) => {
   reduceObj(imagesMd, "md")
   reduceObj(imagesLg, "lg")
   reduceObj(imagesXl, "xl")
-  reduceObj(imagesXXl, "xxl")
 
   return (
     <>
@@ -90,11 +89,7 @@ export const pageQuery = graphql`
         imagesXl {
           name,
           ...imageXl
-        }       
-        imagesXXl {
-          name,
-          ...imageXXl
-        }               
+        }         
         
       }
     }

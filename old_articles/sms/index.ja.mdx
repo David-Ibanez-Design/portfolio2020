@@ -1,0 +1,214 @@
+---
+title: 双方向のSMSで見込み客への接触を図りエンゲージメントを高める
+tags: [UserResearch, UserFlow, Wireframe, Prototyping, VisualDesign]
+path: articles/sms
+order: 4
+featured: 0
+displayToc: true
+menuVignettes: images/menu-vignettes.png
+mobileVignettes: images/mobile-menu-vignettes.png
+coverHomepage: images/homepage-cover.png
+coverArticle: images/article-cover.png
+suggestedArt: images/suggestedArt.png
+imagesLg:
+     - images/Centered-Creation-screen-iteration-1-ja.png
+imagesMd: 
+    - images/Centered-Creation-screen-iteration-1-ja.png
+    - images/centered-Creation-screen-iteration-2-ja.png
+    - images/centered-Creation-screen-iteration-3-ja.png
+    - images/centered-documentation.png
+    - images/full-Final-design-01.png
+    - images/full-Final-design-02.png
+    - images/full-Final-design-03.png
+    - images/wireframe-creation-screen.png
+
+imagesXl:
+    - images/full-User-flow.png
+    - images/full-Wireframes.png
+
+imagesXXl: 
+    - images/centered-Prototype-2.png
+---
+
+<!-- Overview -->
+
+<ArticleOverview>
+    <Sunnary>
+「      Digima」は、顧客のニーズや行動を把握する手段を企業に提供するというミッションをもって、2018年に発売されたウェブベースのCRMです。ミッションを果たすため、既存のメールや電話のチャネル以外で、より効率的に見込み客とコミュニケーションが取れる手段を、ユーザーに提供する必要がありました。
+    </Sunnary>
+    <Problems>
+        <p>Digimaの顧客は、見込み客との連絡にすでにメールと電話を使っていたが、なかなか返信をもらえなかったり、電話に出てもらえなかったりすることに気付いていた。</p>
+    </Problems>
+    <Goals>
+        <p>Digima顧客の見込み客のエンゲージメントとコンバージョン率を向上させる手段を提供する。</p>
+    </Goals>
+    <Outcomes>  
+        <ul>
+            <li>既存のプロダクトに双方向のSMS機能を搭載した。</li>
+            <li>Digima顧客の見込み客のエンゲージメントとコンバージョン率に改善が見られた。</li>           
+        </ul>
+    </Outcomes>
+    <Role>
+        <ul>
+            <li>プロダクトマネージャーとのコラボレーションによる機能仕様</li>
+            <li>ビジュアルデザイン</li>
+        </ul>   
+    </Role>    
+</ArticleOverview>
+
+<!-- Content -->
+<div className="articleContent">
+<section id="課題ステートメント">
+
+#### 課題ステートメント
+## お客様が、見込み客と関係を築くためのより効率的な新しいコミュニケーションチャネルを必要としていました。
+<p>
+お客様の最も重要な事業目標の一つは、サービスを購入してもらうよう、見込み客と有意義な関係を築くことです。
+</p>
+
+<p>
+今日の消費者は、今まで以上に広告で勧誘されているため、その煩わしさを取り払うには、広告主は消費者の好む方法でアプローチする必要があります。
+</p>
+
+<p>
+平均的なメール開封率とコールドコールで繋がる割合は10～15パーセントくらいですが、お客様はより効率的なコミュニケーションチャネルを必要としていました。
+</p>
+
+<p>
+お客様のその目標を達成するために同社が決めたのは、開封率とクリック率が高いSMS機能でした。
+</p>
+</section>
+<section id="制約">
+
+#### 制約
+## プロジェクトの開始時から、外部APIの制約を回避するためにかなりの努力が必要であることが明らかでした。
+
+<p>
+私がプロジェクトの作業に着手したとき、第三者SMSプロバイダーはすでに選定済みで、機能の全体的な目標や機能性の詳細に関するドキュメントの草案も、プロジェクトマネージャーがすでに作成していた状態でした。
+</p>
+
+<p>
+私の最初のタスクは、そのドキュメントを読み込み、チームリーダーとプロジェクトについて話し合うことでした。外部APIに依存する形だったので、早い段階でそのAPIサービスに関する制約を特定することも必須でした。特定した主な制約は以下のとおりです：
+</p>
+
+<ul>
+    <li>ソフトバンクへのSMS送信制限が1日200通であった。それを超えるSMSは送信されない。</li>
+    <li>１つのSMSに70文字までしか入力できないので、同時に４つのSMSまで送信可能にする、とした。</li>
+    <li>スケジュールの問題でバックエンドチームがAPIを調査できず、API自体に関するドキュメントがなかった。</li>
+    <li>SMSの送受信を可能にするために、専用電話番号を手動で発行する必要があった。</li>
+</ul>
+</section>
+<section id="ユーザーフロー">
+
+#### ユーザーフロー
+## 機能のユーザーフローのレイアウトを作成したことで、どの部分に注力し時間をかけなければならないのか明確になりました。
+
+<p>
+プロジェクトの規模と複雑さから、デザインプロセスの初期段階で最も重要だったことは、機能の全体像について確実に、チームで共通の理解を持つことでしたが、当時、仕様書の草案しかありませんでした。
+</p>
+
+<p>ユーザーフローを構築することで、チーム内で機能性の詳細まで検討することができました。全員が同じ認識を持てたことに加え、潜在的な問題を速やかに特定し、考え得る解決策を繰り返し検討することができました。 </p>
+
+<Images 
+    withZoom
+    className="bg-gray-0" 
+    containerType="full" 
+    containerWidth="Xl" 
+    captions="ユーザーフローの構築は、全体的な機能性および課題についての共通理解を深める上で重要でした。"
+    name={props.images.xl["full-User-flow"]}
+/>
+
+
+<p>
+その一例が、機能の有効化プロセスです。SMS機能を使用する前に手作業で電話番号を発行する必要があったため、効率的でかつ、すべてのプロセスを自動にすることはできないという事実を考慮し、柔軟に対応できるフローに合意する必要がありました。また、ユーザーに対しても、リアルタイムで電話番号リクエストの状況を知らせる必要もありました。
+</p>
+</section>
+<section id="ワイヤーフレーム">
+
+#### ワイヤーフレーム
+## APIの制限に関わらず、送信するメッセージに対しユーザーが自分たちでコントロールしている、という感覚を維持してもらうことも不可欠でした。
+
+<p>
+チーム内でユーザーフローに関する質疑応答が出切ったところで、個々の画面の作業に取り掛かりました。
+</p>
+
+<p>
+まずは、最も困難を強いられる画面に焦点をあて、一連のワイヤーフレームを作成しました。例えば、テーブルを表示する画面は <Link to={"/ja/dds"}>デザインシステムから既存の要素を再利用することで</Link> 簡単にデザインできることはわかっていましたので、難しい画面で反復作業することに時間を費やすことにしました。
+</p>
+
+<p>
+難しかった画面の一つは、SMSの作成画面でした。外部APIの制限により、SMSの受信者の端末に4通のSMSが受信されることになるため、それに合わせてメッセージを作成する必要があるということを、ユーザーに理解してもらうことが重要でした。
+</p>
+
+<Images 
+    className="bg-white-0"
+    containerType="full" 
+    containerWidth="Xl"
+    name={[props.images.md["Centered-Creation-screen-iteration-1-ja"], props.images.md["centered-Creation-screen-iteration-2-ja"], props.images.md["centered-Creation-screen-iteration-3-ja"]]}
+/>
+
+<p>
+試行錯誤の結果、2カラムのスタイルのレイアウトに落ち着きました。カラム1は、ユーザーがメッセージの入力と管理をするメッセージエリアで、隣のカラムに、受信者の端末上でのメッセージのプレビューを表示しています。
+</p>
+
+
+<Images name={props.images.md["full-Final-design-01"]} captions="SMS作成画面の最終バージョン"/>
+</section>
+<section id="モックアップ">
+
+#### モックアップ
+## 一貫性を維持した実装にするため、できるだけ既存のパターンを再利用しました
+
+<p>
+まずは最も難しい機能に時間と労力を充てるという戦略の下、SMS作成画面とチャット機能の高忠実度モックアップを作成することから始めました。
+</p>
+
+<p>
+その工程で、デザインシステムからできるだけ既存のデザインパターンを再利用し、一貫性をもって実装できるように心がけました。
+</p>
+
+<p>
+既存のパターンが使用できない場合は、新規UIコンポーネントととし、専用サイトにドキュメントに残しました。
+</p>
+
+
+<Images name={props.images.md["centered-documentation"] } captions="専用サイトに新規UIコンポーネントをまとめておくことで、実装時間の改善と推測しながらの作業を減らすことができました。"/>
+
+<div className={props.style.containedMd}>
+    <div className={props.style.imageWrapper}>
+        <video className={props.style.videoCentered} muted autoplay loop>
+            <source style="display:block;margin:0 auto;" src="images/sms-composer.mp4" type="video/mp4"/>
+             Your browser does not support the video tag.
+        </video> 
+    </div>
+</div>
+
+<Images name={props.images.md["full-Final-design-02"]} captions="SMSチャット一覧画面の最終バージョン"/>
+
+<p>
+最も重要なシーンを想定した画面のデザインが終わったあと、Invisionのプロトタイプを作成し、チームに共有しました。これにより、デザインの最終版がどのように見え、全体的な動作はどうなるのか、チームが理解することができました。
+</p>
+
+<Images containerWidth="XXl" name={props.images.xxl["centered-Prototype-2"]}/>
+</section>
+<section id="結論">
+
+#### 結論
+### 外部サービスを利用する場合は、経験から直接得た知識に基づく決断が必要でした。
+<p>
+スケジュール上の問題から、プロジェクトの初期段階でバックエンドチームが外部APIを評価できなかったため、デザイン過程の大部分で、APIの範囲や制限に関し外部業者の情報に頼らざるを得ませんでした。このため、幸いにも実際には大丈夫でしたが、得た情報が間違っていた場合、大幅なプロジェクトの遅延につながるところでした。今回の件でチームは、今後経験から学ぶことにし、必要に応じ、デザインの早い段階でバックエンドチームにも関わってもうらうことにしました。
+</p>
+<br/>
+
+### 最も難しい問題を解決することから始めたことで、デザインを効率的に進めることができました。
+<p>
+デザイナーとして、早い段階で進捗を感じらるという理由から、比較的簡単に解決できるとわかっている部分からデザインを始める傾向が私にはありました。しかし、このプロジェクトは、最初に最も困難な問題から取り掛かることで、最終的にはより効率的なデザインプロセスに繋がるということを示しました。というのも、課題が見つかる度に、自分の解決策を再検討する必要がないからです。
+</p>
+
+### この機能は大成功を収め、リリースから6カ月後には、お客様の普及率が20％にまで上がり、全体的なプロダクトMRRも10％向上しました。
+<p>
+また、お客様からも、メールよりもSMSで送信したメッセージのエンゲージメント率の方が高かったとご報告いただきました。お客様にとっては、成約の可能性が向上し、同社にとっては、今後の機能開発を支える経常収益が増加することを意味します。
+</p>
+
+</section>
+</div>
