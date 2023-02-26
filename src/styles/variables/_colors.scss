@@ -1,8 +1,12 @@
 // Color variables
 
 // -------- Black and white --------
-$black: #101426 !default;
+$black: #101426;
 $white: #fff !default;
+
+// -------- Black --------
+$black-000:     $black !default;
+$black-100:     #455D6E !default;
 
 // -------- Grays --------
 $gray-000:        #F7F9FC !default;
@@ -92,6 +96,11 @@ $whites: (
   0: $white,
 ) !default;
 
+$blacks: (
+  0: $black,
+  1: $black-100,
+) !default;
+
 $grays: (
   0: $gray-000,
   1: $gray-100,
@@ -162,6 +171,7 @@ $purpules: (
 
 $hue-maps: (
   "white": $whites,
+  "black": $blacks,
   "gray": $grays,
   "blue": $blues,
   "green": $greens,

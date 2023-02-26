@@ -137,6 +137,10 @@ const query = graphql`
                 name
                 category
               }
+              ProjectManagement{
+                name
+                category
+              }
             }
             suggestedArt{
               next
