@@ -157,21 +157,20 @@ const Homepage = ({data, requestLangChange}) => {
           </p>
           
           <div className={style.dribbbleInnerContainer}>
-          
-          {t.home.dribbbleShots.projects.map((dribbbleShotMap, index) => {
-             return(
-                <a key={index} rel="noreferrer" target="_blank" href={`https://dribbble.com/shots/${dribbbleShotMap.dribbbleUrl}`} className={style.dribbbleShots} >
-                  <div className={style.dribbbleShotsImage} data-tip data-for="viewProjectHomepage-1">
-                    <Img fluid={dribbbleShots.edges[index].node.childImageSharp.fluid} alt="sss"/>
-                    <Tooltip id={`tooltipDribbbleShots-${index}`} targetId="viewProjectHomepage-1" effect="float" hidePointer="hidePointer">
-                      {t.home.viewOnDribbble}
-                    </Tooltip>
-                    <div className={style.overlay}></div>
-                  </div>  
-                  <p>{dribbbleShotMap.description}</p>
-                </a>
-             )
-          })}
+            {t.home.dribbbleShots.projects.map((dribbbleShotMap, index) => {
+              return(
+                  <a key={index} rel="noreferrer" target="_blank" href={`https://dribbble.com/shots/${dribbbleShotMap.dribbbleUrl}`} className={style.dribbbleShots} >
+                    <div className={style.dribbbleShotsImage} data-tip data-for="viewProjectHomepage-1">
+                      <Img fluid={dribbbleShots.edges[index].node.childImageSharp.fluid} alt="sss"/>
+                      <Tooltip id={`tooltipDribbbleShots-${index}`} targetId="viewProjectHomepage-1" effect="float" hidePointer="hidePointer">
+                        {t.home.viewOnDribbble}
+                      </Tooltip>
+                      <div className={style.overlay}></div>
+                    </div>  
+                    <p>{dribbbleShotMap.description}</p>
+                  </a>
+              )
+            })}
           </div>       
         </div>
     </div>
