@@ -16,7 +16,7 @@ const Heading = ({ title, tags, imgArticle, coverTitle }) => (
       <h1>{title}</h1>
     </div>
     <div className={style.cover}>
-      <Img fluid={imgArticle} title={coverTitle} alt={title} />
+      <Img fluid={imgArticle} title={coverTitle} alt={title} loading="eager"/>
     </div>
   </div>
 )

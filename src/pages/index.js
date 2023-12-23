@@ -50,6 +50,7 @@ const Homepage = ({data, requestLangChange}) => {
                 <Img 
                   className={style.profilePicImg}
                   fixed={profilePics.childImageSharp.fixed}
+                  loading="eager"
                 />            
                 <div className={style.profilePicBorder}></div>  
               </div>

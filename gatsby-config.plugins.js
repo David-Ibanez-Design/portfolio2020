@@ -56,7 +56,7 @@ module.exports = [
           {
             resolve: `gatsby-remark-images`,
             options: {
-              quality: 100,
+              quality: 90,
               disableBgImage: true,
               backgroundColor: "none",
               showCaptions: true,
