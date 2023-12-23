@@ -63,6 +63,7 @@ const MenuItems = ({data, isMobile , withWork, toggleMenu}) => {
                                                             className={style.preview}
                                                             fluid={!isMobile ? menuVignettes.childImageSharp.fluid : mobileVignettes.childImageSharp.fluid}
                                                             alt={title}
+                                                            loading="eager"
                                                             />
                                                             {!isMobile ? (
                                                                 <span className={style.content}>

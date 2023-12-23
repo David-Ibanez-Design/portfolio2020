@@ -50,7 +50,6 @@ const Homepage = ({data, requestLangChange}) => {
                 <Img 
                   className={style.profilePicImg}
                   fixed={profilePics.childImageSharp.fixed}
-                  loading="eager"
                 />            
                 <div className={style.profilePicBorder}></div>  
               </div>
@@ -71,7 +70,7 @@ const Homepage = ({data, requestLangChange}) => {
               </div>
             </div>
             <div className={style.heroImageContainer}>
-              <Img fluid={heroVisual.childImageSharp.fluid} />
+              <Img fluid={heroVisual.childImageSharp.fluid} loading="eager" />
             </div> 
         </div>  
         <HeroBg className={style.heroBackground}/>
