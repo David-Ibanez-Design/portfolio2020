@@ -9,7 +9,6 @@ import SuggestedArticles from './suggested-articles'
 import style from './article.module.scss'
 import { LocaleContext } from "../components/layout"
 
-
 const Post = ({ data }) => {
 
   const { body, frontmatter, headings } = data.articleContent
