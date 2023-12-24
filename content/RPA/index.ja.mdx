@@ -238,11 +238,13 @@ CRMであるDigimaの顧客プロフィールページは、すべてのお客�
 
 
 <div className={props.style.containedMd}>
-    <video width="100%" muted autoplay loop>
-        <source src="images/prototype.mp4" type="video/mp4"/>
-    Your browser does not support the video tag.
-    </video> 
-    <figcaption className={props.style.caption}>HTML / CSS / jQueryプロトタイプを作成することで、静的バージョンでは明らかにできなかった問題を特定することができました。</figcaption>
+    <div className={props.style.imageWrapper}>
+        <video className={props.style.videoCentered} muted autoplay loop>
+            <source style="display:block;margin:0 auto;" src="images/RPA-prototype.mp4" type="video/mp4"/>
+        Your browser does not support the video tag.
+        </video> 
+    </div>
+    <figcaption className={props.style.caption}>>HTML / CSS / jQueryプロトタイプを作成することで、静的バージョンでは明らかにできなかった問題を特定することができました。</figcaption>
 </div>
 
 </section>

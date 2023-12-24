@@ -4,7 +4,7 @@ module.exports = [
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
-        defaultQuality: 90
+        defaultQuality: 100
       },
     },
     {
@@ -56,7 +56,7 @@ module.exports = [
           {
             resolve: `gatsby-remark-images`,
             options: {
-              quality: 90,
+              quality: 100,
               disableBgImage: true,
               backgroundColor: "none",
               showCaptions: true,
