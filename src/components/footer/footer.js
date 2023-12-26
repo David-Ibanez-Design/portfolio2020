@@ -1,6 +1,6 @@
 /* Vendor imports */
 import React from 'react'
-import { FaDribbble, FaLinkedin } from 'react-icons/fa'
+import { FaDribbble, FaLinkedin, FaGithub } from 'react-icons/fa'
 /* App imports */
 import style from './footer.module.scss'
 import Config from '../../../gatsby-config'
@@ -59,12 +59,31 @@ const Footer = () => {
                       {t.socialsLinks.Linkedin}
                     </a>
                   </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      rel="nofollow noopener noreferrer"
+                      href={Config.siteMetadata.social.github}
+                    >
+                      Github
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>
 
             <div className={style.socialsContainer}>
               <ul className={style.socials}>
+                  <li>
+                    <FaLinkedin size="14"/>
+                    <a
+                      target="_blank"
+                      rel="nofollow noopener noreferrer"
+                      href={Config.siteMetadata.social.linkedin}
+                    >
+                      {t.socialsLinks.Linkedin}
+                    </a>
+                  </li>
                   <li>
                   <FaDribbble size="14"/>
                     <a
@@ -75,16 +94,16 @@ const Footer = () => {
                       {t.socialsLinks.Dribbble}
                     </a>
                   </li>
-                  <li>
-                  <FaLinkedin size="14"/>
-                    <a
-                      target="_blank"
-                      rel="nofollow noopener noreferrer"
-                      href={Config.siteMetadata.social.linkedin}
-                    >
-                      {t.socialsLinks.Linkedin}
-                    </a>
-                  </li>
+                    <li>
+                      <FaGithub size="14" />
+                      <a
+                        target="_blank"
+                        rel="nofollow noopener noreferrer"
+                        href={Config.siteMetadata.social.github}
+                      >
+                        Github
+                      </a>
+                    </li>
                 </ul>
                 <p className={style.legals}>© 2020 {t.footer.legals}.</p>
             </div>
