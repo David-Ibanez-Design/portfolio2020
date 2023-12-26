@@ -52,8 +52,10 @@ const About = ({data}) => {
               <h1>{t.about.title}</h1>
               <p>
                 <span dangerouslySetInnerHTML={{__html: t.about.textPart1}}/>
+                {locale == "ja" && <span dangerouslySetInnerHTML={{__html: t.about.textPart2}}/>}
                 <LocalizedLink to={`/data`}>{t.about.link}</LocalizedLink>
-                <span dangerouslySetInnerHTML={{__html: t.about.textPart2}}/>
+                {locale == "en" && <span dangerouslySetInnerHTML={{__html: t.about.textPart2}}/>}
+                <span dangerouslySetInnerHTML={{__html: t.about.textPart3}}/>
                 <span> {locale === "en" ? t.socialsLinks.Follow : "私の"} </span>
                 <a 
                   href={Config.siteMetadata.social.linkedin} 

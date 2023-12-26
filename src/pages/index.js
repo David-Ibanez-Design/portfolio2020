@@ -1,7 +1,7 @@
 /* Vendor imports */
 import React from 'react'
 import { graphql, navigate } from 'gatsby'
-import { FaDribbble, FaLinkedin } from 'react-icons/fa'
+import { FaDribbble, FaLinkedin, FaGithub } from 'react-icons/fa'
 /* App imports */
 import Img from 'gatsby-image'
 import SEO from '../components/seo'
@@ -54,12 +54,14 @@ const Homepage = ({data, requestLangChange}) => {
                 <div className={style.profilePicBorder}></div>  
               </div>
               <div className={style.socials}>
-                    <span>{t.socialsLinks.Follow}:</span>
+                    <a href={Config.siteMetadata.social.linkedin} target="_blank" rel="noreferrer"  className={style.linkedin}>
+                      <FaLinkedin size="16" />{t.socialsLinks.Linkedin}
+                    </a>
                     <a href={Config.siteMetadata.social.dribbble} target="_blank" rel="noreferrer" className={style.dribbble}>
                       <FaDribbble size="16" />{t.socialsLinks.Dribbble}
                     </a>
-                    <a href={Config.siteMetadata.social.linkedin} target="_blank" rel="noreferrer"  className={style.linkedin}>
-                      <FaLinkedin size="16" />{t.socialsLinks.Linkedin}
+                    <a href={Config.siteMetadata.social.github} target="_blank" rel="noreferrer"  className={style.github}>
+                      <FaGithub size="16" />Github
                     </a>
               </div>
               <h1><span>{t.home.title}</span></h1>

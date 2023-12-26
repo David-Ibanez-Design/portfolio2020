@@ -10,7 +10,8 @@ module.exports = {
     email: 'dibanez@rocketmail.com',
     social: {
       dribbble: 'https://dribbble.com/DavidDesign38',
-      linkedin: 'https://www.linkedin.com/in/david-ibanez-a5b443120/'
+      linkedin: 'https://www.linkedin.com/in/david-ibanez-a5b443120/',
+      github: 'https://github.com/David-Ibanez-Design'
     },
   },
 

@@ -198,6 +198,15 @@
             fill: $blue-600;
         }
 
+        .github{
+            color: $gray-800;
+            cursor: pointer;
+        }
+
+        .github svg{
+            fill: $gray-800;
+        }
+
         &>span:first-child{
             font-size: $h5-size;
             margin-right: $spacer-3;
