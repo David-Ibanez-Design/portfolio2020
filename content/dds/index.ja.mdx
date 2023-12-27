@@ -188,28 +188,28 @@ import ImageSlider from "../../src/components/image-slider"
 </p>
 
 <p>
-変更部分は切り分け、パフォーマンスを維持するため、各UI要素を個別の <a href="https://www.sketch.com/docs/libraries/" target="_blank" rel="noreferrer">Sketchライブラリとして</a> 作成しました。しかしながら、この編成では全体をさっと確認するのが難しかったため、その対処として、エントリーポイントとなるマスターファイルを作りました。
+最初の実装では、変更部分は切り分け、各UI要素を個別の <a href="https://www.sketch.com/docs/libraries/" target="_blank" rel="noreferrer">Sketchライブラリとして</a> 作成しました。しかしながら、この編成では全体をさっと確認するのが難しかったため、その対処として、エントリーポイントとなるマスターファイルを作りました。
 </p>
 
 <Images name={props.images.md["Components-1"]} captions="デザインシステムを主な4カテゴリーに整理しました。"/>
 
 <p>
-効率化を図るという私の目標を達成するための手段の一つとして、コンポーネントを追加したり修正したりするときに、できる限り推測することを減らしました。そのため、コンポーネントライブラリをどう作り、維持していくのか、 <a href="https://comvex-jp.github.io/unison-design-system/getting-started/for-designers" target="_blank" rel="noreferrer">テンプレート、ルール、約束事</a>をまとめました。
-
+しかし、このSketchライブラリを数年間使ってみて、明らかになったことがありました：
 </p>
 
-<Images name={props.images.md["master-file-2"]} className="mt-5" captions="デザインシステムへのエントリーポイントとなるマスターファイル。これにより、デザイナーがスムーズにコンポーネント全体を見渡すことが可能に。"/>
+<ul>
+    <li>コンポーネントを更新するために常にファイルを切り替えなければならないのは非常に非効率的であり、コンポーネントが簡単に古くなってしまう。</li>
+    <li>注意深く作られたコンポーネント構造にもかかわらず、パフォーマンスがまだ遅かった。</li>
+    <li>当時Sketchのプロトタイピング機能が不足していたため、別のツールを使わざるを得なかった。</li>
+</ul>
 
-<Images name={props.images.md["template-rules"]} captions="システムの一貫性を維持し、使いやすさを保つため、コンポーネントステートにそれぞれのシンボルを付けました。"/>
+<p>
+そこで、上記の理由から、2023年の初めに、デザイン・システム全体をFigimaに切り替えることにしました。
+</p>
 
-<Images 
-    className="bg-gray-0 p-0" 
-    containerType="full" 
-    containerWidth="Xl"
-    name={props.images.xl["Components"]}
-    captions="システムコンポーネントのサンプル"
-/>
+<Images name={props.images.md["master-file-2"]} className="mt-5" captions="Sketchとはちがって、すべてのコンポーネントを1つのファイルに保存しても、パフォーマンスへの影響は見られなかった。"/>
 </section>
+
 <section id="ドキュメント">
 
 #### ドキュメント
@@ -220,29 +220,47 @@ import ImageSlider from "../../src/components/image-slider"
 </p>
 
 <p>
-デザイナーがスムーズにデザインファイルからドキュメントに移動できるようにするため、Sketchファイルとドキュメントサイトのナビゲーション、構成、および用語をミラーリングすることにしました。また、Sketchファイル自体にコンポーネントドキュメントへのリンクを、そして関連するドキュメント記事にSketchライブラリへのリンクを追加しました。
+しかし数年後、私の努力にもかかわらず、開発者の採用数が非常に少ないことが明らかになりました。
 </p>
-
-<Images name={props.images.md["documentation-site"]} captions="デザインファイルに直接移動できるリンクが追加されたドキュメントサイト"/>
 
 <p>
-ディベロッパーは、ドキュメントサイトで直接プレビューをクリックすることで、どのコンポーネントも簡単に確認することができます。
+解決策の一つは、現在のドキュメントサイトをStorybookに移行し、現在のウェブアプリケーションのコードベースに直接統合することでした。
 </p>
 
-<Images name={props.images.md["invision-inspect"]} className="mt-5"/>
+<Images name={props.images.md["live-compoenents"]} captions="コードベースに直接統合されたドキュメンテーション・サイトの使用は、採用を促進する上で不可欠な段階でした。"/>
 
-<p>
-また、コンポーネントのReactバージョンを表示し、そのコードスニペットも提供するようにしました。
-</p>
-
-<div className={`${props.style.containedMd} ${props.style.imageWrapper} mt-5`}>
-     <Img fluid={props.images.md["live-compoenents"].fluid} alt="Image for the end of article test"/>
-    <video className={props.style.videoOverlay} muted autoplay loop>
-        <source src="images/vid-test4.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-    </video>
-</div>
 </section>
+
+<section id="future-improvements">
+
+#### 今後の改善
+## デザインと開発を分断していたサイロ化を解消するために、デザインが開発に近づくべき。
+
+<p>
+デザイン・システムの最初のバージョンは、Sketchとカスタムメイドのドキュメント・サイトをベースにしていました。デザイン・プロセスを大幅に改善し、チーム全体に利益をもたらしたにもかかわらず、開発者に採用されることはありませんでした。
+</p>
+
+<p>
+その理由は明らかで、デザインと開発はまだそれぞれのサイロで行われており、そうである限り採用率は低いままであり続けるだろう。
+</p>
+
+<p>
+そのサイロ化を断ち切るために、デザインが開発により近づくべきだと考えていました。なぜなら、結局のところ、最も重要なのは、デザインツールに表示されるものではなく、顧客に直接提供されるものだからです。
+</p>
+
+<p>
+それを実現するために、行われた、あるいは現在進行中のことをいくつか：
+</p>
+
+<ul>
+    <li>デザイン・トークンをデザインと開発で共有すること。</li>
+    <li>デザイン・トークンの使用を強制するために、コードベースにリンティング・ルールを作ること。</li>
+    <li>コードベースをリファクタリングしてコンポーネントベースにすること。</li>
+    <li>Storybookにコンポーネントを文書化し、そのデザイン・バージョンを参照すること。</li>
+    <li>デザイン・システムのコンポーネント構造をリファクタリングし、コードベースと同じ構造にすること。</li>
+</ul>
+</section>
+
 <section id="結論">
 
 #### 結論

@@ -189,26 +189,28 @@ Once the design system structure was defined, I got to work converting the UI el
 </p>
 
 <p>
-To keep changes isolated and performance high, each UI element was created <a href="https://www.sketch.com/docs/libraries/" target="_blank" rel="noreferrer">as a single Sketch library.</a> This organization, however, made it difficult to quickly navigate through the entire set, so to address this issue, I also created a master file that acted as an entry point.
+In my initial implementation, each UI element was created <a href="https://www.sketch.com/docs/libraries/" target="_blank" rel="noreferrer">as a single Sketch library.</a> This organization, however, made it difficult to quickly navigate through the entire set, so to address this issue, I also created a master file that acted as an entry point.
 </p>
 
 <Images name={props.images.md["Components-1"]} captions="The design system is organized into 4 main categories."/>
 
 <p>
-One of the ways I could fulfill my goal of improving efficiency was to reduce guesswork as much as possible when adding or modifying a component. To that end, I created <a href="https://comvex-jp.github.io/unison-design-system/getting-started/for-designers" target="_blank" rel="noreferrer">a set of templates, rules, and conventions</a>, describing how a component library should be built and maintained. 
+However, after using this Sketch library for a couple of years, it becomes clear that:
 </p>
 
-<Images name={props.images.md["master-file-2"]} className="mt-5" captions="The master file act as a entry point to the design system to help designers quickly navigate through the entire set of components."/>
+<ul>
+    <li>Constantly having to switch between files to update a component was very inefficient which means that components could easily end up out of date</li>
+    <li>Despite the carefully crafted component structure, I was still experiencing slow performances</li>
+    <li>Prototyping functionalities in Sketch were lacking forcing me to use a separate tool</li>
+</ul>
 
-<Images name={props.images.md["template-rules"]} captions="To keep the system consistent and easy to use, component states have their own symbols."/>
+<p>
+Therefore for the reasons listed above, at the beginning of 2023, I decided to switch the entire design system to Figima.
+</p>
 
-<Images 
-    className="bg-gray-0 p-0" 
-    containerType="full" 
-    containerWidth="Xl"
-    name={props.images.xl["Components"]}
-    captions="A small sample of the system's components."
-/>
+<Images name={props.images.md["master-file-2"]} className="mt-5" captions="Contrary to Sketch, all components could be stored in a single file with no visible performance impact."/>
+
+
 </section>
 <section id="documentation">
 
@@ -216,33 +218,51 @@ One of the ways I could fulfill my goal of improving efficiency was to reduce gu
 ## The documentation site helped the team move from design to implementation quickly by eliminating guess-work.
 
 <p>
-To forge a shared understanding of the system between designer and developer and facilitate implementation, we needed a documentation site. With the help of the development team, I started working on creating the website and adding components to it.  
+To forge a shared understanding of the system between me the designer and developers and facilitate implementation, we needed a documentation site. With the help of the development team, I started working on creating the website and adding components to it.
 </p>
 
 <p>
-To help designers quickly move between the design files and the documentation, I decided to mirror the navigation, structure, and terminology in the Sketch files and the documentation site. I also added a link to the component documentation in the sketch files themselves and a link to the sketch library in the related documentation article.
+However, after a while and despite my best efforts, it became clear that the developers' adoption was very low.
 </p>
-
-<Images name={props.images.md["documentation-site"]} captions="The documentation site includes a direct link to the design file."/>
 
 <p>
-Developers could quickly inspect any component by simply clicking on its preview right from the documentation site itself.
+Part of the solution was to move the current documentation site over to Storybook and integrate it directly into the current web application codebase.
 </p>
 
-<Images name={props.images.md["invision-inspect"]} className="mt-5"/>
+<Images name={props.images.md["live-compoenents"]} captions="Using a documentation website directly integrated into the codebase was an essential step in promoting adoption."/>
 
-<p>
-When available, I also made sure to display the react version of a component as well as provide code snippets for it.
-</p>
-
-<div className={`${props.style.containedMd} ${props.style.imageWrapper} mt-5`}>
-     <Img fluid={props.images.md["live-compoenents"].fluid} alt="Image for the end of article test"/>
-    <video className={props.style.videoOverlay} muted autoplay loop>
-        <source src="images/vid-test4.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-    </video>
-</div>
 </section>
+
+<section id="future-improvements">
+
+#### Future Improvements
+## To break the silos that divided design and development, I believed that design had to move closer to development.
+
+<p>
+The first version of our design system was based on Sketch and a custom-made documentation site. Despite providing substantial design process improvements that benefited the whole team, it was never really adopted by developers. 
+</p>
+
+<p>
+In insight it was obvious why; design and development were still happening in their respective silos and as long as that was the case adoption will likely remain low.
+</p>
+
+<p>
+To break that silos, I believed that design had to move closer to development because at the end of the day what mattered the most was not what was displayed in a given design tool, but what was shipped to customers.
+</p>
+
+<p>
+To make that happen here are a few things that were done and/or are in progress:
+</p>
+
+<ul>
+    <li>Share design tokens across design and development</li>
+    <li>Setup linting rules in the codebase to enforce the use of design tokens</li>
+    <li>Refactor the code base to be component-driven</li>
+    <li>Document components in Storybook and reference their design version (and vice-versa)</li>
+    <li>Refactor the design system component structure so it uses the same structure as the codebase</li>
+</ul>
+</section>
+
 <section id="conclusion">
 
 #### Conclusion
