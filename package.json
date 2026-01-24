@@ -61,7 +61,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "dev": "gatsby develop",
+    "dev": "gatsby develop -p 3500",
     "clean": "gatsby clean",
     "start": "npm run dev",
     "serve": "gatsby serve",

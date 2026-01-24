@@ -1,0 +1,305 @@
+---
+title: "Transforming Sales Engagement: A User-Centered Approach to Improving Lead Interaction in Digima"
+tags: [UserResearch, Prototyping, VisualDesign, DesignSystem]
+path: articles/AI_agent
+order: 5
+featured: 0
+displayToc: true
+coverHomepage: images/homepage-cover.png
+coverArticle: images/article-cover.png
+menuVignettes: images/menu-vignettes.png
+mobileVignettes: images/mobile-menu-vignettes.png
+suggestedArt: images/suggestedArt.png
+imagesLg:
+    - images/OR-tree.png
+    - images/prioritization-board.png
+    - images/user-testing-spreadsheet.png
+    - images/Usability-testings.png
+    - images/First-prototype.png
+    - images/new-prototype-evolution-1.png
+    - images/new-prototype-evolution-2.png
+    - images/Data.png
+---
+
+<!-- Overview -->
+
+<ArticleOverview>
+    <Sunnary>
+        Digima is a web-based CRM application that helps small to medium real estate companies understand their customers' needs. Sales personnel struggled to identify leads likely to result in meetings, causing missed opportunities and leading users to question our product’s ability to deliver results.
+    </Sunnary>
+    <Problems>
+        <p>
+            Discovery interviews showed salespersons struggled to identify leads with high meeting potential to prioritize outreach.
+        </p>        
+    </Problems>
+    <Goals>
+        <p>
+           Design and validate a solution that would help salespeople efficiently identify and act on high-value leads. This involved rigorously testing assumptions about technical feasibility, usability (Would they act on it?), and desirability (Would they adopt it as a habit?).
+        </p>      
+    </Goals>
+    <Outcomes>
+        <p>The experiment successfully validated the new "Hot lead" list, which reduced the number of missed contact replies and unattended leads. Critically, the process also uncovered deeper, fundamental problems:</p>
+        <ul>
+            <li>Customer profile pages were not easily scannable, making it hard for users to act on the identified hot leads.</li>
+            <li>The low number of contacts on many "Hot lead" lists revealed a more fundamental issue with the quality of content being sent, which pointed the team toward exploring new solutions like AI-generated content.</li>
+        </ul>        
+    </Outcomes>
+    <Role>
+        <ul>
+            <li>Participating in a product discovery interview and gathering insights into an opportunity-solution tree (OST).</li>
+            <li>Organizing and animating product discovery workshops to select ideas and assumptions.</li>
+            <li>Designing experiments to test assumptions, gathering data, analysing results, and making recommendations to the team based on these results.</li>
+            <li>Conducting moderated user testing.</li>
+            <li>Designing the UI and UX of experiments and final designs.</li>
+        </ul>   
+    </Role>  
+</ArticleOverview>
+
+import ImageSlider from "../../src/components/image-slider"
+
+<!-- Content -->
+<div className="articleContent">
+<section id="introduction">
+
+#### Introduction
+## Insight gathered during discovery interviews showed that salespeople struggle to identify high-potential leads and craft engaging messages, leading to missed opportunities and unresponsive outreach.
+
+<p>
+During our product discovery process, we identified 2 opportunities that we wanted to focus on. The first one was as follows:
+</p>
+
+<quote>
+"It is often difficult for salespeople to identify which leads they should reach out to/the ones with a high potential of obtaining a meeting in the short term."
+</quote>
+
+<p>
+Here are some customer quotes taken directly from interviews that show the issue:
+</p>
+
+<quote>
+<ul>
+    <li>
+    “I often don't know what action I should take for a customer, and frankly, I don't have the time to do it either.”
+    </li>
+    <li>
+    “Because long-term customers keep their original sales rep, when they reply to an automated email, sometimes the rep doesn't notice or report it, meaning we can't catch those missed follow-ups. We often don't realize that outreach has been omitted.”
+    </li>
+    <li>
+    “I only reach out to customers who are in the middle-to-long term segment when I have spare time. I don't schedule it; I just do it when I think, 'I have time now, so I might as well do it”
+    </li>
+</ul>
+</quote>
+
+<Images withZoom name={props.images.lg["OR-tree"]} />
+
+<p>
+The second one is addressed <Link to={"/AI_agent/"}>in a separate case study. </Link>
+In order to address these opportunities, I organized a workshop during which the team and I generated a few ideas that could potentially address these opportunities. 
+</p>
+
+
+</section>
+<section id="generating-and-selecting-solutions">
+
+#### Generating and selecting solutions
+## I led a workshop with the team to prioritize solutions based on their potential impact and associated risks, ultimately selecting the creation of a new home screen in Digima to enhance customer engagement.
+
+<p>
+The team members voted on the ideas that had the highest chance of addressing each opportunity. Each member had 3 votes; the following 3 solutions were selected: 
+</p>
+
+<ul>
+    <li>
+    Improve the current notification system. Eliminate bulk email notifications and allow users to receive only truly essential alerts. (Destination: Email remains; existing chat tools or LINE Mobile require verification)
+    </li>
+    <li>
+    Create a new home screen in Digima displaying customer lists and to-do lists, enabling immediate identification of unattended customers
+    </li>
+    <li>
+    Allow users to choose whether to engage with approached customers and suggest content ideas for outreach.
+    </li>
+</ul>
+
+<p>
+We selected a single idea by surfacing assumptions attached to these ideas and rating them based on how much impact they will have on the success of the idea, the level of risks attached to the assumption if the assumption were to be proven wrong, and how much evidence we already have that the assumption is true. The ideas with the most number of assumptions that carry the most risks if proven wrong and the ones that also have the least amount of evidence, should be prioritized.
+</p>
+
+<p>
+Using this system, we selected the following idea:
+</p>
+
+<ul>
+    <li>Create a new home screen in Digima displaying customer lists and to-do lists, enabling immediate identification of unattended customers</li>
+</ul>
+
+<p>
+And the following assumptions were selected for testing:
+</p>
+
+<ul>
+    <li>Can we provide a list of leads likely to respond to user contact attempts?</li>
+    <li>Will users act on the recommended leads by taking a significant action?</li>
+    <li>When presented with a list of mid-to-long-term customers they should reach out to in Digima, will users regularly use the feature?</li>
+</ul>
+
+<Images withZoom name={props.images.lg["prioritization-board"]} />
+
+
+</section>
+<section id="testing-assumptions">
+
+#### Testing assumptions
+## By rigorously testing assumptions through user-centered experiments, we validated our solution's feasibility and usability, ensuring a data-driven approach to enhancing user engagement.
+
+<p>
+An important part of the product discovery process is to test selected assumptions using small experiments that require minimal effort.
+</p>
+
+
+<p>
+<strong>Assumption 1: </strong>Is it technically possible to provide a list of leads likely to respond to user contact attempts? (Feasibility)
+</p>
+
+<p>
+This assumption addressed the technical feasibility necessary for the solution's core value proposition. This required an internal investigative process led by the engineering discipline of the product trio.
+</p>
+
+<p>
+The engineering team conducted a small-scale proof-of-concept (POC) to test the availability and quality of historical lead data within the existing Digima database. The goal was to quickly determine if the necessary data existed to create a real-time list based on predictive analytics of response likelihood.
+</p>
+
+<p>
+Technical constraints and performance metrics (time required to generate the list, data reliability) were defined as acceptable technical benchmarks prior to the investigation.
+</p>
+
+<p>
+The investigation confirmed that sufficient data existed (or could be sourced) and that the predictive logic could be integrated without requiring a complete re-architecture of Digima (Feasibility assumption validated). If the data infrastructure had proven inadequate, we would have revised the solution to rely on technically simpler criteria.
+</p>
+
+<p>
+<strong>Assumption 2: </strong>Will users act on the recommended content by taking a significant action? (Usability & Behavior)
+</p>
+
+<p>
+This assumption tested the immediate usability and actionability of the proposed interface and content. We needed to verify that the design effectively guided users to perform the desired "significant action" (e.g., initiating contact/setting a meeting).
+</p>
+
+<Images withZoom name={props.images.lg["Usability-testings"]} />
+
+
+<p>
+Using the simple prototype showing a ranked lead list of contacts. I conducted a series of moderated user testing sessions. Participants were given a specific task: "Use this new screen to prepare for your next 30 minutes of outreach and initiate contact with the best lead".
+</p>
+
+<p>
+By conducting this test, I wanted to evaluate/understand the following:
+</p>
+
+<ul>
+    <li>Users notice the new contact list</li>
+    <li>Users understand the meaning and goals of the list and what kind of contacts are displayed on the list</li>
+    <li>Users are able to select a specific contact from the list</li>
+    <li>What criteria do users use to select customers in the list?</li>
+    <li>Users are able to perform a significant action, or mention that they could perform an action on the selected contact</li>
+    <li>What influences a user's decision to contact or not contact a customer on the customer detail page?</li>
+</ul>
+
+<p>
+Success was quantitatively defined by requiring that at least 80% participants must successfully initiate contact with a recommended lead.
+</p>
+
+<Images withZoom name={props.images.lg["First-prototype"]} />
+
+<p>
+The test showed some flaws with the design of the prototype. For example, users had difficulties understanding the list’s purpose and what kind of contacts were displayed in the list. To help solve that issue, I introduced a “Meeting potential“ rating system, which displayed how likely a lead was to respond positively to the user’s contact attempt, reinforcing the purpose of the list and at the same time, helping the user decide which contact they should reach out to first.
+</p>
+
+<Images 
+    withZoom
+    containerType="full" 
+    className="bg-gray-0" 
+    containerWidth="Lg"
+    name={[props.images.lg["new-prototype-evolution-1"], props.images.lg["new-prototype-evolution-2"]]}
+/>
+
+<p>
+Once the success metrics showed that most users were able to initiate contact with a recommended lead, it was the signal that we needed to decide to move on to testing the last main assumption.
+</p>
+
+<p>
+The idea was also abandoned because of the following:
+</p>
+
+<ul>
+    <li>Too difficult and time-consuming to implement</li>
+    <li>Difficult to test individual assumptions and obtain real data because most of them are based on technical assumptions of feasibility</li>
+</ul>
+
+<p>
+<strong>Assumption 3: </strong> Will users regularly re-engage mid-to-long-term customers in Digima if we provide a solution for it? (Desirability & Habit)
+</p>
+
+<p>
+This assumption addressed the fundamental desirability of the solution—whether the new functionality was valuable enough to prompt a shift in salesperson behavior and establish a sustained habit of re-engagement.
+</p>
+
+<p>
+To test this opportunity, we introduced the previously tested list of “Hot leads“ as a new element on the dashboard page as a live prototype. The prototype was only made available to a small and diverse number of accounts and users that were selected based on characteristics such a account industry, user job title, and usage habits. 
+</p>
+
+<p>
+The goal of this simulation was to observe if and how often salespeople spontaneously incorporated checking the "re-engagement list" into their daily routine over a set period (e.g., one week), but also to take that opportunity to gather quantitative data analyzed as part of a funnel, such as:
+</p>
+
+<ul>
+    <li>How many users use the list function?</li>
+    <li>How many users select a contact from the contact list?</li>
+    <li>How many users perform a significant action on a contact?</li>
+</ul>
+
+<p>
+We established the success threshold usage frequency and the percentage of users reaching certain funnel steps upfront to ensure the team was aligned on interpreting the results and to guard against confirmation bias.
+</p>
+
+<p>
+By tracking usage in the live prototype, we gathered early signals on whether the solution was integrated into their workflow and if users were leaving the workflows without completing the stated goal of performing a significant action on a specific contact. This measurement helped us determine if the effort of building the solution was worth the potential long-term benefit.
+</p>
+
+<Images 
+    className="bg-gray-0 p-0" 
+    containerType="full" 
+    containerWidth="Lg"
+    name={props.images.lg["Data"]}
+    captions="A snapshot of some of the research findings."
+/>
+
+</section>
+
+<section id="conclusion">
+
+#### Conclusion
+### The experiment successfully validated the new "Hot lead" list, resulting in a measurable improvement in sales team efficiency. We reduced the number of missed contact replies by [X]% and decreased the percentage of unattended mid-to-long-term leads from [Y]% to [Z]%
+
+### Learnings: The "Successful Failure"
+
+<p>
+While the feature was statistically successful, the rollout highlighted two deeper, structural issues within the application:
+</p>
+
+<ul>
+    <li><strong>Scannability Friction: </strong>We found that customer profile pages were not easily scannable. Even when a lead was identified as "Hot," users struggled to quickly digest the customer's history to decide on the next action.</li>
+    <li><strong>The "Empty List" Problem: </strong>Most importantly, we discovered that many users' "Hot Lead" lists had very few contacts. This revealed a fundamental downstream issue: the list worked, but users simply weren't getting enough replies to populate it.</li>
+</ul>
+
+### Next Steps
+
+<p>
+This realization—that identifying leads wasn't enough if the outreach content itself wasn't engaging—shifted our product focus entirely. We realized that to truly solve the engagement problem, we needed to help salespeople write better messages, not just track a few “hot leads“.
+</p>
+
+<p>
+This insight became the direct catalyst for our next major initiative: The AI Prospecting Agent.
+</p>
+
+</section>
+</div>

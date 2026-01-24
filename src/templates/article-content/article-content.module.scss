@@ -247,4 +247,19 @@
     padding-top: $spacer-4;
   }
 
+  quote{
+    display: block;
+    max-width: $container-sm;
+    font-style: italic;
+    border-left: 4px solid $brand;
+    padding-left: $spacer-3;
+    margin: $spacer-3 auto $spacer-5 auto;
+    color: $gray-600;
+    font-size: $h3-size;
+    @include breakpoint("sm"){
+      padding: 0 $spacer-3; 
+    }
+
+  }
+
 }
