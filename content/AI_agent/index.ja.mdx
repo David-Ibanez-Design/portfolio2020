@@ -1,8 +1,8 @@
 ---
-title: "Transforming lead nurturing: designing an AI-driven prospecting agent for a customer builder and real estate CRM."
+title: "リードナーチャリングの変革：注文住宅業者および不動産会社向けのAI駆動型見込み客発掘エージェントの設計"
 tags: [UserResearch, Prototyping, VisualDesign, DesignSystem]
 path: articles/AI_agent
-synopsis: "Sales representatives encountered challenges and spent considerable time crafting messages that rarely resulted in a positive lead engagement, leading t lost opportunities and prompting users to doubt our product's effectiveness in achieving results."
+synopsis: "営業担当者は、メッセージの作成に多大な時間を費やしても、リードからの好意的な反応が得られることは稀で、機会損失につながり、ユーザーが製品の効果を疑問視する原因となっていました。"
 order: 1
 featured: 1
 displayToc: true
@@ -11,39 +11,55 @@ coverArticle: images/article-cover.png
 menuVignettes: images/menu-vignettes.png
 mobileVignettes: images/mobile-menu-vignettes.png
 suggestedArt: images/suggestedArt.png
+
+imagesXl:
+    - images/POC-screen-and-diagram.png
+
+imagesMd:
+    - images/AI-customization-feature.png
+
+imagesLg: 
+    - images/OR-tree.png
+    - images/prioritization-board-jp.png
+    - images/BPO-Journey-map.png
+    - images/flow-diagram.png
+    - images/POC-conversation-viewer-app.png
+    - images/POC-report-results.png
+    - images/Assumption-1-Survey.png
+
 ---
 
 <!-- Overview -->
 
 <ArticleOverview>
     <Sunnary>
-        Digima is a web-based CRM application that helps small to medium real estate companies understand their customers' needs. Sales representatives encountered challenges and spent considerable time crafting messages that rarely resulted in a positive lead engagement, leading t lost opportunities and prompting users to doubt our product's effectiveness in achieving results.
+        Digimaは、中小規模の不動産会社が顧客のニーズを理解するのを支援するWebベースのCRMアプリケーションです。営業担当者は、メッセージの作成に多大な時間を費やしても、リードからの好意的な反応が得られることは稀で、機会損失につながり、ユーザーが製品の効果を疑問視する原因の一つとなっていました。
     </Sunnary>
     <Problems>
         <ul>
-            <li>Users found it difficult and time-consuming to write messages likely to get responses from leads.</li>
-            <li>Improving the lead nurturing process and potentially reducing the need for dedicated BPO staff.</li>
+            <li>ユーザーは、リードから返信が得られそうなメッセージを書くのが難しく、時間がかかると感じていました。</li>
+            <li>不動産のリードジェネレーションの拡大は、高コストなBPOの人員に依存しているため、大きな課題でした。</li>
         </ul>        
     </Problems>
     <Goals>
         <ul>
-            <li>Evaluate the possibility of creating an automated AI prospecting agent that could generate coherent, effective, and natural-sounding messages.</li>
-            <li>Redesign the product using these tools.</li>
+            <li>一貫性があり、効果的で、自然な響きのメッセージを生成できる自動AI見込み客発掘エージェントを作成する可能性を評価する。</li>
+            <li>これらのツールを使用して製品を再設計する。</li>
         </ul>      
     </Goals>
     <Outcomes>
         <ul>
-            <li>The project showed that an AI agent can create natural messages, proving technical feasibility. However, testing revealed AI output, though accurate, lacked personalized offers, causing high edit times for BPO staff. This shifted the project to a "human-in-the-loop" system.</li>
-            <li>Version 2 added document uploads and customizable AI instructions to fix personalization and boost commercial value. The project highlighted the value of testing small hypotheses to catch major flaws early, saving development time and resources.</li>
+            <li>プロジェクトにより、AIエージェントが自然なメッセージを作成できることが示され、技術的な実現可能性が証明されました。しかし、テストの結果、AIの出力は正確ではあるものの、パーソナライズされた営業オファーに欠けており、BPOスタッフの編集時間が長くなることが判明しました。これにより、プロジェクトは「人間が介入する（human-in-the-loop）」システムへと移行しました。</li>
+            <li>バージョン2では、ドキュメントのアップロードとカスタマイズ可能なAI指示を追加し、パーソナライズの問題を修正して商業的価値を高めました。このプロジェクトは、小さな仮説を検証することで重大な欠陥を早期に発見し、開発時間とリソースを節約することの価値を浮き彫りにしました。</li>
         </ul>        
     </Outcomes>
     <Role>
         <ul>
-            <li>Participating in a product discovery interview and gathering insights into an opportunity-solution tree (OST)</li>
-            <li>Organizing and animating product discovery workshops to select ideas and assumptions</li>
-            <li>Designing experiments to test assumptions, gathering data, analysing results, and making recommendations to the team based on these results.</li>
-            <li>Designing the UI and UX of AI-related features.</li>
-            <li>Participating in BPO interviews, and shadowing sessions, gathering insights, and collaborating with PM on journey map creation</li>
+            <li>プロダクトディスカバリーインタビューに参加し、オポチュニティ・ソリューションツリー（OST）へのインサイトを収集する。</li>
+            <li>プロダクトディスカバリーワークショップを主催・進行し、アイデアと仮説を選定する。</li>
+            <li>仮説を検証するための実験を設計し、データを収集・分析し、チームに推奨事項を提示する。</li>
+            <li>AI関連機能のUIとUXをデザインする。</li>
+            <li>BPOへのインタビューやシャドーイングセッションに参加してインサイトを収集し、PMと協力してジャーニーマップを作成する。</li>
         </ul>   
     </Role>  
 </ArticleOverview>
@@ -52,195 +68,266 @@ import ImageSlider from "../../src/components/image-slider"
 
 <!-- Content -->
 <div className="articleContent">
-<section id="audit">
+<section id="context">
 
-#### Audit
-## The product audit revealed many inconsistencies and user experiences issues, confirming the need for a design system.
-
-<p>
- To understand the needs of the redesign, I first had to evaluate the current product. 
-</p>
+#### 背景
+## プロダクトディスカバリーインタビューの結果、営業チームは時間の制約とパーソナライズされたメッセージ作成の難しさにより、リードエンゲージメントに苦労していることが明らかになり、回答率を向上させるための革新的なソリューションが強く求められていることが浮き彫りになりました。
 
 <p>
-To that end, I went through the entire product interface and took screenshots of menus, buttons, and modals. I created a Google spreadsheet where I grouped each component into categories and gave each one a name.
+プロダクトディスカバリーインタビューのプロセスにおいて、2つの機会が特定されました。1つ目は<Link to={"/discovery/"}>別のケーススタディ</Link>で取り上げています。
+本ケーススタディでは、2つ目の機会に取り組んだ私たちの取り組みについて説明します。
 </p>
+
+<quote>
+「返信が得られる可能性の高いメッセージを書くのは難しく、時間がかかる。」
+</quote>
 
 <p>
-Viewing all the components side by side confirmed why we needed a redesign. There were 130 different colors, 56 different shades of greys, 22 different font sizes and 4 completely different variants of search fields. 
+この機会が導き出されたインタビューから、顧客の声を直接引用します。
 </p>
 
-<p>
-It became clear that what we needed was a well organized, collaborative design system custom-built to meet the company’s needs.
-</p>
-
-
-</section>
-<section id="design-principles">
-
-#### Design Principles
-## Agreeing on what kind of product experience we wanted to deliver to our users helped us stay on track when making difficult decisions.
-
-<p>
-Before I could start exploring visual directions for the new design, the team and I needed to decide on our core principles. 
-</p>
-
-<p>
-These core principles are meant to act as our north star when making difficult product decisions and are the basis around which the product should be built.
-</p>
-
-<p>
-After a few discussions, we came up with the following four principles.
-</p>
-
+<quote>
 <ul>
-    <li><strong>Be purposeful:</strong> Always design with intention and seek to validate your solutions with data when possible.</li>
+    <li>
+    「既存の顧客であっても、セールスオートメーションを使ってメールを送ると、めったに返信が来ない。」
+    </li>
+    <li>
+    「古いリードに再エンゲージメントや『掘り起こし』を試みても、返信が来ることはほとんどない。」
+    </li>
+    <li>
+    「リードナーチャリングの努力がほとんど成果を生んでいないと感じる。」
+    </li>
 </ul>
+</quote>
 
-<ul>
-    <li><strong>Provide clarity:</strong> Ensuring consistent, cohesive user experiences by applying the same solutions to the same problems. Changing patterns and workflows familiar to existing users only when doing so is a definite improvement. (consistency trump originality and coherence trump consistency).</li>
-</ul>
-
-<ul>
-    <li><strong>Design Iteratively:</strong> No one solution will be perfect the first time. Be patient, learn from feedback, and improve user experience Iteratively.</li>
-</ul>
-
-<ul>
-    <li><strong>Foster collaboration:</strong> Software development is a team sport. A design cannot exist without the support of others, so learning to implicate them into your process will only make for better designs.</li>
-</ul>
-</section>
-<section id="visual-direction">
-
-#### Visual Direction
-## Before I could start redesigning the product and building the design system, we needed to decide on a visual direction.
+<Images withZoom name={props.images.lg["OR-tree"]} />
 
 <p>
-Once we had an idea of what kind of product experience we wanted to deliver, I started iterating on a few potential design directions for the main screens of the application. 
+ディスカバリーインタビューにより、顧客はポータルサイトやWebフォームからの新規または既存のリードを育成するための時間とリソースが不足していることが明らかになりました。効果的なナーチャリングには高度なパーソナライズが必要ですが、これらのリードは通常コンバージョン率が低いため、営業スタッフはそれを他者に委ねたり、完全に省略したりすることがよくあります。一部の注文住宅業者のユーザーからは、時間がないからというわけではなく、単に顧客を追いかけるという考えが好きではないため、自ら営業活動を行うのを避けているという声さえ聞かれました。
 </p>
 
+<p>
+実は、ビジネスサイドでは過去にこの機会に対処するため、顧客に代わってリードのフォローアップを行う専任のBPOチームを設立したことがありました。
+</p>
 
 <p>
-After a few rounds of feedbacks, the team and I ultimately selected one final style. 
+このソリューションはある程度効果的でしたが、私たちにとっても顧客にとってもコストがかかり、多くのアカウントに拡張するのは困難でした。
+</p>
+
+<p>
+この機会に対処するための過去のビジネス上の取り組みを考慮し、私はワークショップを開催しました。その中で、チームと私はこの機会にどのように対処するかについていくつかのアイデアを出しました。
 </p>
 
 </section>
-<section id="structure">
+<section id="generating-and-selecting-solutions">
 
-#### Structure
-## An agreed-upon and straightforward structure for our design system helped promote the shared understanding necessary to reach our goal of improving efficiency.
-
-<p>
-Now that I had an idea of what the overall solution will look like, it was time to get into the details of how the design system will be structured. 
-</p>
+#### ソリューションの生成と選定
+## 仮説、リスク、証拠に基づいてアイデアに優先順位を付けた結果、最も有望なソリューションとして自動AI返信エージェントが選定されました。
 
 <p>
-I started by organizing and categorizing every component identified during the current product version’s audit. During my conversion with developers, I noticed that often, they were using different names when referring to UI elements. 
-</p>
-
-<p>
-Since one of the goals of the design system was to create a shared understanding, it was essential to decide on the right names collectively and grouped families of UI components based on their similarities.
-</p>
-
-<p>
-After a few backs and forths, we came up with the following organization. 
-</p>
-
-</section>
-<section id="components">
-
-#### Components
-## Designing the components was a long and meticulous process, but one that will significantly increase feature design quality and delivery time. 
-
-<p>
-Once the design system structure was defined, I got to work converting the UI elements listed during the audit phase to the new design style established earlier.
-</p>
-
-<p>
-In my initial implementation, each UI element was created <a href="https://www.sketch.com/docs/libraries/" target="_blank" rel="noreferrer">as a single Sketch library.</a> This organization, however, made it difficult to quickly navigate through the entire set, so to address this issue, I also created a master file that acted as an entry point.
-</p>
-
-<p>
-However, after using this Sketch library for a couple of years, it becomes clear that:
+アイデアを出した後、チームメンバーは、その機会に対処できる可能性が最も高いアイデアに投票しました。各メンバーは3票を持ち、以下の3つのソリューションが選ばれました。
 </p>
 
 <ul>
-    <li>Constantly having to switch between files to update a component was very inefficient which means that components could easily end up out of date</li>
-    <li>Despite the carefully crafted component structure, I was still experiencing slow performances</li>
-    <li>Prototyping functionalities in Sketch were lacking forcing me to use a separate tool</li>
+    <li>リアルタイム「返信スコア」＆提案：メッセージ作成中にAIアシスタントが分析を行います。「返信可能性」スコア（例：85%）を提供し、改善のための具体的な提案を行います。</li>
+    <li>自動AI返信エージェント</li>
+    <li>メッセージ作成時にAIを使って顧客にコンテンツを提案する。</li>
 </ul>
 
 <p>
-Therefore for the reasons listed above, at the beginning of 2023, I decided to switch the entire design system to Figima.
-</p>
-
-
-</section>
-<section id="documentation">
-
-#### Documentation
-## The documentation site helped the team move from design to implementation quickly by eliminating guess-work.
-
-<p>
-To forge a shared understanding of the system between me the designer and developers and facilitate implementation, we needed a documentation site. With the help of the development team, I started working on creating the website and adding components to it.
+私たちは、これらのアイデアに付随する仮説を洗い出し、それらがアイデアの成功にどれだけ影響を与えるか、仮説が間違っていた場合のリスクレベル、そしてその仮説が真実であるという証拠をすでにどれだけ持っているかに基づいて評価し、1つのアイデアを選定しました。間違っていた場合に最もリスクが高く、かつ証拠が最も少ない仮説を多く含むアイデアを優先すべきです。
 </p>
 
 <p>
-However, after a while and despite my best efforts, it became clear that the developers' adoption was very low.
-</p>
-
-<p>
-Part of the solution was to move the current documentation site over to Storybook and integrate it directly into the current web application codebase.
-</p>
-
-
-</section>
-
-<section id="future-improvements">
-
-#### Future Improvements
-## To break the silos that divided design and development, I believed that design had to move closer to development.
-
-<p>
-The first version of our design system was based on Sketch and a custom-made documentation site. Despite providing substantial design process improvements that benefited the whole team, it was never really adopted by developers. 
-</p>
-
-<p>
-In insight it was obvious why; design and development were still happening in their respective silos and as long as that was the case adoption will likely remain low.
-</p>
-<p>
-To break that silos, I believed that design had to move closer to development because at the end of the day what mattered the most was not what was displayed in a given design tool, but what was shipped to customers.
-</p>
-
-<p>
-To make that happen here are a few things that were done and/or are in progress:
+このシステムを使用して、以下のアイデアを選定しました。
 </p>
 
 <ul>
-    <li>Share design tokens across design and development</li>
-    <li>Setup linting rules in the codebase to enforce the use of design tokens</li>
-    <li>Refactor the code base to be component-driven</li>
-    <li>Document components in Storybook and reference their design version (and vice-versa)</li>
-    <li>Refactor the design system component structure so it uses the same structure as the codebase</li>
+    <li>AIを使って、一貫性があり、効果的で、自然な響きのメッセージを費用対効果の高い方法で生成できるか？</li>
+    <li>AIを使ってメッセージを生成することで、専任のBPOスタッフの必要性を減らす、あるいはなくすことができるか？</li>
+    <li>ナーチャリングプロセスのどの部分をAIが効果的に処理でき、どの部分を人間が処理する必要があるか？</li>
 </ul>
+
+<Images withZoom name={props.images.lg["prioritization-board-jp"]} />
+
+</section>
+<section id="initial-research-efforts">
+
+#### 初期の調査活動
+## インタビューやシャドーイングを通じてBPOのワークフローを綿密に分析することで、インサイトを戦略的なジャーニーマップへと変換し、革新的なAI見込み客発掘エージェント機能の基盤を築きました。
+
+<p>
+仮説の一部はBPOスタッフの業務を代替または削減することに関するものだったため、仮説検証に入る前に、まず彼らのワークフローを段階ごとに詳細に理解することが不可欠でした。
+</p>
+
+<p>
+そのために、私とPMは、数名のBPOスタッフおよび顧客へのインタビューを実施しました。また、彼らが当社の製品を使ってリードにアプローチしている様子をシャドーイングしました。これにより、彼らのワークフローを深く理解することができ、PMと私はインタビューやシャドーイングセッションで収集したインサイトをジャーニーマップにまとめました。
+</p>
+
+<Images withZoom name={props.images.lg["BPO-Journey-map"]} />
+
+<p>
+このジャーニーマップは、後にAI見込み客発掘エージェント機能のフロー図となるものの基礎として使用されました。
+</p>
+
+<Images withZoom name={props.images.lg["flow-diagram"]} />
+
+</section>
+<section id="testing-assumptions" data-title="Testing assumptions">
+
+#### 仮説の検証
+## 小規模な実験を通じて仮説を検証した結果、効果的なメッセージ生成におけるAIの可能性が明らかになる一方で、人間の介入が依然として不可欠な領域も特定されました。
+
+<p>
+BPOスタッフのワークフローがどのようなものか明確に理解できたので、次は、最小限の労力で済む小規模な実験を行い、以前に選定した仮説の検証を開始する時が来ました。
+</p>
+
+<p>
+<strong>仮説1：</strong> AIを使って、一貫性があり、自然な響きのメッセージを費用対効果の高い方法で生成できるか？
+</p>
+
+<p>
+この仮説は、ソリューションの核心的な価値提案に必要な技術的実現可能性を問うものでした。
+</p>
+
+<p>
+私の設計と作成した実験に基づき、エンジニアリングチームは、4つの異なるAIモデルのSMSメッセージ返信出力を比較するための小規模な概念実証（POC）を開発しました。
+</p>
+
+<Images 
+    withZoom
+    className="bg-gray-0" 
+    containerType="full" 
+    containerWidth="Xl" 
+    name={props.images.xl["POC-screen-and-diagram"]}
+/>
+
+<p>
+目標は2つありました。
+</p>
+
+<ul>
+    <li>以下の4つの基準に基づいて、各モデルが生成したコンテンツの品質を評価する。</li>
+        <ul>
+            <li>顧客のプロフィール情報/過去のコミュニケーションに対する正確性と関連性。</li>
+            <li>目的意識：メッセージ自体が、会議の予約など明確な目標を持って書かれているか？メッセージに明確な提案が含まれているか？</li>
+            <li>安全性：メッセージに有害または不適切な表現が含まれていないか？</li>
+            <li>言語品質とトーン：メッセージのトーンは自然で理解しやすいか？</li>
+        </ul>
+    <li>各モデルのメッセージ生成ごとのコストを見積もり、その機能が経済的に実行可能かどうかを把握する。</li>
+
+</ul>
+<p>
+PMは、営業経験のある社内ユーザーを募り、POCを操作してもらいました。既存のSMS返信に対して4つのメッセージが生成され、オペレーターは上記の基準に基づいて作成されたアンケートを使用して、生成された各メッセージを評価するよう求められました。アンケート結果はTableauレポートで分析され、評価基準ごとにAIモデルごとのスコアが算出されました。
+</p>
+
+<Images withZoom name={props.images.lg["POC-report-results"]} />
+<Images withZoom name={props.images.lg["POC-conversation-viewer-app"]} />
+<Images withZoom name={props.images.lg["Assumption-1-Survey"]} />
+
+<p>
+この実験により、少なくとも1つのAIモデルについては、生成されたメッセージは完璧ではないものの、ユーザーに販売する機能になり得る十分な品質と低コストであることが確認できました。また、AIでは明らかに対応できない状況があることも発見し、特定のケースでは人間が介入する（human-in-the-loop）方法が間違いなく必要であることも分かりました。
+</p>
+
+<p>
+私の発見と推奨事項をPMと共有した後、彼女は、次の仮説の検証に進み、AIエージェントの実験を返信だけでなく、BPOの責任の一部であった、最近活動のあった新規および既存のリードに送信されるアウトリーチメッセージにも拡大するのに十分な結果であると判断しました。
+</p>
+
+
+<p>
+<strong>仮説2：</strong> AIを使ってメッセージを生成することで、専任のBPOスタッフの必要性を減らす、あるいはなくすことができるか？
+</p>
+
+<p>
+その仮説を検証するために、前回の実験で使用したSMS返信POCを、私が設計した新しい実験に基づいてエンジニアが修正しました。これには、以前選定されたAIモデルのみを含め、顧客からの返信ではなく、新規リードと最近アクティブになった既存リードの2種類のリード向けにアウトリーチSMSメッセージを生成するようにしました。この実験の目標は2つありました。
+</p>
+
+<ul>
+    <li>前回の実験で使用したものと同じアンケートを使用し、以前に定義された基準に基づいて生成された応答を評価し、AIの応答を改善し続ける。</li>
+    <li>BPOスタッフが生成されたメッセージを編集するのにかかった時間と、介入が必要だった回数を追跡する。</li>
+</ul>
+
+<p>
+この実験により、生成されたメッセージの品質は概ね良好であるものの、明確でパーソナライズされたビジネス提案に欠けており、その結果、メッセージごとの平均編集時間が長すぎることが判明しました。これは、コンバージョン率の低下につながる可能性が高いため、重大な問題でした。
+</p>
+
+<p>
+これらの問題に対処するためにチームで協力し、ビジネスの特性や強みをAIに伝えるためのドキュメントをアップロードできる機能を追加し、エージェントの提案を改善できるようにすることを決定しました。また、顧客タイプ（売り手、買い手、注文住宅業者など）に基づいてAIへの指示をカスタマイズできる機能も追加し、各リードの特性に合わせてAIの提案を調整できるようにしました。
+</p>
+
+<Images withZoom name={props.images.md["AI-customization-feature"]} />
+
+<p>
+<strong>仮説3：</strong> ナーチャリングプロセスのどの部分をAIが効果的に処理でき、どの部分を依然として人間が処理する必要があるか？
+</p>
+
+<p>
+以前作成したBPOスタッフのジャーニーマップと私が設計したSMS返信実験の結果を使用して、すべてのやり取りを3つのカテゴリに分類しました。
+</p>
+
+<ul>
+    <li>AIがメッセージを生成すべきではない状況。これらは、「了解しました」や「ありがとう」など、返信を必要としないユーザーから送信されたSMSメッセージです。</li>
+    <li>ユーザーが価格や特定エリアの土地の空き状況について尋ねた場合など、AIが担当者に返信を引き継ぐべき状況。</li>
+    <li>ユーザーがこれ以上の連絡を望まない場合や、すでに他社と契約したことを知らせてきた場合など、AIがユーザーに返信し、小さなタスクを実行することが許可される状況。</li>
+</ul>
+
+<p>
+これらの各ケースをテストするために、エンジニアリングチームはPOCを修正し、ユーザーからの返信を受信するたびに、意図されたAIのアクションを含むSlack通知が送信されるようにしました。目標は2つありました。
+</p>
+
+<ul>
+    <li>AIが会話のシナリオを識別できたかどうかを評価する。</li>
+    <li>AIが適切なアクションをとることができたかどうかを評価する。</li>
+</ul>
+
+<p>
+これらの目標を達成する上でのAIの有効性を測定するために、Slack通知が送信されるたびにPOCを操作するスタッフが記入する必要がある簡単なアンケートを作成しました。
+</p>
+
+<p>
+結果はTableauレポートで分析されました。この実験は現在も継続中です。
+</p>
+
 </section>
 
 <section id="conclusion">
 
-#### Conclusion
-## Creating a design system was necessary to address the scaling and consistency issues that led to a product redesign. 
+#### 結論
+### 単なるジェネレーターから「人間が介入する（human-in-the-loop）」システムへとAIプロジェクトを変革することは、パーソナライズのギャップを埋め、商業的な実行可能性を高める上で極めて重要でした。
+
+### 成果とインパクト
 
 <p>
-This project turned out to be a massive undertaking spanning more than a year and involving several departments.
+実験を通じて、AIエージェントが一貫性のある自然なメッセージを生成できることを検証し、プロジェクトの技術的な実現可能性を証明することに成功しました。
 </p>
 
 <p>
-However, these efforts paid off:
+しかし、最も重要なインサイトは、仮説2の検証から得られました。AIの出力は正確であるものの、パーソナライズされたビジネス提案に欠けており、その結果、BPOスタッフの編集時間が許容できないほど長くなることがわかりました。この定性的な発見が鍵となり、プロジェクトは単なる「AIジェネレーター」から「人間が介入する（human-in-the-loop）」システムへと方向転換しました。
+</p>
+
+<p>
+これが、v2に向けた私のデザインソリューション、つまりドキュメントのアップロードとカスタマイズ可能なAI指示の追加に直結しました。実験から直接生まれたこの機能は、パーソナライズのギャップを解消し、AIエージェントを商業的に実行可能で真に有用なものにするための鍵となります。
+</p>
+
+### 次のステップ
+<p>
+このディスカバリーフェーズは成功しましたが、作業は継続中です。私の当面の次のステップはデザインに焦点を当てたものになります。
 </p>
 
 <ul>
-    <li><strong>As a designer</strong>, it allowed me to create mockups in a fraction of the time and with a higher level of precision than ever before; it also taught me the depth and complexity of thinking involved in crafting every little piece of an application’s user experience.</li>
-    <li><strong>For developers</strong>, being able to rely on clear documentation and reuse existing patterns allows them to focus on writing tests and efficient code rather than continually tweaking CSS values.</li>
-    <li><strong>For the business</strong>, the productivity gains we’ve seen in new feature development have more than justified the investments we made in adopting the system.</li>
+    <li><strong>「ハンドオフ」体験のデザイン：</strong> 完全な「人間が介入する（human-in-the-loop）」フローをデザインし、プロトタイプを作成します。これには、営業担当者がアラートを受け取り（Slack POCを拡張）、AIの提案するアクションを確認し、アプリ内でシームレスに会話を引き継ぐためのUIが含まれます。</li>
+    <li><strong>「トレーニング」機能のユーザビリティテスト：</strong> 新しい「ドキュメントアップロード」と「AI指示」設定についてユーザビリティテストを実施します。ユーザーがAIエージェントを効果的に「トレーニング」する方法を理解するには、明確なガイダンスとフィードバックが必要になるというのが私の仮説です。</li>
+    <li><strong>「ジャストインタイム」データ収集の検討：</strong> 調査の結果、リード情報が少ない場合、AIは苦戦することがわかりました。プロセスの早い段階で営業担当者がより詳細な連絡先情報を取得できるようにするための新しいUIパターンを検討します。これにより、結果としてAIにより良いデータを提供できるようになります。</li>
 </ul>
+
+### 個人的な振り返り
+<p>
+このプロジェクトは、忠実度の高いデザインに着手する前にプロジェクトのリスクを軽減することについての強力な教訓となりました。私たちの当初のアイデアである完全自動化されたAIエージェントは巨大で、証明されていない大きな仮説を伴っていました。
+</p>
+
+<p>
+問題を小さく検証可能な仮説に分解することで、シンプルなPOCを使用して、発見するのに数ヶ月のエンジニアリングを要したであろう重大な欠陥（パーソナライズの欠如）を見つけることができました。初期段階のディスカバリーにおいてデザイナーの最も価値ある役割は、学習に必要な最小限の成果物を作成することであることが多いと、改めて認識しました。このケースでは、ジャーニーマップとシンプルな内部ツールが、間違った製品を作ることから私たちを救ってくれました。
+</p>
 
 </section>
 </div>

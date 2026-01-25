@@ -1,5 +1,5 @@
 ---
-title: "Transforming Sales Engagement: A User-Centered Approach to Improving Lead Interaction in Digima"
+title: "営業エンゲージメントの変革：Digimaにおけるリードとの対話を改善するためのユーザー中心のアプローチ"
 tags: [UserResearch, Prototyping, VisualDesign, DesignSystem]
 path: articles/AI_agent
 order: 5
@@ -10,38 +10,47 @@ coverArticle: images/article-cover.png
 menuVignettes: images/menu-vignettes.png
 mobileVignettes: images/mobile-menu-vignettes.png
 suggestedArt: images/suggestedArt.png
+imagesLg:
+    - images/OR-tree.png
+    - images/prioritization-board.png
+    - images/user-testing-spreadsheet.png
+    - images/Usability-testings.png
+    - images/First-prototype.png
+    - images/new-prototype-evolution-1-jp.png
+    - images/new-prototype-evolution-2-jp.png
+    - images/Data.png
 ---
 
 <!-- Overview -->
 
 <ArticleOverview>
     <Sunnary>
-        Digima is a web-based CRM application that helps small to medium real estate companies understand their customers' needs. Sales personnel struggled to identify leads likely to result in meetings, causing missed opportunities and leading users to question our product’s ability to deliver results.
+        Digimaは、中小規模の不動産会社が顧客のニーズを理解するのを支援するWebベースのCRMアプリケーションです。営業担当者は、会議につながる可能性の高いリードを特定するのに苦労しており、機会損失につながり、ユーザーが製品の効果を疑問視する原因の一つとなっていました。
     </Sunnary>
     <Problems>
         <p>
-            Discovery interviews showed salespersons struggled to identify leads with high meeting potential to prioritize outreach.
+            ディスカバリーインタビューにより、営業担当者は、アプローチの優先順位をつけるために、会議につながる可能性の高いリードを特定するのに苦労していることが明らかになりました。
         </p>        
     </Problems>
     <Goals>
         <p>
-           Design and validate a solution that would help salespeople efficiently identify and act on high-value leads. This involved rigorously testing assumptions about technical feasibility, usability (Would they act on it?), and desirability (Would they adopt it as a habit?).
+           営業担当者が価値の高いリードを効率的に特定し、行動を起こすのを支援するソリューションを設計し、検証する。これには、技術的な実現可能性、ユーザビリティ（彼らはそれに基づいて行動するか？）、および望ましさ（彼らはそれを習慣として採用するか？）に関する仮説を厳密に検証することが含まれます。
         </p>      
     </Goals>
     <Outcomes>
-        <p>The experiment successfully validated the new "Hot lead" list, which reduced the number of missed contact replies and unattended leads. Critically, the process also uncovered deeper, fundamental problems:</p>
+        <p>実験により、新しい「ホットリード」リストが正常に検証され、見逃された連絡先への返信や放置されたリードの数が減少しました。重要なことに、このプロセスは、より深く根本的な問題も明らかにしました。</p>
         <ul>
-            <li>Customer profile pages were not easily scannable, making it hard for users to act on the identified hot leads.</li>
-            <li>The low number of contacts on many "Hot lead" lists revealed a more fundamental issue with the quality of content being sent, which pointed the team toward exploring new solutions like AI-generated content.</li>
+            <li>顧客プロフィールページはスキャンしにくく、ユーザーが特定されたホットリードに対して行動を起こすのが困難でした。</li>
+            <li>多くの「ホットリード」リストの連絡先数が少ないことから、送信されているコンテンツの品質に根本的な問題があることが明らかになり、チームはAI生成コンテンツのような新しいソリューションを模索するようになりました。</li>
         </ul>        
     </Outcomes>
     <Role>
         <ul>
-            <li>Participating in a product discovery interview and gathering insights into an opportunity-solution tree (OST).</li>
-            <li>Organizing and animating product discovery workshops to select ideas and assumptions.</li>
-            <li>Designing experiments to test assumptions, gathering data, analysing results, and making recommendations to the team based on these results.</li>
-            <li>Conducting moderated user testing.</li>
-            <li>Designing the UI and UX of experiments and final designs.</li>
+            <li>プロダクトディスカバリーインタビューに参加し、オポチュニティ・ソリューションツリー（OST）へのインサイトを収集する。</li>
+            <li>プロダクトディスカバリーワークショップを主催・進行し、アイデアと仮説を選定する。</li>
+            <li>仮説を検証するための実験を設計し、データを収集・分析し、その結果に基づいてチームに推奨事項を提示する。</li>
+            <li>モデレートされたユーザーテストを実施する。</li>
+            <li>実験および最終デザインのUIとUXをデザインする。</li>
         </ul>   
     </Role>  
 </ArticleOverview>
@@ -50,195 +59,247 @@ import ImageSlider from "../../src/components/image-slider"
 
 <!-- Content -->
 <div className="articleContent">
-<section id="audit">
+<section id="introduction">
 
-#### Audit
-## The product audit revealed many inconsistencies and user experiences issues, confirming the need for a design system.
+#### はじめに
+## ディスカバリーインタビューで収集されたインサイトにより、営業担当者はポテンシャルの高いリードを特定し、魅力的なメッセージを作成するのに苦労しており、機会損失や反応のないアプローチにつながっていることが明らかになりました。
 
 <p>
- To understand the needs of the redesign, I first had to evaluate the current product. 
+プロダクトディスカバリーのプロセスにおいて、私たちは注力したい2つの機会を特定しました。1つ目は以下の通りです。
 </p>
 
-<p>
-To that end, I went through the entire product interface and took screenshots of menus, buttons, and modals. I created a Google spreadsheet where I grouped each component into categories and gave each one a name.
-</p>
+<quote>
+「営業担当者にとって、どのアプローチすべきリードか、あるいは短期的に会議を獲得できる可能性が高いリードを特定するのは難しいことがよくある。」
+</quote>
 
 <p>
-Viewing all the components side by side confirmed why we needed a redesign. There were 130 different colors, 56 different shades of greys, 22 different font sizes and 4 completely different variants of search fields. 
+この課題を示しているインタビューからの直接の顧客の声をいくつか紹介します。
 </p>
 
+<quote>
+<ul>
+    <li>
+    「顧客に対してどのようなアクションを取るべきかわからないことがよくあるし、正直なところ、それをする時間もない。」
+    </li>
+    <li>
+    「長期の顧客は元の営業担当者が担当し続けるため、自動メールに返信があっても、担当者が気づかなかったり報告しなかったりすることがあり、フォローアップの漏れを把握できない。アプローチが漏れていることに気づかないことがよくある。」
+    </li>
+    <li>
+    「中長期セグメントの顧客には、時間があるときにしかアプローチしない。スケジュールは立てず、『今時間があるからやっておこう』と思ったときにやるだけだ。」
+    </li>
+</ul>
+</quote>
+
+<Images withZoom name={props.images.lg["OR-tree"]} />
+
 <p>
-It became clear that what we needed was a well organized, collaborative design system custom-built to meet the company’s needs.
+2つ目は<Link to={"/AI_agent/"}>別のケーススタディ</Link>で取り上げています。
+これらの機会に対処するために、私はワークショップを開催し、チームと共にこれらの機会に対処できる可能性のあるいくつかのアイデアを出しました。
 </p>
 
 
 </section>
-<section id="design-principles">
+<section id="generating-and-selecting-solutions">
 
-#### Design Principles
-## Agreeing on what kind of product experience we wanted to deliver to our users helped us stay on track when making difficult decisions.
-
-<p>
-Before I could start exploring visual directions for the new design, the team and I needed to decide on our core principles. 
-</p>
+#### ソリューションの生成と選定
+## 私はチームとのワークショップを主導し、潜在的なインパクトと関連するリスクに基づいてソリューションに優先順位を付け、最終的に顧客エンゲージメントを高めるためにDigimaに新しいホーム画面を作成することを選定しました。
 
 <p>
-These core principles are meant to act as our north star when making difficult product decisions and are the basis around which the product should be built.
-</p>
-
-<p>
-After a few discussions, we came up with the following four principles.
+チームメンバーは、各機会に対処できる可能性が最も高いアイデアに投票しました。各メンバーは3票を持ち、以下の3つのソリューションが選ばれました。
 </p>
 
 <ul>
-    <li><strong>Be purposeful:</strong> Always design with intention and seek to validate your solutions with data when possible.</li>
+    <li>
+    現在の通知システムを改善する。大量のメール通知を排除し、ユーザーが本当に重要なアラートのみを受信できるようにする。（送信先：メールは維持。既存のチャットツールやLINEモバイルは検証が必要）
+    </li>
+    <li>
+    顧客リストとToDoリストを表示する新しいホーム画面をDigimaに作成し、放置されている顧客を即座に特定できるようにする。
+    </li>
+    <li>
+    ユーザーがアプローチした顧客とエンゲージするかどうかを選択できるようにし、アプローチのためのコンテンツアイデアを提案する。
+    </li>
 </ul>
 
-<ul>
-    <li><strong>Provide clarity:</strong> Ensuring consistent, cohesive user experiences by applying the same solutions to the same problems. Changing patterns and workflows familiar to existing users only when doing so is a definite improvement. (consistency trump originality and coherence trump consistency).</li>
-</ul>
-
-<ul>
-    <li><strong>Design Iteratively:</strong> No one solution will be perfect the first time. Be patient, learn from feedback, and improve user experience Iteratively.</li>
-</ul>
-
-<ul>
-    <li><strong>Foster collaboration:</strong> Software development is a team sport. A design cannot exist without the support of others, so learning to implicate them into your process will only make for better designs.</li>
-</ul>
-</section>
-<section id="visual-direction">
-
-#### Visual Direction
-## Before I could start redesigning the product and building the design system, we needed to decide on a visual direction.
-
 <p>
-Once we had an idea of what kind of product experience we wanted to deliver, I started iterating on a few potential design directions for the main screens of the application. 
-</p>
-
-
-<p>
-After a few rounds of feedbacks, the team and I ultimately selected one final style. 
-</p>
-
-</section>
-<section id="structure">
-
-#### Structure
-## An agreed-upon and straightforward structure for our design system helped promote the shared understanding necessary to reach our goal of improving efficiency.
-
-<p>
-Now that I had an idea of what the overall solution will look like, it was time to get into the details of how the design system will be structured. 
+私たちは、これらのアイデアに付随する仮説を洗い出し、それらがアイデアの成功にどれだけ影響を与えるか、仮説が間違っていた場合のリスクレベル、そしてその仮説が真実であるという証拠をすでにどれだけ持っているかに基づいて評価し、1つのアイデアを選定しました。間違っていた場合に最もリスクが高く、かつ証拠が最も少ない仮説を多く含むアイデアを優先すべきです。
 </p>
 
 <p>
-I started by organizing and categorizing every component identified during the current product version’s audit. During my conversion with developers, I noticed that often, they were using different names when referring to UI elements. 
-</p>
-
-<p>
-Since one of the goals of the design system was to create a shared understanding, it was essential to decide on the right names collectively and grouped families of UI components based on their similarities.
-</p>
-
-<p>
-After a few backs and forths, we came up with the following organization. 
-</p>
-
-</section>
-<section id="components">
-
-#### Components
-## Designing the components was a long and meticulous process, but one that will significantly increase feature design quality and delivery time. 
-
-<p>
-Once the design system structure was defined, I got to work converting the UI elements listed during the audit phase to the new design style established earlier.
-</p>
-
-<p>
-In my initial implementation, each UI element was created <a href="https://www.sketch.com/docs/libraries/" target="_blank" rel="noreferrer">as a single Sketch library.</a> This organization, however, made it difficult to quickly navigate through the entire set, so to address this issue, I also created a master file that acted as an entry point.
-</p>
-
-<p>
-However, after using this Sketch library for a couple of years, it becomes clear that:
+このシステムを使用して、以下のアイデアを選定しました。
 </p>
 
 <ul>
-    <li>Constantly having to switch between files to update a component was very inefficient which means that components could easily end up out of date</li>
-    <li>Despite the carefully crafted component structure, I was still experiencing slow performances</li>
-    <li>Prototyping functionalities in Sketch were lacking forcing me to use a separate tool</li>
+    <li>顧客リストとToDoリストを表示する新しいホーム画面をDigimaに作成し、放置されている顧客を即座に特定できるようにする。</li>
 </ul>
 
 <p>
-Therefore for the reasons listed above, at the beginning of 2023, I decided to switch the entire design system to Figima.
+そして、以下の仮説が検証のために選ばれました。
 </p>
+
+<ul>
+    <li>ユーザーのアプローチに反応する可能性が高いリードのリストを提供できるか？</li>
+    <li>ユーザーは推奨されたリードに対して、重要なアクションを起こすか？</li>
+    <li>Digima内でアプローチすべき中長期の顧客リストが提示された場合、ユーザーはその機能を定期的に使用するか？</li>
+</ul>
+
+<Images withZoom name={props.images.lg["prioritization-board"]} />
 
 
 </section>
-<section id="documentation">
+<section id="testing-assumptions">
 
-#### Documentation
-## The documentation site helped the team move from design to implementation quickly by eliminating guess-work.
-
-<p>
-To forge a shared understanding of the system between me the designer and developers and facilitate implementation, we needed a documentation site. With the help of the development team, I started working on creating the website and adding components to it.
-</p>
+#### 仮説の検証
+## ユーザー中心の実験を通じて仮説を厳密に検証することで、ソリューションの実現可能性とユーザビリティを確認し、ユーザーエンゲージメントを向上させるためのデータ駆動型のアプローチを確実にしました。
 
 <p>
-However, after a while and despite my best efforts, it became clear that the developers' adoption was very low.
-</p>
-
-<p>
-Part of the solution was to move the current documentation site over to Storybook and integrate it directly into the current web application codebase.
+プロダクトディスカバリープロセスの重要な部分は、最小限の労力で済む小規模な実験を使用して、選定された仮説を検証することです。
 </p>
 
 
-</section>
-
-<section id="future-improvements">
-
-#### Future Improvements
-## To break the silos that divided design and development, I believed that design had to move closer to development.
-
 <p>
-The first version of our design system was based on Sketch and a custom-made documentation site. Despite providing substantial design process improvements that benefited the whole team, it was never really adopted by developers. 
+<strong>仮説1：</strong> ユーザーのアプローチに反応する可能性が高いリードのリストを提供することは技術的に可能か？（実現可能性）
 </p>
 
 <p>
-In insight it was obvious why; design and development were still happening in their respective silos and as long as that was the case adoption will likely remain low.
-</p>
-<p>
-To break that silos, I believed that design had to move closer to development because at the end of the day what mattered the most was not what was displayed in a given design tool, but what was shipped to customers.
+この仮説は、ソリューションの核心的な価値提案に必要な技術的実現可能性を問うものでした。これには、プロダクトトリオのエンジニアリング部門主導による内部調査プロセスが必要でした。
 </p>
 
 <p>
-To make that happen here are a few things that were done and/or are in progress:
+エンジニアリングチームは、既存のDigimaデータベース内の過去のリードデータの可用性と品質をテストするために、小規模な概念実証（POC）を実施しました。目標は、反応の可能性の予測分析に基づいてリアルタイムリストを作成するために必要なデータが存在するかどうかを迅速に判断することでした。
+</p>
+
+<p>
+技術的な制約とパフォーマンス指標（リスト生成にかかる時間、データの信頼性）は、調査に先立ち、許容可能な技術的ベンチマークとして定義されました。
+</p>
+
+<p>
+調査の結果、十分なデータが存在する（または調達可能である）こと、およびDigimaの完全な再構築を必要とせずに予測ロジックを統合できることが確認されました（実現可能性の仮説が検証されました）。データインフラが不十分であることが判明した場合、技術的により単純な基準に依存するようにソリューションを修正していたでしょう。
+</p>
+
+<p>
+<strong>仮説2：</strong> ユーザーは推奨されたコンテンツに対して、重要なアクションを起こすか？（ユーザビリティと行動）
+</p>
+
+<p>
+この仮説は、提案されたインターフェースとコンテンツの即時のユーザビリティと実行可能性をテストしました。デザインがユーザーを効果的に導き、望ましい「重要なアクション」（例：連絡の開始/会議の設定）を実行させるかどうかを確認する必要がありました。
+</p>
+
+<Images withZoom name={props.images.lg["Usability-testings"]} />
+
+
+<p>
+ランク付けされた連絡先のリードリストを表示するシンプルなプロトタイプを使用して、私は一連のモデレートされたユーザーテストセッションを実施しました。参加者には、「この新しい画面を使用して、次の30分間のアプローチの準備をし、最適なリードに連絡を開始してください」という具体的なタスクが与えられました。
+</p>
+
+<p>
+このテストを実施することで、以下を評価/理解したいと考えました。
 </p>
 
 <ul>
-    <li>Share design tokens across design and development</li>
-    <li>Setup linting rules in the codebase to enforce the use of design tokens</li>
-    <li>Refactor the code base to be component-driven</li>
-    <li>Document components in Storybook and reference their design version (and vice-versa)</li>
-    <li>Refactor the design system component structure so it uses the same structure as the codebase</li>
+    <li>ユーザーが新しい連絡先リストに気づくか</li>
+    <li>ユーザーがリストの意味と目的、およびどのような連絡先がリストに表示されているかを理解しているか</li>
+    <li>ユーザーがリストから特定の連絡先を選択できるか</li>
+    <li>ユーザーはリスト内の顧客を選択するためにどのような基準を使用するか？</li>
+    <li>ユーザーが重要なアクションを実行できるか、または選択した連絡先に対してアクションを実行できると言及するか</li>
+    <li>顧客詳細ページで顧客に連絡するかしないかというユーザーの決定に影響を与えるものは何か？</li>
 </ul>
+
+<p>
+成功は、少なくとも80%の参加者が推奨されたリードへの連絡を正常に開始できることと定量的に定義されました。
+</p>
+
+<Images withZoom name={props.images.lg["First-prototype"]} />
+
+<p>
+テストにより、プロトタイプのデザインにいくつかの欠陥があることがわかりました。たとえば、ユーザーはリストの目的や、どのような種類の連絡先がリストに表示されているかを理解するのに苦労しました。その問題を解決するために、私は「会議ポテンシャル」評価システムを導入しました。これは、リードがユーザーのアプローチに対して肯定的に反応する可能性がどれくらいあるかを表示し、リストの目的を強化すると同時に、ユーザーがどの連絡先に最初にアプローチすべきかを決定するのを助けるものです。
+</p>
+
+<Images 
+    withZoom
+    containerType="full" 
+    className="bg-gray-0" 
+    containerWidth="Lg"
+    name={[props.images.lg["new-prototype-evolution-1-jp"], props.images.lg["new-prototype-evolution-2-jp"]]}
+/>
+
+<p>
+成功指標により、ほとんどのユーザーが推奨されたリードへの連絡を開始できることが示された時点で、最後の主要な仮説の検証に進む決定を下す必要がありました。
+</p>
+
+<p>
+また、以下の理由により、そのアイデアは断念されました。
+</p>
+
+<ul>
+    <li>実装が困難で時間がかかりすぎる</li>
+    <li>個々の仮説をテストし、実際のデータを取得することが困難である（ほとんどが技術的な実現可能性の仮説に基づいているため）</li>
+</ul>
+
+<p>
+<strong>仮説3：</strong> ソリューションを提供すれば、ユーザーはDigimaで中長期の顧客に定期的に再エンゲージするか？（望ましさと習慣）
+</p>
+
+<p>
+この仮説は、ソリューションの根本的な望ましさ、つまり新しい機能が営業担当者の行動を変え、再エンゲージメントの持続的な習慣を確立するのに十分な価値があるかどうかを問うものでした。
+</p>
+
+<p>
+この機会をテストするために、以前テストした「ホットリード」リストを、ライブプロトタイプとしてダッシュボードページの新しい要素として導入しました。このプロトタイプは、アカウントの業界、ユーザーの役職、使用習慣などの特性に基づいて選定された、少数かつ多様なアカウントとユーザーのみが利用できるようにしました。
+</p>
+
+<p>
+このシミュレーションの目的は、営業担当者が「再エンゲージメントリスト」の確認を一定期間（例：1週間）の日課に自発的に組み込むかどうか、またその頻度を観察することでした。また、この機会を利用して、以下のようなファネルの一部として分析される定量データを収集することも目的としました。
+</p>
+
+<ul>
+    <li>何人のユーザーがリスト機能を使用しているか？</li>
+    <li>何人のユーザーが連絡先リストから連絡先を選択しているか？</li>
+    <li>何人のユーザーが連絡先に対して重要なアクションを実行しているか？</li>
+</ul>
+
+<p>
+私たちは、チームが結果の解釈について一致し、確証バイアスを防ぐために、使用頻度と特定のファネルステップに到達するユーザーの割合の成功閾値を事前に設定しました。
+</p>
+
+<p>
+ライブプロトタイプでの使用状況を追跡することで、ソリューションが彼らのワークフローに統合されているかどうか、またユーザーが特定の連絡先に対して重要なアクションを実行するという定められた目標を達成せずにワークフローを離脱していないかどうかの初期シグナルを収集しました。この測定は、ソリューションを構築する労力が潜在的な長期的利益に見合うかどうかを判断するのに役立ちました。
+</p>
+
+<Images 
+    className="bg-gray-0 p-0" 
+    containerType="full" 
+    containerWidth="Lg"
+    name={props.images.lg["Data"]}
+    captions="調査結果の一部"
+/>
+
 </section>
 
 <section id="conclusion">
 
-#### Conclusion
-## Creating a design system was necessary to address the scaling and consistency issues that led to a product redesign. 
+#### 結論
+### 実験により、新しい「ホットリード」リストが正常に検証され、営業チームの効率が測定可能なほど改善されました。見逃された連絡先への返信の数を[X]%削減し、放置された中長期リードの割合を[Y]%から[Z]%に減少させました。
+
+### 学び：「成功した失敗」
 
 <p>
-This project turned out to be a massive undertaking spanning more than a year and involving several departments.
-</p>
-
-<p>
-However, these efforts paid off:
+機能は統計的には成功しましたが、ロールアウトにより、アプリケーション内の2つのより深く構造的な問題が浮き彫りになりました。
 </p>
 
 <ul>
-    <li><strong>As a designer</strong>, it allowed me to create mockups in a fraction of the time and with a higher level of precision than ever before; it also taught me the depth and complexity of thinking involved in crafting every little piece of an application’s user experience.</li>
-    <li><strong>For developers</strong>, being able to rely on clear documentation and reuse existing patterns allows them to focus on writing tests and efficient code rather than continually tweaking CSS values.</li>
-    <li><strong>For the business</strong>, the productivity gains we’ve seen in new feature development have more than justified the investments we made in adopting the system.</li>
+    <li><strong>スキャン性の摩擦：</strong>顧客プロフィールページはスキャンしにくいことがわかりました。リードが「ホット」であると特定された場合でも、ユーザーは次のアクションを決定するために顧客の履歴を素早く消化するのに苦労しました。</li>
+    <li><strong>「空のリスト」問題：</strong>最も重要なこととして、多くのユーザーの「ホットリード」リストには連絡先がほとんどないことがわかりました。これは根本的な下流の問題を明らかにしました。リストは機能していましたが、ユーザーは単にリストを埋めるのに十分な返信を得ていなかったのです。</li>
 </ul>
+
+### 次のステップ
+
+<p>
+リードを特定するだけでは不十分で、アプローチのコンテンツ自体が魅力的でなければならないというこの認識は、私たちのプロダクトの焦点を完全に変えました。エンゲージメントの問題を真に解決するには、単にいくつかの「ホットリード」を追跡するだけでなく、営業担当者がより良いメッセージを書くのを支援する必要があることに気づきました。
+</p>
+
+<p>
+このインサイトは、私たちの次の主要なイニシアチブである「AI見込み客発掘エージェント」の直接的な触媒となりました。
+</p>
 
 </section>
 </div>
