@@ -1,7 +1,7 @@
 {
   "site": {
-    "title": "UI/UX Portfolio",
-    "description": "UI/UX Portfolio",
+    "title": "Product designer Portfolio",
+    "description": "Product designer Portfolio",
     "author": "David Ibanez"
   },
   "menu": {
@@ -30,7 +30,7 @@
     "backBtn": "Go back home"
   },
   "home": {
-    "title": "I’m David, a UI/UX Designer With 8+ Years Of Experience.",
+    "title": "I’m David, a product designerer With 8+ Years Of Experience.",
     "seoTitle": "This is the site description",
     "seoDescription": "This is the site description",
     "heroText": "My Front End development skills helps me efficiently communicate my designs to developers. I’m looking to join a company that trusts the design process to deliver meaningful and measurable changes to their customers.",
@@ -122,11 +122,11 @@
   },
 
   "about": {
-    "title": "I’m a UI/UX designer with 8+ years of experience.",
-    "seoTitle": "UI/UX Portfolio",
-    "seoDescription": "UI/UX Portfolio",
+    "title": "I’m a product designerer with 8+ years of experience.",
+    "seoTitle": "Product designer Portfolio",
+    "seoDescription": "Product designer Portfolio",
     "subtitle": "ABOUT ME",   
-    "textPart1": "I’m a UI/UX designer with 8+ years of industry experience. Working with developers, product managers and users in a bilingual environment taught me how to carefully balance business goals, engineering constraints, and user needs to deliver real customer value. In addition, my Front End development skills help me efficiently communicate my designs to developers.<br/><br/> Lately, I have been excited about",
+    "textPart1": "I’m a product designerer with 8+ years of industry experience. Working with developers, product managers and users in a bilingual environment taught me how to carefully balance business goals, engineering constraints, and user needs to deliver real customer value. In addition, my Front End development skills help me efficiently communicate my designs to developers.<br/><br/> Lately, I have been excited about",
     "link": " improving my design process through the use of qualitative/quantitative data",
     "textPart2": " and generative AI.",
     "textPart3": "In my free time, I love to travel, workout, and watch movies.<br/><br/>I’m currently looking to join an existing design team in a company that trusts the design process to deliver meaningful and measurable changes to their customers.",

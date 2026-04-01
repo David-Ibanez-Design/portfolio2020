@@ -5,8 +5,8 @@ module.exports = {
   // pathPrefix: '/public',
   siteMetadata: {
     siteUrl: "https://davidibanez.com",
-    title: "UI/UX Portfolio",
-    description: "UI/UX Portfolio",
+    title: "Product designer Portfolio",
+    description: "Product designer Portfolio",
     email: 'dibanez@rocketmail.com',
     social: {
       dribbble: 'https://dribbble.com/DavidDesign38',
