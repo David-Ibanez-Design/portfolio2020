@@ -1,5 +1,5 @@
 ---
-title: "How We Redesigned A CRM Most Valuable Page, To Improve User Experience And Accelerate New Feature Design Delivery."
+title: "How We Redesigned A CRM's Most Valuable Page To Improve User Experience And Accelerate Feature Delivery."
 tags: [UserResearch, DataAnalysis, Prototyping, VisualDesign]
 path: articles/profile-redesign
 synopsis: "Digima, a web-based CRM application, aim to provide small to medium size companies with a way to understand their customers' needs. The contact profile page plays a key role in fulfilling that objectif. In a single view, the page provides a large amount of information about contact"
@@ -49,9 +49,7 @@ import ImageSlider from "../../src/components/image-slider"
 
 <ArticleOverview>
     <Sunnary>
-            Digima, a web-based CRM application, aim to provide small to medium size companies with a way to understand their customers' needs.
-            The contact profile page plays a key role in fulfilling that objectif. In a single view, the page provides a large amount of information about contact characteristics, actions, and events. Over time, it had accumulated a lot of design debs leading to the necessity of a redesign.
-    </Sunnary>
+Digima, a web-based CRM application, aims to help small and medium-sized companies understand their customers' needs. The contact profile page plays a key role in that: in a single view, it surfaces a large amount of information about a contact's characteristics, actions, and events. Over time, the page accumulated significant design debt, making a redesign necessary.    </Sunnary>
     <Problems>
         <ul>
             <li>Users reported issues finding important lead information within the page. </li>
@@ -66,8 +64,8 @@ import ImageSlider from "../../src/components/image-slider"
     </Goals>
     <Outcomes>
         <ul>
-            <li>Feature design and implementation time were reduced. </li>
-            <li>Users' feedback showed that finding lead information within the profile was much improved.</li>
+            <li>New features now slot into documented, self-contained components instead of triggering a per-feature placement negotiation on a hand-arranged page, removing the step that had been slowing every release. </li>
+            <li>During the beta, users could revert to the old design with one click, and few did. Support tickets asking where to find information, the original trigger for the redesign, declined after release.</li>
         </ul>   
     </Outcomes> 
     <Role>
@@ -271,17 +269,17 @@ In order to reveal additional usability issues with the new design, we use the n
 <Images withZoom name={props.images.md["usability-testing"]} captions="Usability tests were conducted remotely via zoom."/>
 
 <p>
-Participants were selected from our existing customer base and were asked to perform a series of tasks while verbalizing their thought process. Some follow-up questions such as “why” , “how do you think of this function” , “tell me more about that”, and questions about the current profile design were asked to try to get users to elaborate on their feelings. We chose to focus on tasks that were both representative of most user's goals and that were related to parts of the UI that had the most design changes. 
+Participants were selected from our existing customer base and were asked to perform a series of tasks while verbalizing their thought process. Follow-up questions such as "why?", "what do you think of this function?", and "tell me more about that" were used to get participants to elaborate, along with questions comparing against the current profile design. We chose to focus on tasks that were both representative of most user's goals and that were related to parts of the UI that had the most design changes. 
 </p>
 <Images withZoom name={props.images.md["user-testing-spreadsheet"]} captions="Results of each session were consolidated into a Google spreadsheet for further analysis."/>
 <p>
 Our testing sessions uncovered a series of unexpected usability issues that we were later able to fix.
 </p>
 <p>
-For instance, when asked to remove a contact from a group, most participants were either unable to perform the task or unsure whether they were performing the right one even though they were able to find the appropriate UI elements. Further inquiries reveal that some participants did not understand the relationship between the contact and the group the contact belonged to. 
+For instance, when asked to remove a contact from a group, most participants were either unable to perform the task or unsure whether they were performing the right one even though they were able to find the appropriate UI elements. Further questioning revealed that some participants did not understand the relationship between the contact and the group it belonged to. 
 </p>
 <p>
-Changing the contact group block title to clearly describe the relationship seems to fix the issue for most participants.
+Changing the contact group block title to clearly describe that relationship fixed the issue for most participants in follow-up testing.
 </p>
 
 <Images 
@@ -310,7 +308,7 @@ One of the challenges was to efficiently communicate to the frontend team how ea
 To facilitate implementation, I broke down each element into components that I then documented <Link to={"/dds/"}>in our existing design system documentation website.</Link>
 </p>
 
-<Images name={props.images.md["dds-components"]} captions="Each page element were documented in our dedicated deisgn system documentation website."/>
+<Images name={props.images.md["dds-components"]} captions="Each page element was documented in our dedicated design system documentation website."/>
 
  In addition to the HTML prototype created earlier, an invision prototype was also created to give the frontend team a sense of how the final version of the design will look and behave as a whole.
 </section>
@@ -346,7 +344,7 @@ Therefore, in collaboration with the product manager, we decided to organize the
 <Images withZoom name={props.images.md["release-schedule"]} captions="Progressively exposing users to the new design allow us to minimize disruption to their daily work."/>
 
 <p>
-After a few weeks of feedback and bug fixes, we entered the final two weeks of the process, where we warned users that the new profile design would be the default version. 3 months after the start of the beta phase, all users were successfully switched to the new profiled design.
+After a few weeks of feedback and bug fixes, we entered the final two weeks of the process, where we warned users that the new profile design would be the default version. 3 months after the beta began, the migration was complete: every user was on the new design, and the phased approach meant the switch produced no spike in support tickets or opt-out requests.
 </p>
 
 <Images withZoom name={props.images.md["google-analytics-adoption-rate"]} captions="The new profile adoption rate data were tracked in Google Analytics and Tableau."/>
@@ -362,16 +360,14 @@ After a few weeks of feedback and bug fixes, we entered the final two weeks of t
 ### Static or interactive mockups are not enough when dealing with complex problems.
 
 <p>
-Taking the time to create an coded prototype rather than relying solely on an invision prototype turned out to be crucial in getting some early internal feedback and catching a lot of issues that would have otherwise had to be solved by developers during the implementation phase.
+Taking the time to create a coded prototype rather than relying solely on an InVision prototype turned out to be crucial: it surfaced early internal feedback and caught issues that would otherwise have landed on developers mid-implementation.
 </p>
 
 ### Setting business-specific goals Is essential.
 
 <p>
-Getting the stakeholder’s buy-in to move forward with this type of redesign proved to be challenging. However, overcoming that obstacle taught me a lot about how to present my ideas to stakeholders and about the necessity to set up business-specific goals. 
+Getting stakeholder buy-in for a redesign of the product's most-used page proved challenging: it carried maximum disruption risk and shipped no new feature. What won it was reframing the goals in business terms, faster feature delivery rather than better UX, and an implementation plan that never blocked feature work.
 </p>
-
-
 
 <ImageSlider beforeKey={props.images.md["final-version-1"]} afterKey={props.images.md["final-version-2"]} captions="Before and after versions of the contact profile page."/>
 

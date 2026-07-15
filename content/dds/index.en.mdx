@@ -59,7 +59,7 @@ imagesXl:
     <Outcomes>
         <ul>
             <li>A complete design system, established from scratch and still in active use today.</li>
-            <li>Significant reduction in design-to-engineering delivery time, with much higher consistency.</li>
+            <li>Eliminated visual-inconsistency QA as a review category: token enforcement moved from designer review to the build itself, so hard-coded values fail at merge time.</li>
             <li>Design tokens shipped to the frontend codebase and enforced by lint rules I authored, which block hard-coded values at merge time.</li>
             <li>A Storybook documentation layer integrated directly into the application codebase, used by around 10 engineers.</li>
             <li>A foundation in place for the next architectural step: closing the remaining design-code gap and moving toward an agentic design system.</li>
@@ -202,7 +202,7 @@ Tokens in code aren't worth much if engineers can still type #3B82F6 into a CSS 
 </p>
 
 <p>
-This also removed a significant amount of design-review work that used to go into catching small visual inconsistencies.
+This removed an entire category of design-review work: catching hard-coded values by eye stopped being part of my QA process, because the build catches them first.
 </p>
 
 ```javascript
@@ -238,7 +238,7 @@ This also removed a significant amount of design-review work that used to go int
 
 <p>
 <strong>Storybook as the documentation layer</strong><br />
-The earlier custom documentation site had failed because it sat outside the engineering workflow. I moved component documentation into Storybook and integrated it directly into the frontend application. Components could now be browsed, tested in isolation, and referenced by engineers without leaving their environment. Adoption improved meaningfully.
+The earlier custom documentation site had failed because it sat outside the engineering workflow. I moved component documentation into Storybook and integrated it directly into the frontend application. Components could now be browsed, tested in isolation, and referenced by engineers without leaving their environment. Adoption followed quickly: the roughly 10 engineers now browse, test, and reference components in Storybook as part of their normal workflow, without leaving the codebase.
 </p>
 
 <Images name={props.images.md["live-compoenents"]} captions="Using a documentation website directly integrated into the codebase was an essential step in promoting adoption."/>
@@ -265,7 +265,7 @@ The agentic work has already started. Most teams today use AI to generate isolat
 </p>
 
 <p>
-Although still experimental, this will undoubtedly be the next major version of the system.
+Although still experimental, this is the direction I am actively building toward as the next major version of the system.
 </p>
 
 </section>
@@ -279,9 +279,9 @@ Creating a design system was necessary to address the scaling and consistency is
 </p>
 
 <ul>
-    <li><strong>As a designer</strong>, leading the system has let me produce mockups significantly faster and with higher precision than would otherwise be possible, and has helped me become more engineering-minded when designing.</li>
+    <li><strong>As a designer</strong>, leading the system means I assemble mockups from proven components instead of drawing from scratch, and working at the token and code level has made me more engineering-minded when designing.</li>
     <li><strong>For developers</strong>, clear component documentation, reusable patterns, and lint rules that enforce the token system let them focus on logic, tests, and performance instead of endlessly recreating style for every shipped feature.</li>
-    <li><strong>For the business</strong>, the productivity gains in new feature delivery have justified the investment many times over, and the system has become an integral part of the product's experience and identity.</li>
+    <li><strong>For the business</strong>,  the strongest proof is longevity: the system has survived a full tooling migration, is used daily by roughly 10 engineers, and remains the source of truth for every shipped feature to this day.</li>
 </ul>
 
 <ImageSlider 

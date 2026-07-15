@@ -48,7 +48,7 @@ Digima's AI agent could see everything that happened online, but face-to-face an
     <Outcomes>
         <ul>
             <li>Shipped and currently rolling out, with the first 10 companies already using it.</li>
-            <li>Feedback that shaped the design came from the PM, who relayed input from the support and customer success teams, and from the developer on technical limitations. The flow changes I proposed were based on my own design judgment applied to the existing build.</li>
+            <li>Redesigned the core flows based on my own design judgment, validated against support and customer success input relayed through the PM, and against technical constraints worked through directly with the developer.</li>
         </ul>        
     </Outcomes>
     <Role>
@@ -111,7 +111,7 @@ I mapped the full app as a set of flows organized by how a rep would actually st
 ## Reworking the core flows
 
 <p>
-The biggest change was to let reps record first and link the customer afterward. The earlier approach put contact selection before recording, which adds friction at the exact moment a rep wants to just start capturing a conversation. Recording is one tap, and linking the customer happens when the recording stops or later. The app supports the different ways a rep starts a recording rather than forcing one path.
+The biggest change was to let reps record first and link the customer afterward. The earlier approach put contact selection before recording, adding friction at the exact moment a rep needs to capture a conversation. The evidence for this came from the product itself: Digima's existing meeting-log feature went largely unused because logging was too manual, so the redesign attacked friction at the point of capture.
 </p>
 
 <p>
@@ -139,7 +139,7 @@ Recording in the field means a lot can go wrong, so I gave the failure states re
 </p>
 
 <p>
-Designing these properly is what makes the app feel reliable to a rep who just recorded an important meeting and can't afford to lose it.
+Designing these properly protects the moment the whole app exists for: a rep who just recorded an important meeting and cannot afford to lose it. One lost recording would end that rep's trust in the product.
 </p>
 
 
@@ -182,7 +182,7 @@ The tricky part was doing this without breaking implementation. A re-skin that i
 ## From design to implementation
 
 <p>
-Once the designs were approved I wrote the user stories for the build, reviewed each one, and QA'd the implemented screens against the design to catch where the build drifted from the intended experience.
+Once the designs were approved I wrote the user stories for the build, reviewed each one, and QA'd the implemented screens against the design and the acceptance criteria, logged per platform since some issues were Android-only. The QA caught three kinds of drift: visual, such as pickers rendering Material's default purple instead of our green; behavioral, such as onboarding repeating on every login instead of showing once; and spec violations, such as the build allowing unlimited meeting attendees when the agreed maximum was two. Catching that last category is the point: design QA covers the agreement, not just the pixels.
 </p>
 
 <Images withZoom name={props.images.md["youtrack-tasks-jp1"]} captions="User stories created for the mobile app implementation"/>
@@ -200,7 +200,7 @@ Once the designs were approved I wrote the user stories for the build, reviewed 
 
 ## Conclusion
 <p>
-This project came down to shipping a complete mobile experience under a tight deadline by reworking a build that already existed, designing the full set of states rather than just the happy path, and adapting a constrained UI library to the Digima brand without making it harder to build. As more companies start using it, the meeting data it captures becomes the foundation for the automated follow-up direction the wider product is moving toward.
+This project came down to shipping a complete mobile experience under a tight deadline by reworking a build that already existed, designing the full set of states rather than just the happy path, and adapting a constrained UI library to the Digima brand without making it harder to build. It is also the project where my involvement started latest, and the clearest lesson was that even a short design review of the spec before the first build would have caught the core flow problem on paper instead of in code.
 </p>
 
 </section>

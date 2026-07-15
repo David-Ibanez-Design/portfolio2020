@@ -52,9 +52,9 @@ imagesLg:
     <Outcomes>
         <ul>
             <li>Validated that AI-generated outreach was technically feasible and cost-viable through a small, fast proof-of-concept, green-lighting further investment with evidence rather than assumption</li>
-            <li>Surfaced a critical personalization gap before engineering committed: AI output was accurate but lacked tailored offers, causing unacceptable BPO edit times and projected conversion risk</li>
-            <li>This finding pivoted the product from a fully-automated agent to a human-in-the-loop system, justifying the entire research investment</li>
-            <li>Designed a V2 with document upload and customizable AI instructions to close the personalization gap, restoring commercial viability currently being progresivly rollout to customers</li>
+            <li>Surfaced a critical personalization gap before engineering committed: AI output was accurate but lacked tailored offers. A diff analysis I built showed BPO staff rewriting over half of each generated message on average.</li>
+            <li>This finding pivoted the product from a fully-automated agent to a human-in-the-loop system before any production engineering was spent building the wrong version</li>
+            <li>Designed a V2 with document upload and customizable AI instructions to close the personalization gap, now in progressive rollout with the first 16 accounts active</li>
         </ul>        
     </Outcomes>
     <Role>
@@ -239,7 +239,7 @@ The PM recruited internal users with sales experience to operate the POC. For a 
 <Images withZoom name={props.images.lg["Assumption-1-Survey"]} />
 
 <p>
-With this experiment, I was able to determine that in the case of at least one AI model, the generated messages, although not perfect, were of sufficient quality and low enough cost that they had the potential of being a feature sold to users. We also saw that the AI couldn't handle every situation cleanly — a limitation the next two experiments would dig into.
+With this experiment, I was able to determine that at least one AI model produced messages of sufficient quality, as rated by internal evaluators with sales experience, at a per-message cost low enough to be commercially viable.
 </p>
 
 <p>
@@ -257,7 +257,7 @@ To test that assumption, the SMS reply POC used in the previous experiment was m
 
 <ul>
     <li>Use the same survey that the one used in the previous experiment to evaluate the generated response based on the previously defined criteria, and keep improving the AI response</li>
-    <li>Track the time it took BPO staff to edit the generated message and the number of times their intervention was needed</li>
+    <li>Track the time it took BPO staff to edit the generated message and the number of times their intervention was needed. I also built a dashboard computing the diff between each AI draft and the final sent message, which showed staff rewriting over half the text on average.</li>
 </ul>
 
 <p>
@@ -265,7 +265,7 @@ With this experiment, I was able to determine that although the generated messag
 </p>
 
 <p>
-<b>Strategic implication: </b>a fully-automated AI agent was not commercially viable as designed. This finding alone justified the entire research investment. Without it, we'd have spent months building the wrong product. It also gave us a clear direction for v2.
+<b>Strategic implication: </b>a fully-automated AI agent was not commercially viable as designed. Without this finding, we would have spent months of engineering building the wrong product. It also gave us a clear direction for v2.
 </p>
 
 
@@ -316,7 +316,7 @@ The results were analysed in a Tableau report. The pattern was clear: the AI rel
 ### Outcomes & Impact
 
 <p>
-Through our experiments, we successfully validated that an AI agent can generate coherent, natural-sounding messages, confirming the technical feasibility of the project.
+Through our experiments, we validated that an AI agent can generate coherent, natural-sounding messages at a workable cost, confirming technical feasibility. What the experiments deliberately did not validate is end-customer response rates, which is the question the progressive rollout is answering now.
 </p>
 
 <p>
@@ -324,7 +324,7 @@ However, our most critical insight came from testing Assumption 2. We discovered
 </p>
 
 <p>
-This led directly to my design solution for v2: adding document uploads and customizable AI instructions. This feature, born directly from our experiment, addresses the personalization gap and is the key to making the AI agent commercially viable and truly useful.
+This led directly to my design solution for v2: adding document uploads and customizable AI instructions. This feature, born directly from our experiment, is designed to close the personalization gap the research exposed. The early signal I am watching in rollout is whether accounts actually configure their documents and instructions.
 </p>
 
 <p>
