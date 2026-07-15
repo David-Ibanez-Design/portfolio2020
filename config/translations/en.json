@@ -30,10 +30,10 @@
     "backBtn": "Go back home"
   },
   "home": {
-    "title": "I’m David, a product designerer With 10+ Years Of Experience.",
+    "title": "I'm David, a senior product designer working on B2B SaaS in Tokyo.",
     "seoTitle": "This is the site description",
     "seoDescription": "This is the site description",
-    "heroText": "My Front End development skills helps me efficiently communicate my designs to developers. I’m looking to join a company that trusts the design process to deliver meaningful and measurable changes to their customers.",
+    "heroText": "Over the past decade I've grown into <strong>shaping product strategy</strong> through design systems, structured experiments, and data-informed decisions. Recent focus: <strong>de-risking AI product bets and exploring agentic design systems</strong>, restructuring design systems so AI can generate designs that follow the rules. <strong>Native English and French, business-level Japanese.</strong> I build working prototypes in code — HTML/CSS/React, accelerated by AI tooling to validate complex interactions before development commits.",
     "viewResume": "View my resume",
     "contact": "Contact me",
     "caseStudies": "Case Studies",
@@ -126,10 +126,7 @@
     "seoTitle": "Product designer Portfolio",
     "seoDescription": "Product designer Portfolio",
     "subtitle": "ABOUT ME",   
-    "textPart1": "I’m a product designerer with 10+ years of industry experience. Working with developers, product managers and users in a bilingual environment taught me how to carefully balance business goals, engineering constraints, and user needs to deliver real customer value. In addition, my Front End development skills help me efficiently communicate my designs to developers.<br/><br/> Lately, I have been excited about",
-    "link": " improving my design process through the use of qualitative/quantitative data",
-    "textPart2": " and generative AI.",
-    "textPart3": "In my free time, I love to travel, workout, and watch movies.<br/><br/>I’m currently looking to join an existing design team in a company that trusts the design process to deliver meaningful and measurable changes to their customers.",
+    "textPart1": "I'm a senior product designer working on B2B SaaS in Tokyo. Over the past 10 years I've grown from designing features into shaping product strategy through design systems, structured experiments, and data-informed decisions. Working in a bilingual environment alongside PMs, engineers, and users has taught me how to balance business goals, engineering constraints, and user needs.</br> I prototype in code (React, AI-assisted) to validate complex interactions before development commits.</br></br> Lately, my focus has been on de-risking AI product bets and exploring agentic design systems: restructuring design systems so AI tools can generate full designs and prototypes that conform to the rules. ",
     "technicalSkills": "I specialize in",
     "languageSkills": {
       "description": "Languages Skills",
@@ -144,8 +141,6 @@
       "description": "Tools that I use",
       "tool1": "Sketch",
       "tool1URL": "https://www.sketch.com/design/",
-      "tool2": "invision",
-      "tool2URL": "https://www.invisionapp.com/",
       "tool3": "Photoshop",
       "tool3URL": "https://www.adobe.com/products/photoshop.html",
       "tool4": "Illustrator",
@@ -176,64 +171,96 @@
     }
   },
 
-  "tags": {
-    "UserResearch": {
-      "name": "User Research",
-      "category": "research"
-    },
-    "UserInterviews": {
-      "name": "User Interviews",
-      "category": "research"
-    },
-    "UsabilityTesting": {
-      "name": "Usability Testing",
-      "category": "research"
-    },
-    "JourneyMap": {
-      "name": "Journey Map",
-      "category": "research"
-    },
-    "Wireframe": {
-      "name": "Wireframe",
-      "category": "planning"
-    },
-    "Prototyping": {
-      "name": "Prototyping",
-      "category": "planning"
-    },
-    "DesignSystem": {
-      "name": "Design system",
-      "category": "designSystem"
-    },
-    "FrontEndDevelopment": {
-      "name": "Front-End Development",
-      "category": "development"
-    },
-    "UserFlow": {
-      "name": "User Flow",
-      "category": "planning"
-    },
-    "VisualDesign": {
-      "name": "Visual Design",
-      "category": "design"
-    },
-    "DataAnalysis": {
-      "name": "Data Analysis",
-      "category": "dataAnalysis"
-    },
-    "DataVisualization": {
-      "name": "Data Visualization",
-      "category": "dataAnalysis"
-    },
-    "Code": {
-      "name": "HTML/CSS/JS",
-      "category": "development"
-    },
-    "ProjectManagement": {
-      "name": "Project Management",
-      "category": "ProjectManagement"
-    }
+"tags": {
+  "UserInterviews": {
+    "name": "User Interviews",
+    "category": "research"
   },
+  "UsabilityTesting": {
+    "name": "Usability Testing",
+    "category": "research"
+  },
+  "JourneyMap": {
+    "name": "Journey Map",
+    "category": "research"
+  },
+  "HypothesisDrivenExperiments": {
+    "name": "Hypothesis-Driven Experiments",
+    "category": "research"
+  },
+  "VisualDesign": {
+    "name": "Visual Design",
+    "category": "design"
+  },
+  "DesignSystem": {
+    "name": "Design System",
+    "category": "development"
+  },
+  "Prototyping": {
+    "name": "Prototyping",
+    "category": "planning"
+  },
+  "Code": {
+    "name": "HTML/CSS/JS",
+    "category": "development"
+  },
+  "DataAnalysis": {
+    "name": "Data Analysis",
+    "category": "research"
+  },
+  "DataVisualization": {
+    "name": "Data Visualization",
+    "category": "research"
+  },
+  "ABTesting": {
+    "name": "A/B & Funnel Measurement",
+    "category": "research"
+  },
+  "ProductDiscovery": {
+    "name": "Product Discovery",
+    "category": "research"
+  },
+  "StakeholderWorkshops": {
+    "name": "Stakeholder Workshops",
+    "category": "research"
+  },
+  "SprintDelivery": {
+    "name": "Sprint-Based Delivery",
+    "category": "research"
+  },
+  "ProjectManagement": {
+    "name": "Project Management",
+    "category": "research"
+  },
+  "UserResearch": {
+    "name": "User Research",
+    "category": "research"
+  },
+  "UserFlow": {
+    "name": "User Flow",
+    "category": "design"
+  },
+  "Wireframe": {
+    "name": "Wireframe",
+    "category": "design"
+  },
+  "FrontEndDevelopment": {
+    "name": "Front-End Development",
+    "category": "development"
+  },
+  "DesignEngineering": {
+    "name": "Design Engineering",
+    "category": "design"
+  },
+  "AgenticDesign": {
+    "name": "AI/Agentic Design",
+    "category": "design"
+  },
+  "AIProductDesign": {
+    "name": "AIProductDesign ",
+    "category": "design"
+  }
+},
 
   "suggestedArt": {
     "next": "NEXT UP",

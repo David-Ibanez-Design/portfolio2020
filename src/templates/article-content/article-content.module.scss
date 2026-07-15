@@ -20,6 +20,10 @@
     padding: 0 $spacer-3;
   }
 
+  pre + p.caption{
+    margin-bottom: $spacer-6;
+  }
+
   article {
     padding: 0  0 $spacer-7 0;
     overflow-x: auto;
@@ -89,6 +93,38 @@
     code {
       text-decoration: inherit;
     }
+  }
+
+  code {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: $h5-size;
+    background-color: $purpule-100;
+    color: $purpule-800;
+    border-radius: 4px;
+    padding: 2px 6px;
+  }
+
+  pre {
+    max-width: $container-sm;
+    margin: 0 auto;
+    background-color: $gray-700;
+    border-radius: 8px;
+    padding: $spacer-4;
+    overflow-x: auto;
+    @include breakpoint("sm"){
+      border-radius: 0;
+      padding: $spacer-3;
+    }
+
+    code {
+      font-size: $h5-size;
+      background: none;
+      color: $gray-100;
+      padding: 0;
+      border-radius: 0;
+      line-height: $lh-comfortable;
+    }
+
   }
 
   .listHeader + ul{
@@ -262,4 +298,13 @@
 
   }
 
+}
+
+:lang(ja) {
+  .container {
+    h2{
+        line-height: 40px;
+        font-weight: bold;
+      }
+    }
 }

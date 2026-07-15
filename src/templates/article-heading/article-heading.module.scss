@@ -25,3 +25,12 @@
     width: 100%;
     background-image: linear-gradient(221deg, #3C6B87 0%, #1C394F 100%);
 }
+
+
+:lang(ja) {
+    .title {
+      h1{
+          font-weight: bold;
+        }
+      }
+}

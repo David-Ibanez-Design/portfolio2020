@@ -17,7 +17,6 @@ import FranceFlag from "../../images/icons/france-flag";
 import AmericanFlag from "../../images/icons/american-flag";
 import Galogo from "../../images/icons/google-analytics-logo";
 import IllustratorLogo from "../../images/icons/illustrator-logo";
-import InvisionLogo from "../../images/icons/invision-logo";
 import PhotoshopLogo from "../../images/icons/photoshop-logo";
 import SketchLogo from "../../images/icons/sketch-logo";
 import FigmaLogo from "../../images/icons/Figma-logo";
@@ -48,13 +47,11 @@ const About = ({data}) => {
             <Img fluid={profilePhoto.childImageSharp.fluid} className={style.images}/>
           </div>
           <div className="container-sm mt-7">
-              <h5>{t.about.subtitle}</h5>
-              <h1>{t.about.title}</h1>
+              <h1>{t.about.subtitle}</h1>
+              {/* <h1>{t.about.title}</h1> */}
               <p>
                 <span dangerouslySetInnerHTML={{__html: t.about.textPart1}}/>
-                {locale == "ja" && <span dangerouslySetInnerHTML={{__html: t.about.textPart2}}/>}
-                <LocalizedLink to={`/data`}>{t.about.link}</LocalizedLink>
-                {locale == "en" && <span dangerouslySetInnerHTML={{__html: t.about.textPart2}}/>}
+
                 <span dangerouslySetInnerHTML={{__html: t.about.textPart3}}/>
                 <span> {locale === "en" ? t.socialsLinks.Follow : "私の"} </span>
                 <a 
@@ -92,22 +89,25 @@ const About = ({data}) => {
           <div className="container-sm mt-7">
               <h4 className={style.aboutSubTitle}>{t.about.technicalSkills}</h4>
               <TagList 
-                tags={["UserResearch", 
-                "UserFlow", 
-                "UserInterviews", 
-                "UsabilityTesting", 
-                "JourneyMap", 
-                "Wireframe", 
-                "Prototyping", 
-                "VisualDesign", 
-                "DesignSystem", 
-                "DataVisualization", 
-                "DataAnalysis", 
-                "Code",
-                "ProjectManagement"
-              ]}
+                tags={[
+                  "UserInterviews",
+                  "UsabilityTesting",
+                  "JourneyMap",
+                  "HypothesisDrivenExperiments",
+                  "VisualDesign",
+                  "DesignSystem",
+                  "Prototyping",
+                  "Code",
+                  "DataAnalysis",
+                  "DataVisualization",
+                  "ABTesting",
+                  "ProductDiscovery",
+                  "StakeholderWorkshops",
+                  "SprintDelivery",
+                  "ProjectManagement"
+                ]}
                 type="large"
-                />
+              />
           </div>
           <div className="container-sm mt-7">
               <h4 className={style.aboutSubTitle}>{t.about.languageSkills.description}</h4>
@@ -155,12 +155,6 @@ const About = ({data}) => {
                     <MiroLogo/>
                   </span>
                   <p>{t.about.tools.tool10}</p>
-                </a>
-                <a href="https://www.invisionapp.com/" className={style.toolsInner} target="_blank" rel="noreferrer"> 
-                  <span className={style.toolsIcon}>
-                    <InvisionLogo/>
-                  </span>
-                  <p>{t.about.tools.tool2}</p>
                 </a>
                 <a href="https://www.adobe.com/products/photoshop.html" className={style.toolsInner} target="_blank" rel="noreferrer"> 
                   <span className={style.toolsIcon}>

@@ -7,7 +7,7 @@ module.exports = {
     siteUrl: "https://davidibanez.com",
     title: "Product designer Portfolio",
     description: "Product designer Portfolio",
-    email: 'dibanez@rocketmail.com',
+    email: 'david.ibanez38@gmail.com',
     social: {
       dribbble: 'https://dribbble.com/DavidDesign38',
       linkedin: 'https://www.linkedin.com/in/david-ibanez-a5b443120/',

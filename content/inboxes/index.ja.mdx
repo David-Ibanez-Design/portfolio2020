@@ -1,33 +1,33 @@
 ---
 title: "メールボックスとDigimaを連携させることで、テクノロジーに詳しくないユーザーでも作業効率の向上と情報ロスの削減を実現"
-tags: [UserResearch, Prototyping,VisualDesign, ProjectManagement]
+tags: [UserResearch, ProductDiscovery, Prototyping,VisualDesign]
 path: articles/inboxes
 synopsis: "毎月170万通以上のメールがアプリケーションから送られているにもかかわらず、リードの返信が記録されていないため、非効率で、ユーザーにとって貴重な情報の損失につながっていました。"
-order: 4
+order: 2
 featured: 0
 displayToc: true
-menuVignettes: images/menu-vignettes.png
-mobileVignettes: images/mobile-menu-vignettes.png
-coverHomepage: images/homepage-cover.png
-coverArticle: images/article-cover.png
-suggestedArt: images/suggestedArt.png
+menuVignettes: images/menu-vignettes-jp.png
+mobileVignettes: images/mobile-menu-vignettes-jp.png
+coverHomepage: images/homepage-cover-jp.png
+coverArticle: images/article-cover-jp.png
+suggestedArt: images/suggestedArt-jp.png
 imagesXl: 
-    - images/iteration-v1-ja.png
-    - images/iteration-v2-ja.png
-    - images/iteration-v3-ja.png
+    - images/iteration-v1-jp.png
+    - images/iteration-v2-jp.png
+    - images/iteration-v3-jp.png
 
 imagesMd: 
     - images/planning.png
-    - images/user-testing-spreadsheet.png
-    - images/centered-documentation.png 
-    - images/implementation.png 
-    - images/Final-design-01.png
+    - images/user-testing-spreadsheet-jp.png
+    - images/centered-documentation-jp.png 
+    - images/implementation-jp.png 
+    - images/Final-design-jp.png
     
 imagesLg: 
     - images/user-testing-after-ja.png
     - images/user-testing-before-ja.png
-    - images/Final-design-02.png
-    - images/Research-results.png
+    - images/Final-design-jp-2.png
+    - images/Research-results-jp.png
   
 ---
 
@@ -35,33 +35,36 @@ imagesLg:
 
 <ArticleOverview>
     <Sunnary>
-        WebベースのCRMアプリケーションであるDigimaは、中小規模の不動産会社に顧客のニーズを把握してもらうことを目的としています。毎月170万通以上のメールがアプリケーションから送られているにもかかわらず、リードの返信が記録されていないため、非効率で、ユーザーにとって貴重な情報の損失につながっていました。
+       Digimaでは月間170万通のメールが約6,000名の不動産業界ユーザーによって送受信されていましたが、顧客からの返信は一切CRM内に記録されていませんでした。ユーザーはリードを取りこぼし、メールクライアントとDigimaの間を頻繁に行き来する非効率を強いられ、サービスの価値そのものに疑問を持ち始めていました。同時に、ビジネスチームが計画していた「アシスタント型CRM」への進化を実現するためにも、この返信データをDigima内に取り込む必要があった。
     </Sunnary>
     <Problems>
         <ul>
-            <li>Digimaでリードからの返信メールを見ることができず、貴重な情報の損失や機会損失につながっていた</li>
-            <li>現在のメールプロバイダーでのメール配信およびメール送信のコストに関する問題点</li>
+            <li>月間かなりの数の顧客からの返信がDigima内では見えず、ユーザーはリードや商談を失い、受信トレイとCRMの行き来に多くの時間を費やしていた</li>
+            <li>当時のメール配信サービスにおける配信失敗や送信コストが、信頼性と収益性の両面を圧迫していた</li>
+            <li>計画されていた「アシスタント型CRM」への進化は、当時まだ取得できていなかった返信データを前提としていた</li>
         </ul>    
     </Problems>
     <Goals>
         <ul>
-            <li>ユーザーの受信トレイをDigimaに接続し、リードの返信をアプリケーションに登録できるようにする</li>
-            <li>メール到達の問題や送信コストの削減</li>
+            <li>顧客からの返信をDigima内に取り込み、ツール間の往復をなくし、リードの取りこぼしを防ぐこと</li>
+            <li>メール配信失敗と配信コストをスケールに耐える形で削減すること</li>
+            <li>プロダクトの次なる進化に必要なデータ基盤を構築すること</li>
         </ul>   
     </Goals>
     <Outcomes>
         <ul>
-            <li>機能リリースから3ヶ月後、65％のユーザーが受信トレイの接続に成功した</li>
-            <li>アプリケーションからのメール送信数が25%増加した</li>
-            <li>メールの配信エラーが60％減少した</li>
+            <li>リリースから3ヶ月で65%のアカウントが受信トレイ連携を完了し、ビジネスチームが必要としていたデータ基盤を構築</li>
+            <li>Digima内からのメール送信数が25%増加し、ユーザーのツール間往復が定量的に削減された</li>
+            <li>メール配信失敗が60%減少し、サポート対応負荷とメール配信コストの両方を低減</li>
         </ul>   
     </Outcomes> 
     <Role>
         <ul>
-            <li>プロダクトマネージャーと連携したユーザーリサーチ</li>
-            <li>UIデザイン</li>
-            <li>HTML/CSS/jQuery、invisionでのプロトタイプ作成</li>
-            <li>プロジェクト・マネジメント</li>
+            <li>単独のデザイナーとして、PM・エンジニア3名・サポートチームと協働</li>
+            <li>リサーチの設計・統合、およびステークホルダーとの合意形成</li>
+            <li>実現困難と判明したOAuth方式から中盤で方針転換を行うなど、デザイン全体をオーナーシップを持って推進</li>
+            <li>UIデザインおよび、ユーザーテストとエンジニアの参照資料の両方に使用される、完全に機能するコーディング済みプロトタイプ</li>
+            <li>50件以上のユーザーストーリーに分解し、複数スプリントにわたるプロジェクトマネジメントを担当</li>
         </ul>   
     </Role>   
 </ArticleOverview>
@@ -82,7 +85,7 @@ imagesLg:
 </p>
 
 <p>
-さらに、ビジネスチームでは、連絡先情報を収集・表示するだけのCRMから、どのリードに、いつ、どのようにアプローチすればいいのか、ユーザーに有益なアドバイスを与えるアシスタントのような製品への変革を計画していた。その実現のために重要な役割を果たすのが、Digmaに搭載された顧客からの返信メールを登録する機能であった。
+さらに、ビジネスチームでは、連絡先情報を収集・表示するだけのCRMから、どのリードに、いつ、どのようにアプローチすればいいのか、ユーザーに有益なアドバイスを与えるアシスタントのような製品への変革を計画していた。その実現のために重要な役割を果たすのが、Digimaに搭載された顧客からの返信メールを登録する機能であった。
 </p>
 
 <p>
@@ -94,7 +97,7 @@ imagesLg:
 <section id="research-planning" data-title="Research planning">
 
 #### リサーチ計画
-## リサーチの計画や目標設定に時間をかけることで、チームと私は、リサーチ過程を通して一貫した目的を達成することがでた。
+## リサーチの計画や目標設定に時間をかけることで、チームと私は、リサーチ過程を通して一貫した目的を達成することができた。
 
 <p>
 この機能の対象となるユーザーの数とその複雑さを考えると、デザインや 開発を開始する前に、できるだけ多くの問題空間を理解することが不可欠であった。
@@ -164,7 +167,7 @@ imagesLg:
     className="bg-gray-0 p-0" 
     containerType="full" 
     containerWidth="Lg"
-    name={props.images.lg["Research-results"]}
+    name={props.images.lg["Research-results-jp"]}
     captions="リサーチからわかったことの一部"
 />
 
@@ -211,7 +214,7 @@ imagesLg:
 </p>
 
 <p>
-「テクノロジーに詳しくないユーザーが、、自分でDigimaに受信トレイを接続できるような機能を、開発期間への影響を最小限に抑えながら設計するにはどうしたらよいか。」
+「テクノロジーに詳しくないユーザーが、自分でDigimaに受信トレイを接続できるような機能を、開発期間への影響を最小限に抑えながら設計するにはどうしたらよいか。」
 </p>
 
 </section>
@@ -230,21 +233,16 @@ imagesLg:
 </p>
 
 <p>
-しかしながら、以下の理由でこの解決策は諦めた：
+この方向性に正式に進む前に、私は2つの検証を並行して行いました、そして、いずれもこのアイデアを却下する結果となりました。技術的な実現可能性の調査では、Googleサインインを利用するために毎年有償のセキュリティ監査が必要であることが判明し、機能のROIを完全に損なう要因となることが明らかになりました。同時に行ったユーザーインタビューでは、7名中6名が自分の利用しているメールプロバイダー名すら答えられないことがわかり、「プロバイダーを選択してサインインしてください」というフロー自体が成立しないことが明確になりました。開発に着手する前にこの問題を発見できたことで、ユーザーが実際に知っている情報を起点とした再設計に踏み切ることができ、最終的にリリースされたドメイン自動判定方式に繋がりました。
 </p>
 
-<ul>
-    <li>このようなシステムの実現可能性を技術的に調査したところ、プロバイダーサインインには、Googleの有料年間セキュリティ診断が必要であることがわかり、当社にとって高額であった。</li>
-    <li>ユーザー・リサーチの結果、ユーザーは自分が使っているプロバイダを知らないので、プロバイダを選択してほしいという依頼は、うまくいかない可能性があること。
-</li>
-</ul>
 
 <Images 
     withZoom
     className="bg-gray-0" 
     containerType="full" 
     containerWidth="Xl" 
-    name={props.images.xl["iteration-v1-ja"]}
+    name={props.images.xl["iteration-v1-jp"]}
 />
 
 <p>
@@ -264,7 +262,7 @@ imagesLg:
     className="bg-gray-0" 
     containerType="full" 
     containerWidth="Xl" 
-    name={props.images.xl["iteration-v2-ja"]}
+    name={props.images.xl["iteration-v2-jp"]}
 />
 
 <p>
@@ -284,7 +282,7 @@ imagesLg:
     className="bg-gray-0" 
     containerType="full" 
     containerWidth="Xl" 
-    name={props.images.xl["iteration-v3-ja"]}
+    name={props.images.xl["iteration-v3-jp"]}
 />
 
 </section>
@@ -300,7 +298,7 @@ imagesLg:
 </p>
 
 <p>
-そこで、HTML/CSS/Jqueryを駆使したユーザー設定フローのプロトタイプを作成し、既存のユーザーから5名の参加者を募ってテストを行った。
+そこで、実際に操作できるコード実装のプロトタイプを作成し、既存のユーザーから5名の参加者を募ってテストを行った。
 </p>
 
 <div className={props.style.containedMd}>
@@ -310,7 +308,7 @@ imagesLg:
         Your browser does not support the video tag.
         </video> 
     </div>
-    <figcaption className={props.style.caption}>HTML/CSS/jQueryのプロトタイプを作ることで、静的なバージョンでは明らかにできなかった問題を発見することができた。</figcaption>
+    <figcaption className={props.style.caption}>コードで実装した実働プロトタイプを作ることで、静的なバージョンでは明らかにできなかった問題を発見することができた。</figcaption>
 </div>
 
 <p>
@@ -321,7 +319,7 @@ imagesLg:
 テストセッションでは、ユーザビリティに関するいくつかの問題が発見されましたが、それを修正し、さらにテストを行って検証することができた。
 </p>
 
-<Images withZoom name={props.images.md["user-testing-spreadsheet"]} captions="各セッションの結果をGoogleスプレッドシートに集約し、さらに分析した。"/>
+<Images withZoom name={props.images.md["user-testing-spreadsheet-jp"]} captions="各セッションの結果をGoogleスプレッドシートに集約し、さらに分析した。"/>
 
 <p>
 例えば、最初のデザインでは、メール設定の手順を説明する別のサポートページへのヘルプリンクに気づかず、フォームに入力できない参加者がいた。
@@ -354,19 +352,19 @@ imagesLg:
 既存のパターンが使えない場合は、専用の<Link to={"/ja/dds"}>デザインシステム・ドキュメントサイトに文書化した。</Link>
 </p>
 
-<Images withZoom name={props.images.md["centered-documentation"]} captions="新しいUIコンポーネントを専用サイトでドキュメント化することで、推測作業を減らし、実装時間を短縮することができた。"/>
+<Images withZoom name={props.images.md["centered-documentation-jp"]} captions="新しいUIコンポーネントを専用サイトでドキュメント化することで、推測作業を減らし、実装時間を短縮することができた。"/>
 
 <p>
-最終的には、テスト時に使用したプロトタイプに加え、開発、QA、ビジネスの各チームが、最終バージョンのデザインが全体としてどのように見え、どのように動作するかを理解できるように、invisionプロトタイプも作成した。
+最終的には、テスト時に使用したプロトタイプに加え、開発、QA、ビジネスの各チームが、最終バージョンのデザインが全体としてどのように見え、どのように動作するかを理解できるように、実装されたプロトタイプも作成した。
 </p>
 
-<Images withZoom name={props.images.md["Final-design-01"]} captions="送信済みメールリストの最終バージョン。"/>
+<Images withZoom name={props.images.md["Final-design-jp"]} captions="送信済みメールリストの最終バージョン。"/>
 
 <Images 
     className="bg-black-1 p-0" 
     containerType="full" 
     containerWidth="Lg"
-    name={props.images.lg["Final-design-02"] }
+    name={props.images.lg["Final-design-jp-2"] }
     captions="受信ボックス接続処理UIの一部。"
 />
 
@@ -386,7 +384,7 @@ imagesLg:
 実装プロセス全体を通して、開発者やビジネスチームと定期的にミーティングを行い、納期を守れるかどうか、守れない場合は適切な調整がなされるかを確認した。
 </p>
 
-<Images withZoom name={props.images.md["implementation"]} />
+<Images withZoom name={props.images.md["implementation-jp"]} />
 
 </section>
 
@@ -395,12 +393,12 @@ imagesLg:
 #### 結果
 ### 機能リリースから3ヶ月後、65％のユーザーが受信トレイの接続に成功し、メールの送信数は25％増加した。
 <p>
-これはユーザーにとっては、メールクライアントとDigimaを常に切り替える必要がなくなり、重要なリード情報を見逃す心配がないことを意味する。事業面では、多くのユーザーが受信トレイに接続していることで、返信データを利用して将来的にアドバイスベースの機能を構築することができるようになった。
+ユーザーにとっては、メールクライアントとDigimaを行き来する必要がなくなり、重要なリード情報を見落とすリスクも解消されました。ビジネスにとっては、3ヶ月で65%のアカウントが連携を完了したことにより、プロダクトが計画していた「アシスタント型CRM」への進化に必要なデータ基盤が整いました。これまで取得できていなかった返信データが蓄積されることで、今後のアドバイス型機能の開発に向けた新たな可能性が開かれました。
 </p>
 
-### 綿密な計画と入念に記録された研究プロセスは、私やチームが順調にタスクを進めるのに役立った。
+### うまくいったこと：ドキュメント化されたリサーチプロセスが、4ヶ月にわたる開発期間中チームの足並みを揃え続けた。
 <p>
-この機能では、リサーチプロセスの各ステップを事前に計画し、丁寧に文書化することを心がけた。これにより、チーム内でプロセスを簡単に共有することができ、リサーチの目標に専念することができた。
+リサーチの目的を事前に明文化したことで、成果物がステークホルダー間で共有しやすくなり、私自身もプロセスを通じて目標にフォーカスし続けることができました。
 </p>
 
 ### リサーチプロセスをより効率的にするには努力が必要である。

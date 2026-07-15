@@ -60,6 +60,7 @@
     }
 }
 
+
 .intro{
     width: 566px;
     margin-top: 195px;
@@ -86,9 +87,9 @@
     }
 
     h1 span{
-        font-size: $h000-size;
+        font-size: $h00-size;
         font-weight: $font-weight-black;
-        line-height: 58px;
+        line-height: 52px;
         background-image: linear-gradient(to right, rgba($brand-100, .4) 0%,rgba($brand-100, .4) 100%);
         background-position: 0 82%;
         background-size: 100% 13px;
@@ -101,8 +102,7 @@
     }
 
     p{
-        color: $gray;
-        font-size: 20px;
+        font-size: 18px;
         line-height: 32px;
         margin-bottom: $spacer-6;
         @include breakpoint("lg"){  
@@ -243,6 +243,10 @@
 
 }
 
+
+
+
+
 .articleFeature:hover,
 .caseStudies:hover,
 .dribbbleShots:hover{
@@ -285,9 +289,9 @@
 .articleFeature h3 span,
 .caseStudies h4 span{
     color: $gray-800;
-    font-size: $h0-size;
+    font-size: 26px;
     font-weight: $font-weight-extra-bold;
-    line-height: 42px;
+    line-height: 36px;
     background-image: linear-gradient(to right,#000000 0%,#000000 100%);
     background-position: 0 95%;
     background-size: 0 2px;
@@ -363,13 +367,13 @@
 
             .truncate {
                 overflow:hidden;
-                max-height: 8rem;
+                max-height: 12rem;
                 -webkit-box-orient: vertical;
                 display: block;
                 display: -webkit-box;
                 overflow: hidden !important;
                 text-overflow: ellipsis;
-                -webkit-line-clamp: 4;
+                -webkit-line-clamp: 9;
               }
             
             
@@ -544,6 +548,57 @@
 }
 
 
+// Font override for English
 
+:lang(en) {
+    .intro {
+    
+        h1 span{
+            font-size: $h000-size;
+        }
 
+        p{
+            font-size: $h4-size;
+            line-height: 26px;
+        }
+    }
 
+    .actions{
+        font-size: 15px;
+        font-weight: bold;
+
+    }
+}
+
+// Font override for Japanese
+
+:lang(ja) {
+    .intro {
+        h1 span{
+            font-size: $h0-size;
+            font-weight: bold;
+            line-height: 47px;
+        }
+
+        p{
+            font-size: $h4-size;
+            line-height: 28px;
+        }
+    }
+
+    .articleFeature h3 span{
+        line-height: 47px;
+        font-weight: bold;
+    }
+
+    .otherCaseStudies h4 span{
+        line-height: 38px;
+        font-weight: bold;
+    }
+
+    .actions{
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+}

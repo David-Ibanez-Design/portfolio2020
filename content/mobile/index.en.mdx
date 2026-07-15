@@ -1,0 +1,207 @@
+---
+title: "Designing Digima's meeting-recording app: capturing offline meetings to feed the Digima AI agent"
+tags: [Wireframe, UserFlow, Prototyping]
+path: articles/mobile
+order: 7
+featured: 0
+displayToc: false
+coverHomepage: images/homepage-cover.png
+coverArticle: images/article-cover.png
+menuVignettes: images/menu-vignettes.png
+mobileVignettes: images/mobile-menu-vignettes.png
+suggestedArt: images/suggestedArt.png
+imagesXl: 
+    - images/wireframe-entry-points1.png
+    - images/components.png
+    - images/flow-issues3.png
+imagesLg: 
+    - images/errors2.png
+imagesMd: 
+    - images/youtrack-tasks-jp1.png
+    - images/final-version-1.png
+    - images/final-version-2.png
+    - images/final-version-3.png
+---
+
+
+<!-- Overview -->
+
+<ArticleOverview>
+    <Sunnary>
+Digima's AI agent could see everything that happened online, but face-to-face and offline meetings left no trace in the CRM. That gap meant subjective, inconsistent reporting and follow-ups that quietly fell through. This mobile app lets sales reps record an in-person meeting with one tap, get an AI summary of it, and have that summary saved automatically to the right customer's timeline. Those summaries are what eventually let the Digima AI agent follow up on offline meetings the way it already does for online activity, which is the wider direction my other Digima work has been building toward.
+    </Sunnary>
+    <Problems>
+        <ul>
+            <li>Digima's AI agent could see what happened online, but offline meetings left no reliable trace in the CRM, so those records were subjective, inconsistent, and easy to lose.</li>
+            <li>Digima already had a meeting-log feature, but logging a meeting was too manual, so reps rarely did it and the meeting information never made it into the CRM. Without that information, the AI agent couldn't reference what was discussed in later exchanges or re-engage leads that went cold after a first meeting.</li>
+            <li>A first version of the app already existed when I came onto the project. It was a working build, but its look and feel was essentially a wireframe with no real design applied, and its flows had usability problems that needed solving before release.</li>
+        </ul>        
+    </Problems>
+    <Goals>
+        <ul>
+            <li>Make capturing an offline meeting effortless: one-tap recording, with the customer linked afterward rather than before.</li>
+            <li>Make sure AI summaries reliably reach the correct customer record.</li>
+            <li>Improve the existing build's flows without a full rebuild that would break the timeline.</li>
+            <li>Design within the technical setup the engineering team had already committed to.</li>
+        </ul>      
+    </Goals>
+    <Outcomes>
+        <ul>
+            <li>Shipped and currently rolling out, with the first 10 companies already using it.</li>
+            <li>Feedback that shaped the design came from the PM, who relayed input from the support and customer success teams, and from the developer on technical limitations. The flow changes I proposed were based on my own design judgment applied to the existing build.</li>
+        </ul>        
+    </Outcomes>
+    <Role>
+        <ul>
+            <li>Sole designer on the project, brought in after the first build was made.</li>
+            <li>Reviewed the spec and the implemented app, then aligned with the PM and developer on goals, scope, and deadline.</li>
+            <li>Identified the problems in the existing flows and worked through improvements directly with the developer.</li>
+            <li>Produced wireframes and final designs, iterating with the PM and developer throughout.</li>
+            <li>Wrote the user stories for implementation and QA'd the build against the design.</li>
+        </ul>   
+    </Role>  
+</ArticleOverview>
+
+<!-- Content -->
+<div className="articleContent">
+<section id="context">
+
+## Context
+
+<p>
+The business wanted to ship this quickly. At the time the work started I was the only designer and was already supporting two other teams, so I didn't have the bandwidth to take it on right away. The developer went ahead and built a first working version from the PM's spec, with the understanding that the design would be reworked once I could focus on it.
+</p>
+
+<p>
+The PM had written the spec, so the feature scope and business rules were his. My side was the design: how the flows worked, how the screens were structured, and how the app behaved.
+</p>
+
+
+</section>
+<section id="alignment">
+
+## Aligning on a build that already existed
+
+<p>
+I didn't start from a blank file, so the first job was to understand what had already been built and decide what was worth changing. I went through the spec and the implemented app, then met with the PM and the developer to agree on the goals, the deadline, and which flow problems mattered enough to fix for the release versus which could wait. 
+</p>
+
+<p>
+Because the developer had built the first version expecting it to be reworked, there was no friction about changing it. We went through the issues together and agreed on the direction before any work started, so the redesign was a joint effort rather than a set of corrections handed down to engineering.
+</p>
+
+<p>
+I mapped the full app as a set of flows organized by how a rep would actually start: recording on the spot without linking anyone, recording from a specific contact, recording from an existing meeting, and creating a record from the meeting list or a contact profile. Seeing it laid out this way made it easier to agree on what the app needed to cover and what was out of scope for the first release.
+</p>
+
+<Images 
+    withZoom
+    className="bg-gray-0" 
+    containerType="full" 
+    containerWidth="Xl" 
+    name={props.images.xl["wireframe-entry-points1"]}
+/>
+
+
+
+
+</section>
+<section id="flow">
+
+## Reworking the core flows
+
+<p>
+The biggest change was to let reps record first and link the customer afterward. The earlier approach put contact selection before recording, which adds friction at the exact moment a rep wants to just start capturing a conversation. Recording is one tap, and linking the customer happens when the recording stops or later. The app supports the different ways a rep starts a recording rather than forcing one path.
+</p>
+
+<p>
+The wording shown while recording was a harder problem than it looks. The business decided not to give customers the audio file or the raw transcript, out of concern they would feed it into other tools to generate their own summaries. So the recording screen had to set the right expectation without implying the user would get an audio recording or a transcript back. I worded it around the actual value: the audio is being recorded so the app can produce a summary, not so the user ends up with a file or a transcript.
+</p>
+
+<Images 
+    containerType="full" 
+    className="bg-gray-0" 
+    containerWidth="Xl"
+    name={props.images.xl["flow-issues3"]}
+    captions=""
+/>
+
+
+
+</section>
+
+<section id="design">
+
+## Designing the unhappy paths
+
+<p>
+Recording in the field means a lot can go wrong, so I gave the failure states real attention. There are screens for no connection, not enough storage, and uploads waiting for Wi-Fi, plus empty states and access-denied states. These came straight out of the real constraints in the spec: recordings need to upload when the connection comes back, recording keeps working even when a usage quota is hit, and the data has to survive all of it.
+</p>
+
+<p>
+Designing these properly is what makes the app feel reliable to a rep who just recorded an important meeting and can't afford to lose it.
+</p>
+
+
+<Images 
+    className="bg-black-1 p-0" 
+    containerType="full" 
+    containerWidth="Lg"
+    name={props.images.lg["errors2"] }
+    captions="Some of the error states screens and UI created for this project"
+/>
+
+
+</section>
+
+<section id="technical-constraint">
+
+## Designing within a technical constraint: re-skinning React Native Paper
+
+<p>
+The developer wanted to build on React Native Paper so the same UI could serve both the Android and the iOS version of the app from one codebase. That set a real constraint on me: rather than design freely and hand over something that would be expensive to build, I designed within that library and re-skinned its components to Digima's look and feel.
+</p>
+
+<p>
+The tricky part was doing this without breaking implementation. A re-skin that ignores how the underlying components actually work just moves the problem to the developer. So I worked closely with him throughout, checking that the visual changes I wanted mapped onto what the library could do and adjusting where they didn't. The end result carries the Digima look and feel and stays consistent across iOS and Android. Because the designs mapped onto components the library already provided, the developer didn't have to build custom UI from scratch, which saved development time and helped us hit the release deadline.
+</p>
+
+<Images 
+    withZoom
+    className="bg-gray-0 p-0" 
+    containerType="full" 
+    containerWidth="Xl" 
+    name={props.images.xl["components"]}
+    captions="Some of the UI components created for this project"
+/>
+
+</section>
+
+<section id="implementation">
+
+## From design to implementation
+
+<p>
+Once the designs were approved I wrote the user stories for the build, reviewed each one, and QA'd the implemented screens against the design to catch where the build drifted from the intended experience.
+</p>
+
+<Images withZoom name={props.images.md["youtrack-tasks-jp1"]} captions="User stories created for the mobile app implementation"/>
+
+<Images withZoom name={props.images.md["final-version-1"]} captions="Part of the final audio recording flow screen designs"/>
+
+<Images withZoom name={props.images.md["final-version-2"]} captions="The onboarding screen designs"/>
+
+<Images withZoom name={props.images.md["final-version-3"]} captions="Part of the final setting screen designs"/>
+
+</section>
+
+
+<section id="conclusion">
+
+## Conclusion
+<p>
+This project came down to shipping a complete mobile experience under a tight deadline by reworking a build that already existed, designing the full set of states rather than just the happy path, and adapting a constrained UI library to the Digima brand without making it harder to build. As more companies start using it, the meeting data it captures becomes the foundation for the automated follow-up direction the wider product is moving toward.
+</p>
+
+</section>
+</div>

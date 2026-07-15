@@ -22,9 +22,9 @@
     "backBtn": "ホームページに戻る"
   },
   "home": {
-    "title": "10年以上の経験を持つプロダクトデザイナーのデイビッドです。",
+    "title": "デビッドと申します。東京でB2B SaaSのプロダクトデザインを手がけているシニアプロダクトデザイナーです。",
     "description": "This is the site description",
-    "heroText": "フロントエンド開発のスキルを活かし、ディベロッパーに自分のデザインを効率的に伝えることができます。現在、デザインプロセスに信頼を置かれ、お客様に意味のある測定可能な変化を提供している企業のデザインチームの一員になりたいと思っています。",
+    "heroText": "この10年で、デザインシステムの構築、構造化された実験、データに基づく意思決定を通じて<strong>プロダクト戦略に関わる立場</strong>へと成長してきました。直近の注力分野は<strong>AIプロダクトの不確実性の低減と、エージェンティックデザインシステムの探求</strong>です。デザインシステムを再構築し、AIがそのルールに従ってデザインを生成できる仕組みを作っています。<strong>英語とフランス語はネイティブ、日本語はビジネスレベル。</strong>HTML/CSS/ReactとAI支援ツールでプロトタイプを構築し、複雑なインタラクションを開発着手前に検証しています。",
     "caseStudies": "ケーススタディ",
     "viewCaseStudy": "ケーススタディーを確認する",
     "contact": "連絡先",
@@ -120,64 +120,96 @@
     }
   },
   
-  "tags": {
-    "UserResearch": {
-      "name": "ユーザーリサーチ",
-      "category": "research"
-    },
-    "UserInterviews": {
-      "name": "User Interviews",
-      "category": "research"
-    },
-    "UsabilityTesting": {
-      "name": "Usability Testing",
-      "category": "research"
-    },
-    "JourneyMap": {
-      "name": "Journey Map",
-      "category": "research"
-    },
-    "Wireframe": {
-      "name": "ワイヤーフレーム",
-      "category": "planning"
-    },
-    "Prototyping": {
-      "name": "プロトタイプ",
-      "category": "planning"
-    },
-    "DesignSystem": {
-      "name": "デザインシステム",
-      "category": "designSystem"
-    },
-    "FrontEndDevelopment": {
-      "name": "フロントエンド開発",
-      "category": "development"
-    },
-    "UserFlow": {
-      "name": "ユーザーフロー",
-      "category": "planning"
-    },
-    "VisualDesign": {
-      "name": "ビジュアルデザイン",
-      "category": "design"
-    },
-    "DataAnalysis": {
-      "name": "データ分析",
-      "category": "dataAnalysis"
-    },
-    "DataVisualization": {
-      "name": "データ視覚化",
-      "category": "dataAnalysis"
-    },
-    "Code": {
-      "name": "HTML/CSS/JS",
-      "category": "development"
-    },
-    "ProjectManagement": {
-      "name": "プロジェクト管理",
-      "category": "ProjectManagement"
-    }
+"tags": {
+  "UserInterviews": {
+    "name": "ユーザーインタビュー",
+    "category": "research"
   },
+  "UsabilityTesting": {
+    "name": "ユーザビリティテスト",
+    "category": "research"
+  },
+  "JourneyMap": {
+    "name": "ジャーニーマップ",
+    "category": "research"
+  },
+  "HypothesisDrivenExperiments": {
+    "name": "仮説検証型実験",
+    "category": "research"
+  },
+  "VisualDesign": {
+    "name": "ビジュアルデザイン",
+    "category": "design"
+  },
+  "DesignSystem": {
+    "name": "デザインシステム",
+    "category": "development"
+  },
+  "Prototyping": {
+    "name": "プロトタイピング",
+    "category": "research"
+  },
+  "Code": {
+    "name": "HTML/CSS/JS",
+    "category": "development"
+  },
+  "DataAnalysis": {
+    "name": "データ分析",
+    "category": "research"
+  },
+  "DataVisualization": {
+    "name": "データビジュアライゼーション",
+    "category": "research"
+  },
+  "ABTesting": {
+    "name": "A/Bテスト・ファネル分析",
+    "category": "research"
+  },
+  "ProductDiscovery": {
+    "name": "プロダクトディスカバリー",
+    "category": "research"
+  },
+  "StakeholderWorkshops": {
+    "name": "ステークホルダーワークショップ",
+    "category": "research"
+  },
+  "SprintDelivery": {
+    "name": "スプリント開発",
+    "category": "research"
+  },
+  "ProjectManagement": {
+    "name": "プロジェクトマネジメント",
+    "category": "research"
+  },
+  "UserResearch": {
+    "name": "ユーザーリサーチ",
+    "category": "research"
+  },
+  "UserFlow": {
+    "name": "ユーザーフロー",
+    "category": "design"
+  },
+  "Wireframe": {
+    "name": "ワイヤーフレーム",
+    "category": "design"
+  },
+  "FrontEndDevelopment": {
+    "name": "フロントエンド開発",
+    "category": "development"
+  },
+  "DesignEngineering": {
+    "name": "デザインエンジニアリング",
+    "category": "design"
+  },
+  "AgenticDesign": {
+    "name": "エージェンティック・デザイン",
+    "category": "design"
+  },
+  "AIProductDesign": {
+    "name": "AIプロダクトデザイン",
+    "category": "design"
+  }
+},
 
   "suggestedArt": {
     "next": "次ページへ",
@@ -196,10 +228,7 @@
     "title": "10年以上の経験を持つプロダクトデザイナーです。",
     "description": "This is the site description",
     "subtitle": "自己紹介",   
-    "textPart1": "10年以上の業界経験を持つプロダクトデザイナーです。バイリンガルな環境で開発者、プロダクトマネージャー、ユーザーと仕事をする中で、ビジネスゴール、エンジニアリングの制約、ユーザーニーズのバランスを慎重にとり、真の顧客価値を提供する方法を学びました。フロントエンド開発のスキルを活かし、デヴェロッパーに自分のデザインを効率的に伝 えることができます。<br/><br/> 最近は、",
-    "link": "定性・定量データを用いて、自分のデザインプロセスを改善することにやりがいを感じています",
-    "textPart2":  "再生AIと",
-    "textPart3": "趣味は、旅行やワークアウト、映画鑑賞です。<br/><br/>現在、デザインプロセスに信頼を置かれ、お客様に意味のある測定可能な変化を提供している企業のデザインチームの一員になりたいと思っています。",
+    "textPart1": "東京でB2B SaaSのプロダクトデザインを手がけているシニアプロダクトデザイナーです。この10年間で、個別の機能をデザインする立場から、デザインシステム、構造化された実験、データに基づく意思決定を通じてプロダクト戦略に関わる立場へと成長してきました。バイリンガル環境でPMやエンジニア、ユーザーと協働してきた経験から、ビジネス目標、技術的制約、ユーザーニーズのバランスを取る力を身につけました。HTML/CSS/ReactとAI支援ツールを活用したコードプロトタイピングのスキルにより、複雑なインタラクションを開発着手前に検証することができます。</br></br>直近では、AIプロダクトの不確実性の低減と、エージェンティックデザインシステムの探求に注力しています。デザインシステムを再構築し、AIツールがそのルールに従って完全なデザインやプロトタイプを生成できるようにする取り組みです。",
     "technicalSkills": "以下の分野を専門としています",
     "languageSkills": {
       "description": "言語スキル",
@@ -214,8 +243,6 @@
       "description": "使用するツール",
       "tool1": "Sketch",
       "tool1URL": "https://www.sketch.com/design/",
-      "tool2": "invision",
-      "tool2URL": "https://www.invisionapp.com/",
       "tool3": "Photoshop",
       "tool3URL": "https://www.adobe.com/jp/products/photoshop.html",
       "tool4": "Illustrator",

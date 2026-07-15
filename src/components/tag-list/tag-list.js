@@ -16,19 +16,24 @@ const TagList = ({tags, type="medium", limit=""}) => {
     <span className={`${style.tags}`}>
     {tags
       .filter((tag, index) =>limit !== "" ? index < limit :  index === tags.indexOf(tag)) // Remove duplicate values
-      .map((tag, index) => (
-        <React.Fragment key={index}>
-          <span key={tag} className={`${style.tag} ${limit ? 'MobileMenu-' : ''}${t.tags[tag].category}Tag ${type ? style[type] : ""}`}>
-              {t.tags[tag].name || Utils.capitalize(tag)}
-          </span>
-        
-          { limit !== "" && index === limit-1 ? (
-            <span key={index} className={`${style.tag} ${style.moreTags} ${t.tags[tag].category}Tag ${type ? style[type] : ""}`}>
-                + {tagCount - limit}
+      .map((tag, index) => {
+        const translation = (t.tags && t.tags[tag]) || {}
+        const category = translation.category || "default"
+        const name = translation.name || Utils.capitalize(tag)
+        return (
+          <React.Fragment key={index}>
+            <span key={tag} className={`${style.tag} ${limit ? 'MobileMenu-' : ''}${category}Tag ${type ? style[type] : ""}`}>
+                {name}
             </span>
-          ) : null}
-        </React.Fragment>
-      ))}
+
+            { limit !== "" && index === limit-1 ? (
+              <span key={index} className={`${style.tag} ${style.moreTags} ${category}Tag ${type ? style[type] : ""}`}>
+                  + {tagCount - limit}
+              </span>
+            ) : null}
+          </React.Fragment>
+        )
+      })}
   </span>
   )
 

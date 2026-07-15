@@ -1,0 +1,303 @@
+---
+title: Designing And Documenting A Design System To Enable The Team To Focus On User Experience Rather Than Pixels.
+tags: [VisualDesign, DesignSystem, FrontEndDevelopment]
+path: articles/design-system
+order: 6
+featured: 0
+displayToc: true
+coverHomepage: images/homepage-cover.png
+coverArticle: images/article-cover.png
+menuVignettes: images/menu-vignettes.png
+mobileVignettes: images/mobile-menu-vignettes.png
+suggestedArt: images/suggestedArt.png
+imagesMd: 
+    - images/inventory-spreadsheet.png
+    - images/v1-long-list.png
+    - images/visual-direction-01.png
+    - images/visual-direction-02.png
+    - images/visual-direction-final-01.png
+    - images/master-file-1.png
+    - images/master-file-2.png
+    - images/template-rules.png
+    - images/Components-1.png
+    - images/documentation-site.png
+    - images/invision-inspect.png
+    - images/live-compoenents.png
+    - images/before-profile-before.png
+    - images/before-profile-after.png
+    - images/before-table-before.png
+    - images/before-table-after.png
+    - images/before-dashbaord-before.png
+    - images/before-dashbaord-after.png
+
+imagesXl: 
+    - images/v1-duplicate-styles.png
+    - images/Components.png
+---
+
+<!-- Overview -->
+
+<ArticleOverview>
+    <Sunnary>
+        Digima, a web-based CRM application, provides small to medium size companies with a way to understand their customers' needs. 
+        A few months after I joined the company, we came to a realization: Digima was getting harder and harder to scale. It got so bad that the decision was made to rebuild the product from the ground up.
+    </Sunnary>
+    <Problems>
+        <ul>
+            <li>The company needed a more scalable way to deliver feature designs.</li>
+            <li>Digima users needed a more consistent user experience.</li>
+        </ul>        
+    </Problems>
+    <Goals>
+        <ul>
+            <li>Create tools and processes that can deliver quality, consistency, and speed to the design process.</li>
+            <li>Redesign the product using these tools.</li>
+        </ul>      
+    </Goals>
+    <Outcomes>
+        <ul>
+            <li>An entire new design system that included a dedicated documentation site was created.</li>
+            <li>Feature design quality, consistency, and delivery time were significantly imporved.</li>
+        </ul>        
+    </Outcomes>
+    <Role>
+        <ul>
+            <li>UI design </li>
+            <li>Project management</li>
+            <li>Build and maintain design system</li>
+        </ul>   
+    </Role>  
+</ArticleOverview>
+
+import ImageSlider from "../../src/components/image-slider"
+
+<!-- Content -->
+<div className="articleContent">
+<section id="audit">
+
+#### Audit
+## The product audit revealed many inconsistencies and user experiences issues, confirming the need for a design system.
+
+<p>
+ To understand the needs of the redesign, I first had to evaluate the current product. 
+</p>
+
+<p>
+To that end, I went through the entire product interface and took screenshots of menus, buttons, and modals. I created a Google spreadsheet where I grouped each component into categories and gave each one a name.
+</p>
+
+<Images name={props.images.md["inventory-spreadsheet"]}/>
+
+<p>
+Viewing all the components side by side confirmed why we needed a redesign. There were 130 different colors, 56 different shades of greys, 22 different font sizes and 4 completely different variants of search fields. 
+</p>
+
+<p>
+It became clear that what we needed was a well organized, collaborative design system custom-built to meet the company’s needs.
+</p>
+
+<Images 
+    containerType="full" 
+    className="bg-gray-0" 
+    containerWidth="Xl"
+    name={props.images.xl["v1-duplicate-styles"]}
+    captions="The current product audit revealed many inconsistencies."
+/>
+</section>
+<section id="design-principles">
+
+#### Design Principles
+## Agreeing on what kind of product experience we wanted to deliver to our users helped us stay on track when making difficult decisions.
+
+<p>
+Before I could start exploring visual directions for the new design, the team and I needed to decide on our core principles. 
+</p>
+
+<p>
+These core principles are meant to act as our north star when making difficult product decisions and are the basis around which the product should be built.
+</p>
+
+<p>
+After a few discussions, we came up with the following four principles.
+</p>
+
+<ul>
+    <li><strong>Be purposeful:</strong> Always design with intention and seek to validate your solutions with data when possible.</li>
+</ul>
+
+<ul>
+    <li><strong>Provide clarity:</strong> Ensuring consistent, cohesive user experiences by applying the same solutions to the same problems. Changing patterns and workflows familiar to existing users only when doing so is a definite improvement. (consistency trump originality and coherence trump consistency).</li>
+</ul>
+
+<ul>
+    <li><strong>Design Iteratively:</strong> No one solution will be perfect the first time. Be patient, learn from feedback, and improve user experience Iteratively.</li>
+</ul>
+
+<ul>
+    <li><strong>Foster collaboration:</strong> Software development is a team sport. A design cannot exist without the support of others, so learning to implicate them into your process will only make for better designs.</li>
+</ul>
+</section>
+<section id="visual-direction">
+
+#### Visual Direction
+## Before I could start redesigning the product and building the design system, we needed to decide on a visual direction.
+
+<p>
+Once we had an idea of what kind of product experience we wanted to deliver, I started iterating on a few potential design directions for the main screens of the application. 
+</p>
+
+<Images name={props.images.md["visual-direction-01"]} captions="An early version of the new table design."/>
+
+<Images name={props.images.md["visual-direction-02"]} captions="A variation on the web tracking page."/>
+
+<p>
+After a few rounds of feedbacks, the team and I ultimately selected one final style. 
+</p>
+
+<Images name={props.images.md["visual-direction-final-01"]} captions="The final design style." className="mt-0"/>
+</section>
+<section id="structure">
+
+#### Structure
+## An agreed-upon and straightforward structure for our design system helped promote the shared understanding necessary to reach our goal of improving efficiency.
+
+<p>
+Now that I had an idea of what the overall solution will look like, it was time to get into the details of how the design system will be structured. 
+</p>
+
+<p>
+I started by organizing and categorizing every component identified during the current product version’s audit. During my conversion with developers, I noticed that often, they were using different names when referring to UI elements. 
+</p>
+
+<p>
+Since one of the goals of the design system was to create a shared understanding, it was essential to decide on the right names collectively and grouped families of UI components based on their similarities.
+</p>
+
+<p>
+After a few backs and forths, we came up with the following organization. 
+</p>
+
+<Images bg="gray-0" name={props.images.md["master-file-1"]} captions="The design system structure."/>
+</section>
+<section id="components">
+
+#### Components
+## Designing the components was a long and meticulous process, but one that will significantly increase feature design quality and delivery time. 
+
+<p>
+Once the design system structure was defined, I got to work converting the UI elements listed during the audit phase to the new design style established earlier.
+</p>
+
+<p>
+In my initial implementation, each UI element was created <a href="https://www.sketch.com/docs/libraries/" target="_blank" rel="noreferrer">as a single Sketch library.</a> This organization, however, made it difficult to quickly navigate through the entire set, so to address this issue, I also created a master file that acted as an entry point.
+</p>
+
+<Images name={props.images.md["Components-1"]} captions="The design system is organized into 4 main categories."/>
+
+<p>
+However, after using this Sketch library for a couple of years, it becomes clear that:
+</p>
+
+<ul>
+    <li>Constantly having to switch between files to update a component was very inefficient which means that components could easily end up out of date</li>
+    <li>Despite the carefully crafted component structure, I was still experiencing slow performances</li>
+    <li>Prototyping functionalities in Sketch were lacking forcing me to use a separate tool</li>
+</ul>
+
+<p>
+Therefore for the reasons listed above, at the beginning of 2023, I decided to switch the entire design system to Figima.
+</p>
+
+<Images name={props.images.md["master-file-2"]} className="mt-5" captions="Contrary to Sketch, all components could be stored in a single file with no visible performance impact."/>
+
+
+</section>
+<section id="documentation">
+
+#### Documentation
+## The documentation site helped the team move from design to implementation quickly by eliminating guess-work.
+
+<p>
+To forge a shared understanding of the system between me the designer and developers and facilitate implementation, we needed a documentation site. With the help of the development team, I started working on creating the website and adding components to it.
+</p>
+
+<p>
+However, after a while and despite my best efforts, it became clear that the developers' adoption was very low.
+</p>
+
+<p>
+Part of the solution was to move the current documentation site over to Storybook and integrate it directly into the current web application codebase.
+</p>
+
+<Images name={props.images.md["live-compoenents"]} captions="Using a documentation website directly integrated into the codebase was an essential step in promoting adoption."/>
+
+</section>
+
+<section id="future-improvements">
+
+#### Future Improvements
+## To break the silos that divided design and development, I believed that design had to move closer to development.
+
+<p>
+The first version of our design system was based on Sketch and a custom-made documentation site. Despite providing substantial design process improvements that benefited the whole team, it was never really adopted by developers. 
+</p>
+
+<p>
+In insight it was obvious why; design and development were still happening in their respective silos and as long as that was the case adoption will likely remain low.
+</p>
+
+<p>
+To break that silos, I believed that design had to move closer to development because at the end of the day what mattered the most was not what was displayed in a given design tool, but what was shipped to customers.
+</p>
+
+<p>
+To make that happen here are a few things that were done and/or are in progress:
+</p>
+
+<ul>
+    <li>Share design tokens across design and development</li>
+    <li>Setup linting rules in the codebase to enforce the use of design tokens</li>
+    <li>Refactor the code base to be component-driven</li>
+    <li>Document components in Storybook and reference their design version (and vice-versa)</li>
+    <li>Refactor the design system component structure so it uses the same structure as the codebase</li>
+</ul>
+</section>
+
+<section id="conclusion">
+
+#### Conclusion
+## Creating a design system was necessary to address the scaling and consistency issues that led to a product redesign. 
+
+<p>
+This project turned out to be a massive undertaking spanning more than a year and involving several departments.
+</p>
+
+<p>
+However, these efforts paid off:
+</p>
+
+<ul>
+    <li><strong>As a designer</strong>, it allowed me to create mockups in a fraction of the time and with a higher level of precision than ever before; it also taught me the depth and complexity of thinking involved in crafting every little piece of an application’s user experience.</li>
+    <li><strong>For developers</strong>, being able to rely on clear documentation and reuse existing patterns allows them to focus on writing tests and efficient code rather than continually tweaking CSS values.</li>
+    <li><strong>For the business</strong>, the productivity gains we’ve seen in new feature development have more than justified the investments we made in adopting the system.</li>
+</ul>
+
+<ImageSlider 
+    beforeKey={props.images.md["before-profile-before"]} 
+    afterKey={props.images.md["before-profile-after"]} 
+    captions="Before and after versions of the contact profile page."
+/>
+
+<ImageSlider 
+    beforeKey={props.images.md["before-table-before"]} 
+    afterKey={props.images.md["before-table-after"]} 
+    captions="Before and after versions of the contact table page."
+/>
+
+<ImageSlider 
+    beforeKey={props.images.md["before-dashbaord-before"]} 
+    afterKey={props.images.md["before-dashbaord-after"]} 
+    captions="Before and after versions of the dashboard page."
+/>
+</section>
+</div>

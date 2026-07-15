@@ -1,49 +1,49 @@
 ---
 title: "不動産業者にとって、新規リードの獲得と行動理解のプロセスをより効率的にする。"
-tags: [UserResearch, Prototyping, VisualDesign]
+tags: [UserResearch, ProductDiscovery, Prototyping, VisualDesign]
 path: articles/portal-integration
 synopsis: "WebベースのCRMアプリケーションであるDigimaは、中小規模の不動産会社に顧客ニーズを把握する手段を提供することを目的としています。多くの不動産会社の主なリード獲得経路はSUUMOなどのポータルサイトであるにもかかわらず、Digimaにはこれらのリードを自動的に取り込む方法がなく、手作業の増加やユーザーにとって貴重な情報の喪失につながっていました。"
-order: 2
+order: 3
 featured: 0
 displayToc: true
-menuVignettes: images/menu-vignettes.png
-mobileVignettes: images/mobile-menu-vignettes.png
-coverHomepage: images/homepage-cover.png
-coverArticle: images/article-cover.png
-suggestedArt: images/suggestedArt.png
+menuVignettes: images/menu-vignettes-jp.png
+mobileVignettes: images/mobile-menu-vignettes-jp.png
+coverHomepage: images/homepage-cover-jp.png
+coverArticle: images/article-cover-jp.png
+suggestedArt: images/suggestedArt-jp.png
 imagesXl: 
     - images/journey-map.png
     - images/journey-map-test.png
     - images/Real-esate-buyer-block-to-timeline-activity.png
     - images/Real-esate-buyer-and-seller-timeline-activity-jp.png
-    - images/full-User-flow-Delayed response.png
-    - images/full-User-flow-In-Digima-Request-response.png
+    - images/full-User-flow-Delayed respons-jp.png
+    - images/full-User-flow-In-Digima-Request-response-jp.png
     - images/Final-design-screens.png
 
 imagesMd: 
     - images/exsiting-UX-issues.png
     - images/exsiting-customer-feedbacks.png
-    - images/Interview-sheet.png
-    - images/Matching-field-step.png
+    - images/Interview-sheet-jp.png
+    - images/Matching-field-step-jp.png
     - images/exsiting-customer-feedback-spreadsheet.png
-    - images/user-testing-spreadsheet.png
+    - images/user-testing-spreadsheet-jp.png
     - images/exsiting-sections-break-down.png
     - images/new-layout.png
     - images/new-prototype-evolution-1.png
     - images/new-prototype-evolution-2.png
-    - images/dds-components.png
+    - images/dds-components-jp.png
     - images/youtrack-tasks.png
     - images/release-schedule.png
     - images/final-version-1.png
     - images/final-version-2.png
     - images/final-version-3.png
-    - images/centered-documentation.png
-    - images/Buyers-real-estate-journey-takeaways.png
-    - images/Sellers-real-estate-journey-takeaways.png
-    - images/Real-estate-buyer-journey-map.png
-    - images/Real-estate-buyer-agent-journey-map.png
-    - images/Real-estate-seller-journey-map.png
-    - images/Real-estate-seller-agent-journey-map.png
+    - images/centered-documentation-jp.png
+    - images/Buyers-real-estate-journey-takeaways-jp.png
+    - images/Sellers-real-estate-journey-takeaways-jp.png
+    - images/Real-estate-buyer-journey-map-jp.png
+    - images/Real-estate-buyer-agent-journey-map-jp.png
+    - images/Real-estate-seller-journey-map-jp.png
+    - images/Real-estate-seller-agent-journey-map-jp.png
 
 imagesLg: 
     - images/persona-Buyers-jp.png
@@ -60,30 +60,34 @@ import ImageSlider from "../../src/components/image-slider"
 
 <ArticleOverview>
     <Sunnary>
-        WebベースのCRMアプリケーションであるDigimaは、中小規模の不動産会社に顧客ニーズを把握する手段を提供することを目的としています。多くの不動産会社の主なリード獲得経路はSUUMOなどのポータルサイトであるにもかかわらず、Digimaにはこれらのリードを自動的に取り込む方法がなく、手作業の増加やユーザーにとって貴重な情報の喪失につながっていました。    </Sunnary>
+日本の不動産業界では、リードの80%がSUUMOやHOMESといったポータルサイト経由で発生していました。しかしDigimaにはこれらのリードを自動的に取り込む手段がなく、ユーザーは一件ずつ手作業で入力し、その過程で重要な情報を失っていました。同時に、ポータル連携を標準機能として備える競合CRMに対して、Digimaは確実に後れを取っていました。このギャップを埋めることは、ユーザーの生産性を即座に改善することであると同時に、プロダクトの競争力を維持するための必須課題でもありました。   
+    </Sunnary> 
     <Problems>
         <ul>
-            <li>ポータルサイトのリードをDigimaに追加するには、多くの手作業が必要。</li>
-            <li>貴重なリード情報を失う。</li>
+            <li>日本の不動産業界ではリードの80%がポータルサイト経由で発生していたにもかかわらず、すべてDigimaに手作業で再入力されていた</li>
+            <li>手作業による入力は情報の欠落を招き、初動対応のスピードを遅らせ、ポータル連携を標準装備する競合CRMに対してユーザーを不利な立場に置いていた</li>
+            <li>この状況を放置するコストは、即時的（ユーザーの生産性）かつ戦略的（中核ワークフローにおけるDigimaの競争力低下）の両面に及んでいた</li>
         </ul>    
     </Problems>
     <Goals>
         <ul>
-            <li>手作業の削減。</li>
-            <li>Digimaにインポートするリードの数と質を高める。</li>
+            <li>ポータルサイト経由のリードに対する手動再入力を完全に排除すること</li>
+            <li>手入力では実現できないレベルの情報精度でリードを取り込めるようにすること</li>
+            <li>ユーザーの契約継続判断に実際に影響を与えていた競合とのギャップを解消すること</li>
         </ul>   
     </Goals>
     <Outcomes>
         <ul>
-            <li>手作業による顧客情報の作成が76%減少。</li>
-            <li>ユーザーの収益に直接影響を与える新しいポータル取り込み機能に申し込んだアカウントのリード数が25％増加。</li>
+            <li>手動による顧客情報作成が37%減少</li>
+            <li>本機能を導入したアカウントにおいてリード獲得数が25%増加し、ユーザーの売上に直接的なインパクトをもたらした</li>
         </ul>   
     </Outcomes>
     <Role>
         <ul>
-            <li>プロダクトマネージャーと連携したユーザー調査</li>
-            <li>HTML/jQueryとinvisionプロトタイプ</li>
-            <li>UIデザイン</li>
+            <li>本機能の単独デザイナーとして、ユーザーリサーチからローンチまでPMおよびエンジニアリングと協働</li>
+            <li>ユーザーインタビューの設計・実施、およびペルソナとカスタマージャーニーマップへの統合</li>
+            <li>大規模なリファクタリングを伴うアプローチを途中で見直し、納期を守るための現実的な方針転換を含むデザイン全体を推進</li>
+            <li>UIデザイン、実装されたプロトタイプ、および開発引き渡し用の高精度プロトタイプを制作</li>
         </ul>   
     </Role>  
 </ArticleOverview>
@@ -135,7 +139,7 @@ import ImageSlider from "../../src/components/image-slider"
     <li>両市場を扱う不動産会社</li>
 </ul>
 
-<Images withZoom name={props.images.md["Interview-sheet"]} captions="顧客インタビューから得られた知見をGoogleスプレッドシートに記録しました。" />
+<Images withZoom name={props.images.md["Interview-sheet-jp"]} captions="顧客インタビューから得られた知見をGoogleスプレッドシートに記録しました。" />
 
 <p>
     得られた知見をユーザーペルソナとジャーニーマップにまとめました。
@@ -160,28 +164,28 @@ import ImageSlider from "../../src/components/image-slider"
     containerWidth="Md"
     images={[
        {
-          link: props.images.md["Buyers-real-estate-journey-takeaways"],
+          link: props.images.md["Buyers-real-estate-journey-takeaways-jp"],
           cation: "買い手と不動産業者のジャーニーに欠かせない2つの段階から得られる重要なポイント。"
        },
       {
-          link: props.images.md["Sellers-real-estate-journey-takeaways"],
-          cation: "買い手と不動産業者のジャーニーに欠かせない2つの段階から得られる重要なポイント。"
+          link: props.images.md["Sellers-real-estate-journey-takeaways-jp"],
+          cation: "売り手と不動産業者のジャーニーに欠かせない2つの段階から得られる重要なポイント。"
       },
       {
-          link: props.images.md["Real-estate-buyer-journey-map"],
-          cation: "買い手のヤージャーニーマップ。"
+          link: props.images.md["Real-estate-buyer-journey-map-jp"],
+          cation: "買い手のジャーニーマップ。"
       },
       {
-          link: props.images.md["Real-estate-buyer-agent-journey-map"],
-          cation: "買い手不動産エージェントのヤージャーニーマップ"
+          link: props.images.md["Real-estate-buyer-agent-journey-map-jp"],
+          cation: "買い手不動産エージェントのジャーニーマップ"
       },
       {
-          link: props.images.md["Real-estate-seller-journey-map"],
-          cation: "売り手のヤージャーニーマップ。"
+          link: props.images.md["Real-estate-seller-journey-map-jp"],
+          cation: "売り手のジャーニーマップ。"
       },
       {
-          link: props.images.md["Real-estate-seller-agent-journey-map"],
-          cation: "買い手不動産エージェントのヤージャーニーマップ"
+          link: props.images.md["Real-estate-seller-agent-journey-map-jp"],
+          cation: "売り手不動産エージェントのジャーニーマップ"
       }
       ]    
     }
@@ -208,7 +212,7 @@ import ImageSlider from "../../src/components/image-slider"
     <b>開発チームより: </b>
 </p>
 <ul>
-    <li>ポータルサイトには、開発チームがDigimaとポータルサイトを連携APIがありませんでした。そのため、予期せぬ障害や長時間の処理を想定して設計しなければなりませんでした。また、サーバーに負荷がかかるような設計にならないよう、細心の注意を払う必要がありました。 </li>
+    <li>ポータルサイトには、開発チームがDigimaとポータルサイトを連携するためのAPIがありませんでした。そのため、予期せぬ障害や長時間の処理を想定して設計しなければなりませんでした。また、サーバーに負荷がかかるような設計にならないよう、細心の注意を払う必要がありました。 </li>
 </ul>
 
 <p>
@@ -259,14 +263,10 @@ import ImageSlider from "../../src/components/image-slider"
 この問題を解決するために、ユーザーが既存の顧客項目とポータル・サイト経由でインポートされたリード情報を一致させることができる解決策を考えました。そうすれば、情報は自動的に同期され、手作業は必要なくなる。
 </p>
 
-<Images name={props.images.md["Matching-field-step"]}/>
+<Images name={props.images.md["Matching-field-step-jp"]}/>
 
 <p>
-しかし、開発チームとの話し合いの結果、そのデザインを実装するには、既存の技術的負債があるため、大幅なリファクタリング作業が必要であることが判明しました。そのため、その解決策は断念せざるを得ませんでした。
-</p>
-
-<p>
-開発時間を節約しつつ、元のデザインのアイデアをできるだけ活かすために、編集可能なブロックデザインのアイデアを破棄し、代わりに既存のタイムライン・アクティビティ・カードを修正することにした。
+このデザインに本格的に進む前に、エンジニアリングチームと実装の実現可能性を検証したところ、競合との競争においてリリース時期を大幅に遅らせかねないリファクタリング負債が存在することが明らかになりました。私はそれまでに作り込んでいたフィールドマッチング方式を一度白紙に戻し、既存のタイムラインアクティビティカードのパターンを活かして再設計するという現実的な判断を下しました。編集可能性とフィールド単位の集約機能は失われましたが、コアとなる価値提案を維持しつつスケジュールを守ることができました。なお、見送ったアプローチは技術的負債の解消に着手するタイミングで再検討できるよう、バックログに記録しています。
 </p>
 
 <Images 
@@ -275,10 +275,6 @@ import ImageSlider from "../../src/components/image-slider"
     containerWidth="Xl"
     name={props.images.xl["Real-esate-buyer-and-seller-timeline-activity-jp"]}
 />
-
-<p>
-その解決策には、オリジナルのバージョンと比較して明らかな欠点があった（情報を編集したり、グループ化したりすることができなかった）が、その欠点にもかかわらず、問題文に記述されている機能設計の目的のほとんどを満たしていると私は確信していた。
-</p>
 
 <p>
 機能設計の最初の部分がほぼ終わったので、次に最も困難な部分であるポータル連携設定に進みました。
@@ -296,11 +292,11 @@ Digimaにリード情報をインポートするために、ユーザーはま�
 
 <ul>
     <li>ポータルサイトにはAPIがなかったので、予期せぬ障害や長時間の処理を想定して設計しなければなりませんでした。また、サーバーに負荷がかかるような設計をしないよう、細心の注意を払わなければなりませんでした。</li>
-    <li>連携設定はかなり技術的で、ユーザーにとって操作しにくい手順がいくつもある可能性が高たった。</li>
+    <li>連携設定はかなり技術的で、ユーザーにとって操作しにくい手順がいくつもある可能性が高かった。</li>
 </ul>
 
 <p>
-このような課題といくつかの基本的な要件を念頭に置いて、まず、ユーザーが連携設定巣るために通過しなければならないフローを反復することから始めました。その目的は、まず技術的に実現可能なことに合意し、次にそのフローをユーザーと検証することで、ユーザビリティと技術的な実現可能性の適切なバランスを取ることでした。
+このような課題といくつかの基本的な要件を念頭に置いて、まず、ユーザーが連携設定するために通過しなければならないフローを反復することから始めました。その目的は、まず技術的に実現可能なことに合意し、次にそのフローをユーザーと検証することで、ユーザビリティと技術的な実現可能性の適切なバランスを取ることでした。
 </p>
 
 
@@ -309,7 +305,7 @@ Digimaにリード情報をインポートするために、ユーザーはま�
     containerType="full" 
     className="bg-gray-0" 
     containerWidth="Xl"
-    name={props.images.xl["full-User-flow-Delayed response"]}
+    name={props.images.xl["full-User-flow-Delayed respons-jp"]}
 />
 
 <p>
@@ -325,7 +321,7 @@ Digimaにリード情報をインポートするために、ユーザーはま�
     containerType="full" 
     className="bg-gray-0" 
     containerWidth="Xl"
-    name={props.images.xl["full-User-flow-In-Digima-Request-response"]}
+    name={props.images.xl["full-User-flow-In-Digima-Request-response-jp"]}
 />
 
 
@@ -338,7 +334,7 @@ Digimaにリード情報をインポートするために、ユーザーはま�
 ## ユーザビリティテストで、予期せぬユーザビリティの問題が次々と発見され、それを修正し、さらなるテストで検証することができました。
 
 <p>
-開発チームと一緒にポータル連携の設定フローに合意した後、ユーザーと解決方法を検証することにしました。そのために、さまざまなシナリオをテストするために設定できる、完全に機能するHTML/CSS/jQueryのプロトタイプを作成しました。
+開発チームと一緒にポータル連携の設定フローに合意した後、ユーザーと解決方法を検証することにしました。そこで、さまざまなシナリオを切り替えてテストできる、完全に機能するコード実装のプロトタイプを作成しました。
 </p>
 
 <div className={props.style.containedMd}>
@@ -348,7 +344,7 @@ Digimaにリード情報をインポートするために、ユーザーはま�
         Your browser does not support the video tag.
         </video> 
     </div>
-    <figcaption className={props.style.caption}>HTML/CSS/jQueryのプロトタイプを作成することで、静的バージョンでは明らかにできなかった問題を特定することができました。</figcaption>
+    <figcaption className={props.style.caption}>コードで実装した実働プロトタイプを作成することで、静的バージョンでは明らかにできなかった問題を特定することができました。</figcaption>
 </div>
 
 <p>
@@ -363,14 +359,10 @@ Digimaにリード情報をインポートするために、ユーザーはま�
 ユーザビリティテストでは、複数のユーザビリティの問題が発見され、それを修正し、さらなるテストで検証することができました。
 </p>
 
-<Images withZoom name={props.images.md["user-testing-spreadsheet"]} captions="各セッションの結果は、さらなる分析のためにGoogleスプレッドシートにまとめました。"/>
+<Images withZoom name={props.images.md["user-testing-spreadsheet-jp"]} captions="各セッションの結果は、さらなる分析のためにGoogleスプレッドシートにまとめました。"/>
 
 <p>
-例えば、あるタスクでは、ポータルサイトから送られてくるメール通知をDigimaの専用受信箱に転送する方法を説明する一連の指示に従うことが参加者に求められました。開発時間を節約するため、当初はサポートサイトへのリンクを追加するだけで十分だと考えていました。しかし、ほとんどの参加者はそのリンクを無視し、ステップを完全にスキップしてしまいました。
-</p>
-
-<p>
-説明文をページ内に直接表示することで、参加者が何をすべきかを理解するのに必要な視覚的な重みを持たせました。
+参加者全員に共通するパターンが一つ浮き彫りになりました。アプリケーションの外に出る操作を求められると、その操作を完了せずに離脱してしまう、というものです。たとえば、ある検証タスクでは、ポータルサイトから届くメール通知をDigima専用の受信ボックスに転送する手順を実行してもらう必要がありました。開発工数を抑えるため、当初その手順はサポート記事へのリンクとして提示していたのですが、参加者の多くはそのリンクを開かず、フローを途中で離脱してしまいました。手順をアプリ内に直接表示し、十分な視認性を持たせるよう変更したところ、ほとんどの参加者が問題なく完了できるようになりました。
 </p>
 
 <Images 
@@ -396,16 +388,16 @@ Digimaにリード情報をインポートするために、ユーザーはま�
 ビジネス上の主な目標のひとつは、この機能をできるだけ早くリリースすることだったので、最終的なデザインではできるだけ多くのデザイン・コンポーネントを再利用するようにした。
 </p>
 
-<Images withZoom name={props.images.md["dds-components"]} />
+<Images withZoom name={props.images.md["dds-components-jp"]} />
 
 <p>
 既存のパターンを使用できない場合は、フロントエンド・チームに効率的に伝えられるよう、専用の<Link to={"/ja/dds"}>デザイン・システム</Link>・ドキュメント・サイトに文書化するようにしました。
 </p>
 
-<Images withZoom name={props.images.md["centered-documentation"]} captions="新しいUIコンポーネントを専用サイトで文書化することで、当て推量を減らし、実装時間を短縮することができました。"/>
+<Images withZoom name={props.images.md["centered-documentation-jp"]} captions="新しいUIコンポーネントを専用サイトで文書化することで、当て推量を減らし、実装時間を短縮することができました。"/>
 
 <p>
-ユーザビリティテストの時に使用したプロトタイプに加えて、開発チームとビジネスチームがデザインの最終版が全体としてどのように見え、どのように動作するかを理解できるように、忠実度の高いinvisionプロトタイプも作成しました。
+ユーザビリティテストの時に使用したプロトタイプに加えて、開発チームとビジネスチームがデザインの最終版が全体としてどのように見え、どのように動作するかを理解できるように、忠実度の高いプロトタイプも作成しました。
 </p>
 
 </section>
@@ -416,11 +408,13 @@ Digimaにリード情報をインポートするために、ユーザーはま�
 
 #### 結論
 
-### ポータル取り込み機能のリリース以来、手作業による顧客情報作成が平均67％減少し、リード全体の数が25％増加しました。
+### ポータル to リード機能のリリース以降、手動による顧客情報作成は平均37%減少し、リード総数は25%増加しました。その影響は3つのレベルに及びました。
 
-<p>
-お客様にとっては、電話やSMSでリードに連絡を取るなど、より重要な業務に集中できるようになりました。企業にとっては、リード数の増加は、将来の製品開発をサポートするために使用できる直接的な収益の増加も意味しました。
-</p>
+<ul>
+<li><b>顧客にとって: </b>手作業によるデータ入力が37%削減されたことで、営業担当者は商談を成約に導く活動（電話、SMS、商談）に時間を割けるようになりました。</li>
+<li><b>ビジネスにとって: </b> リード獲得数の25%増加は、リード1件あたりの転換率に基づく明確な売上インパクトとして数値化でき、経営層が次の開発投資判断を行う上で根拠として活用できる成果となりました。</li>
+<li><b>デザイナーである私にとって: </b>本プロジェクトを通じて、外部システムとの連携機能における設計パターンが確立され、その後の複数の機能開発でも再利用されました。</li>
+</ul>
 
 ### 絶え間なく進化する仕様と移り変わる優先順位は、デザイナーとしての私の回復力に挑戦しました。
 <p>

@@ -1,9 +1,9 @@
 ---
 title: "Improve work efficiency and reduce information loss by helping non-tech savvy users connect their email inbox to Digima."
-tags: [UserResearch, Prototyping,VisualDesign, ProjectManagement]
+tags: [UserResearch, ProductDiscovery, Prototyping,VisualDesign]
 path: articles/inboxes
 synopsis: "Despite the fact that over 1.7 million emails were sent monthly thought the application, leads replies were not registered, leading to inefficiencies and loss of valuable information for our users."
-order: 4
+order: 2
 featured: 0
 displayToc: true
 menuVignettes: images/menu-vignettes.png
@@ -35,33 +35,36 @@ imagesLg:
 
 <ArticleOverview>
     <Sunnary>
-        Digima, a web-based CRM application, aims to provide small to medium size real estate companies with a way to understand their customers' needs. Despite the fact that over 1.7 million emails were sent monthly thought the application, leads replies were not registered, leading to inefficiencies and loss of valuable information for our users.
+        Digima processed 1.7M emails per month for 6,000 real estate users, but every customer reply that came back was invisible inside the CRM. Users were missing leads, switching constantly between inbox and Digima, and starting to question their subscription. The business also needed reply data captured to power the product's planned shift toward an assistant-style CRM.
     </Sunnary>
     <Problems>
         <ul>
-            <li>Users could not see leads email replies in Digima which lead to a loss of valuable information and miss opportunities</li>
-            <li>Email deliveries and email sending cost issues with the current email provider</li>
+            <li>A significant number of customer replies were invisible inside Digima, costing users leads, deals and time spent context-switching between inbox and CRM</li>
+            <li>Email delivery failures and sending costs from the current email provider were eroding both reliability and margin</li>
+            <li>The product's planned shift toward an assistant-style CRM depended on reply data that did not yet exist</li>
         </ul>    
     </Problems>
     <Goals>
         <ul>
-            <li>Connect user’s inboxes to Digima so that lead replies can be registered in the application</li>
-            <li>Reducing email delivery issues and sending costs</li>
+            <li>Capture incoming customer replies inside Digima to eliminate context-switching and prevent lead loss</li>
+            <li>Reduce email delivery failures and provider costs at scale</li>
+            <li>Build the data foundation needed for the product's next chapter</li>
         </ul>   
     </Goals>
     <Outcomes>
         <ul>
-            <li>3 months after the feature release, 65% of users sucssuflly connected their inboxes</li>
-            <li>We saw a 25% increase in the number of email sent from the application</li>
-            <li>60% decrease in email delivery failures</li>
+            <li>65% of accounts connected within 3 months of release, building the data foundation the business team needed</li>
+            <li>25% increase in emails sent from inside Digima, with measurable cuts to context-switching for users</li>
+            <li>60% decrease in email delivery failures, reducing both support load and email provider costs</li>
         </ul>   
     </Outcomes> 
     <Role>
         <ul>
-            <li>User research in collaboration with product manager</li>
-            <li>UI design</li>
-            <li>HTML/CSS/jQuery and invision prototypes</li>
-            <li>Project management</li>
+            <li>Solo designer, partnering with PM, 3 engineers and support team</li>
+            <li>Research scoping, synthesis and stakeholder alignment</li>
+            <li>Design solution including a mid-project pivot away from a non-viable OAuth approach</li>
+            <li>UI design and a fully functional coded prototype used for both user testing and developer reference.</li>
+            <li>Project management across 50+ user stories and multiple sprints</li>
         </ul>   
     </Role>   
 </ArticleOverview>
@@ -82,11 +85,11 @@ However because email replies could not be registered in Digima, users had no ch
 </p>
 
 <p>
-In addition, the business team was planning to transform the product from a simple CRM that was collecting and displaying contact information to one that would act more like an assistant, giving users useful advices about what lead to reach out to, when and how. The ability of registering customer’ email replies in Digma was going to play an important part in achieve that vision.
+In addition, the business team was planning to transform the product from a simple CRM that was collecting and displaying contact information to one that would act more like an assistant, giving users useful advice about what lead to reach out to, when and how. The ability of registering customer’ email replies in Digima was going to play an important part in achieve that vision.
 </p>
 
 <p>
-To address the above described issues, it was decided that a feature allowing allowing users to connect their email inbox to Digima needed to be design and developed. 
+To address the above described issues, it was decided that a feature allowing users to connect their email inbox to Digima needed to be designed and developed. 
 </p>
 
 </section>
@@ -110,7 +113,7 @@ Once we gather enough information, themes started to emerge. After some refineme
 
 <ul>
     <li><strong>Goal 1</strong>: Understand how users currently use their inboxes</li>
-    <li><strong>Goal 2</strong>: Identify technical and user related challanges that would make connecting to inboxes difficult.</li>
+    <li><strong>Goal 2</strong>: Identify technical and user related challenges that would make connecting to inboxes difficult.</li>
 </ul>
 
 
@@ -125,7 +128,7 @@ Once we gather enough information, themes started to emerge. After some refineme
 ## The various researches unearthed a series of insights that later created important design opportunities. 
 
 <p>
-Once the research goals were identified, I them listed questions that needed to be answer under each research goals. Research questions were then matched with one or more research methods such as user interviews, surveys, data analysis, technical investigation and so on. This process ensured that research efforts were inline with business and user goals.
+Once the research goals were identified, I then listed questions that needed to be answer under each research goals. Research questions were then matched with one or more research methods such as user interviews, surveys, data analysis, technical investigation and so on. This process ensured that research efforts were inline with business and user goals.
 </p>
 
 <p>
@@ -136,7 +139,7 @@ Here are some of the researches key applicable findings:
 <p><b>From the interviews I found out that: </b> </p>
     <ul>
         <li>6 out of 7 interviewees didn’t know what their email provider were or even what the term “email provider” actually meant</li>
-        <li>All interviewee had at least 2 different email addresses. The most common setup was an email address named after it owner and use to interact with leads and an info@../contact@.. email address dedicated to new leads. This email address is usually shared within the company</li>
+        <li>All interviewees had at least 2 different email addresses. The most common setup was an email address named after its owner and used to interact with leads and an info@../contact@.. email address dedicated to new leads. This email address is usually shared within the company</li>
     </ul>
 
 
@@ -173,7 +176,7 @@ Here are some of the researches key applicable findings:
 <section id="challenges" data-title="Challenges">
 
 #### Challenges
-## Identify potential challenges was essential so that along with insights gather from the various researches, they could be used to inform future design solutions.
+## Identifying potential challenges was essential so that along with insights gathered from the various researches, they could be used to inform future design solutions.
 
 <p>
 Based on the research and stakeholder meetings, I identified the following challenges:
@@ -196,7 +199,7 @@ Based on the research and stakeholder meetings, I identified the following chall
 
 <p> <b>From the design team (me)</b></p>
 <ul>
-    <li>Finding ways to help non tech-savvy users connect to their inboxes was the number one challange.</li>
+    <li>Finding ways to help non tech-savvy users connect to their inboxes was the number one challenge.</li>
 </ul>
 
 </section>
@@ -219,10 +222,10 @@ After gathering research finding and defining challenges, I decided to synthesiz
 <section id="ideation" data-title="Ideation">
 
 #### Ideation
-## Using the insight gathered from the research, I them started iterating on a few design solutions.
+## Using the insight gathered from the research, I then started iterating on a few design solutions.
 
 <p>
-With the design goals clearly defined and the research insights in mind, I them started to sketch a few potential design solutions.
+With the design goals clearly defined and the research insights in mind, I then started to sketch a few potential design solutions.
 </p>
 
 <p>
@@ -230,13 +233,9 @@ One of my early ideas was to leverage email providers login APIs when available 
 </p>
 
 <p>
-However this solution had to be abandon for 2 reasons:
+Before committing to this direction, I ran two parallel investigations to validate it, and both killed the idea. Technical feasibility surfaced a recurring paid security audit required for Google sign-in that would have wiped the feature's ROI. In parallel, user interviews revealed that 6 of 7 participants couldn't even name their email provider, meaning a flow that asked them to "select your provider and sign in" would have failed before it started. Catching this pre-development forced a redesign rooted in what users actually knew, which led to the domain-detection approach that ultimately shipped.
 </p>
 
-<ul>
-    <li>A technical investigation into the feasibility of such system revealed that provider sign-in required a paid yearly security audit for Google that was too expensive for the company</li>
-    <li>User research indicated that users didn’t know what provider they were using and so asking them to select a provider might not had work</li>
-</ul>
 
 <Images 
     withZoom
@@ -255,7 +254,7 @@ According to the research, 84% of users were using either Outlook, Gmail or Thun
 </p>
 
 <p>
-The development team however estimated that this feature althgout feasible, would require a significant amount of time to build and maintain especially giving the fact that clients like Outlook had mutiple versions.
+The development team however estimated that this feature although feasible, would require a significant amount of time to build and maintain especially giving the fact that clients like Outlook had multiple versions.
 </p>
 
 <Images 
@@ -299,7 +298,7 @@ Once I was confident that the version I designed was meeting our goals, I set ou
 </p>
 
 <p>
-To that end, I created a fully functional HTML/CSS/Jquery prototype of the user setting flow that we tested with 5 participants recruted from our exsiting user base.
+To that end, I created a fully functional coded prototype of the user setting flow that we tested with 5 participants recruited from our existing user base.
 </p>
 
 <div className={props.style.containedMd}>
@@ -309,7 +308,7 @@ To that end, I created a fully functional HTML/CSS/Jquery prototype of the user 
         Your browser does not support the video tag.
         </video> 
     </div>
-    <figcaption className={props.style.caption}>Building an HTML/CSS/jQuery prototype helped identify issues that a static version could not have otherwise revealed.</figcaption>
+    <figcaption className={props.style.caption}>Building a coded prototype helped identify issues that a static version could not have otherwise revealed.</figcaption>
 </div>
 
 <p>
@@ -323,7 +322,7 @@ The testing sessions uncovered a series of usability issues that I was able to f
 <Images withZoom name={props.images.md["user-testing-spreadsheet"]} captions="Results of each session were consolidated into a Google spreadsheet for further analysis."/>
 
 <p>
-For instance, in the initial design, some participants didn’t noticed the help link that was suppose to open a separate support page with a step by step guide on how to setup their email settings and therefore couldn’t complete the form. 
+For instance, in the initial design, some participants didn’t noticed the help link that was supposed to open a separate support page with a step by step guide on how to setup their email settings and therefore couldn’t complete the form. 
 </p>
 
 <p>
@@ -347,17 +346,17 @@ Changing the link into a banner, displaying the help link in error and warning m
 
 <p>
 After the team and I were satisfied with the usability test results and the prototype, I shifted my focus on the high fidelity version of the design.
-To facilitate implementation and help meet the deallines set by the business team, I made sure to reuse as many design components as possible in my final design.
+To facilitate implementation and help meet the deadlines set by the business team, I made sure to reuse as many design components as possible in my final design.
 </p>
 
 <p>
 When existing patterns could not be used, I documented them in our dedicated  <Link to={"/dds"}>design system documentation site.</Link>
 </p>
 
-<Images withZoom name={props.images.md["centered-documentation"]} captions="Documenting new UI components in our dedicated site, helped imporve implementation time by reducing guesswork."/>
+<Images withZoom name={props.images.md["centered-documentation"]} captions="Documenting new UI components in our dedicated site, helped improve implementation time by reducing guesswork."/>
 
 <p>
-Finally, in addition to the prototype used during testing an invision prototype was also created to help the development, QA and business teams understand how the final version of the design should look and behave as a whole.
+Finally, in addition to the prototype used during testing an coded prototype was also created to help the development, QA and business teams understand how the final version of the design should look and behave as a whole.
 </p>
 
 <Images withZoom name={props.images.md["Final-design-01"]} captions="The final version of the email sent list."/>
@@ -393,25 +392,24 @@ During the whole implementation process, I regularly met with the developers and
 <section id="conclusion" data-title="Conclusion">
 
 #### Conclusion
-### 3 months after the feature release, 65% of users sucssuflly connected their inboxes and emails sending were up by 25%.
+### 3 months after the feature release, 65% of users successfully connected their inboxes and emails sending were up by 25%.
 <p>
-For users it meant that they wouldn't have to constantly switch between their email client and Digima and didn’t have to worry about missing important lead information. 
-For the business, having a large number of users connected to their inbox meant that reply data could be used to build advice based features in the future.
+For users, this meant zero context-switching between their email client and Digima, and zero risk of missing important lead information. For the business, hitting 65% account adoption within 3 months created the data foundation needed for the product's planned shift toward an assistant-style CRM: reply data that wasn't being captured before, and that opens up advice-based feature directions going forward.
 </p>
 
-### A well plan and carefully documented research process help me and the team stay on track.
+### What worked: a documented research process kept the team aligned across 4 months of delivery
 <p>
-For this feature, I made sure that each step of the research process was plan ahead of time and carefully documented. This made the process easly sharable with the team and helped me stay focused on the research goals.
+Documenting research goals upfront made the work shareable across stakeholders and helped me stay focused throughout.
 </p>
 
 ### Efforts to make the research process more efficient should be made.
 <p>
-Even though the insights gather from the research were instrumental in designing a feature that help us met our goals, the overall process took almost 2 months from planning to final recommendations. This meant that I had less time was sepnt on iteration and design. 
+Even though the insights gathered from the research were instrumental in designing a feature that help us met our goals, the overall process took almost 2 months from planning to final recommendations. This meant that I had less time was spent on iteration and design. 
 </p>
 
 ### Taking the time to build a simple proof-of-concept would have helped reduced last minute changes.
 <p>
-Even thought we conducted a lots of technical investigations during the research and design phase, there were still a lot of detail missing and that ended-up causing issues during development. A sinple proof of concept would have probably helped us reduce risks even further.
+Even though we conducted a lot of technical investigations during the research and design phase, there were still a lot of detail missing and that ended-up causing issues during development. A simple proof of concept would have probably helped us reduce risks even further.
 </p>
 
 </section>

@@ -1,0 +1,41 @@
+.pre {
+  max-width: $container-sm;
+  margin: 0 auto $spacer-4 auto;
+  border-radius: 8px;
+  padding: $spacer-4 $spacer-3;
+  overflow-x: auto;
+  position: relative;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  @include breakpoint("sm") {
+    border-radius: 0;
+    padding: $spacer-3;
+  }
+}
+
+.language {
+  position: absolute;
+  top: $spacer-2;
+  right: $spacer-3;
+  font-size: $h6-size;
+  color: $gray-400;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  user-select: none;
+}
+
+.code {
+  display: block;
+  background: none;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+  font-size: $h5-size;
+  line-height: $lh-comfortable;
+}
+
+.line {
+  display: block;
+  min-height: 1em;
+}

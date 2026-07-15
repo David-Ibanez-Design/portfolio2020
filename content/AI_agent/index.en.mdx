@@ -1,8 +1,8 @@
 ---
 title: "Transforming lead nurturing: designing an AI-driven prospecting agent for customer home builder and real estate companies."
-tags: [UserResearch, Prototyping, VisualDesign, DesignSystem]
+tags: [ProductDiscovery, HypothesisDrivenExperiments, DataAnalysis]
 path: articles/AI_agent
-synopsis: "Sales representatives encountered challenges and spent considerable time crafting messages that rarely resulted in a positive lead engagement, leading to lost opportunities and prompting users to doubt our product's effectiveness in achieving results."
+synopsis: "Sales reps spent hours writing personalized outreach that rarely got replies, while a costly BPO team tried to compensate. Lead validation efforts on whether AI could replace or augment that team, and through three small experiments, found why a fully-automated agent wouldn't work, pivoting the project to a human-in-the-loop system before engineering committed resources."
 order: 1
 featured: 1
 displayToc: true
@@ -33,32 +33,38 @@ imagesLg:
 
 <ArticleOverview>
     <Sunnary>
-        Digima is a web-based CRM application that helps small to medium real estate companies understand their customers' needs. Sales representatives encountered challenges and spent considerable time crafting messages that rarely resulted in a positive lead engagement, leading to lost opportunities and prompting users to doubt our product's effectiveness in achieving results.
+        Lead nurturing in Japanese real estate is broken. Reps spend hours writing personalized outreach to leads, most of which never reply. Our BPO team existed specifically to solve this at unsustainable headcount cost. The question we faced: could AI replace or augment the BPO team without destroying the personalization that made messages effective?
     </Sunnary>
     <Problems>
         <ul>
-            <li>Users found it difficult and time-consuming to write messages that are likely to get responses from leads.</li>
-            <li>Scaling real estate lead generation was a major issue because it relies on expensive BPO headcount.</li>
+            <li>Sales reps spent hours writing personalized outreach that rarely produced replies, eroding confidence in Digima's value</li>
+            <li>Scaling lead nurturing depended on a BPO team whose headcount cost was becoming unsustainable</li>
+            <li>The team faced a high-risk product bet: could AI replace or augment BPO without destroying the personalization that made messages effective?</li>
         </ul>        
     </Problems>
     <Goals>
         <ul>
-            <li>Evaluate the possibility of creating an automated AI prospecting agent that could generate coherent, effective, and natural-sounding messages.</li>
+            <li>De-risk the AI agent product bet through structured discovery before engineering committed significant resources</li>
+            <li>Validate whether AI could generate coherent, effective, natural-sounding outreach at a cost that worked commercially</li>
+            <li>Identify which parts of the nurturing process AI could own, and which still needed a human in the loop</li>
         </ul>      
     </Goals>
     <Outcomes>
         <ul>
-            <li>The project showed that an AI agent can create natural messages, proving technical feasibility. However, testing revealed AI output, though accurate, lacked personalized offers, causing high edit times for BPO staff. This shifted the project to a "human-in-the-loop" system.</li>
-            <li>Version 2 added document uploads and customizable AI instructions to fix personalization and boost commercial value. The project highlighted the value of testing small hypotheses to catch major flaws early, saving development time and resources.</li>
+            <li>Validated that AI-generated outreach was technically feasible and cost-viable through a small, fast proof-of-concept, green-lighting further investment with evidence rather than assumption</li>
+            <li>Surfaced a critical personalization gap before engineering committed: AI output was accurate but lacked tailored offers, causing unacceptable BPO edit times and projected conversion risk</li>
+            <li>This finding pivoted the product from a fully-automated agent to a human-in-the-loop system, justifying the entire research investment</li>
+            <li>Designed a V2 with document upload and customizable AI instructions to close the personalization gap, restoring commercial viability currently being progresivly rollout to customers</li>
         </ul>        
     </Outcomes>
     <Role>
         <ul>
-            <li>Participating in a product discovery interview and gathering insights into an opportunity-solution tree (OST)</li>
-            <li>Organizing and animating product discovery workshops to select ideas and assumptions</li>
-            <li>Designing experiments to test assumptions, gathering data, analysing results, and making recommendations to the team.</li>
-            <li>Designing the UI and UX of AI-related features.</li>
-            <li>Participating in BPO interviews, and shadowing sessions, gathering insights, and collaborating with PM on journey map creation</li>
+            <li>Co-led the product discovery that surfaced this opportunity in the first place</li>
+            <li>Ran the solution discovery once it was scoped: facilitated the idea workshop, built the opportunity-solution tree (OST), and ran assumption mapping to narrow the field to the AI agent bet</li>
+            <li>Designed three sequential experiments to de-risk core assumptions before engineering committed resources</li>
+            <li>Analysed experiment data, made recommendations to the team, and surfaced the finding that drove the pivot from a fully-automated agent to a human-in-the-loop system</li>
+            <li>Partnered with PM on BPO interview and journey map creation</li>
+            <li>Designed various UI/UX related to agent customization</li>
         </ul>   
     </Role>  
 </ArticleOverview>
@@ -124,7 +130,7 @@ Taking into account the past business efforts to address this opportunity,  I or
 ## Prioritizing ideas based on their assumptions, risks, and evidence led to the selection of an automated AI reply agent as the most promising solution.
 
 <p>
-After generating the ideas, the team members voted on the ideas that had the highest chance of addressing the opportunity. Each member had 3 votes; the following 3 solutions were selected:
+After generating the ideas, the team members voted on the ones that had the highest chance of addressing the opportunity. Each member had 3 votes; the following 3 solutions were selected:
 </p>
 
 <ul>
@@ -142,6 +148,14 @@ Using this system, we selected the following idea:
 </p>
 
 <ul>
+    <li>An automated AI reply agent</li>
+</ul>
+
+<p>
+And the following assumptions were selected for testing:
+</p>
+
+<ul>
     <li>Can we generate coherent, effective, and natural-sounding messages using AI in a cost-effective way?</li>
     <li>Can we reduce or eliminate the need for a dedicated BPO staff by generating messages using AI?</li>
     <li>What part of the nurturing process can be effectively handled by the AI, and what part needs to be handled by a human?</li>
@@ -153,14 +167,14 @@ Using this system, we selected the following idea:
 <section id="initial-research-efforts">
 
 #### Initial research efforts
-## By meticulously analyzing BPO workflows through interviews and shadowing, we transformed insights into a strategic journey map that laid the foundation for the innovative AI prospecting agent feature.
+## By meticulously analyzing BPO workflows through interviews, we transformed insights into a strategic journey map that laid the foundation for the innovative AI prospecting agent feature.
 
 <p>
 Since part of the assumptions were about replacing or reducing the workload of the BPO staff, it was essential to first understand in detail their workflow step-by-step before diving into assumption testing. 
 </p>
 
 <p>
-To that end, I, along with the PM, organised interviews with some of the BPO staff members and some of our customers. We also shadowed them while they were reaching out to lead using our product. This helped us get a deep understanding of their workflow, and the PM and I consolidated our insights gathered during interviews and shadowing sessions into a journey map. 
+To that end, I, along with the PM, organised interviews with some of the BPO staff members and some of our customers. This helped us get a deep understanding of their workflow, and the PM and I consolidated our insights gathered during interviews sessions into a journey map. 
 </p>
 
 <Images withZoom name={props.images.lg["BPO-Journey-map"]} />
@@ -225,7 +239,7 @@ The PM recruited internal users with sales experience to operate the POC. For a 
 <Images withZoom name={props.images.lg["Assumption-1-Survey"]} />
 
 <p>
-With this experiment, I was able to determine that in the case of at least one AI model, the generated messages, although not perfect, were of sufficient quality and low enough cost that they had the potential of being a feature sold to users. We also discovered that the AI clearly could not handle some situations, and we definitely needed a way to include a human in the loop for some cases.
+With this experiment, I was able to determine that in the case of at least one AI model, the generated messages, although not perfect, were of sufficient quality and low enough cost that they had the potential of being a feature sold to users. We also saw that the AI couldn't handle every situation cleanly — a limitation the next two experiments would dig into.
 </p>
 
 <p>
@@ -247,8 +261,13 @@ To test that assumption, the SMS reply POC used in the previous experiment was m
 </ul>
 
 <p>
-With this experiment, I was able to determine that although the generated message quality was generally good, it lacked a clear and personalized business offer, which resulted in an average edition time per message that was too high. This was a significant issue also because it will most likely result in a poor conversion rate. 
+With this experiment, I was able to determine that although the generated message quality was generally good, it lacked a clear and personalized business offer, which resulted in an average edit time per message that was too high. This would most likely have also resulted in poor conversion rates if released to customers.
 </p>
+
+<p>
+<b>Strategic implication: </b>a fully-automated AI agent was not commercially viable as designed. This finding alone justified the entire research investment. Without it, we'd have spent months building the wrong product. It also gave us a clear direction for v2.
+</p>
+
 
 <p>
 To address these issues, the team collaborated and decided that we would add the ability to upload a document to inform the AI about the specificity and strengths of the business, so it could be used to improve the agent’s offer. We also added the ability to customize the AI instruction based on the customer type (seller, buyer, customer builder…) so that again the AI offer could be tailored to the specificity of each lead.
@@ -257,16 +276,16 @@ To address these issues, the team collaborated and decided that we would add the
 <Images withZoom name={props.images.md["AI-customization-feature"]} />
 
 <p>
-<strong>Assumption 3: </strong>What part of the nurturing process can be effectively handled by the AI, and what part still needs to be handled by a human?
+<strong>Assumption 3: </strong>Which conversations can the AI handle end-to-end, and which should it route to a person?
 </p>
 
 <p>
-Using the previously created BPO staff journey map and the results of the SMS reply experiment I designed, I divided all the interactions into 3 categories:
+Assumption 2 had shown a human needed to stay in the loop to sharpen the AI's offers. Assumption 3 asked a different question; not whether a human was needed, but where: which messages the AI could own outright, and which it had to route to a person. Using the BPO journey map and the results of the SMS reply experiment, I divided the interactions into three categories:
 </p>
 
 <ul>
     <li>Situations where the AI should not generate a message. These are SMS messages sent by users that don’t require a response, such as “Understood“ or “Thank you“</li>
-    <li>Situations where the AI should hand over the reply to the person in charge, such as when a user asks about the price or the availability of a land in th certain area.</li>
+    <li>Situations where the AI should hand over the reply to the person in charge, such as when a user asks about the price or the availability of a land in a certain area.</li>
     <li>Situations where the AI is allowed to reply to the user and perform small tasks, such as when a user asks not to be contacted anymore, or let us know that they have already signed a contract with a different company.</li>
 </ul>
 
@@ -284,7 +303,7 @@ To measure the AI effectiveness in achieving these goals, I created a simple sur
 </p>
 
 <p>
-The results were analysed in a Tableau report. This experiment is still ongoing.
+The results were analysed in a Tableau report. The pattern was clear: the AI reliably handled the routine cases on its own, but for higher-stakes inquiries, especially questions about pricing or land availability, it couldn't consistently take the right action and had to route the conversation to the person in charge. The boundary here wasn't about message quality, as in Assumption 2, but about scope: some conversations the AI simply shouldn't attempt.
 </p>
 
 </section>
@@ -297,7 +316,7 @@ The results were analysed in a Tableau report. This experiment is still ongoing.
 ### Outcomes & Impact
 
 <p>
-Through our experiments, we successfully validated that an AI agent can generate coherent, natural-sounding messages, proving the technical feasibility of the project.
+Through our experiments, we successfully validated that an AI agent can generate coherent, natural-sounding messages, confirming the technical feasibility of the project.
 </p>
 
 <p>
@@ -308,25 +327,19 @@ However, our most critical insight came from testing Assumption 2. We discovered
 This led directly to my design solution for v2: adding document uploads and customizable AI instructions. This feature, born directly from our experiment, addresses the personalization gap and is the key to making the AI agent commercially viable and truly useful.
 </p>
 
+<p>
+That v2 has since shipped. The feature is now in a progressive rollout, with the first 16 accounts already using it actively; early evidence that the human-in-the-loop direction holds up in production, not just in testing.
+</p>
+
 ### Next Steps
 <p>
-While this discovery phase was successful, the work is ongoing. My immediate next steps would be design-focused:
+With v2 shipped and rolling out to customers, the work now moves to mobile — salespeople need to act on hand-offs the moment they land, and decision-makers want the agent's value visible at a glance, both of which happen away from a desk. My immediate next steps would be design-focused:
 </p>
 
 <ul>
-    <li><strong>Design the "Handoff" Experience:</strong> I would design and prototype the complete "human-in-the-loop" flow. This includes the UI for the salesperson to receive an alert (expanding on our Slack POC), review the AI's suggested action, and seamlessly take over the conversation within the app.</li>
-    <li><strong>Usability Test the "Training" Features:</strong> I would conduct usability testing on the new "document upload" and "AI instruction" settings. My hypothesis is that users will need clear guidance and feedback to understand how to "train" their AI agent effectively.</li>
-    <li><strong>Explore "Just-in-Time" Data Collection:</strong> Our research showed that the AI struggled when lead information was sparse. I would explore new UI patterns to help salespeople capture more detailed contact information earlier in the process, which would, in turn, feed the AI better data.</li>
+    <li><strong>Build the mobile hand-off experience for salespeople:</strong> Building on our Slack POC, I'd design and prototype a dedicated mobile experience that handles the hand-off to a human for the tasks the AI can't manage on its own. It would alert the right salesperson on their phone, let them review the AI's suggested action, and take over the conversation on the spot.</li>
+    <li><strong>Build a mobile reporting experience for decision-makers:</strong> This came up repeatedly during discovery, when decision-makers can't clearly see the value a product is delivering, it's one of the most frequently cited reasons they cancel. I'd design a mobile experience aimed at decision-makers that delivers regular reports on the agent's activity, making the value it brings to their business visible over time and giving them a concrete reason to keep it.</li>
 </ul>
-
-### Personal Reflection
-<p>
-This project was a powerful lesson in de-risking a project before committing to high-fidelity design. Our initial idea—a fully automated AI agent—was massive and carried huge, unproven assumptions.
-</p>
-
-<p>
-By breaking the problem down into small, testable hypotheses, we used a simple POC to find a critical flaw (the lack of personalization) that would have otherwise taken months of engineering to discover. It reinforced for me that a designer's most valuable role in early-stage discovery is often to create the minimum artifact necessary to learn. In this case, a journey map and a simple internal tool saved us from building the wrong product.
-</p>
 
 </section>
 </div>

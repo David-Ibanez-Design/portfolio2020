@@ -13,6 +13,8 @@ import ScrollTop from "../../components/scroll-top"
 import ArticleOverview from "../../components/article-overview"
 import Utils from '../../utils'
 import Toc from "../../components/toc"
+import CodeBlock from "../../components/code-block/code-block"
+import CodeCaption from "../../components/code-block/code-caption"
 
 const H4 = ({ children }) => {
   return (
@@ -36,7 +38,9 @@ const ArticleContent = ({body, imagesObj, displayToc, headings}) => (
             Link,
             Images,
             ArticleOverview,
-            h4: H4
+            CodeCaption,
+            h4: H4,
+            pre: CodeBlock,
            }}
           >
           <MDXRenderer style={style} images={imagesObj}>

@@ -105,7 +105,7 @@ const Footer = () => {
                       </a>
                     </li>
                 </ul>
-                <p className={style.legals}>© 2020 {t.footer.legals}.</p>
+                <p className={style.legals}>© 2026 {t.footer.legals}.</p>
             </div>
           </div>
       </div>

@@ -1,9 +1,9 @@
 ---
 title: "Making The Process Of Acquiring and Understanding New Lead Behavior More Efficient For Real Estate Agents."
-tags: [UserResearch, Prototyping, VisualDesign]
+tags: [UserResearch, ProductDiscovery, Prototyping, VisualDesign]
 path: articles/portal-integration
 synopsis: "Digima, a web-based CRM application, aims to provide small to medium size real estate companies with a way to understand their customers' needs. Despite the fact that most real estate company's main lead acquisition channels were portal sites like SUUMO,  Digima did not provide a way to automatically import these leads into Digima, leading to an increase in manual work and a loss of valuable information for our users."
-order: 2
+order: 3
 featured: 0
 displayToc: true
 menuVignettes: images/menu-vignettes.png
@@ -60,31 +60,34 @@ import ImageSlider from "../../src/components/image-slider"
 
 <ArticleOverview>
     <Sunnary>
-        Digima, a web-based CRM application, aims to provide small to medium size real estate companies with a way to understand their customers' needs. Despite the fact that most real estate company's main lead acquisition channels were portal sites like SUUMO,  Digima did not provide a way to automatically import these leads into Digima, leading to an increase in manual work and a loss of valuable information for our users.
+        80% of Japanese real estate leads come through portal sites like SUUMO and HOMES, yet Digima had no way to capture them automatically. Our users were inputing every lead by hand, losing crucial context in the process, and falling behind competitors whose CRMs handled this natively. Closing this gap was both an immediate productivity fix for users and a competitive necessity for the product.
     </Sunnary>
     <Problems>
         <ul>
-            <li>Lots of manual work required to add portal site leads into Digima</li>
-            <li>Loss of valuable lead information</li>
+            <li>80% of Japanese real estate leads came through portal sites, yet every one was rekeyed into Digima by hand</li>
+            <li>Manual entry caused information loss, slowed response times and put users behind competitors with native portal integrations</li>
+            <li>The cost of inaction was both immediate (user productivity) and strategic (Digima losing ground in a core workflow)</li>
         </ul>    
     </Problems>
     <Goals>
         <ul>
-            <li>Reduce manual work</li>
-            <li>Increase number and quality of leads imported into Digima</li>
+            <li>Eliminate manual input of portal-site leads</li>
+            <li>Capture lead information at higher fidelity than manual entry allowed</li>
+            <li>Close a competitive gap that was actively shaping users' renewal decisions</li>
         </ul>   
     </Goals>
     <Outcomes>
         <ul>
-            <li>76% deceased in manual contact creation</li>
-            <li>25% increase in number leads for accounts subscribed to the new portal to lead feature which has a direct impact on the user's bottom line</li>
+            <li>37% decrease in manual contact creation</li>
+            <li>25% increase in the number of leads for accounts subscribed to the new portal to lead feature which has a direct impact on the user's bottom line</li>
         </ul>   
     </Outcomes> 
     <Role>
         <ul>
-            <li>User research in collaboration with product manager</li>
-            <li>HTML/jQuery and invision prototype</li>
-            <li>UI design</li>
+            <li>Sole designer on the feature, partnering with PM and engineering from user research to launch</li>
+            <li>User interview planning, execution and synthesis into personas and journey maps</li>
+            <li>Design solution including a pragmatic mid-project pivot away from a refactor-heavy approach to ship on time</li>
+            <li>UI design, coded prototype and high-fidelity prototype for development handoff</li>
         </ul>   
     </Role>   
 </ArticleOverview>
@@ -105,7 +108,7 @@ Not only that was forcing users to add those leads manually, but it also meant t
 </p>
 
 <p>
-To remedy that situation, it was decided that a feature allowing users to automatically import leads from all majors real estate portal sites into Digima will be built.
+To remedy that situation, it was decided that a feature allowing users to automatically import leads from all major real estate portal sites into Digima will be built.
 </p>
 
 </section>
@@ -113,7 +116,7 @@ To remedy that situation, it was decided that a feature allowing users to automa
 <section id="user-discovery" data-title="User discovery">
 
 #### User discovery
-## To get a deeper understanding of users goals and pain points a series of user interviews were conducted and synthesized into personas and journey maps.
+## To get a deeper understanding of users' goals and pain points a series of user interviews were conducted and synthesized into personas and journey maps.
 
 <p>
 Before diving into any kind of concrete solution, it was essential to answer a few questions:
@@ -151,7 +154,7 @@ To answer these questions, the product manager and I decided to conduct a series
 />
 
 <p>
-In addition to customer interviews, a series of existing internal and external research were used to inform journey maps. Visualizing the whole real estate agents and seller/buyer journey helped the team and I get a broader understanding of users goals and pain points.  
+In addition to customer interviews, a series of existing internal and external research were used to inform journey maps. Visualizing the whole real estate agents and seller/buyer journey helped the team and I get a broader understanding of users' goals and pain points.  
 </p>
 
 <Carrousel 
@@ -162,11 +165,11 @@ In addition to customer interviews, a series of existing internal and external r
     images={[
        {
           link: props.images.md["Buyers-real-estate-journey-takeaways"],
-          cation: "Key takeaways from 2 essential steps in the buyer and real estate agents journey."
+          cation: "Key takeaways from 2 essential steps in the buyer and 'real estate agents' journey."
        },
       {
           link: props.images.md["Sellers-real-estate-journey-takeaways"],
-          cation: "Key takeaways from 2 essential steps in the seller and real estate agents journey"
+          cation: "Key takeaways from 2 essential steps in the seller and real estate agents' journey"
       },
       {
           link: props.images.md["Real-estate-buyer-journey-map"],
@@ -174,7 +177,7 @@ In addition to customer interviews, a series of existing internal and external r
       },
       {
           link: props.images.md["Real-estate-buyer-agent-journey-map"],
-          cation: "The full real restate buyer agent journey map"
+          cation: "The full real estate buyer agent journey map"
       },
       {
           link: props.images.md["Real-estate-seller-journey-map"],
@@ -182,7 +185,7 @@ In addition to customer interviews, a series of existing internal and external r
       },
       {
           link: props.images.md["Real-estate-seller-agent-journey-map"],
-          cation: "The full real restate seller agent journey map"
+          cation: "The full real estate seller agent journey map"
       }
       ]    
     }
@@ -193,10 +196,10 @@ In addition to customer interviews, a series of existing internal and external r
 <section id="challenges" data-title="Challenges">
 
 #### Challenges
-## Identify potential challenges was essential so that along with insights from user research, they could be used to inform any future design solution.
+## Identifying potential challenges so that along with insights from user research, they could be used to inform any future design solution.
 
 <p>
-Based on internal discussions, preliminary researches conducted on portal sites and user research, I identified the following challenges.
+Based on internal discussions, preliminary research conducted on portal sites and user research, I identified the following challenges.
 </p>
 <p>
 <b>From the business team: </b>
@@ -208,7 +211,7 @@ Based on internal discussions, preliminary researches conducted on portal sites 
 <b>From the development team:  </b>
 </p>
 <ul>
-    <li>Portal sites didn't have any API the development team could use to link Digima with a portal site or import contact programmatically. This meant that I had to design for unexpected failure and long running processes. It also meant that I had to be very careful not to design anything that would end-up being server intensif. </li>
+    <li>Portal sites didn't have any API the development team could use to link Digima with a portal site or import contact programmatically. This meant that I had to design for unexpected failure and long running processes. It also meant that I had to be very careful not to design anything that would end-up being server intensive. </li>
 </ul>
 <p>
 <b>From the design team:  </b>
@@ -229,7 +232,7 @@ After identifying users' goals and pain points as well as potential challenges, 
 </p>
 
 <p>
-“How might we design a feature that would automatically import important lead information from portal sites into Digima and organize it in a way that will facilitate real estate agent’s sale activity, while still minimizing development and server cost. “
+“How might we design a feature that would automatically import important lead information from portal sites into Digima and organize it in a way that will facilitate real estate agent’s sales activity, while still minimizing development and server cost. “
 </p>
 </section>
 
@@ -239,7 +242,7 @@ After identifying users' goals and pain points as well as potential challenges, 
 ## After identifying design goals and challenges, I started iterating on a few design ideas.
 
 <p>
-One of my first design solutions was to display lead information into a dedicated block that would integrate nicely with  <Link to={"/profile"}>the existing contact profile page</Link>. Sellers and buyer information would be displayed in separate blocks so that different information could be emphasized for different markets. Finally users had the possibility to edit that information to keep it relevant as agents gather more information about the lead.
+One of my first design solutions was to display lead information into a dedicated block that would integrate nicely with  <Link to={"/profile"}>the existing contact profile page</Link>. Seller and buyer information would be displayed in separate blocks so that different information could be emphasized for different markets. Finally users had the possibility to edit that information to keep it relevant as agents gathered more information about the lead.
 </p>
 
 <Images 
@@ -255,18 +258,15 @@ However after sharing my design internally, externally and looking through exist
 </p>
 
 <p>
-In order to solve that issues, I imagined a design solution that would allow users to match existing contact fields to lead information imported via portal sites. That way information could be automatically synchronized and no manual work would be required.
+In order to solve those issues, I imagined a design solution that would allow users to match existing contact fields to lead information imported via portal sites. That way information could be automatically synchronized and no manual work would be required.
 </p>
 
 <Images name={props.images.md["Matching-field-step"]}/>
 
 <p>
-However, discussions with the development team revealed that implementing that design would require significant refactoring work because of existing technical debt. Therefore that solution had to be abandoned.
+Before committing to that design, I reviewed implementation feasibility with the engineering team, and we surfaced refactoring debt that would have pushed delivery well past our competitive window. I made a pragmatic call to scrap the field-matching approach I'd already invested in, and redesign around the existing timeline activity card pattern instead. We lost editability and field-level aggregation, but we kept the core value proposition and stayed on schedule, and I documented the abandoned approach as a backlog item for when we tackle the technical debt.
 </p>
 
-<p>
-To save time while still leveraging as much of the original design idea as possible, I decided to scrap the editable block design idea and instead modify the existing timeline activity card. 
-</p>
 
 <Images 
     containerType="full" 
@@ -276,11 +276,7 @@ To save time while still leveraging as much of the original design idea as possi
 />
 
 <p>
-That design solution had obvious disadvantages compared to the original version (information could not be edited or grouped together) but I was confident that despite its shortcomings it was still fulfilling most of the feature design objectives described in the problem statement. 
-</p>
-
-<p>
-With the first part of the feature design mostly done, I then moved on to the second most challenging part, the portal integration step-up process. 
+With the first part of the feature design mostly done, I then moved on to the second most challenging part, the portal integration set-up process. 
 </p>
 
 </section>
@@ -288,19 +284,19 @@ With the first part of the feature design mostly done, I then moved on to the se
 <section id="user-flow" data-title="User Flow">
 
 #### User Flow
-## Although a crucial part of the feature, the portal integration step-up process presented some major technical and usability challenges.
+## Although a crucial part of the feature, the portal integration set-up process presented some major technical and usability challenges.
 
 <p>
 In order to import lead information into Digima, users had to first set-up a link between the 2 applications. This set-up process although necessary presented a few challenges:
 </p>
 
 <ul>
-    <li>Portal sites didn't have any API which meant that I had to design for unexpected failure and long running processes. It also meant that I had to be very careful not to design anything that would end-up being server intensif</li>
+    <li>Portal sites didn't have any API which meant that I had to design for unexpected failure and long running processes. It also meant that I had to be very careful not to design anything that would end-up being server intensive</li>
     <li>The integration process was quite technical and involved a number of steps that could be difficult for users to navigate</li>
 </ul>
 
 <p>
-With these challenges in mind and a few basic requirements, I started by iterating over the flow users will have to go through to set up the integration. The objective was to strike the right balance between usability and technical feasibility by first agreeing on what was technically feasible and then validating the flow with users.
+With these challenges in mind and a few basic requirements, I started by iterating over the flow users would have to go through to set up the integration. The objective was to strike the right balance between usability and technical feasibility by first agreeing on what was technically feasible and then validating the flow with users.
 </p>
 
 <Images 
@@ -336,7 +332,7 @@ After further discussion with the development team, we agreed upon a flow that m
 ## Our testing sessions uncovered a series of unexpected usability issues that I was able to fix and validate with further testing.
 
 <p>
-Once the development team and I agreed on a portal integration set-up flow, I then set out to validate it with users. To that end I created a fully functional HTML/CSSjQuery prototype that could be configured to test different scenarios.
+Once the development team and I agreed on a portal integration set-up flow, I then set out to validate it with users. To that end I created a fully functional coded prototype that could be configured to test different scenarios.
 </p>
 
 <div className={props.style.containedMd}>
@@ -346,7 +342,7 @@ Once the development team and I agreed on a portal integration set-up flow, I th
         Your browser does not support the video tag.
         </video> 
     </div>
-    <figcaption className={props.style.caption}>Building an HTML/CSS/jQuery prototype helped identify issues that a static version could not have otherwise revealed.</figcaption>
+    <figcaption className={props.style.caption}>Building a coded prototype helped identify issues that a static version could not have otherwise revealed.</figcaption>
 </div>
 
 <p>
@@ -364,11 +360,7 @@ Testing sessions uncovered a series of usability issues that I was able to fix a
 <Images withZoom name={props.images.md["user-testing-spreadsheet"]} captions="Results of each session were consolidated into a Google spreadsheet for further analysis."/>
 
 <p>
-For instance, one of the tasks required participants to follow a series of instructions describing how to forward email notifications sent from portal sites to a dedicated Digima inbox. To save development time I initially thought that just adding a link to our support site would be enough. However most participants ignored that link and simply skipped the step entirely. 
-</p>
-
-<p>
-Displaying the instructions directly in the page gave it the necessary visual weight it needed to help participants understand what they needed to do.
+One pattern emerged consistently across participants: they ignored anything that asked them to leave the application. For instance, one task required participants to forward email notifications from portal sites to a dedicated Digima inbox, and to save development time, I'd initially used a link to a support article for those instructions. Participants didn't follow the link and abandoned the flow. Moving the instructions inline, with the necessary visual weight, fixed the issue for most users. 
 </p>
 
 <Images 
@@ -400,10 +392,10 @@ Because one of the main business goals was to release the feature as soon as pos
 When existing patterns could not be used, I made sure to document them  <Link to={"/dds"}>in our dedicated design system</Link> documentation site so that they could be efficiently communicated to the Front-end team.
 </p>
 
-<Images withZoom name={props.images.md["centered-documentation"]} captions="Documenting new UI components in our dedicated site, helped imporve implementation time by reducing guesswork."/>
+<Images withZoom name={props.images.md["centered-documentation"]} captions="Documenting new UI components in our dedicated site, helped improve implementation time by reducing guesswork."/>
 
 <p>
-In addition to the prototype used during testing an high fidelity invision prototype was also created to help the development and business teams understand how the final version of the design will look and behave as a whole.
+In addition to the prototype used during testing a high fidelity prototype was also created to help the development and business teams understand how the final version of the design will look and behave as a whole.
 </p>
 
 </section>
@@ -411,14 +403,16 @@ In addition to the prototype used during testing an high fidelity invision proto
 <section id="conclusion" data-title="Conclusion">
 
 #### Conclusion
-### Since the release of the portal to lead feature we saw on average a 67% decrease in manual contact creations and a 25% increase in the overall number of leads.
-<p>
-For our customers this meant that they could focus their attention on more essential tasks like trying to reach a lead by phone or SMS. For the business, the increased number of leads also meant a direct increase in revenue that could be used to support future product developments.
-</p>
+### Since the release of the portal to lead feature we saw on average a 37% decrease in manual contact creations and a 25% increase in the overall number of leads, with impact at three levels.
+<ul>
+<li><b>For customers: </b>37% less manual data entry freed sales staff for the activities that close deals: calls, SMS, meetings.</li>
+<li><b>For the business: </b>25% more leads translated directly into revenue, since each lead has a measurable conversion value, an impact the leadership team could point to in funding decisions for the next product cycle.</li>
+<li><b>For me as a designer: </b>the work established a pattern for external-system integrations we reused in subsequent features.</li>
+</ul>
 
 ### Constantly evolving specifications and shifting priorities challenged my resilience as a designer.
 <p>
-When deadlines got closer and priorities were swifting, it would have been easy for me to just settle for the easiest solution. However, because I spent many hours with customers in interviews and usability tests, I felt a strong responsibility to try hard to find ways to still meet their most important needs despite the challenges.
+When deadlines got closer and priorities were shifting, it would have been easy for me to just settle for the easiest solution. However, because I spent many hours with customers in interviews and usability tests, I felt a strong responsibility to try hard to find ways to still meet their most important needs despite the challenges.
 </p>
 
 ### The setting process remains challenging for users, but improvements are coming.

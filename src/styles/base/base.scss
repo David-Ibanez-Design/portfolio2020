@@ -26,6 +26,18 @@
     font-feature-settings: "lnum";
     overflow-x: hidden;
   }
+
+  :lang(en) {
+    body {
+      font-family: $body-fon-en;
+    }
+  }
+
+  :lang(ja) {
+    body {
+      font-family: $body-fon-ja;
+    }
+  }
   
   a {
     color: $brand;

@@ -84,11 +84,7 @@ const query = graphql`
                 }
               }
             }
-            tags{
-              UserResearch{
-                name
-                category
-              }
+           tags{
               UserInterviews{
                 name
                 category
@@ -101,11 +97,11 @@ const query = graphql`
                 name
                 category
               }
-              Wireframe{
+              HypothesisDrivenExperiments{
                 name
                 category
               }
-              Prototyping{
+              VisualDesign{
                 name
                 category
               }
@@ -113,15 +109,11 @@ const query = graphql`
                 name
                 category
               }
-              FrontEndDevelopment{
+              Prototyping{
                 name
                 category
               }
-              UserFlow{
-                name
-                category
-              }
-              VisualDesign{
+              Code{
                 name
                 category
               }
@@ -133,11 +125,48 @@ const query = graphql`
                 name
                 category
               }
-              Code{
+              ABTesting{
+                name
+                category
+              }
+              ProductDiscovery{
+                name
+                category
+              }
+              StakeholderWorkshops{
+                name
+                category
+              }
+              SprintDelivery{
                 name
                 category
               }
               ProjectManagement{
+                name
+                category
+              }
+              UserResearch{
+                name
+                category
+              }
+              UserFlow{
+                name
+                category
+              }
+              Wireframe{
+                name
+                category
+              }
+              DesignEngineering{
+                name
+                category
+              }AgenticDesign{
+                name
+                category
+              }AIProductDesign{
+                name
+                category
+              }FrontEndDevelopment{
                 name
                 category
               }
@@ -154,13 +183,10 @@ const query = graphql`
               backToTop
             }
             about{
-              title
               seoTitle
               seoDescription
               subtitle
               textPart1
-              link
-              textPart2
               technicalSkills
               languageSkills{
                 description
@@ -175,8 +201,6 @@ const query = graphql`
                 description
                 tool1
                 tool1URL
-                tool2
-                tool2URL
                 tool3
                 tool3URL
                 tool4

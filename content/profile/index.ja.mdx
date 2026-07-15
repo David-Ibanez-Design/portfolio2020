@@ -1,36 +1,36 @@
 ---
 title: "ユーザーエクスペリエンスを向上させ、新機能デザインの提供を速めるため、CRMの最も価値のあるページをどのように再デザインしたか。"
-tags: [UserResearch, Wireframe, Prototyping, VisualDesign]
+tags: [UserResearch, DataAnalysis, Prototyping, VisualDesign]
 path: articles/profile-redesign
 synopsis: "WebベースのCRMアプリケーションであるDigimaは、中小企業が顧客のニーズを理解する方法を提供することを目的としています。顧客プロファイルページは、その目的を果たすために重要な役割を担います。このページでは、顧客情報の特徴、行動、イベントに関する大量の情報を、1つのビューで提供しています。しかし、時間の経過とともにデザイン上の問題点が蓄積され、デザインを見直す必要が出てきました。"
-order: 3
+order: 5
 featured: 0
 displayToc: true
-menuVignettes: images/menu-vignettes.png
-mobileVignettes: images/mobile-menu-vignettes.png
-coverHomepage: images/homepage-cover.png
-coverArticle: images/article-cover.png
-suggestedArt: images/suggestedArt.png
+menuVignettes: images/menu-vignettes-jp.png
+mobileVignettes: images/mobile-menu-vignettes-jp.png
+coverHomepage: images/homepage-cover-jp.png
+coverArticle: images/article-cover-jp.png
+suggestedArt: images/suggestedArt-jp.png
 imagesXl: 
     - images/journey-map-ja.png
 imagesMd: 
     - images/exsiting-UX-issues.png
-    - images/exsiting-customer-feedbacks-ja.png
-    - images/exsiting-google-analytics.png
-    - images/exsiting-customer-feedback-spreadsheet.png
-    - images/user-testing-spreadsheet.png
-    - images/exsiting-sections-break-down-ja.png
+    - images/exsiting-customer-feedbacks-jp.png
+    - images/exsiting-google-analytic-jp.png
+    - images/exsiting-customer-feedback-spreadsheet-jp.png
+    - images/user-testing-spreadsheet-jp.png
+    - images/exsiting-sections-break-down-jp.png
     - images/new-layout-ja.png
     - images/new-prototype-evolution-1-ja.png
     - images/new-prototype-evolution-2-ja.png
-    - images/dds-components.png
-    - images/youtrack-tasks.png
-    - images/release-schedule.png
+    - images/dds-components-jp.png
+    - images/youtrack-tasks-jp.png
+    - images/release-schedule-jp.png
     - images/final-version-1.png
-    - images/final-version-2.png
-    - images/final-version-3.png
+    - images/final-version-2-jp.png
+    - images/final-version-3-jp.png
     - images/usability-testing.png
-    - images/google-analytics-adoption-rate.png
+    - images/google-analytics-adoption-rate-jp.png
     - images/Profile-feedback.png
 
 imagesLg: 
@@ -95,7 +95,7 @@ CRMであるDigimaの顧客プロフィールページは、すべてのお客�
 この問題はユーザーも同様に認識しており、ページの存続期間中に、特定のタスクを実行する方法や、特定の機能がページのどこにあるかを尋ねるサポートチケットやフィードバック、さらには改善要求が増加しました。
 </p>
 
-<Images name={props.images.md["exsiting-customer-feedbacks-ja"]} captions="お客様の声からも改善の必要性を感じました。"/>
+<Images name={props.images.md["exsiting-customer-feedbacks-jp"]} captions="お客様の声からも改善の必要性を感じました。"/>
 </section>
 
 <section id="課題" data-title="Constraints and Challenges">
@@ -113,7 +113,7 @@ CRMであるDigimaの顧客プロフィールページは、すべてのお客�
     <li>デザインの変更とその実装には長い時間がかかるため、他の重要な機能の開発にリソースが割かれる可能性がありました。</li>
 </ul>
 
-<Images name={props.images.md["exsiting-google-analytics"]} captions="Googleアナリティクスのデータから、顧客情報のプロフィールページは、ユーザーにとって重要であることが明らかになっています。"/>
+<Images name={props.images.md["exsiting-google-analytic-jp"]} captions="Googleアナリティクスのデータから、顧客情報のプロフィールページは、ユーザーにとって重要であることが明らかになっています。"/>
 </section>
 
 <section id="ユーザーリサーチ" data-title="User Research">
@@ -128,7 +128,7 @@ CRMであるDigimaの顧客プロフィールページは、すべてのお客�
 また、ユーザーのペインポイントをより深く理解するために、ユーザーとの面談にも参加しました。
 </p>
 
-<Images name={props.images.md["exsiting-customer-feedback-spreadsheet"]} captions="Customer feedbacks from various sources were centralized and categorized in a dedicated Google spreadsheet."/>
+<Images name={props.images.md["exsiting-customer-feedback-spreadsheet-jp"]} captions="Customer feedbacks from various sources were centralized and categorized in a dedicated Google spreadsheet."/>
 
 <p>
 その調査から、データをカスタマージャーニーマップに合成することができました。これにより、ユーザーのペインポイントを表し、どこに注意を払うべきかがわかりました。
@@ -187,7 +187,7 @@ CRMであるDigimaの顧客プロフィールページは、すべてのお客�
 </p>
 
 
-<Images name={props.images.md["exsiting-sections-break-down-ja"]} captions="ページの各UI要素を重要度順に並べることで、全体の階層的な価値を理解することができました。"/>
+<Images name={props.images.md["exsiting-sections-break-down-jp"]} captions="ページの各UI要素を重要度順に並べることで、全体の階層的な価値を理解することができました。"/>
 
 
 <p>
@@ -231,7 +231,7 @@ CRMであるDigimaの顧客プロフィールページは、すべてのお客�
 <section id="プロトタイプ" data-title="Prototyping">
 
 #### プロトタイプ
-## HTML/CSS/jQueryのプロトタイプを作ることで、このような複雑なページをデザインする際のリスクを軽減できました。
+## 実装されたプロトタイプを作ることで、このような複雑なページをデザインする際のリスクを軽減できました。
 
 <p>
 このプロトやイプを作成したことで、いくつかの問題点が浮き彫りになりました。そのひとつが、タイムラインです。当初は、タイムラインを画面の中央に配置し、他のセクションよりも広いスペースを確保すれば、リードの直近のアクティビティを強調するのに十分だと考えていました。しかし、それでは十分ではないことがわかりました。
@@ -247,7 +247,7 @@ CRMであるDigimaの顧客プロフィールページは、すべてのお客�
         <source src="images/prototype.mp4" type="video/mp4"/>
     Your browser does not support the video tag.
     </video> 
-    <figcaption className={props.style.caption}>HTML / CSS / jQueryプロトタイプを作成することで、静的バージョンでは明らかにできなかった問題を特定することができました。</figcaption>
+    <figcaption className={props.style.caption}>実装されたプロトタイプを作成することで、静的バージョンでは明らかにできなかった問題を特定することができました。</figcaption>
 </div>
 
 </section>
@@ -266,7 +266,7 @@ CRMであるDigimaの顧客プロフィールページは、すべてのお客�
 <p>
 参加者を既存の顧客ベースから選び、思考プロセスを声に出しながら、一連のタスクを実行するように依頼しました。 ユーザーに自分の気持ちを詳しく説明してもらうよう、「どうしてですか？」、「この機能についてどう思いますか？」、「それについてもっと教えてください」などのフォローアップの質問や、現行のプロフィールデザインについての質問しました。 多くのユーザーの目標を代表し、かつUIの中で最もデザインが変更された部分に関連するタスクに焦点を当てました。
 </p>
-<Images withZoom name={props.images.md["user-testing-spreadsheet"]} captions="各セッションの結果を、さらなる分析のためにGoogleスプレッドシートに集約しました。"/>
+<Images withZoom name={props.images.md["user-testing-spreadsheet-jp"]} captions="各セッションの結果を、さらなる分析のためにGoogleスプレッドシートに集約しました。"/>
 <p>
 テストでは、予想外の使い勝手の悪さが次々と見つかりましたが、後になって修正することができました。
 </p>
@@ -302,7 +302,7 @@ CRMであるDigimaの顧客プロフィールページは、すべてのお客�
 実装を容易にするために、私は各要素をコンポーネントに分解し、<Link to={"/ja/dds"}>既存のデザインシステムのドキュメントサイトに文書化しました。</Link>
 </p>
 
-<Images name={props.images.md["dds-components"]} captions="各ページの要素を、デザインシステム専用のドキュメントサイトに記録しました。"/>
+<Images name={props.images.md["dds-components-jp"]} captions="各ページの要素を、デザインシステム専用のドキュメントサイトに記録しました。"/>
 
 先に作成したHTMLプロトタイプに加えて、フロントエンドチームに最終バージョンのデザインが全体としてどのように見えるか、どのように動作するかを感じてもらうために、invisionプロトタイプも作成しました。
 </section>
@@ -320,7 +320,7 @@ CRMであるDigimaの顧客プロフィールページは、すべてのお客�
 この方法論により、バグ修正や新機能の開発といった優先度の高いタスクへの影響を最小限に抑えながら、デザイン変更の統合を進めることができました。
 </p>
 
-<Images name={props.images.md["youtrack-tasks"]} captions="デザイン変更の各要素を、ユーザーストーリーに分割し、複数のスプリントに分けました。"/>
+<Images name={props.images.md["youtrack-tasks-jp"]} captions="デザイン変更の各要素を、ユーザーストーリーに分割し、複数のスプリントに分けました。"/>
 
 <p>
 このページはアプリケーション全体の中で最も使用されるページであったため、デザイン変更のもう一つの重要な目標は、ユーザーの日常業務への影響を最小限に抑えることでした。そのため、現行のデザインをすぐに新しいデザインに差し替えることはできませんでした。ユーザーからのフィードバックを見ながら、残っているバグや使い勝手の問題を修正しつつ、徐々に新しいデザインに触れてもらう方法が必要でした。
@@ -336,13 +336,13 @@ CRMであるDigimaの顧客プロフィールページは、すべてのお客�
 </li>
 </ul>
 
-<Images name={props.images.md["release-schedule"]} captions="徐々に新しいデザインに触れていくことで、ユーザーの日常業務への影響を最小限に抑えることができます。"/>
+<Images name={props.images.md["release-schedule-jp"]} captions="徐々に新しいデザインに触れていくことで、ユーザーの日常業務への影響を最小限に抑えることができます。"/>
 
 <p>
 数週間のフィードバックとバグ修正を経て、最後の2週間に入ったところで、新しいプロフィールデザインがデフォルトバージョンになることをユーザーに警告しました。ベータ版の開始から2ヶ月後、すべてのユーザーが新しいプロフィールデザインへの切り替えに成功しました。
 </p>
 
-<Images withZoom name={props.images.md["google-analytics-adoption-rate"]} captions="新しいプロファイルの採用率データは、GoogleAnalyticsとTableauで追跡されました。"/>
+<Images withZoom name={props.images.md["google-analytics-adoption-rate-jp"]} captions="新しいプロファイルの採用率データは、GoogleAnalyticsとTableauで追跡されました。"/>
 
 <Images name={props.images.md["Profile-feedback"]} captions="顧客からのフィードバックはさまざまなソースから収集され、専用のYoutrackボードで管理されました。"/>
 
@@ -355,7 +355,7 @@ CRMであるDigimaの顧客プロフィールページは、すべてのお客�
 ### 複雑な問題を扱う場合、静的なモックアップやインタラクティブなモックアップだけでは不十分である
 
 <p>
-invisionのプロトタイプだけに頼るのではなく、HTML/CSS/jQueryのプロトタイプを時間をかけて作成したことで、早期に社内のフィードバックを得ることができ、実装段階で開発者が解決しなければならなかった多くの問題を発見することができました。
+invisionのプロトタイプだけに頼るのではなく、実装されたプロトタイプを時間をかけて作成したことで、早期に社内のフィードバックを得ることができ、実装段階で開発者が解決しなければならなかった多くの問題を発見することができました。
 </p>
 
 ### ビジネスに特化した目標設定が不可欠。
@@ -366,8 +366,8 @@ invisionのプロトタイプだけに頼るのではなく、HTML/CSS/jQueryの
 
 
 
-<ImageSlider beforeKey={props.images.md["final-version-1"]} afterKey={props.images.md["final-version-2"]} captions="顧客情報プロフィールの旧ページと新ページ"/>
+<ImageSlider beforeKey={props.images.md["final-version-1"]} afterKey={props.images.md["final-version-2-jp"]} captions="顧客情報プロフィールの旧ページと新ページ"/>
 
-<Images name={props.images.md["final-version-3"]} captions="新しいプロフィールデザインのレスポンシブ版"/>
+<Images name={props.images.md["final-version-3-jp"]} captions="新しいプロフィールデザインのレスポンシブ版"/>
 </section>
 </div>

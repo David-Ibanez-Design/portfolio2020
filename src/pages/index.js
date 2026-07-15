@@ -65,7 +65,7 @@ const Homepage = ({data, requestLangChange}) => {
                     </a>
               </div>
               <h1><span>{t.home.title}</span></h1>
-              <p>{t.home.heroText}</p>      
+              <p dangerouslySetInnerHTML={{__html: t.home.heroText}} />      
               <div className={style.actions}>
                 <Buttons destination="external" to={locale === "en" ? ResumeEn : ResumeJp} buttonStyle="primary">{t.home.viewResume}</Buttons>
                 <Buttons destination="external" to={`mailto:${Config.siteMetadata.email}`} buttonStyle="secondary">{t.home.contact}</Buttons>    
@@ -138,7 +138,7 @@ const Homepage = ({data, requestLangChange}) => {
       
       {/* <Testimonies /> */}
 
-        <div className={`${style.dribbbleListContainer}  ${style.container}`}>
+        {/* <div className={`${style.dribbbleListContainer}  ${style.container}`}>
           <h2>{t.home.otherWorks}</h2>
           <p>
             {locale === "en" ?  
@@ -174,7 +174,7 @@ const Homepage = ({data, requestLangChange}) => {
               )
             })}
           </div>       
-        </div>
+        </div> */}
     </div>
     )
   }

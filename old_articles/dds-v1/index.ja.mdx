@@ -1,0 +1,301 @@
+---
+title: ピクセルではなくユーザーエクスペリエンスに集中するためのデザインシステム設計およびドキュメント化
+tags: [VisualDesign, DesignSystem, FrontEndDevelopment]
+path: articles/design-system
+order: 6
+featured: 0
+displayToc: true
+coverHomepage: images/homepage-cover.png
+coverArticle: images/article-cover.png
+menuVignettes: images/menu-vignettes.png
+mobileVignettes: images/mobile-menu-vignettes.png
+suggestedArt: images/suggestedArt.png
+imagesMd: 
+    - images/inventory-spreadsheet.png
+    - images/v1-long-list.png
+    - images/visual-direction-01.png
+    - images/visual-direction-02.png
+    - images/visual-direction-final-01.png
+    - images/master-file-1-ja.png
+    - images/master-file-2.png
+    - images/template-rules.png
+    - images/Components-1.png
+    - images/documentation-site.png
+    - images/invision-inspect.png
+    - images/live-compoenents.png
+    - images/before-profile-before.png
+    - images/before-profile-after.png
+    - images/before-table-before.png
+    - images/before-table-after.png
+    - images/before-dashbaord-before.png
+    - images/before-dashbaord-after.png
+
+imagesXl: 
+    - images/v1-duplicate-styles-ja.png
+    - images/Components.png
+---
+
+<!-- Overview -->
+
+<ArticleOverview>
+    <Sunnary>
+        ウェブベースのCRMアプリケーションである「Digima」は、中小企業が顧客ニーズを把握するための手段を提供しています。同社入社から数カ月後、「Digimaはスケールアップが難しい」ということに気付きました。非常に厳しい状態だったため、プロダクトを一から作り直すことになりました。
+    </Sunnary>
+    <Problems>
+        <ul>
+            <li>同社は、機能デザインの提供のため、より拡張性のある方法を必要としていた。</li>
+            <li>より一貫したユーザーエクスペリエンスをDigimaのユーザーが求めていた。</li>
+        </ul>        
+    </Problems>
+    <Goals>
+        <ul>
+            <li>デザインプロセスに質・一貫性・スピードをもたらすツールとプロセスの構築。</li>
+            <li>上記ツールを用いたプロダクトの再デザイン。</li>
+        </ul>      
+    </Goals>
+    <Outcomes>
+        <ul>
+            <li>専用のドキュメントサイトを含む完全に新しいデザインシステムが構築できた。</li>
+            <li>機能デザインの品質・一貫性・納期が大幅に改善された。</li>
+        </ul>        
+    </Outcomes>
+    <Role>
+        <ul>
+            <li>ビジュアルデザイン</li>
+            <li>プロジェクト管理</li>
+            <li>デザインシステムの構築および維持する</li>
+        </ul>   
+    </Role>   
+</ArticleOverview>
+
+import ImageSlider from "../../src/components/image-slider"
+
+<!-- Content -->
+<div className="articleContent">
+<section id="監査">
+
+#### 監査
+## プロダクト監査の結果、多くの不整合やユーザーエクスペリエンスの問題が見つかり、デザインシステムの必要性が確認されました。
+
+<p>
+再デザインの必要性を理解するため、まずは既存のプロダクトの評価をする必要がありました。 
+</p>
+
+<p>
+そのため、プロダクトのインターフェースを全体的に見渡し、メニュー、ボタン、モーダルのスクリーンショットを撮りました。各コンポーネントをカテゴリー分けし、それぞれに名称をつけ、Googleスプレッドシートにまとめました。
+</p>
+
+<Images name={props.images.md["inventory-spreadsheet"]}/>
+
+<p>
+全てのコンポーネントを並べて確認したことで、デザインの変更が必要であることが分かりました。色は130種類、グレーのシェードに関しても56色、22種類のフォントサイズ、そして、検索窓に関しては全く違う4つのスタイルが存在していました。 
+</p>
+
+<p>
+会社のニーズに合わせ、きちんと整備された協働デザインシステムが必要であるということが明らかになりました。
+</p>
+
+<Images 
+    containerType="full" 
+    className="bg-gray-0" 
+    containerWidth="Xl"
+    name={props.images.xl["v1-duplicate-styles-ja"]}
+    captions="プロダクト監査で多くの不整合が明らかになりました。"
+/>
+</section>
+<section id="デザイン原則">
+
+#### デザイン原則
+## ユーザーにどういったプロダクトエクスペリエンスを届けたいのかについて認識を合わせることで、難しい決断を下す際にも軌道から外れず順調に進めることができました。
+
+<p>
+新しいデザインのビジュアルの方向性を考案する前に、チームと一緒に、自分たちの基本原則を定める必要がありました。
+</p>
+
+<p>
+この基本原則は、プロダクトに関する難しい決断をしなければならない際の、いわゆる北極星のようなもので、プロダクトを構築するための基盤となるものです。
+</p>
+
+<p>
+ディスカッションを重ねた結果、以下の4つの原則に辿り着きました：
+</p>
+
+<ul>
+    <li><strong>目的を持つこと：</strong> 常に意図をもってデザインし、可能な限りデータを基にソリューションを検証する。</li>
+</ul>
+
+<ul>
+    <li><strong>明確にすること：</strong> 同じ問題には同じソリューションを用いることで一貫性を追求し、ユーザーエクスペリエンスに密着すること。既存のユーザーが慣れ親しんだパターンやワークフローを変えるのは、確実にそれが向上につながる時のみに限定する。</li>
+</ul>
+
+<ul>
+    <li><strong>反復的にデザインすること：</strong> 最初から完璧なソリューションはありません。忍耐強く、フィードバックから学び、反復的にユーザーエクスペリエンスを改善していく。</li>
+</ul>
+
+<ul>
+    <li><strong>コラボレーションを促進すること：</strong> ソフトウェア開発はチームスポーツです。周りのサポートなしではデザインは成り立ちません。だからこそ、プロセスに関わってもらうことで、より良いデザインが生まれるのです。</li>
+</ul>
+</section>
+<section id="ビジュアルデザイン">
+
+#### ビジュアルデザイン
+## プロダクトの再デザインとデザインシステムの構築を始める前に、ビジュアルの方向性を決める必要がありました。
+
+<p>
+どのようなプロダクトエクスペリエンスを届けたいのかわかってきたところで、アプリケーションの主要な画面のデザインの方向性を、いくつか検討してみました。
+</p>
+
+<Images name={props.images.md["visual-direction-01"]} captions="新しいテーブルの初期バージョン"/>
+
+<Images name={props.images.md["visual-direction-02"]} captions="ウェブトラッキングページのバリエーション"/>
+
+<p>
+フィードバックのやり取りの後、チームと最終的なスタイルを決定しました。 
+</p>
+
+<Images name={props.images.md["visual-direction-final-01"]} captions="最終デザインスタイル" className="mt-0"/>
+</section>
+<section id="構築">
+
+#### 構築
+## デザインシステムの認識を合わせること、および分かりやすい構造にすることで、効率性を改善するという目標を達成するために必要な、共通理解を得ることができました。
+
+<p>
+ソリューションの全体像が見えたところで、具体的にデザインシステムをどう構築していくのか、詳細の検討を始めました。
+</p>
+
+<p>
+既存のプロダクト監査で特定された全てのコンポーネントを整理し、分類することから始めました。やり取りの中で、ディベロッパーがUI要素を別の名称で呼んでいることに気付きました。
+</p>
+
+<p>
+システムデザインの目的の一つは共通の理解を生むことですので、チーム全体で適切な名称を決めて、類似性に従いUIコンポーネントをグループ分けすることが不可欠でした。
+</p>
+
+<p>
+何度かやり取りを行い、以下の編成に辿り着きました。
+</p>
+
+<Images bg="gray-0" name={props.images.md["master-file-1-ja"]} captions="デザインシステム構造"/>
+</section>
+<section id="コンポーネント">
+
+#### コンポーネント
+## コンポーネントのデザインは細かな作業のため時間がかかりますが、機能デザインの質と納期を大幅に向上させます。
+
+<p>
+デザインシステムの構造が定義されたあとは、監査段階でリストアップしたUI要素を、先に構築した新しいデザインシステムに変換していく作業に入りました。
+</p>
+
+<p>
+最初の実装では、変更部分は切り分け、各UI要素を個別の <a href="https://www.sketch.com/docs/libraries/" target="_blank" rel="noreferrer">Sketchライブラリとして</a> 作成しました。しかしながら、この編成では全体をさっと確認するのが難しかったため、その対処として、エントリーポイントとなるマスターファイルを作りました。
+</p>
+
+<Images name={props.images.md["Components-1"]} captions="デザインシステムを主な4カテゴリーに整理しました。"/>
+
+<p>
+しかし、このSketchライブラリを数年間使ってみて、明らかになったことがありました：
+</p>
+
+<ul>
+    <li>コンポーネントを更新するために常にファイルを切り替えなければならないのは非常に非効率的であり、コンポーネントが簡単に古くなってしまう。</li>
+    <li>注意深く作られたコンポーネント構造にもかかわらず、パフォーマンスがまだ遅かった。</li>
+    <li>当時Sketchのプロトタイピング機能が不足していたため、別のツールを使わざるを得なかった。</li>
+</ul>
+
+<p>
+そこで、上記の理由から、2023年の初めに、デザイン・システム全体をFigimaに切り替えることにしました。
+</p>
+
+<Images name={props.images.md["master-file-2"]} className="mt-5" captions="Sketchとはちがって、すべてのコンポーネントを1つのファイルに保存しても、パフォーマンスへの影響は見られなかった。"/>
+</section>
+
+<section id="ドキュメント">
+
+#### ドキュメント
+## ドキュメントサイトは、チームがデザインから実装へ、推測で判断することなくスムーズに移行するのに役立ちました。
+
+<p>
+デザイナーとディベロッパーとの間で、システムに関する共通の理解を持って実装を進めていくために、ドキュメントサイトが必要でした。開発チームのサポートを受け、ドキュメントサイトの作成作業を開始し、そこにコンポーネントを追加していきました。
+</p>
+
+<p>
+しかし数年後、私の努力にもかかわらず、開発者の採用数が非常に少ないことが明らかになりました。
+</p>
+
+<p>
+解決策の一つは、現在のドキュメントサイトをStorybookに移行し、現在のウェブアプリケーションのコードベースに直接統合することでした。
+</p>
+
+<Images name={props.images.md["live-compoenents"]} captions="コードベースに直接統合されたドキュメンテーション・サイトの使用は、採用を促進する上で不可欠な段階でした。"/>
+
+</section>
+
+<section id="future-improvements">
+
+#### 今後の改善
+## デザインと開発を分断していたサイロ化を解消するために、デザインが開発に近づくべき。
+
+<p>
+デザイン・システムの最初のバージョンは、Sketchとカスタムメイドのドキュメント・サイトをベースにしていました。デザイン・プロセスを大幅に改善し、チーム全体に利益をもたらしたにもかかわらず、開発者に採用されることはありませんでした。
+</p>
+
+<p>
+その理由は明らかで、デザインと開発はまだそれぞれのサイロで行われており、そうである限り採用率は低いままであり続けるだろう。
+</p>
+
+<p>
+そのサイロ化を断ち切るために、デザインが開発により近づくべきだと考えていました。なぜなら、結局のところ、最も重要なのは、デザインツールに表示されるものではなく、顧客に直接提供されるものだからです。
+</p>
+
+<p>
+それを実現するために、行われた、あるいは現在進行中のことをいくつか：
+</p>
+
+<ul>
+    <li>デザイン・トークンをデザインと開発で共有すること。</li>
+    <li>デザイン・トークンの使用を強制するために、コードベースにリンティング・ルールを作ること。</li>
+    <li>コードベースをリファクタリングしてコンポーネントベースにすること。</li>
+    <li>Storybookにコンポーネントを文書化し、そのデザイン・バージョンを参照すること。</li>
+    <li>デザイン・システムのコンポーネント構造をリファクタリングし、コードベースと同じ構造にすること。</li>
+</ul>
+</section>
+
+<section id="結論">
+
+#### 結論
+## デザインシステムの作成は、プロダクトの再デザインにつながる拡張性と一貫性の問題に対処するために必要でした。
+
+<p>
+このプロジェクトは、複数の部署を取り込んだ1年以上に及ぶ大がかりなものになりました。
+</p>
+
+<p>
+しかしながら、その努力は実を結びました：
+</p>
+
+<ul>
+    <li><strong>デザイナーとして</strong>、短時間で、これまで以上に高い精度のモックアップを作成できるようになりました。また、アプリケーションのユーザーエクスペリエンスを細部まで創り上げるのに必要な、奥深く複雑な思考を学ぶことができました。</li>
+    <li><strong>ディベロッパーに関しては</strong>、 明確なドキュメントに頼ることができ、既存のパターンを再利用できたことで、CSS値の微調整を続けるよりも、テストや効率的なコードを書くことに集中できました。</li>
+    <li><strong>ビジネス面では</strong>、新しい機能開発で見られた生産性の向上は、システムの採用にかかった投資を上回るものでした。</li>
+</ul>
+
+<ImageSlider 
+    beforeKey={props.images.md["before-profile-before"]} 
+    afterKey={props.images.md["before-profile-after"]} 
+    captions="顧客プロフィールページの旧バージョンと新バージョン"
+/>
+
+<ImageSlider 
+    beforeKey={props.images.md["before-table-before"]} 
+    afterKey={props.images.md["before-table-after"]} 
+    captions="顧客情報一覧ページの旧バージョンと新バージョン"
+/>
+
+<ImageSlider 
+    beforeKey={props.images.md["before-dashbaord-before"]} 
+    afterKey={props.images.md["before-dashbaord-after"]} 
+    captions="ダッシュボードページの旧バージョンと新バージョン"
+/>
+</section>
+</div>

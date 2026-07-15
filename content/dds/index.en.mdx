@@ -1,15 +1,15 @@
 ---
-title: Designing And Documenting A Design System To Enable The Team To Focus On User Experience Rather Than Pixels.
-tags: [VisualDesign, DesignSystem, FrontEndDevelopment]
+title: Establishing and leading Digima's design system for faster delivery, deeper consistency, and a foundation for agentic design.
+tags: [DesignSystem, DesignEngineering, AgenticDesign, FrontEndDevelopment]
 path: articles/design-system
 order: 6
 featured: 0
 displayToc: true
-coverHomepage: images/homepage-cover.png
+coverHomepage: images/dds-homepage-cover@2x.png
 coverArticle: images/article-cover.png
 menuVignettes: images/menu-vignettes.png
 mobileVignettes: images/mobile-menu-vignettes.png
-suggestedArt: images/suggestedArt.png
+suggestedArt: images/suggestedArt2.png
 imagesMd: 
     - images/inventory-spreadsheet.png
     - images/v1-long-list.png
@@ -33,38 +33,44 @@ imagesMd:
 imagesXl: 
     - images/v1-duplicate-styles.png
     - images/Components.png
+    - images/token_architecture_diagram2.png
 ---
 
 <!-- Overview -->
 
 <ArticleOverview>
     <Sunnary>
-        Digima, a web-based CRM application, provides small to medium size companies with a way to understand their customers' needs. 
-        A few months after I joined the company, we came to a realization: Digima was getting harder and harder to scale. It got so bad that the decision was made to rebuild the product from the ground up.
+        Digima is a B2B SaaS CRM used by small and medium-sized Japanese real estate companies. The original version of the product had been built by a single developer who handled both design and code, with no process or design system in place. As a result, by the time I joined Comvex the product was deeply inconsistent and getting harder to extend with every new feature. The team made the decision to rebuild the product from the ground up, and I owned the design side of solving this.
     </Sunnary>
     <Problems>
         <ul>
             <li>The company needed a more scalable way to deliver feature designs.</li>
             <li>Digima users needed a more consistent user experience.</li>
+            <li>Design and engineering had no shared vocabulary, which made every feature handoff slower than it should have been.</li>
         </ul>        
     </Problems>
     <Goals>
         <ul>
-            <li>Create tools and processes that can deliver quality, consistency, and speed to the design process.</li>
-            <li>Redesign the product using these tools.</li>
+            <li>Create tools and processes that bring quality, consistency, and speed to the design process.</li>
+            <li>Redesign the product using those tools.</li>
+            <li>Reduce the distance between design intent and shipped code.</li>
         </ul>      
     </Goals>
     <Outcomes>
         <ul>
-            <li>An entire new design system that included a dedicated documentation site was created.</li>
-            <li>Feature design quality, consistency, and delivery time were significantly imporved.</li>
+            <li>A complete design system, established from scratch and still in active use today.</li>
+            <li>Significant reduction in design-to-engineering delivery time, with much higher consistency.</li>
+            <li>Design tokens shipped to the frontend codebase and enforced by lint rules I authored, which block hard-coded values at merge time.</li>
+            <li>A Storybook documentation layer integrated directly into the application codebase, used by around 10 engineers.</li>
+            <li>A foundation in place for the next architectural step: closing the remaining design-code gap and moving toward an agentic design system.</li>
         </ul>        
     </Outcomes>
     <Role>
         <ul>
-            <li>UI design </li>
-            <li>Project management</li>
-            <li>Build and maintain design system</li>
+            <li>Established the design system from scratch and have led its evolution since.</li>
+            <li>Drove every major architectural shift: the Sketch-to-Figma migration, the move into the codebase via tokens and lint rules, and the current shift toward AI-assisted generation.</li>
+            <li>Own the system's structure, define its rules, and approve changes to it.</li>
+            <li>Review and QA component contributions and refactors made by engineers.</li>
         </ul>   
     </Role>  
 </ArticleOverview>
@@ -79,21 +85,20 @@ import ImageSlider from "../../src/components/image-slider"
 ## The product audit revealed many inconsistencies and user experiences issues, confirming the need for a design system.
 
 <p>
- To understand the needs of the redesign, I first had to evaluate the current product. 
+ Before proposing anything, I evaluated what already existed. I went through the full product interface and captured every menu, button, modal, and form. I organized them into a spreadsheet, grouped them into families, and gave each variant a name. What came back made the case for everything that followed:
 </p>
 
-<p>
-To that end, I went through the entire product interface and took screenshots of menus, buttons, and modals. I created a Google spreadsheet where I grouped each component into categories and gave each one a name.
-</p>
+<ul>
+    <li>130 different colors in use across the product</li>
+    <li>56 different shades of grey</li>
+    <li>22 different font sizes</li>
+    <li>4 completely different variants of the search field</li>
+</ul>
 
 <Images name={props.images.md["inventory-spreadsheet"]}/>
 
 <p>
-Viewing all the components side by side confirmed why we needed a redesign. There were 130 different colors, 56 different shades of greys, 22 different font sizes and 4 completely different variants of search fields. 
-</p>
-
-<p>
-It became clear that what we needed was a well organized, collaborative design system custom-built to meet the company’s needs.
+Seeing the inventory laid out side by side confirmed that what we needed was a well-organized, collaborative design system built specifically for Digima's needs.
 </p>
 
 <Images 
@@ -104,182 +109,179 @@ It became clear that what we needed was a well organized, collaborative design s
     captions="The current product audit revealed many inconsistencies."
 />
 </section>
-<section id="design-principles">
+<section id="Principles-and-Visuals">
 
-#### Design Principles
-## Agreeing on what kind of product experience we wanted to deliver to our users helped us stay on track when making difficult decisions.
-
-<p>
-Before I could start exploring visual directions for the new design, the team and I needed to decide on our core principles. 
-</p>
+#### Principles and Visuals
+## Before designing components, the team and I agreed on four principles that would let us make consistent decisions later without re-litigating each one.
 
 <p>
-These core principles are meant to act as our north star when making difficult product decisions and are the basis around which the product should be built.
-</p>
-
-<p>
-After a few discussions, we came up with the following four principles.
+Four principles emerged from team discussions and have held up ever since:
 </p>
 
 <ul>
-    <li><strong>Be purposeful:</strong> Always design with intention and seek to validate your solutions with data when possible.</li>
+    <li><strong>Be purposeful:</strong> Design with intention; validate with data where possible.</li>
 </ul>
 
 <ul>
-    <li><strong>Provide clarity:</strong> Ensuring consistent, cohesive user experiences by applying the same solutions to the same problems. Changing patterns and workflows familiar to existing users only when doing so is a definite improvement. (consistency trump originality and coherence trump consistency).</li>
+    <li><strong>Provide clarity:</strong> Apply the same solution to the same problem. Change familiar patterns only when the change is a definite improvement. (Consistency trumps originality, and coherence trumps consistency.)</li>
 </ul>
 
 <ul>
-    <li><strong>Design Iteratively:</strong> No one solution will be perfect the first time. Be patient, learn from feedback, and improve user experience Iteratively.</li>
+    <li><strong>Design Iteratively:</strong> No first solution is perfect. Learn from feedback and improve.</li>
 </ul>
 
 <ul>
-    <li><strong>Foster collaboration:</strong> Software development is a team sport. A design cannot exist without the support of others, so learning to implicate them into your process will only make for better designs.</li>
+    <li><strong>Foster collaboration:</strong> Software is a team sport. Designs survive only with engineering and product partnership.</li>
 </ul>
-</section>
-<section id="visual-direction">
-
-#### Visual Direction
-## Before I could start redesigning the product and building the design system, we needed to decide on a visual direction.
 
 <p>
-Once we had an idea of what kind of product experience we wanted to deliver, I started iterating on a few potential design directions for the main screens of the application. 
+Once the principles were agreed on, I iterated on visual directions for the core screens: the table view, the tracking page, and the contact profile. After several rounds of feedback the team settled on the final style.
 </p>
 
 <Images name={props.images.md["visual-direction-01"]} captions="An early version of the new table design."/>
 
 <Images name={props.images.md["visual-direction-02"]} captions="A variation on the web tracking page."/>
 
-<p>
-After a few rounds of feedbacks, the team and I ultimately selected one final style. 
-</p>
-
 <Images name={props.images.md["visual-direction-final-01"]} captions="The final design style." className="mt-0"/>
+
 </section>
-<section id="structure">
 
-#### Structure
-## An agreed-upon and straightforward structure for our design system helped promote the shared understanding necessary to reach our goal of improving efficiency.
+<section id="from-design-to-code">
+
+#### From Design to Code
+## The system became more valuable to engineering as more of it moved out of the design tool and into the codebase.
 
 <p>
-Now that I had an idea of what the overall solution will look like, it was time to get into the details of how the design system will be structured. 
+Building the system took several years and went through three main shifts in tooling and architecture.
 </p>
 
 <p>
-I started by organizing and categorizing every component identified during the current product version’s audit. During my conversion with developers, I noticed that often, they were using different names when referring to UI elements. 
+<strong>The Sketch era</strong><br />
+The first version of the design system was built in Sketch. Each UI element was its own library, with a master file as the entry point. The system covered four main component categories.
+</p>
+
+<Images name={props.images.md["Components-1"]} captions="The initial Sketch design system."/>
+
+<p>
+After about two years of running this in production, two problems became hard to ignore. Component updates were expensive: each change meant switching between files, and components could easily drift out of date. Sketch's prototyping capabilities also became too limited, forcing me to use a second tool for anything beyond static screens.
 </p>
 
 <p>
-Since one of the goals of the design system was to create a shared understanding, it was essential to decide on the right names collectively and grouped families of UI components based on their similarities.
+Alongside the design tool itself, I built a custom documentation site to bring developers into the system. Despite the effort, adoption stayed low. Design lived in Sketch, code lived in the codebase, and the documentation site sat in between without becoming central to either workflow.
 </p>
 
-<p>
-After a few backs and forths, we came up with the following organization. 
-</p>
-
-<Images bg="gray-0" name={props.images.md["master-file-1"]} captions="The design system structure."/>
 </section>
-<section id="components">
-
-#### Components
-## Designing the components was a long and meticulous process, but one that will significantly increase feature design quality and delivery time. 
 
 <p>
-Once the design system structure was defined, I got to work converting the UI elements listed during the audit phase to the new design style established earlier.
-</p>
-
-<p>
-In my initial implementation, each UI element was created <a href="https://www.sketch.com/docs/libraries/" target="_blank" rel="noreferrer">as a single Sketch library.</a> This organization, however, made it difficult to quickly navigate through the entire set, so to address this issue, I also created a master file that acted as an entry point.
-</p>
-
-<Images name={props.images.md["Components-1"]} captions="The design system is organized into 4 main categories."/>
-
-<p>
-However, after using this Sketch library for a couple of years, it becomes clear that:
-</p>
-
-<ul>
-    <li>Constantly having to switch between files to update a component was very inefficient which means that components could easily end up out of date</li>
-    <li>Despite the carefully crafted component structure, I was still experiencing slow performances</li>
-    <li>Prototyping functionalities in Sketch were lacking forcing me to use a separate tool</li>
-</ul>
-
-<p>
-Therefore for the reasons listed above, at the beginning of 2023, I decided to switch the entire design system to Figima.
+<strong>Figma migration</strong><br />
+In early 2023 I migrated the entire system to Figma. The migration was driven by two concrete problems with Sketch: performance had degraded to the point where the file-switching workflow was a daily cost, and Sketch lacked features that had become essential by then, including variables. Figma also meant the whole system could live in a single file without the performance hit.
 </p>
 
 <Images name={props.images.md["master-file-2"]} className="mt-5" captions="Contrary to Sketch, all components could be stored in a single file with no visible performance impact."/>
 
-
-</section>
-<section id="documentation">
-
-#### Documentation
-## The documentation site helped the team move from design to implementation quickly by eliminating guess-work.
-
 <p>
-To forge a shared understanding of the system between me the designer and developers and facilitate implementation, we needed a documentation site. With the help of the development team, I started working on creating the website and adding components to it.
+<strong>Design tokens in the codebase</strong><br />
+The migration was a prerequisite for the harder problem: bringing the design system's foundation into the codebase itself.
 </p>
 
 <p>
-However, after a while and despite my best efforts, it became clear that the developers' adoption was very low.
+I defined the design tokens (colors, type scale, spacing, border radius, shadows, …) as the source of truth and shipped them into the frontend codebase as code-level primitives. From that point forward, the foundation of the system existed in code, not only in design files.
+</p>
+
+<Images 
+    containerType="full" 
+    className="bg-gray-0" 
+    containerWidth="Xl"
+    name={props.images.xl["token_architecture_diagram2"]}
+    captions="Tokens are defined once in TypeScript, then exported as both a JS object for React and SCSS variables for stylesheets."
+/>
+
+<p>
+<strong>Linting against hard-coded values</strong><br />
+Tokens in code aren't worth much if engineers can still type #3B82F6 into a CSS file. I authored the lint rules that flag any hard-coded color, spacing, typography, … value in the codebase. The rules block the merge unless the value comes from the token set.
 </p>
 
 <p>
-Part of the solution was to move the current documentation site over to Storybook and integrate it directly into the current web application codebase.
+This also removed a significant amount of design-review work that used to go into catching small visual inconsistencies.
+</p>
+
+```javascript
+'scale-unlimited/declaration-strict-value': [
+    [
+        'color',
+        'background',
+        'background-color',
+        'border-color',
+        '/^(padding|margin)/',
+        'border-radius',
+        'font-size',
+        'font-weight',
+    ],
+    {
+        ignoreValues: [
+            'currentColor',
+            'inherit',
+            'transparent',
+            'auto',
+            'none',
+            0,
+            '/calc/',
+            'unset',
+        ],
+        message:
+            'Expected ${types} (expect for padding/margin/border-radius/font-weight) for "${value}" of "${property}"',
+    },
+],
+```
+<CodeCaption>The rule that makes the system enforceable. Color, spacing, typography, and border values must come from tokens. If they don't, the build fails.</CodeCaption>
+
+
+<p>
+<strong>Storybook as the documentation layer</strong><br />
+The earlier custom documentation site had failed because it sat outside the engineering workflow. I moved component documentation into Storybook and integrated it directly into the frontend application. Components could now be browsed, tested in isolation, and referenced by engineers without leaving their environment. Adoption improved meaningfully.
 </p>
 
 <Images name={props.images.md["live-compoenents"]} captions="Using a documentation website directly integrated into the codebase was an essential step in promoting adoption."/>
 
-</section>
+<p>
+A second benefit only became fully visible later. By living inside the codebase as structured, machine-readable component documentation, Storybook also became a foundation that AI tools can consume, and a key piece of infrastructure that the agentic direction builds on directly.
+</p>
 
-<section id="future-improvements">
+<section id="future_improvements">
 
-#### Future Improvements
-## To break the silos that divided design and development, I believed that design had to move closer to development.
+#### Future improvements
+## The next architectural step is unifying the design-system foundation across design and code, and using that foundation as the surface AI tools generate against.
 
 <p>
-The first version of our design system was based on Sketch and a custom-made documentation site. Despite providing substantial design process improvements that benefited the whole team, it was never really adopted by developers. 
+The token layer and the lint rules close the design-code gap at the foundation, since any color, spacing, typography, or related decision in code has to come from the system. However, design and code still live in two largely separate environments above that foundation. The immediate next step is closing that remaining gap.
 </p>
 
 <p>
-In insight it was obvious why; design and development were still happening in their respective silos and as long as that was the case adoption will likely remain low.
+This means turning the design tokens into a true single source of truth shared between Figma and code, by automatically syncing token definitions between the two. It also means applying the same treatment to components, using Figma Code Connect to map Figma components to their production code equivalents, so that designers and engineers reference the same components rather than parallel implementations of them. That unification is what makes the agentic direction credible rather than aspirational.
 </p>
 
 <p>
-To break that silos, I believed that design had to move closer to development because at the end of the day what mattered the most was not what was displayed in a given design tool, but what was shipped to customers.
+The agentic work has already started. Most teams today use AI to generate isolated mockups or scaffolding, when the more interesting problem is upstream: restructuring the design system itself so AI tools can read its tokens, components, and rules, and produce full designs and prototypes that conform to it. Early prototypes generated against the existing design system have been shared with PMs and engineers internally, and Storybook is the key piece of infrastructure that makes this possible, since it gives AI tools a structured, machine-readable surface to generate against. The longer-term goal is to compress the design-to-prototype cycle dramatically, and to generate production-ready (or close to production-ready) designs that use the actual components and tokens of the system rather than approximations of them.
 </p>
 
 <p>
-To make that happen here are a few things that were done and/or are in progress:
+Although still experimental, this will undoubtedly be the next major version of the system.
 </p>
 
-<ul>
-    <li>Share design tokens across design and development</li>
-    <li>Setup linting rules in the codebase to enforce the use of design tokens</li>
-    <li>Refactor the code base to be component-driven</li>
-    <li>Document components in Storybook and reference their design version (and vice-versa)</li>
-    <li>Refactor the design system component structure so it uses the same structure as the codebase</li>
-</ul>
 </section>
 
 <section id="conclusion">
 
 #### Conclusion
-## Creating a design system was necessary to address the scaling and consistency issues that led to a product redesign. 
 
 <p>
-This project turned out to be a massive undertaking spanning more than a year and involving several departments.
-</p>
-
-<p>
-However, these efforts paid off:
+Creating a design system was necessary to address the scaling and consistency issues that drove the product redesign. What started as a Sketch library has grown into a token-enforced, code-integrated, Storybook-documented system that is now moving toward a fully shared design and code foundation and, on top of that, toward AI-assisted generation. Every architectural step solved a real problem and created the conditions for the next one.
 </p>
 
 <ul>
-    <li><strong>As a designer</strong>, it allowed me to create mockups in a fraction of the time and with a higher level of precision than ever before; it also taught me the depth and complexity of thinking involved in crafting every little piece of an application’s user experience.</li>
-    <li><strong>For developers</strong>, being able to rely on clear documentation and reuse existing patterns allows them to focus on writing tests and efficient code rather than continually tweaking CSS values.</li>
-    <li><strong>For the business</strong>, the productivity gains we’ve seen in new feature development have more than justified the investments we made in adopting the system.</li>
+    <li><strong>As a designer</strong>, leading the system has let me produce mockups significantly faster and with higher precision than would otherwise be possible, and has helped me become more engineering-minded when designing.</li>
+    <li><strong>For developers</strong>, clear component documentation, reusable patterns, and lint rules that enforce the token system let them focus on logic, tests, and performance instead of endlessly recreating style for every shipped feature.</li>
+    <li><strong>For the business</strong>, the productivity gains in new feature delivery have justified the investment many times over, and the system has become an integral part of the product's experience and identity.</li>
 </ul>
 
 <ImageSlider 
