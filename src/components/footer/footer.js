@@ -34,7 +34,7 @@ const Footer = () => {
                   <MenuItems withWork={false} />
                 </div>
                 <div className={menuStyle.FooterlangSwitcher}>
-                  <LangSwitcher/>
+                  <LangSwitcher idSuffix="Footer"/>
                 </div>
               </div>
               <div className={style.socialsMobileContainer}>

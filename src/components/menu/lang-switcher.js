@@ -10,10 +10,15 @@ import { LocaleContext } from "../layout"
 import useTranslations from "../useTranslations"
 import locales from "../../../config/i18n"
 
-const LangSwitcher = ({toggleMenu, isMobile, requestLangChange }) => {
+const LangSwitcher = ({toggleMenu, isMobile, requestLangChange, idSuffix = "" }) => {
 
   const { locale, localizedPath, BrowserPreferredLang } = React.useContext(LocaleContext)
   const t = useTranslations()
+
+  // Tooltip ids must be unique per LangSwitcher instance (header, mobile menu, footer),
+  // otherwise every instance's tooltip opens at once on hover.
+  const jpTooltipId = `tooltipMenuJpLang${idSuffix}`
+  const enTooltipId = `switchToEnglish${idSuffix}`
 
   const pageName = localizedPath === locale ? "" : localizedPath.substring(localizedPath.lastIndexOf('/') + 1);
 
@@ -25,7 +30,7 @@ const LangSwitcher = ({toggleMenu, isMobile, requestLangChange }) => {
   return (
         <ul> 
           {/* Japanese */}
-          <li data-tip data-for="tooltipMenuJpLang" >
+          <li data-tip data-for={jpTooltipId} >
             <JapaneseFlag className={style.japaneseFlag}/>
             <Link 
               onClick={ isMobile ? toggleMenu : null}
@@ -35,12 +40,12 @@ const LangSwitcher = ({toggleMenu, isMobile, requestLangChange }) => {
               {t.menu.japanese}
             </Link>
             {locale !== "ja" ? (
-              <Tooltip place="top" targetId="tooltipMenuJpLang" >{t.menu.switchTo}</Tooltip>
+              <Tooltip place="top" targetId={jpTooltipId} >{t.menu.switchTo}</Tooltip>
             ) : null}
           </li>
 
           {/* English */}
-          <li data-tip data-for="switchToEnglish" >
+          <li data-tip data-for={enTooltipId} >
             <AmericanFlag/>
               <Link 
                 onClick={ isMobile ? toggleMenu : null}    
@@ -50,7 +55,7 @@ const LangSwitcher = ({toggleMenu, isMobile, requestLangChange }) => {
                 {t.menu.english}
               </Link>
               {locale === "ja" ? (
-                <Tooltip targetId="switchToEnglish" >{t.menu.switchTo}</Tooltip>
+                <Tooltip targetId={enTooltipId} >{t.menu.switchTo}</Tooltip>
               ) : null}
           </li>
         </ul>

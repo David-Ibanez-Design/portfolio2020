@@ -82,7 +82,7 @@ const Header = () => {
               <MenuItems/>
             </div>
             <div className={style.desktopLanguageContainer}>
-              <LangSwitcher　Tooltip={Tooltip} style={style} toggleMenu={toggleMenu}/>
+              <LangSwitcher Tooltip={Tooltip} style={style} toggleMenu={toggleMenu} idSuffix="Desktop"/>
             </div>
         </div> 
         <div className={style.srollBackground} ></div>   
@@ -108,7 +108,7 @@ const Header = () => {
             <div className={style.menusContainers}>
               <MenuItems isMobile={true} toggleMenu={toggleMenu}/>
               <div className={style.MobilelanguageContainer}>
-                <LangSwitcher style={style} isMobile={true} toggleMenu={toggleMenu}/>
+                <LangSwitcher style={style} isMobile={true} toggleMenu={toggleMenu} idSuffix="Mobile"/>
               </div>
             </div>
         </div>

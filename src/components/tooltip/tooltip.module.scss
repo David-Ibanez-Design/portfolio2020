@@ -21,7 +21,7 @@ $tooltip-theme: $brand;
 }
 
 // Fixed style overriding bug  
-:global(#tooltipMenuJpLang){
+:global([id^="tooltipMenuJpLang"]){
     margin-top: -10px !important;
 }
 
