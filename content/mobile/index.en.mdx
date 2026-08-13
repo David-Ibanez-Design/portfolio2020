@@ -29,12 +29,12 @@ imagesMd:
 
 <ArticleOverview>
     <Sunnary>
-    Digima's AI agent could see everything that happened online — but face-to-face meetings left no trace in the CRM, so reporting was subjective and follow-ups quietly fell through. This mobile app lets sales reps record an in-person meeting with one tap, get an AI summary, and have it saved automatically to the right customer's timeline. Those summaries are what let the AI agent follow up on offline meetings the way it already does online.
+    Digima's AI agent feature was able to leverage our entire CRM information to use as data, but face-to-face meetings were not recorded in our CRM, so the agent couldn't reference what was discussed, or use meeting information as data, and follow-ups quietly fell through. This mobile app helps fill that gap by letting salespersons record an in-person meeting with one tap, get an AI summary, and have it saved automatically to the right customer's timeline. Those summaries are what let the AI agent follow up on offline meetings the way it already does online and catch up on the latest customer information.
     </Sunnary>
     <Problems>
         <ul>
-            <li>Digima's AI agent could see everything online, but offline meetings left no reliable trace in the CRM — records were subjective, inconsistent, and easy to lose</li>
-            <li>A meeting-log feature existed, but logging was so manual that reps rarely used it — so the AI agent couldn't reference past meetings or re-engage leads that went cold after one</li>
+            <li>Digima's AI agent could see everything online, but offline meetings left no reliable trace in the CRM. Records were subjective, inconsistent, and easy to lose</li>
+            <li>A meeting-log feature existed, but logging was so manual that salespersons rarely used it, so the AI agent couldn't reference past meetings or re-engage leads that went cold after one</li>
             <li>A first version of the app already existed when I joined: a working build, but visually still a wireframe, with flow-level usability problems to solve before release</li>
         </ul>        
     </Problems>
@@ -75,7 +75,7 @@ The business wanted to ship this quickly. At the time the work started I was the
 </p>
 
 <p>
-The PM had written the spec, so the feature scope and business rules were his. My side was the design: how the flows worked, how the screens were structured, and how the app behaved.
+The PM wrote the spec, so the feature scope and business rules were his responsibility. My focus was on the design, including how the flows worked, how the screens were structured, and how the app behaved.
 </p>
 
 
@@ -85,7 +85,7 @@ The PM had written the spec, so the feature scope and business rules were his. M
 ## Aligning on a build that already existed
 
 <p>
-I didn't start from a blank file, so the first job was to understand what had already been built and decide what was worth changing. I went through the spec and the implemented app, then met with the PM and the developer to agree on the goals, the deadline, and which flow problems mattered enough to fix for the release versus which could wait. 
+Since I did not start from a blank file, my first task was to understand what had already been built and decide what was worth changing. I went through the spec and the implemented app, then met with the PM and the developer to agree on the goals, the deadline, and which flow problems mattered enough to fix for the release versus which could wait. 
 </p>
 
 <p>
@@ -93,8 +93,19 @@ Because the developer had built the first version expecting it to be reworked, t
 </p>
 
 <p>
-I mapped the full app as a set of flows organized by how a rep would actually start: recording on the spot without linking anyone, recording from a specific contact, recording from an existing meeting, and creating a record from the meeting list or a contact profile. Seeing it laid out this way made it easier to agree on what the app needed to cover and what was out of scope for the first release.
+I mapped the full app as a set of flows organized by the different possible flows a salesperson could actually start a recording from: 
 </p>
+
+<ul>
+    <li>Recording from a contact profile</li>
+    <li>Recording from an existing meeting</li>
+    <li>Recording from the previously pre-created meeting</li>
+</ul>
+
+<p>
+Seeing it laid out this way made it easier to agree on what the app needed to cover and what was out of scope for the first release.
+</p>
+
 
 <Images 
     withZoom
@@ -113,11 +124,11 @@ I mapped the full app as a set of flows organized by how a rep would actually st
 ## Reworking the core flows
 
 <p>
-The biggest change was to let reps record first and link the customer afterward. The earlier approach put contact selection before recording, adding friction at the exact moment a rep needs to capture a conversation. The evidence for this came from the product itself: Digima's existing meeting-log feature went largely unused because logging was too manual, so the redesign attacked friction at the point of capture.
+The biggest change was to let salespersons record first and link the customer afterward. The original flow asked salespersons to select a contact before starting a recording. This was clearly creating a point of friction at the exact moment a salesperson needed to capture a conversation, with the customer standing right there. The clue to that being a potential point of friction came from the existing Digima CRM itself. Digima already had a meeting-log feature, and data showed that our users mostly didn't use it because logging was too manual.
 </p>
 
 <p>
-The wording shown while recording was a harder problem than it looks. The business decided not to give customers the audio file or the raw transcript, out of concern they would feed it into other tools to generate their own summaries. So the recording screen had to set the right expectation without implying the user would get an audio recording or a transcript back. I worded it around the actual value: the audio is being recorded so the app can produce a summary, not so the user ends up with a file or a transcript.
+The wording shown while recording was a harder problem than it looks. The business decided not to give customers the audio file or the raw transcript, out of concern they would feed it into other tools to generate their own summaries. So the recording screen had to set the right expectation without implying the user would get an audio recording or a transcript back. My solution was to word it around the actual value. "The audio is being recorded so the app can produce a summary that would be used to update the Digima AI agent.", not so the user ends up with a file or a transcript.
 </p>
 
 <Images 
@@ -137,11 +148,11 @@ The wording shown while recording was a harder problem than it looks. The busine
 ## Designing the unhappy paths
 
 <p>
-Recording in the field means a lot can go wrong, so I gave the failure states real attention. There are screens for no connection, not enough storage, and uploads waiting for Wi-Fi, plus empty states and access-denied states. These came straight out of the real constraints in the spec: recordings need to upload when the connection comes back, recording keeps working even when a usage quota is hit, and the data has to survive all of it.
+For salespersons, recording in the field means a lot can go wrong, so the recording's failure states needed particular attention. There are screens for no connection, not enough storage, and uploads waiting for Wi-Fi, plus empty states and access-denied states. These came straight out of the real constraints in the spec: recordings need to upload when the connection comes back, recording keeps working even when a usage quota was hit, and the data has to survive these failure modes.
 </p>
 
 <p>
-Designing these properly protects the moment the whole app exists for: a rep who just recorded an important meeting and cannot afford to lose it. One lost recording would end that rep's trust in the product.
+These states were prioritized based on the costs of failure for the user and the business. Data-loss states were designed first, cosmetic states later, because one lost recording had the potential to really impact the user’s trust in the product.
 </p>
 
 
@@ -161,11 +172,11 @@ Designing these properly protects the moment the whole app exists for: a rep who
 ## Designing within a technical constraint: re-skinning React Native Paper
 
 <p>
-The developer wanted to build on React Native Paper so the same UI could serve both the Android and the iOS version of the app from one codebase. That set a real constraint on me: rather than design freely and hand over something that would be expensive to build, I designed within that library and re-skinned its components to Digima's look and feel.
+The developer wanted to build on React Native Paper so the same UI could serve both the Android and the iOS version of the app from one codebase. That set a real constraint on me because rather than design freely and hand over something that would be expensive to build, I had to design within that library and re-skin its components to Digima's look and feel.
 </p>
 
 <p>
-The tricky part was doing this without breaking implementation. A re-skin that ignores how the underlying components actually work just moves the problem to the developer. So I worked closely with him throughout, checking that the visual changes I wanted mapped onto what the library could do and adjusting where they didn't. The end result carries the Digima look and feel and stays consistent across iOS and Android. Because the designs mapped onto components the library already provided, the developer didn't have to build custom UI from scratch, which saved development time and helped us hit the release deadline.
+The tricky part was doing this without breaking implementation. A re-skin that ignores how the underlying components actually work just moves the problem to the developer. So I worked closely with him throughout, checking that the visual changes I wanted mapped onto what the library could do and adjusting where they didn't. As a result, I was able to match Digima's look and feel, and keep its design consistent across both platforms. And because designs mapped onto existing components, no custom UI was created from scratch, which saved dev time and helped hit the release deadline.
 </p>
 
 <Images 
@@ -184,8 +195,15 @@ The tricky part was doing this without breaking implementation. A re-skin that i
 ## From design to implementation
 
 <p>
-Once the designs were approved I wrote the user stories for the build, reviewed each one, and QA'd the implemented screens against the design and the acceptance criteria, logged per platform since some issues were Android-only. The QA caught three kinds of drift: visual, such as pickers rendering Material's default purple instead of our green; behavioral, such as onboarding repeating on every login instead of showing once; and spec violations, such as the build allowing unlimited meeting attendees when the agreed maximum was two. Catching that last category is the point: design QA covers the agreement, not just the pixels.
+Once designs were approved, I wrote the user stories, reviewed each one, then QA'd the implementation against the design. The QA caught three kinds of drift:
 </p>
+
+<ul>
+    <li>Visual, such as pickers rendering Material's default purple instead of our green</li>
+    <li>Behavioral, such as onboarding repeating on every login instead of showing once</li>
+    <li>Spec violations, such as the build allowing unlimited meeting attendees when the agreed maximum was two</li>
+</ul>
+
 
 <Images withZoom name={props.images.md["youtrack-tasks-jp1"]} captions="User stories created for the mobile app implementation"/>
 
@@ -205,20 +223,24 @@ Once the designs were approved I wrote the user stories for the build, reviewed 
 The app is live, so the next question is whether it does its job. I defined the KPIs, worked with the lead developer to make them measurable, and built a dashboard to track them. Instrumentation shipped recently and the data is only starting to accumulate, so there are no results to report yet.
 </p>
 <p>
-The headline metric is the share of recordings delivered end to end. A recording only creates value if it gets summarized and linked to a contact, so the summary shows up on the CRM timeline where the AI agent can use it. Everything else on the dashboard supports that number. The main supporting metrics are the contact link rate, the summary success rate, a lifecycle funnel showing where recordings get lost, and adoption metrics such as weekly active recorders and retention by cohort.
+The KPIs I was the most interested in capturing were:
 </p>
+
+<ul>
+    <li>Percentage of summaries added to a contact timeline vs. recordings started: A recording only creates value if it gets summarized, linked to a contact, and shown on the CRM timeline where the AI agent can use it.</li>
+    <li>Average time a recording stays unlinked to a contact. The design hypothesis is that allowing a user to link a recording to a contact after a recording has ended rather than before will help remove friction and maximize the number of recordings users actually do, but for this hypothesis to actually work, users need to actually link contacts to recordings afterward. This KPI is the one verifying that hypothesis.</li>
+    <li>Adoption over time (weekly active recorders, retention by cohort). For the feature to succeed, users need to make a habit of recording contact meetings.</li>
+    <li>A lifecycle funnel showing where recordings get lost.</li>
+</ul>
+
 <p>
 Part of this data already existed in the product database. The rest did not. I mapped the gaps and worked with the lead developer to close them. We added the recording ID to the meetings table so events could be joined to recordings, logged upload attempts on the backend to catch recordings that start uploading and never arrive, added a table recording each status change of a summary, and set up GA4 events in the app for the record button and the contact picker.
 </p>
 <p>
-For the dashboard, I first built an HTML mockup on sample data, using AI as the build tool. Starting with a mockup meant we could debate the metric definitions before anyone invested in real reporting. Spending time defining KPIs was essential. For example, a salesperson who cancels a recording on purpose is not a lost recording, and counting it as one would overstate the failure rate. The production version keeps the same page and swaps the sample data for a JSON file that a scheduled job exports from our Redshift reporting warehouse each night.
+For the dashboard, I first built an HTML mockup on sample data, using AI as the build tool. Starting with a mockup meant we could debate the metric definitions before anyone invested in real reporting, and I could iterate on the way the data was to be presented. The production version keeps the same page and swaps the sample data for a JSON file that a scheduled job exports from our Redshift reporting warehouse each night.
 </p>
 
 <Images withZoom name={props.images.md["dsahbaord-en"]} />
-
-<p>
-Two numbers will get most of my attention once the data comes in. The first is the contact link rate. The core design decision was to let salespersons record first and link the customer afterward, and the link rate shows whether that link actually gets made. The second is usage per salesperson over time, meaning recording frequency and retention by cohort, to see whether recording becomes a habit or fades after the first few meetings.
-</p>
 
 </section>
 
