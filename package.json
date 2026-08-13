@@ -61,12 +61,12 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "dev": "gatsby develop -p 3500",
+    "build": "PATH=\"$HOME/.nvm/versions/node/v14.18.1/bin:$PATH\" gatsby build",
+    "dev": "PATH=\"$HOME/.nvm/versions/node/v14.18.1/bin:$PATH\" gatsby develop -p 3500",
     "clean": "gatsby clean",
     "start": "npm run dev",
     "serve": "gatsby serve",
-    "deploy": "gatsby build && git push cpanel main -u --exec=/usr/local/cpanel/3rdparty/bin/git-receive-pack",
+    "deploy": "npm run build && git push cpanel main -u --exec=/usr/local/cpanel/3rdparty/bin/git-receive-pack",
     "goDady": "gatsby serve -p 8080 -H 184.168.102.44",
     "format": "prettier --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
