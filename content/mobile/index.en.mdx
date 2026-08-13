@@ -21,6 +21,7 @@ imagesMd:
     - images/final-version-1.png
     - images/final-version-2.png
     - images/final-version-3.png
+    - images/dsahbaord-en.png
 ---
 
 
@@ -49,6 +50,7 @@ imagesMd:
         <ul>
             <li>Shipped and currently rolling out, with the first 10 companies already using it.</li>
             <li>Redesigned the core flows based on my own design judgment, validated against support and customer success input relayed through the PM, and against technical constraints worked through directly with the developer.</li>
+            <li>Defined KPIs, worked with the lead developer to address data gaps, and set up a dashboard to track everything. Data collection is now underway.</li>
         </ul>        
     </Outcomes>
     <Role>
@@ -195,6 +197,30 @@ Once the designs were approved I wrote the user stories for the build, reviewed 
 
 </section>
 
+<section id="measurement">
+
+## Measurement
+
+<p>
+The app is live, so the next question is whether it does its job. I defined the KPIs, worked with the lead developer to make them measurable, and built a dashboard to track them. Instrumentation shipped recently and the data is only starting to accumulate, so there are no results to report yet.
+</p>
+<p>
+The headline metric is the share of recordings delivered end to end. A recording only creates value if it gets summarized and linked to a contact, so the summary shows up on the CRM timeline where the AI agent can use it. Everything else on the dashboard supports that number. The main supporting metrics are the contact link rate, the summary success rate, a lifecycle funnel showing where recordings get lost, and adoption metrics such as weekly active recorders and retention by cohort.
+</p>
+<p>
+Part of this data already existed in the product database. The rest did not. I mapped the gaps and worked with the lead developer to close them. We added the recording ID to the meetings table so events could be joined to recordings, logged upload attempts on the backend to catch recordings that start uploading and never arrive, added a table recording each status change of a summary, and set up GA4 events in the app for the record button and the contact picker.
+</p>
+<p>
+For the dashboard, I first built an HTML mockup on sample data, using AI as the build tool. Starting with a mockup meant we could debate the metric definitions before anyone invested in real reporting. Spending time defining KPIs was essential. For example, a salesperson who cancels a recording on purpose is not a lost recording, and counting it as one would overstate the failure rate. The production version keeps the same page and swaps the sample data for a JSON file that a scheduled job exports from our Redshift reporting warehouse each night.
+</p>
+
+<Images withZoom name={props.images.md["dsahbaord-en"]} />
+
+<p>
+Two numbers will get most of my attention once the data comes in. The first is the contact link rate. The core design decision was to let salespersons record first and link the customer afterward, and the link rate shows whether that link actually gets made. The second is usage per salesperson over time, meaning recording frequency and retention by cohort, to see whether recording becomes a habit or fades after the first few meetings.
+</p>
+
+</section>
 
 <section id="conclusion">
 

@@ -34,6 +34,9 @@ imagesXl:
     - images/v1-duplicate-styles.png
     - images/Components.png
     - images/token_architecture_diagram2.png
+    - images/figure-1-architecture-en.png
+    - images/figure-3-code-to-figma-en.png
+    - images/figure-2-figma-to-code-en.png
 ---
 
 <!-- Overview -->
@@ -61,13 +64,14 @@ imagesXl:
             <li>A complete design system, established from scratch and still in active use today</li>
             <li>Design tokens shipped to the frontend codebase, enforced by lint rules I authored — hard-coded values now fail at merge time, eliminating visual-inconsistency QA as a review category</li>
             <li>A Storybook documentation layer integrated directly into the application codebase, used by around 10 engineers</li>
-            <li>The foundation for the next step: closing the remaining design-code gap and moving toward an agentic design system</li>
+            <li>A token sync system that keeps Figma and the codebase in agreement. Its first full comparison surfaced four inconsistencies no existing check could see, and the system now reports zero drift</li>
+            <li>The foundation for the next step: moving toward an agentic design system</li>
         </ul>        
     </Outcomes>
     <Role>
         <ul>
             <li>Established the design system from scratch and have led its evolution since.</li>
-            <li>Drove every major architectural shift: the Sketch-to-Figma migration, the move into the codebase via tokens and lint rules, and the current shift toward AI-assisted generation.</li>
+            <li>Drove every major architectural shift: the Sketch-to-Figma migration, the move into the codebase via tokens and lint rules, the token sync between Figma and code, and the current shift toward AI-assisted generation.</li>
             <li>Own the system's structure, define its rules, and approve changes to it.</li>
             <li>Review and QA component contributions and refactors made by engineers.</li>
         </ul>   
@@ -246,17 +250,70 @@ The earlier custom documentation site had failed because it sat outside the engi
 A second benefit only became fully visible later. By living inside the codebase as structured, machine-readable component documentation, Storybook also became a foundation that AI tools can consume, and a key piece of infrastructure that the agentic direction builds on directly.
 </p>
 
-<section id="future_improvements">
+<section id="design-token-sync">
 
-#### Future improvements
-## The next architectural step is unifying the design-system foundation across design and code, and using that foundation as the surface AI tools generate against.
+#### Design Token Sync
+## The tokens now stay in sync between Figma and the codebase, and every change crosses sides as a reviewed pull request.
 
 <p>
-The token layer and the lint rules close the design-code gap at the foundation, since any color, spacing, typography, or related decision in code has to come from the system. However, design and code still live in two largely separate environments above that foundation. The immediate next step is closing that remaining gap.
+Shipping the tokens into the codebase solved half of the problem. The same tokens were still present as variables and styles in the Figma file. Designers edited one side while developers worked on the other, and there was no system to ensure both sides remained in sync. Drift went unnoticed until someone spotted an incorrect color in the product.
 </p>
 
 <p>
-This means turning the design tokens into a true single source of truth shared between Figma and code, by automatically syncing token definitions between the two. It also means applying the same treatment to components, using Figma Code Connect to map Figma components to their production code equivalents, so that designers and engineers reference the same components rather than parallel implementations of them. That unification is what makes the agentic direction credible rather than aspirational.
+The clear solution is a one-way copier that exports from Figma and overwrites the code. However, every tool available works this way, and none suit our needs because both sides can change. A one-way copy would eliminate the side it does not reference. So I designed and built a system with a different approach. Code is the main authority, and the tooling shows any discrepancies instead of overwriting either side.
+</p>
+
+<p>
+<strong>How it works</strong><br />
+The interface between the two sides consists of a pair of snapshot files saved in git. The codebase publishes its tokens already converted into Figma's format, and a test fails if that snapshot becomes outdated. A Figma plugin I built reads the live file, retrieves the code snapshot, and shows the designer exactly what differs. When a developer changes a token, the pull request fails unless the token still matches Figma, automatically adding the designer as a reviewer. When a designer makes a change through the plugin, an import job turns it into a regular pull request that humans can review. Nothing updates Figma automatically, and no change crosses between the sides silently.
+</p>
+
+<Images 
+    withZoom
+    containerType="full" 
+    className="bg-gray-0" 
+    containerWidth="Xl"
+    name={props.images.xl["figure-1-architecture-en"]}
+    captions="Where everything lives: the Figma file, the plugin's repository, and the codebase. Each arrow shows the mechanism that transfers the data and the credential it uses."
+/>
+
+<p>
+<strong>What the first real run found</strong><br />
+The first time the completed comparison was run against the actual file, it revealed four real mismatches that had gone unnoticed for months. Sixteen variables pointed to a published library copy of the primitives instead of the local ones, a color ramp was off by one tier, a gradient was set at the wrong angle, and an extra effect style had no code counterpart. While names had been checked and values spot-checked, these issues were invisible to any existing tests. All four were fixed, and the file now shows zero drift, with all tokens in agreement.
+</p>
+
+<Images 
+    withZoom
+    containerType="full" 
+    className="bg-gray-0" 
+    containerWidth="Xl"
+    name={props.images.xl["figure-2-figma-to-code-en"]}
+    captions="Figma to code flow. The plugin does not edit the code directly. It records what it read. A Jenkins job then turns that into a pull request for people to review."
+/>
+
+<Images 
+    withZoom
+    containerType="full" 
+    className="bg-gray-0" 
+    containerWidth="Xl"
+    name={props.images.xl["figure-3-code-to-figma-en"]}
+    captions="Code to Figma flow. A review of the pull request shows that every token can still be expressed in Figma. After the merge, the plugin tells the designer exactly what changes to make by hand."
+/>
+
+</section>
+
+<section id="future_improvements">
+
+#### Future improvements
+## With the token foundation now shared between design and code, the next step is unifying components and using the system as the surface AI tools generate against.
+
+<p>
+The token layer, the lint rules, and the sync system close the design-code gap at the foundation, since any color, spacing, typography, or related decision has to come from the system, and the two sides can no longer drift apart silently. However, design and code still live in two largely separate environments above that foundation, at the component level.
+</p>
+
+<p>
+The next step is applying the same treatment to components, so that the components in the design file and their production code equivalents stay in sync, and designers and engineers reference the same components rather than parallel implementations of them. I am currently working with the lead developer on an architecture that will let us do this with minimal effort and at low cost. That unification is what makes the agentic direction credible rather than aspirational.
+
 </p>
 
 <p>
@@ -274,7 +331,7 @@ Although still experimental, this is the direction I am actively building toward
 #### Conclusion
 
 <p>
-Creating a design system was necessary to address the scaling and consistency issues that drove the product redesign. What started as a Sketch library has grown into a token-enforced, code-integrated, Storybook-documented system that is now moving toward a fully shared design and code foundation and, on top of that, toward AI-assisted generation. Every architectural step solved a real problem and created the conditions for the next one.
+Creating a design system was necessary to address the scaling and consistency issues that drove the product redesign. What started as a Sketch library has grown into a token-enforced, code-integrated, Storybook-documented system whose foundation is now kept in sync between Figma and code, and which is moving toward AI-assisted generation on top of that. Every architectural step solved a real problem and created the conditions for the next one.
 </p>
 
 <ul>
