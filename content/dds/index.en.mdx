@@ -62,7 +62,7 @@ imagesXl:
     <Outcomes>
         <ul>
             <li>A complete design system, established from scratch and still in active use today</li>
-            <li>Design tokens shipped to the frontend codebase, enforced by lint rules I authored — hard-coded values now fail at merge time, eliminating visual-inconsistency QA as a review category</li>
+            <li>Design tokens shipped to the frontend codebase, enforced by lint rules I authored; hard-coded values now fail at merge time, eliminating visual-inconsistency QA as a review category</li>
             <li>A Storybook documentation layer integrated directly into the application codebase, used by around 10 engineers</li>
             <li>A token sync system that keeps Figma and the codebase in agreement. Its first full comparison surfaced four inconsistencies no existing check could see, and the system now reports zero drift</li>
             <li>The foundation for the next step: moving toward an agentic design system</li>
@@ -85,10 +85,10 @@ import ImageSlider from "../../src/components/image-slider"
 <section id="audit">
 
 #### Audit
-## The product audit revealed many inconsistencies and user experiences issues, confirming the need for a design system.
+## The product audit revealed many inconsistencies and user experience issues, confirming the need for a design system.
 
 <p>
- Before proposing anything, I evaluated what already existed. I went through the full product interface and captured every menu, button, modal, and form. I organized them into a spreadsheet, grouped them into families, and gave each variant a name. What came back made the case for everything that followed:
+ Before proposing anything, I evaluated what already existed. I went through the full product interface and captured every menu, button, modal, and form. I organized them into a spreadsheet, grouped them into families, and gave each variant a name:
 </p>
 
 <ul>
@@ -155,7 +155,7 @@ Once the principles were agreed on, I iterated on visual directions for the core
 ## The system became more valuable to engineering as more of it moved out of the design tool and into the codebase.
 
 <p>
-Building the system took several years and went through three main shifts in tooling and architecture.
+Building the system is an ongoing process that went through three main shifts in tooling and architecture.
 </p>
 
 <p>
@@ -166,8 +166,13 @@ The first version of the design system was built in Sketch. Each UI element was 
 <Images name={props.images.md["Components-1"]} captions="The initial Sketch design system."/>
 
 <p>
-After about two years of running this in production, two problems became hard to ignore. Component updates were expensive: each change meant switching between files, and components could easily drift out of date. Sketch's prototyping capabilities also became too limited, forcing me to use a second tool for anything beyond static screens.
+After about two years of running this in production, two problems became hard to ignore:
 </p>
+
+<ul>
+    <li>Component updates were expensive: each change meant switching between files, and components could easily drift out of date.</li>
+    <li>Sketch's prototyping capabilities became too limited, forcing me to use a second tool for anything beyond static screens.</li>
+</ul>
 
 <p>
 Alongside the design tool itself, I built a custom documentation site to bring developers into the system. Despite the effort, adoption stayed low. Design lived in Sketch, code lived in the codebase, and the documentation site sat in between without becoming central to either workflow.
@@ -177,18 +182,18 @@ Alongside the design tool itself, I built a custom documentation site to bring d
 
 <p>
 <strong>Figma migration</strong><br />
-In early 2023 I migrated the entire system to Figma. The migration was driven by two concrete problems with Sketch: performance had degraded to the point where the file-switching workflow was a daily cost, and Sketch lacked features that had become essential by then, including variables. Figma also meant the whole system could live in a single file without the performance hit.
+In early 2023 I migrated the entire system to Figma; the reasons were that in addition to the 2 issues mentioned above (performance issues and the lack of prototyping features), Sketch started to lack necessary features such as variables.
 </p>
 
 <Images name={props.images.md["master-file-2"]} className="mt-5" captions="Contrary to Sketch, all components could be stored in a single file with no visible performance impact."/>
 
 <p>
 <strong>Design tokens in the codebase</strong><br />
-The migration was a prerequisite for the harder problem: bringing the design system's foundation into the codebase itself.
+Once the migration to Figma was completed and the Design variables created, I set out to tackle the bigger challenge of moving the design system’s foundation into the codebase.
 </p>
 
 <p>
-I defined the design tokens (colors, type scale, spacing, border radius, shadows, …) as the source of truth and shipped them into the frontend codebase as code-level primitives. From that point forward, the foundation of the system existed in code, not only in design files.
+I started by defining the design tokens (colors, type scale, spacing, border radius, shadows, …) as the source of truth and shipped them into the frontend codebase as code-level primitives. From that point forward, the foundation of the system existed in code, not only in design files.
 </p>
 
 <Images 
@@ -201,7 +206,7 @@ I defined the design tokens (colors, type scale, spacing, border radius, shadows
 
 <p>
 <strong>Linting against hard-coded values</strong><br />
-Tokens in code aren't worth much if engineers can still type #3B82F6 into a CSS file. I authored the lint rules that flag any hard-coded color, spacing, typography, … value in the codebase. The rules block the merge unless the value comes from the token set.
+Tokens in code aren't worth much if engineers can still type #3B82F6 into a CSS file. To fix that issue, I authored lint rules that flag any hard-coded color, spacing, typography, … value in the codebase. The rules block the merge unless the value comes from the token set.
 </p>
 
 <p>
@@ -241,13 +246,17 @@ This removed an entire category of design-review work: catching hard-coded value
 
 <p>
 <strong>Storybook as the documentation layer</strong><br />
-The earlier custom documentation site had failed because it sat outside the engineering workflow. I moved component documentation into Storybook and integrated it directly into the frontend application. Components could now be browsed, tested in isolation, and referenced by engineers without leaving their environment. Adoption followed quickly: the roughly 10 engineers now browse, test, and reference components in Storybook as part of their normal workflow, without leaving the codebase.
+The earlier custom documentation site had failed because it sat outside the engineering workflow, so in order to fix it, I moved component documentation into Storybook and integrated it directly into the frontend application. 
+</p>
+
+<p>
+Components could now be browsed, tested in isolation, and referenced by engineers without leaving their environment. The team adopted it quickly. All ten engineers now browse, test and add Storybook components right from the codebase as part of their normal workflow.
 </p>
 
 <Images name={props.images.md["live-compoenents"]} captions="Using a documentation website directly integrated into the codebase was an essential step in promoting adoption."/>
 
 <p>
-A second benefit only became fully visible later. By living inside the codebase as structured, machine-readable component documentation, Storybook also became a foundation that AI tools can consume, and a key piece of infrastructure that the agentic direction builds on directly.
+The second benefit that only became visible later was that Storybook offers structured, machine-readable component documentation, which is exactly what an AI agent needs to read and understand a design.
 </p>
 
 <section id="design-token-sync">
@@ -279,7 +288,18 @@ The interface between the two sides consists of a pair of snapshot files saved i
 
 <p>
 <strong>What the first real run found</strong><br />
-The first time the completed comparison was run against the actual file, it revealed four real mismatches that had gone unnoticed for months. Sixteen variables pointed to a published library copy of the primitives instead of the local ones, a color ramp was off by one tier, a gradient was set at the wrong angle, and an extra effect style had no code counterpart. While names had been checked and values spot-checked, these issues were invisible to any existing tests. All four were fixed, and the file now shows zero drift, with all tokens in agreement.
+The first time the completed comparison was run against the actual file, it revealed four real mismatches that had gone unnoticed for months:
+</p>
+
+<ul>
+    <li>Sixteen variables pointed to a published library copy of the primitives instead of the local ones</li>
+    <li>A color ramp was off by one tier</li>
+    <li>A gradient was set at the wrong angle</li>
+    <li>An extra effect style had no code counterpart</li>
+</ul>
+
+<p>
+While names had been checked and values spot-checked, these issues were invisible to any existing tests. All four were fixed, and the file now shows zero drift, with all tokens in agreement.
 </p>
 
 <Images 
@@ -312,7 +332,7 @@ The token layer, the lint rules, and the sync system close the design-code gap a
 </p>
 
 <p>
-The next step is applying the same treatment to components, so that the components in the design file and their production code equivalents stay in sync, and designers and engineers reference the same components rather than parallel implementations of them. I am currently working with the lead developer on an architecture that will let us do this with minimal effort and at low cost. That unification is what makes the agentic direction credible rather than aspirational.
+The next step is applying the same treatment to components, so that the components in the design file and their production code equivalents stay in sync, and designers and engineers reference the same components rather than parallel implementations of them. I am currently working with the lead developer on an architecture that will let us do this with minimal effort and at low cost.
 
 </p>
 
@@ -331,13 +351,13 @@ Although still experimental, this is the direction I am actively building toward
 #### Conclusion
 
 <p>
-Creating a design system was necessary to address the scaling and consistency issues that drove the product redesign. What started as a Sketch library has grown into a token-enforced, code-integrated, Storybook-documented system whose foundation is now kept in sync between Figma and code, and which is moving toward AI-assisted generation on top of that. Every architectural step solved a real problem and created the conditions for the next one.
+Creating a design system was necessary to address the scaling and consistency issues that drove the product redesign. What started as a Sketch library has grown into a token-enforced, code-integrated, Storybook-documented system whose foundation is now kept in sync between Figma and code, and which is moving toward AI-assisted generation on top of that. Every architectural step solved a real problem.
 </p>
 
 <ul>
     <li><strong>As a designer</strong>, leading the system means I assemble mockups from proven components instead of drawing from scratch, and working at the token and code level has made me more engineering-minded when designing.</li>
     <li><strong>For developers</strong>, clear component documentation, reusable patterns, and lint rules that enforce the token system let them focus on logic, tests, and performance instead of endlessly recreating style for every shipped feature.</li>
-    <li><strong>For the business</strong>,  the strongest proof is longevity: the system has survived a full tooling migration, is used daily by roughly 10 engineers, and remains the source of truth for every shipped feature to this day.</li>
+    <li><strong>For the business</strong>, the strongest proof is longevity: the system has survived a full tooling migration, is used daily by roughly 10 engineers, and remains the source of truth for every shipped feature to this day.</li>
 </ul>
 
 <ImageSlider 
