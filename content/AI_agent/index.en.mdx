@@ -2,7 +2,7 @@
 title: "Transforming lead nurturing: designing an AI-driven prospecting agent for customer home builder and real estate companies."
 tags: [ProductDiscovery, HypothesisDrivenExperiments, DataAnalysis]
 path: articles/AI_agent
-synopsis: "Sales reps spent hours writing personalized outreach that rarely got replies, while a costly BPO team tried to compensate. Lead validation efforts on whether AI could replace or augment that team, and through three small experiments, found why a fully-automated agent wouldn't work, pivoting the project to a human-in-the-loop system before engineering committed resources."
+synopsis: "Salespersons spent hours writing personalized outreach that rarely got replies, while a costly BPO team tried to compensate. Led validation efforts on whether AI could replace or augment that team, and through three small experiments, found why a fully-automated agent wouldn't work, pivoting the project to a human-in-the-loop system before engineering committed resources."
 order: 1
 featured: 1
 displayToc: true
@@ -33,11 +33,11 @@ imagesLg:
 
 <ArticleOverview>
     <Sunnary>
-        Lead nurturing in Japanese real estate is broken. Reps spend hours writing personalized outreach to leads, most of which never reply. Our BPO team existed specifically to solve this at unsustainable headcount cost. The question we faced: could AI replace or augment the BPO team without destroying the personalization that made messages effective?
+        Lead nurturing in Japanese real estate is broken. Salespersons spend hours writing personalized outreach to leads, most of which never reply. Our BPO team existed specifically to solve this at unsustainable headcount cost. The question we faced: could AI replace or augment the BPO team without destroying the personalization that made messages effective?
     </Sunnary>
     <Problems>
         <ul>
-            <li>Sales reps spent hours writing personalized outreach that rarely produced replies, eroding confidence in Digima's value</li>
+            <li>Salespersons spent hours writing personalized outreach that rarely produced replies, eroding confidence in Digima's value</li>
             <li>Scaling lead nurturing depended on a BPO team whose headcount cost was becoming unsustainable</li>
             <li>The team faced a high-risk product bet: could AI replace or augment BPO without destroying the personalization that made messages effective?</li>
         </ul>        
@@ -73,7 +73,7 @@ import ImageSlider from "../../src/components/image-slider"
 <section id="context">
 
 #### Context
-## Product discovery interview showed that Sales teams struggle with lead engagement due to time constraints and the challenge of crafting personalized messages, highlighting a critical need for innovative solutions to enhance response rates.
+## Product discovery interviews showed that Sales teams struggle with lead engagement due to time constraints and the challenge of crafting personalized messages, highlighting a critical need for innovative solutions to enhance response rates.
 
 <p>
 During our product discovery interview process, 2 opportunities were identified. The first one is addressed <Link to={"/discovery/"}>in a separate case study. </Link> 
@@ -117,7 +117,7 @@ This solution was somewhat effective but costly for us and our customers, and wa
 </p>
 
 <p>
-Taking into account the past business efforts to address this opportunity,  I organized a workshop during which the team and I generated a few ideas on how to address this opportunity.
+Taking into account the past business efforts to address this opportunity, I organized a workshop during which the team and I generated a few ideas on how to address this opportunity.
 </p>
 
 </section>
@@ -131,13 +131,13 @@ After generating the ideas, the team members voted on the ones that had the high
 </p>
 
 <ul>
-    <li>Real-time 'Reply Score' & Suggestions: An AI assistant that analyzes your message as you write it. It could provide a "reply likelihood" score (e.g., 85%) and offer specific suggestions to improve.</li>
+    <li>A real-time "reply score" assistant that scores your draft as you write</li>
     <li>An automated AI reply agent</li>
-    <li>Suggest content to customers when writing messages using AI.</li>
+    <li>AI-suggested content while writing messages</li>
 </ul>
 
 <p>
-We selected a single idea by surfacing assumptions attached to these ideas and rating them based on how much impact they will have on the success of the idea, the level of risks attached to the assumption if the assumption were to be proven wrong, and how much evidence we already have that the assumption is true. The ideas with the most number of assumptions that carry the most risks if proven wrong and the ones that also have the least amount of evidence, should be prioritized.
+We selected a single idea by surfacing assumptions attached to these ideas and rating them based on how much impact they would have on the success of the idea, the level of risk attached to the assumption if the assumption were to be proven wrong, and how much evidence we already have that the assumption is true. The ideas with the most assumptions that carry the most risk if proven wrong, and the ones that also have the least amount of evidence, should be prioritized.
 </p>
 
 <p>
@@ -167,11 +167,11 @@ And the following assumptions were selected for testing:
 ## By meticulously analyzing BPO workflows through interviews, we transformed insights into a strategic journey map that laid the foundation for the innovative AI prospecting agent feature.
 
 <p>
-Since part of the assumptions were about replacing or reducing the workload of the BPO staff, it was essential to first understand in detail their workflow step-by-step before diving into assumption testing. 
+Since some of the assumptions were about replacing or reducing the workload of the BPO staff, it was essential to first understand in detail their workflow step-by-step before diving into assumption testing. 
 </p>
 
 <p>
-To that end, I, along with the PM, organised interviews with some of the BPO staff members and some of our customers. This helped us get a deep understanding of their workflow, and the PM and I consolidated our insights gathered during interviews sessions into a journey map. 
+To that end, I, along with the PM, organised interviews with some of the BPO staff members and some of our customers. This helped us get a deep understanding of their workflow, and the PM and I consolidated our insights gathered during interview sessions into a journey map. 
 </p>
 
 <Images withZoom name={props.images.lg["BPO-Journey-map"]} />
@@ -213,18 +213,18 @@ Based on my designs and the experiment I created, the engineering team developed
 />
 
 <p>
-The goal was 2 folds:
+The goal was 2-fold:
 </p>
 
 <ul>
-    <li>Evaluate each model-generated content quality based on 4 criteria:</li>
+    <li>Evaluate each model's generated content quality based on 4 criteria:</li>
         <ul>
             <li>Accuracy and Relevance to the contact's profile information/past communications.</li>
             <li>Purposefulness: Is the message itself written with a clear goal in mind, like booking a meeting? Does the message contain a clear offer?</li>
             <li>Safety: Does the message contain any instances of harmful or inappropriate language?</li>
             <li>Language Quality and Tone: Is the message tone natural and easy to understand?</li>
         </ul>
-    <li>Estimate each model’s cost per generated message to get an understanding of whether the feature was  economically viable</li>
+    <li>Estimate each model’s cost per generated message to get an understanding of whether the feature was economically viable</li>
 
 </ul>
 <p>
@@ -249,11 +249,11 @@ After sharing my findings and recommendations with the PM, she decided that the 
 </p>
 
 <p>
-To test that assumption, the SMS reply POC used in the previous experiment was modified by the engineers based on the new experiment I designed to only include the previously selected AI model and to generate outreach SMS messages not for customer replies but for 2 types of leads: new leads and existing leads that have recently become active. The goal of this experiment was 2 folds:
+To test that assumption, the SMS reply POC used in the previous experiment was modified by the engineers based on the new experiment I designed to only include the previously selected AI model and to generate outreach SMS messages not for customer replies but for 2 types of leads: new leads and existing leads that have recently become active. The goal of this experiment was 2-fold:
 </p>
 
 <ul>
-    <li>Use the same survey that the one used in the previous experiment to evaluate the generated response based on the previously defined criteria, and keep improving the AI response</li>
+    <li>Use the same survey as the one used in the previous experiment to evaluate the generated response based on the previously defined criteria, and keep improving the AI response</li>
     <li>Track the time it took BPO staff to edit the generated message and the number of times their intervention was needed. I also built a dashboard computing the diff between each AI draft and the final sent message, which showed staff rewriting over half the text on average.</li>
 </ul>
 
@@ -277,17 +277,17 @@ To address these issues, the team collaborated and decided that we would add the
 </p>
 
 <p>
-Assumption 2 had shown a human needed to stay in the loop to sharpen the AI's offers. Assumption 3 asked a different question; not whether a human was needed, but where: which messages the AI could own outright, and which it had to route to a person. Using the BPO journey map and the results of the SMS reply experiment, I divided the interactions into three categories:
+Assumption 2 had shown a human needed to stay in the loop to sharpen the AI's offers. Assumption 3 asked a different question: not whether a human was needed, but where. Which messages the AI could own outright, and which it had to route to a person. Using the BPO journey map and the results of the SMS reply experiment, I divided the interactions into three categories:
 </p>
 
 <ul>
-    <li>Situations where the AI should not generate a message. These are SMS messages sent by users that don’t require a response, such as “Understood“ or “Thank you“</li>
-    <li>Situations where the AI should hand over the reply to the person in charge, such as when a user asks about the price or the availability of a land in a certain area.</li>
-    <li>Situations where the AI is allowed to reply to the user and perform small tasks, such as when a user asks not to be contacted anymore, or let us know that they have already signed a contract with a different company.</li>
+    <li>Situations where the AI should not generate a message. These are SMS messages sent by users that don’t require a response, such as “Understood” or “Thank you”</li>
+    <li>Situations where the AI should hand over the reply to the person in charge, such as when a user asks about the price or the availability of land in a certain area.</li>
+    <li>Situations where the AI is allowed to reply to the user and perform small tasks, such as when a user asks not to be contacted anymore, or lets us know that they have already signed a contract with a different company.</li>
 </ul>
 
 <p>
-To test each of these cases, the engineering team modified the POC so that a Slack notification with the intended AI action would be sent whenever a user reply was received. The goal was 2 folds:
+To test each of these cases, the engineering team modified the POC so that a Slack notification with the intended AI action would be sent whenever a user reply was received. The goal was 2-fold:
 </p>
 
 <ul>
@@ -296,11 +296,11 @@ To test each of these cases, the engineering team modified the POC so that a Sla
 </ul>
 
 <p>
-To measure the AI effectiveness in achieving these goals, I created a simple survey that had to be filled out by the staff operating the POC every time a Slack notification was sent.
+To measure the AI's effectiveness in achieving these goals, I created a simple survey that had to be filled out by the staff operating the POC every time a Slack notification was sent.
 </p>
 
 <p>
-The results were analysed in a Tableau report. The pattern was clear: the AI reliably handled the routine cases on its own, but for higher-stakes inquiries, especially questions about pricing or land availability, it couldn't consistently take the right action and had to route the conversation to the person in charge. The boundary here wasn't about message quality, as in Assumption 2, but about scope: some conversations the AI simply shouldn't attempt.
+The results were analysed in a Tableau report. The pattern was clear: the AI reliably handled the routine cases on its own, but for higher-stakes inquiries, especially questions about pricing or land availability, it couldn't consistently take the right action and had to route the conversation to the person in charge.
 </p>
 
 </section>
@@ -325,17 +325,17 @@ This led directly to my design solution for v2: adding document uploads and cust
 </p>
 
 <p>
-That v2 has since shipped. The feature is now in a progressive rollout, with the first 16 accounts already using it actively; early evidence that the human-in-the-loop direction holds up in production, not just in testing.
+That v2 has since shipped. The feature is now in a progressive rollout, with the first 16 accounts already using it actively, early evidence that the human-in-the-loop direction holds up in production, not just in testing.
 </p>
 
 ### Next Steps
 <p>
-With v2 shipped and rolling out to customers, the work now moves to mobile — salespeople need to act on hand-offs the moment they land, and decision-makers want the agent's value visible at a glance, both of which happen away from a desk. My immediate next steps would be design-focused:
+With v2 shipped and rolling out to customers, the work now moves to mobile. Salespeople need to act on hand-offs the moment they come in, and decision-makers want the agent's value visible at a glance. My immediate next steps would be the following:
 </p>
 
 <ul>
     <li><strong>Build the mobile hand-off experience for salespeople:</strong> Building on our Slack POC, I'd design and prototype a dedicated mobile experience that handles the hand-off to a human for the tasks the AI can't manage on its own. It would alert the right salesperson on their phone, let them review the AI's suggested action, and take over the conversation on the spot.</li>
-    <li><strong>Build a mobile reporting experience for decision-makers:</strong> This came up repeatedly during discovery, when decision-makers can't clearly see the value a product is delivering, it's one of the most frequently cited reasons they cancel. I'd design a mobile experience aimed at decision-makers that delivers regular reports on the agent's activity, making the value it brings to their business visible over time and giving them a concrete reason to keep it.</li>
+    <li><strong>Build a mobile reporting experience for decision-makers:</strong> This came up repeatedly during discovery: when decision-makers can't clearly see the value a product is delivering, it's one of the most frequently cited reasons they cancel. I'd design a mobile experience aimed at decision-makers that delivers regular reports on the agent's activity, making the value it brings to their business visible over time and giving them a concrete reason to keep it.</li>
 </ul>
 
 </section>
