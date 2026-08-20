@@ -140,6 +140,7 @@ Here are some of the researches key applicable findings:
     <ul>
         <li>6 out of 7 interviewees didn’t know what their email provider were or even what the term “email provider” actually meant</li>
         <li>All interviewees had at least 2 different email addresses. The most common setup was an email address named after its owner and used to interact with leads and an info@../contact@.. email address dedicated to new leads. This email address is usually shared within the company</li>
+        <li>I also checked the opposite side: did users know their own email address and password? Everyone knew their address and was able to find their password when needed, even when they couldn't recall it from memory. That finding is what later made an email-and-password-only flow a safe bet.</li>
     </ul>
 
 
@@ -297,8 +298,14 @@ For users who didn’t have access to account level server settings, a dedicated
 Once I was confident that the version I designed was meeting our goals, I set out to validate my assumptions by testing them with real users.
 </p>
 
+
 <p>
 To that end, I created a fully functional coded prototype of the user setting flow that we tested with 5 participants recruited from our existing user base.
+</p>
+
+<p>
+The design had two connection paths, and I tested both. The main path, where a user enters only their email and password. And the fallback path, where a user enters server settings manually.
+I only tested the settings flow, and that was a deliberate call. Time and resources were limited, so I had to choose where testing would matter most. The interviews had shown the main path asked only for things users already knew, so I was confident that wasn't where the risk lived. The settings flow was where a non-technical user was most likely to get stuck, so that's where I spent the testing budget.
 </p>
 
 <div className={props.style.containedMd}>
