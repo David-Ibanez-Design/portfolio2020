@@ -243,10 +243,6 @@
       "description": "使用するツール",
       "tool1": "Sketch",
       "tool1URL": "https://www.sketch.com/design/",
-      "tool3": "Photoshop",
-      "tool3URL": "https://www.adobe.com/jp/products/photoshop.html",
-      "tool4": "Illustrator",
-      "tool4URL": "https://www.adobe.com/jp/products/illustrator.html",
       "tool5": "Tableau",
       "tool5URL": "https://www.tableau.com/ja-jp?cb=Wed%20Jun%20%209%2008%3A32%3A31%202021",
       "tool6": "GA",
@@ -258,7 +254,9 @@
       "tool9": "Figma",
       "tool9URL": "https://www.figma.com/",
       "tool10": "Miro",
-      "tool10URL": "https://miro.com/"
+      "tool10URL": "https://miro.com/",
+      "tool11": "Claude Code/Design",
+      "tool11URL": "https://claude.ai/"
     },
     "process": {
       "description": "デザインプロセス",

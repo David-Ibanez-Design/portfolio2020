@@ -16,10 +16,9 @@ import JapaneseFlag from "../../images/icons/japanese-flag";
 import FranceFlag from "../../images/icons/france-flag";
 import AmericanFlag from "../../images/icons/american-flag";
 import Galogo from "../../images/icons/google-analytics-logo";
-import IllustratorLogo from "../../images/icons/illustrator-logo";
-import PhotoshopLogo from "../../images/icons/photoshop-logo";
 import SketchLogo from "../../images/icons/sketch-logo";
 import FigmaLogo from "../../images/icons/Figma-logo";
+import ClaudeLogo from "../../images/icons/claude-logo";
 import MiroLogo from "../../images/icons/miro-logo";
 import SmartlookLogo from "../../images/icons/smartlook-logo";
 import VscodeLogo from "../../images/icons/VS-code-logo";
@@ -144,6 +143,12 @@ const About = ({data}) => {
                   </span>
                   <p>{t.about.tools.tool9}</p>
                 </a>
+                <a href="https://claude.ai/" className={style.toolsInner} target="_blank" rel="noreferrer"> 
+                  <span className={style.toolsIcon}>
+                    <ClaudeLogo/>
+                  </span>
+                  <p>{t.about.tools.tool11}</p>
+                </a>
                 <a href="https://www.sketch.com/design/" className={style.toolsInner} target="_blank" rel="noreferrer"> 
                   <span className={style.toolsIcon}>
                     <SketchLogo/>
@@ -155,18 +160,6 @@ const About = ({data}) => {
                     <MiroLogo/>
                   </span>
                   <p>{t.about.tools.tool10}</p>
-                </a>
-                <a href="https://www.adobe.com/products/photoshop.html" className={style.toolsInner} target="_blank" rel="noreferrer"> 
-                  <span className={style.toolsIcon}>
-                    <PhotoshopLogo/>
-                  </span>
-                  <p>{t.about.tools.tool3}</p>
-                </a>
-                <a href="https://www.adobe.com/products/illustrator.html" className={style.toolsInner} target="_blank" rel="noreferrer"> 
-                  <span className={style.toolsIcon}>
-                    <IllustratorLogo/>
-                  </span>
-                  <p>{t.about.tools.tool4}</p>
                 </a>
                 <a href="https://www.tableau.com/" className={style.toolsInner} target="_blank" rel="noreferrer"> 
                   <span className={style.toolsIcon}>
