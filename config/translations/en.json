@@ -126,7 +126,7 @@
     "seoTitle": "Product designer Portfolio",
     "seoDescription": "Product designer Portfolio",
     "subtitle": "ABOUT ME",   
-    "textPart1": "I'm a senior product designer working on B2B SaaS in Tokyo. Over the past 10 years I've grown from designing features into shaping product strategy through design systems, structured experiments, and data-informed decisions. Working in a bilingual environment alongside PMs, engineers, and users has taught me how to balance business goals, engineering constraints, and user needs.</br> I prototype in code (React, AI-assisted) to validate complex interactions before development commits.</br></br> Lately, my focus has been on de-risking AI product bets and exploring agentic design systems: restructuring design systems so AI tools can generate full designs and prototypes that conform to the rules. ",
+    "textPart1": "I'm a senior product designer working on B2B SaaS in Tokyo. Over the past 10 years I've grown from designing features into shaping product strategy through design systems, structured experiments, and data-informed decisions. Working in a bilingual environment alongside PMs, engineers, and users has taught me how to balance business goals, engineering constraints, and user needs.</br> I prototype in code to validate complex interactions before development commits.</br></br> Lately, my focus has been on de-risking AI product bets and exploring agentic design systems: restructuring design systems so AI tools can generate full designs and prototypes that conform to the rules. ",
     "technicalSkills": "I specialize in",
     "languageSkills": {
       "description": "Languages Skills",
