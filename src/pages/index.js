@@ -256,7 +256,7 @@ export const pageQuery = graphql`
         }
 
         heroVisual: file(
-        relativePath: { eq: "homepage/hero-visual.png" }) {
+        relativePath: { eq: "homepage/hero-visual-v5.png" }) {
           ...imageXXSmall
         }
 
