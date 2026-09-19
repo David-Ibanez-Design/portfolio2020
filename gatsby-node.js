@@ -75,7 +75,7 @@ exports.onCreateNode = ({ node, actions }) => {
   }
 }
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
   const artTemplate = require.resolve(`./src/templates/article.js`)
@@ -119,6 +119,10 @@ exports.createPages = async ({ graphql, actions }) => {
     // All files for a blogpost are stored in a folders
     // relativeDirectory is the name of the folder
     const slug = art.relativeDirectory
+    if (!art.childMdx) {
+      reporter.warn(`Skipping "${slug}": its MDX file failed to parse (check for a syntax error in the article).`)
+      return
+    }
     const title = art.childMdx.frontmatter.title
     const locale = art.childMdx.fields.locale
     const isDefault = art.childMdx.fields.isDefault
