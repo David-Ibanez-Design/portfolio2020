@@ -1,6 +1,6 @@
 /* Vendor imports */
 import React from 'react'
-import { graphql, navigate } from 'gatsby'
+import { graphql } from 'gatsby'
 import { FaDribbble, FaLinkedin, FaGithub } from 'react-icons/fa'
 /* App imports */
 import Img from 'gatsby-image'
@@ -21,24 +21,14 @@ import useTranslations from "../components/useTranslations"
 import { LocaleContext } from "../components/layout"
 
 
-const Homepage = ({data, requestLangChange}) => {
+const Homepage = ({data}) => {
 
   const t = useTranslations()
-  const { localizedPath, locale, BrowserPreferredLang } = React.useContext(LocaleContext)
+  const { localizedPath, locale } = React.useContext(LocaleContext)
   
   let { caseStudyFeatureTablet, caseStudiesTablet, dribbbleShots,testimoniesImg, heroVisual, profilePics  } = data
   caseStudyFeatureTablet = caseStudyFeatureTablet.edges[0]
   caseStudiesTablet = caseStudiesTablet.edges;
-
-  // If users has a different default browser language setting that the website
-  // Redirect them to their prefered langauge
-  // ISSUE: we need to let user change lang whe the use the lang switcher
-
-  // if(locale == "en" && BrowserPreferredLang == "ja" && !requestLangChange){
-  //   navigate("/ja")}
-  // else if(locale == "ja" && BrowserPreferredLang == "en" && !requestLangChange){
-  //   navigate("/")
-  // }
 
   return(
     <div className={style.homeContainer}>

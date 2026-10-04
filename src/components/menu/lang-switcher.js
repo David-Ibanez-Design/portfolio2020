@@ -8,11 +8,11 @@ import JapaneseFlag from "../../images/icons/japanese-flag";
 import AmericanFlag from "../../images/icons/american-flag";
 import { LocaleContext } from "../layout"
 import useTranslations from "../useTranslations"
-import locales from "../../../config/i18n"
+import Utils from "../../utils"
 
-const LangSwitcher = ({toggleMenu, isMobile, requestLangChange, idSuffix = "" }) => {
+const LangSwitcher = ({toggleMenu, isMobile, idSuffix = "" }) => {
 
-  const { locale, localizedPath, BrowserPreferredLang } = React.useContext(LocaleContext)
+  const { locale, localizedPath } = React.useContext(LocaleContext)
   const t = useTranslations()
 
   // Tooltip ids must be unique per LangSwitcher instance (header, mobile menu, footer),
@@ -20,11 +20,14 @@ const LangSwitcher = ({toggleMenu, isMobile, requestLangChange, idSuffix = "" })
   const jpTooltipId = `tooltipMenuJpLang${idSuffix}`
   const enTooltipId = `switchToEnglish${idSuffix}`
 
-  const pageName = localizedPath === locale ? "" : localizedPath.substring(localizedPath.lastIndexOf('/') + 1);
-
   function switchLangTo(targetLang) {
-       const isIndex = (pageName === `/` || pageName === ``)
-       return locales[targetLang].default ? `/${pageName}` : `/${locales[targetLang].path}${isIndex ? `` : `/${pageName}`}`  
+       return Utils.switchLangPath(localizedPath, locale, targetLang)
+  }
+
+  // Remember the choice so the browser-language redirect in Layout doesn't override it
+  function onSelectLang(targetLang) {
+       Utils.setPreferredLang(targetLang)
+       if (isMobile) toggleMenu()
   }
 
   return (
@@ -33,7 +36,7 @@ const LangSwitcher = ({toggleMenu, isMobile, requestLangChange, idSuffix = "" })
           <li data-tip data-for={jpTooltipId} >
             <JapaneseFlag className={style.japaneseFlag}/>
             <Link 
-              onClick={ isMobile ? toggleMenu : null}
+              onClick={() => onSelectLang("ja")}
               className={locale === "ja" ? style.active : null} 
               to={switchLangTo("ja")}
               >
@@ -48,7 +51,7 @@ const LangSwitcher = ({toggleMenu, isMobile, requestLangChange, idSuffix = "" })
           <li data-tip data-for={enTooltipId} >
             <AmericanFlag/>
               <Link 
-                onClick={ isMobile ? toggleMenu : null}    
+                onClick={() => onSelectLang("en")}
                 className={locale === "en" ?  style.active : null} 
                 to={switchLangTo("en")}
               >               

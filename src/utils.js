@@ -1,47 +1,54 @@
+const locales = require('../config/i18n')
+
+const PREFERRED_LANG_KEY = 'preferredLang'
+
 const Utils = {
 
-  setDefaultLang: (contextLang, options = {}) => {
-      const defaultOptions = {
-        languageCodeOnly: true,
-        languageFallback: "ja",
-      };
+  /**
+   * First of the browser's preferred languages that the site is available in.
+   * @return {string|null} Locale key from config/i18n (e.g. "ja"), or null if none match.
+   */
+  getBrowserLang: () => {
+    if (typeof navigator === 'undefined') return null
+    const browserLocales = navigator.languages || [navigator.language]
+    const match = browserLocales
+      .filter(Boolean)
+      .map(lang => lang.trim().split(/-|_/)[0].toLowerCase())
+      .find(lang => locales[lang])
+    return match || null
+  },
 
-      const opt = {
-        ...defaultOptions,
-        ...options,
-      };
+  /**
+   * Language the visitor picked with the language switcher, if any.
+   * Storage can be unavailable (private mode, blocked site data), so failures are ignored.
+   * @return {string|null} Locale key from config/i18n, or null if none was saved.
+   */
+  getPreferredLang: () => {
+    try {
+      const lang = window.localStorage.getItem(PREFERRED_LANG_KEY)
+      return locales[lang] ? lang : null
+    } catch (e) {
+      return null
+    }
+  },
 
-      if(typeof navigator !== 'undefined'){
+  setPreferredLang: (lang) => {
+    try {
+      window.localStorage.setItem(PREFERRED_LANG_KEY, lang)
+    } catch (e) {}
+  },
 
-        const browserLocales =
-        navigator.languages === undefined
-          ? [navigator.language]
-          : navigator.languages;
-      
-        if (!browserLocales) { return contextLang === defaultOptions.languageFallback ;}
-
-        const browserLocalesArr = []
-        
-        browserLocales.map(locale => {
-          const trimmedLocale = locale.trim();
-          browserLocalesArr.push(opt.languageCodeOnly ? trimmedLocale.split(/-|_/)[0] : trimmedLocale);
-        });
-
-        // If the array is empty set the fallback language as the default language
-        if(browserLocalesArr.length === 0){
-          return contextLang === defaultOptions.languageFallback
-
-        // If the first result it equal to the context lang
-        }else if(browserLocalesArr[0] === contextLang){
-          return browserLocalesArr[0]
-        }else{
-          return browserLocalesArr[0]
-        }
-
-      }else{
-          return contextLang === defaultOptions.languageFallback
-        }
-
+  /**
+   * Path of the current page in another language.
+   * @param {string} localizedPath Current page path from pageContext (e.g. "/about", "ja/about", "ja").
+   * @param {string} locale Current page locale.
+   * @param {string} targetLang Locale key to switch to.
+   * @return {string} Path of the same page in targetLang.
+   */
+  switchLangPath: (localizedPath, locale, targetLang) => {
+    const pageName = localizedPath === locale ? "" : localizedPath.substring(localizedPath.lastIndexOf('/') + 1)
+    const isIndex = (pageName === `/` || pageName === ``)
+    return locales[targetLang].default ? `/${pageName}` : `/${locales[targetLang].path}${isIndex ? `` : `/${pageName}`}`
   },
 
 
