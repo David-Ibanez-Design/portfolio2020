@@ -12,7 +12,7 @@ export const imageXXSmall = graphql`
   fragment imageXXSmall on File {
     childImageSharp {
               fluid(maxWidth: 555) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_withWebp
                 ...GatsbyImageSharpFluidLimitPresentationSize
               }
     }
@@ -23,7 +23,7 @@ export const imageXSmall = graphql`
   fragment imageXSmall on File {
     childImageSharp {
               fluid(maxWidth: 590) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_withWebp
                 ...GatsbyImageSharpFluidLimitPresentationSize
               }
     }
@@ -34,7 +34,7 @@ export const imageSmall = graphql`
   fragment imageSmall on File {
     childImageSharp {
               fluid(maxWidth: 624) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_withWebp
                 ...GatsbyImageSharpFluidLimitPresentationSize
               }
     }
@@ -45,7 +45,7 @@ export const imageMedium = graphql`
   fragment imageMedium on File {
     childImageSharp {
             fluid(maxWidth: 1035) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
               ...GatsbyImageSharpFluidLimitPresentationSize
             }
     }
@@ -56,7 +56,7 @@ export const imageLg = graphql`
   fragment imageLg on File {
     childImageSharp {
             fluid(maxWidth: 1280,srcSetBreakpoints: [1035, 1280, 1500]) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
               ...GatsbyImageSharpFluidLimitPresentationSize
             }
     }
@@ -68,7 +68,7 @@ export const imageXl = graphql`
     childImageSharp {
             fluid( maxWidth: 1500, srcSetBreakpoints: [1035, 1280, 1500]
               ) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
               ...GatsbyImageSharpFluidLimitPresentationSize
             }
           }
@@ -81,7 +81,7 @@ export const imageXXl = graphql`
             fluid(
               maxWidth: 2560, srcSetBreakpoints: [1035, 1280, 1500]
               ) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
               ...GatsbyImageSharpFluidLimitPresentationSize
             }
     }
